@@ -1,6 +1,10 @@
 
+.. _quickstartguide:
+
 Quick start
 ===========
+
+.. _minsysreqs:
 
 Minimum system requirements
 ---------------------------
