@@ -22,7 +22,7 @@ so.
 4. The above unique combination translates to lower capital and operational
 costs of your storage infratructure.
 
-Target usecases
+Supported usecases
 ---------------
 
 Rockstor addresses the **NAS/Filer** usecase. It can be installed on bare
@@ -58,11 +58,13 @@ for clarity.
 | Asynchronous share          | beta    | replicate shares between       |
 | replication                 |         | multiple Rockstor appliances   |
 +-----------------------------+---------+--------------------------------+
-| WebUI                       | prod    |                                |
+| WebUI                       | prod    | efficient management through   |
+|                             |         | Firefox browser                |
 +-----------------------------+---------+--------------------------------+
 | CLI                         | beta    |                                |
 +-----------------------------+---------+--------------------------------+
-| RESTful API                 | prod    |                                |
+| RESTful API                 | prod    | integrate applications with    |
+|                             |         | Rockstor                       |
 +-----------------------------+---------+--------------------------------+
 | Active directory            | beta    |                                |
 +-----------------------------+---------+--------------------------------+
