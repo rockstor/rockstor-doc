@@ -52,6 +52,20 @@ Setup
 CLI
 ---
 
+RockStor provides a command line interface that can be used by a user to 
+administer the appliance, or used for scripting to automate repetitive
+tasks.
+
+To access the CLI, ssh to the appliance as the admin user that you created in the setup process. This will place you into the command line shell. The CLI is structured as a collection of subsystems. 
+
+At any point in the CLI, entering 'help' will give you a list of available subsystems or commands, and entering any particular subsystem name or command from that list will take you to the corresponding subsystem, or execute that command.
+
+   .. image:: cli.png
+      :align: center
+
+The subsections and commands will be further explained in the corresponding 
+sections of the documentation that they are related to.
+
 .. _api:
 
 API
