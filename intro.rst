@@ -1,6 +1,6 @@
 
 Introduction
-=================
+============
 
 Rockstor is a **free enterprise class storage platform**. At the foundation, it
 is a CentOS flavored Linux operating system tailored for storage
@@ -23,7 +23,7 @@ so.
 costs of your storage infratructure.
 
 Supported usecases
----------------
+------------------
 
 Rockstor addresses the **NAS/Filer** usecase. It can be installed on bare
 metal or as a virtual machine.
