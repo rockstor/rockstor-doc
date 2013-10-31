@@ -19,7 +19,7 @@ the webui under the logo is the ip address of the appliance. Click on it and
 the Appliances popup window will open. Now click on the **Add Appliance**
 button and submit the form as shown below.
 
-.. image:: add_appliance.png
+.. image:: add_appliance.gif
    :scale: 65%
    :align: center
 

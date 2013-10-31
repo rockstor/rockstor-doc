@@ -328,8 +328,8 @@ enter *NFS Exports* view. In the displayed table of nfs exports, click on the
    :scale: 65%
    :align: center
 
-Replicate shares across other Rockstor appliances
--------------------------------------------------
+Replicate shares to other Rockstor appliances
+---------------------------------------------
 
 Shares from one Rockstor appliance can be replicated to others at scheduled
 frequencies. Replication frequency is in seconds and can be as little as 60
@@ -348,3 +348,17 @@ form as shown below.
 
 Note that a pool must already exist on the target appliance to host the
 replica of the share.
+
+Disable or enable a replication task
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the webui, click on the *Storage* tab to enter the main Storage view. Now
+click on *Replication* in the left sidebar to enter *Replication* view. In the
+displayed table of replication tasks, click on the **disable** icon of the
+corresponding task to disable it as shown below.
+
+.. image:: disable_replica.gif
+   :scale: 65%
+   :align: center
+
+Follow the same procedure to enable a replication task back again.
