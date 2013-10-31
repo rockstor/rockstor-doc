@@ -19,6 +19,7 @@ Welcome to RockStor
    uis
    dashboard
    analytics
+   multiple_appliances
    storage_ops
    services
    users
