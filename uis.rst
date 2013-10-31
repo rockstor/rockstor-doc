@@ -11,18 +11,21 @@ Web UI
 ------
 
 The RockStor browser based interface or Web UI is supported on the Firefox 
-web browser. The initial setup of the appliance should be done through the 
+web browser. 
+
+The initial setup of the appliance should be done through the 
 Web UI, and once it is completed, any of the supported interfaces can be used
 to interact with it.
-
-Once you have completed RockStor installation as described in the 
-:ref:`installation` section, visit https://<appliance_ip> in your browser 
-to setup the appliance. 
 
 .. _setup:
 
 Setup
 ^^^^^^
+
+Once you have completed RockStor installation as described in the 
+:ref:`installation` section, visit https://<appliance_ip> in your browser 
+to setup the appliance. 
+
 1. User 
    
    When you go to https://<appliance_ip> after installation, you will be 

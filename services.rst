@@ -2,8 +2,7 @@
 Services
 ========
 
-Rockstor supports many services that are necessary for a storage system to
-interoperate with. 
+Rockstor supports many services that are necessary for a storage system to be functional.
 Service management including configuration, turning a service on or off, can be done via the System tab of the Webui as well as the services console of the CLI.
 
 The System -> Services page lists the services handled by Rockstor, and their current state (ON or OFF)
@@ -15,6 +14,8 @@ The System -> Services page lists the services handled by Rockstor, and their cu
 To start or stop a service, click the ON or OFF buttons respecively.
 
 Some services need to be configured before they can be turned on. To access the configuration page for a service, click the wrench icon next to the service name.
+
+The supported services are described below.
 
 NFS
 ---
@@ -40,7 +41,6 @@ AD Configuration
 To configure AD, you can specify the following values on the AD configuration page.
 
 1. Domain 
-   Specify the Winbind Domain here
 2. Controllers
 3. Security
 4. Realm
@@ -56,7 +56,7 @@ standard time server. This service must always be turned on.
 
 NTP Configuration
 ^^^^^^^^^^^^^^^^^
-To configure NTP, you must specify the address of an Internet standard time server in the NTP configuration page.
+To configure NTP, you can specify the address of an Internet standard time server in the NTP configuration page.
 
 LDAP
 ----
@@ -81,7 +81,7 @@ NIS is a directory service to connect to a NIS server.
 NIS Configuration
 ^^^^^^^^^^^^^^^^^
 
-To configure NIS, the following values must be provided
+To configure NIS, the following values can be provided on the NIS configuration page.
 
 1. Domain
 2. Server
