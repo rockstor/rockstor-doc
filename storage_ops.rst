@@ -328,3 +328,23 @@ enter *NFS Exports* view. In the displayed table of nfs exports, click on the
    :scale: 65%
    :align: center
 
+Replicate shares across other Rockstor appliances
+-------------------------------------------------
+
+Shares from one Rockstor appliance can be replicated to others at scheduled
+frequencies. Replication frequency is in seconds and can be as little as 60
+seconds. The appliance that hosts the replica is called a target
+appliance. At least one target appliance must be added before setting up
+replication for shares. See :ref:`add_appliance` for more details.
+
+In the webui, click on the *Storage* tab to enter the main Storage view. Now
+click on *Replication* in the left sidebar to enter *Replication* view. Click
+on **Add Replication Task** button and a form will be displayed. Submit the
+form as shown below.
+
+.. image:: add_replica.gif
+   :scale: 65%
+   :align: center
+
+Note that a pool must already exist on the target appliance to host the
+replica of the share.
