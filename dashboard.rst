@@ -53,5 +53,7 @@ Network activity
 
 The network activity widget displays data sent/received, and packets sent/received over the selected network interface, over the last 5 minutes.
 
+   .. image:: network-widget.png
+      :align: center
 
 
