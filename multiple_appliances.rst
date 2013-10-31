@@ -1,5 +1,5 @@
 
-Manage multiple Rockstor appliances
+Multiple Rockstor appliances
 ===================================
 
 Rockstor provides a simple way to manage multiple appliances. The webui is
