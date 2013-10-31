@@ -69,6 +69,9 @@ To configure AD, you can specify the following values on the AD configuration pa
 
 6. Allow offline login
 
+   .. image:: ad-config.png
+      :scale: 70 % 
+      :align: center
 
 NTP
 ---
