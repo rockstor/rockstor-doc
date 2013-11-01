@@ -25,9 +25,10 @@ There are two quick ways to evaluate Rockstor. See :ref:`quickeval` for more inf
 Is rockstor ready for production use?
 -------------------------------------
 
-Rockstor is currently in Beta and not suitable for production use. However, we
-have multiple installations of Rockstor that have been stable and we continue
-to test all layers of Rockstor software. We plan to finalize the Linux kernel
+While some features of Rockstor are ready for primetime, as a whole, it is
+currently in Beta and not suitable for production use. However, we have
+multiple installations of Rockstor that have been stable and we continue to
+test all layers of Rockstor software. We plan to finalize the Linux kernel
 soon, perhaps with the next version of CentOS release at which point we will
 reevaluate Rockstor's suitability for production use.
 
