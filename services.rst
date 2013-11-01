@@ -45,7 +45,7 @@ button.
 NTP
 ---
 
-NTP is a service to maintain system time in synchronization with Internet
+NTP maintains system time in synchronization with Internet
 standard time server. This service must always be turned on.
 
 To configure NTP, you can specify the address of an Internet standard time
@@ -63,8 +63,8 @@ in order to be part of AD.
 
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
-sidebar. To configure AD, click on the **wrench** icon and submit the form as
-shown below.
+sidebar. To configure AD, click on the **wrench** icon and submit the form with
+apropriate values as shown below.
 
 .. image:: ad-config.png
    :scale: 70 %
@@ -77,6 +77,7 @@ The individual fields of the form are described below.
 * **Controllers**: domain controller to use.
 * **Security**:  The security model to use, which configures how clients should
   respond to Samba. The options are
+
    1. user. A client must first log in with a valid username and password.
    2. server. In this mode, Samba will attempt to validate the username/password by authenticating it through another SMB server (for example, a Windows NT Server). If the attempt fails, the user mode will take effect instead.
    3. domain. In this mode, Samba will attempt to validate the username/password by authenticating it through a Windows NT Primary or Backup Domain Controller, similar to how a Windows NT Server would.
@@ -96,8 +97,8 @@ LDAP is a directory service to connect to LDAP server.
 
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
-sidebar. To configure LDAP, click on the **wrench** icon and submit the form as
-shown below.
+sidebar. To configure LDAP, click on the **wrench** icon and submit the form
+with appropiate values as shown below.
 
 .. image:: ldap-config.png
    :scale: 70 %
@@ -124,8 +125,8 @@ NIS is a directory service to connect to a NIS server.
 
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
-sidebar. To configure NIS, click on the **wrench** icon and submit the form as
-shown below.
+sidebar. To configure NIS, click on the **wrench** icon and submit the form
+with appropiate values as shown below.
 
 .. image:: nis-config.png
    :scale: 70 %

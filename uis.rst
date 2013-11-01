@@ -2,21 +2,22 @@
 User Interfaces
 ===============
 RockStor supports multiple ways for a user to interact
-with the appliance. It supports operations through a browser based
-interface (Web UI), a command line interface (CLI) that can be used for
-scripting common operations, or a RESTful API that enables complete
-programmatic control of the appliance.
+with the appliance. It supports operations through 
+
+1. a browser based interface (web-ui)
+2. a command line interface (CLI) that can be used for scripting common operations, 
+3. a RESTful API that enables complete programmatic control of the appliance.
 
 .. _webui:
 
-Web UI
+web-ui
 ------
 
 The RockStor browser based interface or web-ui is supported on the Firefox
 web browser.
 
 The initial setup of the appliance should be done through the
-Web UI, and once it is completed, any of the supported interfaces can be used
+web-ui, and once it is completed, any of the supported interfaces can be used
 to interact with it.
 
 .. _setup:
