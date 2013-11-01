@@ -23,8 +23,8 @@ Download Rockstor
 -----------------
 
 Download RockStor by clicking `here
-<http://rockstor.com/download-form.html>`_. Create a bootable CD from the
-downloaded iso and proceed to the next section for installation.
+<http://rockstor.com/download-form.html>`_. Create a bootable CD or USB drive
+from the downloaded iso and proceed to the next section for installation.
 
 Installation
 ------------
@@ -60,18 +60,19 @@ Some configuration steps are necessary before proceeding to use RockStor NAS, as
 Configuration
 -------------
 
-Rockstor's webUI and CLI are designed to be very user friendly. All of the
+Rockstor's web-ui and CLI are designed to be very user friendly. All of the
 storage provisioning tasks be done via WebUI or CLI. But before proceeding to
 provisioning storage, a few steps are necessary
 
 1. Make sure that RockStor is assigned an ip address. No additional steps are
 necessary for dhcp configuration, but static ip can be assigned during
 installation or manually during post install. After initial ip address
-assignment, all further configuration changes can be done easily via webUI
+assignment, all further configuration changes can be done easily via web-ui
 and CLI.
 
-2. There is a good chance that RockStor RPMs have been updated. Before
-proceeding further, update the installation::
+2. There is a good chance that Rockstor RPMs have been updated since the ISO
+was created. All updates are provided via the Rockstor yum repository. Before
+proceeding further, update to the latest software::
 
     [root@localhost ~]# yum update rockstor
 
@@ -106,9 +107,11 @@ the WebUI or CLI.::
     rd                               RUNNING    pid 1546, uptime 0:00:40
     [root@localhost ~]#
 
-RockStor WebUI is now ready. Open firefox browser on a laptop or some other
-machine and go to https://rockstor_appliance_ip. On the first visit, the
+6. RockStor WebUI is now ready. Open Firefox browser on a laptop or some other
+machine and go to https://rockstor_appliance_ip. **On the first visit, the
 browser shows a SSL certificate security warning. Please add the exception to
-proceed. You need to click through the initial setup process after which the
-main dashboard appears. Watch the WebUI video for a detailed overview.
+proceed**.
+
+7. Click through the initial setup process as shown
+in :ref:`setup`.
 

@@ -2,8 +2,8 @@
 Introduction
 ============
 
-Rockstor is a **free enterprise class storage platform**. At the foundation, it
-is a CentOS flavored Linux operating system tailored for storage
+Rockstor is a **free enterprise class file storage platform**. At the
+foundation, it is a CentOS flavored Linux operating system tailored for storage
 usecases. Rockstor brings together technologies including the Linux kernel,
 BTRFS filesystem, SystemTap and our own free software stack to deliver a
 compelling solution.
@@ -74,8 +74,8 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | Smart probes                | beta    | ondemand deep insights         |
 +-----------------------------+---------+--------------------------------+
-| Smart probe data            | beta    |                                |
-| visualization               |         |                                |
+| Smart probe data            | beta    | visualization of ondemand deep |
+| visualization               |         | insights                       |
 +-----------------------------+---------+--------------------------------+
 | NFS server side analytics   | beta    |                                |
 +-----------------------------+---------+--------------------------------+

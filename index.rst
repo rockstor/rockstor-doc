@@ -19,15 +19,18 @@ Welcome to RockStor
    uis
    dashboard
    analytics
-   storage_ops
+   disk_pool_ops
+   share_snap_ops
+   nfs_ops
+   samba_ops
+   multiple_appliances
+   share_replication
    services
    users
    network
-   replication
    tasks
    support
    contribute
-   howtos
    benchmarks
    faq
 
