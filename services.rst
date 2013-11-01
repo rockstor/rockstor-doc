@@ -6,7 +6,7 @@ Rockstor supports many services that are necessary for a storage system to be fu
 Service management including configuration, turning on or off, can be done via
 the System tab of the web-ui.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. All services and their current state are displayed.
 
@@ -25,7 +25,7 @@ Rockstor uses Linux NFS server to support exporting Shares to remote clients
 via NFS. Custom NFS configuration is not supported, but the service must be
 turned on in order to export shares.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To start or stop the NFS server, click the corresponding ON or OFF
 button.
@@ -37,7 +37,7 @@ Rockstor supports making Shares available to SMB and CIFS clients via Samba
 software suite. Custom Samba server configuration is not supported, but the
 service must be turned on before exposing shares.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To start or stop the NFS server, click the corresponding ON or OFF
 button.
@@ -61,7 +61,7 @@ AD
 AD is a directory service to connect to Active Directory. It must be turned on
 in order to be part of AD.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure AD, click on the **wrench** icon and submit the form as
 shown below.
@@ -94,7 +94,7 @@ LDAP
 
 LDAP is a directory service to connect to LDAP server.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure LDAP, click on the **wrench** icon and submit the form as
 shown below.
@@ -122,7 +122,7 @@ NIS
 
 NIS is a directory service to connect to a NIS server.
 
-On the webu-ui, click on *System* tab to go to the *System* view. This also
+In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure NIS, click on the **wrench** icon and submit the form as
 shown below.
