@@ -4,5 +4,4 @@
 Analytics
 =========
 
-Smart probes
-------------
+Coming soon...

@@ -27,25 +27,12 @@ All Flash NAS
 ^^^^^^^^^^^^^
 Coming soon...
 
-
-Initial setup
--------------
-
-Rockstor needs to be setup initially using the WebUI. Once the installation is
-complete, go to https://<appliance_ip> using the Firefox browser.
-
-1. cert download screenshot
-
-2. initial setup screens screenshot
-
-3. dashboard screenshot
-
 Upgrading Rockstor
 ------------------
 
-Rockstor is under heavy development. However, we strive to make most updates
-non-disruptive. You can safely update Rockstor anytime with the following
-command::
+Rockstor is under continuous development. However, we strive to make most
+updates non-disruptive. You can safely update Rockstor anytime with the
+following command::
 
     [root@localhost ~]# yum update rockstor
 

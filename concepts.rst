@@ -18,9 +18,9 @@ hardware. Rockstor can rescan to detect new disks and make them available.
 Pool
 ----
 
-A pool is a collection of disks with predefined redundancy strategy. Available
- redundancy options include RAID0, RAID1 and RAID10. Redundancy strategy must
- be chosen during pool creation but cannot be changed afterwards.
+A pool is a collection of disks with predefined redundancy strategy.  Available
+redundancy options include RAID0, RAID1 and RAID10. Redundancy strategy must be
+chosen during pool creation but cannot be changed afterwards.
 
 A pool can be resized at anytime by adding or removing drives. Obviously,
 success of these operations depends on the state of the pool including current
@@ -39,10 +39,10 @@ A snapshot is a read-only point in time copy of a share. Since BTRFS is a CoW
 filesystem, snapshots are created instantly and take up no extra space when
 created.
 
-WebUI
------
+Web UI
+------
 
-The easiest way to manage your storage with Rockstor is via it's WebUI. It can
+The easiest way to manage your storage with Rockstor is via it's web-ui. It can
 be accessed by visiting the appliance's management IP over https using the
 Firefox browser. Note that other browsers are not supported.
 

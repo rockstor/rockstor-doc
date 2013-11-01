@@ -1,29 +1,29 @@
 Feature overview
 ================
 
-User friendly WebUI
--------------------
+User friendly web-ui
+--------------------
 
-Rockstor WebUI is designed to efficiently manage large and complex storage
-infrastructure. It is also designed for elegent user experience, which
+Rockstor web-ui is designed to efficiently manage large and complex storage
+infrastructure. It is also designed for intuitive user experience, which
 eliminates the need to read extensive documentation and learning to be able to
 use it. Below are the feature highlights. See :ref:`webui` for a more detailed
 explanation.
 
-* Secure via SSL
+* Secure access via HTTPS.
 
-* Efficiently perform storage management operations including pool and share
+* Efficiently perform storage management including pool and share
   creation, snapshots, nfs exports, etc..
 
-* Efficiently perform necessary system management operations including
+* Efficiently perform necessary system management including
   directory services, user management etc..
 
-* Customize dashboard per admin user by choosing relevent widgets and their
+* Customize dashboard per admin user by choosing relevant widgets and their
   layout.
 
-* Visualize smart probe data for deep insight into the infrastructure.
+* Visualize smart probe data for deeper insights.
 
-* View other Rockstor appliances by quick switching.
+* Manage other Rockstor appliances by quick switching.
 
 User friendly CLI
 -----------------
@@ -32,7 +32,7 @@ Rockstor CLI is designed to provide every necessary command without
 overwhelming the user. All commands have documentation and examples. Below are
 the feature highlights. See :ref:`cli` for a more detailed explanation.
 
-* Secure via SSH
+* Secure access via SSH
 
 * Switch to specific consoles of subsystems like pools, shares, nfs, network
   etc.. for a clean user experience.
@@ -56,7 +56,7 @@ Online disk management
 Online Pool management
 -----------------------
 
-* Create pools instantly using the WebUI or CLI.
+* Create pools instantly using the web-ui or CLI.
 
 * Resize pools online by adding or removing whole disk drives.
 
@@ -65,7 +65,7 @@ Online Pool management
 Online Share and Snapshot management
 ------------------------------------
 
-* Create shares instantly using the WebUI or CLI.
+* Create shares instantly using the web-ui or CLI.
 
 * Resize pools online, thin provision or over provision according to your
   needs.
@@ -80,6 +80,11 @@ Online Share and Snapshot management
 * Toggle snapshot visibility to the end user via NFS.
 
 * Rollback a share to one of it's snapshots.
+
+Share replication
+-----------------
+
+* Replicate shares from one Rockstor appliance to others.
 
 Directory services
 ------------------
