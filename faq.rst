@@ -11,6 +11,17 @@ usecases. Specifically, it addresses NAS usecase. Rockstor brings together
 technologies including the Linux kernel, BTRFS filesystem, SystemTap and our
 own free software stack to deliver a compelling solution.
 
+How can I get started with Rockstor?
+------------------------------------
+
+See :ref:`quickstartguide` to get started. It's very easy and short
+installation process.
+
+What is a quick way to evaluate Rockstor?
+-----------------------------------------
+
+There are two quick ways to evaluate Rockstor. See :ref:`quickeval` for more information.
+
 Is rockstor ready for production use?
 -------------------------------------
 
@@ -25,4 +36,14 @@ What enterprize linux flavor is rockstor based on?
 
 Rockstor is based on CentOS 6.3. However, it runs mainline kernel version
 3.7.7-1.
+
+Can I use Rockstor with other Storage products?
+-----------------------------------------------
+
+This means question means different to different people. All that Rockstor
+needs in terms of storage resources is a set of disk drives. These drives can
+be physical, virtual, direct attached or can come from SAN. Beyond the disk
+drive layer, Rockstor cannot be used with other Storage products. At least, not
+currently.
+
 

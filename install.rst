@@ -60,6 +60,8 @@ Installation in a virtual environment
 
 coming soon...
 
+.. _quickeval:
+
 Quick evaluation
 ------------------
 
@@ -67,3 +69,6 @@ Before proceeding with a serious installation that may require hardware
 procurement, you can evaluate Rockstor on Amazon AWS. `Here
 <https://www.youtube.com/watch?v=ys_8FLVov2U>`_ is a short video on how to get
 started.
+
+Rockstor can also be evaluated quickly using Virtualbox. `Here
+<https://www.youtube.com/watch?v=p3izPNhsqA4>`_ is a short video on how to get started.
