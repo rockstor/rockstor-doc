@@ -6,7 +6,7 @@ Create a share
 --------------
 
 Share related operations including creating a share can be done from the
-*Shares* view. In the webui, click on the *Storage* tab to enter the main
+*Shares* view. In the web-ui, click on the *Storage* tab to enter the main
 Storage view. Now click on *Shares* in the left sidebar to enter the *Shares*
 view. If there are any shares in the system, they are displayed in a table. If
 there are large number of shares, the table is paginated and the current page
@@ -36,7 +36,7 @@ Resize a share
 --------------
 
 A share can be resized by increasing or decreasing it's provisioned
-capacity. Go to the Storage tab of the webui and click on *Shares* in the
+capacity. Go to the Storage tab of the web-ui and click on *Shares* in the
 left
 sidebar to enter the *Shares* view. In the displayed table of shares, click on
 the share to be resized to enter the share detail view. Now, click on the
@@ -57,7 +57,7 @@ share is made available to remote clients via NFS or SMB, or has snapshots, it
 cannot be deleted. So, ensure that all snapshots have been deleted and that the
 share is not in use before deleting it.
 
-Go to the Storage tab of the webui and click on *Shares* in the left sidebar to
+Go to the Storage tab of the web-ui and click on *Shares* in the left sidebar to
 enter the *Shares* view. In the displayed table of shares, click on the
 **trash** icon corresponding to the share to delete it as shown below.
 
@@ -78,7 +78,7 @@ number of snapshots can be created for a given share.
 Create a snapshot
 ^^^^^^^^^^^^^^^^^
 
-In the webui, click on the *Storage* tab to enter the main Storage view. Now
+In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
 displayed table of shares, click on the share to snapshot, to enter the share
 detail view. Any existing snapshots of the share are displayed in a table
@@ -96,7 +96,7 @@ useful for users to fetch or refer to older files.
 Delete a snapshot
 ^^^^^^^^^^^^^^^^^
 
-In the webui, click on the *Storage* tab to enter the main Storage view. Now
+In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
 displayed table of shares, click on the share from which to delete a snapshot
 to enter the share detail view. Click on the **trash** icon

@@ -10,7 +10,7 @@ via NFS. Both NFS v3 and v4 are supported. UID and GID mapping for the exported
 shares can be handled by manually creating users or by using directory services
 like LDAP, NIS or AD.
 
-NFS exports can be managed from the *NFS Exports* view. In the webui, click on
+NFS exports can be managed from the *NFS Exports* view. In the web-ui, click on
 the *Storage* tab to enter the main Storage view. Now click on *NFS Exports* in
 the left sidebar to enter *NFS Exports* view. If there are any exports in the
 system, they are displayed in a table. If there are large number of exports,
@@ -34,7 +34,7 @@ Add NFS export
 ^^^^^^^^^^^^^^
 
 A single NFS export represents a unique combination of clients to which a set
-of shares are made accessible via chosen options. In the webui, click on the
+of shares are made accessible via chosen options. In the web-ui, click on the
 *Storage* tab to enter the main Storage view. Now click on *NFS Exports* in the
 left sidebar to enter *NFS Exports* view. Click on **Add NFS Export** button
 and the export creation form will be displayed. Submit this form to add a new
@@ -60,7 +60,7 @@ Edit NFS export
 ^^^^^^^^^^^^^^^
 
 An NFS export can be edited to add or remove a share or allow different set of
-clients to be able to access it. In the webui, click on *Storage* tab to enter
+clients to be able to access it. In the web-ui, click on *Storage* tab to enter
 the main Storage view. Now click on *NFS Exports* in the left sidebar to enter
 *NFS Exports* view. In the displayed table of nfs exports, click on the
 **edit** icon of the corresponding export to edit as shown below.
@@ -72,7 +72,7 @@ the main Storage view. Now click on *NFS Exports* in the left sidebar to enter
 Delete NFS export
 ^^^^^^^^^^^^^^^^^
 
-In the webui, click on the *Storage* tab to
+In the web-ui, click on the *Storage* tab to
 enter the main Storage view. Now click on *NFS Exports* in the left sidebar to
 enter *NFS Exports* view. In the displayed table of nfs exports, click on the
 **trash** icon of corresponding export to delete as shown below.

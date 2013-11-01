@@ -5,7 +5,7 @@ Disks and Pools
 Scan for new disks
 ------------------
 
-In the webui, click on the *Storage* tab to enter the main Storage view. This
+In the web-ui, click on the *Storage* tab to enter the main Storage view. This
 also serves as the Disks view, which is selected by default in the left
 sidebar. Already existing disks in the system are displayed.
 
@@ -68,7 +68,7 @@ Create a pool
 -------------
 
 Pool related operations including creating a pool can be done from the *Pools*
-view. In the webui, click on the *Storage* tab to enter the main Storage
+view. In the web-ui, click on the *Storage* tab to enter the main Storage
 view. Now click on **Pools** in the left sidebar to enter the *Pools* view. If there are any pools in the system, they are displayed in a
 table.
 
@@ -111,7 +111,7 @@ Resize a pool
 -------------
 
 A pool can be resized by adding more disks to it. Go to the Storage tab of the
-webui and click on *Pools* in the left sidebar to enter the *Pools* view. In
+web-ui and click on *Pools* in the left sidebar to enter the *Pools* view. In
 the displayed table of pools, click the pool to be resized to enter the pool
 detail view. Now, click on the **Resize** button and a popup form is
 displayed. Select disks to be added and submit the form. Upon success, pool's
@@ -128,7 +128,7 @@ Delete a pool
 A *pool* can be deleted as long as it is empty, i.e., there are no *shares*
 remaining in it.
 
-Go to the Storage tab of the webui and click on *Pools* in the left sidebar to
+Go to the Storage tab of the web-ui and click on *Pools* in the left sidebar to
 enter the *Pools* view. In the displayed table of pools, click on the **trash**
 icon corresponding to the pool to delete it as shown below.
 
