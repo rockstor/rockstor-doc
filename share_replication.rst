@@ -2,6 +2,11 @@
 Share replication
 =================
 
+Redundancy options of a pool operate at the single appliance level. While this
+reduces the risk of data loss from bad disks, it does no good if the entire
+appliance fails. To mitigate and distribute this risk, Shares can be replicated
+to other Rockstor appliances.
+
 Replicate shares to other Rockstor appliances
 ---------------------------------------------
 

@@ -142,7 +142,11 @@ view.
 Scrub a pool
 ------------
 
-A *pool* scrub operation can take a while depending on the size of the pool. To
+Over time, a pool could accumulate low level errors relating to
+redundancy. Scrubbing is a background process that finds and fixes these errors
+and ensures the long life of a pool.
+
+The *pool* scrub operation can take a while depending on the size of the pool. To
 start a scrub, go to the pool's detail view and click on the **Start scrub**
 button. The button will be disabled during the scrub process and enabled again
 once the scrub finishes.

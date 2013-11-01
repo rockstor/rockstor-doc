@@ -24,5 +24,5 @@ button and submit the form as shown below.
    :align: center
 
 From the Appliances popup, clicking on an appliance's ip will open it's
-web-ui. Besides the convenience, adding an appliance is necessary inorder to
-replicate shares to it.
+web-ui. Besides the convenience of management, adding an appliance is necessary
+inorder to replicate shares to it.

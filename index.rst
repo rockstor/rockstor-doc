@@ -28,11 +28,9 @@ Welcome to RockStor
    services
    users
    network
-   replication
    tasks
    support
    contribute
-   howtos
    benchmarks
    faq
 

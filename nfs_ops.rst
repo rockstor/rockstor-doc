@@ -26,9 +26,8 @@ arrows displayed in each column header.
 
 Below are the main operations possible from the *NFS Exports* view, which
 operate on one or more shares and is a convenient way to manage exports for the
-entire system. Although redundant, Rockstor also makes NFS export management
-possible for a specific share from within the *NFS* tab of a share's detail
-view.
+entire system. Rockstor also makes NFS export management possible for a
+specific share from within the *NFS* tab of a share's detail view.
 
 Add NFS export
 ^^^^^^^^^^^^^^

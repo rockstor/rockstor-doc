@@ -71,9 +71,10 @@ detail view.
 Snapshots
 ---------
 
-Snapshots are read-only point in time representations of a share. Snapshots are
-created instantaneously and take up no extra space when created. Unlimited
-number of snapshots can be created for a given share.
+Snapshots are read-only point in time copies of a share. They are created
+instantaneously and take up no extra space when created because of CoW nature
+of BTRFS filesystem. Unlimited number of snapshots can be created for a given
+share.
 
 Create a snapshot
 ^^^^^^^^^^^^^^^^^
