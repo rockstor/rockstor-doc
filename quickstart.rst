@@ -70,9 +70,27 @@ installation or manually during post install. After initial ip address
 assignment, all further configuration changes can be done easily via web-ui
 and CLI.
 
-2. There is a good chance that Rockstor RPMs have been updated since the ISO
-was created. All updates are provided via the Rockstor yum repository. Before
-proceeding further, update to the latest software::
+2. There are many updates to the main rockstor RPM since the initial version(1.4-5) that
+shipped with the ISO. Version 1.7 and later are NOT backwards compatible. This
+makes the first update a bit tricky in that the defualt RPM must be removed,
+it's files must be manually removed and then the latest rockstor RPM can be
+installed.
+
+    a. Remove the default rockstor RPM::
+
+        [root@localhost ~]# yum remove rockstor
+
+    b. Remove following directory::
+
+        [root@localhost ~]# rm -rf /opt/rockstor
+
+    c. Install rockstor RPM::
+
+        [root@localhost ~]# yum install rockstor
+
+We regret this workaround, which will be removed in the next major update, 2.0.
+
+All subsequent rockstor updates can be performed simply::
 
     [root@localhost ~]# yum update rockstor
 
