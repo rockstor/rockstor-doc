@@ -130,9 +130,29 @@ In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
 displayed table of shares, click on the desired share to enter the share detail
 view, and click on the *Snapshot* tab to view the list of snapshots of the
-share. Click the clone button to display to the form to create a clone.  Submit
+share. Click the **Clone** button to display the form to create a clone. Submit
 it after entering the new name for the newly created share as shown below.
 
 .. image:: clone_snap.gif
    :scale: 65%
    :align: center
+
+Rollback a Share
+----------------
+
+A share can be rolled back to any of its snapshots. This is useful if you wish
+to restore a share to a state at a previous point in time. 
+
+In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
+click on *Shares* in the left sidebar to enter the *Shares* view. In the
+displayed table of shares, click on the desired share to enter the share detail
+view. Click the **Rollback** button to display the form to select a snapshot to
+rollback to, and submit the form as shown below.
+
+*Note:* Shares that are exported through NFS or Samba cannot be rolled back. The
+NFS or Samba shares should be deleted before the share can be rolled back.
+
+.. image:: rollback_share.gif
+   :scale: 65%
+   :align: center
+
