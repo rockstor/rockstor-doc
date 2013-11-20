@@ -59,8 +59,8 @@ The network activity widget displays data sent/received, and packets sent/receiv
 Top Shares Widget
 ^^^^^^^^^^^^^^^^^
 
-The top shares widget displays the top 5 shares sorted by percentage of space
-used, and the used space and total size of each.
+The top shares widget displays up to 10 top shares sorted by percentage of space
+used, amount of space used and the total size of each.
 Additional details about each share are shown while hovering over the share.
 
 .. image:: top-shares-widget.png
