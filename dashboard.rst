@@ -27,11 +27,9 @@ CPU Widget
 ^^^^^^^^^^
 
 The CPU widget displays the cpu usage of the appliance and is updated every
-second. The widget display is divided into two parts. The top graph displays
-the percent of time spent in system mode, user mode, and user mode nice, for
-each cpu, for the current time interval. The bottom graph displays the
-percentage of average time spent in each mode over all cpus, over the last 5
-minutes.
+second. The top graph of the cpu widget displays the average cpu usage of the
+appliance, and the bottom graph displays the percent of time spent in system
+mode, user more and user mode nice, for each cpu, for the current time interval.
 
 .. image:: cpu-widget.png
    :align: center
@@ -57,3 +55,14 @@ The network activity widget displays data sent/received, and packets sent/receiv
 
 .. image:: network-widget.png
    :align: center
+
+Top Shares Widget
+^^^^^^^^^^^^^^^^^
+
+The top shares widget displays up to 10 top shares sorted by percentage of space
+used, amount of space used and the total size of each.
+Additional details about each share are shown while hovering over the share.
+
+.. image:: top-shares-widget.png
+   :align: center
+
