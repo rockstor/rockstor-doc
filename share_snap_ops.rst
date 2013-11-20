@@ -71,15 +71,22 @@ detail view.
 Clone a share
 -------------
 
-A clone is a share that is an exact copy of the share (or snapshot) that it was created from, at the time that it was created.
+A Clone is a Share that is an exact copy of the Share (or Snapshot) that it was created from, at the time that it was created.
 
-In RockStor, clones can be created from shares or snapshots. 
+In RockStor, clones can be created from shares or snapshots.
 
-To create a clone from a share, go to the Storage tab of the web-ui and click on *Shares* in the left sidebar to enter the *Shares* view. In the displayed table of shares, click on the share to be cloned to enter the share detail view. Now, click on the **Clone** button and the form to create a clone is dispalyed. Submit it after entering the new name for the newly created share as shown below.
+To clone a Share, go to the Storage tab of the web-ui and click on *Shares*
+in the left sidebar to enter the *Shares* view. In the displayed table of
+shares, click on the share to be cloned to enter the share detail view. Now,
+click on the **Clone** button and the form to create a clone is
+dispalyed. Submit it after entering a desired name for the soon to be created
+Share as shown below.
 
 .. image:: clone_share.gif
    :scale: 65%
    :align: center
+
+To clone a snapshot, see :ref:`clonesnap`.
 
 Snapshots
 ---------
@@ -120,11 +127,12 @@ next to the snapshot to delete it as shown below.
    :scale: 65%
    :align: center
 
+.. _clonesnap:
+
 Clone a snapshot
 ^^^^^^^^^^^^^^^^^
-A clone can be created from a snapshot of a share. This is useful if you wish 
-to create a new share that is an exact copy of a share at a previous point in
-time.
+A Clone can be created from a Snapshot of a Share. This is useful if you wish
+to create a new Share that is an exact copy of the Snapshot.
 
 In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
@@ -140,8 +148,8 @@ it after entering the new name for the newly created share as shown below.
 Rollback a Share
 ----------------
 
-A share can be rolled back to any of its snapshots. This is useful if you wish
-to restore a share to a state at a previous point in time. 
+A Share can be rolled back to any of its snapshots. This is useful if you wish
+to restore a Share to it's previous state represented by its snapshots
 
 In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
