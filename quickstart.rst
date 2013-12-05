@@ -13,8 +13,8 @@ RockStor is available as a complete Linux distribution (iso) to be installed
 directly on hardware or as a VM with the following minimum system requirements.
 
 * 64-bit processor
-* 1GB RAM
-* 6GB hard disk space for the OS
+* 2GB RAM
+* 8GB hard disk space for the OS
 * One or more additional hard drives
 * 1Gbps Ethernet interface with internet access
 * CD/DVD drive or USB port for installation
@@ -29,100 +29,104 @@ from the downloaded iso and proceed to the next section for installation.
 Installation
 ------------
 
-Installing RockStor is straight forward and only takes a few minutes. You can
-watch the `installation video <https://www.youtube.com/watch?v=p3izPNhsqA4>`_
-or proceed to read further.
+Installing RockStor is straight forward and is similar to installing
+Fedora. RockStor is provided as a network install image and requires an
+internet connection. Total installation time varies based on internet speeds.
+
+**Important note: Installing RockStor deletes existing data on the system
+drive(s) selected as installation destination.**
+
+**Important note: If you need further assistance during or post install, you
+can contact us by sending an email to support@rockstor.com**
 
 1. Boot your machine with the RockStor CD and the splash screen will
-appear. Hit Enter to proceed. Anaconda installer starts, which looks identical
-to installing a CentOS system.
+appear. Select **Install RockStor 2.0** option. The graphical installer should
+start momentarily. If you run into graphics problem at this stage, you can
+select **Troubleshooting** from the splash screen and then select "Install
+RockStor 2.0 in basic graphics mode".
 
-2. In the first screen, you can skip the media test to proceed to the welcome
-banner in the next screen. Hit enter to proceed to the language selection
-screen. Proceed with the default english language to the keyboard selection
-screen. Again, proceed with the default us keyboard selection.
+2. The language selection window appears as the first screen soon as the
+graphical installer starts. Go with the default -- English(United States),
+which is the only supported language and optionally select the "Set keyboard to
+default layout for selected language" checkbox at the bottom of the screen and
+click the **Continue** button to proceed.
 
-3. Select your time zone in the next screen and proceed to the Root Password
-screen. Type in your desired root password and proceed to the next screen.
+3. On the next(Installation Summary) screen, multiple parameters can be
+configured together.
 
-4. The next screen is for disk partitioning on which only the first drive(sda)
-is shown and selected by default. Select "Use entire drive" and press OK to
-proceed. A warning screen appears next. Press "Write changes to disk" and the
-installer will proceed for a few minutes without any prompting.
+    a. Click on the **Date & Time** to change the default timezone
+    .
 
-5. The Package Installation screen appears for a few minutes showing the
-progress of 255 packages being installed. After the package installation is
-complete, hit enter to reboot on the next screen. You may need to pop out the
-installation CD for the machine to boot from the hard drive.
+    b. The network configuration can also be changed from the default dchp
+    configuration. Make sure your system has network connection for the
+    installation to proceed.
 
-Some configuration steps are necessary before proceeding to use RockStor NAS, as detailed in the next section
+    c. Under the **Storage** section, click on **Installation Destination**. On
+    the next screen, all local drives are displayed. You have several options
+    here, but for the minimalist setup pick the first drive(it must be atleast
+    8GB). If your system can boot from a USB drive, you can dedicate one as the
+    root drive and this will free up an extra Hard drive for data. Click **Done**
+    at the top after selecting a disk and a popup will appear. Select **BTRFS**
+    for the partition scheme. If the disk is free, you'll see the **Continue**
+    button. If not, click on **Reclaim space** to wipe the drive clean(this will
+    erase all data on the drive) in the next screen.
+
+    d. If there are any errors in the **Storage** or **Software** sections, the
+    installation will not proceed and you'll have the opportunity to correct
+    them. Soon as all installation requirements are satisfied, click on **Begin
+    Installation** button to start the package installation.
+
+4. On the next screen, package installation begins in the background while you
+can set the root password. You can also create an additional user, but it's not
+necessary.
+
+5. Package installation takes varying time based on your hardware configuration
+and internet speed. Please be patient, eventually the installer will finish and
+you can reboot into RockStor! Upon reboot, remove the install cd from the
+system and boot into RockStor from the install destination(Hard drive or USB)
+as selected earlier.
+
+Some configuration steps are necessary before proceeding to use RockStor NAS,
+as detailed in the next section
 
 Configuration
 -------------
 
 Rockstor's web-ui and CLI are designed to be very user friendly. All of the
-storage provisioning tasks be done via WebUI or CLI. But before proceeding to
-provisioning storage, a few steps are necessary
+storage provisioning tasks must be done via WebUI or CLI. But before proceeding
+to provisioning storage, a few steps are necessary
 
-1. Make sure that RockStor is assigned an ip address. No additional steps are
-necessary for dhcp configuration, but static ip can be assigned during
-installation or manually during post install. After initial ip address
-assignment, all further configuration changes can be done easily via web-ui
-and CLI.
+1. Once the system boots, login as the root user
+.
 
-2. There are many updates to the main rockstor RPM since the initial version(1.4-5) that
-shipped with the ISO. Version 1.7 and later are NOT backwards compatible. This
-makes the first update a bit tricky in that the defualt RPM must be removed,
-it's files must be manually removed and then the latest rockstor RPM can be
-installed.
+2. RockStor is rapidly evolving and software updates are released almost
+daily. Update your system::
 
-    a. Remove the default rockstor RPM::
+    [root@localhost ~]# yum update
 
-        [root@localhost ~]# yum remove rockstor
+3. Turn off iptables
+::
 
-    b. Remove following directory::
-
-        [root@localhost ~]# rm -rf /opt/rockstor
-
-    c. Install rockstor RPM::
-
-        [root@localhost ~]# yum install rockstor
-
-We regret this workaround, which will be removed in the next major update, 2.0.
-
-All subsequent rockstor updates can be performed simply::
-
-    [root@localhost ~]# yum update rockstor
-
-3. On the first boot, login as root and turn off
-iptables.::
-
-    [root@localhost ~]# service iptables stop
-    iptables: Flushing firewall rules:                         [  OK  ]
-    iptables: Setting chains to policy ACCEPT: filter          [  OK  ]
-    iptables: Unloading modules:                               [  OK  ]
-    [root@localhost ~]# chkconfig iptables off
+    [root@localhost ~]# systemctl disable firewalld
+    rm '/etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service'
+    rm '/etc/systemd/system/basic.target.wants/firewalld.service'
+    [root@localhost ~]# systemctl stop firewalld
     [root@localhost ~]#
 
-4. Nginx service should already be running. Ensure that it
-is.::
-
-    [root@localhost ~]# service nginx status
-    nginx (pid  1251) is running...
-    [root@localhost ~]#
-
-5. Besides Nginx, execute the following two commands in order to start using
+5. Execute the following two commands in order to start using
 the WebUI or CLI.::
 
     [root@localhost ~]# /opt/rockstor/bin/supervisord -c /opt/rockstor/etc/supervisord.conf
     [root@localhost ~]# /opt/rockstor/bin/supervisorctl start all
-    gunicorn: started
-    smart_manager: started
     rd: started
+    smart_manager: started
+    nginx: started
+    gunicorn: started
     [root@localhost ~]# /opt/rockstor/bin/supervisorctl status
-    gunicorn                         RUNNING    pid 1540, uptime 0:00:35
-    smart_manager                    RUNNING    pid 1544, uptime 0:00:30
-    rd                               RUNNING    pid 1546, uptime 0:00:40
+    gunicorn                         RUNNING    pid 2695, uptime 0:00:17
+    nginx                            RUNNING    pid 2694, uptime 0:00:17
+    rd                               RUNNING    pid 2699, uptime 0:00:16
+    smart_manager                    RUNNING    pid 2701, uptime 0:00:15
     [root@localhost ~]#
 
 6. RockStor WebUI is now ready. Open Firefox browser on a laptop or some other
