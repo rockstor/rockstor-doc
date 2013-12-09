@@ -80,17 +80,17 @@ Here's what you need to proceed with installation
 1. Right server for your needs. See :ref:`serverreqs` for suggestions.
 2. At least two HDDs installed in the system. See :ref:`hdds` for more details.
 3. At least 2 GB of RAM. See :ref:`servermemory` for more information.
-3. (Optional) 8 GB USB drive if you choose to run RockStor off of the USB
+4. (Optional) 8 GB USB drive if you choose to run RockStor off of the USB
 drive and save an entire HDD for data.
-4. Network cable to connect the server to your router. RockStor install needs
+5. Network cable to connect the server to your router. RockStor install needs
 connection to the internet.
-5. CD/DVD ROM drive. If your server does not have an internal CD/DVD ROM, an
+6. CD/DVD ROM drive. If your server does not have an internal CD/DVD ROM, an
 external usb based one should work.
-6. (Optional) 1 GB USB drive if you choose to install from the USB instead of
+7. (Optional) 1 GB USB drive if you choose to install from the USB instead of
 CD/DVD ROM.
-7. The RockStor ISO file, downloadable from
+8. The RockStor ISO file, downloadable from
 `here. <http://rockstor.com/downloads.html>`_
-8. A blank CD-R/RW to burn the ISO file to. You don't need this for install
+9. A blank CD-R/RW to burn the ISO file to. You don't need this for install
 from USB drive.
 10. A monitor, keyboard and a mouse to drive the install process.
 
@@ -99,10 +99,10 @@ from USB drive.
 Install RockStor from CD/DVD drive
 ----------------------------------
 
-**Skip this section and go to :ref:`usbinstall` instead, if you plan to install
-RockStor from a USB flash drive**
+**Skip this section and go to** :ref:`usbinstall` **instead, if you plan to
+install RockStor from a USB flash drive.**
 
-Burn the downloaded RockStor ISO file onto a black CD or DVD disk as a bootable
+Burn the downloaded RockStor ISO file onto a blank CD or DVD disk as a bootable
 image. On Linux, you can use programs like K3b. On Windows, you can use Windows
 Disc Image Burner(Windows 7) or an open source program like `Infra Recorder.
 <http://infrarecorder.org/>`_ On Mac, use the **Disk Utility** program.
@@ -118,7 +118,7 @@ appear beginning the installation process.
 Install RockStor from USB flash drive
 -------------------------------------
 
-**Skip this section and go to :ref:`cdinstall` instead, if you plan to install RockStor from CD-R/RW**
+**Skip this section and go to** :ref:`cdinstall` **instead, if you plan to install RockStor from CD-R/RW**
 
 Installing RockStor from a CD-R/RW is straight forward on most servers that
 come with a CD/DVD drive. Even if they don't, RockStor should install smoothly
@@ -149,5 +149,30 @@ installation process.
 Installation and Setup
 ----------------------
 
-If you want to install RockStor on to one of the Hard Drives
-inthe system, there's nothing else but to continue with the installation process.
+If you want to install RockStor on to one of the Hard Drives in the system,
+there's nothing else but to continue with the installation process as described
+in :ref:`quickstartguide`. But if you like to install it on to a USB flash
+drive and save a Hard Drive for more data, just plug in a USB flash drive with
+at least 8 GB capacity and select it as the installation destination as
+described in :ref:`quickstartguide`.
+
+**Note: This USB flash drive is separate and not to be confused with the one
+mentioned earlier in the document. The earlier one can be as little as 1 GB and
+contains the RockStor installer. After the installation, you'll unplug it and
+use it again only for another install. This separate drive needs to be at least
+8 GB and will hold the RockStor operating system and must stay plugged
+permanently.**
+
+**Note: All data will be completely erased from this USB flash drive. So backup
+your data as needed.**
+
+Using RockStor
+--------------
+
+After the installation and initial setup proceses are complete as described in
+:ref:`quickstartguide` and :ref:`setup`, RockStor is ready to be
+used for all your Fileserver needs.
+the initial
+
+
+
