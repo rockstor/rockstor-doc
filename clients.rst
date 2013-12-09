@@ -8,6 +8,8 @@ Unix / Linux client
 ^^^^^^^^^^^^^^^^^^^
 
    On a Linux client, the RockStor server will appear in the File explorer application, under **Browse Network** . Clicking on the server will display the available exported shares that have Browseable true. 
+
+   If the RockStor server does not appear in the File explorer, a connection can be made by selecting 'Connect to Server'
    
    .. image:: smb_linux_network.png
       :scale: 65%
