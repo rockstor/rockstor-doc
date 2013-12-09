@@ -1,0 +1,153 @@
+
+Small Office Fileserver with RockStor
+=====================================
+
+In a small office or home office like environment, a centralized storage server
+is needed to store documents, photos, videos and other files including backups
+and virtual machines and access them from other computers on the network. Here
+are some simple but important uses of such server.
+
+1. Backup data from workstations, laptops and other computers
+
+2. Share data easily with other users and from any computer.
+
+3. Create and orgnize a central repository of all data.
+
+There are more complex usecases which are covered in their own separate documents.
+
+RockStor can be setup as this centralized storage server, also called a
+Fileserver or NAS following the steps described in this document.
+
+.. _serverreqs:
+
+Server requirements and suggestions
+-------------------------------------
+
+The first step in building a RockStor Fileserver is to procure hardware. Since
+RockStor is Free software based on Linux, there is a lot of flexibility. You
+can purchase hardware that fits your budget and performance requirements. See
+:ref:`minsysreqs` for general guidance. As long as it meets these requirements,
+you can easily convert an old PC into a Fileserver with RockStor. You
+can also purchase small office servers from various places like newegg, ebay
+and Dell.
+
+In our community, RockStor is humming on different hardware. Here are some
+examples:
+
+**Disclaimer: RockStor is a software only product. We don't recommend or
+certify any particular hardware. These are mere suggestions based on known deployments in our community**
+
+* `HP Proliant Microserver <http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860#!tab=features">`_ is chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage. This is ideal for a simple setup with a small footprint that meets most file storage needs of a small or home office.
+
+* `Dell Poweredge T300 <http://www.dell.com/us/dfb/p/poweredge-t300/pd>`_ is a powerful server tower with Intel Xeon processor that can have upto 24GB Memory and 4 hard drives. This model is officially discontinued by Dell and newer more powerful options are available in it's place.
+
+* `IBM System x3400 <http://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=migr-64905>`_ is a powerful server tower similar to the Dell mentioned above. It can have upto 32GB Memory and 8 hard drives.
+
+.. _hdds:
+
+Hard disk drives
+----------------
+
+Disk drives are critical in a fileserver. While RockStor offers slick
+management and access to your data, all of it is ultimately stored inside the
+Hard disk drives of the system. Most servers including the ones mentioned in
+:ref:`serverreqs` are compatible with standard SATA HDDs. Once you choose the
+right server based on your needs, choose appropriate HDDs for that server.
+
+**Note about hardware raid**: RockStor provides BTRFS based software RAID
+capabilities. However, advanced servers offer hardware RAID functionality
+providing additional redundancy. Evaluate your risks and choose appropriately.
+
+Rockstor needs one entire HDD for the operating system. So at least two HDDs
+are required in the system. Alternatively, you can put the operating system on
+a USB disk and use all of the system's HDDs for data. More on this at...
+
+.. _servermemory:
+
+Server Memory
+-------------
+
+At least 2 GB of RAM is required for RockStor to function reasonably. This
+should deliver decent performance for about 1 TB of data. If your capacity
+needs are larger, a simple rule of thumb is to add 1 GB
+RAM per 1 TB of extra capacity.
+
+Pre-install checklist
+---------------------
+
+Here's what you need to proceed with installation
+
+1. Right server for your needs. See :ref:`serverreqs` for suggestions.
+2. At least two HDDs installed in the system. See :ref:`hdds` for more details.
+3. At least 2 GB of RAM. See :ref:`servermemory` for more information.
+3. (Optional) 8 GB USB drive if you choose to run RockStor off of the USB
+drive and save an entire HDD for data.
+4. Network cable to connect the server to your router. RockStor install needs
+connection to the internet.
+5. CD/DVD ROM drive. If your server does not have an internal CD/DVD ROM, an
+external usb based one should work.
+6. (Optional) 1 GB USB drive if you choose to install from the USB instead of
+CD/DVD ROM.
+7. The RockStor ISO file, downloadable from
+`here. <http://rockstor.com/downloads.html>`_
+8. A blank CD-R/RW to burn the ISO file to. You don't need this for install
+from USB drive.
+10. A monitor, keyboard and a mouse to drive the install process.
+
+.. _cdinstall:
+
+Install RockStor from CD/DVD drive
+----------------------------------
+
+**Skip this section and go to :ref:`usbinstall` instead, if you plan to install
+RockStor from a USB flash drive**
+
+Burn the downloaded RockStor ISO file onto a black CD or DVD disk as a bootable
+image. On Linux, you can use programs like K3b. On Windows, you can use Windows
+Disc Image Burner(Windows 7) or an open source program like `Infra Recorder.
+<http://infrarecorder.org/>`_ On Mac, use the **Disk Utility** program.
+
+Once the disk is ready to be booted, insert it in your soon to be RockStor
+Fileserver and start the machine. You may need to change the boot order in BIOS
+to boot from the USB flash drive. This is achieved by booting the system and
+pressing **F12** key on most systems. Soon, the RockStor splash screen should
+appear beginning the installation process.
+
+.. _usbinstall:
+
+Install RockStor from USB flash drive
+-------------------------------------
+
+**Skip this section and go to :ref:`cdinstall` instead, if you plan to install RockStor from CD-R/RW**
+
+Installing RockStor from a CD-R/RW is straight forward on most servers that
+come with a CD/DVD drive. Even if they don't, RockStor should install smoothly
+using an external usb CD/DVD drive.
+
+A USB flash drive of at least 1 GB in size is required. **All data on the USB
+drive will be erased**. So backup your data as needed.
+
+On Windows or Fedora operating systems, Liveusb-creator program can be used to
+prepare your USB flash drive with RockStor ISO file. If you are using
+Windows operating system, download the program from
+`here. <https://fedorahosted.org/releases/l/i/liveusb-creator/liveusb-creator-3.12.0-setup.exe>`_
+and install it. On Fedora, run the following command::
+
+    # yum install liveusb-creator
+
+On Mac or any Linux operating system, the **dd** program can be used by running
+the following command::
+
+    # dd if=path/image_name.iso of=device
+
+Plug the USB flash drive into your soon to be RockStor Fileserver and start the
+machine. You may need to change the boot order in BIOS to boot from the USB
+flash drive. This is achieved by booting the system and pressing **F12** key on
+most systems. Soon, the RockStor splash screen should appear beginning the
+installation process.
+
+Installation and Setup
+----------------------
+
+If you want to install RockStor on to one of the Hard Drives
+inthe system, there's nothing else but to continue with the installation process.

@@ -31,6 +31,7 @@ Welcome to RockStor
    tasks
    support
    contribute
+   soho
    benchmarks
    faq
 
