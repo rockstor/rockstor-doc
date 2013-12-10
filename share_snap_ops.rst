@@ -2,6 +2,8 @@
 Shares, Snapshots and Clones
 ====================
 
+.. _createshare:
+
 Create a share
 --------------
 

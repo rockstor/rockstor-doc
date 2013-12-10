@@ -205,7 +205,9 @@ Using RockStor
 After the installation and initial setup proceses are complete as described in
 :ref:`quickstartguide` and :ref:`setup`, RockStor is ready to be
 used for all your Fileserver needs.
-the initial
 
+In order to start storing and accessing your data see :ref:`accessshares`
 
+For any questions about installation and other matters, or to get commercial
+support, see :ref:`support` for more information.
 
