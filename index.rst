@@ -32,7 +32,7 @@ Welcome to RockStor
    clients
    support
    contribute
-   soho
+   howtos
    benchmarks
    faq
 
