@@ -29,8 +29,10 @@ Welcome to RockStor
    users
    network
    tasks
+   clients
    support
    contribute
+   howtos
    benchmarks
    faq
 

@@ -1,15 +1,8 @@
 
-Popular howtos
-==============
+Howtos
+======
 
-Single node NAS
----------------
+.. toctree::
+   :maxdepth: 2
 
-Rockstor at home
-----------------
-
-Rockstor on AWS
----------------
-
-All flash NAS with Rockstor
----------------------------
+   soho

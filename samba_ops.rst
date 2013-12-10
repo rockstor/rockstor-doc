@@ -5,6 +5,8 @@ Samba/CIFS
 Rockstor supports making Shares available to SMB and CIFS clients via Samba
 software suite. Samba service must be turned on before exposing shares.
 
+.. _sharesamba:
+
 Enable or disable Samba/CIFS access for a Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
