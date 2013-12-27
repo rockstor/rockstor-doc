@@ -1,0 +1,133 @@
+{% extends "basic/layout.html" %}
+
+{% set script_files = script_files + ['_static/js/libs/jquery-1.9.1.min.js'] %}
+{% set css_files = ['_static/css/bootstrap.min.css', '_static/css/bootstrap-responsive.min.css', '_static/css/style.css', '_static/css/syntax.css']  %}
+
+{%- block extrahead %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockStor: Free and Easy File storage</title>
+<script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+{%- endblock %}
+
+{%- block doctype -%}
+<!DOCTYPE html>
+{%- endblock %}
+
+{# Silence the sidebar's, relbar's #}
+{% block header %}{% endblock %}
+{% block sidebar1 %}{% endblock %}
+{% block sidebar2 %}{% endblock %}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
+{% block sidebarsourcelink %}{% endblock %}
+
+
+
+{%- block content %}
+<div class="navbar-outer">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="/">RockStor</a>
+        <ul class="nav">
+          <li><a id="product_nav" href="overview.html">Product</a></li>
+          <li class="dropdown">
+            <a id="support_nav" href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Support<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="commercial_support.html"
+                  target="_blank">Commercial support</a></li>
+              <li><a href="free_support.html">Free
+                  support</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a id="solution_nav" href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Solutions<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="small_biz.html"
+                  target="_blank">Small Businesses</a></li>
+              <li><a href="cloud-builders.html">Cloud
+                  Builders</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a id="resources_nav" href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Resources<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="docs/index.html" target="_blank">Docs</a></li>
+              <li><a href="docs/quickstart.html">Quick Start</a></li>
+              <li><a href="docs/faq.html">FAQ</a></li>
+              <li><a href="docs/howtos.html">Howtos</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a id="community_nav" href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Community<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="contribute.html">Get involved</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a id="company_nav" href="#" class="dropdown-toggle"
+              data-toggle="dropdown">About us<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">Team</a></li>
+              <li><a href="feedback.html">Contact us</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <a id="nav-download" class="btn btn-primary-main-story" href="downloads.html">Download&nbsp;</a>
+        <a href="http://www.linkedin.com/company/2955044?trk=tyah"
+          target="_blank"><img src="images/linkedin.png" class="social-link"></a>
+        <a href="http://twitter.com/rockstorinc" target="_blank"><img src="images/twitter-bird.png" class="social-link"></a>
+        <a href="http://www.youtube.com/user/rockstorinc" target="_blank"><img src="images/youtube_24x24.png" class="social-link"></a>
+      </div> <!-- navbar-inner -->
+    </div> <!-- navbar -->
+
+  </div> <!-- container -->
+</div> <!-- navbar-outer -->
+
+<div id="maincontent">
+  <div class="container">
+    <br>
+    <h1>Documentation</h1>
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="sphinxsidebarwrapper">
+          <br>
+          <a href="#"><h3>Table of contents</h3></a>
+          {{ toctree() }}
+        </div>
+      </div>
+      <div class="span9">
+        <br>
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </div> <!-- container -->
+</div> <!-- maincontent -->
+
+<div id="footer-outer">
+  <div class="container">
+
+    <div id="footer">
+      <div class="row-fluid">
+        <div id="footer-links" class="span12 centertext">
+          Copyright &copy;2013 RockStor, Inc.&nbsp;
+        </div>
+      </div> <!-- row-fluid -->
+    </div>
+  </div> <!-- container -->
+</div> <!-- footer-outer -->
+{% endblock %}
+{%- block footer %}
+<script src="_static/js/libs/bootstrap.min.js" ></script>
+{% endblock %}
+
