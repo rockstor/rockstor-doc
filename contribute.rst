@@ -5,6 +5,8 @@ Contribute to Rockstor
 Rockstor is a free and open source software and we are proud of our budding
 developer and user community. You can contribute in a few different ways.
 
+.. _storageexperts:
+
 Storage experts
 ---------------
 
@@ -32,6 +34,7 @@ RockStor.
 4. Report bugs to help other community members via `RockStor issue tracker
 <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
+.. _developers:
 
 Software Engineers
 ------------------
