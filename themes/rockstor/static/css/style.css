@@ -832,4 +832,6 @@ ul.main-story-featurelist {
   background: rgb(238, 238, 238);
   padding: 4px 20px 20px 20px !important;
 }
+li { line-height: 24px; }
+
 
