@@ -149,7 +149,7 @@ to provisioning storage, a few steps are necessary
     [root@localhost ~]# systemctl stop firewalld
     [root@localhost ~]#
 
-5. Execute the following two commands in order to start using
+4. Execute the following two commands in order to start using
    the WebUI or CLI.
    ::
 
@@ -160,7 +160,7 @@ to provisioning storage, a few steps are necessary
     nginx: started
     gunicorn: started
 
-6. Check the status of the running services with the following command. You
+5. Check the status of the running services with the following command. You
    should see all services running, as shown below.
    ::
 
