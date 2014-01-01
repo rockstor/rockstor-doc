@@ -106,9 +106,22 @@ internet connection. Total installation time varies based on internet speeds.
    
    Package installation takes varying time based on your hardware configuration
    and internet speed. Please be patient, eventually the installer will finish and
-   you can reboot into RockStor! Upon reboot, remove the install cd from the
-   system and boot into RockStor from the install destination(Hard drive or USB)
-   as selected earlier.
+   you can reboot into RockStor! 
+ 
+7. **Boot into RockStor** 
+
+   Upon reboot, remove the install cd from the system and boot into RockStor 
+   from the install destination(Hard drive or USB) as selected earlier.
+   RockStor will boot and bring you to the login window, where it will show you
+   the ip address of your system. 
+  
+   .. raw:: html 
+
+      <div class="alert">
+        <strong>Important!</strong> Note the ip address of your RockStor server
+        since you will need it during the Configuration process as described
+        below.
+      </div>
 
 Some configuration steps are necessary before proceeding to use RockStor NAS,
 as detailed in the next section
