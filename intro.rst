@@ -81,5 +81,5 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | Critical event alerts       | planned |                                |
 +-----------------------------+---------+--------------------------------+
-| Scheduled tasks             | planned | snapshots, replication, scurbs |
+| Scheduled tasks             | planned | snapshots, replication, scrubs |
 +-----------------------------+---------+--------------------------------+
