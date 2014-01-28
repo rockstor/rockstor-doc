@@ -11,13 +11,18 @@ Enable or disable Samba/CIFS access for a Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
-click on *Samba* in the left sidebar to go to the *Samba* view. 
+click on *Samba* in the left sidebar to go to the *Samba* view.
 
 Click on the *Add Samba Export* button. Fill in the form with the appropriate values as explained below.
 
 In the list of shares, select the shares that you want to export through Samba.
 
-In the *Admin Users* field, enter a space separated list of usernames who will have access to this share. These users can be local users, or users from NIS or Active Directory.
+In the *Admin Users* field, enter a space separated list of usernames who will
+have administrative access to this share. These users can be local, from NIS or
+Active Directory. *Admin Users* are equivalent to the *root* user on Rockstor
+and have all permissions. If your users come from Active Directory, we
+recommend you use one *Admin User* and add/change ACLs for other users from
+a Windows machine.
 
 Set *Browsable* to *yes* if you want clients to be able to see the exported shares.
 
