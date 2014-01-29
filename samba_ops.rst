@@ -38,183 +38,45 @@ Set *Read only* to *yes* if the share should not be writable by clients.
 To disable Samba/CIFS access, go to the *Samba* view as before, and click on the trash icon for the appropriate share to delete the Samba export for that share.
 
 
-How to Access a share as a local user
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to Access a share 
+^^^^^^^^^^^^^^^^^^^^^^
 
-Before you try to access the share as a local user, go to System tab -> Services and make sure that AD service is turned OFF.
-This is just to avoid any interruption from AD server.
+From a **Windows** machine:
 
-First and foremost you should know which share to access. 
-Next you need a user who has permission to access the share.
-You can see all the details in the Samba table displayed when you go to Storage tab -> File Sharing -> Samba
+1. Go to the File explorer and in the location field, enter the ip address of your RockStor Web UI in the following format.
+   
+    * \\\\192.168.1.21
 
-Now that you have all the details, use your local machine to access the share.
+2. When you try to access this location, you will be presented with a window which prompts for the username and password. 
 
+3. The domain name is defaulted to your machine name. Enter *DOMAINNAME\\username* in the username field to change the domain. Use WORKGROUP as the domainname if it is a local user, or use the AD domain if it is an AD user. (*username* is the username of the user who has permission to access the share)
 
-From **Windows** machine:
+4. Enter the user's password. 
 
-1. Go to the File explorer and give the ip address of your rockstor web ui similar to this *\\192.168.1.21* 
+5. Check remember credentials, and click Ok
 
-2. Double click on it and you see a window which prompts for the username and password. 
+6. Now, you must be able to see the shares available on RockStor.
 
-3. In general the domain name is set default to your machine name.
+7. To access a share, double click on it. 
 
-4. Inorder to change the domain, in the username field enter *WORKGROUP\username*
- 
-  (here username is name of the user who has permission to access the share)
+From a **Linux** machine:
 
-5. Enter the password given while creating the user.
+1. Open File Browser -> File -> Connect to Server and enter the address of the RockStor appliance in this format.
+    
+    * smb://<ip_address> 
 
-6. Check the box to remember credentials.
+2. Click Connect, and you will see the shares available on the RockStor appliance.
 
-7. Press ok to access the share.
+3. To access a share, double click on it, and you will be presented with a window with Username, Domain, and Password fields. Enter the following 
 
-8. Now, you must be able to see the users and shares created.
+    * Username -> username of the user who has permission to access the share.
+    * Domain -> WORKGROUP for a local user, AD domain for an AD user
+    * Password -> password of the user
 
-9. To access a share, double click on it. 
+4. Click Connect
 
-Depending upon the options selecting while creating a Samba export, one should be able to create a folder, read, 
-write and delete the files and folders inside the share.
+5. You should now be able to see the share contents. 
 
-
-
-From **Linux** machine:
-
-1. Go to File Browser -> Network -> Browse Network
-
-2. Open Browse Network and you should see the rockstor web ui machine with the ip address.
-
-3. Double click on it which opens a window with username and password fields.
-
-4. Give the Domain name as WORKGROUP and username as the user who has permission to access the share.
-
-5. Enter the password used while creating the user in rockstor web UI.
-
-6. Press enter.
-
-7. You must be able to see the users and shares created.
-
-8. Inorder to access a  share, double click on it.
-
-Depending upon the options selecting while creating a Samba export, one should be able to create a folder, read, 
-write and delete the files and folders inside the share.
-
-
-More than 1 user can be given permission to access a share. This can be done by giving two users space seperated in the 
-Admin Users field while creating Add samba export.
-
-
-
-How to Access a share as an Active Directory user
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Steps to be followed on Rockstor web UI:**
-
-Now that you want to access a share as an Active Directory user, make sure that AD service is turned ON!
-
-1. Turn ON the AD service if it's OFF.
-
-2. Now, Configure AD by clicking on the wrench icon with following values:
-
-Winbind Domain - rockstorad
-Security Model - ads
-Winbind ADS Realm - rockstorad.local
-Winbind Domain Controllers - WIN-H323VCUT6GT.ROCKSTORAD.LOCAL
-Template shell - /bin/bash
-Don't check Allow offline login box.
-
-3. Click Submit button.
-
-4. Next, Click ‘Join Domain' and it prompts to enter Administrator and Password.
-
-(Both of them are set while creating the AD server)
-
-5. Click Submit button and verify that you get the Join ok message.
-
-
-**Steps to be followed on Active Directory Server:**
-
-Create a user on Active Directory
-
-On Windows machine: 
-
-1. From start go to Remote Desktop Connection (192.168.1.21)
- 
-2. Login with Username: Administrator
-
- and Password : St0r3smartly
-
-3. Inside Active directory server, go to Server Manager -> Tools -> Active Directory Users and Computers -> Users
-
-4. Right click on Users -> New -> User. This will open a window with some credentials as shown in the screenshot below
-
-
-.. image:: user_create.png
-   :scale: 65%
-   :align: center
-
- 
-Keep the @rockstorad.local as it is.
-
-5. Click on next button which prompts for password. Enter the password and re-type it.
-
-For convenience, uncheck the user must change password at next logon and 
-
-check password never expires.
-
-6. Click on next  button which takes to last screen. Click on Finish.
-
-
-This should create the user. Sometimes it can throw an error with regard to password not meeting the criteria.
-
-
-Now go back to Rockstor web UI and do the following:
-
-1. Create a new Add samba export with the follwowing configuration:
- Admin users - username (Newly created one on the AD server)
- Browsable - yes
- Guest Ok - yes/no
- Read only - yes/no
-
-Acess the Share from a Windows Machine :
-
-1. Go to explorer - > Computer -> right click and select map network drive. Then the following screen appears:
-
-2. Drive is autoslected where as you need to select the folder as
-\\server\sharename
-
-3. Check connect using different credentials. This is to to login with a different user than which is already saved. Click Finish.
-
-4. Next screen prompts for Network Username and Password. Select “Use another account” and enter the credentials of the Active Directory user who has permission to access the share.
-Inorder to change the domain enter rockstorad\username in the username field.
-
-5. Share should be visible in the explorer.
-
-6. Share contents should be visible.
-
-7. You should be able to (1) create a file (2) write to it (3) save it (4) read it (5) create a directory (6) delete a directory.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Depending upon the options selected while creating a Samba export, you should be able to create a folder, read, write and delete the files and folders inside the share.
 
 
