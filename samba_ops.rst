@@ -7,8 +7,8 @@ software suite. Samba service must be turned on before exposing shares.
 
 .. _sharesamba:
 
-Enable or disable Samba/CIFS access for a Share
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a Samba Export of a Share
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
 click on *Samba* in the left sidebar to go to the *Samba* view.
@@ -35,11 +35,32 @@ Set *Read only* to *yes* if the share should not be writable by clients.
    :scale: 65%
    :align: center
 
+
+View Samba Export  
+^^^^^^^^^^^^^^^^^
+
+If you already have Samba exports created, you can see them displayed in a table.
+
+All the details about the samba export are present in the table. Here is what the columns in the table mean:
+
+  * Name of the share ->  Share which is exported.
+  * Browsable -> Is the Share browsable by everyone? yes/no
+  * Guest Ok -> Are Guests Ok to access the share? yes/no
+  * Read only -> Is the Share Read only?
+  * Admin Users -> Users who want to access the Share.
+  * Comments -> Comments related to particular samba export.
+  * Actions -> To delete the Samba Export.
+
+
+.. image:: samba_table.png
+   :scale: 65%
+   :align: center
+
 To disable Samba/CIFS access, go to the *Samba* view as before, and click on the trash icon for the appropriate share to delete the Samba export for that share.
 
 
 How to Access a share 
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 From a **Windows** machine:
 
