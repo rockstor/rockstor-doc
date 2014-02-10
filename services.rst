@@ -90,6 +90,17 @@ The individual fields of the form are described below.
 
 To start or stop the service, click the corresponding ON or OFF button.
 
+For example, for an environment with the Winbind domain as *rockstorad*, and the AD controller as *WIN-H323VCUT6GT.ROCKSTORAD.LOCAL*, these are the values used to configure AD.
+
+    * Winbind Domain - rockstorad
+    * Security Model - ads
+    * Winbind ADS Realm - rockstorad.local
+    * Winbind Domain Controllers - WIN-H323VCUT6GT.ROCKSTORAD.LOCAL
+    * Template shell - /bin/bash
+    * Don't check Allow offline login box.
+
+Once the AD service is configured, click *Join Domain* and enter the AD Administrator username and password, and click Submit. The appliance will now attempt to join the domain and will display a *Join Ok* message if successful.
+
 LDAP
 ----
 
