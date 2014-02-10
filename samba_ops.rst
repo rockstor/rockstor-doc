@@ -18,8 +18,8 @@ Click on the *Add Samba Export* button. Fill in the form with the appropriate va
 In the list of shares, select the shares that you want to export through Samba.
 
 In the *Admin Users* field, enter a space separated list of usernames who will
-have administrative access to this share. These users can be local, from NIS or
-Active Directory. *Admin Users* are equivalent to the *root* user on Rockstor
+have administrative access to this share. These users can be local, or from NIS
+or Active Directory. *Admin Users* are equivalent to the *root* user on Rockstor
 and have all permissions. If your users come from Active Directory, we
 recommend you use one *Admin User* and add/change ACLs for other users from
 a Windows machine.
@@ -43,13 +43,13 @@ If you already have Samba exports created, you can see them displayed in a table
 
 All the details about the samba export are present in the table. Here is what the columns in the table mean:
 
-  * Name of the share ->  Share which is exported.
-  * Browsable -> Is the Share browsable by everyone? yes/no
-  * Guest Ok -> Are Guests Ok to access the share? yes/no
-  * Read only -> Is the Share Read only?
-  * Admin Users -> Users who want to access the Share.
-  * Comments -> Comments related to particular samba export.
-  * Actions -> To delete the Samba Export.
+* Name of the share ->  Share which is exported.
+* Browsable -> Is the Share browsable by everyone? yes/no
+* Guest Ok -> Are Guests Ok to access the share? yes/no
+* Read only -> Is the Share Read only?
+* Admin Users -> Users who have administrative access to the Share.
+* Comments -> Comments related to particular samba export.
+* Actions -> To delete the Samba Export.
 
 
 .. image:: samba_table.png
@@ -64,7 +64,7 @@ How to Access a share
 
 From a **Windows** machine:
 
-1. Go to the File explorer and in the location field, enter the ip address of your RockStor Web UI in the following format.
+1. Go to the File explorer and in the location field, enter the ip address of your RockStor appliance in the following format.
    
     * \\\\192.168.1.21
 
@@ -76,7 +76,7 @@ From a **Windows** machine:
 
 5. Check remember credentials, and click Ok
 
-6. Now, you must be able to see the shares available on RockStor.
+6. The File explorer will attempt to connect to the RockStor appliance, and if successful, you will be able to see the shares available on RockStor.
 
 7. To access a share, double click on it. 
 
@@ -84,7 +84,7 @@ From a **Linux** machine:
 
 1. Open File Browser -> File -> Connect to Server and enter the address of the RockStor appliance in this format.
     
-    * smb://<ip_address> 
+    * smb://192.168.1.21 
 
 2. Click Connect, and you will see the shares available on the RockStor appliance.
 
@@ -98,6 +98,6 @@ From a **Linux** machine:
 
 5. You should now be able to see the share contents. 
 
-Depending upon the options selected while creating a Samba export, you should be able to create a folder, read, write and delete the files and folders inside the share.
+Depending upon the options selected while creating a Samba export, you should be able to read, write, create and delete files and folders inside the share.
 
 
