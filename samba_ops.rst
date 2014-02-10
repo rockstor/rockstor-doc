@@ -62,7 +62,8 @@ To disable Samba/CIFS access, go to the *Samba* view as before, and click on the
 How to Access a share 
 ^^^^^^^^^^^^^^^^^^^^^
 
-From a **Windows** machine:
+From a Windows machine:
+---------------------------
 
 1. Go to the File explorer and in the location field, enter the ip address of your RockStor appliance in the following format.
    
@@ -80,7 +81,8 @@ From a **Windows** machine:
 
 7. To access a share, double click on it. 
 
-From a **Linux** machine:
+From a Linux machine:
+--------------------------
 
 1. Open File Browser -> File -> Connect to Server and enter the address of the RockStor appliance in this format.
     
@@ -100,4 +102,21 @@ From a **Linux** machine:
 
 Depending upon the options selected while creating a Samba export, you should be able to read, write, create and delete files and folders inside the share.
 
+
+From a Mac:
+------------
+
+1. On your Mac, open the Finder, and select *Go* -> *Connect to Server*
+
+2. In the Server address field, type in the address of the shared folder as shown below (with the ip address of your RockStor appliance)
+
+   * smb://192.168.1.21/sharename
+
+3. Click Connect. The Finder will connect to the RockStor appliance, and will popup an authentication dialog.
+ 
+4. Enter the username and password of a user who has permission to access the share. Select *Remember this password in my keychain*, if you want the connection to be stored, and click *Connect*
+
+5. Your Mac will now attempt to connect to the share, and if successful, it will be visible in the Finder.
+
+6. The share is also accessible through the terminal at */Volumes/sharename*
 
