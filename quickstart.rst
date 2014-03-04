@@ -135,15 +135,10 @@ to provisioning storage, a few steps are necessary
 
 1. Once the system boots, login as the root user.
 
-2. Turn off iptables
-   ::
+2. Run the initialization script for a bit of miscellaneous configuration
+   changes::
 
-    [root@localhost ~]# systemctl disable firewalld
-    rm '/etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service'
-    rm '/etc/systemd/system/basic.target.wants/firewalld.service'
-
-    [root@localhost ~]# systemctl stop firewalld
-    [root@localhost ~]#
+    [root@localhost ~]# /opt/rockstor/bin/initrock
 
 3. The RockStor WebUI is now ready. Open Firefox browser on a laptop or
    some other machine and go to https://rockstor_appliance_ip.
