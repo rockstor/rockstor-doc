@@ -27,14 +27,14 @@ Just like other NAS products, Rockstor supports file storage via popular
 protocols(NFS, Samba/CIFS, SFTP). With the exception of that broad similarity,
 there are many differences. Rockstor runs on Linux kernel and uses BTRFS as the
 underlying filesystem. It makes storage management easy with smart features and
-a powerful UI. It exposes a robust API to be used as a high performance storage
+a powerful UI. It exposes a RESTful API to be used as a high performance storage
 backend in Cloud infrastructures. These are just a few differences. Give
 Rockstor a try and you'll notice the value and differentiation right away.
 
 Who can download and use Rockstor?
 ----------------------------------
 
-All Y'all. Rockstor is a open source project with the primary goal to ensure
+Everyone. Rockstor is an open source project with the primary goal of ensuring
 that it's freely available for anyone to use and that it provides value and
 quality to all of it's users. A lot of effort goes into developing Rockstor and
 we'd love for it to be widely used and distributed.
@@ -42,11 +42,9 @@ we'd love for it to be widely used and distributed.
 How much does Rockstor cost?
 ----------------------------
 
-$0.00 USD. Rockstor is not Open Storage, Open Core or some other bottom line
-driven partially open thing. It is completely Free and Open Source and is here
-to stay that way. You can use the product in it's entirity for free of cost and
-explore :ref:`freesupport`. :ref:`Commercial support` is also available and if you so
-choose, you can even hire us to build stuff with Rockstor.
+Zero USD. It is completely Free and Open Source and is here
+to stay that way. You can use the product in it's entirety for free of cost and
+explore `Free Support <http://rockstor.com/free_support.html>`_. `Commercial support <http://rockstor.com/commercial_support.html>`_ is also available and if you so choose, you can even hire us to build stuff with Rockstor.
 
 
 How can I get started with Rockstor?
@@ -59,15 +57,14 @@ get started.
 What kind of hardware do I need to install Rockstor?
 ----------------------------------------------------
 
-Rockstor run on 64-bit commodity hardware. At the least, you can run it as a VM
-or install it on a old server. See :ref:`quickstartguide` for more information.
+Rockstor runs on 64-bit commodity hardware. You can run it as a virtual machine, or install it on bare metal. See :ref:`quickstartguide` for more information.
 
 
 What is a quick way to evaluate Rockstor?
 -----------------------------------------
 
 For quick evaluation, install Rockstor on Virtual Box, VMWare or try it out on
-AWS Cloud. See :ref:`quickeval` for more information.
+Amazon EC2. See :ref:`quickeval` for more information.
 
 
 Do you have any hardware recommendations?
@@ -101,7 +98,7 @@ I have Rockstor installed. How do I get software updates?
 ---------------------------------------------------------
 
 Rockstor development happens at a reasonably fast pace. At this time, we are
-only releasing production updates once a month or so. Rockstor should be
+releasing production updates once a month or so. Rockstor should be
 updated directly from the web-ui when it indicates that an update is
 available. It's a simple process and takes couple of mouse clicks and a few minutes.
 
@@ -112,7 +109,7 @@ Rockstor is free software licenced under the terms of GNU General Public
 License version 2. See here for more details.
 
 
- What Linux flavor is rockstor based on?
+What Linux flavor is rockstor based on?
 ---------------------------------------
 
 Rockstor is based on Fedora 19.
@@ -129,7 +126,7 @@ Disk level redundancy is provided by builtin software raid of BTRFS including
 raid1, raid10, raid5 and raid6. Beyond that, Rockstor also supports replication
 of Shares across two or more Rockstor appliances.
 
- Can I use Rockstor with other Storage products?
+Can I use Rockstor with other Storage products?
 -----------------------------------------------
 
 This question is a bit ambiguous. All that Rockstor needs in terms of storage
@@ -139,17 +136,17 @@ direct attached or can come from SAN.
 Rockstor also comes with a backup plugin, making it a suitable backup target to
 replicate data from expensive NAS products.
 
-Can Rockstor support my specific storage usecase X?
+Can Rockstor support my specific storage usecase?
 ---------------------------------------------------
 
-Possibly. Contact us with your requirements and we will get in touch with you.
+You can `contact us <http://rockstor.com/feedback.html>`_ with your requirements 
+and we will get in touch with you. We do storage services and support 
+and will be happy to enable you to use Rockstor for your storage requirements.
 
 How can I stay in touch with latest Rockstor news?
 --------------------------------------------------
 
-Follow us on github
-Join development mailing list
-Follow us on twitter
+You can follow the `rockstor-core project <https://github.com/rockstor/rockstor-core>`_ on github, join the `development mailing list <https://lists.sourceforge.net/lists/listinfo/rockstor-devel>`_, and follow us on `twitter <https://twitter.com/rockstorinc>`_.
 
 How is Rockstor development funded?
 -----------------------------------
