@@ -1,4 +1,6 @@
 
+.. _contributetorockstor:
+
 Contribute to Rockstor
 ======================
 
