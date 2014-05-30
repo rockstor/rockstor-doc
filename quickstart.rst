@@ -22,7 +22,7 @@ directly on hardware or as a VM with the following minimum system requirements.
 Download Rockstor
 -----------------
 
-Download RockStor at `http://rockstor.com/downloads.html
+Download RockStor from `http://rockstor.com/downloads.html
 <http://rockstor.com/downloads.html>`_. Create a bootable CD or USB drive
 from the downloaded iso and proceed to the next section for installation.
 
@@ -162,4 +162,3 @@ to provisioning storage, a few steps are necessary
     [root@localhost ~]# systemctl enable rockstor
 
 5. Click through the initial setup process as shown in :ref:`setup`.
-
