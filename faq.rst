@@ -16,7 +16,7 @@ Does Rockstor provide Block or Object storage?
 ----------------------------------------------
 
 Not currently. **File storage is the only supported usecase**. Block storage
-support can be added and we shall consider it based on demand, but Object
+support can be added and we shall consider it based on demand. Object
 storage is not on the idea board. However, Rockstor is Free Software and anyone
 in the community is welcome to add these features.
 
@@ -28,7 +28,7 @@ protocols(NFS, Samba/CIFS, SFTP). With the exception of that broad similarity,
 there are many differences. Rockstor runs on Linux kernel and uses BTRFS as the
 underlying filesystem. It makes storage management easy with smart features and
 a powerful UI. It exposes a RESTful API to be used as a high performance storage
-backend in Cloud infrastructures. These are just a few differences. Give
+backend in Cloud infrastructure. These are just a few differences. Give
 Rockstor a try and you'll notice the value and differentiation right away.
 
 How is Rockstor different from Dropbox, Google Drive and other Cloud Storage offerings?
@@ -36,7 +36,7 @@ How is Rockstor different from Dropbox, Google Drive and other Cloud Storage off
 
 Rockstor is your personal cloud storage and unlike public cloud storage
 services, all of your data resides on your appliance. In other words, you have
-complete control and ownership of your data and you can store lot's of it at
+complete control and ownership of your data and you can store lots of it at
 very low cost. We are working towards compatibility and interoperability with
 some Cloud Storage solutions. However, Rockstor is not a simple replacement and
 doesn't come with comparable user interfaces.
@@ -55,15 +55,16 @@ How much does Rockstor cost?
 Zero USD. It is completely Free and Open Source and is here to stay that
 way. You can use the product in it's entirety for free of cost and explore
 `Free Support <http://rockstor.com/free_support.html>`_ options. `Commercial
-support <http://rockstor.com/commercial_support.html>`_ is also available and
-if you so choose, you can even hire us to build stuff with Rockstor.
+support <http://rockstor.com/commercial_support.html>`_ is also
+available. Additionally, you can hire us if you need custom integration with
+Rockstor.
 
 
 How can I get started with Rockstor?
 ------------------------------------
 
 Installation of Rockstor is a very easy and short process. You can even install
-it on a old server or check it out on AWS cloud. See :ref:`quickstartguide` to
+it on a spare server or check it out on AWS cloud. See :ref:`quickstartguide` to
 get started.
 
 What kind of hardware do I need to install Rockstor?
@@ -112,7 +113,7 @@ I have Rockstor installed. How do I get software updates?
 ---------------------------------------------------------
 
 Rockstor development happens at a reasonably fast pace. However, we are aware
-of criticality given that users store data and don't want to lose it. We create
+that your data is important and that you don't like to lose it. So, we create
 and test staging releases more frequently, but production/public updates are
 made available once a month or so. Rockstor should be updated directly from the
 web-ui when it indicates that an update is available. It's a simple,
@@ -143,7 +144,7 @@ BTRFS, a rich and disruptive filesystem.
 How do I protect data loss with Rockstor?
 -----------------------------------------
 
-Disk level redundancy is provided by builtin software raid of BTRFS including
+Disk level redundancy is provided by built-in software raid of BTRFS including
 raid1, raid10, raid5 and raid6. Beyond that, Rockstor also supports replication
 of Shares across two or more Rockstor appliances. See :ref:`sharereplication`
 for more details.
@@ -157,7 +158,7 @@ direct attached or can come from SAN. So you can surely let SAN products
 provide volumes for Rockstor.
 
 Rockstor also comes with a backup plugin, making it a suitable backup target to
-replicate data from other, perhaps expensive NAS products.
+replicate data from other NAS products.
 
 Can Rockstor support my specific storage usecase?
 ---------------------------------------------------
