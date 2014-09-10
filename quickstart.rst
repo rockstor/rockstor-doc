@@ -22,9 +22,10 @@ directly on hardware or as a VM with the following minimum system requirements.
 Download Rockstor
 -----------------
 
-Download RockStor from `http://rockstor.com/downloads.html
-<http://rockstor.com/downloads.html>`_. Create a bootable CD or USB drive
-from the downloaded iso and proceed to the next section for installation.
+Download RockStor from `here
+<https://sourceforge.net/projects/rockstor/files/latest/download>`_.  Create a
+bootable CD or USB drive from the downloaded iso and proceed to the next
+section for installation.
 
 Installation
 ------------
