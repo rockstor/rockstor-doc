@@ -5,20 +5,16 @@ Product FAQ
 What is Rockstor?
 -----------------
 
-Rockstor is a **free enterprise class file storage platform**. At the
-foundation, it is a Fedora flavored Linux operating system tailored for
-storage usecases. The primary supported usecase is NAS via protocols including
-NFS, Samba/CIFS and SFTP. Rockstor brings together technologies including the
-Linux kernel, BTRFS filesystem, SystemTap and our own free software stack to
-deliver a compelling solution.
+RockStor is a **free and open source NAS(Network Attached Storage)
+solution**. It's a software solution and can be installed on any hardware or a
+virtual machine satisfying :ref:`minsysreqs`
 
-Does Rockstor provide Block or Object storage?
-----------------------------------------------
+How can I share files using Rockstor?
+-------------------------------------
 
-Not currently. **File storage is the only supported usecase**. Block storage
-support can be added and we shall consider it based on demand. Object
-storage is not on the idea board. However, Rockstor is Free Software and anyone
-in the community is welcome to add these features.
+Rockstor works as a centralized file storage server and supports popular
+protocols like Samba/CIFS, NFS and SFTP. Linux, Apple and Windows clients can
+store and access files from your Rockstor box.
 
 How is Rockstor different from other software NAS products?
 -----------------------------------------------------------
@@ -27,33 +23,31 @@ Just like other NAS products, Rockstor supports file storage via popular
 protocols(NFS, Samba/CIFS, SFTP). With the exception of that broad similarity,
 there are many differences. Rockstor runs on Linux kernel and uses BTRFS as the
 underlying filesystem. It makes storage management easy with smart features and
-a powerful UI. It exposes a RESTful API to be used as a high performance storage
-backend in Cloud infrastructure. These are just a few differences. Give
+a powerful UI. It exposes a RESTful API to be used as a high performance
+storage backend in Cloud infrastructure. These are just a few differences. Give
 Rockstor a try and you'll notice the value and differentiation right away.
 
 How is Rockstor different from Dropbox, Google Drive and other Cloud Storage offerings?
 ---------------------------------------------------------------------------------------
 
-Rockstor is your personal cloud storage and unlike public cloud storage
-services, all of your data resides on your appliance. In other words, you have
-complete control and ownership of your data and you can store lots of it at
-very low cost. We are working towards compatibility and interoperability with
-some Cloud Storage solutions. However, Rockstor is not a simple replacement and
-doesn't come with comparable user interfaces.
+For home/small-office users Rockstor works as personal cloud storage and
+unlike public cloud storage services, all of your data resides on your
+appliance. In other words, you have complete control and ownership of your data
+and you can store lots of it at very low cost. We are working towards
+compatibility and interoperability with some Cloud Storage solutions. We have
+plans to make Rockstor compatible and interoperable with popular public cloud
+storage offerings.
 
-Who can download and use Rockstor?
-----------------------------------
+Does Rockstor provide Block or Object storage?
+----------------------------------------------
 
-Anybody. Rockstor is an open source project with the primary goal of ensuring
-free availability for anyone to use and providing value and quality to all of
-it's users. A lot of effort goes into developing Rockstor and we'd love for it
-to be widely used and distributed.
+Not currently. But since Rockstor is open source, anyone in our community can
+work with us to get new features added in the future.
 
 How much does Rockstor cost?
 ----------------------------
 
-Zero USD. It is completely Free and Open Source and is here to stay that
-way. You can use the product in it's entirety for free of cost and explore
+Zero USD. You can use the product in it's entirety for free of cost and explore
 `Free Support <http://rockstor.com/free_support.html>`_ options. `Commercial
 support <http://rockstor.com/commercial_support.html>`_ is also
 available. Additionally, you can hire us if you need custom integration with
@@ -85,29 +79,13 @@ Amazon EC2. See :ref:`quickeval` for more information.
 Do you have any hardware recommendations?
 -----------------------------------------
 
-For individual or small business use, we've seen Rockstor install flawlessly on
+For home or small business use, we've seen Rockstor install flawlessly on
 HP, DELL and supermicro servers and desktops. The developers of Rockstor
 use HP Micro servers for individual use.
 
 Rockstor also installs smoothly on latest generation servers from vendors like
 HP and Supermicro.
 
-
-Is rockstor ready for production use?
--------------------------------------
-
-While some features of Rockstor are ready for primetime, as a whole, it is
-currently in Beta. However, the product has been downloaded by many and we have
-direct knowledge of a handful of deployments. The developers of Rockstor use it
-heavily and continue to test all layers of Rockstor software.
-
-Who is using Rockstor?
-----------------------
-
-We see regular downloads, but it's hard to say who is actively using the
-product as we don't collect that information. It is suitable for small and
-midsize businesses, and of course for advanced individual users. We are
-familiar with deployments storing up to 200 GB of data on Rockstor.
 
 I have Rockstor installed. How do I get software updates?
 ---------------------------------------------------------
@@ -129,19 +107,17 @@ License version 2. See `here <http://www.gnu.org/licenses>`_ for more details.
 What Linux flavor is rockstor based on?
 ---------------------------------------
 
-Rockstor is based on Fedora 19. Our plan is to fully support Rockstor on latest
-CentOS out of the box. However, that is not possible until a more recent Linux
-kernel is supported on CentOS.
-
+Rockstor 3.x is based on CentOS 7. We rebrand CentOS, add Rockstor software in
+the form of additional rpms and change the installer to make it a bit more
+straight forward and specific.
 
 What Filesystems are supported by Rockstor?
 -------------------------------------------
 
-Rockstor only supports BTRFS filesystem. See `here
-<https://btrfs.wiki.kernel.org/index.php/Main_Page>`_ for more details about
-BTRFS, a rich and disruptive filesystem.
+BTRFS all the way! Though there's lot more to Rockstor than the filesystem, at
+the core Rockstor productizes neat features of BTRFS filesystem.
 
-How do I protect data loss with Rockstor?
+How do I prevent data loss with Rockstor?
 -----------------------------------------
 
 Disk level redundancy is provided by built-in software raid of BTRFS including
@@ -185,7 +161,9 @@ for over a year. Currently, our own funding is augmented with customer revenue.
 How can I contribute to Rockstor?
 ---------------------------------
 
-Thanks for asking and welcome to the Rockstor community. Depending on your needs and interests, there are a few ways to participate. See :ref:`contributetorockstor` for more details.
+Thanks for asking and welcome to the Rockstor community. Depending on your
+needs and interests, there are a few ways to participate. See
+:ref:`contributetorockstor` for more details.
 
 How can I report bugs and request features?
 -------------------------------------------
