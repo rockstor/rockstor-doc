@@ -16,7 +16,7 @@ directly on hardware or as a VM with the following minimum system requirements.
 * 2GB RAM
 * 8GB hard disk space for the OS
 * One or more additional hard drives
-* 1Gbps Ethernet interface with internet access
+* 1Gbps Ethernet interface (with internet access -- for updates)
 * CD/DVD drive or USB port for installation
 
 Download Rockstor
@@ -30,9 +30,9 @@ section for installation.
 Installation
 ------------
 
-Installing RockStor is straight forward and is similar to installing
-Fedora. RockStor is provided as a network install image and requires an
-internet connection. Total installation time varies based on internet speeds.
+Installing Rockstor is quick and straight forward. Since Rockstor is based on
+CentOS, the anaconda installer looks similar to installation of CentOS, Redhat or
+Fedora.
 
 .. raw:: html
 
@@ -46,120 +46,56 @@ internet connection. Total installation time varies based on internet speeds.
    can contact us by sending an email to support@rockstor.com
    </div>
 
-1. Boot your machine with the RockStor CD and the splash screen will
-   appear.
+1. Boot your machine with the Rockstor CD and the splash screen will
+   appear. Press enter and the graphical installer will start momentarily
+   displaying the **Installation Summary screen**
 
-2. Select the **Install RockStor 2.0** option.
-
-   The graphical installer should
-   start momentarily. If you run into graphics problem at this stage, you can
-   select **Troubleshooting** from the splash screen and then select "Install
-   RockStor 2.0 in basic graphics mode".
-
-3. **Language selection**
-
-   The language selection window appears as the first screen when the
-   graphical installer starts. Select the default -- **English(United States)**,
-   which is the only supported language and optionally select the "Set keyboard to
-   default layout for selected language" checkbox at the bottom of the screen.
-
-   Click the **Continue** button to proceed.
-
-4. **Installation Summary screen**
+2. **Installation Summary screen**
 
    On this screen, multiple parameters can be configured together.
 
    a. Click on the **Date & Time** to change the default timezone.
 
-   b. The network configuration can also be changed from the default dhcp
-      configuration. Make sure your system has a working network connection
-      for the installation to proceed.
+   b. A network connection is required and the installation will not proceed
+      otherwise. The default is dhcp which the installer automatically picks
+      up. You can configure the network manually, but make sure your system has
+      a working ip address for the installation to proceed.
 
-   c. Under the **Storage** section, click on **Installation Destination**. On
-      the next screen, all local drives are displayed. You have several options
-      here, but for the minimal setup pick the first drive(it must be atleast
-      8GB). If your system can boot from a USB drive, you can dedicate one as the
-      root drive and this will free up an extra Hard drive for data. Click **Done**
-      at the top after selecting a disk and a popup will appear.
+   c. Under the **Installation Destination**, there may be further action
+      required. By default, the first hard drive is selected if there is no
+      data on it. Otherwise, click on the amber icon for the device selection
+      screen. For the default automatic partitioning, just click **DONE**. On
+      the next window, **Reclaim space** and follow directions to configure it
+      as the installation destination.
 
-      .. raw:: html
+      If you are an advanced user, you can go with a custom partitioning
+      scheme. However, note that Rockstor only supports **BTRFS** even for root
+      filesystem.
 
-         <div class="alert">
-         <strong>Important!</strong> Select <strong>BTRFS</strong> for the partition scheme.
-         </div>
+    .. raw:: html
 
-      If the disk is free, you will see the **Continue**
-      button. If not, click on **Reclaim space** to wipe the drive clean(this will
-      erase all data on the drive) in the next screen.
+        <div class="alert">
+        <strong>Important!</strong> Installing RockStor deletes existing data on the system
+        drive(s) selected as installation destination.
+        </div>
 
-   d. If there are any errors in the **Storage** or **Software** sections, the
-      installation will not proceed and you will have the opportunity to correct
-      them. When all installation requirements are satisfied, click on **Begin
-      Installation** button to start the package installation.
+   d. Once the installation configuration is complete and there are no amber
+      icons, click on **Begin Installation** button to start the package
+      installation.
 
-5. **Package Installation**
+3. **Package Installation**
 
-   On the next screen, package installation begins in the background while you
-   can set the root password. You can also create an additional user, but it's not
-   necessary.
+   On the next screen, package installation begins in the background and you
+   must set the root password. You can **optionally** create an additional
+   user.
 
-6. **Installation complete**
+4. **Boot into Rockstor**
 
-   Package installation takes varying time based on your hardware configuration
-   and internet speed. Please be patient, eventually the installer will finish and
-   you can reboot into RockStor!
+   Package installation takes a few minutes and once it's complete you can
+   reboot, remove the install cd and boot into Rockstor. Once the system boots
+   up, the url for web-ui is displayed above the login prompt. The url is
+   simply https://<IP_ADDRESS_OF_THE_SYSTEM>
 
-7. **Boot into RockStor**
+5. **Setup Rockstor**
 
-   Upon reboot, remove the install cd from the system and boot into RockStor
-   from the install destination(Hard drive or USB) as selected earlier.
-   RockStor will boot and bring you to the login window, where it will show you
-   the ip address of your system.
-
-   .. raw:: html
-
-      <div class="alert">
-        <strong>Important!</strong> Note the ip address of your RockStor
-        server. You will need it during the Configuration process described
-        below.
-      </div>
-
-Some configuration steps are necessary before proceeding to use RockStor NAS,
-as detailed in the next section
-
-Configuration
--------------
-
-Rockstor's WebUI and CLI are designed to be very user friendly. All of the
-storage provisioning tasks must be done via WebUI or CLI. But before proceeding
-to provisioning storage, a few steps are necessary
-
-1. Once the system boots, login as the root user.
-
-2. Run the initialization script for a bit of miscellaneous configuration
-   changes::
-
-    [root@localhost ~]# /opt/rockstor/bin/initrock
-
-3. The RockStor WebUI is now ready. Open Firefox browser on a laptop or
-   some other machine and go to https://rockstor_appliance_ip.
-
-   .. raw:: html
-
-      <div class="alert">
-        <strong>Important!</strong> On the first visit, the browser shows a SSL certificate security warning. Please add the exception to proceed.
-      </div>
-
-4. If you are unable to reach the WebUI, make sure that rockstor service is
-   running. Following are helpful commands to troubleshoot::
-
-    #to check the status
-    [root@localhost ~]# systemctl status rockstor
-
-    #to start rockstor
-    [root@localhost ~]# systemctl start rockstor
-
-    #to enable rockstor at boot
-    [root@localhost ~]# systemctl enable rockstor
-
-5. Click through the initial setup process as shown in :ref:`setup`.
+   Go to Rockstor's web-ui from your web browser and complete the initial setup.
