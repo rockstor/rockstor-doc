@@ -34,6 +34,9 @@ Installing Rockstor is quick and straight forward. Since Rockstor is based on
 CentOS, the anaconda installer looks similar to installation of CentOS, Redhat or
 Fedora.
 
+To find out how the installation process looks like, watch a 5 minute video by
+clicking `here <http://youtu.be/00k_RwwC5Ms>`_.
+
 .. raw:: html
 
    <div class="alert">
@@ -48,7 +51,7 @@ Fedora.
 
 1. Boot your machine with the Rockstor CD and the splash screen will
    appear. Press enter and the graphical installer will start momentarily
-   displaying the **Installation Summary screen**
+   and display the **Installation Summary screen**
 
 2. **Installation Summary screen**
 
