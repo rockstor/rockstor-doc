@@ -120,10 +120,41 @@ the core Rockstor productizes neat features of BTRFS filesystem.
 How do I prevent data loss with Rockstor?
 -----------------------------------------
 
-Disk level redundancy is provided by built-in software raid of BTRFS including
-raid1, raid10, raid5 and raid6. Beyond that, Rockstor also supports replication
-of Shares across two or more Rockstor appliances. See :ref:`sharereplication`
-for more details.
+This is a very important question and a lot of our work with Rockstor revolves
+around minimizing data loss. There are a few measures you can take to prevent
+dataloss and have disaster recovery strategy for different possibilities. See
+:ref:`dataloss`
+
+How frequently is Rockstor updated?
+-----------------------------------
+
+We make a major release requiring a OS reinstall ONLY when necessary. Almost
+all updates are pushed online and we like to push small batches at a regular
+frequency. Depending on the update, it could be once a week or once a month. We
+almost never wait too long to push updates unless there is a compelling reason
+to do so.
+
+Why is Rockstor updated so frequently?
+--------------------------------------
+
+While we make major releases that require complete OS install, we try to make
+these releases as infrequent as possible. However, we constantly improve
+Rockstor and push tested updates in small batches which can be updated online
+right from the web-ui. We do this because we want our users to get the best of
+Rockstor without any unnecessary disruption.
+
+Is BTRFS filesystem reliable?
+-----------------------------
+
+BTRFS is a newer Linux filesystem and is under heavy development. Some
+commercial Linux distribution vendors are supporting it to various levels and
+others will follow very soon given that the stability has improved quite a
+bit. So for now, you have to answer that question yourself based on data and
+your risk. In our experience, BTRFS has become very reliable. Also, Rockstor
+confines users from using BTRFS more freely, thus reducing the chances of
+hitting deep intricate bugs. The fact that bugs being reported lately are
+only triggered by very special scenarios is an encouraging sign.
+
 
 Can I use Rockstor with other Storage products?
 -----------------------------------------------
@@ -148,8 +179,7 @@ How can I stay in touch with latest Rockstor news?
 --------------------------------------------------
 
 You can follow the `rockstor-core project
-<https://github.com/rockstor/rockstor-core>`_ on github, join the `development
-mailing list <https://lists.sourceforge.net/lists/listinfo/rockstor-devel>`_,
+<https://github.com/rockstor/rockstor-core>`_ on github, join the `mailing list <https://lists.sourceforge.net/lists/listinfo/rockstor-announce>`_,
 and follow us on `twitter <https://twitter.com/rockstorinc>`_.
 
 How is Rockstor development funded?
