@@ -21,6 +21,7 @@ Welcome to RockStor
    analytics
    disk_pool_ops
    share_snap_ops
+   data_loss
    nfs_ops
    samba_ops
    multiple_appliances
