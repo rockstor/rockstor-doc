@@ -1,7 +1,7 @@
 .. _dataloss:
 
-Data loss and recovery in Rockstor
-==================================
+Data loss Prevention and Recovery in Rockstor
+=============================================
 
 There is no single cause of data loss as failures in hardware, software and
 user errors can trigger removal or corruption of storage data in different and
@@ -30,21 +30,21 @@ communities to report and fix issues and help improve Rockstor.
    on Rockstor to another system.
    </div>
 
-Backup recommendations
+Backup Recommendations
 ----------------------
 
 If you have critical data on Rockstor, we strongly recommend that you have a
 backup. In the near future, BTRFS and hence Rockstor shall become stable enough
 to not require this. But as of this writing, we strongly recommend you have
-backups. Here are some recommendations
+backups. Here are some recommendations.
 
 * Use Rockstor's replication feature to asynchronously and automatically
   replicate important shares on another Rockstor system.
-* Use Rockstor's external share backup functinality which rsyncs selected
+* Use Rockstor's external share backup functionality which rsyncs selected
   shares to an external location on a periodic basis (under development)
 * Use your own method to backup important Shares to another external system.
 
-Rockstor web-ui and data loss monitoring
+Rockstor Web-UI and Data Loss Monitoring
 ----------------------------------------
 
 Currently, there is no support for monitoring of drives or pools in
@@ -58,9 +58,9 @@ any potential failures.
 Rockstor also does not support any recovery features at this time. Given the
 current state of rapid BTRFS development, we have not added this support as it
 may need to fundamentally change again. So wear your Linux ninja hat to
-troubleshoot serious data loss problems. Hope this document helps a little.
+troubleshoot serious data loss problems. Hope this document helps.
 
-Ask us for help
+Ask Us for Help
 ---------------
 
 If you are in a data loss scenario, we'd like to help you. Though we cannot
@@ -73,8 +73,8 @@ BTRFS in which case you can also seek help on btrfs mailing list.
 
 .. _datalossraid0:
 
-Data loss and recovery in RAID0 Pools
--------------------------------------
+Data loss Prevention and Recovery in RAID0 Pools
+------------------------------------------------
 
 A raid0 pool consists of two or more drives and offers no data redundancy. All
 drives in a raid0 pool are simply combined to present a single large volume and
@@ -114,8 +114,8 @@ please contact support@rockstor.com and we'll try to help.
 
 .. _datalossraid1:
 
-Data loss and recovery in RAID1 Pools
--------------------------------------
+Data loss Prevention and Recovery in RAID1 Pools
+------------------------------------------------
 
 A raid1 pool in Rockstor consists of exactly two drives. A copy of data on one
 drive exists on the other one. So a raid1 pool is simply a two drive mirror.
@@ -184,8 +184,8 @@ described in :ref:`datalossraid0`
 
 .. _datalossraid10:
 
-Data loss and recovery in RAID10 Pools
---------------------------------------
+Data loss Prevention and Recovery in RAID10 Pools
+-------------------------------------------------
 
 A raid10 pool in Rockstor consists of stripes of raid1 mirrors and requires at least 4
 drives. So, just like a raid0 consists of stripes of individual drives, raid10
@@ -207,8 +207,8 @@ case, follow the recovery strategy described in :ref:`datalossraid0`
 
 .. _datalossraid5:
 
-Data loss and recovery in RAID5 Pools
-------------------------------------
+Data loss Prevention and Recovery in RAID5 Pools
+------------------------------------------------
 
 A raid5 pool in Rockstor requires at least 3 drives. Parity information is
 distributed among the drives so the pool stays functional even when a single
@@ -284,8 +284,8 @@ in :ref:`datalossraid0`
 
 .. _datalossraid6:
 
-Data loss and recovery in RAID6 Pools
--------------------------------------
+Data loss Prevention and Recovery in RAID6 Pools
+------------------------------------------------
 
 A raid6 pool is very similar to raid5. Unlike raid5, two copies of parity
 information is distributed among the drives, so the pool will be functional
