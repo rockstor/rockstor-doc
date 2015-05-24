@@ -93,6 +93,10 @@ Clone your forked rockstor repository onto your local developmet environment
 
         git clone https://github.com/your_github_username/rockstor-core.git
 
+Now change into the directory the above command should have created::
+
+        cd rockstor-core
+
 Configure your git client with your name and email address. This is helpful in
 keeping an accurate record of collaboration::
 
