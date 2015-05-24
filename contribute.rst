@@ -88,7 +88,7 @@ button. This will fork the rockstor-core repository into your profile which
 serves as your own parallel git universe. The process is the same for any other
 repository.
 
-Clone your forked rockstor repository onto your local developmet environment
+Clone your forked rockstor repository onto your local development environment
 ::
 
         git clone https://github.com/your_github_username/rockstor-core.git
