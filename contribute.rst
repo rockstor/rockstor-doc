@@ -97,11 +97,11 @@ Now change into the directory the above command should have created::
 
         cd rockstor-core
 
-Configure your git client with your name and email address. This is helpful in
+Configure this new git repo with your name and email address. This is helpful in
 keeping an accurate record of collaboration::
 
-        git config --global user.name "Firstname Lastname"
-        git config --global user.email your_email_address
+        git config user.name "Firstname Lastname"
+        git config user.email your_email_address
 
 Setup your fork's master branch to sync with the main repository. Here's the
 command to set it up for rockstor-core repository::
