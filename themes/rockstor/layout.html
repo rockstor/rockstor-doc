@@ -1,12 +1,13 @@
 {% extends "basic/layout.html" %}
 
-{% set css_files = ['_static/css/bootstrap.min.css', '_static/css/bootstrap-responsive.min.css', '_static/css/style.css', '_static/css/syntax.css']  %}
+{% set css_files = ['_static/css/font-awesome.min.css', '_static/css/bootstrap.min.css', '_static/css/bootstrap-responsive.min.css', '_static/css/style.css', '_static/css/syntax.css']  %}
 
 {%- block extrahead %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RockStor: Free and Easy File storage</title>
 <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+<link rel="shortcut icon" href="_img/ico/favicon.ico">
 {%- endblock %}
 
 {%- block doctype -%}
@@ -15,7 +16,7 @@
 
 {# Silence the sidebar's, relbar's #}
 {% block header %}{% endblock %}
-{% block sidebar1 %}{% endblock %}
+{% block sidebar1 %}{% endblock %}  
 {% block sidebar2 %}{% endblock %}
 {% block relbar1 %}{% endblock %}
 {% block relbar2 %}{% endblock %}
@@ -28,8 +29,8 @@
   <div class="container">
     <div class="navbar">
       <div class="navbar-inner">
-	<div id="logo">
-	  <object data="_static/img/rockstor_website_logo.svg" type="image/svg+xml"></object>
+	<div id="logo" style="padding-top: 5px">
+	  <img src="_static/img/rockstorlogo-font2.png" width="150px" />
 	</div>
         <ul class="nav">
           <li><a id="product_nav" href="/overview.html">Product</a></li>
@@ -79,16 +80,21 @@
         &nbsp;
         &nbsp;
         <a id="nav-download" class="btn btn-primary-main-story" href="/download.html">Download&nbsp;</a>
-        <a href="http://www.linkedin.com/company/2955044?trk=tyah"
-          target="_blank"><img src="_static/img/linkedin.png" class="social-link"></a>
-        <a href="http://twitter.com/rockstorinc" target="_blank"><img src="_static/img/twitter-bird.png" class="social-link"></a>
-        <a href="http://www.youtube.com/user/rockstorinc" target="_blank"><img src="_static/img/youtube_24x24.png" class="social-link"></a>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <span class="social_icons"><a href="http://twitter.com/rockstorinc"><i class="fa fa-twitter"></i></a></span>
+        <span class="social_icons"><a href="http://www.linkedin.com/company/2955044?trk=tyah"><i class="fa fa-linkedin"></i></a></span>
+        <span class="social_icons"><a href="https://github.com/rockstor"><i class="fa fa-github"></i></a></span>
+        <span class="social_icons"><a href="http://www.youtube.com/user/rockstorinc"><i class="fa fa-youtube-play"></i></a></span>
+
       </div> <!-- navbar-inner -->
     </div> <!-- navbar -->
 
   </div> <!-- container -->
 </div> <!-- navbar-outer -->
-
+<br>
+<br>
 <div id="maincontent">
   <div class="container">
     <span class="h1">Documentation</span>
@@ -96,7 +102,7 @@
       <form class="form-inline" id="top-search" method="get" action="search.html">
         <input type="text" value="" name="q"></input>
         &nbsp;
-        <input class="btn btn-primary" type="submit" value="Search"></input>
+        <input class="btn btn-primary-main-story" type="submit" value="Search"></input>
         <span id="search-progress" style="padding-left: 10px"></span>
       </form>
     </div>
@@ -120,7 +126,7 @@
     <div id="footer">
       <div class="row-fluid">
         <div id="footer-links" class="span12 centertext">
-          Copyright &copy;2014 RockStor, Inc.&nbsp;
+          Copyright &copy; 2015 RockStor, Inc.&nbsp;
         </div>
       </div> <!-- row-fluid -->
     </div>
