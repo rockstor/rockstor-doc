@@ -12,7 +12,7 @@ Hardware recommendations:
 
 At the bare minimum, see :ref:`minsysreqs` for a basic recommendation. This
 translates to most commodity servers with more than a couple of disk
-drives. Based on your cost constraints and performances requirements, several
+drives. Based on your cost constraints and performance requirements, several
 hardware configurations are possible as described below.
 
 Home NAS
@@ -37,7 +37,7 @@ following command::
     [root@localhost ~]# yum update rockstor
 
 If an update is disruptive, the update process prompts for user action and
-provides necessary information to choose to update or not. You can safely
+provides the necessary information to choose to update or not. You can safely
 decide not to update if that makes sense for your environment.
 
 
