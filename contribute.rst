@@ -4,8 +4,8 @@
 Contribute to Rockstor
 ======================
 
-Rockstor is a free and open source software and we are proud of our budding
-developer and user community. You can contribute in a few different ways.
+Rockstor is free and open source software and we are proud of our budding
+developer and user community. Anyone can contribute in a number of different ways.
 
 .. _storageexperts:
 
@@ -14,26 +14,26 @@ Storage experts
 
 Domain experts have been involved in RockStor development right from the
 beginning. While RockStor started with visionary ideas of Smart capabilities
-and Open paradigm, the core team has expertise in the Storage industry.
+and an Open paradigm, the core team has expertise in the Storage industry.
 
 RockStor is a community effort and we believe that domain experts are essential
 in making RockStor a successful platform. If you are a Storage administrator,
-Systems engineer, Linux administrator, Filesystems expert, technical manager or
-simply a geek! with deep interest in the Storage infrastructure space, we
+Systems engineer, Linux administrator, Filesystems expert, Technical manager, or
+simply a techie with deep interest in the Storage infrastructure space, we
 welcome you to join our community.
 
 You can contribute to Rockstor by
 
-1. Participating in feature request and specification process via `RockStor
+1. Participating in feature requests and the specification process via `RockStor
 issue tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
 2. Join and participate in our `mailing list
 <http://sourceforge.net/mailarchive/forum.php?forum_name=rockstor-devel>`_.
 
-3. Test stable and release candidates of
+3. Testing stable and release candidates of
 RockStor.
 
-4. Report bugs to help other community members via `RockStor issue tracker
+4. Reporting bugs to help other community members via `RockStor issue tracker
 <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
 .. _developers:
@@ -41,15 +41,15 @@ RockStor.
 Software Engineers
 ------------------
 
-Developing RockStor to deliver on its unique value proposition of Smart,
-Powerful and Open storage platform is a major effort. If you are passionate
-about Open source and Storage like us, you are in the right company. We welcome
+Developing RockStor to deliver on its unique value proposition of being a Smart,
+Powerful, and Open storage platform is a major effort. If you are passionate
+about Open Source and Storage like us; you are in the right company. We welcome
 you to join our community.
 
 Our development process is very simple and straight forward. `Github
 <https://github.com>`_ is our
-primary framework for all collaboration including issue tracking, design and
-development collaboration. Before you make any contribution subject to
+primary framework for all collaboration including issue tracking, design, and
+development. Before you make any contribution subject to
 copyright, we ask you to fillout an online Contributor License
 Agreement(CLA). We tried to keep the agreement as simple as possible. Please
 click `here <http://rockstor.com/cla.html>`_ to submit the form.
@@ -88,16 +88,20 @@ button. This will fork the rockstor-core repository into your profile which
 serves as your own parallel git universe. The process is the same for any other
 repository.
 
-Clone your forked rockstor repository onto your local developmet environment
+Clone your forked rockstor repository onto your local development environment
 ::
 
         git clone https://github.com/your_github_username/rockstor-core.git
 
-Configure your git client with your name and email address. This is helpful in
+Now change into the directory the above command should have created::
+
+        cd rockstor-core
+
+Configure this new git repo with your name and email address. This is helpful in
 keeping an accurate record of collaboration::
 
-        git config --global user.name "Firstname Lastname"
-        git config --global user.email your_email_address
+        git config user.name "Firstname Lastname"
+        git config user.email your_email_address
 
 Setup your fork's master branch to sync with the main repository. Here's the
 command to set it up for rockstor-core repository::
@@ -128,7 +132,7 @@ after that. Finally, describe the change in more detail in plain text format
 where each line is no more than 80 characters. This description should be in
 present tense. Below is a fictional example::
 
-        foobar functinality for rockstor
+        foobar functionality for rockstor
 
         Add a new file to implement the algorithm called recursive transaction
         launcher to generate transactional foobars recursively during runtime
@@ -158,7 +162,7 @@ Testing changes
 ---------------
 
 Test changes in your build environment before committing. To test your changes,
-rsync your changes to the build environment::
+rsync them to the build environment::
 
         rsync -avz --exclude=.git rockstor-core/ root@your_rockstor_vm:deploy_dir/
 
