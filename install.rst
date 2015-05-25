@@ -57,4 +57,4 @@ procurement, you can evaluate Rockstor on Amazon AWS. `Here
 started.
 
 Rockstor can also be evaluated quickly using Virtualbox. `Here
-<https://www.youtube.com/watch?v=p3izPNhsqA4>`_ is a short video on how to get started.
+<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ is a short video on how to get started.
