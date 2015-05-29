@@ -84,7 +84,7 @@ textarea.large { width: 400px; height: 300px; }
 }
 
 .navbar {
-  padding: 12px 0px 12px 0px;
+  padding: 10px 0px 10px 0px;
   margin-bottom: 0px;
   font-size: 12px/1.5em;
   /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
@@ -158,15 +158,15 @@ textarea.large { width: 400px; height: 300px; }
 
 /* navbar dropdown menu */
 .dropdown-menu > li > a {
-  color: #000;
+  color: #ffffff;
 }
 
 .dropdown-menu {
-  background: #fff;
+  background: #151515;
 }
 
 .navbar .nav > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu:after {
-  color: #000;
+  color: #ffffff;
 }
 
 /***/
@@ -250,23 +250,6 @@ textarea.large { width: 400px; height: 300px; }
 }
 
 
-.social_icons .fa-facebook:hover,
-.social_icons .fa-twitter:hover,
-.social_icons .fa-linkedin:hover,
-.social_icons .fa-github:hover,
-.social_icons .fa-youtube-play:hover {
-  transform: rotate(360deg);
-  -ms-transform:rotate(360deg);
-  -webkit-transform:rotate(360deg);
-  transition-duration:2s;
-  transition-property: all;
-  transition-timing-function: ease;
-  opacity:1;
-  transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
-}
 
 .social_icons .fa-facebook {
   background: #404040;
@@ -544,7 +527,7 @@ input[type="submit"] {
 }
 
 .btn {
-  padding: 9px 24px;
+  padding: 9px 24px !important;
   line-height: 18px;
   *line-height: 18px;
   font-size: 14px;
@@ -554,9 +537,9 @@ input[type="submit"] {
 }
 
 .btn-primary-main-story, .btn-primary-main-story:focus {
-  color: white;
+  color: white !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #e76545;
+  background-color: #e76545 !important;
   background-image: none;
   border: none;
   text-shadow: none;
@@ -569,7 +552,7 @@ input[type="submit"] {
 .btn-primary-main-story.disabled,
 .btn-primary-main-story[disabled] {
   color: #ffffff;
-  background-color: #FF502E;
+  background-color: #FF502E !important;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
