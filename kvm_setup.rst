@@ -6,7 +6,7 @@ If you are using a Linux desktop you have the option to use the GNU/linux KVM an
 
 Can I run the Linux KVM
 -----------------------
-This depends on weather you CPU has the appropriate capabilities; to find out on an ubuntu desktop you can install the cpu-checker program with the following command::
+This depends on you CPU having the appropriate capabilities; to find out on an ubuntu desktop you can install the cpu-checker program with the following command::
 
     sudo apt-get install cpu-checker
 
@@ -26,7 +26,7 @@ This is Ubuntu specific but may well work on other debian derivatives::
 
     sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
 
-N.B. it is required that one logout and then back in again after the above installs as then your linux user is able to acquire their new group privileges.
+N.B. it is required that one logs out and then back in again after the above installs as then your linux user is able to acquire their new group privileges.
 
 Setting up a KVM for Rockstor
 -----------------------------
