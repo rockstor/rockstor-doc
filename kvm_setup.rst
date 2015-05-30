@@ -67,36 +67,43 @@ Creating the Virtual Machine
 Starting the "Create a new virtual machine" wizard either from the File menu or the icon bar should show the first of 5 configuration dialogs.
 
 Step 1 - Method of install ie via **iso**
+
 .. image:: VMM_iso_step1.png
     :scale: 100%
     :align: center
 
 Step 2 - Select our install media; in this case the **Rockstor-#.#-#.iso**
+
 .. image:: VMM_iso_os_step2.png
     :scale: 100%
     :align: center
 N.B. In the above dialog we must also select OS type **Linux** and Version **Red Hat Enterprise Linux 7 (or later)**
 
 Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 on a quad core host
+
 .. image:: VMM_ram_step3.png
     :scale: 100%
     :align: center
 
 Step 4 - Set the **system drive** to install Rockstor on.
 N.B. as we have already created our named volumes tick **Select managed or other existing storage**
+
 .. image:: VMM_system_disk_step4.png
     :scale: 100%
     :align: center
 We should then be presented with the following dialog where we can select our pre-prepared **system-drive**
+
 .. image:: VMM_system_disk_step4_choose.png
     :scale: 100%
     :align: center
 
 Step 5 - Set our VM's **Name** and **tick "Customise configuration before install"**
+
 .. image:: VMM_customise-tick-step5.png
     :scale: 100%
     :align: center
 As we ticked customize we get the chance to modify our VM prior to its fist launch
+
 .. image:: VMM_system_disk_sata.png
     :scale: 100%
     :align: center
@@ -113,14 +120,18 @@ This is good practice and can simplify the install; as well as removing the poss
 The Rockstor Install
 ^^^^^^^^^^^^^^^^^^^^
 It only remains for you to boot the above configured Virtual Machine via the **Begin Installation** button in the top left of the last dialog.
+
 .. image:: VMM_iso_boot.png
     :scale: 100%
     :align: center
 
 Selecting the **Install Rockstor 3** option via the **Return Key** should result in
+
 .. image:: VMM_Installation_summary_screen.png
     :scale: 100%
     :align: center
+
+N.B. If you do not see the whole of the graphical install screen like in the above image you can select **View** and then **Resize to VM**
 
 Following the graphical installers prompts should result a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
 
