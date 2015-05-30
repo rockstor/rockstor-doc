@@ -85,8 +85,7 @@ Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 o
     :scale: 100%
     :align: center
 
-Step 4 - Set the **system drive** to install Rockstor on.
-As we have already created our named volumes tick **Select managed or other existing storage**
+Step 4 - Set the **system drive** to install Rockstor on. As we have already created our named volumes tick **Select managed or other existing storage.** Then click the **Browse** button.
 
 .. image:: VMM_system_disk_step4.png
     :scale: 100%
@@ -102,15 +101,15 @@ Step 5 - Set our VM's **Name** and **tick "Customise configuration before instal
 .. image:: VMM_customise_tick_step5.png
     :scale: 100%
     :align: center
-As we ticked customize we get the chance to modify our VM prior to its fist launch
+As we ticked customize we get the chance to modify our VM prior to its first launch
 
 .. image:: VMM_system_disk_sata.png
     :scale: 100%
     :align: center
-N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA**.
+N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA** and then clicking on Apply.
 This is necessary as otherwise the Red Had Kickstarter semi automated installer process can fail to identify the default kvm drive type of vda.
 
-If you receive a "Specified nonexistent disk sda in ignoredisk command" then look to this last setting.
+If during Rockstor installation you receive a "Specified nonexistent disk sda in ignoredisk command" then look to this last setting.
 
 VM Creation Summary
 ^^^^^^^^^^^^^^^^^^^
@@ -135,9 +134,20 @@ N.B. If you do not see the whole of the graphical install screen like in the abo
 
 Following the graphical installers prompts should result in a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
 
+Note that the installation media will be automatically removed in this first reboot; there by avoiding booting from the iso image again.
+
 Initial first boot configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The result should be similar to:
+The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The resulting page should look something like
+Note that getting to this page may first require adding an exception for the default self signed certificate used. It is possible to add a certificate later once the initial setup is complete.
+
+.. image:: Rockstor_first_login_page.png
+    :scale: 100%
+    :align: center
+
+In the above image the hostname has been entered as well as the user (admin) and their associated password.
+
+
 
 
 
