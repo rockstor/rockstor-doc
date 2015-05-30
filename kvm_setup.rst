@@ -54,11 +54,86 @@ Click on the New Volume button and create the system drive eg
 
 In the above we used the provided defaults but named our volume system-drive. The 8GB size coincides with the suggested minimum for Rockstor's install drive.
 
-Using the same procedure we can add additional drives for use by Rockstor as it's data drives.  The following illustrates the result of adding another 2 data drives each of 2GB.
+Using the same procedure we can add additional drives for use by Rockstor as it's data drives.  The following illustrates the result of adding another two data drives each of 2GB.
 
 .. image:: VMM_drives_created.png
     :scale: 100%
     :align: center
+
+Closing the above dialog and retuning to main window of Virtual Machine Manager we can proceed with creating the virtual machine that will use the storage / drives we have now defined.
+
+Creating the Virtual Machine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting the "Create a new virtual machine" wizard either from the File menu or the icon bar should show the first of 5 configuration dialogs.
+
+Step 1 - Method of install ie via **iso**
+.. image:: VMM_iso_step1.png
+    :scale: 100%
+    :align: center
+
+Step 2 - Select our install media; in this case the **Rockstor-#.#-#.iso**
+.. image:: VMM_iso_os_step2.png
+    :scale: 100%
+    :align: center
+N.B. In the above dialog we must also select OS type **Linux** and Version **Red Hat Enterprise Linux 7 (or later)**
+
+Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 on a quad core host
+.. image:: VMM_ram_step3.png
+    :scale: 100%
+    :align: center
+
+Step 4 - Set the **system drive** to install Rockstor on.
+N.B. as we have already created our named volumes tick **Select managed or other existing storage**
+.. image:: VMM_system_disk_step4.png
+    :scale: 100%
+    :align: center
+We should then be presented with the following dialog where we can select our pre-prepared **system-drive**
+.. image:: VMM_system_disk_step4_choose.png
+    :scale: 100%
+    :align: center
+
+Step 5 - Set our VM's **Name** and **tick "Customise configuration before install"**
+.. image:: VMM_customise-tick-step5.png
+    :scale: 100%
+    :align: center
+As we ticked customize we get the chance to modify our VM prior to its fist launch
+.. image:: VMM_system_disk_sata.png
+    :scale: 100%
+    :align: center
+N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA**.
+This is necessary as otherwise the Red Had Kickstarter semi automated installer process can fail to identify the default kvm drive type of vda.
+
+If you receive a "Specified nonexistent disk sda in ignoredisk command" then look to this last setting.
+
+VM Creation Summary
+^^^^^^^^^^^^^^^^^^^
+So in the above example we have added a single system drive/disk to our virtual machine; the system-drive.
+This is good practice and can simplify the install; as well as removing the possibility of accidentally installing onto existing data drives.
+
+The Rockstor Install
+^^^^^^^^^^^^^^^^^^^^
+It only remains for you to boot the above configured Virtual Machine via the **Begin Installation** button in the top left of the last dialog.
+.. image:: VMM_iso_boot.png
+    :scale: 100%
+    :align: center
+
+Selecting the **Install Rockstor 3** option via the **Return Key** should result in
+.. image:: VMM_Installation_summary_screen.png
+    :scale: 100%
+    :align: center
+
+Following the graphical installers prompts should result a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
+
+Initial first boot configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+
+
 
 
 
