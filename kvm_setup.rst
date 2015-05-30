@@ -138,14 +138,40 @@ Note that the installation media will be automatically removed in this first reb
 
 Initial first boot configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The resulting page should look something like
-Note that getting to this page may first require adding an exception for the default self signed certificate used. It is possible to add a certificate later once the initial setup is complete.
+The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The resulting page should look something like the following
 
 .. image:: Rockstor_first_login_page.png
     :scale: 100%
     :align: center
 
+Note that getting to the above page may first require adding an exception in the browser for the default self signed certificate used. It is possible to add a certificate later once the initial setup is complete.
+
 In the above image the hostname has been entered as well as the user (admin) and their associated password.
+
+Next we are greeted with the following:
+
+.. image:: Rockstor_update_now_page.png
+    :scale: 100%
+    :align: center
+
+Going with the default of **Update Now** gets us to:
+
+.. image:: Rockstor_auto_update_page.png
+    :scale: 100%
+    :align: center
+
+And finally the dashboard, prior to adding the data drives
+
+.. image:: Rockstor_dashboard_no_drives.png
+    :scale: 100%
+    :align: center
+
+Adding the data drives/disks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
 
 
 
