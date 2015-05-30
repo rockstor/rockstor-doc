@@ -60,7 +60,7 @@ Using the same procedure we can add additional drives for use by Rockstor as it'
     :scale: 100%
     :align: center
 
-Closing the above dialog and retuning to main window of Virtual Machine Manager we can proceed with creating the virtual machine that will use the storage / drives we have now defined.
+Close the above dialog and return to main window of Virtual Machine Manager to creating the virtual machine that will use the storage / drives we have now defined.
 
 Creating the Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +86,7 @@ Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 o
     :align: center
 
 Step 4 - Set the **system drive** to install Rockstor on.
-N.B. as we have already created our named volumes tick **Select managed or other existing storage**
+As we have already created our named volumes tick **Select managed or other existing storage**
 
 .. image:: VMM_system_disk_step4.png
     :scale: 100%
@@ -99,7 +99,7 @@ We should then be presented with the following dialog where we can select our pr
 
 Step 5 - Set our VM's **Name** and **tick "Customise configuration before install"**
 
-.. image:: VMM_customise-tick-step5.png
+.. image:: VMM_customise_tick_step5.png
     :scale: 100%
     :align: center
 As we ticked customize we get the chance to modify our VM prior to its fist launch
@@ -133,10 +133,11 @@ Selecting the **Install Rockstor 3** option via the **Return Key** should result
 
 N.B. If you do not see the whole of the graphical install screen like in the above image you can select **View** and then **Resize to VM**
 
-Following the graphical installers prompts should result a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
+Following the graphical installers prompts should result in a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
 
 Initial first boot configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The result should be similar to:
 
 
 
