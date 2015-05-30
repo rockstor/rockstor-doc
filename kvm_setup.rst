@@ -2,9 +2,9 @@ Rockstor in a GNU/Linux Kernel Virtual Machine (KVM)
 ====================================================
 A quick and easy way to evaluate Rockstor is by using a virtual machine. A virtual machine instance of Rockstor is also invaluable as part of a build environment.
 
-If you are using a Linux desktop you have the option to use the GNU/linux KVM and its associated GUI Virtual Machine Manager.  This can be more efficient than the more well know Oracle VirtualBox.
+If you are using a Linux desktop you have the option to use the GNU/Linux KVM and its associated GUI Virtual Machine Manager.  This can be more efficient than the more well know Oracle VirtualBox.
 
-Can I run the Linux KVM
+Can I run the Linux KVM?
 -----------------------
 This depends on you CPU having the appropriate capabilities; to find out on an ubuntu desktop you can install the cpu-checker program with the following command::
 
@@ -30,6 +30,39 @@ N.B. it is required that one logs out and then back in again after the above ins
 
 Setting up a KVM for Rockstor
 -----------------------------
+The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or virt-manager via command line.
+
+.. image:: VMM.png
+    :scale: 100%
+    :align: center
+
+This graphical assistant is fairly intuitive and can get a VM up and running by just following the built in "Create a new virtual machine" however if you like to be able to name your drives/volumes then creating them first will be necessary.
+
+Adding the virtual drives / disks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Double click on the localhost (QEMU) and select the storage tab
+
+.. image:: VMM_add_volumes.png
+    :scale: 100%
+    :align: center
+
+Click on the New Volume button and create the system drive eg
+
+.. image:: VMM_system_drive.png
+    :scale: 100%
+    :align: center
+
+In the above we used the provided defaults but named our volume system-drive. The 8GB size coincides with the suggested minimum for Rockstor's install drive.
+
+Using the same procedure we can add additional drives for use by Rockstor as it's data drives.  The following illustrates the result of adding another 2 data drives each of 2GB.
+
+.. image:: VMM_drives_created.png
+    :scale: 100%
+    :align: center
+
+
+
+
 
 
 
