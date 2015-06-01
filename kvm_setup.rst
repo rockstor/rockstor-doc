@@ -166,11 +166,11 @@ And finally the dashboard, prior to adding the data drives
     :scale: 100%
     :align: center
 
-Adding the data drives / disks to Rockstor KVM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding the data drives / disks to the Rockstor VM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Although Rockstor can make use of the unused space on the system drive (by creating shares within the rockstor_rockstor pool) this is strongly discouraged and limits what btrfs options are available; ie resize, compression, and deletion are not allowed.
 
-So we need to add the data-drive volumes we created earlier to the newly created virtual machine.  In some KVM configurations it is possible to hot-plug additional drives but this was not an option for me; so shutting down your virtual machine first is advisable.
+So we need to add the data-drive volumes we created earlier to the newly created virtual machine.  In some KVM configurations it is possible to hot-plug additional drives but this was not an option for me; so shutting down your Rockstor virtual machine first is advisable.
 
 Start by **double clicking** on the **Rockstor VM** listing within the main window of Virtual Machine Manager:
 
