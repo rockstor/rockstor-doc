@@ -199,7 +199,12 @@ Once both drives have been added our virtual machine details should look somethi
     :scale: 100%
     :align: center
 
-We can now boot our VM with its two shiny new 2GB virtual SATA drives for experimental / developmental purposes.
+We can now boot our Rockstor virtual machine with its two shiny new 2GB virtual SATA drives for experimental / developmental purposes.
+
+.. image:: rockstor_storage_2_data_drives.png
+    :scale: 100%
+    :align: center
+
 
 
 
