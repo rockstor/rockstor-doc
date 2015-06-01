@@ -4,6 +4,12 @@ A quick and easy way to evaluate Rockstor is by using a virtual machine. A virtu
 
 If you are using a Linux desktop you have the option to use the GNU/Linux KVM and its associated GUI Virtual Machine Manager.  This can be more efficient than the more well know Oracle VirtualBox.
 
+A note on networking
+^^^^^^^^^^^^^^^^^^^^
+In the following guide the default KVM networking arrangement is used (NAT); this is to minimize the network reconfiguration required on the host and essentially sets up a virtual router with NAT that allows all virtual guests and the host to communicate with each other.
+
+However this arrangement doesn't allow for the guest virtual machines to be accessible from other machines on the hosts lan.  This arrangement is sufficient for trialing Rockstor from the host machine via its ip or via its <hostname>.local but will hamper services that require lan name resolution.
+
 Can I run the Linux KVM?
 -----------------------
 This depends on you CPU having the appropriate capabilities; to find out on an ubuntu desktop you can install the cpu-checker program with the following command::
@@ -39,7 +45,7 @@ The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or 
 This graphical assistant is fairly intuitive and can get a virtual machine up and running by just following the built in "Create a new virtual machine" however if you like to be able to name your drives/volumes then creating them first will be necessary.
 
 Creating the virtual drives / disks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Double click on the localhost (QEMU) and select the storage tab
 
 .. image:: vmm_add_volumes.png
@@ -52,9 +58,11 @@ Click on the New Volume button and create the system drive eg
     :scale: 100%
     :align: center
 
-In the above we used the provided defaults but named our volume system-drive. The 8GB size coincides with the suggested minimum for Rockstor's install drive.
+In the above we used the provided defaults but named our volume **"system-drive"**. The 8GB size coincides at time of writing with the suggested minimum for Rockstor's install drive.
 
-Using the same procedure we can add additional drives for use by Rockstor as it's data drives.  The following illustrates the result of adding another two data drives each of 2GB.
+Current `minimum system requirements <http://rockstor.com/docs/quickstart.html#minimum-system-requirements>`_
+
+Using the same procedure we can add additional volumes for use by the Rockstor virtual machine as it's data drives.  The following illustrates the result of adding another two volumes; each of 2GB.
 
 .. image:: vmm_drives_created.png
     :scale: 100%
@@ -77,6 +85,7 @@ Step 2 - Select our install media; in this case the **Rockstor-#.#-#.iso**
 .. image:: vmm_iso_os_step2.png
     :scale: 100%
     :align: center
+
 N.B. In the above dialog we must also select OS type **Linux** and Version **Red Hat Enterprise Linux 7 (or later)**
 
 Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 on a quad core host
@@ -90,6 +99,7 @@ Step 4 - Set the **system drive** to install Rockstor on. As we have already cre
 .. image:: vmm_system_disk_step4.png
     :scale: 100%
     :align: center
+
 We should then be presented with the following dialog where we can select our pre-prepared **system-drive**
 
 .. image:: vmm_system_disk_step4_choose.png
@@ -101,18 +111,20 @@ Step 5 - Set our virtual machine's **Name** and **tick "Customise configuration 
 .. image:: vmm_customise_tick_step5.png
     :scale: 100%
     :align: center
+
 As we ticked customize we get the chance to modify our virtual machine prior to its first launch
 
 .. image:: vmm_system_disk_sata.png
     :scale: 100%
     :align: center
+
 N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA** and then clicking on Apply.
-This is necessary as otherwise the Red Had Kickstarter semi automated installer process can fail to identify the default KVM drive type of vda (a virtio block device).
+This is necessary as otherwise the Red Hat Kickstart semi automated installer process can fail to identify the default KVM drive type of vda (a virtio block device).
 
 If during Rockstor installation you receive a "Specified nonexistent disk sda in ignoredisk command" then look to this last setting.
 
 Virtual Machine Creation Summary
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 So in the above example we have added a single system drive/disk to our virtual machine; the system-drive.
 This is good practice and can simplify the install; as well as removing the possibility of accidentally installing onto existing data drives.
 
