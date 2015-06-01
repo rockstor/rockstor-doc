@@ -36,9 +36,9 @@ The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or 
     :scale: 100%
     :align: center
 
-This graphical assistant is fairly intuitive and can get a VM up and running by just following the built in "Create a new virtual machine" however if you like to be able to name your drives/volumes then creating them first will be necessary.
+This graphical assistant is fairly intuitive and can get a virtual machine up and running by just following the built in "Create a new virtual machine" however if you like to be able to name your drives/volumes then creating them first will be necessary.
 
-Adding the virtual drives / disks
+Creating the virtual drives / disks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Double click on the localhost (QEMU) and select the storage tab
 
@@ -96,29 +96,29 @@ We should then be presented with the following dialog where we can select our pr
     :scale: 100%
     :align: center
 
-Step 5 - Set our VM's **Name** and **tick "Customise configuration before install"**
+Step 5 - Set our virtual machine's **Name** and **tick "Customise configuration before install"**
 
 .. image:: VMM_customise_tick_step5.png
     :scale: 100%
     :align: center
-As we ticked customize we get the chance to modify our VM prior to its first launch
+As we ticked customize we get the chance to modify our virtual machine prior to its first launch
 
 .. image:: VMM_system_disk_sata.png
     :scale: 100%
     :align: center
 N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA** and then clicking on Apply.
-This is necessary as otherwise the Red Had Kickstarter semi automated installer process can fail to identify the default kvm drive type of vda.
+This is necessary as otherwise the Red Had Kickstarter semi automated installer process can fail to identify the default KVM drive type of vda (a virtio block device).
 
 If during Rockstor installation you receive a "Specified nonexistent disk sda in ignoredisk command" then look to this last setting.
 
-VM Creation Summary
+Virtual Machine Creation Summary
 ^^^^^^^^^^^^^^^^^^^
 So in the above example we have added a single system drive/disk to our virtual machine; the system-drive.
 This is good practice and can simplify the install; as well as removing the possibility of accidentally installing onto existing data drives.
 
 The Rockstor Install
 ^^^^^^^^^^^^^^^^^^^^
-It only remains for you to boot the above configured Virtual Machine via the **Begin Installation** button in the top left of the last dialog.
+It only remains for you to boot the above configured virtual machine via the **Begin Installation** button in the top left of the last dialog.
 
 .. image:: VMM_iso_boot.png
     :scale: 100%
@@ -136,8 +136,8 @@ Following the graphical installers prompts should result in a problem free insta
 
 Note that the installation media will be automatically removed in this first reboot; there by avoiding booting from the iso image again.
 
-Initial first boot configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Initial "first boot configuration"
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The resulting page should look something like the following
 
 .. image:: Rockstor_first_login_page.png
@@ -166,8 +166,43 @@ And finally the dashboard, prior to adding the data drives
     :scale: 100%
     :align: center
 
-Adding the data drives/disks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding the data drives / disks to Rockstor KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Although Rockstor can make use of the unused space on the system drive (by creating shares within the rockstor_rockstor pool) this is strongly discouraged and limits what btrfs options are available; ie resize, compression, and deletion are not allowed.
+
+So we need to add the data-drive volumes we created earlier to the newly created virtual machine.  In some KVM configurations it is possible to hot-plug additional drives but this was not an option for me; so shutting down your virtual machine first is advisable.
+
+Start by **double clicking** on the **Rockstor VM** listing within the main window of Virtual Machine Manager:
+
+.. image:: VMM_rockstor_listing.png
+    :scale: 100%
+    :align: center
+
+The resulting dialog once you select **View** then **Details** or clicking on the **lightbulb** icon will be similar to:
+
+.. image:: VMM_rockstor_details_system_drive_only.png
+    :scale: 100%
+    :align: center
+
+To add our previously prepared data volumes as virtual drives we **Add Hardware** and go through the same process as when we added the system-drive; only this time we select our data-drive-1 and data-drive-2 volumes, each in turn.
+
+.. image:: VMM_add_data_drive_1.png
+    :scale: 100%
+    :align: center
+
+The above image shows where **Select managed or other existing storage** has been selected and the **Browse** button has facilitated the selection of **data-drive-1**.
+N.B. it is important to select **Bus type** of **SATA** as then our drives appear as regular sata drives to Rockstor, virtio drives, although more efficient, are currently not supported.
+
+Once both drives have been added our virtual machine details should look something like:
+
+.. image:: VMM_added_the_data_drives_sata.png
+    :scale: 100%
+    :align: center
+
+We can now boot our VM with its two shiny new 2GB virtual SATA drives for experimental / developmental purposes.
+
+
+
 
 
 
