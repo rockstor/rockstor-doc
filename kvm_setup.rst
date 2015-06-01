@@ -32,7 +32,7 @@ Setting up a KVM for Rockstor
 -----------------------------
 The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or virt-manager via command line.
 
-.. image:: VMM.png
+.. image:: vmm.png
     :scale: 100%
     :align: center
 
@@ -42,13 +42,13 @@ Creating the virtual drives / disks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Double click on the localhost (QEMU) and select the storage tab
 
-.. image:: VMM_add_volumes.png
+.. image:: vmm_add_volumes.png
     :scale: 100%
     :align: center
 
 Click on the New Volume button and create the system drive eg
 
-.. image:: VMM_system_drive.png
+.. image:: vmm_system_drive.png
     :scale: 100%
     :align: center
 
@@ -56,7 +56,7 @@ In the above we used the provided defaults but named our volume system-drive. Th
 
 Using the same procedure we can add additional drives for use by Rockstor as it's data drives.  The following illustrates the result of adding another two data drives each of 2GB.
 
-.. image:: VMM_drives_created.png
+.. image:: vmm_drives_created.png
     :scale: 100%
     :align: center
 
@@ -68,42 +68,42 @@ Starting the "Create a new virtual machine" wizard either from the File menu or 
 
 Step 1 - Method of install ie via **iso**
 
-.. image:: VMM_iso_step1.png
+.. image:: vmm_iso_step1.png
     :scale: 100%
     :align: center
 
 Step 2 - Select our install media; in this case the **Rockstor-#.#-#.iso**
 
-.. image:: VMM_iso_os_step2.png
+.. image:: vmm_iso_os_step2.png
     :scale: 100%
     :align: center
 N.B. In the above dialog we must also select OS type **Linux** and Version **Red Hat Enterprise Linux 7 (or later)**
 
 Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2 on a quad core host
 
-.. image:: VMM_ram_step3.png
+.. image:: vmm_ram_step3.png
     :scale: 100%
     :align: center
 
 Step 4 - Set the **system drive** to install Rockstor on. As we have already created our named volumes tick **Select managed or other existing storage.** Then click the **Browse** button.
 
-.. image:: VMM_system_disk_step4.png
+.. image:: vmm_system_disk_step4.png
     :scale: 100%
     :align: center
 We should then be presented with the following dialog where we can select our pre-prepared **system-drive**
 
-.. image:: VMM_system_disk_step4_choose.png
+.. image:: vmm_system_disk_step4_choose.png
     :scale: 100%
     :align: center
 
 Step 5 - Set our virtual machine's **Name** and **tick "Customise configuration before install"**
 
-.. image:: VMM_customise_tick_step5.png
+.. image:: vmm_customise_tick_step5.png
     :scale: 100%
     :align: center
 As we ticked customize we get the chance to modify our virtual machine prior to its first launch
 
-.. image:: VMM_system_disk_sata.png
+.. image:: vmm_system_disk_sata.png
     :scale: 100%
     :align: center
 N.B. in the above we have changed what was **Disk 1** to the required **SATA Disk 1** by changing its "Disk bus" in **Advanced options** to **SATA** and then clicking on Apply.
@@ -120,13 +120,13 @@ The Rockstor Install
 ^^^^^^^^^^^^^^^^^^^^
 It only remains for you to boot the above configured virtual machine via the **Begin Installation** button in the top left of the last dialog.
 
-.. image:: VMM_iso_boot.png
+.. image:: vmm_iso_boot.png
     :scale: 100%
     :align: center
 
 Selecting the **Install Rockstor 3** option via the **Return Key** should result in
 
-.. image:: VMM_Installation_summary_screen.png
+.. image:: vmm_installation_summary_screen.png
     :scale: 100%
     :align: center
 
@@ -140,7 +140,7 @@ Initial "first boot configuration"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The rest of Rockstor's configuration is done via it's Web GUI interface; simply point you browser as the indicated ip address. The resulting page should look something like the following
 
-.. image:: Rockstor_first_login_page.png
+.. image:: rockstor_first_login_page.png
     :scale: 100%
     :align: center
 
@@ -150,19 +150,19 @@ In the above image the hostname has been entered as well as the user (admin) and
 
 Next we are greeted with the following:
 
-.. image:: Rockstor_update_now_page.png
+.. image:: rockstor_update_now_page.png
     :scale: 100%
     :align: center
 
 Going with the default of **Update Now** gets us to:
 
-.. image:: Rockstor_auto_update_page.png
+.. image:: rockstor_auto_update_page.png
     :scale: 100%
     :align: center
 
 And finally the dashboard, prior to adding the data drives
 
-.. image:: Rockstor_dashboard_no_drives.png
+.. image:: rockstor_dashboard_no_drives.png
     :scale: 100%
     :align: center
 
@@ -174,19 +174,19 @@ So we need to add the data-drive volumes we created earlier to the newly created
 
 Start by **double clicking** on the **Rockstor VM** listing within the main window of Virtual Machine Manager:
 
-.. image:: VMM_rockstor_listing.png
+.. image:: vmm_rockstor_listing.png
     :scale: 100%
     :align: center
 
 The resulting dialog once you select **View** then **Details** or clicking on the **lightbulb** icon will be similar to:
 
-.. image:: VMM_rockstor_details_system_drive_only.png
+.. image:: vmm_rockstor_details_system_drive_only.png
     :scale: 100%
     :align: center
 
 To add our previously prepared data volumes as virtual drives we **Add Hardware** and go through the same process as when we added the system-drive; only this time we select our data-drive-1 and data-drive-2 volumes, each in turn.
 
-.. image:: VMM_add_data_drive_1.png
+.. image:: vmm_add_data_drive_1.png
     :scale: 100%
     :align: center
 
@@ -195,7 +195,7 @@ N.B. it is important to select **Bus type** of **SATA** as then our drives appea
 
 Once both drives have been added our virtual machine details should look something like:
 
-.. image:: VMM_added_the_data_drives_sata.png
+.. image:: vmm_added_the_data_drives_sata.png
     :scale: 100%
     :align: center
 
