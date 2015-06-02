@@ -131,6 +131,8 @@ Virtual Machine Creation Summary
 So in the above example we have added a single system drive/disk to our virtual machine; the system-drive.
 This is good practice and can simplify the install; as well as removing the possibility of accidentally installing onto existing data drives.
 
+.. _vmmrockstorinstall:
+
 The Rockstor Install
 ^^^^^^^^^^^^^^^^^^^^
 It only remains for you to boot the above configured virtual machine via the **Begin Installation** button in the top left of the last dialog.

@@ -41,8 +41,8 @@ Installing Rockstor is quick and straight forward. Since Rockstor is based on
 CentOS, the anaconda installer looks similar to installation of CentOS, Redhat or
 Fedora.
 
-To find out how the installation process looks like, watch a 5 minute video by
-clicking `here <http://youtu.be/00k_RwwC5Ms>`_.
+To find out what the installation process looks like, watch a 5 minute video of
+ `a Rockstor VirtualBox install <http://youtu.be/00k_RwwC5Ms>`_, or :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup`
 
 .. raw:: html
 
