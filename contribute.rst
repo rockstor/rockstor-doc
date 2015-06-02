@@ -153,9 +153,9 @@ name to the AUTHORS file.
 Build Environment
 -----------------
 
-You need a build environment to test and develop your changes. A simple solution is to create a RockStor virtual machine using either `VirtualBox
-<https://www.virtualbox.org/>`_ or if you are using a Linux desktop `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You can find a `step by step setup process for VirtualBox
-<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel <https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a step by step setup process for :ref:`kvmsetup` in our documentation.
+You need a build environment to test and develop your changes. A simple solution is to create a RockStor virtual machine using either Oracle's `VirtualBox
+<https://www.virtualbox.org/>`_ or if you are using a Linux desktop then `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You can find a `VirtualBox Rockstor install demo
+<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel <https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a :ref:`kvmsetup` in our documentation.
 
 Testing changes
 ---------------

@@ -1,10 +1,10 @@
 .. _kvmsetup:
 
-Rockstor in a GNU/Linux Kernel Virtual Machine (KVM)
-====================================================
+Rockstor in Virtual Machine Manager guide
+=========================================
 A quick and easy way to evaluate Rockstor is by using a virtual machine. A virtual machine instance of Rockstor is also invaluable as part of a build environment.
 
-If you are using a Linux desktop you have the option to use the GNU/Linux KVM and its associated GUI Virtual Machine Manager.  This can be more efficient than the more well know Oracle VirtualBox.
+If you are using a Linux desktop you have the option to use the GNU/Linux KVM and its associated GUI Virtual Machine Manager.
 
 A note on networking
 --------------------
