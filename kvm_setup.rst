@@ -47,15 +47,15 @@ The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or 
 
 This graphical assistant is fairly intuitive and can get a virtual machine up and running by just following the built in "Create a new virtual machine" however if you like to be able to name your drives/volumes then creating them first will be necessary.
 
-Creating the virtual drives / disks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating the storage volumes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Double click on the localhost (QEMU) and select the storage tab
 
 .. image:: vmm_add_volumes.png
    :scale: 100%
    :align: center
 
-Click on the New Volume button and create the system drive eg
+Click on the New Volume button and create the system drive volume eg
 
 .. image:: vmm_system_drive.png
    :scale: 100%
@@ -134,7 +134,7 @@ This is good practice and can simplify the install; as well as removing the poss
 .. _vmmrockstorinstall:
 
 The Rockstor Install
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 It only remains for you to boot the above configured virtual machine via the **Begin Installation** button in the top left of the last dialog.
 
 .. image:: vmm_iso_boot.png
