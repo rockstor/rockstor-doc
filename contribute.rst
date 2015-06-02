@@ -78,7 +78,7 @@ merged.
 Get started
 -----------
 
-Since we rely on github services, you need to create a profile on `Github
+Since we rely on github services, you need to create a profile on `github.com
 <https://github.com/>`_.
 
 The main RockStor repository is called rockstor-core. Go to its `main page

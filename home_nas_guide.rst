@@ -1,4 +1,4 @@
-.. _homenasguide
+.. _homenasguide:
 
 Home Nas Guide
 ==============
