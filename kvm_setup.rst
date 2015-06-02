@@ -60,7 +60,7 @@ Click on the New Volume button and create the system drive eg
 
 In the above we used the provided defaults but named our volume **"system-drive"**. The 8GB size coincides at time of writing with the suggested minimum for Rockstor's install drive.
 
-Current `minimum system requirements <http://rockstor.com/docs/quickstart.html#minimum-system-requirements>`_
+Current :ref:`minsysreqs`
 
 Using the same procedure we can add additional volumes for use by the Rockstor virtual machine as it's data drives.  The following illustrates the result of adding another two volumes; each of 2GB.
 
