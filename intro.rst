@@ -4,7 +4,7 @@ Introduction
 
 Rockstor is a **free enterprise class file storage platform**. At the
 foundation, it is a CentOS flavored Linux operating system tailored for storage
-usecases. Rockstor brings together technologies including the Linux kernel,
+use cases. Rockstor brings together technologies including the Linux kernel,
 BTRFS filesystem, SystemTap and our own free software stack to deliver a
 compelling solution.
 
@@ -20,12 +20,12 @@ visualization and programmable orchestration.
 so.
 
 4. The above unique combination translates to lower capital and operational
-costs of your storage infratructure.
+costs of your storage infrastructure.
 
-Supported usecases
-------------------
+Supported use cases
+-------------------
 
-Rockstor addresses the **NAS/Filer** usecase. It can be installed on bare
+Rockstor addresses the **NAS/Filer** use case. It can be installed on bare
 metal or as a virtual machine.
 
 
@@ -34,7 +34,7 @@ Features
 
 Below is the list of all features supported in Rockstor at a glance. Features
 in *prod* status are production ready where as *beta* indicates features not
-yet ready for primetime. Some unsupported and planned features are also listed
+yet ready for prime time. Some unsupported and planned features are also listed
 for clarity.
 
 +-----------------------------+---------+--------------------------------+
@@ -72,10 +72,10 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | NIS                         | prod    |                                |
 +-----------------------------+---------+--------------------------------+
-| Smart probes                | beta    | ondemand deep insights         |
+| Smart probes                | beta    | on demand deep insights        |
 +-----------------------------+---------+--------------------------------+
-| Smart probe data            | beta    | visualization of ondemand deep |
-| visualization               |         | insights                       |
+| Smart probe data            | beta    | visualization of on demand     |
+| visualization               |         | deep insights                  |
 +-----------------------------+---------+--------------------------------+
 | NFS server side analytics   | beta    |                                |
 +-----------------------------+---------+--------------------------------+
