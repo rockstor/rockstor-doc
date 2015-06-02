@@ -1,3 +1,4 @@
+.. highlight:: shell
 .. _kvmsetup:
 
 Rockstor in Virtual Machine Manager guide
@@ -18,8 +19,7 @@ This depends on you CPU having the appropriate capabilities; to find out on an u
 
     sudo apt-get install cpu-checker
 
-Once this program is installed you can execute the following command in a terminal
-::
+Once this program is installed you can execute the following command in a terminal::
 
     kvm-ok
 
