@@ -55,13 +55,13 @@ Hard drives to hold your data. Multiple hard drives are recommended, to create p
       
 Download the RockStor iso at `http://www.rockstor.com/downloads <http://rockstor.com/downloads.html>`_
 
-If you are using a USB drive as the installation media, prepare the USB drive with the RockStor iso, by following the instructions `here <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
+If you are using a USB drive as the installation media, prepare the USB drive with the RockStor iso by following `these instructions <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
 
 **Installation and Setup**
 
 Insert both the flash drives into the server. Set the flash drive containing the iso as the boot disk, and during installation, select the other flash drive as the destination to install RockStor.
 
-Install RockStor using the installation instructions provided `here <http://rockstor.com/docs/quickstart.html#quickstartguide>`_
+Install RockStor using the installation instructions provided in our :ref:`quickstartguide` Guide
 
 **Using RockStor**
         
