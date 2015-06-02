@@ -29,13 +29,10 @@ translates to most commodity servers with more than a couple of disk
 drives. Based on your cost constraints and performance requirements, several
 hardware configurations are possible as described below.
 
-Home NAS
-^^^^^^^^
-Coming soon...
+Small Office or Home NAS
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Small office NAS
-^^^^^^^^^^^^^^^^
-Coming soon...
+See our :ref:`sohoguide`
 
 All Flash NAS
 ^^^^^^^^^^^^^

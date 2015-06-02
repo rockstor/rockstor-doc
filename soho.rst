@@ -1,3 +1,4 @@
+.. _sohoguide:
 
 Small Office Fileserver with RockStor
 =====================================
