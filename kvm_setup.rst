@@ -151,7 +151,7 @@ N.B. If you do not see the whole of the graphical install screen like in the abo
 
 Following the graphical installers prompts should result in a problem free install and once complete the virtual system should rebooted and the initial minimal configuration can be done.
 
-Note that the installation media will be automatically removed in this first reboot; there by avoiding booting from the iso image again.
+Note that the installation media will be automatically removed from the virtual machine during this first reboot; there by avoiding booting from the iso image again.
 
 Initial "first boot configuration"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
