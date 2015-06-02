@@ -1,5 +1,7 @@
-Home Nas Guide 
-================
+.. _homenasguide
+
+Home Nas Guide
+==============
 
 **A guide to setting up a Fileserver / NAS (Network attached storage) for your home using Rockstor**
 
@@ -17,14 +19,12 @@ This guide looks at how to build your own NAS using easily available
 hardware, and the RockStor storage server.
 RockStor is an open-source storage server based on linux, that can be
 installed on commodity hardware.
-      
-      
-     
+
 Hardware
----------
+--------
 
 hardware components for a home NAS build
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       
 **A Server**
           

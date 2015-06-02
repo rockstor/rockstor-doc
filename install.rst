@@ -32,7 +32,7 @@ hardware configurations are possible as described below.
 Small Office or Home NAS
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-See our :ref:`sohoguide`
+See our :ref:`sohoguide` or our :ref:`homenasguide`
 
 All Flash NAS
 ^^^^^^^^^^^^^
