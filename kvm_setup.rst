@@ -66,11 +66,11 @@ Current :ref:`minsysreqs`
 
 Using the same procedure we can add additional volumes for use by the Rockstor virtual machine as it's data drives.  The following illustrates the result of adding another two volumes; each of 2GB.
 
-.. image:: vmm_drives_created.png
+.. image:: vmm_volumes_created.png
    :scale: 100%
    :align: center
 
-Close the above dialog and return to main window of Virtual Machine Manager to creating the virtual machine that will use the storage / drives we have now defined.
+Close the above dialog and return to the main window of Virtual Machine Manager to creating the virtual machine that will use the storage volumes we have now defined.
 
 Creating the Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
