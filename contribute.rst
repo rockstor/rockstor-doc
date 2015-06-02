@@ -50,12 +50,11 @@ Our development process is very simple and straight forward. `Github
 <https://github.com>`_ is our
 primary framework for all collaboration including issue tracking, design, and
 development. Before you make any contribution subject to
-copyright, we ask you to fillout an online Contributor License
-Agreement(CLA). We tried to keep the agreement as simple as possible. Please
-click `here <http://rockstor.com/cla.html>`_ to submit the form.
+copyright, we ask you to fill out an `online Contributor License
+Agreement(CLA) <http://rockstor.com/cla.html>`_. We tried to keep the agreement as simple as possible.
 
 We use the wonderful tool `Git <http://git-scm.com/>`_ for source code
-management and `Github <https://github.com/organizations/rockstor>`_ for issue
+management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
 tracking, hosting and collaboration in general. You can use the "git" command
 line tool on Linux or alternatively use `Eclipse <http://www.eclipse.org/>`_
 with `Egit <http://wiki.eclipse.org/EGit/User_Guide>`_ plugin. The development
