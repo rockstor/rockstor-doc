@@ -1,3 +1,5 @@
+.. _kvmsetup:
+
 Rockstor in a GNU/Linux Kernel Virtual Machine (KVM)
 ====================================================
 A quick and easy way to evaluate Rockstor is by using a virtual machine. A virtual machine instance of Rockstor is also invaluable as part of a build environment.
