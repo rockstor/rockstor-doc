@@ -50,12 +50,11 @@ Our development process is very simple and straight forward. `Github
 <https://github.com>`_ is our
 primary framework for all collaboration including issue tracking, design, and
 development. Before you make any contribution subject to
-copyright, we ask you to fillout an online Contributor License
-Agreement(CLA). We tried to keep the agreement as simple as possible. Please
-click `here <http://rockstor.com/cla.html>`_ to submit the form.
+copyright, we ask you to fill out an `online Contributor License
+Agreement(CLA) <http://rockstor.com/cla.html>`_. We tried to keep the agreement as simple as possible.
 
 We use the wonderful tool `Git <http://git-scm.com/>`_ for source code
-management and `Github <https://github.com/organizations/rockstor>`_ for issue
+management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
 tracking, hosting and collaboration in general. You can use the "git" command
 line tool on Linux or alternatively use `Eclipse <http://www.eclipse.org/>`_
 with `Egit <http://wiki.eclipse.org/EGit/User_Guide>`_ plugin. The development
@@ -79,7 +78,7 @@ merged.
 Get started
 -----------
 
-Since we rely on github services, you need to create a profile on `Github
+Since we rely on github services, you need to create a profile on `github.com
 <https://github.com/>`_.
 
 The main RockStor repository is called rockstor-core. Go to its `main page
@@ -153,10 +152,9 @@ name to the AUTHORS file.
 Build Environment
 -----------------
 
-You need a build environment to test and develop your changes. A simple
-solution is to create a RockStor virtual machine using `VirtualBox
-<https://www.virtualbox.org/>`_. You can find detailed setup process `here
-<http://rockstor.com/vbox_setup.html>`_.
+You need a build environment to test and develop your changes. A simple solution is to create a RockStor virtual machine using either Oracle's `VirtualBox
+<https://www.virtualbox.org/>`_ or if you are using a Linux desktop then `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You can find a `VirtualBox Rockstor install demo
+<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel <https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a :ref:`kvmsetup` in our documentation.
 
 Testing changes
 ---------------

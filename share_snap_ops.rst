@@ -1,6 +1,6 @@
 
 Shares, Snapshots and Clones
-====================
+============================
 
 .. _createshare:
 

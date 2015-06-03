@@ -21,7 +21,7 @@ How is Rockstor different from other software NAS products?
 
 Just like other NAS products, Rockstor supports file storage via popular
 protocols(NFS, Samba/CIFS, SFTP). With the exception of that broad similarity,
-there are many differences. Rockstor runs on Linux kernel and uses BTRFS as the
+there are many differences. Rockstor runs on the Linux kernel and uses BTRFS as the
 underlying filesystem. It makes storage management easy with smart features and
 a powerful UI. It exposes a RESTful API to be used as a high performance
 storage backend in Cloud infrastructure. These are just a few differences. Give
@@ -47,7 +47,7 @@ work with us to get new features added in the future.
 How much does Rockstor cost?
 ----------------------------
 
-Zero USD. You can use the product in it's entirety for free of cost and explore
+Zero USD. You can use the product in it's entirety free of charge and explore
 `Free Support <http://rockstor.com/free_support.html>`_ options. `Commercial
 support <http://rockstor.com/commercial_support.html>`_ is also
 available. Additionally, you can hire us if you need custom integration with
@@ -72,7 +72,7 @@ information.
 What is a quick way to evaluate Rockstor?
 -----------------------------------------
 
-For quick evaluation, install Rockstor on Virtual Box, VMWare or try it out on
+For quick evaluation, install Rockstor on Virtual Box, Virtual Machine Manager, VMWare or try it out on
 Amazon EC2. See :ref:`quickeval` for more information.
 
 
@@ -80,10 +80,10 @@ Do you have any hardware recommendations?
 -----------------------------------------
 
 For home or small business use, we've seen Rockstor install flawlessly on
-HP, DELL and supermicro servers and desktops. The developers of Rockstor
+HP, DELL and Supermicro servers and desktops. The developers of Rockstor
 use HP Micro servers for individual use.
 
-Rockstor also installs smoothly on latest generation servers from vendors like
+Rockstor also installs smoothly on the latest generation of servers from vendors like
 HP and Supermicro.
 
 
@@ -95,7 +95,7 @@ that your data is important and that you don't like to lose it. So, we create
 and test staging releases more frequently, but production/public updates are
 made available once a month or so. Rockstor should be updated directly from the
 web-ui when it indicates that an update is available. It's a simple,
-non-disruptive process and takes couple of mouse clicks and a few minutes.
+non-disruptive process and takes only a couple of mouse clicks and a few minutes.
 
 How is Rockstor licensed?
 -------------------------
@@ -114,8 +114,8 @@ straight forward and specific.
 What Filesystems are supported by Rockstor?
 -------------------------------------------
 
-BTRFS all the way! Though there's lot more to Rockstor than the filesystem, at
-the core Rockstor productizes neat features of BTRFS filesystem.
+BTRFS all the way! Though there's a lot more to Rockstor than the filesystem, at
+the core Rockstor productizes neat features of the BTRFS filesystem.
 
 How do I prevent data loss with Rockstor?
 -----------------------------------------
@@ -167,16 +167,16 @@ provide volumes for Rockstor.
 Rockstor also comes with a backup plugin, making it a suitable backup target to
 replicate data from other NAS products.
 
-Can Rockstor support my specific storage usecase?
----------------------------------------------------
+Can Rockstor support my specific storage use case?
+--------------------------------------------------
 
 You can `contact us <http://rockstor.com/feedback.html>`_ with your requirements
 and we will get in touch with you. We do storage services and support
 and are happy to enable you to use Rockstor for your storage requirements.
 
 
-How can I stay in touch with latest Rockstor news?
---------------------------------------------------
+How can I stay in touch with the latest Rockstor news?
+------------------------------------------------------
 
 You can follow the `rockstor-core project
 <https://github.com/rockstor/rockstor-core>`_ on github, join the `mailing list <https://lists.sourceforge.net/lists/listinfo/rockstor-announce>`_,
