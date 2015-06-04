@@ -60,12 +60,17 @@ ul.large li { font-size: 118%; line-height: 1.5em; }
 .smallfont { font-size: 0.9em; line-height: 1.5em; }
 /***/
 
+h3 .a {
+    text-decoration: none;
+}
+
 hr { border-top: 1px solid #ccc; margin: 6px 0px 20px 0px; }
 
 .inner-container { padding: 12px 12px 20px 12px; }
 
 /* links */
-a { text-decoration: none; color: #098AE6; outline: 0 !important; }
+a { text-decoration: none; color: #e76545; outline: 0 !important; }
+a:hover { text-decoration: underline; color: #e76545; outline: 0 !important; }
 
 /* input classes */
 input.large { width: 400px; }
@@ -75,11 +80,11 @@ textarea.large { width: 400px; height: 300px; }
 .navbar-outer {
   /*border-bottom: 1px solid #ddd;*/
   /*padding-bottom: 24px; padding-top: 24px;*/
-  background: #eee;
+  background: #151515;
 }
 
 .navbar {
-  padding: 12px 0px 12px 0px;
+  padding: 10px 0px 10px 0px;
   margin-bottom: 0px;
   font-size: 12px/1.5em;
   /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
@@ -100,7 +105,7 @@ textarea.large { width: 400px; height: 300px; }
 .nav li a { font-size: 14px; }
 .navbar .nav>li>a { 
   text-shadow: none; 
-  color: #000; 
+  color: #FFFFFF;
   padding: 10px 10px;
   text-transform: uppercase;
   font-size: 13px;
@@ -122,7 +127,7 @@ textarea.large { width: 400px; height: 300px; }
 }
 
 .navbar .nav>li>a:hover {
-  color: #6191bf;
+  color: #e76545;
   text-decoration: none;
   background-color: none;
 }
@@ -134,7 +139,7 @@ textarea.large { width: 400px; height: 300px; }
 }
 
 .navbar .nav li.dropdown.open>.dropdown-toggle, .navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle {
-  color: #000;
+  color: #e76545;
   background-color: transparent;
 }
 
@@ -153,15 +158,15 @@ textarea.large { width: 400px; height: 300px; }
 
 /* navbar dropdown menu */
 .dropdown-menu > li > a {
-  color: #000;
+  color: #ffffff;
 }
 
 .dropdown-menu {
-  background: #fff;
+  background: #151515;
 }
 
 .navbar .nav > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu:after {
-  color: #000;
+  color: #ffffff;
 }
 
 /***/
@@ -213,6 +218,84 @@ textarea.large { width: 400px; height: 300px; }
 .module .edit-module {
   float: right;
 }
+
+
+/* Social Icons */
+
+
+.social_icons
+{
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: block;
+}
+
+.social_icons
+{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.social_icons a i{
+  border-radius: 50%;
+  color: #FFFFFF;
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  padding: 0;
+  text-align: center;
+  width: 25px;
+  opacity:.8;
+}
+
+
+
+.social_icons .fa-facebook {
+  background: #404040;
+}
+
+.social_icons .fa-twitter {
+  background: #404040;
+}
+
+.social_icons .fa-youtube-play {
+  background: #404040;
+}
+
+.social_icons .fa-linkedin {
+  background: #404040;
+}
+
+.social_icons .fa-github{
+  background: #404040;
+}
+
+
+
+
+
+
+.social_icons .fa-facebook:hover {
+  background: #3b5998;
+}
+
+.social_icons .fa-twitter:hover {
+  background: #20B8FF;
+}
+
+.social_icons .fa-youtube-play:hover {
+  background: #D34836;
+}
+
+.social_icons .fa-linkedin:hover{
+  background: #0976b4;
+}
+
+.social_icons .fa-github:hover{
+  background: #666;
+}
+
 
 
 /* Tables */
@@ -271,7 +354,7 @@ table.tablesorter tbody td {
 */
 
 table.tablesorter thead tr th.title {
-  background: ##9AB5C8;
+  background: #9AB5C8;
 }
 
 table.tablesorter thead tr th.title h4 {
@@ -444,7 +527,7 @@ input[type="submit"] {
 }
 
 .btn {
-  padding: 9px 24px;
+  padding: 9px 24px !important;
   line-height: 18px;
   *line-height: 18px;
   font-size: 14px;
@@ -454,9 +537,9 @@ input[type="submit"] {
 }
 
 .btn-primary-main-story, .btn-primary-main-story:focus {
-  color: white;
+  color: white !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #FF7F66;
+  background-color: #e76545 !important;
   background-image: none;
   border: none;
   text-shadow: none;
@@ -469,7 +552,7 @@ input[type="submit"] {
 .btn-primary-main-story.disabled,
 .btn-primary-main-story[disabled] {
   color: #ffffff;
-  background-color: #FF502E;
+  background-color: #FF502E !important;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
@@ -831,6 +914,7 @@ ul.main-story-featurelist {
 .sphinxsidebarwrapper {
   background: rgb(238, 238, 238);
   padding: 4px 20px 20px 20px !important;
+    border-radius: 3px;
 }
 li { line-height: 24px; }
 
