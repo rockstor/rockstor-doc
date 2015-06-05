@@ -167,7 +167,7 @@ rsync them to the build environment::
 If you are deploying for the first time or like a clean deployment, execute the
 following command in your deploy directory::
 
-        [root@your_rockstor_vm deploy_dir]# python27 bootstrap.py
+        [root@your_rockstor_vm deploy_dir]# python2.7 bootstrap.py
 
 The next step is to build RockStor with your new changes. This takes a long
 time for a clean deployment, but subsequent deployments execute very quickly::
