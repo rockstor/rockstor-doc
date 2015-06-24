@@ -9,64 +9,56 @@ developer and user community. Anyone can contribute in a number of different way
 
 .. _storageexperts:
 
-Storage experts
+Non developers
 ---------------
 
-Domain experts have been involved in RockStor development right from the
-beginning. While RockStor started with visionary ideas of Smart capabilities
-and an Open paradigm, the core team has expertise in the Storage industry.
+There is a lot you can do other than coding that is essential to the
+project. First, please join our `community discussion forum
+<http://forum.rockstor.com>`_. It's the central location where all discussions
+take place. If you need help, share an idea, suggest a new feature etc.. Forum
+is a great place to start. Being active there could be very helpful to the
+project and our community.
 
-RockStor is a community effort and we believe that domain experts are essential
-in making RockStor a successful platform. If you are a Storage administrator,
-Systems engineer, Linux administrator, Filesystems expert, Technical manager, or
-simply a techie with deep interest in the Storage infrastructure space, we
-welcome you to join our community.
+Contributions such as testing and reporting bugs are tremendously helpful and
+greatly appreciated.
 
-You can contribute to Rockstor by
-
-1. Participating in feature requests and the specification process via `RockStor
-issue tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
-
-2. Join and participate in our `mailing list
-<http://sourceforge.net/mailarchive/forum.php?forum_name=rockstor-devel>`_.
-
-3. Testing stable and release candidates of
-RockStor.
-
-4. Reporting bugs to help other community members via `RockStor issue tracker
-<https://github.com/organizations/rockstor/dashboard/issues>`_.
+You can also contribute to the documentation of the project. For details go to
+the `rockstor-doc repository on Github
+<https://github.com/rockstor/rockstor-doc>`_.
 
 .. _developers:
 
-Software Engineers
-------------------
+Developers
+----------
 
-Developing RockStor to deliver on its unique value proposition of being a Smart,
-Powerful, and Open storage platform is a major effort. If you are passionate
-about Open Source and Storage like us; you are in the right company. We welcome
-you to join our community.
+Developing Rockstor to deliver on its unique value proposition of being a
+Smart, Powerful, and Open storage platform is a major effort. If you are
+passionate about Open Source and Storage like us, you are in the right
+company. We welcome you to join our community. Please begin by joining our
+`community discussion forum <http://forum.rockstor.com>`_.
 
-Our development process is very simple and straight forward. `Github
-<https://github.com>`_ is our
-primary framework for all collaboration including issue tracking, design, and
-development. Before you make any contribution subject to
-copyright, we ask you to fill out an `online Contributor License
-Agreement(CLA) <http://rockstor.com/cla.html>`_. We tried to keep the agreement as simple as possible.
+Our development process is simple and straight forward. There is currently one
+main reposistory called `rockstor-core on Github
+<https://github.com/rockstor/rockstor-core>`_. Begin by `forking it
+<https://github.com/rockstor/rockstor-core#fork-destination-box>`_.
 
-We use the wonderful tool `Git <http://git-scm.com/>`_ for source code
+We use the wonderful `Git <http://git-scm.com/>`_ for source code
 management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
-tracking, hosting and collaboration in general. You can use the "git" command
-line tool on Linux or alternatively use `Eclipse <http://www.eclipse.org/>`_
-with `Egit <http://wiki.eclipse.org/EGit/User_Guide>`_ plugin. The development
-process is as follows:
+tracking. We'll assume you have basic proficiency with Git and are familiar
+with it using a text editor or IDE of your choice. Emacs, Vim,
+Eclipse and PyCharm are some recommendations. We'll further assume that you
+have your laptop ready with git and an editor.
 
-1. Search for an existing issue or start a new issue using the `Rockstor Issue
-Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_
+After you've forked the rockstor-core repo, clone the fork onto your
+laptop. The high level flow of a new contribution is as follows.
 
-2. You can also just start a conversation on our mailing list before creating a
-new issue.
+1. Search for an existing issue or start a new issue using the `Issue
+Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
-3. Submit your changes as a `pull request
+2. Make code changes
+.
+
+3. Submit your changes in a single `pull request
 <https://help.github.com/articles/using-pull-requests>`_.
 
 4. Use the issue tracker for discussions as
@@ -75,61 +67,70 @@ necessary.
 5. Close the issue when your pull request is
 merged.
 
-Get started
------------
+Let's walk through this process in detail.
+
+Local git repo setup
+--------------------
 
 Since we rely on github services, you need to create a profile on `github.com
 <https://github.com/>`_.
 
-The main RockStor repository is called rockstor-core. Go to its `main page
-<https://github.com/rockstor/rockstor-core>`_ and click on the "Fork"
-button. This will fork the rockstor-core repository into your profile which
-serves as your own parallel git universe. The process is the same for any other
-repository.
+Go to `rockstor-core repo <https://github.com/rockstor/rockstor-core>`_ and
+click on the "Fork" button. This will fork the repository into your profile
+which serves as your private git remote called origin. Next few git steps are
+demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
+have ways to completely avoid the terminal, but using the terminal makes you
+`look cool <https://www.youtube.com/watch?v=51lGCTgqE_w>`_.
 
-Clone your forked rockstor repository onto your local development environment
-::
+Clone your rockstor-core fork onto your local development environment. You can
+do this in any directory, but chances are you have a project directory
+appropriate for this. Let's assume you have a projects directory in your
+home(~/projects) where you'd like to clone to. ::
 
-        git clone https://github.com/your_github_username/rockstor-core.git
+        [you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-core.git
 
-Now change into the directory the above command should have created::
+The above command creates a local rockstor-core git repo in a new directory by
+the same name(rockstor-core). Change into it::
 
-        cd rockstor-core
+        [you@your_laptop ~/projects]# cd rockstor-core
 
-Configure this new git repo with your name and email address. This is helpful in
-keeping an accurate record of collaboration::
+Configure this new git repo with your name and email address. This is required
+for accurate record of collaboration::
 
-        git config user.name "Firstname Lastname"
-        git config user.email your_email_address
+        [you@your_laptop rockstor-core]# git config user.name "Firstname Lastname"
+        [you@your_laptop rockstor-core]# git config user.email your_email_address
 
-Setup your fork's master branch to sync with the main repository. Here's the
-command to set it up for rockstor-core repository::
+Add a remote called upstream to periodically rebase your local repository with
+changes in the upstream made by other contributors::
 
-        git remote add rockstor-core https://github.com/rockstor/rockstor-core.git
+        [you@your_laptop rockstor-core]# git remote add upstream https://github.com/rockstor/rockstor-core.git
 
-Here is the command to subsequently pull updates and sync up your master
-branch::
-
-        git pull --rebase rockstor-core master
 
 Making changes
 --------------
 
-We request that you commit your changes a certain way to help other developers
-and keep the merge process smooth. As a guiding principle, separate your
-changes into one or more logically independent commits.
+We'll assume you have identified an issue(eg: #1234) from the `issue tracker
+<https://github.com/rockstor/rockstor-core/issues>`_ to work on. First, start
+with the latest code by rebasing your local repo with upstream::
 
-When you start working on an issue, create a separate branch for that issue
-with the issue number as part of the name. You can then start working and
-commiting changes in that branch. Here is the command to create a new branch::
+        [you@your_laptop rockstor-core]# git pull --rebase upstream master
 
-        git checkout -b issue#1234_brief_label
+Checkout a new/separate branch for your issue. For example::
+
+        [you@your_laptop rockstor-core]# git checkout -b issue#1234_brief_label
+
+You can then start making changes in this branch.
+
+We strongly encourage you to commit changes a certain way to help other
+developers and keep the merge process smooth. As a guiding principle, separate
+your changes into one or more logically independent commits.
 
 We request that you divide a commit message into three parts. Start the message
 with a single line summary, about 70 characters in length. Add a blank line
-after that. Finally, describe the change in more detail in plain text format
-where each line is no more than 80 characters. This description should be in
-present tense. Below is a fictional example::
+after that. If you want to add more than a summary to your commit message,
+describe the change in more detail in plain text format where each line is no
+more than 80 characters. This description should be in present tense. Below is
+a fictional example::
 
         foobar functionality for rockstor
 
@@ -146,88 +147,156 @@ present tense. Below is a fictional example::
         #       new file:   foobar.py
         #
 
-If you'd like credit for your patch or you are a frequent contributor, add your
-name to the AUTHORS file.
+If you'd like credit for your patch or if you are a frequent contributor, you
+should add your name to the AUTHORS file.
 
-Build Environment
------------------
+Build VM
+--------
 
-You need a build environment to test and develop your changes. A simple solution is to create a RockStor virtual machine using either Oracle's `VirtualBox
-<https://www.virtualbox.org/>`_ or if you are using a Linux desktop then `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You can find a `VirtualBox Rockstor install demo
-<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel <https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a :ref:`kvmsetup` in our documentation.
+You need a Virtual Machine(VM) to build and test your changes. An easy solution
+is to create a RockStor VM using either Oracle's `VirtualBox
+<https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
+`Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
+can find a `VirtualBox Rockstor install demo
+<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel
+<https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a
+:ref:`kvmsetup` in our documentation.
 
-Testing changes
----------------
+Helpful terms
+-------------
 
-Test changes in your build environment before committing. To test your changes,
-rsync them to the build environment::
+In the following sections, we use some terms in the commands. Here's a short
+explanation of these terms
 
-        rsync -avz --exclude=.git rockstor-core/ root@your_rockstor_vm:deploy_dir/
+1. **laptop**: This is your laptop or desktop computer.
 
-If you are deploying for the first time or like a clean deployment, execute the
-following command in your deploy directory::
+2. **rockstor-core**: This is a directory on your laptop containing your local
+   rockstor-core repo. In my case, it's ~/Learnix/rockstor-core
 
-        [root@your_rockstor_vm deploy_dir]# python27 bootstrap.py
+2. **build_vm**: IP address of your build VM. In my case, I use Virtualbox
+   with host-only adapter and get an ip in 192.168.56.101-254 range.
 
-The next step is to build RockStor with your new changes. This takes a long
-time for a clean deployment, but subsequent deployments execute very quickly::
+3. **build_dir**: The directory on the build VM where you like to copy the code to
+   and build. In my case, I picked /opt/build/.
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/buildout -N
+Build VM initial setup
+----------------------
 
-Once the deployment succeeds as indicated by the above step, start the rockstor
-services which are managed by supervisord. First start the supervisord process
-with::
+Transfer the code from your laptop to the build VM ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/supervisord -c etc/supervisord.conf
+        [you@laptop ]# rsync -avz --exclude=.git /path/to/rockstor-core/ root@build_vm:/path/to/build_dir/
 
-You will notice that all three rockstor services, namely, nginx, gunicorn and
-smart_manager are in STOPPED state::
+If you are building for the first time or like a clean build, execute the
+following command in your deploy directory ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/supervisorctl status
-        gunicorn                         STOPPED    Not started
-        nginx                            STOPPED    Not started
-        smart_manager                    STOPPED    Not started
+        [root@build_vm ]# python /path/to/build_dir/bootstrap.py -c /path/to/build_dir/buildout.cfg
 
-If they are not running, start all three rockstor services
+The next step is to build Rockstor with your new changes. This takes a long
+time for a clean build, but subsequent builds finish quickly ::
+
+        [root@build_vm ]# /path/to/build_dir/bin/buildout -N -c /path/to/build_dir/buildout.cfg
+
+Once the buildout step above succeeds, start rockstor services that are
+managed by supervisord. First start the supervisord process with ::
+
+        [root@build_vm ]# /path/to/build_dir/bin/supervisord -c /path/to/build_dir/etc/supervisord.conf
+
+Now start all required services with this command
 ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/supervisorctl start nginx gunicorn smart_manager
-        nginx: started
-        gunicorn: started
-        smart_manager: started
+        [root@build_vm ]# /path/to/build_dir/bin/supervisorctl start all
 
-You should be able to login via WebUI, CLI or test directly using the API.
+You should now be able to login to the WebUI and verify your changes.
+
+Change -> Test cycle
+--------------------
+
+Changes fall into two categories. (1) Backend changes involving python coding
+and (2) Frontend changes involving javascript, html and css.
+
+To test any change, you need to transfer files from your laptop to the VM
+::
+        [you@laptop ]# rsync -avz --exclude=.git /path/to/rockstor-core/ root@build_vm:/path/to/build_dir/
+
+If you made any javascript, html or css changes, you need to collect static
+files with this command::
+
+        [root@build_vm ]# /path/to/build_dir/bin/buildout -c /path/to/build_dir/install collectstatic
+
+Then, refresh the browser to test new changes in the WebUI. It's best to have
+aliases setup for above commands and have it all integrated into your
+editor(Emacs anyone?). At the very least, you should have multiple terminal
+tabs open, one for transferring files, one for running commands on the vm and
+another for browsing through the logs
+
+When making backend changes, you may want to see debug logs and
+errors. Everything that you or any rockstor service logs go into this directory
+on your VM::
+
+        [root@build_vm ]# ls -l /path/to/build_dir/var/log
+	total 280
+	-rw-r--r-- 1 root root 106912 Jun 23 19:49 gunicorn.log
+	-rw-r--r-- 1 root root 119533 Jun 23 19:49 rockstor.log
+	-rw-r--r-- 1 root root     25 Jun 23 19:19 supervisord_data-collector_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_data-collector_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_gunicorn_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 16:27 supervisord_gunicorn_stdout.log
+	-rw-r--r-- 1 root root  27980 Jun 23 19:49 supervisord.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_replication_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_replication_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_smart_manager_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_smart_manager_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_task-scheduler_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_task-scheduler_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stdout.log
+	-rw-r--r-- 1 root root    996 Jun 23 19:49 ztask.log
+
+rockstor.log should be the first place to look for errors or debug logs.
+
+When making frontend changes, Developer tools in Chrome/Firefox are your
+friend. You could `inspect elements
+<https://developer.chrome.com/devtools/docs/dom-and-styles#inspecting-elements>`_
+for html/css changes, log to the browser console from javascript code with
+console.log() and also use the debugger and step through javascript from your
+browser.
 
 Database migrations
 -------------------
 
-We use `South <http://south.aeracode.org/>`_ to manage database migrations for RockStor. Due to the fact that running south to generate migrations requires all dependencies installed, it is easier to generate the migration in the deployment directory instead of the development directory, and copy the changes back to the development directory.
+We use `PostgreSQL <http://www.postgresql.org/>`_ as the database backend for
+Rockstor. There are two databases, (1) storageadmin and (2)
+smart_manager. Depending on your issue, you may need to add a Django model,
+delete one or change fields of an existing model. After editing models, you
+need to create a migration and apply it.
 
-Follow these steps to make a change to the storageadmin models and generate the
-corresponding migration after you have added or updated a model. (The procedure is similar for changes to the smart_manager models)
+We use `South <http://south.aeracode.org/>`_ to manage database migrations. Due
+to the fact that running south to generate migrations requires all dependencies
+installed, it is easier to generate the migration on your VM and copy the
+migration file back to your laptop and add it in git once you are satisfied.
 
-For model changes in storageadmin, from your deploy_dir, run
+For model changes in storageadmin application, create a migration file using
 ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/django schemamigration storageadmin --auto
+        [root@build_vm ]# /path/to/build_dir/bin/django schemamigration storageadmin --auto
 
-This will generate the required migration file in the
-src/rockstor/storageadmin/migrations directory. Run the migration with::
+Above command generates a migration file in
+/path/to/build_dir/src/rockstor/storageadmin/migrations/ Apply the migration::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/django migrate storageadmin --database=default
+        [root@build_vm ]# /path/to/build_dir/bin/django migrate storageadmin --database=default
 
-If your migration is successful, copy the changed model file and the generated
-migration file back to your development environment
-
-For model changes in the smart_manager application, run
+For model changes in the smart_manager application, create a migration file using
 ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/django schemamigration smart_manager --auto
+        [root@build_vm ]# /path/to/build_dir/bin/django schemamigration smart_manager --auto
 
 Run the migration with
 ::
 
-        [root@your_rockstor_vm deploy_dir]# ./bin/django migrate smart_manager --database=smart_manager
+        [root@build_vm ]# /path/to/build_dir/bin/django migrate smart_manager --database=smart_manager
+
 
 Shipping changes
 ----------------
@@ -236,7 +305,7 @@ As you continue to work on an issue, commit and push changes to the issue
 branch of your fork. You can periodically push your changes to github with the
 following command::
 
-        git push origin your_branch_name
+        [you@laptop ]# cd /path/to/rockstor-core; git push origin your_branch_name
 
 When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the "pull request" button on github. This notifies the
