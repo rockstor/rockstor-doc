@@ -46,12 +46,12 @@ The easiest way to manage your storage with Rockstor is via it's web-ui. It can
 be accessed by visiting the appliance's management IP over https using the
 Firefox browser. Note that other browsers are not supported.
 
-CLI
----
+Secure Shell
+------------
 
 Console access to Rockstor is possible by logging in as one of the admin users
-using SSH. Rockstor CLI is userfriendly with help and examples available on all
-commands. CLI can also be used to perform operations non-interactively.
+using SSH.  During normal operations this should not be required but is
+provided for advanced configurations and development purposes.
 
 Smart Manager
 -------------
