@@ -160,35 +160,35 @@ In the following sections, we use some terms in the commands. Here's a short
 explanation of these terms
 
 1. rockstor-core : This is the directory containing your local rockstor-core
-   repo on your laptop.
+   repo on your laptop. In my case, it's ~/Learnix/rockstor-core
 
-2. your_rockstor_vm : IP address of your build VM.
+2. your_rockstor_vm : IP address of your build VM. In my case, I use Virtualbox
+   with host-only adapter and get an ip in 192.168.56.101-254 range.
 
-3. deploy_dr: The directory on your build VM where the code is transfered
-   to. eg: /opt/deploy/
+3. deploy_dir: The directory on your build VM where the code is transfered
+   to. In my case, it's /opt/deploy
 
 
 Build VM initial setup
 ----------------------
 
-After making a changes to the code, transfer the code to the build VM
-::
+After making changes to code, transfer the code from your laptop to the build
+VM ::
 
-        rsync -avz --exclude=.git rockstor-core/ root@your_rockstor_vm:deploy_dir/
+        [you@your_laptop ]# rsync -avz --exclude=.git /path/to/your/rockstor-core/ root@your_rockstor_vm:deploy_dir/
 
 If you are deploying for the first time or like a clean deployment, execute the
 following command in your deploy directory::
 
         [root@your_rockstor_vm deploy_dir]# python bootstrap.py
 
-The next step is to build RockStor with your new changes. This takes a long
+The next step is to build Rockstor with your new changes. This takes a long
 time for a clean deployment, but subsequent deployments execute very quickly::
 
         [root@your_rockstor_vm deploy_dir]# ./bin/buildout -N
 
-Once the deployment succeeds as indicated by the above step, start the rockstor
-services that are managed by supervisord. First start the supervisord process
-with::
+Once the deployment step above succeeds, start rockstor services that are
+managed by supervisord. First start the supervisord process with::
 
         [root@your_rockstor_vm deploy_dir]# ./bin/supervisord -c etc/supervisord.conf
 
@@ -202,19 +202,57 @@ You should now be able to login to the WebUI and verify your changes.
 Change -> Test cycle
 --------------------
 
-Changes fall into two categories. (1) Backend changes involving pythong coding
+Changes fall into two categories. (1) Backend changes involving python coding
 and (2) Frontend changes involving javascript, html and css.
 
-To test any change, you need to transfer files
+To test any change, you need to transfer files from your laptop to the VM
 ::
-        rsync -avz --exclude=.git rockstor-core/ root@your_rockstor_vm:deploy_dir/
+        [you@your_laptop ]# rsync -avz --exclude=.git /path/to/your/rockstor-core/ root@your_rockstor_vm:deploy_dir/
 
 If you made any javascript, html or css changes, you need to collect static
 files with this command::
 
         [root@your_rockstor_vm deploy_dir]# ./bin/buildout install collectstatic
 
-Then, refresh the browser to test new changes in the WebUI.
+Then, refresh the browser to test new changes in the WebUI. It's best to have
+aliases setup for above commands and have it all integrated into your
+editor(Emacs anyone?). At the very least, you should have multiple terminal
+tabs open, one for transferring files, one for running commands on the vm and
+another for browsing through the logs
+
+When making backend changes, you may want to see debug logs and
+errors. Everything that you or any rockstor service logs go into this directory
+on your VM::
+
+        [root@your_rockstor_vm ]# ls -l /path/to/your/deploy_dir/var/log
+	total 280
+	-rw-r--r-- 1 root root 106912 Jun 23 19:49 gunicorn.log
+	-rw-r--r-- 1 root root 119533 Jun 23 19:49 rockstor.log
+	-rw-r--r-- 1 root root     25 Jun 23 19:19 supervisord_data-collector_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_data-collector_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_gunicorn_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 16:27 supervisord_gunicorn_stdout.log
+	-rw-r--r-- 1 root root  27980 Jun 23 19:49 supervisord.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_replication_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_replication_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_smart_manager_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_smart_manager_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_task-scheduler_stderr.log
+	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_task-scheduler_stdout.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stderr.log
+	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stdout.log
+	-rw-r--r-- 1 root root    996 Jun 23 19:49 ztask.log
+
+rockstor.log should be the first place to look for errors or debug logs.
+
+When making frontend changes, Developer tools in Chrome/Firefox are your
+friend. You could `inspect elements
+<https://developer.chrome.com/devtools/docs/dom-and-styles#inspecting-elements>`_
+for html/css changes, log to the browser console from javascript code with
+console.log() and also use the debugger and step through javascript from your
+browser.
 
 Database migrations
 -------------------
