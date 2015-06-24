@@ -25,23 +25,6 @@ explanation.
 
 * Manage other Rockstor appliances by quick switching.
 
-User friendly CLI
------------------
-
-Rockstor CLI is designed to provide every necessary command without
-overwhelming the user. All commands have documentation and examples. Below are
-the feature highlights. See :ref:`cli` for a more detailed explanation.
-
-* Secure access via SSH
-
-* Switch to specific consoles of subsystems like pools, shares, nfs, network
-  etc.. for a clean user experience.
-
-* Automate using CLI batch mode from any language including Shell, Perl and
-  Python.
-
-* Retrieve commands from history.
-
 Online disk management
 ----------------------
 
@@ -113,7 +96,6 @@ workloads. The following probes are available
 * Call metadata with specific uid and gid information.
 
 See :ref:`analytics` for more details.
-
 
 Support
 -------
