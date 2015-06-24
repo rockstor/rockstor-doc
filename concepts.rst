@@ -6,11 +6,14 @@ Disk
 ----
 
 A disk is a block device that is usable by Rockstor. Disks can be locally
-attached SCSI or SATA drives or can be SAN backed block devices.
+attached SCSI or SATA drives or can be SAN backed block devices, there is also
+increasing support for some virtual block devices for when Rockstor is
+installed in a virtual machine.
 
-Rockstor only works with whole drives and not partitions. If a disk has
-partitions, it is displayed in the list of available disks but is
-unusable. Parition table can be wiped using the UI and make the disk usable.
+N.B. Rockstor only works with whole drives and not partitions. If a disk has
+partitions it is displayed in the list of available disks but is
+unusable. However the UI does provide a facility to remove any existing
+partition tables so that those disks might become usable.
 
 Disks can be added online as long as it is supported by the underlying
 hardware. Rockstor can rescan to detect new disks and make them available.
