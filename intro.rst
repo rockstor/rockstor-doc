@@ -53,7 +53,7 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | WebDAV                      | planned |                                |
 +-----------------------------+---------+--------------------------------+
-| FTP/SFTP                    | planned |                                |
+| SFTP                        | beta    |                                |
 +-----------------------------+---------+--------------------------------+
 | Asynchronous share          | beta    | replicate shares between       |
 | replication                 |         | multiple Rockstor appliances   |
