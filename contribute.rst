@@ -53,7 +53,7 @@ After you've forked the rockstor-core repo, clone the fork onto your
 laptop. The high level flow of a new contribution is as follows.
 
 1. Search for an existing issue or start a new issue using the `Issue
-Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_
+Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
 2. Make code changes.
 
@@ -80,25 +80,28 @@ which serves as your private git remote called origin. Next few git steps are
 demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE
 may have ways to completely avoid the terminal for these steps.
 
-Clone your rockstor-core fork onto your local development environment
-::
+Clone your rockstor-core fork onto your local development environment. You can
+do this in any directory, but chances are you have a project directory
+appropriate for this. Let's assume you have a projects directory in your
+home(~/projects) where you'd like to clone to. ::
 
-        git clone https://github.com/your_github_username/rockstor-core.git
+        [you@your_laptop ~/projects]# git clone https://github.com/your_github_username/rockstor-core.git
 
-Now change into the directory the above command should have created::
+The above command creates a local rockstor-core git repo in a new directory by
+the same name(rockstor-core). Change into it::
 
-        cd rockstor-core
+        [you@your_laptop ~/projects]# cd rockstor-core
 
 Configure this new git repo with your name and email address. This is helpful in
 keeping an accurate record of collaboration::
 
-        git config user.name "Firstname Lastname"
-        git config user.email your_email_address
+        [you@your_laptop rockstor-core]# git config user.name "Firstname Lastname"
+        [you@your_laptop rockstor-core]# git config user.email your_email_address
 
 Add a remote called upstream to periodically rebase your local repository with
-changes in the upstream made by other contributors.
+changes in the upstream made by other contributors::
 
-        git remote add upstream https://github.com/rockstor/rockstor-core.git
+        [you@your_laptop rockstor-core]# git remote add upstream https://github.com/rockstor/rockstor-core.git
 
 
 Making changes
