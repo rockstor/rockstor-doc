@@ -53,7 +53,7 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | WebDAV                      | planned |                                |
 +-----------------------------+---------+--------------------------------+
-| FTP/SFTP                    | planned |                                |
+| SFTP                        | beta    |                                |
 +-----------------------------+---------+--------------------------------+
 | Asynchronous share          | beta    | replicate shares between       |
 | replication                 |         | multiple Rockstor appliances   |
@@ -61,7 +61,7 @@ for clarity.
 | WebUI                       | prod    | efficient management through   |
 |                             |         | Firefox browser                |
 +-----------------------------+---------+--------------------------------+
-| CLI                         | beta    |                                |
+| SSH                         | prod    | standard bash shell            |
 +-----------------------------+---------+--------------------------------+
 | RESTful API                 | prod    | integrate applications with    |
 |                             |         | Rockstor                       |

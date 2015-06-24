@@ -6,11 +6,14 @@ Disk
 ----
 
 A disk is a block device that is usable by Rockstor. Disks can be locally
-attached SCSI or SATA drives or can be SAN backed block devices.
+attached SCSI or SATA drives or can be SAN backed block devices, there is also
+increasing support for some virtual block devices for when Rockstor is
+installed in a virtual machine.
 
-Rockstor only works with whole drives and not partitions. If a disk has
-partitions, it is displayed in the list of available disks but is
-unusable. Parition table can be wiped using the UI and make the disk usable.
+N.B. Rockstor only works with whole drives and not partitions. If a disk has
+partitions it is displayed in the list of available disks but is
+unusable. However the UI does provide a facility to remove any existing
+partition tables so that those disks might become usable.
 
 Disks can be added online as long as it is supported by the underlying
 hardware. Rockstor can rescan to detect new disks and make them available.
@@ -46,12 +49,12 @@ The easiest way to manage your storage with Rockstor is via it's web-ui. It can
 be accessed by visiting the appliance's management IP over https using the
 Firefox browser. Note that other browsers are not supported.
 
-CLI
----
+Secure Shell
+------------
 
 Console access to Rockstor is possible by logging in as one of the admin users
-using SSH. Rockstor CLI is userfriendly with help and examples available on all
-commands. CLI can also be used to perform operations non-interactively.
+using SSH.  During normal operations this should not be required but is
+provided for advanced configurations and development purposes.
 
 Smart Manager
 -------------
