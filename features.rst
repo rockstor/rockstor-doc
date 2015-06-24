@@ -37,7 +37,7 @@ Online disk management
   without unnecessary disruption.
 
 Online Pool management
------------------------
+----------------------
 
 * Create pools instantly using the web-ui or CLI.
 
