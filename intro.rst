@@ -61,7 +61,7 @@ for clarity.
 | WebUI                       | prod    | efficient management through   |
 |                             |         | Firefox browser                |
 +-----------------------------+---------+--------------------------------+
-| CLI                         | beta    |                                |
+| SSH                         | prod    | standard bash shell            |
 +-----------------------------+---------+--------------------------------+
 | RESTful API                 | prod    | integrate applications with    |
 |                             |         | Rockstor                       |
