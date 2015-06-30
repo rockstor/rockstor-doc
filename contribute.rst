@@ -106,7 +106,7 @@ changes in the upstream made by other contributors::
 Making changes
 --------------
 
-We'll assume you have identified an issue(eg: #1234) from the `issue tracker
+We'll assume you have identified an issue(eg: #1234) from the `github issue tracker
 <https://github.com/rockstor/rockstor-core/issues>`_ to work on. First, start
 with the latest code by rebasing your local repo with upstream::
 
@@ -150,7 +150,7 @@ should add your name to the AUTHORS file.
 Build VM
 --------
 
-You need a Virtual Machine(VM) to build and test your changes. An easy solution
+You need a Virtual Machine (VM) to build and test your changes. An easy solution
 is to create a RockStor VM using either Oracle's `VirtualBox
 <https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
 `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
@@ -211,8 +211,8 @@ Change -> Test cycle
 Changes fall into two categories. (1) Backend changes involving python coding
 and (2) Frontend changes involving javascript, html and css.
 
-To test any change, you need to transfer files from your laptop to the VM
-::
+To test any change, you need to transfer files from your laptop to the VM::
+
         [you@laptop ]# rsync -avz --exclude=.git /path/to/rockstor-core/ root@build_vm:/path/to/build_dir/
 
 If you made any javascript, html or css changes, you need to collect static
