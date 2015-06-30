@@ -221,7 +221,7 @@ To test any change, you need to transfer files from your laptop to the VM
 If you made any javascript, html or css changes, you need to collect static
 files with this command::
 
-        [root@build_vm ]# /path/to/build_dir/bin/buildout -c /path/to/build_dir/install collectstatic
+        [root@build_vm ]# /path/to/build_dir/bin/buildout -c /path/to/build_dir/buildout.cfg install collectstatic
 
 Then, refresh the browser to test new changes in the WebUI. It's best to have
 aliases setup for above commands and have it all integrated into your
