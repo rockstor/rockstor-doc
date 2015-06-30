@@ -55,14 +55,17 @@ laptop. The high level flow of a new contribution is as follows.
 1. Search for an existing issue or start a new issue using the `Issue
 Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
-2. Make code changes.
+2. Make code changes
+.
 
 3. Submit your changes in a single `pull request
 <https://help.github.com/articles/using-pull-requests>`_.
 
-4. Use the issue tracker for discussions as necessary.
+4. Use the issue tracker for discussions as necessary
+.
 
-5. Close the issue when your pull request is merged.
+5. Close the issue when your pull request is merged
+.
 
 Let's walk through this process in detail.
 
