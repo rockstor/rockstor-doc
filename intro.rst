@@ -79,6 +79,8 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | NFS server side analytics   | beta    |                                |
 +-----------------------------+---------+--------------------------------+
+| Docker based Plugin system  | beta    | We call these Rock-ons         |
++-----------------------------+---------+--------------------------------+
 | Critical event alerts       | planned |                                |
 +-----------------------------+---------+--------------------------------+
 | Scheduled tasks             | planned | snapshots, replication, scrubs |
