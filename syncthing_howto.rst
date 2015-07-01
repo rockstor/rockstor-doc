@@ -1,6 +1,6 @@
 .. _syncthing_rockon:
 
-Syncthing Rock-on Guide
-=======================
+Syncthing Rock-on
+=================
 
-Coming Soon ...
+Guide coming Soon ...

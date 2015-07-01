@@ -45,7 +45,7 @@ to use the existing 'out of the box' home share but this is not recommended.
 The following shows a **minimum recommended 1GB rock-on-root** Share.
 
 .. image:: rockons_root_share.png
-   :scale: 100%
+   :scale: 80%
    :align: center
 
 This will only be enough for 2 or 3 Rock-ons but is enough to get started.
@@ -56,15 +56,17 @@ Then click on the **spanner** next to the **Rock-on service**.
    :scale: 100%
    :align: center
 
-Now **select** the share to use for your **Rock-ons root**.
+Now to **select** the share to use for your **Rock-ons root**.
 
 .. image:: rockons_root_config.png
    :scale: 100%
    :align: center
 
+**Select** the **rock-on-root** share that we created earlier and **Submit**
+
 You can now **enable** the **Rock-on service** and proceed to the Rock-ons page.
 If no Rock-ons are showing on the 'All' tab then click the **Update** button
-to refresh the list of available Rock-ons. To install a Rock-on you simply use
+to refresh the list of available Rock-ons. To install a Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
 .. _rockons_available:

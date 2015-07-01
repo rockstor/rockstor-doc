@@ -1,6 +1,6 @@
 .. _transmission_rockon:
 
-Transmission Rock-on Guide
-==========================
+Transmission Rock-on
+====================
 
-Coming Soon ...
+Guide coming Soon ...

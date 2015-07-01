@@ -1,6 +1,6 @@
 .. _btsync_rockon:
 
-BitTorrent Sync Rock-on Guide
-=============================
+BitTorrent Sync Rock-on
+=======================
 
-Coming Soon ...
+Guide coming Soon ...

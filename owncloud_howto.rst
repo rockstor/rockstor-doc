@@ -1,6 +1,6 @@
 .. _owncloud_rockon:
 
-Own Cloud Rock-on Guide
-=======================
+OwnCloud Rock-on
+================
 
-Coming Soon ...
+Guide coming Soon ...

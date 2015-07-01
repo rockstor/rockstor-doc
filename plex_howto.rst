@@ -1,6 +1,6 @@
 .. _plex_rockon:
 
-Plex Rock-on Guide
-==================
+Plex Server Rock-on
+===================
 
-Coming soon ...
+Guide coming soon ...
