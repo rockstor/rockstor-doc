@@ -21,6 +21,7 @@ Welcome to RockStor
    analytics
    disk_pool_ops
    share_snap_ops
+   rockons
    data_loss
    nfs_ops
    samba_ops
