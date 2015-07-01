@@ -1,3 +1,4 @@
+.. _disksandpools:
 
 Disks and Pools
 ===============
@@ -36,7 +37,7 @@ relevant help text is displayed upon mousing over this icon.
    :scale: 65 %
    :align: center
 
-Inorder to use a partitioned disk, it's partition table needs to be wiped as
+In order to use a partitioned disk, it's partition table needs to be wiped as
 indicated by the help text. Click on the sprocket icon and a popup confirmation
 dialog is displayed. Upon confirmation, the partition table is wiped and the
 disk will be ready for use as shown below.
