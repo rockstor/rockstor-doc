@@ -15,9 +15,9 @@ Non developers
 There is a lot you can do other than coding that is essential to the
 project. First, please join our `community discussion forum
 <http://forum.rockstor.com>`_. It's the central location where all discussions
-take place. If you need help, share an idea, suggest a new feature etc.. Forum
-is a great place to start. Being active there could be very helpful to the
-project and our community.
+take place. If you need help, want to share an idea, suggest a new feature etc..
+the forum is a great place to start. Being active there could be very helpful to
+the project and our community.
 
 Contributions such as testing and reporting bugs are tremendously helpful and
 greatly appreciated.
@@ -38,7 +38,7 @@ company. We welcome you to join our community. Please begin by joining our
 `community discussion forum <http://forum.rockstor.com>`_.
 
 Our development process is simple and straight forward. There is currently one
-main reposistory called `rockstor-core on Github
+main repository called `rockstor-core on Github
 <https://github.com/rockstor/rockstor-core>`_. Begin by `forking it
 <https://github.com/rockstor/rockstor-core#fork-destination-box>`_.
 
@@ -47,7 +47,7 @@ management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
 tracking. We'll assume you have basic proficiency with Git and are familiar
 with it using a text editor or IDE of your choice. Emacs, Vim,
 Eclipse and PyCharm are some recommendations. We'll further assume that you
-have your laptop ready with git and an editor.
+have your laptop ready with git and an editor installed.
 
 After you've forked the rockstor-core repo, clone the fork onto your
 laptop. The high level flow of a new contribution is as follows.
@@ -61,11 +61,11 @@ Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 3. Submit your changes in a single `pull request
 <https://help.github.com/articles/using-pull-requests>`_.
 
-4. Use the issue tracker for discussions as
-necessary.
+4. Use the issue tracker for discussions as necessary
+.
 
-5. Close the issue when your pull request is
-merged.
+5. Close the issue when your pull request is merged
+.
 
 Let's walk through this process in detail.
 
@@ -77,7 +77,7 @@ Since we rely on github services, you need to create a profile on `github.com
 
 Go to `rockstor-core repo <https://github.com/rockstor/rockstor-core>`_ and
 click on the "Fork" button. This will fork the repository into your profile
-which serves as your private git remote called origin. Next few git steps are
+which serves as your private git remote called origin. The next few git steps are
 demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
 have ways to completely avoid the terminal, but using the terminal makes you
 `look cool <https://www.youtube.com/watch?v=51lGCTgqE_w>`_.
@@ -95,7 +95,7 @@ the same name(rockstor-core). Change into it::
         [you@your_laptop ~/projects]# cd rockstor-core
 
 Configure this new git repo with your name and email address. This is required
-for accurate record of collaboration::
+to accurately record collaboration::
 
         [you@your_laptop rockstor-core]# git config user.name "Firstname Lastname"
         [you@your_laptop rockstor-core]# git config user.email your_email_address
@@ -109,7 +109,7 @@ changes in the upstream made by other contributors::
 Making changes
 --------------
 
-We'll assume you have identified an issue(eg: #1234) from the `issue tracker
+We'll assume you have identified an issue(eg: #1234) from the `github issue tracker
 <https://github.com/rockstor/rockstor-core/issues>`_ to work on. First, start
 with the latest code by rebasing your local repo with upstream::
 
@@ -153,7 +153,7 @@ should add your name to the AUTHORS file.
 Build VM
 --------
 
-You need a Virtual Machine(VM) to build and test your changes. An easy solution
+You need a Virtual Machine (VM) to build and test your changes. An easy solution
 is to create a RockStor VM using either Oracle's `VirtualBox
 <https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
 `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
@@ -165,8 +165,8 @@ can find a `VirtualBox Rockstor install demo
 Helpful terms
 -------------
 
-In the following sections, we use some terms in the commands. Here's a short
-explanation of these terms
+In the following sections we use some terms in the commands; this is a short
+explanation of these terms:-
 
 1. **laptop**: This is your laptop or desktop computer.
 
@@ -187,7 +187,7 @@ Transfer the code from your laptop to the build VM ::
         [you@laptop ]# rsync -avz --exclude=.git /path/to/rockstor-core/ root@build_vm:/path/to/build_dir/
 
 If you are building for the first time or like a clean build, execute the
-following command in your deploy directory ::
+following command in your deploy directory on the VM ::
 
         [root@build_vm ]# python /path/to/build_dir/bootstrap.py -c /path/to/build_dir/buildout.cfg
 
@@ -196,12 +196,12 @@ time for a clean build, but subsequent builds finish quickly ::
 
         [root@build_vm ]# /path/to/build_dir/bin/buildout -N -c /path/to/build_dir/buildout.cfg
 
-Once the buildout step above succeeds, start rockstor services that are
-managed by supervisord. First start the supervisord process with ::
+Once the buildout step above succeeds we can start the rockstor services; these are
+managed by supervisord, so start the supervisord process with ::
 
         [root@build_vm ]# /path/to/build_dir/bin/supervisord -c /path/to/build_dir/etc/supervisord.conf
 
-Now start all required services with this command
+Now start all the required services with this command
 ::
 
         [root@build_vm ]# /path/to/build_dir/bin/supervisorctl start all
@@ -214,53 +214,53 @@ Change -> Test cycle
 Changes fall into two categories. (1) Backend changes involving python coding
 and (2) Frontend changes involving javascript, html and css.
 
-To test any change, you need to transfer files from your laptop to the VM
-::
+To test any change, you need to transfer files from your laptop to the VM::
+
         [you@laptop ]# rsync -avz --exclude=.git /path/to/rockstor-core/ root@build_vm:/path/to/build_dir/
 
 If you made any javascript, html or css changes, you need to collect static
 files with this command::
 
-        [root@build_vm ]# /path/to/build_dir/bin/buildout -c /path/to/build_dir/install collectstatic
+        [root@build_vm ]# /path/to/build_dir/bin/buildout -c /path/to/build_dir/buildout.cfg install collectstatic
 
 Then, refresh the browser to test new changes in the WebUI. It's best to have
 aliases setup for above commands and have it all integrated into your
-editor(Emacs anyone?). At the very least, you should have multiple terminal
-tabs open, one for transferring files, one for running commands on the vm and
-another for browsing through the logs
+editor(Emacs anyone?). At the very least you should have multiple terminal
+tabs open; one for transferring files, one for running commands on the VM, and
+another for browsing through the logs.
 
 When making backend changes, you may want to see debug logs and
-errors. Everything that you or any rockstor service logs go into this directory
-on your VM::
+errors. Everything that you or any rockstor service logs goes into the following
+directory on your VM::
 
-        [root@build_vm ]# ls -l /path/to/build_dir/var/log
-	total 280
-	-rw-r--r-- 1 root root 106912 Jun 23 19:49 gunicorn.log
-	-rw-r--r-- 1 root root 119533 Jun 23 19:49 rockstor.log
-	-rw-r--r-- 1 root root     25 Jun 23 19:19 supervisord_data-collector_stderr.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_data-collector_stdout.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_gunicorn_stderr.log
-	-rw-r--r-- 1 root root      8 Jun 23 16:27 supervisord_gunicorn_stdout.log
-	-rw-r--r-- 1 root root  27980 Jun 23 19:49 supervisord.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stderr.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stdout.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_replication_stderr.log
-	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_replication_stdout.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_smart_manager_stderr.log
-	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_smart_manager_stdout.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_task-scheduler_stderr.log
-	-rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_task-scheduler_stdout.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stderr.log
-	-rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stdout.log
-	-rw-r--r-- 1 root root    996 Jun 23 19:49 ztask.log
+    [root@build_vm ]# ls -l /path/to/build_dir/var/log
+    total 280
+    -rw-r--r-- 1 root root 106912 Jun 23 19:49 gunicorn.log
+    -rw-r--r-- 1 root root 119533 Jun 23 19:49 rockstor.log
+    -rw-r--r-- 1 root root     25 Jun 23 19:19 supervisord_data-collector_stderr.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_data-collector_stdout.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_gunicorn_stderr.log
+    -rw-r--r-- 1 root root      8 Jun 23 16:27 supervisord_gunicorn_stdout.log
+    -rw-r--r-- 1 root root  27980 Jun 23 19:49 supervisord.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stderr.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_nginx_stdout.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_replication_stderr.log
+    -rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_replication_stdout.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_smart_manager_stderr.log
+    -rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_smart_manager_stdout.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_task-scheduler_stderr.log
+    -rw-r--r-- 1 root root      8 Jun 23 15:33 supervisord_task-scheduler_stdout.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stderr.log
+    -rw-r--r-- 1 root root      0 Jun 23 15:33 supervisord_ztask-daemon_stdout.log
+    -rw-r--r-- 1 root root    996 Jun 23 19:49 ztask.log
 
 rockstor.log should be the first place to look for errors or debug logs.
 
-When making frontend changes, Developer tools in Chrome/Firefox are your
-friend. You could `inspect elements
+When making frontend changes, Developer Tools in Chrome/Firefox are your
+friends. You can `inspect elements
 <https://developer.chrome.com/devtools/docs/dom-and-styles#inspecting-elements>`_
 for html/css changes, log to the browser console from javascript code with
-console.log() and also use the debugger and step through javascript from your
+console.log(), and use the debugger and step through javascript from your
 browser.
 
 Database migrations
@@ -268,8 +268,8 @@ Database migrations
 
 We use `PostgreSQL <http://www.postgresql.org/>`_ as the database backend for
 Rockstor. There are two databases, (1) storageadmin and (2)
-smart_manager. Depending on your issue, you may need to add a Django model,
-delete one or change fields of an existing model. After editing models, you
+smart_manager. Depending on your issue you may need to add a Django model,
+delete one, or change fields of an existing model. After editing models you
 need to create a migration and apply it.
 
 We use `South <http://south.aeracode.org/>`_ to manage database migrations. Due
@@ -282,8 +282,8 @@ For model changes in storageadmin application, create a migration file using
 
         [root@build_vm ]# /path/to/build_dir/bin/django schemamigration storageadmin --auto
 
-Above command generates a migration file in
-/path/to/build_dir/src/rockstor/storageadmin/migrations/ Apply the migration::
+The above command generates a migration file in
+/path/to/build_dir/src/rockstor/storageadmin/migrations/ Apply the migration with::
 
         [root@build_vm ]# /path/to/build_dir/bin/django migrate storageadmin --database=default
 
@@ -309,5 +309,5 @@ following command::
 
 When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the "pull request" button on github. This notifies the
-maintainers of your changes. As a best practice, only open one pull request per
+maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
