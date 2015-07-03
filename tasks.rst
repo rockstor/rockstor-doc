@@ -23,6 +23,8 @@ enter the task frequency in seconds, and submit the task as shown below.
    :scale: 75 %
    :align: center
 
+.. _snapshottask:
+
 Create a snapshot task
 ----------------------
 
