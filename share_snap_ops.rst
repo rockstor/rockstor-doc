@@ -118,7 +118,7 @@ By checking *Visible to user?* box in the form, the snapshot will be made
 visible to remote clients as a read-only directory inside the share. This is
 useful for users to fetch or refer to older files.
 
-Using Rockstors :ref:`task` system it is also possible to schedule automated
+Using Rockstors :ref:`tasks` system it is also possible to schedule automated
 snapshots; see :ref:`snapshottask` or setup a series of tasks to implement
 :ref:`mpsnapshots`.
 
