@@ -75,7 +75,7 @@ Clone a share
 
 A Clone is a Share that is an exact copy of the Share (or Snapshot) that it was created from, at the time that it was created.
 
-In RockStor, clones can be created from shares or snapshots.
+In Rockstor, clones can be created from shares or snapshots.
 
 To clone a Share, go to the Storage tab of the web-ui and click on *Shares*
 in the left sidebar to enter the *Shares* view. In the displayed table of
@@ -90,13 +90,15 @@ Share as shown below.
 
 To clone a snapshot, see :ref:`clonesnap`.
 
+.. _snapshots:
+
 Snapshots
 ---------
 
-Snapshots are read-only point in time copies of a share. They are created
-instantaneously and take up no extra space when created because of CoW nature
-of BTRFS filesystem. Unlimited number of snapshots can be created for a given
-share.
+Snapshots are independent instantaneous points in time of a share, and can be read-only. They are created
+instantaneously and take up no extra space when created because of the CoW
+(Copy On Write) nature of the BTRFS filesystem. An unlimited number of snapshots
+can be created for any given share.
 
 Create a snapshot
 ^^^^^^^^^^^^^^^^^
@@ -115,6 +117,10 @@ small form is displayed. Submit it to create the snapshot as shown below.
 By checking *Visible to user?* box in the form, the snapshot will be made
 visible to remote clients as a read-only directory inside the share. This is
 useful for users to fetch or refer to older files.
+
+Using Rockstors :ref:`task` system it is also possible to schedule automated
+snapshots; see :ref:`snapshottask` or setup a series of tasks to implement
+:ref:`mpsnapshots`.
 
 Delete a snapshot
 ^^^^^^^^^^^^^^^^^
