@@ -27,6 +27,7 @@ To create a scrub task enter the following:-
    :scale: 100 %
    :align: center
 
+Then the **Submit** button.
 
 .. _snapshottask:
 
@@ -45,21 +46,24 @@ To create a snapshot task enter the following:-
    :scale: 100 %
    :align: center
 
+Then the **Submit** button.
 
-Enable / Disable a task
------------------------
 
-In the Web-UI, click on *System* tab to go to the *System* view. Now click on
-*Scheduled Tasks* in the left sidebar to go to the *Scheduled Tasks* view.
+Enable / Disable one or all Tasks
+---------------------------------
 
-In the list of scheduled tasks, the **enabled** checkbox shows whether the task
-is currently enabled or not. To disable a currently enabled task, click the
-**disable** icon in the corresponding row in the list of tasks, and similarly to
-enable a disabled task, click the **enable** icon.
+On the Web-UI **System** page select **Scheduled Tasks**
+The **Task Scheduler** switch will enable or disable all Tasks at once.
+
+If you wish to Enable / Disable an **individual task** use that task's
+respective **tick box** in the *Enabled column*
+
 
 .. image:: enable_disable_task.gif
    :scale: 75 %
    :align: center
+
+Then the **Submit** button.
 
 
 Delete a task
