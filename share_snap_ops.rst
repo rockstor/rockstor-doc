@@ -30,7 +30,7 @@ displayed. Submit this form to create a new share as shown below.
 
 When creating a share, an arbitrary size can be chosen to thin provision or
 over provision the share. As long as the underlying pool is resized enough to
-accomodate the share capacity, users will not see out of space errors. If a
+accommodate the share capacity, users will not see out of space errors. If a
 share's usage exceeds the provisioned capacity or underlying actual capacity,
 out of space errors will occur as users try to write.
 
@@ -119,7 +119,7 @@ visible to remote clients as a read-only directory inside the share. This is
 useful for users to fetch or refer to older files.
 
 Using Rockstors :ref:`tasks` system it is also possible to schedule automated
-snapshots; see :ref:`snapshottask` or setup a series of tasks to implement
+snapshots; see :ref:`snapshottask` or to setup a series of tasks to implement
 :ref:`mpsnapshots`.
 
 Delete a snapshot
