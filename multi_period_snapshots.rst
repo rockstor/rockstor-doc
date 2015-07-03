@@ -35,4 +35,4 @@ In the above example we keep, 7 daily, 5 weekly, 12 monthly, and 2 yearly
 snapshots by using the *Maximum count* feature on each snapshot task.
 
 From the *mouse over tooltip* on the WebUI we have *"Older snapshots beyond
-this number and created by this task will be deleted"*
+this number and created by this task will be deleted."*

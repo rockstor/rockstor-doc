@@ -119,7 +119,7 @@ visible to remote clients as a read-only directory inside the share. This is
 useful for users to fetch or refer to older files.
 
 Using Rockstors :ref:`tasks` system it is also possible to schedule automated
-snapshots; see :ref:`snapshottask` or to setup a series of tasks to implement
+snapshots, see :ref:`snapshottask`, or to setup a series of tasks to implement
 :ref:`mpsnapshots`.
 
 Delete a snapshot
