@@ -28,10 +28,13 @@ enter the task frequency in seconds, and submit the task as shown below.
 Create a snapshot task
 ----------------------
 
-To create a snapshot task enter the **Task name**, the **task type** as **snapshot**, the **Share**
-that should be snapshotted, a **Snapshot prefix** (the snapshot will be given an
-auto-generated name with this prefix),the **Maximum count**,
-a **Start Date** and **Start time**, and the task frequency in seconds.
+To create a snapshot task enter enter the following:-
+
+* **Task name** and **Task type** ie *snapshot*
+* **Share** to snapshot
+* **Snapshot prefix** the file name will be *prefix_YYYYMMDDHHMMSS*
+* **Maximum count** keep only this number of the most recent snapshots
+* **Start Date**, **Start time**, and **Task frequency** in minutes
 
 .. image:: snapshot_task.gif
    :scale: 75 %
