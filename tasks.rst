@@ -19,8 +19,8 @@ To create a pool scrub task select the task type as **scrub**. Select the pool
 to scrub from the drop-down list of pools, enter a start date and start time,
 enter the task frequency in seconds, and submit the task as shown below.
 
-.. image:: scrub_task.gif
-   :scale: 75 %
+.. image:: scrub_task.png
+   :scale: 100 %
    :align: center
 
 .. _snapshottask:
