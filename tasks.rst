@@ -41,8 +41,8 @@ To create a snapshot task enter the following:-
 * **Maximum count** keep only this number of the most recent snapshots
 * **Start Date**, **Start time**, and **Task frequency** in minutes
 
-.. image:: snapshot_task.gif
-   :scale: 75 %
+.. image:: mpsnapshot_daily.png
+   :scale: 100 %
    :align: center
 
 
