@@ -4,7 +4,7 @@ Scheduled tasks
 ===============
 
 Rockstor allows a user to set up scheduled tasks that start at a particular time
-and are run at a specified frequency. Two types of tasks are supported currently
+and are run at a specified frequency. The types of tasks currently supported are:-
 
 * Pool scrub
 * Share Snapshot 
@@ -52,30 +52,23 @@ Then the **Submit** button.
 Enable / Disable one or all Tasks
 ---------------------------------
 
-On the Web-UI **System** page select **Scheduled Tasks**
+On the Web-UI **System** page select **Scheduled Tasks**.
 The **Task Scheduler** switch will enable or disable all Tasks at once.
 
 If you wish to Enable / Disable an **individual task** use that task's
 respective **tick box** in the *Enabled column*
 
 
-.. image:: enable_disable_task.gif
-   :scale: 75 %
+.. image:: tasks_list.png
+   :scale: 100 %
    :align: center
 
-Then the **Submit** button.
 
-
-Delete a task
+Delete a Task
 -------------
 
-In the Web-UI, click on *System* tab to go to the *System* view. Now click on
-*Scheduled Tasks* in the left sidebar to go to the *Scheduled Tasks* view.
+To delete a task, click the **Delete / bin** icon in that tasks **Actions**
+column in the list of tasks available on the **System** page **Scheduled Tasks**
+section.
 
-To delete a task, click the **Delete** icon in the corresponding row in the list
-of tasks.
-
-.. image:: delete_task.gif
-   :scale: 75 %
-   :align: center
 
