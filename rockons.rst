@@ -42,13 +42,14 @@ this service it must be configured.  This is a simple matter of assigning a
 sufficiently large share for the rock-ons to be installed into.  It is possible
 to use the existing 'out of the box' home share but this is not recommended.
 
-The following shows a **minimum recommended 1GB rock-on-root** Share.
+The following shows a **Recommended Minimum 5GB rock-on-root** Share.
 
 .. image:: rockons_root_share.png
    :scale: 80%
    :align: center
 
-This will only be enough for 2 or 3 Rock-ons but is enough to get started.
+Note that during the lifetime of Rock-ons several snapshots will be created so
+plan to be able to expand this share if need be.
 
 Then click on the **spanner** next to the **Rock-on service**.
 
