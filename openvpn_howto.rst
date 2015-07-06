@@ -131,5 +131,10 @@ information in order to inform the Client OpenVPN software on how to find your
 Rockstor's OpenVPN Server Rock-on.**
 
 
+Now we just need to turn the OpenVPN Rock-on ON:-
 
+.. image:: openvpn_on.png
+   :scale: 80%
+   :align: center
 
+It should then appear as shown in the **Installed** tab above.
