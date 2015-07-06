@@ -20,7 +20,7 @@ As Rock_ons / docker containers are like mini linux installs they require
 somewhere to live.  In Rockstor it is recommend that you setup a Share
 specifically for this purpose.
 
-Note that all Rock-on will then be installed into this shared area but each will
+Note that all Rock-ons will then be installed into this shared area but each will
 remain independent and during the setup of each Rock-on you are given the option to
 store their respective configuration and data in other shares.  This is
 good practice as it keeps your Rock-on config and data apart from the
@@ -51,7 +51,7 @@ The following shows a **Recommended Minimum 5GB rock-on-root** Share.
 Note that during the lifetime of Rock-ons several snapshots will be created so
 plan to be able to expand this share if need be.
 
-Then click on the **spanner** next to the **Rock-on service**.
+Then click on the **spanner** next to the **Rock-on service** on the **System** page.
 
 .. image:: small_services.png
    :scale: 100%
