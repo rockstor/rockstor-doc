@@ -118,7 +118,12 @@ Note that once the above Syncthing statistic share consent dialog has been
 dismissed there is a notification that the **Configuration** has been **saved
 but not activated** this is normal; just press the **restart button** in the UI.
 
-We now have the Default Syncthing WebUI:-
+.. _syncthing_webui:
+
+Syncthing WebUI
+---------------
+
+We now have the **Default Syncthing WebUI**:-
 
 .. image:: syncthing_webui.png
    :scale: 80%
