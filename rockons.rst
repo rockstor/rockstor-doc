@@ -83,5 +83,6 @@ Please see the following for specific Rock-on install details
    openvpn_howto
    plex_howto
    syncthing_howto
+   owncloud_howto
    transmission_howto
    btsync_howto
