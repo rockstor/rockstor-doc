@@ -105,14 +105,25 @@ a ssh console.
 
 /opt/rockstor/bin/ovpn-initpki
 
+Note this command will ask for a PEM pass phrase, a Common Name (after which a long list of
+.'s and +'s will appear as the key is generated), and a pass phrase for the private
+key.
+
 **Generate a client certificate    One for every client**::
 
 /opt/rockstor/bin/ovpn-client-gen
+
+N.B this command will ask for the client name (no spaced) and a pass phrase
 
 **Retrieve the client configuration. For any one of your clients. The resulting
 .ovpn file can be used to connect to this OpenVPN server.**::
 
 /opt/rockstor/bin/ovpn-client-print
+
+N.B. this command will ask for the name of the client you wish the .ovpn
+file to be created for; the file will be placed in **/tmp** ie:-::
+
+/tmp/<clientname>.ovpn
 
 **Please note that if you change your hostname you will need to regenerate
 your client authentication credentials and re-deploy them as they contain this
