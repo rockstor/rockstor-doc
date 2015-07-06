@@ -66,7 +66,12 @@ Now to **select** the share to use for your **Rock-ons root**.
 **Select** the **rock-on-root** share that we created earlier and **Submit**
 
 You can now **enable** the **Rock-on service** and proceed to the Rock-ons page.
-If no Rock-ons are showing on the 'All' tab then click the **Update** button
+
+.. image:: rockons_page.png
+   :scale: 80%
+   :align: center
+
+If no Rock-ons are showing on the **All** tab then click the **Update** button
 to refresh the list of available Rock-ons. To install a Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
