@@ -118,7 +118,7 @@ a ssh console.
 
 **Initialize PKI    The OpenVPN Rock-on will not start without it**::
 
-/opt/rockstor/bin/ovpn-initpki
+   /opt/rockstor/bin/ovpn-initpki
 
 Note this command will ask for a PEM pass phrase, a Common Name (after which a long list of
 .'s and +'s will appear as the key is generated), and a pass phrase for the private
