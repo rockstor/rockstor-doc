@@ -25,6 +25,21 @@ called a hostname, that point back to your Rockstor's internet gateway.  This
 allows the client software to be able to find your Rockstor machine on the
 internet; see :ref:`openvpn_hostname` detailed below.
 
+.. _openvpn_install:
+
+Installing OpenVPN Rock-on
+--------------------------
+
+First please consider the pre-requisites for any Rockstor Rockon; these
+are linked to at the :ref:`top <openvpn_rockon>` of this document.
+
+.. image:: openvpn_install.png
+   :scale: 80%
+   :align: center
+
+Click the **Install** button next to the OpenVPN listing on the Rock-ons page.
+
+
 The OpenVPN Port
 ^^^^^^^^^^^^^^^^
 
@@ -111,19 +126,19 @@ key.
 
 **Generate a client certificate    One for every client**::
 
-/opt/rockstor/bin/ovpn-client-gen
+   /opt/rockstor/bin/ovpn-client-gen
 
 N.B this command will ask for the client name (no spaced) and a pass phrase
 
 **Retrieve the client configuration. For any one of your clients. The resulting
 .ovpn file can be used to connect to this OpenVPN server.**::
 
-/opt/rockstor/bin/ovpn-client-print
+   /opt/rockstor/bin/ovpn-client-print
 
 N.B. this command will ask for the name of the client you wish the .ovpn
 file to be created for; the file will be placed in **/tmp** ie:-::
 
-/tmp/<clientname>.ovpn
+   /tmp/<clientname>.ovpn
 
 **Please note that if you change your hostname you will need to regenerate
 your client authentication credentials and re-deploy them as they contain this
