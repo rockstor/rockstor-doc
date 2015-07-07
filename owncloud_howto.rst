@@ -7,7 +7,7 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-.. _woncloud_whatis:
+.. _owncloud_whatis:
 
 What is OwnCloud
 ----------------

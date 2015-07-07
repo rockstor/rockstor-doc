@@ -36,7 +36,7 @@ section of syncthing's docs.
 
 Installing Syncthing Rock-on
 ----------------------------
-First please consider the pre-requisites for any Rockstor Rockon; these
+First please consider the pre-requisites for any Rockstor Rock-on; these
 are linked to at the :ref:`top <syncthing_rockon>` of this document. Note also
 that the Syncthing Rock-on will require a Share to share / sync and optionally
 (but recommended) another Share on which you store its configurations files.
