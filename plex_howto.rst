@@ -3,4 +3,53 @@
 Plex Server Rock-on
 ===================
 
-Guide coming soon ...
+Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro`;
+specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
+requirement.
+
+.. _plex_whatis:
+
+What is Plex
+------------
+
+`Plex <https://plex.tv/>`_ is a
+`centralized <https://support.plex.tv/hc/en-us/articles/200288286-What-is-Plex->`_
+domestic media distribution system that acts
+both as a `DLNA <https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance>`_
+and as its own more `flexible <https://plex.tv/features>`_ type of
+streaming technology server.
+`plex client apps <https://plex.tv/downloads>`_ are available on nearly
+every platform.  But in order to manage your media with the
+Plex system it is first necessary to have a
+Plex Media Server. This Rock-on is exactly that; and aims to make the install
+and media provisioning of a Plex server as simple as possible.
+
+.. _plex_doc:
+
+Plex Documentation
+------------------
+
+Plex's `own documentation <https://support.plex.tv/hc/en-us>`_ is extensive and
+well presented and a good kicking off point might well be their `Getting Started
+<https://support.plex.tv/hc/en-us/categories/200007268-Getting-Started>`_ guide
+that has a thorough `Step by Step <>`_ introductions to the Plex syste.
+
+.. _plex_install:
+
+Installing Plex Rock-on
+-----------------------
+First please consider the pre-requisites for any Rockstor Rock-on; these
+are linked to at the :ref:`top <syncthing_rockon>` of this document. Note also
+that the Plex Rock-on will require a Share for your media and optionally
+(but recommended) another Share on which you store its configurations files.
+This makes a total of 3 shares, one for the Rock-on system itself ie
+:ref:`rockons_root` that may well already have been made and an additional 1 or 2
+shares depending on whether you wish to split your Plex config from its data;
+this is highly recommended though.
+
+.. image:: plex_install.png
+   :scale: 80%
+   :align: center
+
+Click the **Install** button next to the Plex listing on the Rock-ons page.
+
