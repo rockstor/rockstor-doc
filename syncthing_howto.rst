@@ -70,7 +70,7 @@ updated and improved.
    :scale: 80%
    :align: center
 
-N.B. to create these Storage areas please see our :ref:`createshare`.
+N.B. to create these storage areas please see our :ref:`createshare`.
 
 .. _syncthing_ports:
 
