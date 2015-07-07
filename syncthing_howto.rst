@@ -42,7 +42,7 @@ that the Syncthing Rock-on will require a Share to share / sync and optionally
 (but recommended) another Share on which you store its configurations files.
 This makes a total of 3 shares, one for the Rock-on system itself ie
 :ref:`rockons_root` that may well already have been made and an additional 1 or 2
-shares depending on whether you wish to split your syncthing config from its data,
+shares depending on whether you wish to split your Syncthing config from its data;
 this is highly recommended though.
 
 .. image:: syncthing_install.png
@@ -57,11 +57,14 @@ Syncthing Shares
 ^^^^^^^^^^^^^^^^
 
 Next we select the **Storage areas** for Syncthing's **data** and
-**configuration** files.  Here we are using the **recommended names**.  Note
-that Syncthing's configuration does not require much space so a 1GB
-syncthing-config share should surfice; if this is not your finding then please
-discus this on the `Rockstor forum <http://forum.rockstor.com/>`_ so that this
-document might be updated.
+**configuration** files.  Here we are using the **recommended names**.
+
+* **syncthing-config** - min 1 GB
+* **syncthing-data** - room enough for your data and snapshots.
+
+If you find that these values are insufficient then please discus this on the
+`Rockstor forum <http://forum.rockstor.com/>`_ so that this document might be
+updated and improved.
 
 .. image:: syncthing_shares.png
    :scale: 80%
