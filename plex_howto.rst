@@ -95,11 +95,71 @@ This is the port you will use to access the :ref:`plex_ui`.
 
 Now check that the entered details are correct before clicking **Submit**.
 
+Closing the resulting simple *Installation is in progress* dialog and we have:-
 
+.. image:: plex_installing.png
+   :scale: 80%
+   :align: center
 
+and a few minutes later depending on internet and machine speed:-
 
+**The Plex Media Server Rock-on is ON**
 
+.. image:: plex_on.png
+   :scale: 80%
+   :align: center
 
+N.B. Notice the **Plex UI** button and the **spanner** to adjust the Rock-on
+settings which includes adding additional Rockstor Shares.
 
+.. _plex_addshares:
+
+Additional Shares to Plex
+-------------------------
+This facility is only required if you wish to have the Plex Rock-on access more
+than one Rockstor Share.  It is not uncommon for all of a Plex Media Server's
+data to reside on a single Share.  N.B. the Shares are not the same as the
+Libraries within Plex, ie one can have multiple Plex libraries on a single
+Rockstor Share. Plex Libraries are configured from within the :ref:`plex_ui`
+and represent how the Plex Server organizes and shares your media. An example
+of requiring more than one Rockstor Share to be mapped into the Plex Rock-on
+is if you have all your Movies in one Share and all you Music in another Share.
+
+From the information dialog **i icon** on the Plex Rock-on listing we get:-
+
+.. image:: plex_info.png
+   :scale: 80%
+   :align: center
+
+Reproduced here for clarity:-
+
+**Additional information about Plex Rock-on**::
+
+   Adding more media to Plex.
+
+   You can add more Shares (with media) to Plex from the settings wizard of
+   this Rock-on. Then, from Plex WebUI, you can update and re-index your library.
+
+The **settings wizard** is accessed via the **spanner** icon on the Plex
+entry on the Rock-ons page.
+
+.. image:: plex_spanner.png
+   :scale: 80%
+   :align: center
+
+As can be seen here there is an **Add Storage** button on the spanner dialog.
 
 .. _plex_ui:
+
+Plex UI
+-------
+The **Default Plex UI** accessed via the **Plex UI** button on the
+Rock-ons page:-
+
+.. image:: plex_ui.png
+   :scale: 80%
+   :align: center
+
+You can now configure and populate your Plex Media Server Rock-on;
+:ref:`owncloud_doc`
+
