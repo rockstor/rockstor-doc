@@ -35,7 +35,7 @@ well presented and a good kicking off point might well be their `Getting Started
 that has a thorough
 `Step by Step <https://support.plex.tv/hc/en-us/articles/200264746-Quick-Start-Step-by-Step>`_
 introductions to the Plex system.  Also note that the Plex Media Server
-requires you media to be
+requires your media to be
 `organized <https://support.plex.tv/hc/en-us/categories/200028098-Media-Preparation>`_
 in a certain way.
 
@@ -164,6 +164,4 @@ Rock-ons page:-
    :scale: 80%
    :align: center
 
-You can now configure and populate your Plex Media Server Rock-on;
-:ref:`owncloud_doc`
-
+You can now configure and populate your Plex Media Server Rock-on; :ref:`plex_doc`

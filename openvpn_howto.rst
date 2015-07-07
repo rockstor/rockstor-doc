@@ -30,7 +30,7 @@ internet; see :ref:`openvpn_hostname` detailed below.
 Installing OpenVPN Rock-on
 --------------------------
 
-First please consider the pre-requisites for any Rockstor Rockon; these
+First please consider the pre-requisites for any Rockstor Rock-on; these
 are linked to at the :ref:`top <openvpn_rockon>` of this document.
 
 .. image:: openvpn_install.png
@@ -52,7 +52,7 @@ suggest the default:-
 
 You may well have to open and forward the configured port on your Rockstor's
 internet gateway router back to the Rockstor machine.  This effectively makes at least
-this port on Rockstor appear on your routers red (internet) interface. The client OpenVPN
+this port on Rockstor appear on your router's red (internet) interface. The client OpenVPN
 software can then talk directly and securely to your Rockstor's OpenVPN Rock-on
 using this port.
 
@@ -63,7 +63,7 @@ An Internet Hostname or IP
 
 Although the OpenVPN client can be told which port you are using it also needs
 to know where on the internet your Rockstor machine is; this is done using
-an internet hostname or in much less common instances your routers public IP
+an internet hostname or in much less common instances your router's public IP
 address, but this will only work in the long run if your public IP is static:-
 
 .. image:: openvpn_address.png
@@ -79,7 +79,7 @@ will have to use a `dynamic dns <https://en.wikipedia.org/wiki/Dynamic_DNS>`_
 naming services. These work by using client
 software running either on your internet router or on a machine within your
 network that periodically calls out to your dynamic dns naming provider and
-updates that provider with your routers current location / IP on the internet.
+updates that provider with your router's current location / IP on the internet.
 The dynamic dns naming provider will then update their publicly available
 records of the hostname you agreed upon during account sign up.  This then allows
 for your Rockstor's internet connection to be located by that hostname / IP.
@@ -102,7 +102,7 @@ Once the install has completed you will see the following:-
    :scale: 100%
    :align: center
 
-This is a peculiar complexity that exist in our *first flush* OpenVPN Rock-on
+This is a peculiar complexity that exists in our *first flush* OpenVPN Rock-on
 implementation. Please click on the **"i" icon** to get the following instructions:-
 
 .. image:: openvpn_certs.png
@@ -111,7 +111,7 @@ implementation. Please click on the **"i" icon** to get the following instructio
 
 The above indicated steps are reproduced here for clarity:-
 
-**Additional steps are required by this Rockon**
+**Additional steps are required by this Rock-on**
 
 Run the following commands as the **root** user on your Rockstor system ie via
 a ssh console.

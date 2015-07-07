@@ -25,7 +25,7 @@ Syncthing Documentation
 
 Syncthing's `own documentation <http://docs.syncthing.net/>`_ is the best place
 to start with understanding its nature and capabilities, they also have a very
-accessibly `getting started
+accessible `getting started
 <http://docs.syncthing.net/intro/getting-started.html#getting-started>`_ guide.
 N.B. if your network gateway router does not have UPnP or you don't wish to
 enable it then please see the

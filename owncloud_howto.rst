@@ -12,7 +12,7 @@ requirement.
 What is OwnCloud
 ----------------
 
-OwnCloud is an Open Source self hosting general cloud services system that is
+`OwnCloud <https://owncloud.org/>`_ is an Open Source self hosting general cloud services system that is
 gaining popularity with those wishing to take greater control of their internet
 based services. It's `features <https://owncloud.org/features/>`_ include sync
 and share capabilities across devices and users with; files, contacts,
@@ -97,7 +97,7 @@ OwnCloud DataBase
 ^^^^^^^^^^^^^^^^^
 
 We are now required to enter a **password** and **username** that owncloud will
-use as the database administrator use.
+use for it's database administration.
 
 .. image:: owncloud_db.png
    :scale: 80%
@@ -121,7 +121,7 @@ Closing the resulting simple *Installation is in progress* dialog and we have:-
 
 and a few minutes later depending on internet and machine speed:-
 
-**The Syncthing Rock-on is ON**
+**The OwnCloud Rock-on is ON**
 
 .. image:: owncloud_on.png
    :scale: 80%
@@ -156,6 +156,6 @@ Rock-ons page:-
 
 You can now configure your very own ownCloud Rock-on; :ref:`owncloud_doc`
 
-**Remember to change your ownCloud admin users password.**
+**Remember to change your ownCloud admin user's password.**
 
 **Admin** top right in :ref:`owncloud_ui` and **Users**.
