@@ -83,9 +83,9 @@ These are the **Default Ports** and it is unlikely you will have to alter them.
    :scale: 80%
    :align: center
 
-N.B. if you have used Syncthing before note that it's default **WebUI port
-may have changed** from your previous installs; browser bookmarks may have to
-be updated.
+N.B. if you have used Syncthing before note that it's default **User Interface**
+port may have changed** from your previous installs; browser bookmarks may
+have to be updated.
 
 .. image:: syncthing_verify.png
    :scale: 80%
@@ -104,7 +104,7 @@ Closing the resulting simple *Installation is in progress* dialog and we have:-
 N.B. Notice the **Syncthing UI** button and the **spanner** to adjust the Rock-on
 settings.
 
-The first time you visit the **Syncthing WebUI** the following will appear:-
+The first time you visit the **Syncthing UI** the following will appear:-
 
 .. image:: syncthing_allow_anon.png
    :scale: 80%
@@ -121,14 +121,14 @@ Note that once the above Syncthing statistic share consent dialog has been
 dismissed there is a notification that the **Configuration** has been **saved
 but not activated** this is normal; just press the **restart button** in the UI.
 
-.. _syncthing_webui:
+.. _syncthing_ui:
 
-Syncthing WebUI
----------------
+Syncthing UI
+------------
 
-We now have the **Default Syncthing WebUI**:-
+We now have the **Default Syncthing UI**:-
 
-.. image:: syncthing_webui.png
+.. image:: syncthing_ui.png
    :scale: 80%
    :align: center
 
