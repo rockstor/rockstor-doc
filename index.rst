@@ -4,7 +4,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to RockStor
+Welcome to Rockstor
 ===================
 
 
@@ -21,6 +21,7 @@ Welcome to RockStor
    analytics
    disk_pool_ops
    share_snap_ops
+   rockons
    data_loss
    nfs_ops
    samba_ops
