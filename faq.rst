@@ -181,7 +181,7 @@ Please refer to this blog post on instructions on building a personal cloud usin
 Can Rockstor support my specific storage use case?
 --------------------------------------------------
 
-You can `contact us <http://rockstor.com/feedback.html>`_ with your requirements
+You can `contact us <http://rockstor.com/about-us.html#contact>`_ with your requirements
 and we will get in touch with you. We do storage services and support
 and are happy to enable you to use Rockstor for your storage requirements.
 
