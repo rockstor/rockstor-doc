@@ -85,9 +85,9 @@ Please see the following for specific Rock-on install details
 .. toctree::
    :maxdepth: 2
 
-   openvpn_howto
-   plex_howto
-   syncthing_howto
-   owncloud_howto
-   transmission_howto
-   btsync_howto
+   openvpn-server
+   plex-media-server
+   syncthing
+   owncloud
+   transmission-bittorrent
+   bittorrent-sync
