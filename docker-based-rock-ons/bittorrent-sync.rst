@@ -37,8 +37,8 @@ and their `FAQ <http://help.getsync.com/customer/portal/articles/1916920-faqs>`_
 
 .. _btsync_install:
 
-Installing BitTorrent Sync Rock-on
--------------------------------
+Installing BTSync Rock-on
+-------------------------
 First please consider the pre-requisites for any Rockstor Rock-on; these
 are linked to at the :ref:`top <btsync_rockon>` of this document. Note also
 that the BitTorrent Sync Rock-on will require a Share to sync/store it's
@@ -78,15 +78,7 @@ These are the **Default Ports** and it is unlikely you will have to alter them.
    :scale: 80%
    :align: center
 
-Next configure the Transmission **User** and **Password** for the
-:ref:`btsync_ui`
-
-.. image:: btsync_user.png
-   :scale: 80%
-   :align: center
-
-Note that these are examples only, you can use whatever username and password
-you like but don't use spaces.
+Now to verity the configuration.
 
 .. image:: btsync_verify.png
    :scale: 80%
@@ -102,8 +94,16 @@ Closing the resulting simple *Installation is in progress* dialog and we have:-
    :scale: 80%
    :align: center
 
-N.B. Notice the **BitTorrent Sync UI** button and the **spanner** to see the
-Rock-on settings and add additional Shares.
+N.B. Notice the **BTSync UI** button and the **spanner** to view the
+Rock-on settings and add additional Rockstor Shares.
+
+.. _btsync_addshares:
+
+Adding Shares to BTSync
+-----------------------
+
+This facility is only required if you wish to have the BTSync Rock-on access
+more than one Rockstor Share.
 
 From the information dialog **i icon** on the BTSync Rock-on listing we get:-
 
@@ -134,4 +134,4 @@ We now have the **Default BitTorrent Sync UI**.
    :scale: 80%
    :align: center
 
-You can now Sync other BitTorrent Sync sources with a Rockstor BitTorrent Sync Rock-on Share; see :ref:`transmission_doc`.
+You can now sync other BTSync sources with this Rockstor BTSync Rock-on Share; see :ref:`transmission_doc`.
