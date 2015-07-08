@@ -7,6 +7,8 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `OpenVPN server Rock-on forum <http://forum.rockstor.com/t/openvpn-server-rock-on/178>`_ area.
+
 What is OpenVPN
 ---------------
 

@@ -7,6 +7,8 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `Plex Media Server Rock-on forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_ area.
+
 .. _plex_whatis:
 
 What is Plex
@@ -71,8 +73,8 @@ Next we select the **Storage areas** for the Plex Rock-on's **data** and
 * **plex-config** - min 1 GB
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/>`_ so that this document might be
-updated and improved.
+`Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
+so that this document might be updated and improved.
 
 .. image:: plex_shares.png
    :scale: 80%
