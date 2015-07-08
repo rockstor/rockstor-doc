@@ -7,6 +7,8 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `Syncthing Rock-on forum <http://forum.rockstor.com/t/syncthing-rock-on/180>`_ area.
+
 What is Syncthing
 -----------------
 
