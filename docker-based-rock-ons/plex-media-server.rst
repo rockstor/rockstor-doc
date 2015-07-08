@@ -113,13 +113,13 @@ and a few minutes later depending on internet and machine speed:-
    :scale: 80%
    :align: center
 
-N.B. Notice the **Plex UI** button and the **spanner** to adjust the Rock-on
-settings which includes adding additional Rockstor Shares.
+N.B. Notice the **Plex UI** button and the **spanner** to view the Rock-on
+settings and add additional Rockstor Shares.
 
 .. _plex_addshares:
 
-Additional Shares to Plex
--------------------------
+Adding Shares to Plex
+---------------------
 This facility is only required if you wish to have the Plex Rock-on access more
 than one Rockstor Share.  It is not uncommon for all of a Plex Media Server's
 data to reside on a single Share.  N.B. the Shares are not the same as the
