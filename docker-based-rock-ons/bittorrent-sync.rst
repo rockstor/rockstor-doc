@@ -7,6 +7,9 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `Bittorrent Sync forum <http://forum.rockstor.com/t/bittorent-sync-rock-on/186>`_ area.
+
+
 What is BTSync
 --------------
 
