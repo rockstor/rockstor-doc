@@ -7,6 +7,8 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `Plex Media Server Rock-on forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_ area.
+
 .. _plex_whatis:
 
 What is Plex
@@ -71,8 +73,8 @@ Next we select the **Storage areas** for the Plex Rock-on's **data** and
 * **plex-config** - min 1 GB
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/>`_ so that this document might be
-updated and improved.
+`Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
+so that this document might be updated and improved.
 
 .. image:: plex_shares.png
    :scale: 80%
@@ -113,13 +115,13 @@ and a few minutes later depending on internet and machine speed:-
    :scale: 80%
    :align: center
 
-N.B. Notice the **Plex UI** button and the **spanner** to adjust the Rock-on
-settings which includes adding additional Rockstor Shares.
+N.B. Notice the **Plex UI** button and the **spanner** to view the Rock-on
+settings and add additional Rockstor Shares.
 
 .. _plex_addshares:
 
-Additional Shares to Plex
--------------------------
+Adding Shares to Plex
+---------------------
 This facility is only required if you wish to have the Plex Rock-on access more
 than one Rockstor Share.  It is not uncommon for all of a Plex Media Server's
 data to reside on a single Share.  N.B. the Shares are not the same as the

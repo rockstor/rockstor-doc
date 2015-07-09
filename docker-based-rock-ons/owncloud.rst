@@ -7,6 +7,8 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
+Our `ownCloud Rock-on forum <http://forum.rockstor.com/t/owncloud-rock-on/182>`_ area.
+
 .. _owncloud_whatis:
 
 What is OwnCloud
@@ -69,8 +71,8 @@ Next we select the **Storage areas** for ownCloud's **data**,
 * **owncloud-db** - min 1 GB
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/>`_ so that this document might be
-updated and improved.
+`Rockstor forum <http://forum.rockstor.com/t/owncloud-rock-on/182>`_ so that
+this document might be updated and improved.
 
 .. image:: owncloud_shares.png
    :scale: 80%
