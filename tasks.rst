@@ -1,65 +1,74 @@
+.. _tasks:
 
 Scheduled tasks
 ===============
 
-RockStor allows a user to set up scheduled tasks that start at a particular time
-and are run at a specified frequency. Two types of tasks are supported currently
+Rockstor allows a user to set up scheduled tasks that start at a particular time
+and are run at a specified frequency. The types of tasks currently supported are:-
 
 * Pool scrub
 * Share Snapshot 
 
-In the web-ui, click on *System* tab to go to the *System* view. Now click on
-*Scheduled Tasks* in the left sidebar to go to the *Scheduled Tasks* view.
-To create a new task, click the Add Scheduled Task button.
+On the Web-UI **System** page select **Scheduled Tasks** and **Enable** the **Task
+Scheduler**. To create a new task click the **Add Scheduled Task** button.
 
-Create a scrub task
+
+Create a Scrub Task
 -------------------
 
-To create a pool scrub task select the task type as **scrub**. Select the pool
-to scrub from the dropdown list of pools, enter a start date and start time, 
-enter the task frequency in seconds, and submit the task as shown below.
+To create a scrub task enter the following:-
 
-.. image:: scrub_task.gif
-   :scale: 75 %
+* **Task name** and **Task type** ie *scrub*
+* **Pool to scrub** from the drop down
+* **Start Date**, **Start time**, and **Task frequency** in minutes
+
+
+.. image:: scrub_task.png
+   :scale: 100 %
    :align: center
 
-Create a snapshot task
+Then the **Submit** button.
+
+.. _snapshottask:
+
+Create a Snapshot Task
 ----------------------
 
-To create a snapshot task select the task type as **snapshot**. Select the share
-that should be snapshotted, enter a prefix (The snapshot will be given an
-auto-generated name with this prefix), enter a start date and start time, enter
-the task frequency in seconds, and submit the task as shown below.
+To create a snapshot task enter the following:-
 
-.. image:: snapshot_task.gif
-   :scale: 75 %
+* **Task name** and **Task type** ie *snapshot*
+* **Share** to snapshot
+* **Snapshot prefix** the file name will be *prefix_YYYYMMDDHHMMSS*
+* **Maximum count** keep only this number of the most recent snapshots
+* **Start Date**, **Start time**, and **Task frequency** in minutes
+
+.. image:: mpsnapshot_daily.png
+   :scale: 100 %
    :align: center
 
-Enable / Disable a task
------------------------
+Then the **Submit** button.
 
-In the web-ui, click on *System* tab to go to the *System* view. Now click on
-*Scheduled Tasks* in the left sidebar to go to the *Scheduled Tasks* view.
 
-In the list of scheduled tasks, the **enabled** checkbox shows whether the task
-is currently enabled or not. To disable a currently enabled task, click the
-**disable** icon in the corresponding row in the list of tasks, and similarly to
-enable a disabled task, click the **enable** icon.
+Enable / Disable one or all Tasks
+---------------------------------
 
-.. image:: enable_disable_task.gif
-   :scale: 75 %
+On the Web-UI **System** page select **Scheduled Tasks**.
+The **Task Scheduler** switch will enable or disable all Tasks at once.
+
+If you wish to Enable / Disable an **individual task** use that task's
+respective **tick box** in the *Enabled column*
+
+
+.. image:: tasks_list.png
+   :scale: 100 %
    :align: center
 
-Delete a task
+
+Delete a Task
 -------------
 
-In the web-ui, click on *System* tab to go to the *System* view. Now click on
-*Scheduled Tasks* in the left sidebar to go to the *Scheduled Tasks* view.
+To delete a task, click the **Delete / bin** icon in that tasks **Actions**
+column in the list of tasks available on the **System** page **Scheduled Tasks**
+section.
 
-To delete a task, click the **Delete** icon in the corresponding row in the list
-of tasks.
-
-.. image:: delete_task.gif
-   :scale: 75 %
-   :align: center
 
