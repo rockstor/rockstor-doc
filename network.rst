@@ -52,7 +52,7 @@ Rockstor's network port.  This requires knowledge of your specific network and
 should not be required for home use, it is however a very common configuration
 in pro server installs. If you are assigning a static IP to Rockstor, or any
 machine instance for that matter, make sure to use an address that is not also
-in your DNS server's dynamic pool range. The following is an example of a
+in your DHCP server's dynamic pool range. The following is an example of a
 Static IP configuration.
 
 .. image:: network_static.png
