@@ -83,8 +83,8 @@ blank.
 Data Import
 -----------
 
-Once the system has been re-installed as per <link> to see what is involved and
-your have applied the updates via the early setup prompt on the WebUI you can
+Once Rockstor has been :ref:`reinstalled <reinstall>` and
+you have applied the updates via the automated prompt in the WebUI you can
 import the data that was present on your previous Rockstor install’s data
 disks; assuming you had separate data disks of course.
 
