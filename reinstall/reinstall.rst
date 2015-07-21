@@ -89,8 +89,12 @@ if prompted to do so you can
 import the data that was present on your previous Rockstor install’s data
 disks; assuming you had separate data disks of course.
 
-This can be done by using the **tiny down arrow** icon next to the relevant
-device on the **Storage** page **Disks** section.
+N.B. given this is a new install it is advisable to reboot anyway to make sure
+all is well before doing the data import, this will ensure you are using all of
+what has just been updated.
+
+Data import is initiated by using the **tiny down arrow** icon next to the
+relevant device on the **Storage** page **Disks** section.
 
 This process is intended to import:-
 
