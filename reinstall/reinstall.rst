@@ -96,7 +96,7 @@ what has just been updated.
 Data import is initiated by using the **tiny down arrow** icon next to the
 relevant device on the **Storage** page **Disks** section.
 
-This process is intended to import:-
+This process is intended to import the following:-
 
 * Pools
 * Shares
