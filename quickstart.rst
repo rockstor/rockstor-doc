@@ -38,22 +38,23 @@ Installation
 ------------
 
 Installing Rockstor is quick and straight forward. Since Rockstor is based on
-CentOS, the anaconda installer looks similar to installation of CentOS, Redhat or
-Fedora.
+CentOS and uses the same anaconda installer the installation looks similar to
+that of CentOS, Redhat, or Fedora.
 
 To find out what the installation process looks like, watch a 5 minute video of
- `a Rockstor VirtualBox install <http://youtu.be/00k_RwwC5Ms>`_, or :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup`
+`a Rockstor VirtualBox install <http://youtu.be/00k_RwwC5Ms>`_, or
+:ref:`vmmrockstorinstall` section of our :ref:`kvmsetup`.
 
 .. raw:: html
 
-   <div class="alert">
+   <div class="alert alert-warning">
    <strong>Important!</strong> Installing RockStor deletes existing data on the system
    drive(s) selected as installation destination.
    </div>
 
    <div class="alert alert-info">
    If you need further assistance during or post install, you
-   can contact us by sending an email to support@rockstor.com
+   can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an e-mail to support@rockstor.com
    </div>
 
 1. Boot your machine with the Rockstor CD and the splash screen will
@@ -67,24 +68,25 @@ To find out what the installation process looks like, watch a 5 minute video of
    a. Click on the **Date & Time** to change the default timezone.
 
    b. A network connection is required and the installation will not proceed
-      otherwise. The default is dhcp which the installer automatically picks
+      otherwise. The default is DHCP which the installer automatically picks
       up. You can configure the network manually, but make sure your system has
       a working ip address for the installation to proceed.
 
-   c. Under the **Installation Destination**, there may be further action
-      required. By default, the first hard drive is selected if there is no
-      data on it. Otherwise, click on the amber icon for the device selection
-      screen. For the default automatic partitioning, just click **DONE**. On
-      the next window, **Reclaim space** and follow directions to configure it
-      as the installation destination.
+   c. Under the **Installation Destination** there may be further action
+      required if there are partitions on sda. By default the sda hard drive is
+      selected and set to be auto partitioned but only if blank. If not then an
+      exclamation icon indicates the need for attention. Please see our
+      :ref:`wiping_disk` for more details.
+
+      For the default automatic partitioning, just click **DONE**.
 
       If you are an advanced user, you can go with a custom partitioning
-      scheme. However, note that Rockstor only supports **BTRFS** even for root
+      scheme. However, note that Rockstor only supports **BTRFS** for its root
       filesystem.
 
     .. raw:: html
 
-        <div class="alert">
+        <div class="alert alert-warning">
         <strong>Important!</strong> Installing RockStor deletes existing data on the system
         drive(s) selected as installation destination.
         </div>
