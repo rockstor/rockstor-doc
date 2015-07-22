@@ -47,14 +47,14 @@ To find out what the installation process looks like, watch a 5 minute video of
 
 .. raw:: html
 
-   <div class="alert">
+   <div class="alert alert-warning">
    <strong>Important!</strong> Installing RockStor deletes existing data on the system
    drive(s) selected as installation destination.
    </div>
 
    <div class="alert alert-info">
    If you need further assistance during or post install, you
-   can contact us by sending an email to support@rockstor.com
+   can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an e-mail to support@rockstor.com
    </div>
 
 1. Boot your machine with the Rockstor CD and the splash screen will
@@ -86,7 +86,7 @@ To find out what the installation process looks like, watch a 5 minute video of
 
     .. raw:: html
 
-        <div class="alert">
+        <div class="alert alert-warning">
         <strong>Important!</strong> Installing RockStor deletes existing data on the system
         drive(s) selected as installation destination.
         </div>
