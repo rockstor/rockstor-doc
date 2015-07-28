@@ -30,6 +30,24 @@ What kind of hardware do I need to install Rockstor?
 Rockstor runs on 64-bit commodity hardware. You can install it on bare metal or
 a hypervisor. See :ref:`quickstartguide` for more information.
 
+Can I run Rockstor from a USB flash drive?
+------------------------------------------
+
+Yes. Rockstor is optimized to do less writes if it detects the root
+drive to be USB flash drive or SSD. As expected, USB 2.0 can be pretty
+slow. So we recommend a USB 3.0 drive even if your motherboard doesn't support
+USB 3.0 as it'll still be faster. You can also purchase a 16 GB USB 3.0
+drive from our `shop
+<http://shop.rockstor.com/collections/diy-accessories/products/usb-stick>`_ and
+support our effort!
+
+Are the faster alternatives to running from USB?
+------------------------------------------------
+
+Yes. If your motherboard has a spare PCI-Express slot you can get a SSD boot
+drive from our `shop <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_.
+This is a cheap yet much faster alternative. Here's a short
+`blog post <http://rockstor.com/blog/diy-nas/ssd-boot-drive-for-diy-rockstor-systems>`_ with more information.
 
 How much does Rockstor cost?
 ----------------------------

@@ -27,10 +27,17 @@ Download RockStor from `here
 bootable CD or USB drive from the downloaded iso and proceed to the next
 section for installation.
 
+.. raw:: html
+
+   <div class="alert alert-info">
+   For convenience, you can also purchase a USB install disk from our <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">shop</a>.
+   Thanks for your support!
+   </div>
+
 To create a USB install disk, you can use the dd command on Linux or Mac. For
 example, if your USB drive is /dev/sdb, the command would be::
 
-  dd if=Rockstor-3.5-5.iso of=/dev/sdb
+  dd if=Rockstor-3.8-0.iso of=/dev/sdb
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
