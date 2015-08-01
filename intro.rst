@@ -59,7 +59,7 @@ for clarity.
 | replication                 |         | multiple Rockstor appliances   |
 +-----------------------------+---------+--------------------------------+
 | WebUI                       | prod    | efficient management through   |
-|                             |         | Firefox browser                |
+|                             |         | Chrome browser                 |
 +-----------------------------+---------+--------------------------------+
 | SSH                         | prod    | standard bash shell            |
 +-----------------------------+---------+--------------------------------+
