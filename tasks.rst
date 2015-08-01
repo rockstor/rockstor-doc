@@ -10,15 +10,7 @@ and at a specified time in the case of lower frequencies.
 The types of tasks currently supported are:-
 
 * Pool scrub
-* Share Snapshot 
-
-.. _tasksenable:
-
-Enable / Disable all Tasks
---------------------------
-
-On the Web-UI **System** page under **Services** there is a **Task Scheduler**
-switch which will enable or disable all tasks at once.
+* Share Snapshot
 
 .. _newtask:
 
@@ -56,7 +48,7 @@ To create a snapshot task enter the following:-
 
 * **Task name** and **Task type** ie *snapshot*
 * **Share** to snapshot
-* **Snapshot prefix** the file name will be *prefix_YYYYMMDDHHMMSS*
+* **Snapshot prefix** the name of a snapshot taken at timestamp YYYY/MM/DD/HH/MM will be *prefix_YYYYMMDDHHMM*
 * **Maximum count** keep only this number of the most recent snapshots
 * **Frequency of tasks** ie how often and when
 
@@ -95,5 +87,3 @@ Delete a Task
 To delete a task, click the **Delete / bin** icon in that tasks **Actions**
 column in the list of tasks available on the **System** page **Scheduled Tasks**
 section.
-
-
