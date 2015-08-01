@@ -59,7 +59,7 @@ for clarity.
 | replication                 |         | multiple Rockstor appliances   |
 +-----------------------------+---------+--------------------------------+
 | WebUI                       | prod    | efficient management through   |
-|                             |         | Firefox browser                |
+|                             |         | Chrome browser                 |
 +-----------------------------+---------+--------------------------------+
 | SSH                         | prod    | standard bash shell            |
 +-----------------------------+---------+--------------------------------+
@@ -83,5 +83,5 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | Critical event alerts       | planned |                                |
 +-----------------------------+---------+--------------------------------+
-| Scheduled tasks             | beta    | snapshots, replication, scrubs |
+| Scheduled tasks             | beta    | snapshots and scrubs           |
 +-----------------------------+---------+--------------------------------+

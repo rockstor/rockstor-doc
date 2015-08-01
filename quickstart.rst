@@ -9,8 +9,8 @@ Quick start
 Minimum system requirements
 ---------------------------
 
-RockStor is available as a complete Linux distribution (iso) to be installed
-directly on hardware or as a VM with the following minimum system requirements.
+Rockstor is a complete Linux distribution (iso) to be installed
+directly on hardware or on a VM with the following minimum system requirements.
 
 * 64-bit Intel or AMD processor
 * 2GB RAM
@@ -22,15 +22,14 @@ directly on hardware or as a VM with the following minimum system requirements.
 Download Rockstor
 -----------------
 
-Download RockStor from `here
-<https://sourceforge.net/projects/rockstor/files/latest/download>`_.  Create a
+Rockstor `download options <http://rockstor.com/download.html>`_. Create a
 bootable CD or USB drive from the downloaded iso and proceed to the next
 section for installation.
 
 .. raw:: html
 
    <div class="alert alert-info">
-   For convenience, you can also purchase a USB install disk from our <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">shop</a>.
+   For convenience, you can also purchase a USB install disk from <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">our shop</a>.
    Thanks for your support!
    </div>
 
@@ -49,7 +48,7 @@ CentOS and uses the same anaconda installer the installation looks similar to
 that of CentOS, Redhat, or Fedora.
 
 To find out what the installation process looks like, watch a 5 minute video of
-`a Rockstor VirtualBox install <http://youtu.be/00k_RwwC5Ms>`_, or
+`a Rockstor VirtualBox install <http://youtu.be/00k_RwwC5Ms>`_, or see
 :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup`.
 
 .. raw:: html
