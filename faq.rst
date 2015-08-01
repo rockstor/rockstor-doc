@@ -41,12 +41,12 @@ drive from our `shop
 <http://shop.rockstor.com/collections/diy-accessories/products/usb-stick>`_ and
 support our effort!
 
-Are the faster alternatives to running from USB?
-------------------------------------------------
+Are there faster alternatives to running from USB?
+--------------------------------------------------
 
-Yes. If your motherboard has a spare PCI-Express slot you can get a SSD boot
-drive from our `shop <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_.
-This is a cheap yet much faster alternative. Here's a short
+Yes. If your motherboard has a spare PCI-Express slot you can get an SSD boot
+drive `from our shop <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_.
+This is a cheap yet much faster alternative to a USB flash drive. Here's a short
 `blog post <http://rockstor.com/blog/diy-nas/ssd-boot-drive-for-diy-rockstor-systems>`_ with more information.
 
 How much does Rockstor cost?

@@ -29,7 +29,7 @@ section for installation.
 .. raw:: html
 
    <div class="alert alert-info">
-   For convenience, you can also purchase a USB install disk from our <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">shop</a>.
+   For convenience, you can also purchase a USB install disk from <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">our shop</a>.
    Thanks for your support!
    </div>
 
