@@ -9,9 +9,19 @@ and are run at a specified frequency. The types of tasks currently supported are
 * Pool scrub
 * Share Snapshot 
 
-On the Web-UI **System** page select **Scheduled Tasks** and **Enable** the **Task
-Scheduler**. To create a new task click the **Add Scheduled Task** button.
+.. _tasksenable:
 
+Enable / Disable all Tasks
+--------------------------
+
+On the Web-UI **System** page under **Services** there is a **Task Scheduler**
+switch which will enable or disable all Tasks at once.
+
+To create a new task click the **Add Scheduled Task** button in the
+**Scheduled Tasks** section of the **System** page; see the following sections
+:ref:`scrubtask` and :ref:`snapshottask` for examples of creating tasks.
+
+.. _scrubtask:
 
 Create a Scrub Task
 -------------------
@@ -20,11 +30,11 @@ To create a scrub task enter the following:-
 
 * **Task name** and **Task type** ie *scrub*
 * **Pool to scrub** from the drop down
-* **Start Date**, **Start time**, and **Task frequency** in minutes
+* **Frequency of task** ie how often and when
 
 
 .. image:: scrub_task.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
 Then the **Submit** button.
@@ -40,29 +50,38 @@ To create a snapshot task enter the following:-
 * **Share** to snapshot
 * **Snapshot prefix** the file name will be *prefix_YYYYMMDDHHMMSS*
 * **Maximum count** keep only this number of the most recent snapshots
-* **Start Date**, **Start time**, and **Task frequency** in minutes
+* **Frequency of tasks** ie how often and when
 
 .. image:: mpsnapshot_daily.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
 Then the **Submit** button.
 
 
-Enable / Disable one or all Tasks
----------------------------------
 
-On the Web-UI **System** page select **Scheduled Tasks**.
-The **Task Scheduler** switch will enable or disable all Tasks at once.
+.. _tasksedit:
 
-If you wish to Enable / Disable an **individual task** use that task's
-respective **tick box** in the *Enabled column*
+Edit an Existing Task
+---------------------
 
+If you wish to Enable / Disable / Edit an **Existing task** use that task's
+respective **pen icon** in the **Actions column** on the **System** page
+**Scheduled Tasks** section.
 
 .. image:: tasks_list.png
-   :scale: 100 %
+   :scale: 80 %
    :align: center
 
+And clicking on the **pen** of an **existing task** results in:-
+
+.. image:: task_edit.png
+   :scale: 80 %
+   :align: center
+
+Note the **Enable task?** tick box within this edit page.
+
+.. _taskdelete:
 
 Delete a Task
 -------------
