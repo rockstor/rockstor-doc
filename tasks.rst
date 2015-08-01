@@ -1,10 +1,13 @@
 .. _tasks:
 
-Scheduled tasks
+Scheduled Tasks
 ===============
 
-Rockstor allows a user to set up scheduled tasks that start at a particular time
-and are run at a specified frequency. The types of tasks currently supported are:-
+Rockstor has the ability to set up scheduled tasks that are run at a specified
+frequency eg:- every minute / 30 minutes, daily, weekly, monthly, or yearly;
+and at a specified time in the case of lower frequencies.
+
+The types of tasks currently supported are:-
 
 * Pool scrub
 * Share Snapshot 
@@ -15,7 +18,12 @@ Enable / Disable all Tasks
 --------------------------
 
 On the Web-UI **System** page under **Services** there is a **Task Scheduler**
-switch which will enable or disable all Tasks at once.
+switch which will enable or disable all tasks at once.
+
+.. _newtask:
+
+Creating a New Task
+-------------------
 
 To create a new task click the **Add Scheduled Task** button in the
 **Scheduled Tasks** section of the **System** page; see the following sections
@@ -24,7 +32,7 @@ To create a new task click the **Add Scheduled Task** button in the
 .. _scrubtask:
 
 Create a Scrub Task
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 To create a scrub task enter the following:-
 
@@ -42,7 +50,7 @@ Then the **Submit** button.
 .. _snapshottask:
 
 Create a Snapshot Task
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 To create a snapshot task enter the following:-
 
@@ -57,8 +65,6 @@ To create a snapshot task enter the following:-
    :align: center
 
 Then the **Submit** button.
-
-
 
 .. _tasksedit:
 
