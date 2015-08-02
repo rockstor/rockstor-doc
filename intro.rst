@@ -22,6 +22,7 @@ so.
 4. The above unique combination translates to lower capital and operational
 costs of your storage infrastructure.
 
+
 Supported use cases
 -------------------
 
@@ -34,8 +35,8 @@ Features
 
 Below is the list of all features supported in Rockstor at a glance. Features
 in *prod* status are production ready where as *beta* indicates features not
-yet ready for prime time. Some unsupported and planned features are also listed
-for clarity.
+yet ready for prime time. Some unsupported and planned features are also
+listed.
 
 +-----------------------------+---------+--------------------------------+
 | Feature                     | support | notes                          |
@@ -47,13 +48,16 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | Unlimited CoW snapshots     | beta    |                                |
 +-----------------------------+---------+--------------------------------+
-| sharing via NFS(v3 and v4)  | prod    |                                |
+| sharing via NFS(v3 and v4)  | prod    | Network File System cross      |
+|                             |         | platform enterprise file access|
 +-----------------------------+---------+--------------------------------+
-| sharing via SMB             | beta    |                                |
+| sharing via SMB             | beta    | also known as CIFS / Samba     |
++-----------------------------+---------+--------------------------------+
+| sharing via AFP             | beta    | Apple File Protocol            |
 +-----------------------------+---------+--------------------------------+
 | WebDAV                      | planned |                                |
 +-----------------------------+---------+--------------------------------+
-| SFTP                        | beta    |                                |
+| SFTP                        | beta    | Secure File Transport Protocol |
 +-----------------------------+---------+--------------------------------+
 | Asynchronous share          | beta    | replicate shares between       |
 | replication                 |         | multiple Rockstor appliances   |
@@ -68,9 +72,15 @@ for clarity.
 +-----------------------------+---------+--------------------------------+
 | Active directory            | beta    |                                |
 +-----------------------------+---------+--------------------------------+
-| LDAP                        | prod    |                                |
+| LDAP                        | prod    | Lightweight Directory Access   |
 +-----------------------------+---------+--------------------------------+
-| NIS                         | prod    |                                |
+| NIS                         | prod    | Network Information System     |
++-----------------------------+---------+--------------------------------+
+| NTP client                  | prod    | set system time from NTP server|
++-----------------------------+---------+--------------------------------+
+| SNMP                        | beta    | enterprise monitoring facility |
++-----------------------------+---------+--------------------------------+
+| S.M.A.R.T                   | beta    | disk health information system |
 +-----------------------------+---------+--------------------------------+
 | Smart probes                | beta    | on demand deep insights        |
 +-----------------------------+---------+--------------------------------+
@@ -84,4 +94,6 @@ for clarity.
 | Critical event alerts       | planned |                                |
 +-----------------------------+---------+--------------------------------+
 | Scheduled tasks             | beta    | snapshots and scrubs           |
++-----------------------------+---------+--------------------------------+
+| Config Backup and Restore   | beta    | for recovery / migration use   |
 +-----------------------------+---------+--------------------------------+
