@@ -3,6 +3,11 @@
 Configuration Backup and Restore
 ================================
 
+**Please note that this feature is in beta testing and not yet recommended
+for production use**
+
+*Bug reports or suggestions are always welcome on* `our forum <http://forum.rockstor.com/>`_
+
 The current configuration of Rockstor can be saved at any time and restored to
 any previously saved point.  This is a particularly useful feature when making
 extensive configuration changes as it provides the possibility to revert to a
