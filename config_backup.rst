@@ -52,8 +52,10 @@ configuration in the same way ie:-
     :scale: 80%
     :align: center
 
-Note in the above listing we have several saved configurations.
-
-The config named **my-rockstor-config5.json.gz** is an example of an uploaded
+Note in the above listing we have several saved configurations.The config
+named **my-rockstor-config5.json.gz** is an example of an **uploaded**
 configuration that was renamed locally after having been downloaded
 previously and is now ready to be applied using the **Play** icon as usual.
+
+**All configuration backups are stored in zipped json format in the
+/opt/rockstor/static/config-backups directory**
