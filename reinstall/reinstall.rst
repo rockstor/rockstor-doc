@@ -108,3 +108,11 @@ This process is intended to import the following:-
 
 This image shows the yellow **mouse over** popup info window explaining the
 **import icon**
+
+
+Restoring Configuration
+-----------------------
+
+If you have previously :ref:`Created a Configuration Backup <config_backup>`
+and downloaded the relevant file then you can now :ref:`restore that
+configuration <config_restore>`.
