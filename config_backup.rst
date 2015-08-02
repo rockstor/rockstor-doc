@@ -36,14 +36,20 @@ backup will be saved and named according to the date and time it was taken.
 This shows a single save point; note the icons in the actions column.
 Mouse over tooltips assist with identifying these icons and their function.
 
+..  _config_backup_actions:
+
 Possible Actions
-^^^^^^^^^^^^^^^^
+----------------
+
 By using the **Bin**, **Download**, and **Play** icons in the action column it
 is possible to:-
 
 * **Bin** / dispose of a particular configuration backup
 * **Download** a particular backup file to you local machine
 * **Play** / Restore the selected configuration
+
+Note that it is also possible to upload a previously downloaded configuration
+and then apply / play back that configuration.
 
 ..  _config_restore:
 
