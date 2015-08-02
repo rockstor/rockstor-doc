@@ -11,7 +11,8 @@ for production use**
 The current configuration of Rockstor can be saved at any time and restored to
 any previously saved point.  This is a particularly useful feature when making
 extensive configuration changes as it provides the possibility to revert to a
-known good configuration.
+known good configuration. Once a configuration backup has been generated and
+downloaded it can also be used in system migration scenarios.
 
 This feature is found in the **Config Backups** section on the **System** page.
 
