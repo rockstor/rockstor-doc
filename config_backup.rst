@@ -14,6 +14,26 @@ extensive configuration changes as it provides the possibility to revert to a
 known good configuration. Once a configuration backup has been generated and
 downloaded it can also be used in system migration scenarios.
 
+Following state information is saved as part of a backup
+
+* Users and Groups
+* Samba configuration
+* NFS configuration
+* AFP configuration
+* Service configurations (ntp, smartd etc..)
+
+Since Rockstor can dynamicall detects Pool, Share and Snapshot information after
+an external change like a reinstall, there is not need to save this
+information. While the above list covers essential portion of the whole state,
+following state information is not saved to a backup. Support is planned to be
+added in future.
+
+* Appliance configurations
+* Dashboard customizations
+* Network interface settings
+* Schedule task configuration
+* Rock-on configuration
+
 This feature is found in the **Config Backups** section on the **System** page.
 
 ..  image:: conf_backup.png
@@ -34,8 +54,12 @@ backup will be saved and named according to the date and time it was taken.
     :scale: 80%
     :align: center
 
-This shows a single save point; note the icons in the actions column.
-Mouse over tooltips assist with identifying these icons and their function.
+This shows a single save point; It's recommended that you download the backup
+and save it somewhere safe and secure. In case of a reinstall, you can upload
+it and restore the system to this save point as explained below.
+
+Note the icons in the actions column.  Mouse over tooltips assist with
+identifying these icons and their function.
 
 ..  _config_backup_actions:
 
