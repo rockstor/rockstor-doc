@@ -30,6 +30,7 @@ Welcome to Rockstor
    services
    users
    network
+   config_backup
    tasks
    clients
    support
