@@ -91,7 +91,7 @@ listed.
 +-----------------------------+---------+--------------------------------+
 | Docker based Plugin system  | beta    | We call these Rock-ons         |
 +-----------------------------+---------+--------------------------------+
-| Critical event alerts       | planned |                                |
+| Critical event alerts       | beta    | via email notification system  |
 +-----------------------------+---------+--------------------------------+
 | Scheduled tasks             | beta    | snapshots and scrubs           |
 +-----------------------------+---------+--------------------------------+

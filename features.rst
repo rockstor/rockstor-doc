@@ -102,6 +102,22 @@ A Plugin system
 
 Used to extend Rockstors features; we call these :ref:`rockons_intro`
 
+Email notifications
+-------------------
+
+Rockstor includes an easy to use Postfix configuration facility to enable
+:ref:`email_notifications` on system events and drive health status.
+
+S.M.A.R.T drive monitoring
+--------------------------
+
+The S.M.A.R.T technology in most modern drives is integrated
+into Rockstor so that many aspect of a drive's status can be examined. It is
+possible, thanks to smartmontools, to receive emails via Rockstor's notification
+system when drives have heath issues or when they reach a warning or critical
+temperature; or even is their temperature varies by more than a configured
+value over time.
+
 Support
 -------
 
