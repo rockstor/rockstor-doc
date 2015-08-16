@@ -105,8 +105,8 @@ Used to extend Rockstors features; we call these :ref:`rockons_intro`
 Email notifications
 -------------------
 
-Rockstor includes an easy to use Postfix configuration facility to enable email
-notifications on system events and drive health status.
+Rockstor includes an easy to use Postfix configuration facility to enable
+:ref:`email_notifications` on system events and drive health status.
 
 S.M.A.R.T drive monitoring
 --------------------------
