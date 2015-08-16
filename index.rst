@@ -18,10 +18,11 @@ Welcome to Rockstor
    features
    uis
    dashboard
-   analytics
    disk_pool_ops
    share_snap_ops
    docker-based-rock-ons/overview
+   email_setup
+   tasks
    data_loss
    nfs_ops
    samba_ops
@@ -31,11 +32,11 @@ Welcome to Rockstor
    users
    network
    config_backup
-   tasks
    clients
    support
    contribute
    howtos
+   analytics
    benchmarks
    faq
 
