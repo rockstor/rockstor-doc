@@ -41,8 +41,10 @@ Current Configuration
 ---------------------
 
 Upon submitting the desired configuration the following is displayed
-summarizing the previously entered information and advising on how this
-configuration might be tested.
+summarizing the previously entered / current information and advising on how
+this configuration might be tested.
+
+**Email Alerts** section of the **System** page with existing configuration.
 
 ..  image:: email_done.png
     :scale: 80%
