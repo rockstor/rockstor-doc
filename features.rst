@@ -78,8 +78,8 @@ Directory services
 
 * AD
 
-NFS Analytics (Planned)
------------------------
+NFS Analytics
+-------------
 
 Server side NFS analytics are available with Rockstor's smart probes. These
 probes can be run on demand to collect insightful information about NFS
