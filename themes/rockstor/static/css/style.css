@@ -68,6 +68,13 @@ hr { border-top: 1px solid #ccc; margin: 6px 0px 20px 0px; }
 
 .inner-container { padding: 12px 12px 20px 12px; }
 
+.container {  
+	padding-right: 15px;
+	padding-left: 15px;
+        margin-right: 0px;
+	margin-left: 0px;
+}
+
 /* links */
 a { text-decoration: none; color: #e76545; outline: 0 !important; }
 a:hover { text-decoration: underline; color: #e76545; outline: 0 !important; }
