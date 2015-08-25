@@ -101,6 +101,11 @@ workloads. The following probes are available
 
 See :ref:`analytics` for more details.
 
+A Plugin system
+---------------
+
+Used to extend Rockstors features; we call these :ref:`rockons_intro`
+
 Support
 -------
 

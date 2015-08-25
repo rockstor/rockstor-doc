@@ -14,9 +14,12 @@ sidebar. All services and their current state are displayed.
    :scale: 70 %
    :align: center
 
-To start or stop a service, click the ON or OFF buttons respecively.
+To start or stop a service, click the ON or OFF buttons respectively.
 
 Some services need to be configured before they can be turned on. To access the configuration page for a service, click the **wrench** icon next to the service name.
+
+Please note that not all services are documented here, we are currently working
+on upgrading the documentation
 
 NFS
 ---
@@ -146,5 +149,12 @@ with appropiate values as shown below.
 * **Domain**: NIS domain.
 * **Server**: IP address of NIS server.
 
-To start or stop the service, click the corresponding ON or OFF button.
+ROCK-ON (DOCKER PLUGIN SYSTEM)
+------------------------------
+
+This is a very new service that is still in Beta, please see :ref:`rockons_intro`
+For an introduction to Rockstor's `docker <https://www.docker.com/>`_ based
+plugin system.
+
+**To start or stop a service, click the corresponding ON or OFF button**
 

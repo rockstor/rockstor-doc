@@ -64,3 +64,8 @@ other features that increase operational efficiency of the storage
 infrastructure.
 
 
+Rock-ons
+--------
+
+This is our made up term to reference the built in `docker <https://www.docker.com/>`_
+based plugin system; see our :ref:`rockons_intro` section for an explanation.
