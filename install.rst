@@ -21,7 +21,7 @@ Before proceeding with a serious installation that may require hardware
 procurement, you can evaluate Rockstor on Amazon AWS. See our YouTube video on `Rockstor on ec2
 <https://www.youtube.com/watch?v=ys_8FLVov2U>`_.
 
-Hardware recommendations:
+Hardware recommendations
 -------------------------
 
 At the bare minimum, see :ref:`minsysreqs` for a basic recommendation. This
@@ -40,9 +40,19 @@ Coming soon...
 
 Upgrading Rockstor
 ------------------
+Rockstor is under continuous development and we push tested updates in small batches. These updates are easy to install. While we roll-out major releases that require complete OS install, we try to make these releases as infrequent as possible. We strive to make most updates non-disruptive.
 
-Rockstor is under continuous development. However, we strive to make most
-updates non-disruptive. You can safely update Rockstor anytime with the
+Rockstor updates can be installed in two ways :
+
+1. Install updates from the Web-UI : On the Rockstor Web-UI, on the top-right side of the navigation bar, you will see an upward facing arrow. If you click on that arrow, and if there is an update available, you will see *Software Update* highlighted, with details on the screen. This `video <https://www.youtube.com/watch?v=srn6vgQNkbc>`_ also illustrates the process of update from Web-UI.
+
+.. image:: install-update.png
+   :scale: 60%
+   :align: center
+ 
+
+
+2. Install updates from the CLI : You can safely update Rockstor anytime with the
 following command::
 
     [root@localhost ~]# yum update rockstor

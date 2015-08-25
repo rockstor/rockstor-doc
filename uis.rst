@@ -1,21 +1,19 @@
 
 User Interfaces
 ===============
-Rockstor supports 2 main user interface methods.
+Rockstor supports two main user interface methods.
 
-1. a browser based interface (web-ui)
-2. a RESTful API that enables complete programmatic control
+1. A browser based interface (Web-UI)
+2. A RESTful API that enables complete programmatic control
 
 .. _webui:
 
-web-ui
+Web-UI
 ------
 
-The RockStor browser based interface or web-ui is supported on the Firefox
-web browser.
+To access RockStor browser based interface or Web-UI, we recommend using Firefox or Chrome web browser.
 
-The initial setup of the appliance should be done through the
-web-ui, and once it is completed, any interface method can be used; including ssh bash access if required.
+The initial setup of the appliance should be done through the Web-UI, and once it is completed, any interface method can be used; including ssh bash access if required.
 
 .. _setup:
 
@@ -37,11 +35,4 @@ process as shown below.
 
 Once the setup process is complete, the newly created admin user is logged in
 and the Rockstor dashboard is displayed.
-
-.. _api:
-
-API
----
-
-Coming soon...
 
