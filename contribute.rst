@@ -82,10 +82,14 @@ demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
 have ways to completely avoid the terminal, but using the terminal makes you
 `look cool <https://www.youtube.com/watch?v=51lGCTgqE_w>`_.
 
-Clone your rockstor-core fork onto your local development environment. You can
-do this in any directory, but chances are you have a project directory
-appropriate for this. Let's assume you have a projects directory in your
-home(~/projects) where you'd like to clone to. ::
+Your development machine can be a Linux system or a Mac. In my case, it's a
+Lenovo laptop running Ubuntu. There are other contributors using Mac, so this
+process works the same in both cases.
+
+Clone your fork of rockstor-core repo onto your local development
+environment. You can do this in any directory, but chances are you have a
+project directory appropriate for this. Let's assume you have a projects
+directory in your home(~/projects) for the repo. ::
 
         [you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-core.git
 
@@ -262,6 +266,32 @@ friends. You can `inspect elements
 for html/css changes, log to the browser console from javascript code with
 console.log(), and use the debugger and step through javascript from your
 browser.
+
+Adding third party Javascript libraries
+---------------------------------------
+
+The frontend code uses third party javascript libraries such as jquery,
+bootstrap, d3 and many others. These are not part of the rockstor-core
+repository but are dynamically generated during the buildout step. They are
+placed in the below directory on your build VM::
+
+    [root@build_vm ]# ls /path/to/build_dir/static/js/lib
+    backbone-0.9.2.js            cocktail.js   humanize.js                jquery.flot.stack.js         jquery.sparkline.min.js    json2.js              socket.io.min.js
+    backbone.routefilter.min.js  cron          jquery-1.9.1.min.js        jquery.flot.stackpercent.js  jquery.tablesorter.js      jsonform.js           underscore-1.3.2.js
+    bootstrap-datepicker.js      cubism.v1.js  jquery.flot.axislabels.js  jquery.flot.time.js          jquery.tools.min.js        later.min.js
+    bootstrap.js                 d3-tip.js     jquery.flot.js             jquery.flot.tooltip_0.5.js   jquery.touch-punch.min.js  moment.min.js
+    bootstrap-timepicker.js      d3.v3.min.js  jquery.flot.navigate.js    jquery-migrate-1.2.1.min.js  jquery-ui.min.js           prettycron.js
+    chosen.jquery.js             gentleSelect  jquery.flot.resize.js      jquery.shapeshift.js         jquery.validate.js         simple-slider.min.js
+
+If you need to add a new library, place all of it's files in the lib
+directory(on the build VM, obviously) and continue your development
+process. After you open the pull request for rockstor-core repo, it's time to
+open a separate pull request for merging these libaries into upstream. This
+separate pull request must be opened for another repository named
+`rockstor-jslibs <https://github.com/rockstor/rockstor-jslibs>`_, which
+mirrors the contents of the lib directory shown above. The fork and
+pull-request process is same as it is for this(rockstor-core repo) one.
+
 
 Database migrations
 -------------------
