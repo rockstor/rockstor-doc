@@ -157,14 +157,22 @@ should add your name to the AUTHORS file.
 Build VM
 --------
 
-You need a Virtual Machine (VM) to build and test your changes. An easy solution
-is to create a RockStor VM using either Oracle's `VirtualBox
+You need a Virtual Machine (VM) to build and test your changes. An easy
+solution is to create a RockStor VM using either Oracle's `VirtualBox
 <https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
 `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
 can find a `VirtualBox Rockstor install demo
 <https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel
 <https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a
-:ref:`kvmsetup` in our documentation.
+:ref:`kvmsetup` in our documentation. It need not be a VM, but using a physical
+machine just for this purpose could be an overkill.
+
+Note that when you first create the build VM, rockstor rpm package will already
+be installed. The package files are located in /opt/rockstor. Further more, the
+rockstor service should be running. We don't want that as it interferes with
+our development activity. Further down in this document, there is a buildout
+step. When that is run the first time, the rpm package and it's effects are
+removed.
 
 Helpful terms
 -------------
