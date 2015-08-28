@@ -1,10 +1,10 @@
-Feature overview
+Feature Overview
 ================
 
-User friendly web-ui
+User friendly Web-UI
 --------------------
 
-Rockstor web-ui is designed to efficiently manage large and complex storage
+Rockstor Web-UI is designed to efficiently manage large and complex storage
 infrastructure. It is also designed for intuitive user experience, which
 eliminates the need to read extensive documentation and learning to be able to
 use it. Below are the feature highlights. See :ref:`webui` for a more detailed
@@ -25,7 +25,11 @@ explanation.
 
 * Manage other Rockstor appliances by quick switching.
 
-Online disk management
+* Extend functionality using Docker-based plugins called *Rock-ons* 
+
+* Contact Rockstor support
+
+Online Disk Management
 ----------------------
 
 * Rescan the system for any new disks and make them available instantly for
@@ -36,19 +40,19 @@ Online disk management
 * Act on disk alerts, repair and remove disks from the system if necessary
   without unnecessary disruption.
 
-Online Pool management
+Online Pool Management
 ----------------------
 
-* Create pools instantly using the web-ui or CLI.
+* Create pools instantly using the Web-UI or CLI.
 
 * Resize pools online by adding or removing whole disk drives.
 
 * Schedule scrub operations for periodic maintenance
 
-Online Share and Snapshot management
+Online Share and Snapshot Management
 ------------------------------------
 
-* Create shares instantly using the web-ui or CLI.
+* Create shares instantly using the Web-UI or CLI.
 
 * Resize pools online, thin provision or over provision according to your
   needs.
@@ -64,12 +68,12 @@ Online Share and Snapshot management
 
 * Rollback a share to one of it's snapshots.
 
-Share replication
+Share Replication
 -----------------
 
 * Replicate shares from one Rockstor appliance to others.
 
-Directory services
+Directory Services
 ------------------
 
 * LDAP
