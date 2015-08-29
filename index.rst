@@ -40,7 +40,6 @@ Welcome to Rockstor
    benchmarks
    faq
 
-
 Indices and tables
 ==================
 

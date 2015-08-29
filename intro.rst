@@ -2,32 +2,18 @@
 Introduction
 ============
 
-Rockstor is a **free enterprise class file storage platform**. At the
-foundation, it is a CentOS flavored Linux operating system tailored for storage
-use cases. Rockstor brings together technologies including the Linux kernel,
-BTRFS filesystem, SystemTap and our own free software stack to deliver a
-compelling solution.
+Rockstor is a **Linux/BTRFS based Network Attached Storage (NAS) and private
+cloud solution**. It is distributed as a CentOS flavored Linux
+operating system with a newer kernel and Rockstor application software bundled
+together to easily install a system and manage your data.
 
-Rockstor's proposition is the following
+Rockstor supports advanced NAS features powered by BTRFS and other Linux
+technologies. It also supports hosting of various apps based on Docker
+technology which extends it's feature set beyond NAS and transforms the system
+into a private cloud server.
 
-1. Rockstor provides powerful features, a few of them include dynamic volume
-management, snapshots, thin provisioning etc..
-
-2. Rockstor provides smart features including Analytics, data driven
-visualization and programmable orchestration.
-
-3. Rockstor is free software and will remain
-so.
-
-4. The above unique combination translates to lower capital and operational
-costs of your storage infrastructure.
-
-
-Supported use cases
--------------------
-
-Rockstor addresses the **NAS/Filer** use case. It can be installed on bare
-metal or as a virtual machine.
+Rockstor can be installed on commodity hardware or as a virtual machine on
+hypervisors like Xen, KVM and VMWare.
 
 
 Features
@@ -46,7 +32,7 @@ listed.
 +-----------------------------+---------+--------------------------------+
 | Online share management     | beta    |                                |
 +-----------------------------+---------+--------------------------------+
-| Unlimited CoW snapshots     | beta    |                                |
+| CoW snapshots               | beta    |                                |
 +-----------------------------+---------+--------------------------------+
 | sharing via NFS(v3 and v4)  | prod    | Network File System cross      |
 |                             |         | platform enterprise file access|
@@ -81,13 +67,6 @@ listed.
 | SNMP                        | beta    | enterprise monitoring facility |
 +-----------------------------+---------+--------------------------------+
 | S.M.A.R.T                   | beta    | disk health information system |
-+-----------------------------+---------+--------------------------------+
-| Smart probes                | beta    | on demand deep insights        |
-+-----------------------------+---------+--------------------------------+
-| Smart probe data            | beta    | visualization of on demand     |
-| visualization               |         | deep insights                  |
-+-----------------------------+---------+--------------------------------+
-| NFS server side analytics   | beta    |                                |
 +-----------------------------+---------+--------------------------------+
 | Docker based Plugin system  | beta    | We call these Rock-ons         |
 +-----------------------------+---------+--------------------------------+
