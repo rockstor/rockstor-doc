@@ -119,9 +119,9 @@ Create a Pool
 -------------
 
 Pool related operations including creating a pool can be done from the *Pools*
-view. In the web-ui, click on the *Storage* tab to enter the main Storage
-view. Now click on **Pools** in the left sidebar to enter the *Pools* view.
-If there are any pools in the system, they are displayed in a table.
+view. In the Web-UI, click on the *Storage* tab to enter the main Storage
+view. Now click on **Pools** in the left sidebar to enter the *Pools* view. If there are any pools in the system, they are displayed in a
+table. **Note** A pool can only be created on an empty disk.  If there is an existing pool on a disk, a new one can't be created, unless the existing pool is removed.
 
 If there are a large number of pools, the table will be paginated and the
 current page number will be displayed below the table along with **Prev** and
@@ -135,16 +135,20 @@ up/down arrows displayed in each column header.
    :align: center
 
 Click on **Create Pool** button and the create pool form will be
-displayed. Submit this form to create a new pool as shown below.
+displayed. When creating a new pool, choose the appropriate redundancy from the *Raid
+configuration* dropdown menu. Submit this form to create a new pool as shown below.
 
-.. image:: create_pool.gif
-   :scale: 65 %
+.. image:: create-pool.png
+   :scale: 65%
    :align: center
+   :target: https://www.youtube.com/watch?v=T5sg8xSoH1E
 
-When creating a new pool, choose the appropriate redundancy from the *Raid
-configuration* drop down menu.
+.. raw:: html
+    <div style="margin-top:10px;">
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/T5sg8xSoH1E" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-Redundancy options
+Redundancy Options
 ^^^^^^^^^^^^^^^^^^
 
 All standard BTRFS redundancy options are available when creating a pool.
@@ -156,19 +160,59 @@ All standard BTRFS redundancy options are available when creating a pool.
   are striped across the disks.
 * **Raid1**: Two or more disks of same size can be used and the configuration applies
   to both data and metadata.
+* **Raid5**:
+* **Raid6**:
 * **Raid10**: This is a Raid0 of Raid1 mirrors. Four or more disks of same size
   can be used and the configuration applies to both data and metadata.
 
 Resize a Pool
+
+Compression Options
+^^^^^^^^^^^^^^^^^^^
+
+* **Don't enable compression**:
+* **zlib**: More details, can `refer here <http://www.zlib.net/manual.html>`_.
+* **lzo**: A file compressor similar to gzip. More details, you can `refer here <http://www.lzop.org/>`_.  
+
+Mount Options
+^^^^^^^^^^^^^
+
+These are for advanced users to provide BTRFS specific mount options. Allowed options are :
+
+* **alloc_start**
+* **autodefrag**
+* **clear_cache**
+* **commit**
+* **compress-force**
+* **discard**
+* **fatal_errors**
+* **inode_cache**
+* **max_inline**
+* **metadata_ratio**
+* **noacl**
+* **noatime**
+* **nodatacow**
+* **nodatasum**
+* **nospace_cache**
+* **space_cache**
+* **ssd**
+* **ssd_spread**
+* **thread_pool**
+
+Select Disks Option
+^^^^^^^^^^^^^^^^^^^
+
+Available disks for a pool are visible. You can select one or more options depending on your RAID configuration.
+
+
+Resize a pool
 -------------
 
-A pool can be resized by adding more disks to it. Go to the Storage tab of the
-web-ui and click on *Pools* in the left sidebar to enter the *Pools* view. In
-the displayed table of pools, click the pool to be resized to enter the pool
-detail view. Now, click on the **Resize** button and a popup form is
-displayed. Select disks to be added and submit the form. Upon success, pool's
-detail view is dispalyed which lists the new disk(s) added and the resulting
-new size of the pool as shown below.
+A pool can be resized by adding more disks, removing disks or by modifying RAID level. Click on the pool (under 'Name' tab) that you want to resize from the displayed table of pools to enter the detail view. In the detail view, go to the *Overview* tab of the Web-UI that gives the details such as Usage, Compression and Mount Options, Disks in the pool. Now, click on the **Resize** button and a popup form with three options 1) Modify RAID level 2) Add Disks 3) Remove Disks is displayed. Select any one of the options and submit the form. 	
+Upon success, 1) If *Modify RAID level* is selected, then the message *Resize is initiated. A balance process is kicked off to redistribute data. It could take a while. You can check the status in the Balances tab. Its finish marks the success of resize.* is displayed.
+
+	      2) If *Add Disks* is selected, and if disks are available to be added to the pool, then upon success, the added disks are displayed.
+	      3) If *Remove Disks* is selected, and if disks are successfully removed, then the correct message is displayed.  [NOTE : Suman to complete]	
 
 .. image:: resize_pool.gif
    :scale: 65%
@@ -180,7 +224,7 @@ Delete a Pool
 A *pool* can be deleted as long as it is empty, i.e., there are no *shares*
 remaining in it.
 
-Go to the Storage tab of the web-ui and click on *Pools* in the left sidebar to
+Go to the Storage tab of the Web-UI and click on *Pools* in the left sidebar to
 enter the *Pools* view. In the displayed table of pools, click on the **trash**
 icon corresponding to the pool to delete it as shown below.
 
@@ -199,8 +243,17 @@ redundancy. Scrubbing is a background process that finds and fixes these errors
 and ensures the long life of a pool.
 
 The *pool* scrub operation can take a while depending on the size of the pool. To
-start a scrub, go to the pool's detail view and click on the **Start scrub**
-button. The button will be disabled during the scrub process and enabled again
+start a scrub, go to the pool's detail view and click on the **Start a new scrub** button under the scrub tab. 
+The button will be disabled during the scrub process and enabled again
 once the scrub finishes.
 
+Balance a pool
+--------------
 
+click on **Start a new balance**.  [NOTE : Suman to complete the documentation for balances]
+
+Add Share
+---------
+
+From a detail view of a pool, you can click **Add Share** button, to create and add a share to the pool you selected.
+`
