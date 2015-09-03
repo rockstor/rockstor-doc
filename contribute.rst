@@ -115,8 +115,9 @@ Making changes
 
 We'll assume you have identified an issue(eg: #1234) from the `github issue tracker
 <https://github.com/rockstor/rockstor-core/issues>`_ to work on. First, start
-with the latest code by rebasing your local repo with upstream::
+with the latest code by rebasing your local repo's master branch with the upstream::
 
+        [you@your_laptop rockstor-core]# git checkout master
         [you@your_laptop rockstor-core]# git pull --rebase upstream master
 
 Checkout a new/separate branch for your issue. For example::
