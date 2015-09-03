@@ -115,69 +115,100 @@ as shown below.
    :scale: 65 %
    :align: center
 
-Create a Pool
--------------
+|
+Pools overview
+--------------
 
-Pool related operations including creating a pool can be done from the *Pools*
-view. In the Web-UI, click on the *Storage* tab to enter the main Storage
-view. Now click on **Pools** in the left sidebar to enter the *Pools* view. If there are any pools in the system, they are displayed in a
-table. **Note** A pool can only be created on an empty disk.  If there is an existing pool on a disk, a new one can't be created, unless the existing pool is removed.
+A Pool in Rockstor is a set of disk drives combined and represented as a single
+volume. Pools have attributes such as redundancy profile and compression to
+safeguard and store data efficiently. Pools can be expanded or shrunk by adding
+or removing disk drives. In other words, a Pool is a single or multi device
+BTRFS filesystem.
 
-If there are a large number of pools, the table will be paginated and the
-current page number will be displayed below the table along with **Prev** and
-**Next** buttons.
+Pool related operations can be managed from the **Pools** screen listed under
+the **Storage** tab of the Web-UI.
 
-The display can be sorted by individual columns by clicking the small
-up/down arrows displayed in each column header.
 
-.. image:: pools_view.gif
-   :scale: 65 %
-   :align: center
+Creating a Pool
+^^^^^^^^^^^^^^^
 
-Click on **Create Pool** button and the create pool form will be
-displayed. When creating a new pool, choose the appropriate redundancy from the *Raid
-configuration* dropdown menu. Submit this form to create a new pool as shown below.
+Only whole disk drives can be used to create Pools. But they don't have to be
+of the same size, which is a great feature of BTRFS. Disks that are partitioned
+with other filesystems including BTRFS won't be touched. Whole disks with BTRFS
+created outside of Rockstor or from a previous install, can however be
+imported. For more information, see :ref:`reinstall_import_data`.
 
-.. image:: create-pool.png
-   :scale: 65%
-   :align: center
-   :target: https://www.youtube.com/watch?v=T5sg8xSoH1E
+Click on **Create Pool** button and submit the create pool form to create a
+pool. There is a tooltip for each input field to help you choose appropriate
+parameters. Here's a video showing this operation.
 
-.. raw:: html
-    <div style="margin-top:10px;">
-    	<iframe width="560" height="315" src="https://www.youtube.com/embed/T5sg8xSoH1E" frameborder="0" allowfullscreen></iframe>
-    </div>
+.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
 
-Redundancy Options
-^^^^^^^^^^^^^^^^^^
+Redundancy profiles
+^^^^^^^^^^^^^^^^^^^
 
-All standard BTRFS redundancy options are available when creating a pool.
+.. _redundancyprofiles:
 
-* **Single**: One or more disks can be used. Data is neither mirrored nor
-  striped. But metadata is mirrored across drives. Drives of different
-  capacities can be used with this configuration.
-* **Raid0**: Two or more disks of same size can be used. Both metadata and data
-  are striped across the disks.
-* **Raid1**: Two or more disks of same size can be used and the configuration applies
-  to both data and metadata.
-* **Raid5**:
-* **Raid6**:
-* **Raid10**: This is a Raid0 of Raid1 mirrors. Four or more disks of same size
-  can be used and the configuration applies to both data and metadata.
+All standard BTRFS redundancy profiles are available when creating a pool.
 
-Resize a Pool
+* **Single**: This profile offers no redundancy, and is the only valid option
+  for creating a Pool with a single disk drive. It is also recommened if you
+  have multiple disks of different sizes, yielding higher total capacity
+  compared to **Raid0**. Data is neither mirrored nor striped, so if a disk
+  fails, the entire data of the Pool will be lost.
+
+* **Raid0**: Two or more disks can be used with this profile when there is no
+  need for redundancy. Both metadata and data are striped across the disks. It
+  is recommended for same size disks. If you have different size disks and no
+  need for redundancy, **Single** profile provides higher capacity. If a disk
+  fails, the entire data of the Pool will be lost.
+
+* **Raid1**: Two or more disks can be used with this profile. And both metadata
+  and data are replicated on 2 devices. So a Pool with this profile can sustain
+  a single disk failure.
+
+* **Raid5**: Two or more disks can be used with this profile, which supports
+  striping + parity. Like **Raid1**, this profile can sustain a single disk
+  failure. The BTRFS community consensus is that **Raid5** support is not yet
+  fully stable.
+
+* **Raid6**: Three or more disks can be used with this profile, which supports
+  striping + dual-parity. Because of dual-parity, a **Raid6** Pool can sustain
+  upto two disk failures at the same time.  The BTRFS community consensus is
+  that **Raid6** support is not yet fully stable.
+
+* **Raid10**: This is a Raid0 of Raid1 mirrors, with a minimum requirement of
+  four disk drives. It offers most redundancy at the cost of capacity where a
+  Pool can sustain multiple disk failures at the same time as long as they part
+  of different Raid1 groups.
+
 
 Compression Options
 ^^^^^^^^^^^^^^^^^^^
 
-* **Don't enable compression**:
-* **zlib**: More details, can `refer here <http://www.zlib.net/manual.html>`_.
-* **lzo**: A file compressor similar to gzip. More details, you can `refer here <http://www.lzop.org/>`_.  
+Compression can optionally be chosen during Pool creation or it can be set on a
+previously created Pool. In the latter scenario, compression is applied only to
+data written after it's set.
+
+Compression can also be set at the Share level. If you don't want to enable
+compression for all Shares under a Pool, don't enable it at the Pool
+level. Instead, selectively enable it on Shares.
+
+Besides not enabling compression at all, there are two additional choices
+
+* **zlib**: Provies slower but higher compression ratio. You can find out more `here <http://www.zlib.net/manual.html>`_.
+* **lzo**: A faster compression algorithm but provides lower ratio compared to
+  **zlib**. You can find out more `here <http://www.oberhumer.com/opensource/lzo/>`_.
+
 
 Mount Options
 ^^^^^^^^^^^^^
 
-These are for advanced users to provide BTRFS specific mount options. Allowed options are :
+These are optional and meant for more advanced users to provide BTRFS specific
+mount options. Since a Pool is a filesystem, it is mounted with default options
+which can be altered by providing one or more of the following. You can find
+out more about each option `here
+<https://btrfs.wiki.kernel.org/index.php/Mount_options>`_.
 
 * **alloc_start**
 * **autodefrag**
@@ -199,20 +230,27 @@ These are for advanced users to provide BTRFS specific mount options. Allowed op
 * **ssd_spread**
 * **thread_pool**
 
-Select Disks Option
-^^^^^^^^^^^^^^^^^^^
-
-Available disks for a pool are visible. You can select one or more options depending on your RAID configuration.
-
-
-Resize a pool
+|
+Resizing a Pool
 -------------
 
-A pool can be resized by adding more disks, removing disks or by modifying RAID level. Click on the pool (under 'Name' tab) that you want to resize from the displayed table of pools to enter the detail view. In the detail view, go to the *Overview* tab of the Web-UI that gives the details such as Usage, Compression and Mount Options, Disks in the pool. Now, click on the **Resize** button and a popup form with three options 1) Modify RAID level 2) Add Disks 3) Remove Disks is displayed. Select any one of the options and submit the form. 	
+You can resize a Pool for one of the following reasons
+
+1. To change it's redundancy profile. For example, to go from a RAID10 to RAID1.
+
+2. To add more disks and increase it's capacity.
+
+3. To remove disks and decrease capacity. Removed disks can be reused for other Pools.
+
+Pool resize is an online operation that does not cause any access
+disruption. However, depending on the size of the Pool, it took take a long
+time to finish.
+
+A pool can be resized by adding more disks, removing disks or by modifying RAID level. Click on the pool (under 'Name' tab) that you want to resize from the displayed table of pools to enter the detail view. In the detail view, go to the *Overview* tab of the Web-UI that gives the details such as Usage, Compression and Mount Options, Disks in the pool. Now, click on the **Resize** button and a popup form with three options 1) Modify RAID level 2) Add Disks 3) Remove Disks is displayed. Select any one of the options and submit the form.
 Upon success, 1) If *Modify RAID level* is selected, then the message *Resize is initiated. A balance process is kicked off to redistribute data. It could take a while. You can check the status in the Balances tab. Its finish marks the success of resize.* is displayed.
 
 	      2) If *Add Disks* is selected, and if disks are available to be added to the pool, then upon success, the added disks are displayed.
-	      3) If *Remove Disks* is selected, and if disks are successfully removed, then the correct message is displayed.  [NOTE : Suman to complete]	
+	      3) If *Remove Disks* is selected, and if disks are successfully removed, then the correct message is displayed.  [NOTE : Suman to complete]
 
 .. image:: resize_pool.gif
    :scale: 65%
@@ -243,7 +281,7 @@ redundancy. Scrubbing is a background process that finds and fixes these errors
 and ensures the long life of a pool.
 
 The *pool* scrub operation can take a while depending on the size of the pool. To
-start a scrub, go to the pool's detail view and click on the **Start a new scrub** button under the scrub tab. 
+start a scrub, go to the pool's detail view and click on the **Start a new scrub** button under the scrub tab.
 The button will be disabled during the scrub process and enabled again
 once the scrub finishes.
 
