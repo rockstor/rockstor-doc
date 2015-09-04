@@ -1,123 +1,7 @@
-..  _disksandpools:
+..  _pools:
 
-Disks and Pools
-===============
-
-..  _disksoverview:
-
-Disks Overview
---------------
-
-The WebUI **Disks** subsection of the **Storage** page gives
-an overview of disks **currently or previously known** to the Rockstor system.
-
-*Table links from left to right:-*
-
-* **Drive Name** - see that drives **SMART data** / status
-* **Bulb Icon** - to flash the drive's activity light ie to **identify its location**
-* **Pool Name** - that pools specific **details** page
-* **S.M.A.R.T** - enable or disable for each device
-
-*Buttons:-*
-
-* **Rescan** - the hardware for any supported drives, see :ref:`scandisks` below
-* **S.M.A.R.T** - system wide **custom configuration** (advanced)
-
-.. image:: disks_overview.png
-   :scale: 80%
-   :align: center
-
-The disks table can be sorted by individual columns by clicking the small
-up/down arrows displayed in each column header.
-
-With a large numbers of disks the table will be paginated and the current page
-number will be displayed below the table along with **Prev** and **Next**
-buttons.
-
-..  _scandisks:
-
-Scan for new disks
-^^^^^^^^^^^^^^^^^^
-
-In the :ref:`disksoverview` (above) clicking the **Rescan** button starts a scan for any
-new disks added to the system since the last scan. This is particularly useful
-if a drive has been added to the system since Rockstor was power-on ie
-*hot plugged*.
-
-..  _btrfsdisk:
-
-Existing whole disk BTRFS
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If after scanning or after a Rockstor reinstall the system finds an
-**existing whole disk BTRFS filesystems** a small **down arrow icon** next to
-the drive name will indicate this. This down arrow can be used to import the
-discovered btrfs filesystem. In this situation there are two
-options:
-
-* **import** the exiting **whole disk btrfs** filesystem - see :ref:`reinstall_import_data` in our :ref:`reinstall` HowTo
-
-*or*
-
-* **wipe the disk** and re-use as if new - see :ref:`wipedisk` below
-
-
-..  _partitioneddisks:
-
-Partitioned disks
-^^^^^^^^^^^^^^^^^
-
-Rockstor works only with whole disk drives that do not contain a partition table.
-If a disk has a partition table, it is suspected to have data and
-Rockstor doesn't allow it's usage until the partition table is explicitly
-wiped. Such disks are displayed with a little **eraser icon** next to their
-name. Relevant help text is displayed upon mousing over this icon indicating
-the above restriction. See the next section :ref:`wipedisk` for the procedure.
-
-.. image:: partitioned_disk.png
-   :scale: 65 %
-   :align: center
-
-..  _wipedisk:
-
-Wiping a Partitioned Disk
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Before a partitioned or previously used disk can be deployed it's partition
-table or existing whole disk filesystem needs to be wiped, as
-indicated by the help text above. Click on the **eraser icon** and a popup confirmation
-dialog will be displayed. Upon confirmation, the entire disk will be wiped and
-ready for use as shown below.
-
-**Please note that whole disk btrfs filesystems can also be imported, see:**
-:ref:`btrfsdisk`
-
-.. image:: disk_wipe_partition.png
-   :scale: 65 %
-   :align: center
-
-Broken or removed disks
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Rockstor detects when a disk drive goes offline (damaged or removed from the
-system) and marks it as such. This is indicated by a **little trash icon** next
-to the disk name and relevant help text is displayed upon mousing over this icon.
-
-.. image:: disk_offline.png
-   :scale: 65 %
-   :align: center
-
-In order to remove the disk from Rockstor click on the trash icon and a popup
-confirmation dialog is displayed. Upon confirmation, the disk will be removed
-as shown below.
-
-.. image:: disk_remove.png
-   :scale: 65 %
-   :align: center
-
-|
-Pools overview
---------------
+Pools
+=====
 
 A Pool in Rockstor is a set of disk drives combined and represented as a single
 volume. Pools have attributes such as redundancy profile and compression to
@@ -232,7 +116,7 @@ out more about each option `here
 
 |
 Resizing a Pool
--------------
+---------------
 
 You can resize a Pool for one of the following reasons
 
@@ -243,21 +127,24 @@ You can resize a Pool for one of the following reasons
 3. To remove disks and decrease capacity. Removed disks can be reused for other Pools.
 
 Pool resize is an online operation that does not cause any access
-disruption. However, depending on the size of the Pool, it took take a long
-time to finish.
+disruption. However, depending on size of the Pool, it could take a long time
+to finish. Resizing is simple and can be done using the Web-UI.
 
-A pool can be resized by adding more disks, removing disks or by modifying RAID level. Click on the pool (under 'Name' tab) that you want to resize from the displayed table of pools to enter the detail view. In the detail view, go to the *Overview* tab of the Web-UI that gives the details such as Usage, Compression and Mount Options, Disks in the pool. Now, click on the **Resize** button and a popup form with three options 1) Modify RAID level 2) Add Disks 3) Remove Disks is displayed. Select any one of the options and submit the form.
-Upon success, 1) If *Modify RAID level* is selected, then the message *Resize is initiated. A balance process is kicked off to redistribute data. It could take a while. You can check the status in the Balances tab. Its finish marks the success of resize.* is displayed.
+This video shows changing the redundancy profile
 
-	      2) If *Add Disks* is selected, and if disks are available to be added to the pool, then upon success, the added disks are displayed.
-	      3) If *Remove Disks* is selected, and if disks are successfully removed, then the correct message is displayed.  [NOTE : Suman to complete]
+.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
 
-.. image:: resize_pool.gif
-   :scale: 65%
-   :align: center
+This video shows adding disks to a Pool
 
-Delete a Pool
--------------
+.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+
+This video shows removing disks from a Pool
+
+.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+
+
+Deleting a Pool
+---------------
 
 A *pool* can be deleted as long as it is empty, i.e., there are no *shares*
 remaining in it.
@@ -273,8 +160,8 @@ icon corresponding to the pool to delete it as shown below.
 A pool can also be deleted by clicking the **Delete** button inside it's detail
 view.
 
-Scrub a Pool
-------------
+Scrubbing a Pool
+----------------
 
 Over time, a pool could accumulate low level errors relating to
 redundancy. Scrubbing is a background process that finds and fixes these errors

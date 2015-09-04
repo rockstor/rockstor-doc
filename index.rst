@@ -18,7 +18,8 @@ Welcome to Rockstor
    features
    uis
    dashboard
-   disk_pool_ops
+   disks
+   pools-btrfs
    share_snap_ops
    docker-based-rock-ons/overview
    email_setup
