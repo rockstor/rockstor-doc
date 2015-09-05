@@ -14,7 +14,7 @@ the **Storage** tab of the Web-UI.
 
 
 Creating a Pool
-^^^^^^^^^^^^^^^
+---------------
 
 Only whole disk drives can be used to create Pools. But they don't have to be
 of the same size, which is a great feature of BTRFS. Disks that are partitioned
@@ -28,10 +28,13 @@ parameters. Here's a video showing this operation.
 
 .. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
 
+
+.. _redundancyprofiles:
+
 Redundancy profiles
 ^^^^^^^^^^^^^^^^^^^
 
-.. _redundancyprofiles:
+
 
 All standard BTRFS redundancy profiles are available when creating a pool.
 
@@ -115,45 +118,72 @@ out more about each option `here
 * **thread_pool**
 
 |
-Resizing a Pool
----------------
 
-You can resize a Pool for one of the following reasons
+.. _poolresize:
 
-1. To change it's redundancy profile. For example, to go from a RAID10 to RAID1.
+Pool resizing
+-------------
 
-2. To add more disks and increase it's capacity.
+A really cool feature in Pool management(powered by BTRFS) is the ability to
+add or remove disks and change redundancy profile online without access
+disruption. You can resize a Pool easily from the Web-UI for one of the
+following reasons
 
-3. To remove disks and decrease capacity. Removed disks can be reused for other Pools.
+1. To change it's redundancy profile. For example, to go from a RAID10 to
+   RAID1. See :ref:`poolraidchange`.
 
-Pool resize is an online operation that does not cause any access
+2. To add more disks and increase it's capacity. See :ref:`pooladddisks`.
+
+3. To remove disks and decrease capacity. Removed disks can be reused for other
+   Pools. See :ref:`poolremovedisks`.
+
+Pool resize is an online operation that does not cause access
 disruption. However, depending on size of the Pool, it could take a long time
-to finish. Resizing is simple and can be done using the Web-UI.
+to finish.
 
-This video shows changing the redundancy profile
+.. _poolraidchange:
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+Redundancy profile changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This video shows adding disks to a Pool
+You can change :ref:`redundancyprofiles` online with very few
+restrictions. This video shows how to change a Pool from RAID1 to RAID10.
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+.. youtube:: https://www.youtube.com/watch?v=DouOx8gX5yE
 
-This video shows removing disks from a Pool
+.. _pooladddisks:
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+Adding Disks
+^^^^^^^^^^^^
+
+Disks can be added to a Pool online and expand capacity.  This video shows how
+to expand a RAID1 Pool by adding three disks.
+
+.. youtube:: https://www.youtube.com/watch?v=E37rzWcwGu0
+
+.. _poolremovedisks:
+
+Removing Disks
+^^^^^^^^^^^^^^
+
+Disks can be removed from a Pool online similar to adding Disks. However, since
+it results in reduced capacity, this operation can succeed only if the
+resulting capacity after removal is greater than the current usage. This video
+shows how to remove two disks from a RAID1 Pool made up of four disks.
+
+.. youtube:: https://www.youtube.com/watch?v=535pxsF16Pk
 
 
-Deleting a Pool
----------------
+Pool deletion
+-------------
 
-A *pool* can be deleted as long as it is empty, i.e., there are no *shares*
-remaining in it.
+A *Pool* can be deleted as long as it is empty, i.e., there are no *Shares*
+remaining in it. So, if you need to delete a Pool, first delete every Share in
+it. Then, click on the corresponding **trash** icon for it in the *Pools*
+screen under the *Storage* tab of the Web-UI.
 
-Go to the Storage tab of the Web-UI and click on *Pools* in the left sidebar to
-enter the *Pools* view. In the displayed table of pools, click on the **trash**
-icon corresponding to the pool to delete it as shown below.
 
-.. image:: delete_pool1.gif
+.. image:: delete_pool.png
    :scale: 65%
    :align: center
 
@@ -163,22 +193,31 @@ view.
 Scrubbing a Pool
 ----------------
 
-Over time, a pool could accumulate low level errors relating to
-redundancy. Scrubbing is a background process that finds and fixes these errors
-and ensures the long life of a pool.
+The scrub operation initiates a BTRFS scrub process in the background. It reads
+all data from all disks of the Pool, verifies checksums and fixes corruptions
+if detected and possible. To find out more, go `here
+<https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-scrub>`_.
 
-The *pool* scrub operation can take a while depending on the size of the pool. To
-start a scrub, go to the pool's detail view and click on the **Start a new scrub** button under the scrub tab.
-The button will be disabled during the scrub process and enabled again
-once the scrub finishes.
+To start a scrub, go to the Pool's detail page and click on the **Start a new
+scrub** button in the Scrubs tab. The button will be disabled during the scrub
+process and enabled again once the scrub finishes. The progress of a running
+scrub operation is displayed in a table. Refresh the page to update the
+information.
+
+A periodic scrub is a proactive strategy to fix errors before too many
+accumulate. You can schedule it using the **Scheduled Tasks** screen under
+**System** tab of the Web-UI.
+
 
 Balance a pool
 --------------
 
-click on **Start a new balance**.  [NOTE : Suman to complete the documentation for balances]
+The balance operation initiates a BTRFS balance process in the background. It
+spreads data more evenly across multiple disks of the Pool. It is automatically
+triggered after a :ref:`poolresize` operation, which is the main purpose of
+this feature. A standalone balance operation is intended for advanced users who
+can judge for themselves if it is necessary. To find out more, go `here
+<https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F>`_.
 
-Add Share
----------
-
-From a detail view of a pool, you can click **Add Share** button, to create and add a share to the pool you selected.
-`
+To start a balance, go to the Pool's detail page and click on the **Start a new
+balance** button in the **Balances** tab.
