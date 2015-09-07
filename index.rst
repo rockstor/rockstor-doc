@@ -21,6 +21,7 @@ Welcome to Rockstor
    disks
    pools-btrfs
    shares-btrfs-subvolumes
+   snapshots-btrfs-snapshots
    docker-based-rock-ons/overview
    email_setup
    tasks

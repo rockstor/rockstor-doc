@@ -46,10 +46,10 @@ Rockstor updates can be installed in two ways :
 
 1. Install updates from the Web-UI : On the Rockstor Web-UI, on the top-right side of the navigation bar, you will see an upward facing arrow. If you click on that arrow, and if there is an update available, you will see *Software Update* highlighted, with details on the screen. This `video <https://www.youtube.com/watch?v=srn6vgQNkbc>`_ also illustrates the process of update from Web-UI.
 
-.. image:: install-update.png
+.. image:: images/install-update.png
    :scale: 60%
    :align: center
- 
+
 
 
 2. Install updates from the CLI : You can safely update Rockstor anytime with the
@@ -60,6 +60,3 @@ following command::
 If an update is disruptive, the update process prompts for user action and
 provides the necessary information to choose to update or not. You can safely
 decide not to update if that makes sense for your environment.
-
-
-

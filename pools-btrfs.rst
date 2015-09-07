@@ -183,7 +183,7 @@ it. Then, click on the corresponding **trash** icon for it in the *Pools*
 screen under the *Storage* tab of the Web-UI.
 
 
-.. image:: delete_pool.png
+.. image:: images/delete_pool.png
    :scale: 65%
    :align: center
 

@@ -24,7 +24,7 @@ known** to the system are displayed.
 * **Rescan** - the hardware for any supported drives, see :ref:`scandisks` below
 * **S.M.A.R.T** - system wide **custom configuration** (advanced)
 
-.. image:: disks_overview.png
+.. image:: images/disks_overview.png
    :scale: 80%
    :align: center
 
@@ -74,7 +74,7 @@ wiped. Such disks are displayed with a little **gear icon** next to their
 name. Relevant help text is displayed upon mousing over this icon indicating
 the above restriction. See the next section :ref:`wipedisk` for the procedure.
 
-.. image:: partitioned_disk.png
+.. image:: images/partitioned_disk.png
    :scale: 65 %
    :align: center
 
@@ -92,7 +92,7 @@ ready for use as shown below.
 **Please note that whole disk btrfs filesystems can also be imported, see:**
 :ref:`btrfsdisk`
 
-.. image:: disk_wipe_partition.png
+.. image:: images/disk_wipe_partition.png
    :scale: 65 %
    :align: center
 
@@ -103,7 +103,7 @@ Rockstor detects when a disk drive goes offline (damaged or removed from the
 system) and marks it as such. This is indicated by a **little trash icon** next
 to the disk name and relevant help text is displayed upon mousing over this icon.
 
-.. image:: disk_offline.png
+.. image:: images/disk_offline.png
    :scale: 65 %
    :align: center
 
@@ -111,6 +111,6 @@ In order to remove the disk from Rockstor click on the trash icon and a popup
 confirmation dialog is displayed. Upon confirmation, the disk will be removed
 as shown below.
 
-.. image:: disk_remove.png
+.. image:: images/disk_remove.png
    :scale: 65 %
    :align: center
