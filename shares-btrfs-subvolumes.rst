@@ -25,7 +25,7 @@ submit the Share creation form to create one. There is a tooltip for each input
 field to help you choose appropriate parameters. Here's a video showing this
 operation.
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+.. youtube:: https://www.youtube.com/watch?v=k537gsx8ifQ
 
 
 Resizing a share
@@ -35,7 +35,7 @@ A share can be resized by increasing or decreasing it's provisioned
 capacity. To resize a Share, Click the **Resize** button in it's detail screen
 as shown in this video
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+.. youtube:: https://www.youtube.com/watch?v=vMCNZFDwKLQ
 
 Note that a share cannot be decreased to a capacity lower than it's current
 usage. Internally, Share capacity enforcement is done via BTRFS qgroup feature
