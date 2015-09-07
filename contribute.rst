@@ -209,17 +209,9 @@ time for a clean build, but subsequent builds finish quickly ::
 
         [root@build_vm ]# /path/to/build_dir/bin/buildout -N -c /path/to/build_dir/buildout.cfg
 
-Once the buildout step above succeeds we can start the rockstor services; these are
-managed by supervisord, so start the supervisord process with ::
-
-        [root@build_vm ]# /path/to/build_dir/bin/supervisord -c /path/to/build_dir/etc/supervisord.conf
-
-Now start all the required services with this command
-::
-
-        [root@build_vm ]# /path/to/build_dir/bin/supervisorctl start all
-
-You should now be able to login to the WebUI and verify your changes.
+Once the buildout step above succeeds, rockstor services are automatically
+started and managed by systemd. You should now be able to login to the WebUI
+and verify your changes.
 
 Change -> Test cycle
 --------------------

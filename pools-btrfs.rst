@@ -187,8 +187,8 @@ screen under the *Storage* tab of the Web-UI.
    :scale: 65%
    :align: center
 
-A pool can also be deleted by clicking the **Delete** button inside it's detail
-view.
+A Pool can also be deleted using the **Delete** button inside it's detail
+screen.
 
 Scrubbing a Pool
 ----------------
