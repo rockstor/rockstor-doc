@@ -90,52 +90,7 @@ Share as shown below.
 
 To clone a snapshot, see :ref:`clonesnap`.
 
-.. _snapshots:
 
-Snapshots
----------
-
-Snapshots are independent instantaneous points in time of a share, and can be read-only. They are created
-instantaneously and take up no extra space when created because of the CoW
-(Copy On Write) nature of the BTRFS filesystem. An unlimited number of snapshots
-can be created for any given share.
-
-Create a snapshot
-^^^^^^^^^^^^^^^^^
-
-In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
-click on *Shares* in the left sidebar to enter the *Shares* view. In the
-displayed table of shares, click on the share to snapshot, to enter the share
-detail view. Any existing snapshots of the share are displayed in a table
-inside the *Snapshots* tab. Now click on the **Create snapshot** button and a
-small form is displayed. Submit it to create the snapshot as shown below.
-
-.. image:: create_snap.gif
-   :scale: 65%
-   :align: center
-
-By checking *Visible to user?* box in the form, the snapshot will be made
-visible to remote clients as a read-only directory inside the share. This is
-useful for users to fetch or refer to older files.
-
-Using Rockstors :ref:`tasks` system it is also possible to schedule automated
-snapshots, see :ref:`snapshottask`, or to setup a series of tasks to implement
-:ref:`mpsnapshots`.
-
-Delete a snapshot
-^^^^^^^^^^^^^^^^^
-
-In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
-click on *Shares* in the left sidebar to enter the *Shares* view. In the
-displayed table of shares, click on the share from which to delete a snapshot
-to enter the share detail view. Click on the **trash** icon
-next to the snapshot to delete it as shown below.
-
-.. image:: delete_snap.gif
-   :scale: 65%
-   :align: center
-
-.. _clonesnap:
 
 Clone a snapshot
 ^^^^^^^^^^^^^^^^^
@@ -171,4 +126,3 @@ NFS or Samba shares should be deleted before the share can be rolled back.
 .. image:: rollback_share.gif
    :scale: 65%
    :align: center
-
