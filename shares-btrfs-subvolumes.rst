@@ -65,7 +65,7 @@ cannot be deleted. So, ensure that all Snapshots have been deleted and that it
 is not in use before deleting it.
 
 To delete a Share, click on the corresponding **trash** icon for it in the
-*Shares* screen under the *Storage* tab of the Web-UI.
+**Shares** screen under the **Storage** tab of the Web-UI.
 
 .. image:: images/delete_share.png
    :scale: 65%
