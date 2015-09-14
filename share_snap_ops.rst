@@ -17,7 +17,6 @@ A snapshot can be created in two ways, 1. By clicking **Create** under *Storage-
 
 .. youtube:: https://www.youtube.com/watch?v=PA0hneCq-AE
    
-.. _cloneasnapshot:
 
 Clone a Snapshot
 ----------------
@@ -34,8 +33,6 @@ it after entering the new name for the newly created share as shown below.
 
 .. youtube:: https://www.youtube.com/watch?v=aySlQCx65GM
    
-.. _rollbackashare:
-
 
 Rollback a Share to a specific Snapshot
 ---------------------------------------

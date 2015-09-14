@@ -90,5 +90,4 @@ Share as shown below.
 
 .. youtube:: https://www.youtube.com/watch?v=DhXUyDoBVMY
 
-
 To clone a snapshot, see :ref:`clonesnap`.
