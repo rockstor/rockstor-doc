@@ -72,3 +72,19 @@ To delete a Share, click on the corresponding **trash** icon for it in the
    :align: center
 
 A Share can also be deleted using the **Delete** button inside it's detail screen.
+
+
+Cloning a Share
+---------------
+
+A Clone is a Share that is an exact copy of the Share (or Snapshot) that it was
+created from, at the time that it was created.
+
+In Rockstor, both Shares and Snapshots can be cloned to create new Shares.
+
+To clone a Share, got to it's detail screen and click on the **Clone** button
+as shown in this video.
+
+.. youtube:: https://www.youtube.com/watch?v=DhXUyDoBVMY
+
+To clone a Snapshot, see :ref:`clonesnapshot`.

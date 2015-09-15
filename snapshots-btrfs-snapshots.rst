@@ -15,13 +15,23 @@ Snapshots are point in time representations of :ref:`shares`. Here are some bene
 * A Snapshot can be cloned to become a brand new Share
 * Many Snapshots can be taken overtime
 
-Internally, Snapshots are BTRFS Snapshots and valuable benefits listed above
-are possible due to BTRFS's CoW(Copy on Write) capabilities. To find out more,
-go `here <https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Snapshots>`_.
+At the time of creation, a Snapshot does not take up extra space as it merely
+point to the same contents of the Share. But if a file is later deleted from
+the Share, it still persists in the Snapshot. This feature makes it possible to
+retrieve certain deleted files of a Share from it's Snapshots.
+
+Snapshots can be created read-only or read-write. Since Snapshots are
+predominantly used to retrieve deleted files, read-only Snapshots are suggested
+for this purpose.
+
+Internally, Snapshots are BTRFS Snapshots. To find out more about internal
+implementation, go `here
+<http://forum.rockstor.com/t/internal-implementation-of-pools-shares-snapshots-and-clones/453>`_.
 
 Snapshot related operations can be managed from the **Snapshots** screen listed
 under the **Storage** tab of the Web-UI.
 
+.. _createsnapshot:
 
 Creating a Snapshot
 -------------------
@@ -30,15 +40,16 @@ To create a Snapshot, use the **Create Snapshot** button and submit the form
 with your chosen input values. There is a tooltip for each input field with
 more help. Here's a sample video showing this operation.
 
-.. youtube:: https://www.youtube.com/watch?v=k537gsx8ifQ
-
+.. youtube:: https://www.youtube.com/watch?v=QTQePwrYMS0
 
 Scheduling Snapshots
 --------------------
 
 Using Rockstor's :ref:`tasks` system it is also possible to schedule Snapshot
 creation automatically at a predefined time and frequency similar to cronjobs
-in Linux. To find out more, see :ref:`snapshottask`.
+in Linux. To find out more, see :ref:`snapshottask` or see this video.
+
+.. youtube:: https://www.youtube.com/watch?v=PA0hneCq-AE
 
 You can also schedule Snapshots such that the frequency decreases over
 time. For example, you can schedule 12 hourly Snapshots during the day, 4
@@ -56,3 +67,32 @@ the **Storage** tab. To delete multiple Snapshots, select them and use the
 .. image:: images/delete_snapshot.png
    :scale: 65%
    :align: center
+
+
+.. _clonesnapshot:
+
+Cloning a Snapshot
+------------------
+
+A Snapshot can be cloned to create a brand new Share. This is useful if you
+wish to create a new Share that is an exact copy of the Snapshot.
+
+To clone a Snapshot, click on the clone icon in the **Actions** column of the
+Snapshot table as shown in this video.
+
+.. youtube:: https://www.youtube.com/watch?v=aySlQCx65GM
+
+To clone a Share, see :ref:`cloneshare`.
+
+Rolling back a Share
+--------------------
+
+A Share can be rolled back to any of its snapshots. This is useful if you wish
+to restore a Share to it's previous state represented by its snapshots
+
+Click on the **Rollback** button in the Share's detail screen as shown in this video.
+
+.. youtube:: https://www.youtube.com/watch?v=r0SbCZ_kEBg
+
+*Note:* Shares that are exported through NFS or Samba cannot be rolled back. The
+NFS or Samba shares should be deleted before the share can be rolled back.

@@ -1,115 +1,41 @@
 
-Shares, Snapshots and Clones
+Snapshots and Clones
 ============================
 
-.. _createshare:
+Snapshot
+^^^^^^^^
 
-Create a share
---------------
+A snapshot is read-only point in time copy of a share. Since BTRFS is a CoW filesystem, snapshots are created instantly and take up no extra space when created.
 
-Share related operations including creating a share can be done from the
-*Shares* view. In the web-ui, click on the *Storage* tab to enter the main
-Storage view. Now click on *Shares* in the left sidebar to enter the *Shares*
-view. If there are any shares in the system, they are displayed in a table. If
-there are large number of shares, the table is paginated and the current page
-number is displayed below the table along with **Prev** and **Next** buttons.
+Create a Snapshot
+-----------------
 
-The display can be sorted by individual columns by clicking small up/down
-arrows displayed in each column header.
+A snapshot can be created in two ways, 1. By clicking **Create** under *Storage->Snapshots* tab to create a snapshot of a share 2. By clicking **Schedule** under *Storage->Snapshots* tab. This leads to *Schedule a Task* page where you can set up a snapshot schedule based on your parameters like hourly, daily, monthly freqeuncy etc. Also, refer **Create a Snapshot Task** under `Scheduled Task <http://rockstor.com/docs/tasks.html` _ documentation.      
 
-.. image:: shares_view.gif
-   :scale: 65%
-   :align: center
+.. youtube:: https://www.youtube.com/watch?v=QTQePwrYMS0
+   
 
-Click on **Create Share** button and the create share form will be
-displayed. Submit this form to create a new share as shown below.
+.. youtube:: https://www.youtube.com/watch?v=PA0hneCq-AE
+   
 
-.. image:: create_share.gif
-   :scale: 65%
-   :align: center
+Clone a Snapshot
+----------------
 
-When creating a share, an arbitrary size can be chosen to thin provision or
-over provision the share. As long as the underlying pool is resized enough to
-accommodate the share capacity, users will not see out of space errors. If a
-share's usage exceeds the provisioned capacity or underlying actual capacity,
-out of space errors will occur as users try to write.
-
-Resize a share
---------------
-
-A share can be resized by increasing or decreasing it's provisioned
-capacity. Go to the Storage tab of the web-ui and click on *Shares* in the
-left
-sidebar to enter the *Shares* view. In the displayed table of shares, click on
-the share to be resized to enter the share detail view. Now, click on the
-**Resize** button and a small form is dispalyed. Submit it after
-entering the new desired size as shown below.
-
-.. image:: resize_share.gif
-   :scale: 65%
-   :align: center
-
-Note that a share cannot be decreased to a capacity lower than it's current usage.
-
-Delete a share
---------------
-
-A share that is not in use and has no snapshots can be deleted. However, if a
-share is made available to remote clients via NFS or SMB, or has snapshots, it
-cannot be deleted. So, ensure that all snapshots have been deleted and that the
-share is not in use before deleting it.
-
-Go to the Storage tab of the web-ui and click on *Shares* in the left sidebar to
-enter the *Shares* view. In the displayed table of shares, click on the
-**trash** icon corresponding to the share to delete it as shown below.
-
-.. image:: delete_share.gif
-   :scale: 65%
-   :align: center
-
-A share can also be deleted by clicking the **Delete** button inside it's
-detail view.
-
-Clone a share
--------------
-
-A Clone is a Share that is an exact copy of the Share (or Snapshot) that it was created from, at the time that it was created.
-
-In Rockstor, clones can be created from shares or snapshots.
-
-To clone a Share, go to the Storage tab of the web-ui and click on *Shares*
-in the left sidebar to enter the *Shares* view. In the displayed table of
-shares, click on the share to be cloned to enter the share detail view. Now,
-click on the **Clone** button and the form to create a clone is
-dispalyed. Submit it after entering a desired name for the soon to be created
-Share as shown below.
-
-.. image:: clone_share.gif
-   :scale: 65%
-   :align: center
-
-To clone a snapshot, see :ref:`clonesnap`.
-
-
-
-Clone a snapshot
-^^^^^^^^^^^^^^^^^
 A Clone can be created from a Snapshot of a Share. This is useful if you wish
 to create a new Share that is an exact copy of the Snapshot.
 
-In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
+In the Web-UI, click on the *Storage* tab to enter the main Storage view. Now
 click on *Shares* in the left sidebar to enter the *Shares* view. In the
 displayed table of shares, click on the desired share to enter the share detail
 view, and click on the *Snapshot* tab to view the list of snapshots of the
 share. Click the **Clone** button to display the form to create a clone. Submit
 it after entering the new name for the newly created share as shown below.
 
-.. image:: clone_snap.gif
-   :scale: 65%
-   :align: center
+.. youtube:: https://www.youtube.com/watch?v=aySlQCx65GM
+   
 
-Rollback a Share
-----------------
+Rollback a Share to a specific Snapshot
+---------------------------------------
 
 A Share can be rolled back to any of its snapshots. This is useful if you wish
 to restore a Share to it's previous state represented by its snapshots
@@ -123,6 +49,6 @@ rollback to, and submit the form as shown below.
 *Note:* Shares that are exported through NFS or Samba cannot be rolled back. The
 NFS or Samba shares should be deleted before the share can be rolled back.
 
-.. image:: rollback_share.gif
-   :scale: 65%
-   :align: center
+.. youtube:: https://www.youtube.com/watch?v=r0SbCZ_kEBg
+
+ 
