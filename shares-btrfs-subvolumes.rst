@@ -73,6 +73,7 @@ To delete a Share, click on the corresponding **trash** icon for it in the
 
 A Share can also be deleted using the **Delete** button inside it's detail screen.
 
+.. _cloneshare:
 
 Cloning a Share
 ---------------
