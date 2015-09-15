@@ -29,10 +29,8 @@ must be created by entering desired credentials. In the second screen, all
 disks detected in the system are displayed. Click next to finish the setup
 process as shown below.
 
-.. image:: rockstor-setup.gif
-   :scale: 60 %
-   :align: center
-
+.. youtube:: https://www.youtube.com/watch?v=MvdkoPeTLm8
+   
 Once the setup process is complete, the newly created admin user is logged in
 and the Rockstor dashboard is displayed.
 
