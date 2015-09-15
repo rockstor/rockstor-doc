@@ -27,7 +27,7 @@ good practice as it keeps your Rock-on config and data apart from the
 Rock-ons themselves.  You do not have to separate the config and data within each
 Rock-on but that is also good practice, and is why this option is offered.
 
-It is assumed you have already setup your :ref:`disksandpools` and one or more
+It is assumed you have already setup your :ref:`pools` and one or more
 shares in those pools (see our :ref:`createshare`) appropriate for your Rock-ons,
 ie a plex-movies share and a plex-config share.
 
