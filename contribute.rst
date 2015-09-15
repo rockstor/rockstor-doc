@@ -69,6 +69,8 @@ Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
 
 Let's walk through this process in detail.
 
+.. _localrepo:
+
 Local git repo setup
 --------------------
 
@@ -109,6 +111,7 @@ changes in the upstream made by other contributors::
 
         [you@your_laptop rockstor-core]# git remote add upstream https://github.com/rockstor/rockstor-core.git
 
+.. _makechanges:
 
 Making changes
 --------------
@@ -328,6 +331,7 @@ Run the migration with
 
         [root@build_vm ]# /path/to/build_dir/bin/django migrate smart_manager --database=smart_manager
 
+.. _shipchanges:
 
 Shipping changes
 ----------------
@@ -342,3 +346,48 @@ When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the "pull request" button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
+
+Contributing to the documentation
+---------------------------------
+
+We follow the same fork and pull request model for documentation contributions
+as well.
+
+Fork the `rockstor-doc repo <https://github.com/rockstor/rockstor-doc>`_, clone
+and config your git by following the same steps as in :ref:`localrepo`. Note that,
+though the steps are same, it's a different repo. So substitute rockstor-doc
+for rockstor-core.
+
+The process of creating a new branch and commiting changes is also similar to
+code contributions. So follow the same steps as in :ref:`makechanges`.
+
+Unlike for code contributions, there is no need for a build VM. We use `Sphinx
+<http://sphinx-doc.org/contents.html>`_ to generate the html content from .rst
+files we edit. Installation procedure varies if you are on Mac or Linux, so
+follow the appropriate installation guide for Sphinx.
+
+Generating html files with Sphinx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As you edit the content in .rst files, you can periodically generate html files
+and review them in your browser. To generate or update the HTML files, use the
+following command ::
+
+        [you@laptop /path/to/rockstor-doc]# make html
+
+HTML files are generated in _build/html directory. From a separate terminal
+window, you can have a simple Python webserver always serving up this content
+with the following command ::
+
+        [you@laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
+
+You can now go to http://localhost:8000 in your browser to review your
+changes. The webserver is to be only once and it will continue to serve the
+files and changes you make to them.
+
+After making any changes to a .rst file, run *make html* as shown above and
+refresh your browser.
+
+Once you are satisfied with your changes and committed them to your branch
+following the steps outlined here, you can open a pull request using the same
+steps as in :ref:`shipchanges`.
