@@ -40,6 +40,8 @@ example, if your USB drive is /dev/sdb, the command would be::
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
+.. _osinstall:
+
 Installation
 ------------
 

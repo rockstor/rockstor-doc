@@ -10,3 +10,4 @@ Howtos
    home_nas_guide
    soho
    kvm_setup
+   reset-root-password
