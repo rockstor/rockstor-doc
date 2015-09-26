@@ -24,19 +24,54 @@ procurement, you can evaluate Rockstor on Amazon AWS. See our YouTube video on `
 Hardware recommendations
 -------------------------
 
-At the bare minimum, see :ref:`minsysreqs` for a basic recommendation. This
-translates to most commodity servers with more than a couple of disk
-drives. Based on your cost constraints and performance requirements, several
-hardware configurations are possible as described below.
+There is nothing about Rockstor that requires special hardware. It's Linux, and
+specifically a CentOS/Fedora fork, so it can be installed on a wide range of
+commodity hardware. See :ref:`minsysreqs` for basic requirements.
 
-Small Office or Home NAS
-^^^^^^^^^^^^^^^^^^^^^^^^
+Over time, the Rockstor developers and community at large share hardware specs
+that are known to work with Rockstor. Below is a list of these recommendations.
 
-See our :ref:`sohoguide` or our :ref:`homenasguide`
+Complete Builds for Home and small organizations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All Flash NAS
-^^^^^^^^^^^^^
-Coming soon...
+1. `This <http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas>`_ is one
+   of the first builds assembled by Rockstor developers and works great. It is
+   a production server of Rockstor team for several purposes. You can get a
+   `boot drive
+   <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_
+   for the OS and have up to 4 additional hard drives for your data.
+
+2. You can get the same build as above but with a different mini ITX
+   motherboard with 6 SATA ports as the case can accommodate two additional
+   2.5" hard drives.
+
+3. Another build that is used by Rockstor developers and at least some known
+   community members uses `ASRock C2550D4I
+   <http://www.asrockrack.com/general/productdetail.asp?Model=C2550D4I#Specifications>`_
+   with `this memory
+   <http://www.kingston.com/us/memory/search/?partid=kvr16le11/8>`_. The
+   motherboard provides 12 SATA ports, so `this
+   <http://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
+   case to hold up to 12 hard drives.
+
+4. Yet another recommendation used by Rockstor team is `HP Microserver
+   <http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860>`_. Note
+   that the link refers to gen8 which may be in use by some community members,
+   but gen7 is the one in use by the Rockstor team.
+
+Small plug-and-play builds for Home
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following are off the shelf products that require very little DIY work, if
+any. They provide USB 3.0, making it convenient to use external USB drives with
+impressive speeds.
+
+1. Intel NUC. To find out more, read this `blog post
+   <http://rockstor.com/blog/tutorials/rockstor-on-the-intel-nuc/>`_.
+
+2. ASUS VivoPC. To find out more, read this `blog post
+   <http://rockstor.com/blog/personal-cloud/rockstor-on-asus-vivopc/>`_.
+
 
 Upgrading Rockstor
 ------------------
