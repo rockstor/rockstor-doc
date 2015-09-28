@@ -36,7 +36,8 @@ Welcome to Rockstor
    config_backup
    clients
    support
-   contribute
+   contribute 
+   contribute_documentation 
    howtos
    analytics
    benchmarks
