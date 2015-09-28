@@ -1,14 +1,15 @@
+.. _services:
 
 Services
 ========
 
-Rockstor supports many services that are necessary for a storage system to be functional.
-Service management including configuration, turning on or off, can be done via
-the System tab of the web-ui.
+Rockstor supports many services that are necessary or useful in a storage system.
+Service management ie turning on or off and configuration can be done via
+the **System** - **Services** page of the web-ui. Note that the **spanner icon**
+next to each service name is used to **configure** that service.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. All services and their current state are displayed.
+This section is the default for the System page: all services and their
+current state are displayed.
 
 .. image:: services.png
    :scale: 70 %
