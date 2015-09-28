@@ -1,7 +1,7 @@
 Contributing to Rockstor documentation
 --------------------------------------
 
-Steps for contributing to **rockstor-doc** repo are similar to contributing to **rockstor-core**, as we follow the same fork and pull request model. We’ll assume you have basic proficiency with Git and are familiar with it using a texteditor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some recommendations. We’ll further assume that you have your laptop ready with git and an editor installed. Since we rely on github services, you need to create a profile on github.com.
+Steps for contributing to **rockstor-doc** repo are similar to contributing to **rockstor-core**, as we follow the same fork and pull request model. We’ll assume you have basic proficiency with Git and are familiar with using a texteditor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some recommendations. We’ll further assume that you have your laptop ready with git and an editor installed. Since we rely on github services, you need to create a profile on github.com.
 
 Once you have your profile set-up on github.com, follow these steps   
   
@@ -10,14 +10,17 @@ Once you have your profile set-up on github.com, follow these steps
 
 	[you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-doc.git
 
-The above command creates a local rockstor-core git repo in a new directory by the same name(rockstor-core). Change into it ::
+The above command creates a local **rockstor-doc** git repo in a new directory by the same name(rockstor-doc). Change into it. ::
+	
 	[you@your_laptop ~/projects]# cd rockstor-doc 
 
-Configure this new git repo with your name and email address. This is required to accurately record collaboration ::
+Configure this new git repo with your name and email address. This is required to accurately record collaboration. ::
+		
 	[you@your_laptop rockstor-doc]# git config user.name "Firstname Lastname"
 	[you@your_laptop rockstor-doc]# git config user.email your_email_address
 
-Add a remote called upstream to periodically rebase your local repository with changes in the upstream made by other contributors ::
+Add a remote called upstream to periodically rebase your local repository with changes in the upstream made by other contributors. ::
+	
 	[you@your_laptop rockstor-doc]#git remote add upstream https://github.com/rockstor/rockstor-doc.git
 
 
@@ -26,7 +29,7 @@ Making changes
 
 We'll assume you have identified an issue(eg: #1234) from the `github issue tracker
 <https://github.com/rockstor/rockstor-doc/issues>`_ to work on. First, start
-with the latest code by rebasing your local repo's master branch with the upstream ::
+with the latest documentation by rebasing your local repo's master branch with the upstream ::
 
         [you@your_laptop rockstor-doc]# git checkout master
         [you@your_laptop rockstor-doc]# git pull --rebase upstream master
@@ -56,8 +59,8 @@ a fictional example::
 
         foobar functionality documentation for rockstor
 
-        This document describes foobar functionality. This feature is based on  algorithm called recursive transaction
-        launcher to generate transactional foobars.
+        This document describes foobar functionality. This feature is based on algorithm called 
+	recursive transaction launcher to generate transactional foobars.
 
         # Please enter the commit message for your changes. Lines starting
         # with '#' will be ignored, and an empty message aborts the commit.
@@ -88,7 +91,7 @@ If you want to create a videos to explain Rockstor feature or functionality, you
 install an extra Sphinx package. If you prefer uploading your videos to Rockstor Youtube channel,
 please, send an email to support@rockstor.com ::
 
-	[you@laptop /path/to/rockstor-doc]# sudo pip install sphinxcontrib.youtube
+	[you@your_laptop /path/to/rockstor-doc]# sudo pip install sphinxcontrib.youtube
 
 Generating html files with Sphinx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
@@ -96,17 +99,13 @@ As you edit the content in .rst files, you can periodically generate html files
 and review them in your browser. To generate or update the HTML files, use the
 following command ::
 
-        [you@laptop /path/to/rockstor-doc]# make html
+        [you@your_laptop /path/to/rockstor-doc]# make html
 
 HTML files are generated in _build/html directory. From a separate terminal
 window, you can have a simple Python webserver always serving up this content
 with the following command ::
 
-        [you@laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
-
-You can now go to http://localhost:8000 in your browser to review your
-changes. The webserver is to be only once and it will continue to serve the
-files and changes you make to them.
+        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
 
 You can now go to http://localhost:8000 in your browser to review your
 changes. The webserver is to be only once and it will continue to serve the
@@ -116,8 +115,14 @@ After making any changes to a .rst file, run *make html* as shown above and
 refresh your browser.
 
 Once you are satisfied with your changes and committed them to your branch
-following the steps outlined here, you can open a pull request using the same
-steps as in :ref:`shipchanges`.
+following the steps outlined here, you can open a pull request using the following
+request.
 
+As you continue to work on an issue, commit and push changes to the issue branch of your fork. 
+You can periodically push your changes to github with the following command::
 
+	[you@your_laptop ]# cd /path/to/rockstor-doc
+	[you@your_laptop rockstor-doc] git push origin your_branch_name
+
+When you finish work for the issue and are ready to submit, create a pull request by clicking on the “pull request” button on github. This notifies the maintainers of your changes. As a best practice only open one pull request per issue containing all relevant changes.
 
