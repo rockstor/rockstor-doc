@@ -144,7 +144,7 @@ NIS is a directory service to connect to a NIS server.
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure NIS, click on the **wrench** icon and submit the form
-with appropiate values as shown below.
+with appropriate values as shown below.
 
 .. image:: nis-config.png
    :scale: 70 %
