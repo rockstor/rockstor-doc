@@ -119,6 +119,9 @@ available in :ref:`nut_standalone` there are also the following:
 * **Internal UPS name** -  Single word ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this as their nut monitor reference ie "ups@rockstor.lan".
 * **UPS Description** - Human friendly name for this UPS.
 
+**Please note that there are additional security concerns with running nut in
+netserver mode: if you are not aware of these then please use standalone mode**
+
 ..  image:: nut_netserver.png
     :scale: 80%
     :align: center
