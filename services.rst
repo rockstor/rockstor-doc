@@ -116,7 +116,7 @@ LDAP is a directory service to connect to LDAP server.
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure LDAP, click on the **wrench** icon and submit the form
-with appropiate values as shown below.
+with appropriate values as shown below.
 
 .. image:: ldap-config.png
    :scale: 70 %
@@ -131,7 +131,7 @@ The individual fields of the form are described below.
   sent to the LDAP server.
 * **Certificate URL**: If the ``Enable TLS`` checkbox is checked, you can
   specify a URL from which to download a valid CA (Certificate Authority)
-  Ceritifcate. A valid CA Certificate must be in PEM (Privacy Enhanced Mail)
+  Certificate. A valid CA Certificate must be in PEM (Privacy Enhanced Mail)
   format.
 
 To start or stop the service, click the corresponding ON or OFF button.
