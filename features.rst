@@ -101,8 +101,8 @@ workloads. The following probes are available
 
 See :ref:`analytics` for more details.
 
-A Plugin system
----------------
+A Docker based Plugin system
+----------------------------
 
 Used to extend Rockstors features; we call these :ref:`rockons_intro`
 
@@ -121,6 +121,16 @@ possible, thanks to smartmontools, to receive emails via Rockstor's notification
 system when drives have heath issues or when they reach a warning or critical
 temperature; or even is their temperature varies by more than a configured
 value over time.
+
+UPS managed Shutdown
+--------------------
+
+By integrating the well establish `NUT <http://www.networkupstools.org/>`_
+software package and providing a Web-UI, :ref:`rockstor_nut_config` aims to
+make UPS setup easy and straight forward. Defaulting to gracefull system
+Shutdown in the event of power outage and a UPS battery low state. If
+:ref:`email_notifications` have been enabled then power events of note will
+be part of these notifications.
 
 Support
 -------
