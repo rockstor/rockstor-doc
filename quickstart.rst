@@ -17,6 +17,7 @@ hardware or as a VM with the following minimum system requirements.
 * 8GB hard disk space for the OS
 * One or more additional hard drives
 * Ethernet interface (with internet access -- for updates)
+* a UPS (if desired) that is supported by `nut <http://www.networkupstools.org/>`_
 * CD/DVD drive or USB port for installation
 
 Download Rockstor
