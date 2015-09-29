@@ -13,7 +13,8 @@ knowledge of safe power conditions. In the event of those conditions changing
 :ref:`email_notifications` can be sent and if the critical mains power
 condition persists the system will be shutdown to avoid an otherwise
 inevitable power cut affecting the system whilst in a live state. If you are
-familiar with UPS and NUT please skip to :ref:`rockstor_nut_config`.
+familiar with the terms UPS and NUT then please skip ahead to the
+:ref:`rockstor_nut_config` section.
 
 .. _what_is_a_ups:
 
@@ -43,20 +44,20 @@ What is NUT
 -----------
 
 NUT stand for `Network UPS Tools <http://www.networkupstools.org/>`_ and is a
-collection of GPLv2 licenced packages that enables the communication between
+collection of GPLv2 licenced packages that enables communication between
 UPS systems and
 their protected equipment. It also has the facility to share this information
 on the local lan so that equipment that is powered by the UPS but is not
-directly connected to the ups data wise can be informed of the critical mains
+directly connected to the UPS data wise can be informed of the critical mains
 power events. This is particularly useful as generally in the low to mid range
 of UPS's only one machine may be connected data wise to each UPS unit. With NUT
 acting in :ref:`nut_netserver` it can inform any number of machines of the
 critical power event. The other machines would receive this message by running
-their own instance of NUT but in :ref:`nut_netclient` mode. Rockstor can be
+their own instance of NUT but in :ref:`nut_netclient`. Rockstor can be
 configured to work in any of NUT 3 modes. The third mode is the most common
 and is called :ref:`nut_standalone`. In this mode Rockstor is directly
-attached to UPS and doesn't share the mains state information it gets with any
-other machines.
+attached to a UPS and doesn't share the mains state information it gets from
+the UPS with any other machines.
 
 .. _rockstor_nut_config:
 
@@ -64,10 +65,10 @@ Rockstor NUT configuration
 --------------------------
 Nut in Rockstor is treated as a service. Please see our :ref:`services` section
 for further information. From the **System - Services** page it is possible to
-turn the NUT service **ON** and **OFF** and **configured** it via it's
+turn the NUT service **ON** and **OFF** and **configure** it via it's
 **spanner icon**.
 
-Please take care to read the mouse over tool tips in nuts configuration screen;
+Please take care to read the mouse over tips in nuts configuration screen;
 the **Nut Mode** is the first option to consider in any nut configuration and
 will dictate the number of other options presented.
 
@@ -100,7 +101,7 @@ This mode requires the following fields:
     :align: center
 
 Note in the above mouse over hint there is a web link to assist in driver
-selection. Repeated here for convenience:-
+selection; repeated here for convenience:-
 `Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_
 
 .. _nut_netserver:
@@ -140,11 +141,11 @@ another nut instance running in :ref:`nut_netserver` mode. Additional
 configuration items to those detailed in the :ref:`nut_standalone` and
 :ref:`nut_netserver` sections are detailed below:
 
-* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` mode and probably also in master monitor mde.
+* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` mode and probably also in master monitor mode.
 
 ..  image:: nut_netclient.png
     :scale: 80%
     :align: center
 
 In the above the nut server is rather unimaginatively called nutserver on a lan
-domain named using an equally imaginative scheme as "lan".
+domain named using an equally imaginative scheme.
