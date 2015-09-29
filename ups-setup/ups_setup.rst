@@ -50,12 +50,13 @@ on the local lan so that equipment that is powered by the UPS but is not
 directly connected to the ups data wise can be informed of the critical mains
 power events. This is particularly useful as generally in the low to mid range
 of UPS's only one machine may be connected data wise to each UPS unit. With NUT
-acting in :ref:`nut_netserver` it can inform any number of machines of the critical
-power event. The other machines would receive this message by running their own
-instance of NUT but in :ref:`nut_netclient` mode. Rockstor can be configured to work in
-any of NUT 3 modes. The third mode is the most common and is called
-:ref:`nut_standalone`. In this mode Rockstor is directly attached to UPS and
-doesn't share the mains state information it gets with any other machines.
+acting in :ref:`nut_netserver` it can inform any number of machines of the
+critical power event. The other machines would receive this message by running
+their own instance of NUT but in :ref:`nut_netclient` mode. Rockstor can be
+configured to work in any of NUT 3 modes. The third mode is the most common
+and is called :ref:`nut_standalone`. In this mode Rockstor is directly
+attached to UPS and doesn't share the mains state information it gets with any
+other machines.
 
 .. _rockstor_nut_config:
 
@@ -66,15 +67,16 @@ for further information. From the **System - Services** page it is possible to
 turn the NUT service **ON** and **OFF** and **configured** it via it's
 **spanner icon**.
 
-Please take care to read the mouse over tool tips; the **Nut Mode** is the
-first thing to select in any nut configuration.
+Please take care to read the mouse over tool tips in nuts configuration screen;
+the **Nut Mode** is the first option to consider in any nut configuration and
+will dictate the number of other options presented.
 
 ..  image:: nut_modes.png
     :scale: 80%
     :align: center
 
-The 3 modes available are detailed in the following sections
-:ref:`nut_standalone`, :ref:`nut_netserver`, :ref:`nut_netclient`
+The 3 modes are detailed in the following sections;
+:ref:`nut_standalone`, :ref:`nut_netserver`, and :ref:`nut_netclient`
 
 .. _nut_standalone:
 
@@ -89,7 +91,7 @@ This mode requires the following fields:
 
 * **NUT Mode** - A drop down and in this case **standalone** is required
 * **NUT Driver** - Please see NUT's `Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
-* **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine; examples are **/dev/ttyS0** for the first serial port or **/dev/ttyUSB0** for a or **auto** for many direct usb connected UPSs.
+* **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine; examples are **/dev/ttyS0** for the first serial port or **/dev/ttyUSB0** or **auto** for many direct usb connected UPSs.
 * **NUT User** - N.B. this is not a system user but reserved solely for NUT use.
 * **NUT User Password** - A password for the above nut user.
 
@@ -97,26 +99,49 @@ This mode requires the following fields:
     :scale: 80%
     :align: center
 
+Note in the above mouse over hint there is a web link to assist in driver
+selection. Repeated here for convenience:-
+`Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_
+
 .. _nut_netserver:
 
 Netserver Mode
 ^^^^^^^^^^^^^^
 
-Netserver Mode is essential identical to :ref:`standalone` but with the
+Netserver Mode is essentially identical to :ref:`nut_standalone` but with the
 additional benefit of offering NUT services to other machines on the network by
-way of those machines running NUT client software.
+way of those machines running NUT client software. In addition to the options
+available in :ref:`nut_standalone` there are also the following:
+
+* **Monitor Mode** - Select either **master** or **slave**
+    - **master** - (Default) This System is most likely directly connected to the UPS; this system will shutdown last allowing slave nut systems time to shutdown first.
+    - **slave** - This system will not wait for other nut clients to shutdown, UPS is most likely not directly connected to this system.
+* **Internal UPS name** -  Single word ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this as their nut monitor reference ie "ups@rockstor.lan".
+* **UPS Description** - Human friendly name for this UPS.
 
 ..  image:: nut_netserver.png
     :scale: 80%
     :align: center
 
-
+Note the helpful **Monitor Mode** mouse over hint; if you are unsure which to
+select then **master** is probably what you want.
 
 .. _nut_netclient:
 
 Netclient Mode
 ^^^^^^^^^^^^^^
 
+Netclient Mode is a little different from the other two modes in that it does
+not talk directly with a UPS unit but instead gains mains power status info via
+another nut instance running in :ref:`nut_netserver` mode. Additional
+configuration items to those detailed in the :ref:`nut_standalone` and
+:ref:`nut_netserver` sections are detailed below:
+
+* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` mode and probably also in master monitor mde.
+
 ..  image:: nut_netclient.png
     :scale: 80%
     :align: center
+
+In the above the nut server is rather unimaginatively called nutserver on a lan
+domain named using an equally imaginative scheme as "lan".
