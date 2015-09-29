@@ -86,13 +86,12 @@ Standalone Mode
 
 This is the most common configuration. Rockstor is connected directly to the
 data port of the UPS, usually via serial or USB connection, and doesn't share
-the mains / ups data with any other machines.
-
-This mode requires the following fields:
+the mains / ups data with any other machines. This mode requires the following
+fields:
 
 * **NUT Mode** - A drop down and in this case **standalone** is required
 * **NUT Driver** - Please see NUT's `Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
-* **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine; examples are **/dev/ttyS0** for the first serial port or **/dev/ttyUSB0** or **auto** for many direct usb connected UPSs.
+* **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine eg - **/dev/ttyS0** for the first serial port - **/dev/ttyUSB0** for the first USB to serial port adapter - **auto** for many directly usb connected UPSs.
 * **NUT User** - N.B. this is not a system user but reserved solely for NUT use.
 * **NUT User Password** - A password for the above nut user.
 
@@ -117,7 +116,7 @@ available in :ref:`nut_standalone` there are also the following:
 * **Monitor Mode** - Select either **master** or **slave**
     - **master** - (Default) This System is most likely directly connected to the UPS; this system will shutdown last allowing slave nut systems time to shutdown first.
     - **slave** - This system will not wait for other nut clients to shutdown, UPS is most likely not directly connected to this system.
-* **Internal UPS name** -  Single word ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this as their nut monitor reference ie "ups@rockstor.lan".
+* **Internal UPS name** -  Single word ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this in their nut monitor reference ie the **ups** in ups@rockstor.lan.
 * **UPS Description** - Human friendly name for this UPS.
 
 **Please note that there are additional security concerns with running nut in
@@ -137,7 +136,7 @@ Netclient Mode
 
 Netclient Mode is a little different from the other two modes in that it does
 not talk directly with a UPS unit but instead gains mains power status info via
-another nut instance running in :ref:`nut_netserver` mode. Additional
+another nut instance running in :ref:`nut_netserver`. Additional
 configuration items to those detailed in the :ref:`nut_standalone` and
 :ref:`nut_netserver` sections are detailed below:
 
