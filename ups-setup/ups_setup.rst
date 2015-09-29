@@ -43,7 +43,8 @@ What is NUT
 -----------
 
 NUT stand for `Network UPS Tools <http://www.networkupstools.org/>`_ and is a
-collection of packages that enables the communication between UPS systems and
+collection of GPLv2 licenced packages that enables the communication between
+UPS systems and
 their protected equipment. It also has the facility to share this information
 on the local lan so that equipment that is powered by the UPS but is not
 directly connected to the ups data wise can be informed of the critical mains
@@ -61,8 +62,19 @@ doesn't share the mains state information it gets with any other machines.
 Rockstor NUT configuration
 --------------------------
 Nut in Rockstor is treated as a service. Please see our :ref:`services` section
-for further information. From the **System - Services** page it is possible to turn the
-NUT service **ON** and **OFF** and **configured** it via it's **spanner icon**.
+for further information. From the **System - Services** page it is possible to
+turn the NUT service **ON** and **OFF** and **configured** it via it's
+**spanner icon**.
+
+Please take care to read the mouse over tool tips; the **Nut Mode** is the
+first thing to select in any nut configuration.
+
+..  image:: nut_modes.png
+    :scale: 80%
+    :align: center
+
+The 3 modes available are detailed in the following sections
+:ref:`nut_standalone`, :ref:`nut_netserver`, :ref:`nut_netclient`
 
 .. _nut_standalone:
 
@@ -90,7 +102,21 @@ This mode requires the following fields:
 Netserver Mode
 ^^^^^^^^^^^^^^
 
+Netserver Mode is essential identical to :ref:`standalone` but with the
+additional benefit of offering NUT services to other machines on the network by
+way of those machines running NUT client software.
+
+..  image:: nut_netserver.png
+    :scale: 80%
+    :align: center
+
+
+
 .. _nut_netclient:
 
 Netclient Mode
 ^^^^^^^^^^^^^^
+
+..  image:: nut_netclient.png
+    :scale: 80%
+    :align: center
