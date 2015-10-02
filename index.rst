@@ -34,6 +34,7 @@ Welcome to Rockstor
    users
    network
    config_backup
+   ups-setup/ups_setup
    clients
    support
    contribute

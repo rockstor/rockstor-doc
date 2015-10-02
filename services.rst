@@ -1,22 +1,26 @@
+.. _services:
 
 Services
 ========
 
-Rockstor supports many services that are necessary for a storage system to be functional.
-Service management including configuration, turning on or off, can be done via
-the System tab of the web-ui.
+Rockstor supports many services that are necessary or useful in a storage system.
+Service management, ie turning on or off and configuration can be done via
+the **System** - **Services** page of the web-ui. Note that the **spanner icon**
+next to each service name is used to **configure** that service.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. All services and their current state are displayed.
+This section is the default for the System page: all services and their
+current state are displayed.
 
 .. image:: services.png
    :scale: 70 %
    :align: center
 
-To start or stop a service, click the ON or OFF buttons respectively.
+To **start** or **stop** a service, click its respective **ON** or **OFF**
+buttons.
 
-Some services need to be configured before they can be turned on. To access the configuration page for a service, click the **wrench** icon next to the service name.
+Some services need to be configured before they can be turned on. To access
+the configuration page for a service, click the **wrench** icon next to the
+service name.
 
 Please note that not all services are documented here, we are currently working
 on upgrading the documentation
@@ -67,7 +71,7 @@ in order to be part of AD.
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure AD, click on the **wrench** icon and submit the form with
-apropriate values as shown below.
+appropriate values as shown below.
 
 .. image:: ad-config.png
    :scale: 70 %
@@ -112,7 +116,7 @@ LDAP is a directory service to connect to LDAP server.
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure LDAP, click on the **wrench** icon and submit the form
-with appropiate values as shown below.
+with appropriate values as shown below.
 
 .. image:: ldap-config.png
    :scale: 70 %
@@ -127,7 +131,7 @@ The individual fields of the form are described below.
   sent to the LDAP server.
 * **Certificate URL**: If the ``Enable TLS`` checkbox is checked, you can
   specify a URL from which to download a valid CA (Certificate Authority)
-  Ceritifcate. A valid CA Certificate must be in PEM (Privacy Enhanced Mail)
+  Certificate. A valid CA Certificate must be in PEM (Privacy Enhanced Mail)
   format.
 
 To start or stop the service, click the corresponding ON or OFF button.
@@ -140,7 +144,7 @@ NIS is a directory service to connect to a NIS server.
 In the web-ui, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure NIS, click on the **wrench** icon and submit the form
-with appropiate values as shown below.
+with appropriate values as shown below.
 
 .. image:: nis-config.png
    :scale: 70 %
@@ -149,6 +153,13 @@ with appropiate values as shown below.
 * **Domain**: NIS domain.
 * **Server**: IP address of NIS server.
 
+NUT-UPS
+-------
+
+A (Currently Beta) `Network UPS Tools <http://www.networkupstools.org/>`_
+based service to orchestrate gracefull system shutdown in the event of a power
+outage. Please see our: :ref:`ups_setup` section for more details.
+
 ROCK-ON (DOCKER PLUGIN SYSTEM)
 ------------------------------
 
@@ -156,5 +167,4 @@ This is a very new service that is still in Beta, please see :ref:`rockons_intro
 For an introduction to Rockstor's `docker <https://www.docker.com/>`_ based
 plugin system.
 
-**To start or stop a service, click the corresponding ON or OFF button**
-
+**To start or stop any service, click the corresponding ON or OFF button**
