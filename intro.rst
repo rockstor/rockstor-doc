@@ -76,5 +76,5 @@ listed.
 +-----------------------------+---------+--------------------------------+
 | Config Backup and Restore   | beta    | for recovery / migration use   |
 +-----------------------------+---------+--------------------------------+
-| UPS support via NUT          | beta    | Configure a UPS from the GUI   |
+| UPS support via NUT         | beta    | Configure a UPS from the GUI   |
 +-----------------------------+---------+--------------------------------+
