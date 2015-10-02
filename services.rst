@@ -4,7 +4,7 @@ Services
 ========
 
 Rockstor supports many services that are necessary or useful in a storage system.
-Service management ie turning on or off and configuration can be done via
+Service management, ie turning on or off and configuration can be done via
 the **System** - **Services** page of the web-ui. Note that the **spanner icon**
 next to each service name is used to **configure** that service.
 
@@ -168,4 +168,3 @@ For an introduction to Rockstor's `docker <https://www.docker.com/>`_ based
 plugin system.
 
 **To start or stop any service, click the corresponding ON or OFF button**
-

@@ -10,12 +10,13 @@ Minimum system requirements
 ---------------------------
 
 Rockstor is a complete Linux distribution (iso) to be installed directly on
-hardware or as a VM with the following minimum system requirements.
+hardware or as a VM with the following minimum system requirements and
+recommendations.
 
 * 64-bit Intel or AMD processor
-* 2GB RAM
+* 2GB RAM or more. (recommended)
 * 8GB hard disk space for the OS
-* One or more additional hard drives
+* One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)
 * a UPS (if desired) that is supported by `nut <http://www.networkupstools.org/>`_
 * CD/DVD drive or USB port for installation

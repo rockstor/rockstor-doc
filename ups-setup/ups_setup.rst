@@ -12,7 +12,7 @@ for production use.**
 Overview
 --------
 
-Rockstor users the `NUT software collection <http://www.networkupstools.org/>`_
+Rockstor user the `NUT software collection <http://www.networkupstools.org/>`_
 to orchestrate a graceful system shutdown in the presence of mains power
 failure. It does this by continuously monitoring a UPS device to maintain a
 knowledge of safe power conditions. In the event of those conditions changing
@@ -29,9 +29,9 @@ What is a UPS
 
 A **UPS** is a **Un-interruptable Power Supply** and is often associated with
 mission critical electrical components such as computer servers and network
-infrastructure. There function is to continue to provide mains power to the
+infrastructure. Their function is to continue to provide mains power to the
 equipment they are setup to protect in the event that the mains suffers a
-blackout (mains disappears completely) or a brown out (the mains becomes sub
+blackout (mains disappears completely) or a brownout (the mains becomes sub
 standard). A common facility of UPS devices is an ability to inform their
 protected equipment of a critical mains event which in turn allows that
 equipment to take evasive action and avoid suffering the consequences of the
@@ -50,31 +50,32 @@ What is NUT
 -----------
 
 NUT stand for `Network UPS Tools <http://www.networkupstools.org/>`_ and is a
-collection of GPLv2 licenced packages that enables communication between
-UPS systems and
-their protected equipment. It also has the facility to share this information
-on the local lan so that equipment that is powered by the UPS but is not
-directly connected to the UPS data wise can be informed of the critical mains
-power events. This is particularly useful as generally in the low to mid range
-of UPS's only one machine may be connected data wise to each UPS unit. With NUT
-acting in :ref:`nut_netserver` it can inform any number of machines of the
-critical power event. The other machines would receive this message by running
-their own instance of NUT but in :ref:`nut_netclient`. Rockstor can be
-configured to work in any of NUT 3 modes. The third mode is the most common
-and is called :ref:`nut_standalone`. In this mode Rockstor is directly
-attached to a UPS and doesn't share the mains state information it gets from
-the UPS with any other machines.
+collection of GPLv2 licenced packages that enables communication between UPS
+systems and their protected equipment. It also has the facility to share this
+information on the local lan so that equipment that is powered by the UPS but
+is not directly connected to the UPS data wise can be informed of the critical
+mains power events. This is particularly useful as generally in the low to mid
+range of UPS's only one machine may be connected data wise to each UPS
+unit. With NUT acting in :ref:`nut_netserver` it can inform any number of
+machines of the critical power event. The other machines would receive this
+message by running their own instance of NUT but in
+:ref:`nut_netclient`. Rockstor can be configured to work in any of three NUT
+modes. The third mode is the most common and is called
+:ref:`nut_standalone`. In this mode Rockstor is directly attached to a UPS and
+doesn't share the mains state information it gets from the UPS with any other
+machine.
 
 .. _rockstor_nut_config:
 
 Rockstor NUT configuration
 --------------------------
+
 Nut in Rockstor is treated as a service. Please see our :ref:`services` section
 for further information. From the **System - Services** page it is possible to
 turn the NUT service **ON** and **OFF** and **configure** it via it's
 **spanner icon**.
 
-Please take care to read the mouse over tips in nuts configuration screen;
+Please take care to read the mouse over tips in NUT's configuration screen;
 the **Nut Mode** is the first option to consider in any nut configuration and
 will dictate the number of other options presented.
 
@@ -82,7 +83,7 @@ will dictate the number of other options presented.
     :scale: 80%
     :align: center
 
-The 3 modes are detailed in the following sections;
+The three modes are detailed in the following sections;
 :ref:`nut_standalone`, :ref:`nut_netserver`, and :ref:`nut_netclient`
 
 .. _nut_standalone:
@@ -92,7 +93,7 @@ Standalone Mode
 
 This is the most common configuration. Rockstor is connected directly to the
 data port of the UPS, usually via serial or USB connection, and doesn't share
-the mains / ups data with any other machines. This mode requires the following
+the mains / ups data with any other machine. This mode requires the following
 fields:
 
 * **NUT Mode** - A drop down and in this case **standalone** is required
@@ -122,7 +123,7 @@ available in :ref:`nut_standalone` there are also the following:
 * **Monitor Mode** - Select either **master** or **slave**
     - **master** - (Default) This System is most likely directly connected to the UPS; this system will shutdown last allowing slave nut systems time to shutdown first.
     - **slave** - This system will not wait for other nut clients to shutdown, UPS is most likely not directly connected to this system.
-* **Internal UPS name** -  Single word ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this in their nut monitor reference ie the **ups** in ups@rockstor.lan.
+* **Internal UPS name** -  Single word, ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this in their nut monitor reference, ie the **ups** in ups@rockstor.lan.
 * **UPS Description** - Human friendly name for this UPS.
 
 **Please note that there are additional security concerns with running nut in
