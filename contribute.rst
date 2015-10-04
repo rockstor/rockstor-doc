@@ -22,9 +22,9 @@ the project and our community.
 Contributions such as testing and reporting bugs are tremendously helpful and
 greatly appreciated.
 
-You can also contribute to the documentation of the project. For details go to
-the `rockstor-doc repository on Github
-<https://github.com/rockstor/rockstor-doc>`_.
+You can also contribute to the documentation of the project, which in many
+cases is crucial and often lags behind. So documentation contributions are
+appreciated very much. For more information go to :ref:`contributedocs`
 
 .. _developers:
 
@@ -346,4 +346,3 @@ When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the "pull request" button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
-

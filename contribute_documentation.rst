@@ -1,3 +1,5 @@
+.. _contributedocs:
+
 Contributing to Rockstor documentation
 --------------------------------------
 
