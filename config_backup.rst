@@ -22,11 +22,11 @@ Following state information is saved as part of a backup
 * AFP configuration
 * Service configurations (ntp, smartd etc..)
 
-Since Rockstor can dynamicall detects Pool, Share and Snapshot information after
-an external change like a reinstall, there is not need to save this
-information. While the above list covers essential portion of the whole state,
-following state information is not saved to a backup. Support is planned to be
-added in future.
+Since Rockstor can dynamically detects Pool, Share and Snapshot information
+after an external change like a reinstall, there is no need to save this
+information. While the above list covers the essentials of the whole state,
+the following state information is not currently saved to a backup. There are
+plans to add these states to the list of saved states in the future.
 
 * Appliance configurations
 * Dashboard customizations
