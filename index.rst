@@ -37,7 +37,8 @@ Welcome to Rockstor
    ups-setup/ups_setup
    clients
    support
-   contribute
+   contribute 
+   contribute_documentation 
    howtos
    analytics
    benchmarks
