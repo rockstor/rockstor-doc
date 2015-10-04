@@ -17,8 +17,9 @@ Initial Email Setup
 Navigate to the **Email Alerts** section of the **System** page:-
 
 ..  image:: email_init.png
+    :align: center
 
-Press the **Setup E-Mail for alerts** button to begin.
+Press the **Add an E-Mail account** button to begin.
 
 Complete the following required fields
 
@@ -30,24 +31,39 @@ Complete the following required fields
 * **Recipient email** who is to receive the notification emails from Rockstor
 
 ..  image:: email_config.png
-    :scale: 80%
     :align: center
 
 **Submit** button when done
 
 ..  _email_current:
 
-Current Configuration
----------------------
+Current Email Configuration
+---------------------------
 
 Upon submitting the desired configuration the following is displayed
-summarizing the previously entered / current information and advising on how
-this configuration might be tested.
+summarizing the previously entered and now current information and advising on
+how this configuration might be :ref:`tested <email_test>`.
 
 **Email Alerts** section of the **System** page with existing configuration.
 
 ..  image:: email_done.png
-    :scale: 80%
     :align: center
 
-**Note the Bin icon** in case anything is incorrect or needs replacing.
+Note **the Bin icon** to remove the configuration and start
+over, and the **small arrow icon** to **test** the configuration.
+
+.. _email_test:
+
+Testing Email
+-------------
+
+A test email containing the appliance id, a UUID generated during install, can
+be sent using the **small arrow icon** next to the **Bin icon** on the
+:ref:`email_current` page. Upon a test email having been sent the following
+screen should be visible:
+
+..  image:: email_test.png
+    :align: center
+
+**Please note that the appliance id sent in this email is used to identify
+this particular install and it's update channel registration**
