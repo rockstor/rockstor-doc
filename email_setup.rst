@@ -17,8 +17,9 @@ Initial Email Setup
 Navigate to the **Email Alerts** section of the **System** page:-
 
 ..  image:: email_init.png
+    :align: center
 
-Press the **Setup E-Mail for alerts** button to begin.
+Press the **Add an E-Mail account** button to begin.
 
 Complete the following required fields
 
@@ -30,7 +31,6 @@ Complete the following required fields
 * **Recipient email** who is to receive the notification emails from Rockstor
 
 ..  image:: email_config.png
-    :scale: 80%
     :align: center
 
 **Submit** button when done
@@ -47,7 +47,6 @@ this configuration might be tested.
 **Email Alerts** section of the **System** page with existing configuration.
 
 ..  image:: email_done.png
-    :scale: 80%
     :align: center
 
 **Note the Bin icon** in case anything is incorrect or needs replacing.
