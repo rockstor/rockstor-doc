@@ -41,8 +41,8 @@ Current Email Configuration
 ---------------------------
 
 Upon submitting the desired configuration the following is displayed
-summarizing the previously entered / current information and advising on how
-this configuration might be tested.
+summarizing the previously entered and now current information and advising on
+how this configuration might be :ref:`tested <email_test>`.
 
 **Email Alerts** section of the **System** page with existing configuration.
 
@@ -58,8 +58,9 @@ Testing Email
 -------------
 
 A test email containing the appliance id, a UUID generated during install, can
-be sent using the **small arrow icon** next to the **Bin icon**. Upon a test
-email having been sent the following screen should be visible:
+be sent using the **small arrow icon** next to the **Bin icon** on the
+:ref:`email_current` page. Upon a test email having been sent the following
+screen should be visible:
 
 ..  image:: email_test.png
     :align: center
