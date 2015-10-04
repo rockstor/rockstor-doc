@@ -12,7 +12,7 @@ for production use.**
 Overview
 --------
 
-Rockstor user the `NUT software collection <http://www.networkupstools.org/>`_
+Rockstor uses the `NUT software collection <http://www.networkupstools.org/>`_
 to orchestrate a graceful system shutdown in the presence of mains power
 failure. It does this by continuously monitoring a UPS device to maintain a
 knowledge of safe power conditions. In the event of those conditions changing
@@ -147,7 +147,7 @@ another nut instance running in :ref:`nut_netserver`. Additional
 configuration items to those detailed in the :ref:`nut_standalone` and
 :ref:`nut_netserver` sections are detailed below:
 
-* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` mode and probably also in master monitor mode.
+* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` and probably also in master monitor mode.
 
 ..  image:: nut_netclient.png
     :scale: 80%
