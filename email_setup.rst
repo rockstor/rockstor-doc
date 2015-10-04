@@ -37,8 +37,8 @@ Complete the following required fields
 
 ..  _email_current:
 
-Current Configuration
----------------------
+Current Email Configuration
+---------------------------
 
 Upon submitting the desired configuration the following is displayed
 summarizing the previously entered / current information and advising on how
@@ -49,4 +49,20 @@ this configuration might be tested.
 ..  image:: email_done.png
     :align: center
 
-**Note the Bin icon** in case anything is incorrect or needs replacing.
+Note **the Bin icon** to remove the configuration and start
+over, and the **small arrow icon** to **test** the configuration.
+
+.. _email_test:
+
+Testing Email
+-------------
+
+A test email containing the appliance id, a UUID generated during install, can
+be sent using the **small arrow icon** next to the **Bin icon**. Upon a test
+email having been sent the following screen should be visible:
+
+..  image:: email_test.png
+    :align: center
+
+**Please note that the appliance id sent in this email is used to identify
+this particular install and it's update channel registration**
