@@ -11,3 +11,4 @@ Howtos
    soho
    kvm_setup
    reset-root-password
+   windows-shadow-copy
