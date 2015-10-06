@@ -25,6 +25,7 @@ Welcome to Rockstor
    docker-based-rock-ons/overview
    email_setup
    tasks
+   update-channels/update_channels
    data_loss
    nfs_ops
    samba_ops

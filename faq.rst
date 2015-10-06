@@ -105,6 +105,7 @@ Rockstor and push tested updates in small batches which can be updated online
 right from the web-ui. We do this because we want our users to get the best of
 Rockstor without any unnecessary disruption or delay.
 
+.. _faq_license:
 
 How is Rockstor licensed?
 -------------------------
