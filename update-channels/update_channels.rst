@@ -73,7 +73,8 @@ see :ref:`additional benefits <free_stable>`.
 There is really no better testing alternative than thousands of users putting a
 product to uses that were never envisaged by the developers; and when those
 users see rapid development in the problems they find and report, everybody
-wins.
+wins. It's the classic *Bazaar* model described in `CatB
+<https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar>`_.
 
 .. _stable_channel:
 
@@ -81,14 +82,15 @@ Stable Channel
 --------------
 
 This is the recommended channel for **Production Rockstor use**, the frequency
-of updates are much less than those in the :ref:`testing_channel` and there is
-the reassurance that update in the stable channel have been field tested first
-on systems running on the testing channel. This channel will receive the
-highest attention with regard to bug fixes where as the testing channel is more
-focused on development rather than refinement. There will also be greater
-attention paid to avoiding regressions and via partner programs production
-environment testing prior to release should help to ensure this channels
-greater stability and dependability.
+of updates are much less(**every 3-4 weeks**) than those in the
+:ref:`testing_channel` and there is the reassurance that update in the stable
+channel have been field tested first on systems running on the testing channel
+including the production systems powering various day to day operations of
+project. This channel will receive the highest attention with regard to bug
+fixes where as the testing channel is more focused on development rather than
+refinement. There will also be greater attention paid to avoiding regressions,
+and via partner programs, production environment testing prior to release should
+help to ensure this channel's greater stability and dependability.
 
 Below we see the process involved in setting up the stable channel updates. A
 link is provided to the Rockstor shop where a variety of one off charge options
@@ -126,7 +128,7 @@ eligible for unlimited Activation codes.
 Auto Updates
 ------------
 
-When enabled **auto update** checks for all system updates and installs them
+When enabled, **auto update** checks for all system updates and installs them
 automatically on a daily basis. This is the **recommended** setting when on the
 :ref:`stable_channel` only. If you are on the :ref:`testing_channel` it is not
 recommended to enable auto updates but instead to evaluate all updates prior to
@@ -137,5 +139,3 @@ the testing channel and it's inevitably greater chance of breakage or bugs.
     :align: center
 
 **N.B. Auto updates are only recommended when on the stable updates channel**
-
-
