@@ -52,11 +52,11 @@ This is a cheap yet much faster alternative to a USB flash drive. Here's a short
 How much does Rockstor cost?
 ----------------------------
 
-Zero USD. You can use the product in it's entirety free of charge and seek
-support from `the community forum <http://forum.rockstor.com>`_. `Commercial
-support <http://rockstor.com/commercial_support.html>`_ is also
-available. Additionally, you can hire us if you need custom integration with
-Rockstor.
+Little to nothing, depending on how you choose to receive software updates. You
+can download and install Rockstor from the ISO file free of cost. However, we
+release rolling updates. These updates are divided into a Stable channel and a
+Testing channel. Testing channel is free, but access to Stable channel requires
+a small subscription fee. See :ref:`update_channels` for more information.
 
 
 How can I share files using Rockstor?
