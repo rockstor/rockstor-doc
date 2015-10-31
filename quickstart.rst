@@ -56,6 +56,10 @@ produce **NON working USB install disks** when used with the Rockstor iso file.
 * Unetbootin
 * Rufus
 
+Please also see the :ref:`usbinstall` and the :ref:`bootorderchanges` sections
+of the :ref:`sohoguide` document for more information on making and using the
+USB install disk.
+
 .. _osinstall:
 
 Installation
