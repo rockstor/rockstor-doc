@@ -111,7 +111,7 @@ Disc Image Burner(Windows 7 only) or an open source program like `Infra Recorder
 
 Once the disk is ready to be booted, insert it in your soon to be RockStor
 Fileserver and start the machine. You may need to change the boot order in BIOS
-to boot from the USB flash drive. This is achieved by booting the system and
+to boot from the CD/DVD drive. This is achieved by booting the system and
 pressing **F12** key on most systems. Soon, the RockStor splash screen should
 appear beginning the installation process.
 
