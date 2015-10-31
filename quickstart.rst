@@ -44,9 +44,20 @@ To create a USB install disk on Linux or Mac one can use the dd command. For
 example if your USB device is /dev/sdc then from within the directory
 containing your downloaded Rockstor iso file the command would be:-
 
-  dd if=Rockstor-3.8-9.iso of=/dev/sdc
+    dd if=Rockstor-3.8-9.iso of=/dev/sdc
 
 Note that the .iso file name will vary depending on the Rockstor version.
+
+Another option on linux systems is the ddrescue command which gives
+more reassuring feedback whilst the USB key is being written. On Debian and
+Ubuntu systems install via *sudo apt-get install gddrescue* and on Fedora
+systems install via *sudo dnf install ddrescue*. Use similarly to dd above
+only using the following command:-
+
+    sudo ddrescue -d -D --force Rockstor-3.8-9.iso /dev/sdc
+
+Note that there are 2 "-" characters next to each other before the "force"
+switch.
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
