@@ -114,7 +114,7 @@ Disc Image Burner(Windows 7 only) or an open source program like `Infra Recorder
 <http://infrarecorder.org/>`_ On Mac, use the **Disk Utility** program.
 
 Once the disk is ready to be booted, insert it in your soon to be Rockstor
-Fileserver and start the machine. Please see :ref:`bootorderchanges`
+Fileserver and power cycle the machine. Please see :ref:`bootorderchanges`
 to boot the install media.
 
 .. _usbinstall:
