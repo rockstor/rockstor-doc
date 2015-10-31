@@ -42,6 +42,12 @@ example, if your USB drive is /dev/sdc, the command would be::
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
+**Please note** the following USB image writing programs have been found to
+produce **NON working USB install disks** when used with Rockstor.
+
+* Unetbootin
+* Rufus
+
 .. _osinstall:
 
 Installation
