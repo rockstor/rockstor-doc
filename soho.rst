@@ -104,35 +104,35 @@ Install RockStor from CD/DVD drive
 **Skip this section and go to** :ref:`usbinstall` **instead, if you plan to
 install RockStor from a USB flash drive.**
 
+Installing RockStor from a CD-R/RW is straight forward on most system that
+come with a CD/DVD drive and if there is no built in drive then RockStor
+should also install just fine using an external USB CD/DVD drive.
+
 Burn the downloaded RockStor ISO file onto a blank CD or DVD disk as a bootable
 image. On Linux, you can use programs like K3b. On Windows, you can use Windows
 Disc Image Burner(Windows 7 only) or an open source program like `Infra Recorder.
 <http://infrarecorder.org/>`_ On Mac, use the **Disk Utility** program.
 
 Once the disk is ready to be booted, insert it in your soon to be RockStor
-Fileserver and start the machine. You may need to change the boot order in BIOS
-to boot from the CD/DVD drive. This is achieved by booting the system and
-pressing **F12** key on most systems. Soon, the RockStor splash screen should
-appear beginning the installation process.
+Fileserver and start the machine. Please see :ref:`bootorderchanges`
+to boot the install media.
 
 .. _usbinstall:
 
 Install RockStor from USB flash drive
 -------------------------------------
 
-**Skip this section and go to** :ref:`cdinstall` **instead, if you plan to install RockStor from CD-R/RW**
-
-Installing RockStor from a CD-R/RW is straight forward on most servers that
-come with a CD/DVD drive. Even if they don't, RockStor should install smoothly
-using an external usb CD/DVD drive.
+**Skip this section and go to** :ref:`cdinstall` **instead, if you plan to
+install RockStor from a CD-R/RW**
 
 A USB flash drive of at least 1 GB in size is required. **All data on the USB
-drive will be erased**. So backup your data as needed before proceeding further.
+drive will be erased**. So backup your data as needed before proceeding
+further.
 
 On Windows or Fedora operating systems, Liveusb-creator program can be used to
-prepare your USB flash drive with RockStor ISO file. If you are using
-Windows operating system, download the program from
-`here. <https://fedorahosted.org/releases/l/i/liveusb-creator/liveusb-creator-3.12.0-setup.exe>`_
+prepare your USB flash drive with the RockStor ISO file. If you are using the
+Windows operating system then liveusb-creator can be download from
+`liveusb-creator. <https://fedorahosted.org/releases/l/i/liveusb-creator/liveusb-creator-3.12.0-setup.exe>`_
 and install it. On Fedora, run the following command::
 
     # yum install liveusb-creator
@@ -142,11 +142,30 @@ flash drive by running the following command::
 
     # dd if=path_to_rockstor_iso of=/dev/<usb_flash_drive>
 
-Plug the USB flash drive into your soon to be RockStor Fileserver and start the
-machine. You may need to change the boot order in BIOS to boot from the USB
-flash drive. This is achieved by booting the system and pressing **F12** key on
-most systems. Soon, the RockStor splash screen should appear beginning the
-installation process.
+Plug the USB flash drive into your soon to be RockStor Fileserver and power
+cycle the machine. Please see :ref:`bootorderchanges` to boot the install
+media.
+
+..  _bootorderchanges:
+
+Boot order changes
+------------------
+
+When installing Rockstor from a USB boot disk or a CD-R/DVD it may well be
+necessary to change the system's device boot order so that the install disk is
+booted first. Often this can be accomplished by pressing the **F12 key**
+shortly after system power on (note the on screen instructions). If this option
+is not available or doesn't work then try changing the boot options within the
+systems BIOS settings. Take careful note of what you change though so that
+the original setting can be restored if need be. Also note that some systems
+require the USB key to be inserted prior to power on before offering it as an
+option within the BIOS boot section screens.
+
+To get to a systems BIOS (Basic Input / Output System) take note of early
+on screen messages during system power on. Many systems use the **F2 key** or
+the **Del key** and some Compaqs use the **F10** key. Note that changes in the
+system BIOS may have to be un-done post install to prevent accidental booting
+of future install media on subsequent reboots.
 
 .. _installsetup:
 
@@ -180,7 +199,7 @@ itself. However, it only needs about 8 GB of space to function. This is
 terribly inefficient since the drive capacity is usually in hundreds of
 gigabytes. So, we made it possible to run RockStor completely off a USB flash
 drive as an alternate approach. But as with anything else, there are
-tradeoffs.
+trade-offs.
 
 Here are some advantages of running RockStor completely off a USB flash drive.
 
@@ -196,9 +215,6 @@ Here are some disadvantages of this approach
 3. More advanced servers support hardware raid and the operating system can
    live on a raid mirror ensuring high availability. This is not possible with
    USB flash drives.
-
-
-
 
 Using RockStor
 --------------
