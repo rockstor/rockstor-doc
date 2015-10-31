@@ -1,16 +1,17 @@
 
 .. _contributetorockstor:
 
-Contribute to Rockstor
-======================
+Contributing to Rockstor - Overview
+===================================
 
 Rockstor is free and open source software and we are proud of our budding
-developer and user community. Anyone can contribute in a number of different ways.
+developer and user community. Anyone can contribute in a number of different
+ways.
 
 .. _storageexperts:
 
 Non developers
----------------
+--------------
 
 There is a lot you can do other than coding that is essential to the
 project. First, please join our `community discussion forum
@@ -24,7 +25,7 @@ greatly appreciated.
 
 You can also contribute to the documentation of the project, which in many
 cases is crucial and often lags behind. So documentation contributions are
-appreciated very much. For more information go to :ref:`contributedocs`
+also very much appreciated. For more information go to :ref:`contributedocs`
 
 .. _developers:
 
