@@ -34,8 +34,8 @@ that are known to work with Rockstor. Below is a list of these recommendations.
 Complete Builds for Home and small organizations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. `This <http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas>`_ is one
-   of the first builds assembled by Rockstor developers and works great. It is
+1. This is `one of the first <http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas>`_
+   builds assembled by Rockstor developers and works great. It is
    a production server of Rockstor team for several purposes. You can get a
    `boot drive
    <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_
@@ -66,10 +66,10 @@ The following are off the shelf products that require very little DIY work, if
 any. They provide USB 3.0, making it convenient to use external USB drives with
 impressive speeds.
 
-1. Intel NUC. To find out more, read this `blog post
+1. Intel NUC. To find out more, see `Garrett's blog post
    <http://rockstor.com/blog/tutorials/rockstor-on-the-intel-nuc/>`_.
 
-2. ASUS VivoPC. To find out more, read this `blog post
+2. ASUS VivoPC. To find out more, see `Amir's blog post
    <http://rockstor.com/blog/personal-cloud/rockstor-on-asus-vivopc/>`_.
 
 
