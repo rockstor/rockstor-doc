@@ -172,12 +172,12 @@ of future install media on subsequent reboots.
 Installation and Setup
 ----------------------
 
-If you want to install Rockstor on to one of the Hard Drives in the system,
-just continue with the installation process as described
-in :ref:`quickstartguide`. But if you like to install it on to a USB flash
+If you wish to install Rockstor on to one of the Hard Drives / SSD's or mSATA
+devices in the system see our :ref:`quickstartguide` guide and specifically
+the :ref:`osinstall` section. But if you want to install it on to a USB flash
 drive, just plug in a USB flash drive with at least 8 GB capacity and select it
-as the installation destination as described in :ref:`quickstartguide`. For
-pros and cons of this approach, see :ref:`usboverhdd`
+as the installation destination as described in :ref:`quickstartguide`. For the
+pros and cons of this approach see :ref:`usboverhdd`
 
 **Note: This USB flash drive is separate and not to be confused with the one
 mentioned earlier in the document. The earlier one can be as little as 1 GB and
