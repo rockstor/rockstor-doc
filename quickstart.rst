@@ -36,9 +36,9 @@ section for installation.
    </div>
 
 To create a USB install disk, you can use the dd command on Linux or Mac. For
-example, if your USB drive is /dev/sdb, the command would be::
+example, if your USB drive is /dev/sdc, the command would be::
 
-  dd if=Rockstor-3.8-0.iso of=/dev/sdb
+  dd if=Rockstor-3.8-0.iso of=/dev/sdc
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
