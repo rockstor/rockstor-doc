@@ -15,6 +15,7 @@ into a private cloud server.
 Rockstor can be installed on commodity hardware or as a virtual machine on
 hypervisors like Xen, KVM and VMWare.
 
+.. _featurestable:
 
 Features
 --------
