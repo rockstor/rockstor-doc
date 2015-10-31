@@ -1,6 +1,6 @@
 .. _sohoguide:
 
-Small Office Fileserver with RockStor
+Small Office Fileserver with Rockstor
 =====================================
 
 In a small office or home office like environment, a centralized storage server

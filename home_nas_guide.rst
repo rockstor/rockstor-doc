@@ -16,8 +16,8 @@ You need to store all movies, music, photos, documents that you create
 every day, and be able to access them from any computer in your home. 
 
 This guide looks at how to build your own NAS using easily available
-hardware, and the RockStor storage server.
-RockStor is an open-source storage server based on linux, that can be
+hardware, and the Rockstor storage server.
+Rockstor is an open-source storage server based on linux, that can be
 installed on commodity hardware.
 
 Hardware
@@ -53,28 +53,28 @@ Hard drives to hold your data. Multiple hard drives are recommended, to create p
       
 **Software**
       
-Download the RockStor iso at `http://www.rockstor.com/downloads <http://rockstor.com/downloads.html>`_
+Download the Rockstor iso at `http://www.rockstor.com/downloads <http://rockstor.com/downloads.html>`_
 
-If you are using a USB drive as the installation media, prepare the USB drive with the RockStor iso by following `these instructions <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
+If you are using a USB drive as the installation media, prepare the USB drive with the Rockstor iso by following `these instructions <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
 
 **Installation and Setup**
 
 Insert both the flash drives into the server. Set the flash drive containing the iso as the boot disk, and during installation, select the other flash drive as the destination to install RockStor.
 
-Install RockStor using the installation instructions provided in our :ref:`quickstartguide` Guide
+Install Rockstor using the installation instructions provided in our :ref:`quickstartguide` Guide
 
-**Using RockStor**
+**Using Rockstor**
         
 1. Accessing a shared folder from a Mac client
 
-   To access a shared folder on RockStor from a Mac, you have to create a pool, create a share in the pool, and export it using Samba. This is explained in the :ref:`createshare` section.
+   To access a shared folder on Rockstor from a Mac, you have to create a pool, create a share in the pool, and export it using Samba. This is explained in the :ref:`createshare` section.
 
-   Once you have exported the Share using Samba on RockStor, it should appear as a folder in the Devices menu on your Mac.
+   Once you have exported the Share using Samba on Rockstor, it should appear as a folder in the Devices menu on your Mac.
 
 2. Accessing a shared drive from a Windows client
 
-   To access a shared folder on RockStor from a Mac, you have to create a pool, create a share in the pool, and export it using Samba. This is explained in the :ref:`createshare` section.
+   To access a shared folder on Rockstor from a Mac, you have to create a pool, create a share in the pool, and export it using Samba. This is explained in the :ref:`createshare` section.
 
-   Once you have exported the Share using Samba on RockStor, it should appear as a folder in the Devices menu on your Mac.
+   Once you have exported the Share using Samba on Rockstor, it should appear as a folder in the Devices menu on your Mac.
 
 

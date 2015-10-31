@@ -162,7 +162,7 @@ Build VM
 --------
 
 You need a Virtual Machine (VM) to build and test your changes. An easy
-solution is to create a RockStor VM using either Oracle's `VirtualBox
+solution is to create a Rockstor VM using either Oracle's `VirtualBox
 <https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
 `Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
 can find a `VirtualBox Rockstor install demo

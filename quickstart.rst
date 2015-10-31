@@ -71,7 +71,7 @@ about installation.
 .. raw:: html
 
    <div class="alert alert-warning">
-   <strong>Important!</strong> Installing RockStor deletes existing data on the system
+   <strong>Important!</strong> Installing Rockstor deletes existing data on the system
    drive(s) selected as installation destination.
    </div>
 
@@ -110,7 +110,7 @@ about installation.
     .. raw:: html
 
         <div class="alert alert-warning">
-        <strong>Important!</strong> Installing RockStor deletes existing data on the system
+        <strong>Important!</strong> Installing Rockstor deletes existing data on the system
         drive(s) selected as installation destination.
         </div>
 

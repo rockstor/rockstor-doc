@@ -20,10 +20,10 @@ as described below.
 Unix/Linux
 ^^^^^^^^^^
 
-   On a Unix/Linux client, the RockStor server will appear in the
-   File explorer application as an entry of the form **RockStor@<ip-address>** under **Browse Network** . Clicking on the server will display the available exported shares that have Browseable true.
+   On a Unix/Linux client, the Rockstor server will appear in the
+   File explorer application as an entry of the form **Rockstor@<ip-address>** under **Browse Network** . Clicking on the server will display the available exported shares that have Browseable true.
 
-   If the RockStor server does not appear in the File explorer, a connection can be made by selecting 'Connect to Server'
+   If the Rockstor server does not appear in the File explorer, a connection can be made by selecting 'Connect to Server'
 
    .. image:: smb_linux_network.png
       :scale: 65%
@@ -43,7 +43,7 @@ Windows
 Mac OS
 ^^^^^^
 
-   On a Mac OS, the RockStor server will appear in the Finder sidebar, as an entry of the form **RockStor@<ip-address>**. Connecting to the server can be done by clicking on the entry, and authenticating as a specific user who has permissions to access the share, (or as a guest user, if the share has Guest OK set to true) as shown below.
+   On a Mac OS, the Rockstor server will appear in the Finder sidebar, as an entry of the form **Rockstor@<ip-address>**. Connecting to the server can be done by clicking on the entry, and authenticating as a specific user who has permissions to access the share, (or as a guest user, if the share has Guest OK set to true) as shown below.
 
    .. image:: smb_mac_auth.png
       :scale: 65%
