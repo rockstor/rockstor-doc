@@ -17,15 +17,21 @@ There is a lot you can do other than coding that is essential to the
 project. First, please join our `community discussion forum
 <http://forum.rockstor.com>`_. It's the central location where all discussions
 take place. If you need help, want to share an idea, suggest a new feature etc..
-the forum is a great place to start. Being active there could be very helpful to
-the project and our community.
+the forum is a great place to start. Being active on the forum is very helpful
+to the project and the community as a whole.
 
 Contributions such as testing and reporting bugs are tremendously helpful and
-greatly appreciated.
+greatly appreciated. Please see our :ref:`update_channels` section and
+specifically the :ref:`testing_channel` sub section for information on how to
+track the latest fixes and features.
 
 You can also contribute to the documentation of the project, which in many
 cases is crucial and often lags behind. So documentation contributions are
 also very much appreciated. For more information go to :ref:`contributedocs`
+
+Finally Rockstor's continued development and distribution depends on all those
+choosing to subscribe to the :ref:`stable_channel` updates where all the
+:ref:`testing_channel` work end up.
 
 .. _developers:
 
