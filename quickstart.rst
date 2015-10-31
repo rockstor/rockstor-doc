@@ -25,8 +25,8 @@ Download Rockstor
 -----------------
 
 Rockstor `download options <http://rockstor.com/download.html>`_. Create a
-bootable CD or USB drive from the downloaded iso and proceed to the next
-section for installation.
+bootable CD or USB drive from the downloaded iso and proceed to the
+:ref:`installation` section.
 
 .. raw:: html
 
@@ -35,15 +35,23 @@ section for installation.
    Thanks for your support!
    </div>
 
-To create a USB install disk, you can use the dd command on Linux or Mac. For
-example, if your USB drive is /dev/sdc, the command would be::
+.. _makeusbinstalldisk:
 
-  dd if=Rockstor-3.8-0.iso of=/dev/sdc
+Making a Rockstor USB install disk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To create a USB install disk on Linux or Mac one can use the dd command. For
+example if your USB device is /dev/sdc then from within the directory
+containing your downloaded Rockstor iso file the command would be:-
+
+  dd if=Rockstor-3.8-9.iso of=/dev/sdc
+
+Note that the .iso file name will vary depending on the Rockstor version.
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
 **Please note** the following USB image writing programs have been found to
-produce **NON working USB install disks** when used with Rockstor.
+produce **NON working USB install disks** when used with the Rockstor iso file.
 
 * Unetbootin
 * Rufus
