@@ -109,8 +109,10 @@ improves response time.
 
 Participation in the stable channel is key to the future of Rockstor
 development. The ability to continue to improve and provide future-proof
-services by way of advanced file system facilities made easy is dependant on
-a financial component. The stable channel is that financial component.
+services by way of advanced file system facilities made easy is dependant on a
+financial component. The stable channel is that financial component. Currently,
+users can purchase a one year subscription for $15.00 USD or a five year
+subscription for $35.00 USD.
 
 **Variable one off charge depending on duration**
 
