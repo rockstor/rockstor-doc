@@ -83,9 +83,11 @@ level. Instead, selectively enable it on Shares.
 
 Besides not enabling compression at all, there are two additional choices
 
-* **zlib**: Provies slower but higher compression ratio. You can find out more `here <http://www.zlib.net/manual.html>`_.
+* **zlib**: Provides slower but higher compression ratio. You can find out
+  more from `zlib.net <http://www.zlib.net/manual.html>`_.
 * **lzo**: A faster compression algorithm but provides lower ratio compared to
-  **zlib**. You can find out more `here <http://www.oberhumer.com/opensource/lzo/>`_.
+  **zlib**. You can find out more from `oberhumer.com
+  <http://www.oberhumer.com/opensource/lzo/>`_.
 
 
 Mount Options
@@ -94,7 +96,7 @@ Mount Options
 These are optional and meant for more advanced users to provide BTRFS specific
 mount options. Since a Pool is a filesystem, it is mounted with default options
 which can be altered by providing one or more of the following. You can find
-out more about each option `here
+out more about each option from the `btrfs wiki mount options section
 <https://btrfs.wiki.kernel.org/index.php/Mount_options>`_.
 
 * **alloc_start**
@@ -116,8 +118,6 @@ out more about each option `here
 * **ssd**
 * **ssd_spread**
 * **thread_pool**
-
-|
 
 .. _poolresize:
 
@@ -195,7 +195,7 @@ Scrubbing a Pool
 
 The scrub operation initiates a BTRFS scrub process in the background. It reads
 all data from all disks of the Pool, verifies checksums and fixes corruptions
-if detected and possible. To find out more, go `here
+if detected and possible. To find out more, see the `btrfs wiki scrub section
 <https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-scrub>`_.
 
 To start a scrub, go to the Pool's detail page and click on the **Start a new
@@ -216,7 +216,8 @@ The balance operation initiates a BTRFS balance process in the background. It
 spreads data more evenly across multiple disks of the Pool. It is automatically
 triggered after a :ref:`poolresize` operation, which is the main purpose of
 this feature. A standalone balance operation is intended for advanced users who
-can judge for themselves if it is necessary. To find out more, go `here
+can judge for themselves if it is necessary. To find out more, see the `btrfs
+wiki balance section
 <https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F>`_.
 
 To start a balance, go to the Pool's detail page and click on the **Start a new

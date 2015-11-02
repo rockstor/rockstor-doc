@@ -1,5 +1,5 @@
 
-.. RockStor documentation master file, created by
+.. Rockstor documentation master file, created by
    sphinx-quickstart on Thu Oct 17 09:09:17 2013.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -38,7 +38,7 @@ Welcome to Rockstor
    ups-setup/ups_setup
    clients
    support
-   contribute
+   contribute_section
    howtos
    analytics
    benchmarks

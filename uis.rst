@@ -12,7 +12,7 @@ Rockstor supports two main user interface methods.
 Web-UI
 ------
 
-To access RockStor browser based interface or Web-UI, we recommend using
+To access Rockstor browser based interface or Web-UI, we recommend using
 Firefox or Chrome web browser.
 
 The initial setup of the appliance should be done through the Web-UI, and other

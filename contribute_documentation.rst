@@ -1,7 +1,7 @@
 .. _contributedocs:
 
 Contributing to Rockstor documentation
---------------------------------------
+======================================
 
 Steps for contributing to **rockstor-doc** repo are similar to contributing to
 **rockstor-core**, as we follow the same fork and pull request model. We’ll

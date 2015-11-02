@@ -18,15 +18,15 @@ recommendations.
 * 8GB hard disk space for the OS
 * One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)
-* a UPS (if desired) that is supported by `nut <http://www.networkupstools.org/>`_
+* a UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
 * CD/DVD drive or USB port for installation
 
 Download Rockstor
 -----------------
 
 Rockstor `download options <http://rockstor.com/download.html>`_. Create a
-bootable CD or USB drive from the downloaded iso and proceed to the next
-section for installation.
+bootable CD or USB drive from the downloaded iso and proceed to the
+:ref:`installation` section.
 
 .. raw:: html
 
@@ -35,12 +35,41 @@ section for installation.
    Thanks for your support!
    </div>
 
-To create a USB install disk, you can use the dd command on Linux or Mac. For
-example, if your USB drive is /dev/sdb, the command would be::
+.. _makeusbinstalldisk:
 
-  dd if=Rockstor-3.8-0.iso of=/dev/sdb
+Making a Rockstor USB install disk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To create a USB install disk on Linux or Mac one can use the dd command. For
+example if your USB device is /dev/sdc then from within the directory
+containing your downloaded Rockstor iso file the command would be:-
+
+    dd if=Rockstor-3.8-9.iso of=/dev/sdc
+
+Note that the .iso file name will vary depending on the Rockstor version.
+
+Another option on linux systems is the ddrescue command which gives
+more reassuring feedback whilst the USB key is being written. On Debian and
+Ubuntu systems install via *sudo apt-get install gddrescue* and on Fedora
+systems install via *sudo dnf install ddrescue*. Use similarly to dd above
+only using the following command:-
+
+    sudo ddrescue -d -D --force Rockstor-3.8-9.iso /dev/sdc
+
+Note that there are 2 "-" characters next to each other before the "force"
+switch.
 
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
+
+**Please note** the following USB image writing programs have been found to
+produce **NON working USB install disks** when used with the Rockstor iso file.
+
+* Unetbootin
+* Rufus
+
+Please also see the :ref:`usbinstall` and the :ref:`bootorderchanges` sections
+of the :ref:`sohoguide` document for more information on making and using the
+USB install disk.
 
 .. _osinstall:
 
@@ -57,7 +86,7 @@ about installation.
 .. raw:: html
 
    <div class="alert alert-warning">
-   <strong>Important!</strong> Installing RockStor deletes existing data on the system
+   <strong>Important!</strong> Installing Rockstor deletes existing data on the system
    drive(s) selected as installation destination.
    </div>
 
@@ -96,7 +125,7 @@ about installation.
     .. raw:: html
 
         <div class="alert alert-warning">
-        <strong>Important!</strong> Installing RockStor deletes existing data on the system
+        <strong>Important!</strong> Installing Rockstor deletes existing data on the system
         drive(s) selected as installation destination.
         </div>
 

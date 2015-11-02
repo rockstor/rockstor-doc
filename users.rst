@@ -3,7 +3,7 @@
 User configuration
 ==================
 
-RockStor supports local user adds, edits and deletes. All local users added by
+Rockstor supports local user adds, edits and deletes. All local users added by
 Rockstor have UIDs starting from 5001. If local users must be added to the
 appliance, ensure that their UIDs are below 5001. Rockstor does not support
 configuration of users that are not added using Rockstor user
@@ -26,7 +26,7 @@ User** button and submit the form to add a new user as shown below.
    :scale: 75 %
    :align: center
 
-If the "``Allow this user to login to RockStor Web UI``" checkbox is unchecked,
+If the "``Allow this user to login to Rockstor Web UI``" checkbox is unchecked,
 the created user will be a local system user but will not be allowed to login
 to the web-ui or CLI. If it is checked, the user can login to the web-ui and CLI.
 

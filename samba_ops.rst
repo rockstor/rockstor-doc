@@ -66,7 +66,7 @@ How to Access a share
 From a Windows machine:
 ---------------------------
 
-1. Go to the File explorer and in the location field, enter the ip address of your RockStor appliance in the following format.
+1. Go to the File explorer and in the location field, enter the ip address of your Rockstor appliance in the following format.
 
     * \\\\192.168.1.21
 
@@ -78,18 +78,18 @@ From a Windows machine:
 
 5. Check remember credentials, and click Ok
 
-6. The File explorer will attempt to connect to the RockStor appliance, and if successful, you will be able to see the shares available on RockStor.
+6. The File explorer will attempt to connect to the Rockstor appliance, and if successful, you will be able to see the shares available on Rockstor.
 
 7. To access a share, double click on it.
 
 From a Linux machine:
 --------------------------
 
-1. Open File Browser -> File -> Connect to Server and enter the address of the RockStor appliance in this format.
+1. Open File Browser -> File -> Connect to Server and enter the address of the Rockstor appliance in this format.
 
     * smb://192.168.1.21
 
-2. Click Connect, and you will see the shares available on the RockStor appliance.
+2. Click Connect, and you will see the shares available on the Rockstor appliance.
 
 3. To access a share, double click on it, and you will be presented with a window with Username, Domain, and Password fields. Enter the following
 
@@ -109,11 +109,11 @@ From a Mac:
 
 1. On your Mac, open the Finder, and select *Go* -> *Connect to Server*
 
-2. In the Server address field, type in the address of the shared folder as shown below (with the ip address of your RockStor appliance)
+2. In the Server address field, type in the address of the shared folder as shown below (with the ip address of your Rockstor appliance)
 
    * smb://192.168.1.21/sharename
 
-3. Click Connect. The Finder will connect to the RockStor appliance, and will popup an authentication dialog.
+3. Click Connect. The Finder will connect to the Rockstor appliance, and will popup an authentication dialog.
 
 4. Enter the username and password of a user who has permission to access the share. Select *Remember this password in my keychain*, if you want the connection to be stored, and click *Connect*
 

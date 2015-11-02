@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# RockStor documentation build configuration file, created by
+# Rockstor documentation build configuration file, created by
 # sphinx-quickstart on Thu Oct 17 09:09:17 2013.
 #
 # This file is execfile()d with the current directory set to its

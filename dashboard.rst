@@ -2,7 +2,7 @@
 Dashboard
 =========
 
-The RockStor dashboard is a view for an admin to rapidly monitor the storage, compute and network resources of the appliance.
+The Rockstor dashboard is a view for an admin to rapidly monitor the storage, compute and network resources of the appliance.
 
 The dashboard is designed as a configurable set of widgets, each displaying
 information about the resources mentioned above. Here are some features of
