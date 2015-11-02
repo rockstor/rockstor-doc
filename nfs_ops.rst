@@ -11,10 +11,7 @@ via NFS. Both NFS v3 and v4 are supported. UID and GID mapping for the exported
 shares can be handled by manually creating users or by using directory services
 like LDAP, NIS or AD.
 
-NFS exports can be managed from the *File Sharing->NFS* view. In the Web-UI, click on
-the *Storage* tab to enter the main Storage view. Now click on *NFS* under *FileSharing* in the left sidebar to enter *NFS* view. If there are any exports in the system, they are displayed in a table. If there are large number of exports,
-the table is paginated and the current page number is displayed below the table
-along with **Prev** and **Next** buttons.
+NFS exports can be managed from the *File Sharing->NFS* view. In the Web-UI, click on the *Storage* tab to enter the main Storage view. Now click on *NFS* under *FileSharing* in the left sidebar to enter *NFS* view. If there are any exports in the system, they are displayed in a table. If there are large number of exports, the table is paginated and the current page number is displayed below the table along with **Prev** and **Next** buttons.
 
 The display can be sorted by individual columns by clicking small up/down
 arrows displayed in each column header.
@@ -38,7 +35,7 @@ left sidebar to enter *NFS* view. Click on **Add NFS Export** button
 and the export creation form will be displayed. Submit this form to add a new
 NFS export as shown in the video below.
 
-.. youtube:: https://youtu.be/4xRsIIbXYXI
+.. youtube:: https://www.youtube.com/watch?v=4xRsIIbXYXI
 
 Various fields of the form are explained as follows.
 
@@ -58,7 +55,7 @@ the main Storage view. Now click on *NFS* in the left sidebar to enter
 *NFS* view. In the displayed table of NFS exports, click on the
 **edit** icon of the corresponding export to edit as shown in the video below.
 
-.. youtube:: https://youtu.be/OSs6BteniX0
+.. youtube:: https://www.youtube.com/watch?v=OSs6BteniX0
 
 Advanced Edit
 ^^^^^^^^^^^^^

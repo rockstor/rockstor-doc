@@ -11,7 +11,7 @@ software suite. Samba service must be turned on before exposing shares.
 Create a Samba Export of a Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the web-ui, click on the *Storage* tab to enter the main Storage view. Now
+In the Web-UI, click on the *Storage* tab to enter the main Storage view. Now
 click on *Samba* in the left sidebar to go to the *Samba* view.
 
 Click on the *Add Samba Export* button. Fill in the form with the appropriate values as explained below.
@@ -32,10 +32,7 @@ Set *Guest OK* to *yes* if you want to permit guest access.
 Set *Read only* to *yes* if the share should not be writable by clients.
 
 
-.. image:: samba_add.gif
-   :scale: 65%
-   :align: center
-
+.. youtube:: https://www.youtube.com/watch?v=hZ7FQWuF6TI
 
 View Samba Export
 ^^^^^^^^^^^^^^^^^
