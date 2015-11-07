@@ -14,8 +14,8 @@ is still enabled by default and if SMB is not available then AFP is used.
 Time Machine
 ------------
 
-Time Machine is the built in backup system in OSX (Operating System 10).
-It is a `requirement <https://support.apple.com/en-us/HT202784>`_ of Time
+Time Machine is the built in backup system in Apple's OSX (Operating System
+10). It is a `requirement <https://support.apple.com/en-us/HT202784>`_ of Time
 Machine that network volumes be over AFP. By way of example this document steps
 through the configuration of a Time Machine compatible network volume.
 
@@ -25,9 +25,13 @@ Creating an AFP share
 ---------------------
 
 In order to establish an AFP share it is first necessary to have a
-pre-configured storage pool, this pool will then be used in the AFP Share.
+pre-configured storage pool, a Share of this pool, and a Rockstor user to
+authenticate against this Share. Finally the Share must be exported via the AFP
+method. The following list details a suggested order and links to
+documentation on each of these steps.
 
 * To create a storage pool see :ref:`createpool` in the :ref:`pools` section.
+* :ref:`Add a Rockstor user <adduser>` to match the OSX user, see the :ref:`users` section.
 * A :ref:`Share <shares>` of this storage pool is then required, see :ref:`createshare` in the :ref:`pools` section.
 * Finally this share is exported via the AFP system.
 
@@ -50,6 +54,21 @@ it strongly advised that any Share to be used by Time Machine be at least 3
 to 5 times the size of the data on the client machine. A typical OSX install
 before any data is 6-9 GB. This makes it advisable to allocate around 30-50 GB
 per client machine.
+
+In this example we have changed the owner and group of our share to that of an
+existing Rockstor user and removed *Other* users access as it is not required.
+Note that the Rockstor user name doesn't have to match that of the OSX user
+but it is easier if it does as it will then be auto populated by the client
+machine.
+
+..  image:: tm_backups_single_user.png
+    :scale: 80%
+    :align: center
+
+**If multiple users are required to share this Network volume then create an
+appropriate group eg macuser and ensure all you time machine users belong to
+that group. You will also have to enable group write.**
+
 
 ..  image:: tm_backups_share.png
     :scale: 80%
