@@ -22,6 +22,7 @@ Welcome to Rockstor
    pools-btrfs
    shares-btrfs-subvolumes
    snapshots-btrfs-snapshots
+   users
    docker-based-rock-ons/overview
    email_setup
    tasks
@@ -33,7 +34,6 @@ Welcome to Rockstor
    multiple_appliances
    share_replication
    services
-   users
    network
    config_backup
    ups-setup/ups_setup
