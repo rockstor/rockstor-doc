@@ -27,6 +27,7 @@ Welcome to Rockstor
    tasks
    update-channels/update_channels
    data_loss
+   afp/apple_filing_protocol.rst
    nfs_ops
    samba_ops
    multiple_appliances
