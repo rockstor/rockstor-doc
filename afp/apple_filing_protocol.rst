@@ -49,11 +49,11 @@ In the following example a dedicated **time_machine_pool** has been created.
 The "Backup" Share
 ^^^^^^^^^^^^^^^^^^
 
-Here a :ref:`Share <shares>` named **Backups** has been created; note that is
-it strongly advised that any Share to be used by Time Machine be at least 3
-to 5 times the size of the data on the client machine. A typical OSX install
-before any data is 6-9 GB. This makes it advisable to allocate around 30-50 GB
-per client machine.
+Here a :ref:`Share <shares>` named **Backups** has been created; note that it
+is strongly advised that any Share to be used by Time Machine be at least 3
+to 5 times the size of a single full backup. A typical OSX install
+before any data is 6-20 GB depending on upgrades applied etc. This makes it
+advisable to allocate around 30-100 GB per client machine.
 
 In this example we have changed the owner and group of our share to that of an
 existing Rockstor user and removed *Other* users access as it is not required.
@@ -74,8 +74,8 @@ Time Machine backups as this prevents single client machines monopolizing the
 available space as Time Machine defaults to using all the available space and
 will only remove it's own old backups when space is short; and not another
 machines backups. This results in frequently used machines backups dominating
-the available space and can prevent occasionaly used machines from having space
-to do their backups.
+the available space and can prevent occasionally used machines from having
+space to do their backups.
 
 The Access Control section of a Share also allows for setting up read only
 shares on the network if this is desired.
