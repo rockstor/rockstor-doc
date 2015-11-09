@@ -42,7 +42,7 @@ Samba
 
 Rockstor supports making Shares available to SMB and CIFS clients via Samba
 software suite. Custom Samba server configuration is not supported, but the
-service must be turned on before exposing shares. See the :ref:`samba`
+service must be turned on before exposing shares. See the :ref:`samba` section
 for details.
 
 In the web-ui, click on *System* tab to go to the *System* view. This also
