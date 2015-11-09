@@ -5,7 +5,7 @@ Accessing Shares from Clients
 
 Data is stored and organized by users in Shares, which are exported to clients
 via various protocols including :ref:`samba`, :ref:`nfs`, and :ref:`afp`.
-Before storing any data at least one :ref:`share <shares>` must be created.
+Before storing any data at least one :ref:`Share <shares>` must be created.
 See :ref:`createshare` for a detailed description.
 
 Accessing Shares via Samba/CIFS
@@ -29,7 +29,7 @@ Unix/Linux
       :scale: 65%
       :align: center
 
-   Connecting to a share can be done by clicking on it, and authenticating as a specific user who has permissions to access the share, or as a guest user.
+   Connecting to a Share can be done by clicking on it, and authenticating as a specific user who has permissions to access the Share, or as a guest user.
 
    .. image:: smb_linux_share.png
       :scale: 65%
@@ -43,7 +43,7 @@ Windows
 Mac OS
 ^^^^^^
 
-   On a Mac OS, the Rockstor server will appear in the Finder sidebar, as an entry of the form **Rockstor@<ip-address>**. Connecting to the server can be done by clicking on the entry, and authenticating as a specific user who has permissions to access the share, (or as a guest user, if the share has Guest OK set to true) as shown below.
+   On a Mac OS, the Rockstor server will appear in the Finder sidebar, as an entry of the form **Rockstor@<ip-address>**. Connecting to the server can be done by clicking on the entry, and authenticating as a specific user who has permissions to access the Share, (or as a guest user, if the Share has Guest OK set to true) as shown below.
 
    .. image:: smb_mac_auth.png
       :scale: 65%
@@ -55,7 +55,7 @@ Mac OS
       :scale: 65%
       :align: center
 
-   On the command line, the available exported shares will appear as folders under /Volumnes
+   On the OSX command line, the available exported Shares will appear as folders under /Volumes
 
 Accessing NFS shares
 ---------------------
