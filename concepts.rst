@@ -33,7 +33,7 @@ Share
 -----
 
 A share is created by carving out a chunk from a pool. Shares can be resized
-at a later time as well as exported via NFS or SMB protocols.
+at a later time as well as exported via NFS, SMB, or AFP protocols.
 
 Snapshot
 --------
