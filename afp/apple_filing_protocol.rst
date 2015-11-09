@@ -88,6 +88,8 @@ Our Example Share:
 
 *A 100 GB share of the time_machine_pool*
 
+..  _afp_export:
+
 Add AFP Export
 ^^^^^^^^^^^^^^
 
@@ -103,10 +105,97 @@ available.
 **Note the Time Machine option** this default to off and is not required for
 normal AFP file sharing.
 
+..  _osx_afp_config:
+
 Client OSX configuration
 ------------------------
 
 Having now setup an AFP share as :ref:`above <create_afp_share>` we can now
-configure the client Mac machines to use this share as the Network Time Machine
-Volume.
+configure the client Mac machine/s to access it. The steps required are
+outlined below.
+
+* Connect to the Rockstor Share as the Rockstor user created earlier.
+* Select this Share Connection in Time Machine's Preferences (if desired).
+
+Connect to Share in Finder
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first step is to locate the Rockstor server by name under the **Shared**
+section in **Finder**. Here the Rockstor server was configured with the
+hostname "**rockstor**".
+
+..  image:: tm_finder_connect_as.png
+    :scale: 80%
+    :align: center
+
+Now use the **Connect As** button displayed in the top right corner of the
+**Finder** right hand window. Note that you will then be required to enter the
+**Rockstor Username** and **Password** setup earlier. OSX may capitalize the
+first character but this doesn't matter and in this example the user was
+auto populated as the OSX user and the Rockstor user where the same. This is
+not necessary but is convenient.
+
+..  image:: tm_connect_as_user_pass.png
+    :scale: 80%
+    :align: center
+
+The Rockstor Share named "**Backups**" is now visible in Finder and ready for
+general purpose use, however if *Time Machine* was selected during the
+:ref:`afp_export` section of :ref:`create_afp_share` then this share can also
+be used by OSX's Built in Backup System. See :ref:`tm_select_share`.
+
+N.B. In **Finder** it is also possible to invoke an afp type network
+connection via **Go** then **Connect to Server** menu options *(Option + K)*.
+Then enter **afp://philip@rockstor** where *philip* is the user and *rockstor*
+is the hostname of the rockstor system. On some setup this may be required to
+ensure an afp rather smb type connection.
+
+
+..  image:: finder_backups_on_rockstor.png
+    :scale: 80%
+    :align: center
+
+..  _tm_select_share:
+
+Select Share in Time Machine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now open Time Machine Preferences either by right clicking on it's icon in the
+top bar (a analogue clock with an arrow around it) or by opening System
+Preferences and selecting Time Machine.
+
+..  image:: tm_select_backup_disk.png
+    :scale: 80%
+    :align: center
+
+In this image we see finder's connection to the share on the left and Time
+Machine offering this same Share as a storage option on the right.
+
+..  image:: tm_use_disk.png
+    :scale: 80%
+    :align: center
+
+Note that it will be required to **Re-enter** the **Rockstor user** and
+**password** after having clicked on the **Use Disk** button.
+
+..  image:: tm_use_disk_password.png
+    :scale: 80%
+    :align: center
+
+Time Machine should now **default** to **ON** and begin it's first backup. The
+first backup will take longer that subsequent backups due to initialization
+tasks. A progress bar and the estimated time remaining should be displayed
+shortly after the initialization tasks have completed.
+
+..  image:: tm_in_progress.png
+    :scale: 80%
+    :align: center
+
+In El Capitan (OSX 10.11) a notification will be issued upon Time Machine's
+completion. All versions of OSX should indicate the last successful Time
+Machine backup in the Time Machine Preferences dialog.
+
+..  image:: tm_backup_complete.png
+    :scale: 80%
+    :align: center
 
