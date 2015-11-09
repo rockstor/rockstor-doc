@@ -57,14 +57,14 @@ Online Share and Snapshot Management
 * Resize pools online, thin provision or over provision according to your
   needs.
 
-* Export shares via NFS and SMB protocols
+* Export shares via NFS, SMB, and AFP protocols
 
 * Create snapshots for shares instantly or schedule snapshots to be created
   periodically.
 
 * Create unlimited number of snapshots for a given share.
 
-* Toggle snapshot visibility to the end user via NFS.
+* Toggle snapshot visibility to the end user via NFS or Windows :ref:`Shadow Copy <windowsshadowcopy>`.
 
 * Rollback a share to one of it's snapshots.
 

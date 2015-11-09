@@ -22,17 +22,18 @@ Welcome to Rockstor
    pools-btrfs
    shares-btrfs-subvolumes
    snapshots-btrfs-snapshots
+   users
    docker-based-rock-ons/overview
    email_setup
    tasks
    update-channels/update_channels
    data_loss
+   afp/apple_filing_protocol.rst
    nfs_ops
    samba_ops
    multiple_appliances
    share_replication
    services
-   users
    network
    config_backup
    ups-setup/ups_setup

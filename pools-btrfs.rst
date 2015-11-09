@@ -12,6 +12,7 @@ BTRFS filesystem.
 Pool related operations can be managed from the **Pools** screen listed under
 the **Storage** tab of the Web-UI.
 
+.. _createpool:
 
 Creating a Pool
 ---------------

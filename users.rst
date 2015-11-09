@@ -15,6 +15,8 @@ Users view
 In the web-ui, click on *System* tab to go to the *System* view. Now click on
 *Users* in the left sidebar to go to the *Users* view.
 
+.. _adduser:
+
 Add a user
 ----------
 

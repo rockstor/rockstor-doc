@@ -1,7 +1,7 @@
 .. _nfs:
 
-NFS
-===
+Network File System (NFS)
+=========================
 
 Export Shares via NFS
 ---------------------
