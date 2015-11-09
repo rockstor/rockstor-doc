@@ -3,19 +3,19 @@
 Accessing Shares from Clients
 =============================
 
-Data is stored and organized by users in Shares, which are exposed to clients
-via various protocols including Samba/CIFS and NFS. Before storing any data,
-at least one Share must be created. See :ref:`createshare` for a detailed
-description on how to do that.
+Data is stored and organized by users in Shares, which are exported to clients
+via various protocols including :ref:`samba`, :ref:`nfs`, and :ref:`afp`.
+Before storing any data at least one :ref:`share <shares>` must be created.
+See :ref:`createshare` for a detailed description.
 
 Accessing Shares via Samba/CIFS
 -------------------------------
 
 Samba/CIFS is the standard way to store and access data in Shares from Windows,
-Mac and Linux clients such as desktops and laptops. In order to access a Share, it must be first made
-availabe. See :ref:`sharesamba` for details. Once a Share is configured for
-Samba/CIFS availability, data can be stored and accessed from various clients
-as described below.
+Mac, and Linux clients such as desktops and laptops. In order to access a
+Share, it must first be made available. See :ref:`sharesamba` for details.
+Once a Share is configured for Samba/CIFS availability, data can be stored
+and accessed from various clients as described below.
 
 Unix/Linux
 ^^^^^^^^^^
