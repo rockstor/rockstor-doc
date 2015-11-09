@@ -64,7 +64,7 @@ Online Share and Snapshot Management
 
 * Create unlimited number of snapshots for a given share.
 
-* Toggle snapshot visibility to the end user via NFS.
+* Toggle snapshot visibility to the end user via NFS or Windows :ref:`Shadow Copy <windowsshadowcopy>`.
 
 * Rollback a share to one of it's snapshots.
 
