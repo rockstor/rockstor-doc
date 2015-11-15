@@ -9,7 +9,9 @@ creation of bootable USB flash drives. It is licenced under
 `GNU GPLv3 or later <https://www.gnu.org/licenses/gpl.html>`_. Using it's
 default settings it will NOT create a working Rockstor USB install disk but
 using the following configuration options it can successfully prepare a working
-USB flash drive to be used for Rockstor install.
+USB flash drive to be used for Rockstor install. Please see the
+:ref:`makeusbinstalldisk` in our :ref:`quickstartguide` guide for other tested
+methods.
 
 N.B. The following method and screen captures were graciously proved and
 provided respectively by @Dragon2611 a
