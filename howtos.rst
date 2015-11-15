@@ -13,3 +13,4 @@ Howtos
    reset-root-password
    windows-shadow-copy
    rufus-howto/rufus_howto
+   gnome-disks-usb/gnome_disks_usb
