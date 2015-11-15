@@ -12,3 +12,5 @@ Howtos
    kvm_setup
    reset-root-password
    windows-shadow-copy
+
+   gnome-disks-usb/gnome_disks_usb
