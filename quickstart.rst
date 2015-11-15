@@ -62,10 +62,11 @@ switch.
 If you are on Windows, you can use `dd for Windows <http://www.chrysocome.net/dd>`_ or `Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
 
 **Please note** the following USB image writing programs have been found to
-produce **NON working USB install disks** when used with the Rockstor iso file.
+produce **NON working USB install disks** when used with the Rockstor iso and
+their default settings.
 
 * Unetbootin
-* Rufus
+* Rufus (N.B. does work in DD image mode, see our :ref:`rufus_howto`)
 
 Please also see the :ref:`usbinstall` and the :ref:`bootorderchanges` sections
 of the :ref:`sohoguide` document for more information on making and using the

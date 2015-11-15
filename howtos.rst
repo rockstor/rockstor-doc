@@ -12,3 +12,4 @@ Howtos
    kvm_setup
    reset-root-password
    windows-shadow-copy
+   rufus-howto/rufus_howto
