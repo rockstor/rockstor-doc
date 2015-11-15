@@ -76,7 +76,8 @@ Upon confirming continuation we should have the following progress screen
    :scale: 100%
    :align: center
 
-**Upon completion safely eject / remove / unmount the USB device**
+**Upon completion safely eject / remove / unmount the USB device before
+removing it**
 
 
 
