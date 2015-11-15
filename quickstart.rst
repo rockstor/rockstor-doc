@@ -41,7 +41,31 @@ Making a Rockstor USB install disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The downloaded iso must first be *restored* to a physical device to create the
-install media for a physical machine install.
+install media for a physical machine install. Depending on you desktop/laptop
+OS(Linux, Windows or Mac), there are GUI as well as Command Line programs using
+which the install disk can be created.
+
+.. _makeusbinstalldiskgui:
+
+GUI options
+~~~~~~~~~~~
+
+On a Linux Unity or Gnome Desktop see our :ref:`gnome_disks_howto`.
+
+On a Windows Desktop consider using
+`Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
+
+**Please note** the following USB image writing programs have been found to
+produce **NON working USB install disks** when used with the Rockstor iso and
+their default settings.
+
+* Unetbootin
+* Rufus (N.B. does work in DD image mode, see our :ref:`rufus_howto`)
+
+Please also see the :ref:`usbinstall` and the :ref:`bootorderchanges` sections
+of the :ref:`sohoguide` document for more information on making and using the
+USB install disk.
+
 
 Command line options
 ~~~~~~~~~~~~~~~~~~~~
@@ -68,27 +92,6 @@ switch.
 There is also `dd for Windows <http://www.chrysocome.net/dd>`_ but this is
 untested, please see our :ref:`makeusbinstalldiskgui`.
 
-.. _makeusbinstalldiskgui:
-
-GUI options
-~~~~~~~~~~~
-
-On a Linux Unity or Gnome Desktop see our :ref:`gnome_disks_howto`.
-
-On a Windows Desktop consider using
-`Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
-
-**Please note** the following USB image writing programs have been found to
-produce **NON working USB install disks** when used with the Rockstor iso and
-their default settings.
-
-* Unetbootin
-* Rufus (N.B. does work in DD image mode, see our :ref:`rufus_howto`)
-
-Please also see the :ref:`usbinstall` and the :ref:`bootorderchanges` sections
-of the :ref:`sohoguide` document for more information on making and using the
-USB install disk.
-
 .. _osinstall:
 
 Installation
@@ -113,9 +116,9 @@ about installation.
    can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an e-mail to support@rockstor.com
    </div>
 
-1. Boot your machine with the Rockstor CD and the splash screen will
-   appear. Press enter and the graphical installer will start momentarily
-   and display the **Installation Summary screen**
+1. Boot your machine with the Rockstor CD or USB and the splash screen will
+   appear. Press enter and the graphical installer will start momentarily and
+   display the **Installation Summary screen**
 
 2. **Installation Summary screen**
 

@@ -6,7 +6,7 @@ Rockstor USB install disk using Gnome Disks
 Many popular linux desktop distributions including
 `Ubuntu <http://www.ubuntu.com/desktop>`_,
 `Fedora <https://getfedora.org/>`_, and many others, include the
-gnome-disks program by default and as such have a build-in graphical way to
+gnome-disks program by default and as such have a built-in graphical way to
 create a Rockstor USB install disk from the downloadable iso file. What follows
 is a step by step guide of this process.  Please see the
 :ref:`makeusbinstalldisk` in our :ref:`quickstartguide` guide for other tested
