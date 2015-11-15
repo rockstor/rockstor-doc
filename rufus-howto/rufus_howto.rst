@@ -11,8 +11,9 @@ default settings it will NOT create a working Rockstor USB install disk but
 using the following configuration options it can successfully prepare a working
 USB flash drive to be used for Rockstor install.
 
-N.B. The following method and screen captures were proved and provided by
-@Dragon2611 a `Rockstor forum <http://forum.rockstor.com/`_ member.
+N.B. The following method and screen captures were graciously proved and
+provided respectively by @Dragon2611 a
+`Rockstor forum <http://forum.rockstor.com/>`_ member.
 
 .. _rufus_steps:
 
@@ -29,6 +30,8 @@ Rufus:-
 * Change the dropdown next to the CD icon button to read **DD Image** mode.
 * Double check all settings and **Click Start**.
 
+The following images and notes indicate the above steps.
+
 First select the destination USB key using the **Device** drop down.
 
 .. image:: rufus_select_device.png
@@ -37,22 +40,24 @@ First select the destination USB key using the **Device** drop down.
 
 In the above example the Device selected was a 8 GB (7.7 GB) USB2 device.
 
-Now select the **Rockstor iso image** using the **CD icon button**.
+Now select the **Rockstor iso image** using the **CD icon button**: a small
+button at the end of the line with the *Create a bootable disk using* option.
 
 .. image:: rufus_rockstor_selected.png
    :scale: 100%
    :align: center
 
-The Rockstor iso file name should now be visible in the bottom of the window.
+The Rockstor iso file name should now be visible in the bottom of the Rufus
+window.
 
-Now select the **DD Image** option next to the *Create a bootable disk using*
-and the *CD icon** button.
+Now select the **DD Image** option from the drop down between the
+*Create a bootable disk using* option and the *CD icon* button.
 
 .. image:: rufus_select_dd.png
    :scale: 100%
    :align: center
 
-Note in the above we see the **DD Image** selection.
+Note in the above we see the **DD Image** mode selection.
 
 Double check all selections and then click the **Start Button**, the following
 warning should result.
@@ -65,11 +70,11 @@ Note the device label and size in the warning before preceding.
 
 Upon confirming continuation we should have the following progress screen
 
-.. image:: rufus_wright_in_progress.png
+.. image:: rufus_write_in_progress.png
    :scale: 100%
    :align: center
 
-
+**Upon completion safely eject / remove / unmount the USB device**
 
 
 
