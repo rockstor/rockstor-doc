@@ -19,7 +19,7 @@ recommendations.
 * One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)
 * a UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
-* CD/DVD drive or USB port for installation
+* DVD drive and a blank DVD, or a USB port and min 1 GB USB key (for the installation media)
 
 Download Rockstor
 -----------------
