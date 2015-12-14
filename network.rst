@@ -3,14 +3,19 @@
 Network configuration
 =====================
 
-Rockstor's network configuration is found on the **System page** under the
-**Network Interfaces** section ie:-
+Rockstor supports basic network configuration from the Web-UI. Network
+interfaces can be configured with DHCP or Static IP
+configuration. Configuration using the Web-UI is intuitive and self guided with
+helpful tooltips for each input field.
 
-.. image:: network_info.png
+To view or configure network, navigate to **Network Interfaces** screen under
+the **System** tab. Rockstor fetches the current state and lists all ethernet
+devices and connection information on this screen.
+
+.. image:: images/network_interfaces.png
    :scale: 80%
    :align: center
 
-Note the **Configuration** column indicating **DHCP**.
 
 .. _network_reconfig:
 
@@ -21,54 +26,49 @@ To **alter** the network configuration **click** on the **pen icon** in the
 **Actions column**. Please be aware though that altering the network
 configuration of the interface over which you are currently communicating with
 Rockstor can be problematic as once submitted you will have to manually change
-the IP you use to access Rockstor's WebUI interface.
+the IP you use to access Rockstor's Web-UI.
+
 
 .. _network_dhcp:
 
-DHCP
-^^^^
+Auto (DHCP)
+^^^^^^^^^^^
 
-The default network configuration established during Rockstor install is of the
-DHCP (Dynamic Host Configuration Protocol) type
-which is the most common and compatible configuration for general purpose use,
-this is what is most commonly used in home office / small office arrangements.
-An example of this default configuration is show below. Note the warning in red.
+DHCP is a very common and easy way to configure a network interface. This is
+the default/recommended method for home-office/small-office type
+deployments. Just select *Auto (DHCP)* in the **Config Method** dropdown and
+submit. An example of this default configuration is shown below.
 
-.. image:: network_dhcp.png
+.. image:: images/network_dhcp.png
    :scale: 80%
    :align: center
 
-**Submit** button to **confirm** the configuration. The above is the edit panel
-of an existing **DHCP** configuration.
 
 .. _static_ip:
 
-Static IP
-^^^^^^^^^
+Manual (Static IP)
+^^^^^^^^^^^^^^^^^^
 
-A more usual configuration for Rockstor in professional installations is of the
-Static IP variant. This simply means assigning a stationary, unchanging IP to
-Rockstor's network port.  This requires knowledge of your specific network and
-should not be required for home use, it is however a very common configuration
-in pro server installs. If you are assigning a static IP to Rockstor, or any
-machine instance for that matter, make sure to use an address that is not also
-in your DHCP server's dynamic pool range. The following is an example of a
-Static IP configuration.
+It is more common to use Static IP configuration in commercial
+installations. Select *Manual* in the **Config Method** dropdown and provide
+appropriate input. The following is an example of a Static IP configuration.
 
-.. image:: network_static.png
+.. image:: images/network_static.png
    :scale: 80%
    :align: center
 
-**Submit** button to **confirm** the configuration.
 
-In the following image we see the results of applying the above static IP
-configuration
+Network Bonding and Teaming
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: network_static_set.png
-   :scale: 80%
-   :align: center
+Network bonding and teaming are currently not supported from the Web-UI. There
+are plans to add the support, but in the meantime, they can be configured from
+the command line.
 
-Note the **configuration column** entry has changed to **static** and the
-additional details are now displayed.
 
-**N.B. The URL was manually changed to reference this static IP.**
+Implementation details
+^^^^^^^^^^^^^^^^^^^^^^
+
+NetworkManager is used to configure and manage connections. For more
+information see `implementation details
+<http://forum.rockstor.com/t/network-management-implementation-details/441>`_.
