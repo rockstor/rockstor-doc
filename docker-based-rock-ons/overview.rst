@@ -73,7 +73,7 @@ You can now **enable** the **Rock-on service** and proceed to the Rock-ons page.
    :align: center
 
 If no Rock-ons are showing on the **All** tab then click the **Update** button
-to refresh the list of available Rock-ons. To install a Rock-on use
+to refresh the list of available Rock-ons. To install a listed Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
 .. _adding_rockons:
@@ -87,10 +87,12 @@ as the repository for :ref:`rockons_available`. Please consider donating,
 or asking your favourite project to donate, a rock-on via a GitHub pull request
 to this repository. Note that it is also possible to add to the available
 Rock-ons by placing a suitably configured and named json file in the
-/opt/rockstor/rockons-metastor directory of your Rockstor instance. Some
+/opt/rockstor/rockons-metastor directory of your Rockstor install. Some
 projects prefer to host their own Rock-on plugins and this feature enables the
 use of other projects official Rock-ons. An example of a project that takes
-advantage of this feature is `Emby <https://emby.media>`_.
+advantage of this feature is `Emby <https://emby.media>`_ with their official
+`Rock-on App <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
+definition file for the Emby server component.
 
 .. _rockons_available:
 
