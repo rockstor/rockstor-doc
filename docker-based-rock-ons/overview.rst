@@ -42,7 +42,7 @@ this service it must be configured.  This is a simple matter of assigning a
 sufficiently large share for the rock-ons to be installed into.  It is possible
 to use the existing 'out of the box' home share but this is not recommended.
 
-The following shows a **Recommended Minimum 5 GB rock-on-root** Share.
+The following shows a **Recommended Minimum 5 GB rock-ons-root** Share.
 
 .. image:: rockons_root_share.png
    :scale: 80%
