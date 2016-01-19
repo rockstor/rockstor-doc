@@ -80,9 +80,11 @@ firewall to the Rockstor system to have internet access to Discourse.
    :scale: 80%
    :align: center
 
+**Next** button.
+
 .. _discourse_mail:
 
-Discourse Mail credentials
+Discourse Mail Credentials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Discourse now requires the following email details / credentials:-

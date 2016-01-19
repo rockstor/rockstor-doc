@@ -91,7 +91,7 @@ Rock-ons by placing a suitably configured and named json file in the
 projects prefer to host their own Rock-on plugins and this feature enables the
 use of other projects official Rock-ons. An example of a project that takes
 advantage of this feature is `Emby <https://emby.media>`_ with their official
-`Rock-on App <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
+`Rock-on <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
 definition file for the Emby server component.
 
 .. _rockons_available:
