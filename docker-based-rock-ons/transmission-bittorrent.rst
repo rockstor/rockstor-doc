@@ -9,6 +9,8 @@ requirement.
 
 Our `Transmission Rock-on forum <http://forum.rockstor.com/t/transmission-bittorrent-client-rock-on/181>`_ area.
 
+.. _transmission_whatis:
+
 What is Transmission
 --------------------
 

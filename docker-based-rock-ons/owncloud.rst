@@ -40,6 +40,8 @@ and an
 These links are for version 8.0.
 
 
+.. _owncloud_install:
+
 Installing ownCloud Rock-on
 ---------------------------
 First please consider the pre-requisites for any Rockstor Rockon; these
