@@ -103,10 +103,12 @@ Please see the following for specific Rock-on install details
 
 .. toctree::
    :maxdepth: 2
-
+      
+   bittorrent-sync
+   discourse
    openvpn-server
+   owncloud
    plex-media-server
    syncthing
-   owncloud
    transmission-bittorrent
-   bittorrent-sync
+
