@@ -106,6 +106,7 @@ Please see the following for specific Rock-on install details
 
    bittorrent-sync
    discourse
+   jenkins
    openvpn-server
    owncloud
    plex-media-server
