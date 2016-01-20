@@ -145,5 +145,5 @@ Rock-ons page:-
    :scale: 80%
    :align: center
 
-You can now configure and discuss in your very own Discourse Rock-on;
-:ref:`discourse_doc`.
+You can now juggle your Jenkins jobs for your continuous integration in your
+very own Jenkins server Rock-on; :ref:`jenkins_doc`.
