@@ -37,12 +37,13 @@ But we also need to create the :ref:`rockons_root` share.
 
 The Rock-ons root
 ^^^^^^^^^^^^^^^^^
-All Rock-ons require the **Rock-on service** be enabled and prior to enabling
-this service it must be configured.  This is a simple matter of assigning a
+All Rock-ons require the **Rock-on service** to be enabled and prior to enabling
+this service it must be configured.  This is a simple matter of configuring a
 sufficiently large share for the rock-ons to be installed into.  It is possible
 to use the existing 'out of the box' home share but this is not recommended.
 
-The following shows a **Recommended Minimum 5 GB rock-on-root** Share.
+The following shows a **Recommended Minimum 5 GB rock-ons-root** share backed by
+a previously created pool named **rock-pool**.
 
 .. image:: rockons_root_share.png
    :scale: 80%
@@ -72,22 +73,43 @@ You can now **enable** the **Rock-on service** and proceed to the Rock-ons page.
    :align: center
 
 If no Rock-ons are showing on the **All** tab then click the **Update** button
-to refresh the list of available Rock-ons. To install a Rock-on use
+to refresh the list of available Rock-ons. To install a listed Rock-on use
 its **Install** button on the Rock-ons WebUI page.
+
+.. _adding_rockons:
+
+Adding your own Rock-on
+-----------------------
+
+The `rockon-registry <https://github.com/rockstor/rockon-registry>`_ contains
+the current list of freely available rock-on definition files and servers
+as the repository for :ref:`rockons_available`. Please consider donating,
+or asking your favourite project to donate, a rock-on via a GitHub pull request
+to this repository. Note that it is also possible to add to the available
+Rock-ons by placing a suitably configured and named json file in the
+/opt/rockstor/rockons-metastor directory of your Rockstor install. Some
+projects prefer to host their own Rock-on plugins and this feature enables the
+use of other projects official Rock-ons. An example of a project that takes
+advantage of this feature is `Emby <https://emby.media>`_ with their official
+`Rock-on <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
+definition file for the Emby server component.
 
 .. _rockons_available:
 
-Available Rock-ons
-------------------
+Rock-ons Available by default
+-----------------------------
 
 Please see the following for specific Rock-on install details
 
 .. toctree::
    :maxdepth: 2
 
+   bittorrent-sync
+   discourse
+   jenkins
    openvpn-server
+   owncloud
    plex-media-server
    syncthing
-   owncloud
    transmission-bittorrent
-   bittorrent-sync
+

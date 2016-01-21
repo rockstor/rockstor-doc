@@ -34,7 +34,7 @@ purposes of this howto, our **/** will be 6GB, **/boot** will be 1GB and
 **swap** will also be 1GB.
 
 Step 1: Device Selection
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start the Rockstor installation process and you'll soon see the **INSTALLATION
 SUMMARY** screen. Click on **INSTALLATION DESTINATION** to go to device
@@ -54,7 +54,7 @@ the top.
    :align: center
 
 Step 2: Destroy old data, if any
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next screen is titled **MANUAL PARTITIONING** as shown below. If there are
 any partitions already on the two HDDs selected before, they will appear on the
@@ -74,7 +74,7 @@ process until all of them are deleted.
    :align: center
 
 Step 3: Setup **/** partition
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Select **Standard Partitioning** from the dropdown menu and click **+** button
 at the bottom to create a new partition.
@@ -100,7 +100,7 @@ button to finalize **/** partition setup.
    :align: center
 
 Step 4: Setup **/boot** partition
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Click on **+** button at the bottom left to add the **/boot** partition. The
 procedure is just like above but pick **/boot** from the dropdown, enter
@@ -119,7 +119,7 @@ button to finalize **/boot** partition setup.
    :align: center
 
 Step 5: Setup **swap** partition
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Just like in **/boot** above, click on **+** button and pick **swap** from the
 dropdown. Leave the size field blank and all of the remaining space will be
@@ -142,7 +142,7 @@ Partitioning** selection.
 
 
 Step 6: Accept Changes and proceed
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Click **DONE** at the top left of the screen and then click on **Accept
 Changes** to finalize the manual partition scheme.
@@ -162,7 +162,7 @@ refer to :ref:`quickstartguide`.
    :align: center
 
 Verification of the mirror
-==========================
+--------------------------
 
 It's a good idea to verify the setup once the installation is finished. You can
 do that simply with the following command ::
@@ -191,7 +191,7 @@ the right size with the following command ::
   /dev/md125      923M  100M  761M  12% /boot
 
 Disaster Recovery
-=================
+-----------------
 
 Up to this point, we have setup the mirror and verified that everything looks
 good. Over time, usually after a long time, one of the HDDs may start throwing
@@ -199,7 +199,7 @@ errors indicating that it's time to replace it. Following steps will guide you
 through that process.
 
 Step 1: Remove failing HDD
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your hardware supports hotswapping HDDs, you can pull out the failing drive
 and leave the system running while you replace it with a new HDD. After
@@ -221,7 +221,7 @@ missing) ::
         1546240 blocks super 1.2 [2/1] [U_]
 
 Step 2: Add a replacement HDD
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Next step is to replace the failing HDD with a new HDD. Same size and brand is
 recommended, to keep things uniform. In our demonstration here, I've added a
@@ -229,7 +229,7 @@ new 8GB virtual drive(similar to the failed HDD) and it appeared as **sdb** to
 the system.
 
 Step 3: Partition the replacement HDD
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The replacement HDD must be partitioned, much like during OS install. But this
 time we'll use command line tools to do so. The advantage of using the same
@@ -284,7 +284,7 @@ composite command ::
   (See fdisk(8).)
 
 Step 4: Rebuild the mirror
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the final and crucial step. We'll resync the partitions of the
 replacement HDD with their counter parts in the mirror. This can be done with

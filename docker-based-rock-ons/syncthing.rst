@@ -9,6 +9,8 @@ requirement.
 
 Our `Syncthing Rock-on forum <http://forum.rockstor.com/t/syncthing-rock-on/180>`_ area.
 
+.. _syncthing_whatis:
+
 What is Syncthing
 -----------------
 

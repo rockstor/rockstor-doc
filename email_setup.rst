@@ -17,6 +17,7 @@ Initial Email Setup
 Navigate to the **Email Alerts** section of the **System** page:-
 
 ..  image:: email_init.png
+    :scale: 80%
     :align: center
 
 Press the **Add an E-Mail account** button to begin.
@@ -31,6 +32,7 @@ Complete the following required fields
 * **Recipient email** who is to receive the notification emails from Rockstor
 
 ..  image:: email_config.png
+    :scale: 80%
     :align: center
 
 **Submit** button when done
@@ -47,6 +49,7 @@ how this configuration might be :ref:`tested <email_test>`.
 **Email Alerts** section of the **System** page with existing configuration.
 
 ..  image:: email_done.png
+    :scale: 80%
     :align: center
 
 Note **the Bin icon** to remove the configuration and start
@@ -63,6 +66,7 @@ be sent using the **small arrow icon** next to the **Bin icon** on the
 screen should be visible:
 
 ..  image:: email_test.png
+    :scale: 80%
     :align: center
 
 **Please note that the appliance id sent in this email is used to identify
