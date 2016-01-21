@@ -18,11 +18,13 @@ What is Discourse
 Discourse is open source forum / discussion server software and is what the
 `Rockstor forum <http://forum.rockstor.com/>`_ itself uses; in fact Rockstor's
 forum is in fact hosted as a Rock-on on a Rockstor system. It is available in
-`17 languages and counting <https://www.transifex.com/discourse/discourse-org/>`_
-and supports such features as `single sign on <https://meta.discourse.org/t/official-single-sign-on-for-discourse/13045>`_
-and real time notifications. The source code for Discourse if available on
-`the Discourse GitHub Page <https://github.com/discourse/discourse>`_. Visit
-the Discourse `online sandbox <http://try.discourse.org/>`_ for a demonstration.
+`17 languages and counting
+<https://www.transifex.com/discourse/discourse-org/>`_ and supports such
+features as `single sign on
+<https://meta.discourse.org/t/official-single-sign-on-for-discourse/13045>`_
+and real time notifications. The source code for Discourse is available on `the
+Discourse GitHub Page <https://github.com/discourse/discourse>`_. Visit the
+Discourse `online sandbox <http://try.discourse.org/>`_ for a demonstration.
 
 .. _discourse_doc:
 
@@ -38,11 +40,11 @@ start along with their `FAQ <https://www.discourse.org/faq/>`_ and their
 Installing Discourse Rock-on
 ----------------------------
 
-First please consider the pre-requisites for any Rockstor Rock-on; these
-are linked to at the :ref:`top <discourse_rockon>` of this document. Note also
-that the Discourse Rock-on will require a Share to store it's forum data.
-Note that this is in addition to the
-:ref:`rockons_root` that may well already have been made.
+First please consider the pre-requisites for any Rock-on; these are linked to
+at the :ref:`top <discourse_rockon>` of this document. Note also that the
+Discourse Rock-on will require a Share to store it's forum data.  Note that
+this is in addition to the :ref:`rockons_root` that may well already have been
+made.
 
 .. image:: discourse_install.png
    :scale: 80%

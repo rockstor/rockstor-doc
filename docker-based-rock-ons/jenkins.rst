@@ -65,7 +65,7 @@ Jenkins Share
 ^^^^^^^^^^^^^
 
 Next we select the **Jenkins Home**. Here we are using the obviously named
-**jenkins-home** share setup for his purpose. Note that this share **should not
+**jenkins-home** share setup for this purpose. Note that this share **should not
 be owned by root** as the Jenkins server, once installed, will run as the owner
 of the share configured here.
 
@@ -94,7 +94,7 @@ Jenkins Ports
 
 These are the **Default Ports** and it is unlikely you will have to alter them.
 The ports shown on your particular install, especially the *Server port* may
-not be the same as in the following image. This depends of what other Rock-ons
+not be the same as in the following image. This depends on what other Rock-ons
 have already been installed. Also note that you may have to forward the *Server
 port* on your network's firewall to the Rockstor system to have internet access
 to Jenkins's UI.
