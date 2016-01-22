@@ -93,7 +93,8 @@ a fictional example::
 	#
 
 If you'd like credit for your patch or if you are a frequent contributor, you
-should add your name to the AUTHORS file.
+should add your name to the `rockstor-doc AUTHORS
+<https://github.com/rockstor/rockstor-doc/blob/master/AUTHORS>`_ file.
 
 
 Unlike for code contributions, there is no need for a build VM. We use `Sphinx

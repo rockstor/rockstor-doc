@@ -163,7 +163,8 @@ a fictional example::
         #
 
 If you'd like credit for your patch or if you are a frequent contributor, you
-should add your name to the AUTHORS file.
+should add your name to the `rockstor-core AUTHORS
+<https://github.com/rockstor/rockstor-core/blob/master/AUTHORS>`_ file.
 
 Build VM
 --------
