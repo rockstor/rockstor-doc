@@ -18,7 +18,39 @@ Memory test
 Built into the Rockstor installer (inherited from the upstream CentOS installer)
 is the famous `memtest86+ <http://www.memtest.org/>`_ boot option. This program
 is actually derived from the linux kernel itself, the core of the operating
-system that Rockstor is built on.
+system that Rockstor is built on and is a boot option within the Rockstor
+installer.
+
+First select the **Troubleshooting** menu item on the initial boot screen of
+the installer:-
+
+.. image:: troubleshooting.png
+   :scale: 80%
+   :align: center
+Use the **Cursor Keys** and then the **Enter Key** to select this entry.
+
+Once selected the following options should be displayed:
+
+.. image:: run_memory_test.png
+   :scale: 80%
+   :align: center
+
+Then select the **Run a memory test** option to boot the machine into the
+**memtest86+** system.
+
+N.B. This memory test system will **continue indefinitely** until you either
+turn off the system, which is safe to do, or press the **ESC Key**
+
+Memtest86+ cautionary note
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Memtest86+ can place a very intense load on your system, especially if run in
+the new Multithreaded mode (version 5.01 and onwards via F1 on initial start)
+but a sufficiently cooled system should be able to execute this test
+indefinately however if your system has cooling issues then your system may lock
+or even sustain damage. Please take care to monitor your systems temperate
+during this test. Version 5.01 and on have a built in CPU temperature monitor.
+
 
 .. _check_md5sum:
 
@@ -100,8 +132,25 @@ example output:
     fb b6 53 44 b3 1c 77 15 80 77 50 e5 8e 99 f7 88
     CertUtil: -hashfile command completed successfully.
 
-Checking the Install media
+.. _check_install_media:
+
+Checking the Install Media
 --------------------------
 
-Once you have created the USB or in deed the CD / DVD by your chosen method
-method
+Once you have created the USB or in deed the CD / DVD by your chosen method:
+see :ref:`makeusbinstalldisk` in our :ref:`quickstartguide` guide there is one
+final measure one can take to ensure the the install media is as
+expected. That is to choose the **Test this media & install Rockstor** option
+on the initial boot screen of the installer:-
+
+.. image:: test_this_media.png
+   :scale: 80%
+   :align: center
+
+Using this option the installer will first check that it can successfully read
+the contents of the USB key or CD / DVD and only proceed if the integrity check
+of what it reads succeeds. Note that this does take additional time but not
+more than a few minutes on a modern USB connection.
+
+The purpose of this test is two fold as it is not only checking the contents of
+the install media but also the computers ability to read that contents.
