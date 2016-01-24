@@ -7,6 +7,7 @@ Howtos
 
    mdraid-mirror/boot_drive_howto
    reinstall/reinstall
+   pre-install-howto/pre-install-howto
    home_nas_guide
    soho
    kvm_setup
