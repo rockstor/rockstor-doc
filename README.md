@@ -1,4 +1,4 @@
 rockstor-doc
 ============
 
-For contribution guidelines, see [contributing to docs](http://rockstor.com/docs/contribute.html#contributing-to-the-documentation)
+For contribution guidelines, see [Contributing to Rockstor documentation](http://rockstor.com/docs/contribute_documentation.html)
