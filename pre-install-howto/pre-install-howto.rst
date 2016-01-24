@@ -80,16 +80,16 @@ data on the existing drives and second to test that the drive is able to
 write to all it's available sectors, it is often the case that a drive is
 unaware of an issue with itself, via the built in SMART system, until it
 attempts to write to a faulty sector. In fact this can trigger a drives build
-in ability to allocate spare sectors reserved for this very purpose to *self
-heal*.
+in ability to allocate spare sectors reserved for this very purpose.
 
 Note that the zero fill *fast* option is probably sufficient for testing
 purposes but that there are many official options available. All options will
 take a considerable amount of time to complete, ie in the region of a few
 hours per drive.
 
-It is not strongly recommended that any drives be tested this way prior to
-using them for Rockstor but is included here as an advisory procedure.
+It is **not** strongly recommended that any drives be tested this way prior to
+using them for Rockstor but is included here as an advisory procedure if you
+suspect a drive of having hardware issues.
 
 DBAN Cautionary Note
 ^^^^^^^^^^^^^^^^^^^^
@@ -98,7 +98,7 @@ The DBAN program / procedure will **Irreversibly Erase all data**. Use with
 caution and disconnect any drives that you wish not to be affected prior to
 booting into DBAN. Due to the comparatively limited write cycles of earlier
 generation SSD's further consideration should be given prior to running DBAN
-due to it's write heavy nature.
+on these devices due to it's write heavy nature.
 
 
 .. _check_md5sum:
@@ -116,13 +116,13 @@ command that can be executed once the download of the Rockstor iso file is
 complete: that of checking it's checksum.
 
 A checksum is a mathematical
-abstraction of a dataset, in this case our file, that is unique (near enough
+abstraction of a data set, in this case our file, that is unique (near enough
 anyway). As a result of this it is possible to establish file corruption by
 comparing the published checksum of the official file with that calculated from
 the downloaded file. This in effect verifies the downloaded file as legitimate /
 free from corruption. Note however though that if you used the BitTorrent
-download option to acquire your install image then this check has already been done by
-way of the internal workings of the BitTorrent system. No harm in double
+download option to acquire your install image then this check has already been
+done by way of the internal workings of the BitTorrent system. No harm in double
 checking though. If however you acquired your image by any other means then it
 is highly recommended that you check it's md5sum. In the following operating
 system specific sections it is assumed that you have downloaded your Rockstor
