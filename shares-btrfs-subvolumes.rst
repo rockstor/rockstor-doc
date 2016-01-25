@@ -5,7 +5,7 @@ Shares
 
 A Share is a chunk of space carved out of a Pool. Shares behave like
 directories on the Rockstor system which can be accessed via protocols like
-:ref:`samba`, :ref:`afp`, :ref:`nfs` and *sftp*. They also provide storage
+:ref:`samba`, :ref:`afp`, :ref:`nfs` and :ref:`sftp`. They also provide storage
 to Rock-ons for application and user generated data. See :ref:`rockons_intro`
 for more information.
 
