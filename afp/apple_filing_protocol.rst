@@ -23,11 +23,12 @@ Rockstor and how to backup to this volume from an OSX client machine.
 
 ..  _create_afp_share:
 
-Creating an AFP share
+Creating an AFP Share
 ---------------------
 
 In order to establish an AFP share it is first necessary to have a
-pre-configured storage pool, a Share of this pool, and a Rockstor user to
+pre-configured storage Pool, a share of this pool or part there of, and a
+Rockstor user to
 authenticate against this Share. Finally the Share must be exported via the AFP
 method. The following list details a suggested order and gives links to the
 documentation on each of these steps.
@@ -110,7 +111,7 @@ normal AFP file sharing.
 
 ..  _osx_afp_config:
 
-Client OSX configuration
+Client OSX Configuration
 ------------------------
 
 Having now setup an AFP share as in :ref:`create_afp_share` we can now
