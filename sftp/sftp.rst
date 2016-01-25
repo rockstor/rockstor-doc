@@ -56,7 +56,7 @@ and gives links to the documentation on each of these steps.
 The SFTP Pool
 ^^^^^^^^^^^^^
 
-The following example shows a general purpose **rock_pool** has been created.
+The following example shows a general purpose **rock-pool** has been created.
 
 ..  image:: rock_pool.png
     :scale: 80%
@@ -95,8 +95,8 @@ Add SFTP Export
 
 Finally **export** the **Share** via the **SFTP** entry in **File Sharing**.
 This menu entry is available in the **Storage** section. Note that the **SFTP
-Service** must be **ON**, which is the the default, before these options are
-available.
+Service** must be **ON**, the default, for the configured shares to be
+available to SFTP clients.
 
 ..  image:: add_sftp_export.png
     :scale: 80%
@@ -110,5 +110,5 @@ The resulting SFTP export is then displayed in summary form:
     :scale: 80%
     :align: center
 
-Note that even if the share is writable by the user the export *read only*
-option will take precedence.
+**N.B even if a share is writable by the user the export "read only" option
+will take precedence.**
