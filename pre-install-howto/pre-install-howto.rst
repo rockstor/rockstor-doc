@@ -19,8 +19,8 @@ Memory Test (memtest86+)
 Built into the Rockstor installer (inherited from the upstream CentOS installer)
 is the famous `memtest86+ <http://www.memtest.org/>`_ boot option. This program
 is actually derived from the linux kernel itself, the core of the operating
-system that Rockstor is built on and is a boot option within the Rockstor
-*Troubleshooting* installer menu.
+system that Rockstor is built on, and is a boot option within the Rockstor
+*Troubleshooting* installer menu. Memtest86+ is licensed under the GPL.
 
 First select the **Troubleshooting** menu item on the initial boot screen of
 the installer:-
@@ -53,7 +53,7 @@ Memtest86+ Cautionary Note
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Memtest86+ can place a very intense load on your system, especially if run in
-the new Multithreaded mode (version 5.01 and onwards via F1 on initial start)
+the new Multithreaded mode (version 5.01 and onwards via F2 on initial start)
 but a sufficiently cooled system should be able to execute this test
 indefinitely however if your system has cooling issues then it may lockup
 or even sustain damage. Please take care to monitor your systems temperate
@@ -63,7 +63,6 @@ If you find that your version of the Rockstor installer doesn't include the 5
 temperature then download a `Pre-Compiled Bootable ISO
 <http://www.memtest.org/#downiso>`_ from their official page and write it to a
 USB key in exactly the same way you do for a Rockstor install ISO.
-Memtest86+ is licensed under the GPL.
 
 .. _wiping_disks:
 
