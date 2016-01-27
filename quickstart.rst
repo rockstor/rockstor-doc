@@ -4,6 +4,10 @@
 Quick start
 ===========
 
+Please take note of the information in our :ref:`pre_install` guide, though
+not strictly required it may help in avoiding problems encountered during
+install.
+
 .. _minsysreqs:
 
 Minimum system requirements
@@ -14,7 +18,7 @@ hardware or as a VM with the following minimum system requirements and
 recommendations.
 
 * 64-bit Intel or AMD processor
-* 2GB RAM or more. (recommended)
+* 2GB RAM or more (recommended)
 * 8GB hard disk space for the OS
 * One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)

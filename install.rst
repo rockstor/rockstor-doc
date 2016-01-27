@@ -5,7 +5,8 @@ Installation
 ============
 
 Installation of Rockstor is a short and straight forward process. For all types
-of installations, see :ref:`quickstartguide` to get started.
+of installations, see :ref:`quickstartguide` to get started. Please also note
+that we have a :ref:`pre_install`.
 
 .. _quickeval:
 
