@@ -41,17 +41,19 @@ Note that this is in addition to the
    :scale: 80%
    :align: center
 
-Click the **Install** button next to the Transmission listing on the Rock-ons page.
+Click the **Install** button next to the Transmission listing on the Rock-ons
+page.
 
 .. _transmission_share:
 
 Transmission Share
 ^^^^^^^^^^^^^^^^^^
 
-Next we select the **Storage area** for Transmission's files.  Here we are
-using the **recommended Share name**.
+Next we select the **Share** for storing Transmission's config and data
+files, including downloads.  Here we are using the **recommended Share name**
+given in the mouse over info popup.
 
-* **transmission-rockon** - room enough for your data and snapshots.
+* **Data Storage** - room enough for your transmission data and it's snapshots.
 
 .. image:: transmission_share.png
    :scale: 80%
@@ -86,7 +88,8 @@ you like but don't use spaces.
 
 Check that the entered details are correct before clicking **Submit**.
 
-Closing the resulting simple *Installation is in progress* dialog and we have:-
+Closing the resulting simple *Installation is in progress* dialog and shortly
+afterwards we have:-
 
 **The Transmission Rock-on is ON**
 
