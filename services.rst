@@ -50,6 +50,14 @@ serves as the *Services* view, which is selected by default in the left
 sidebar. To start or stop the NFS server, click the corresponding ON or OFF
 button.
 
+SFTP
+----
+
+SFTP stands for Secure File Transfer Protocol and is essentially FTP over SSH.
+In Rockstor user owned shares exported via this method are mounted withing a
+minimal chroot environment for enhance security. Please see out :ref:`sftp`
+section.
+
 AFP
 ---
 
