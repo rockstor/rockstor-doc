@@ -29,7 +29,7 @@ must be met to gain sftp access to a Rockstor share.
 These restrictions make Rockstor's SFTP implimentation more suited for
 individual storage needs as opposed to a shared storage area accessed by
 multiple users. In the following example we will setup a secure share for use by
-a single user, ie for secure backup purposes.
+a single user, ie for secure file access / storage across client platforms.
 
 Note also that the share or shares owned by the SFTP user will be mounted within
 a chroot environment, internally this is located at
@@ -40,16 +40,18 @@ a chroot environment, internally this is located at
 Creating a SFTP Share
 ---------------------
 
-In order to establish an SFTP share it is first necessary to have a
+In order to establish a SFTP share it is first necessary to have a
 pre-configured storage pool, a share of this pool or part there of, and a
 Rockstor user to authenticate against this share. Finally the share must be
 exported via the SFTP method. The following list details a suggested order
 and gives links to the documentation on each of these steps.
 
-* To create a storage pool see :ref:`createpool` in the :ref:`pools` section.
 * :ref:`Add a Rockstor user <adduser>` to use in the SFTP authentication process, see the :ref:`users` section.
-* A :ref:`Share <shares>` of this storage pool is then required, see :ref:`createshare` in the :ref:`pools` section.
+* Create a storage pool (if need be) for the SFTP Share, see :ref:`createpool` in the :ref:`pools` section.
+* A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare` in the :ref:`pools` section.
 * Finally this Share is exported via :ref:`sftp_export`.
+
+The following sections illustrate examples of the last 3 items in the above.
 
 .. _sftp_pool:
 
@@ -113,28 +115,33 @@ The resulting SFTP export is then displayed in summary form:
 **N.B even if a share is writable by the user the export "read only" option
 will take precedence.**
 
+.. _sftp_access:
+
 Accessing a SFTP Share
 ----------------------
 
 Depending on your chosen operating system your options to access a SFTP Share
 differ.
 
-From a Linux machine
-^^^^^^^^^^^^^^^^^^^^
+.. _sftp_linux:
+
+SFTP Access from Linux
+^^^^^^^^^^^^^^^^^^^^^^
 
 Most Linux desktop systems have SFTP capability built into their file managers.
 This is usually accessed either via a url entry such as in Nautilus, the
 gnome file manager, or by way of a form entry system such as in KDE. The typical
 URL that can be used in both desktop environments is as follows:-
 
-* sftp://username@rockstor-ip-or-name
+* **sftp://username@rockstor-ip-or-name**
 
 so to access the above example share the url would be:-
 
-* sftp://philip@rockstord.lan
+* **sftp://philip@rockstord.lan**
 
 The following shows this url having been entered via the **Other Locations**
-option in Nautilus. This is akin to **Ubuntu's** Unity **Connect to Server**.
+option in Nautilus. This is akin to **Ubuntu's** Unity **Connect to Server**. A
+similar facility is possible via KDE's dolphin file manager.
 
 ..  image:: gnome_sftp.png
     :scale: 80%
@@ -146,18 +153,58 @@ And the consequent connection along with the associated eject icon.
     :scale: 80%
     :align: center
 
-A similar arrangement is possible via KDE's dolphin file manager.
+Here we see the minimal content associated with a chroot environment and the
+share or shares owned by this use; in this case the **philip-sftp-share**.
 
-Once mapped the resource is available to other GUI programs via their respective
-open / save dialogs.
+Once connected the resource is available to other GUI programs via their
+respective open / save dialogs and the connection can be bookmarked to ease
+future access.
 
-From an OSX / Apple machine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _sftp_osx:
 
+SFTP Access From OSX
+^^^^^^^^^^^^^^^^^^^^
 
+A popular SFTP client program on OSX is `Cyberduck <https://cyberduck.io>`_.
+This is a particularly feature full client available directly from the link
+given or if preferred via a paid version on the Mac App Store where updates
+will then be automated. Cyberduck is licenced under GNUv2 and is available
+for OSX 10.7 (Lion) or later. Source code and issue tracking are available
+at `trac.cyberduck.io <https://trac.cyberduck.io/>`_.
 
-From a Windows Machine
-^^^^^^^^^^^^^^^^^^^^^^
+A partner project by the same founding author of Cyberduck is Mountain Duck
+which allows for drive mappings to be made in the Finder over a variety of
+protocols including SFTP.
+
+Here we see the dialog resulting from the **Open Connection** button filled out
+with the example used in this guide. Note the generated url in blue from the
+information entered. The 22 at the end of the url is required by some clients
+and is the default port used by ssh /sftp.
+
+..  image:: cyberduck_sftp.png
+    :scale: 80%
+    :align: center
+
+The display once the above connection is made is shown below; note the
+**eject** icon to disconnect.
+
+..  image:: cyberduck_sftp_connected.png
+    :scale: 80%
+    :align: center
+
+Finally we see Cyberduck used to transfer the OSX screen shots used in this
+document via the example Rockstor share. A testfiles directory is also visible.
+
+..  image:: cyberduck_sftp_share.png
+    :scale: 80%
+    :align: center
+
+Note that Cyberduck supports **drag and drop** from the OSX Finder app.
+
+.. _sftp_win:
+
+SFTP Access from Windows
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Most versions of MS Windows do not have a build in ability to access a SFTP
 resource. To partially get around this limitation one can install
@@ -172,4 +219,9 @@ only and `does not map a drive <http://www.swish-sftp.org/wiki/FAQ>`_ in the
 traditional Windows way so does not make the SFTP resource available to other
 programs. Ie it is not a filesystem driver.
 
-A dedicated SFTP application that has found favour in our forum is
+Also note that Cyberduck, as referenced in the :ref:`sftp_osx` section above,
+is also available for various versions of windows.
+
+A dedicated SFTP client application that has found favour in `our forum
+<http://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
+`GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
