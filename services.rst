@@ -32,11 +32,6 @@ Rockstor uses Linux NFS server to support exporting Shares to remote clients
 via NFS. Custom NFS configuration is not supported, but the service must be
 turned on in order to export shares. See the :ref:`nfs` section for details.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. To start or stop the NFS server, click the corresponding ON or OFF
-button.
-
 Samba
 -----
 
@@ -44,11 +39,6 @@ Rockstor supports making Shares available to SMB and CIFS clients via Samba
 software suite. Custom Samba server configuration is not supported, but the
 service must be turned on before exposing shares. See the :ref:`samba` section
 for details.
-
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. To start or stop the NFS server, click the corresponding ON or OFF
-button.
 
 SFTP
 ----
