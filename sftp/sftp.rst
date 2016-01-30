@@ -19,7 +19,7 @@ or ip address on the clients that wish to connect.
 The Rockstor SFTP System
 ------------------------
 
-By default no user other than root are allowed to login via ssh or user sftp.
+By default no user other than root are allowed to login via ssh or use SFTP.
 This restriction improves security but means there are certain conditions that
 must be met to gain sftp access to a Rockstor share.
 
@@ -67,7 +67,7 @@ The following example shows a general purpose **rock-pool** has been created.
 .. _sftp_share:
 
 The SFTP Share
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 Here a :ref:`Share <shares>` has been created on the above rock-pool disk set.
 
@@ -112,3 +112,64 @@ The resulting SFTP export is then displayed in summary form:
 
 **N.B even if a share is writable by the user the export "read only" option
 will take precedence.**
+
+Accessing a SFTP Share
+----------------------
+
+Depending on your chosen operating system your options to access a SFTP Share
+differ.
+
+From a Linux machine
+^^^^^^^^^^^^^^^^^^^^
+
+Most Linux desktop systems have SFTP capability built into their file managers.
+This is usually accessed either via a url entry such as in Nautilus, the
+gnome file manager, or by way of a form entry system such as in KDE. The typical
+URL that can be used in both desktop environments is as follows:-
+
+* sftp://username@rockstor-ip-or-name
+
+so to access the above example share the url would be:-
+
+* sftp://philip@rockstord.lan
+
+The following shows this url having been entered via the **Other Locations**
+option in Nautilus. This is akin to **Ubuntu's** Unity **Connect to Server**.
+
+..  image:: gnome_sftp.png
+    :scale: 80%
+    :align: center
+
+And the consequent connection along with the associated eject icon.
+
+..  image:: gnome_sftp_connected.png
+    :scale: 80%
+    :align: center
+
+A similar arrangement is possible via KDE's dolphin file manager.
+
+Once mapped the resource is available to other GUI programs via their respective
+open / save dialogs.
+
+From an OSX / Apple machine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+From a Windows Machine
+^^^^^^^^^^^^^^^^^^^^^^
+
+Most versions of MS Windows do not have a build in ability to access a SFTP
+resource. To partially get around this limitation one can install
+an explorer extension such as `Swish <http://www.swish-sftp.org/>`_ which is
+Licenced under GPLv2 with source code available on their `Swish GitHub page
+<https://github.com/alamaison/swish/blob/develop/LICENSE.txt>`_. Note also
+that Swish has been translated to over 20 languages via `their Transifex
+account <https://www.transifex.com/alamaison/swish/>`_.
+
+An important aspect to the use of Swish is that it is an explorer extension
+only and `does not map a drive <http://www.swish-sftp.org/wiki/FAQ>`_ in the
+traditional Windows way so does not make the SFTP resource available to other
+programs. Ie it is not a filesystem driver.
+
+A dedicated SFTP application that has found favour in our forum is
