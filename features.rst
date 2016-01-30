@@ -57,7 +57,7 @@ Online Share and Snapshot Management
 * Resize pools online, thin provision or over provision according to your
   needs.
 
-* Export shares via NFS, SMB, and AFP protocols
+* Export shares via NFS, SMB, SFTP, and AFP protocols
 
 * Create snapshots for shares instantly or schedule snapshots to be created
   periodically.
