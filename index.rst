@@ -31,6 +31,7 @@ Welcome to Rockstor
    afp/apple_filing_protocol.rst
    nfs_ops
    samba_ops
+   sftp/sftp
    multiple_appliances
    share_replication
    services

@@ -3,10 +3,10 @@
 Accessing Shares from Clients
 =============================
 
-Data is stored and organized by users in Shares, which are exported to clients
-via various protocols including :ref:`samba`, :ref:`nfs`, and :ref:`afp`.
-Before storing any data at least one :ref:`Share <shares>` must be created.
-See :ref:`createshare` for a detailed description.
+Data is stored and organized for use in Shares which are exported to clients
+via various protocols ie :ref:`samba`, :ref:`nfs`, :ref:`afp`, and
+:ref:`sftp`. Before storing any data at least one :ref:`Share <shares>` must be
+created. See :ref:`createshare` for a detailed description.
 
 Accessing Shares via Samba/CIFS
 -------------------------------

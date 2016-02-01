@@ -71,4 +71,6 @@ displayed along with an estimate of the time remaining.
     :align: center
 
 **Upon completion safely eject / remove / unmount the USB device before
-removing it, although it may very well not be mounted.**
+physically removing it, although it may very well not be mounted. This could be
+achieved using the eject button visible in the above image (in the window
+header)**
