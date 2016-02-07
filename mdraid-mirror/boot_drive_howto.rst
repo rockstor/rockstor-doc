@@ -104,7 +104,7 @@ Step 4: Setup **/boot** partition
 
 Click on **+** button at the bottom left to add the **/boot** partition. The
 procedure is just like above but pick **/boot** from the drop down, enter the
-appropriate size(1-2GB recommended) and click *Add mount point*
+appropriate size (1-2GB recommended) and click *Add mount point*
 
 .. image:: boot_partition_1.png
    :scale: 85%
@@ -140,10 +140,11 @@ partition setup. We really don't need redundancy for the swap partition, and it
 also results in a performance overhead, but it does allow for hot swapping /
 replacement of a system raid drive if all partitions are setup that way.
 Otherwise it would be necessary to shut the machine down prior to removing
-a raid member dive. If live replacement is not a requirement or your hardware
-doesn't support hot swapping then you can keep the default **Standard
-Partitioning** selection. This will result in a single drives swap being used
-until full and then the second drives swap will be used there after.
+or replacing a raid member drive. If live replacement is not a requirement or
+your hardware doesn't support hot swapping then you can keep the default
+**Standard Partitioning** selection. This will result in a single drives swap
+being used until full and then the second drives swap will be used there after.
+Assuming a swap is placed on each drive.
 
 .. image:: swap_partition_2.png
    :scale: 85%
@@ -190,8 +191,8 @@ do that simply with the following command ::
         1546240 blocks super 1.2 [2/2] [UU]
 
 The three md* devices correspond to the mirror configuration we setup earlier
-during the install. Note that each partition is mirrored(raid1) where the
-counter parts of the mirror are from different drives(**sda** and **sdb** in
+during the install. Note that each partition is mirrored (raid1) where the
+counter parts of the mirror are from different drives (**sda** and **sdb** in
 our example). We can also verify that **/** and **/boot** are mounted and are
 the right size with the following command ::
 
@@ -200,10 +201,12 @@ the right size with the following command ::
   /dev/md125      923M  100M  761M  12% /boot
 
 Note that that installer will by default continue this raid building / resync
-process on first boot and this will delay the systems availability. If you are
+process on first boot which may reduce the systems performance. If you are
 experiencing slow response times on the first boot after install check the raid
 status using the above cat command. On slow hardware it may be advisable to
-wait until all the md devices have completed their resync.
+wait until all the md devices have completed their resync. This could take
+anywhere from minutes to hours, but an estimated time left is given for each md
+device listed.
 
 Disaster Recovery
 -----------------
@@ -302,8 +305,8 @@ Step 4: Rebuild the mirror
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the final and crucial step. We'll resync the partitions of the
-replacement HDD with their counter parts in the mirror. This can be done with
-the following composite command ::
+replacement HDD with its working counterpart in the mirror. This can be done
+with the following composite command ::
 
   # mdadm --manage /dev/md125 --add /dev/sdb2; mdadm --manage /dev/md126 --add /dev/sdb1; mdadm --manage /dev/md127 --add /dev/sdb3
   mdadm: added /dev/sdb2
@@ -312,7 +315,7 @@ the following composite command ::
 
 After the above step, the mirror is re-synchronized. It will take some time
 proportional to your HDD size. You can monitor the progress and confirm the
-finish by looking at the contents of /proc/mdstat file as shown here ::
+finish by looking at the contents of the **/proc/mdstat** file as shown here ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -331,8 +334,11 @@ finish by looking at the contents of /proc/mdstat file as shown here ::
 
   unused devices: <none>
 
-Above output indicates that md125 and md127 have finished recovery(re-sync),
-but md126 is at 68%. It is completed after a few more seconds as shown again here. ::
+Note the estimated time for completion on md126 above ie **finnish=2.0mins**
+
+The above output indicates that md125 and md127 have finished their recovery
+(re-sync), but md126 is at 68%. It is completed after a short while as shown
+again here. ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
