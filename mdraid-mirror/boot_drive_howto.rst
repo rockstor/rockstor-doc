@@ -3,6 +3,11 @@
 Mirroring Rockstor OS using Linux Raid
 ======================================
 
+N.B. this howto is a work in progress and doesn't currently work for a Rockstor
+install as it requires btrfs on root and the installer as indicated doesn't
+allow for btrfs on top of an md device. We hope to improve / modify this howto
+in order to facilitate this requirement while still remaining accessible.
+
 It's a common and recommended practice to setup redundancy for the OS bits
 while installing a mission critical Rockstor server. The idea is to combine two
 Hard Disk Drives (HDDs) in a mirror configuration to house the OS. If one of the
