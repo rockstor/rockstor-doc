@@ -5,39 +5,39 @@ Mirroring Rockstor OS using Linux Raid
 
 It's a common and recommended practice to setup redundancy for the OS bits
 while installing a mission critical Rockstor server. The idea is to combine two
-Hard Disk Drives(HDDs) in a mirror configuration to house the OS. If one of the
+Hard Disk Drives (HDDs) in a mirror configuration to house the OS. If one of the
 HDDs fails, it can simply be swapped out with a new drive saving us from a
 re-install or downtime.
 
-In this howto, we will use `Linux Raid
+In this howto we will use `Linux Raid
 <https://raid.wiki.kernel.org/index.php/Linux_Raid>`_ to setup the redundant OS
-drive mirror. This can be done easily as part of Rockstor installation. If you
+drive mirror. This can be done easily as part of Rockstor's installation. If you
 have never installed Rockstor before, we recommend you read our
-:ref:`quickstartguide` and watch `this install video
+:ref:`quickstartguide` guide and watch `this install video
 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_ before proceeding with this
 howto.
 
 Requirements
 ------------
 
-You need two HDDs to setup the mirror. We recommend HDDs of same size and brand
-for uniformity. The drives can be as small as 16GB, but in practice, they are
-usually 100+ GB. In this howto, we demonstrate with 8GB virtual drives using
-VirtualBox.
+You need two HDDs to setup the mirror. We recommend HDDs of the same size and
+brand for uniformity. The drives can be as small as 16GB but in practice they
+are usually 100+ GB. In this howto we demonstrate with an 8GB virtual drives
+using VirtualBox.
 
-We will create a mirrored setup for each of **/boot, / and swap**
+We will create a mirrored setup for each of **/boot**, **/** and **swap**
 partitions. You should plan the sizing of each partition before proceeding
-further. **/boot** can be as little as 1-2GB and will store Kernels. **swap**
-can be 2-4GB or twice the amount of RAM in the system. **/** will store most of
-the OS bits and should be atleast 8GB, more the better. For demonstration
-purposes of this howto, our **/** will be 6GB, **/boot** will be 1GB and
-**swap** will also be 1GB.
+further. **/boot** can be as little as 1-2 GB and will store Kernels. **swap**
+can be 2-4 GB or twice the amount of RAM in the system. **/** will store most of
+the OS bits and should be at least 6GB, more the better. For demonstration
+purposes in this howto, our **/** will be **6GB**, our **/boot** will be
+**1GB**, and our **swap** will also be **1GB**.
 
 Step 1: Device Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start the Rockstor installation process and you'll soon see the **INSTALLATION
-SUMMARY** screen. Click on **INSTALLATION DESTINATION** to go to device
+SUMMARY** screen. Click on **INSTALLATION DESTINATION** to go to the device
 selection screen.
 
 .. image:: installation_summary.png
@@ -45,9 +45,9 @@ selection screen.
    :align: center
 
 On the next screen, the two HDDs we are about to mirror should be
-visible. Click to select them. In the bottom half of the screen,
-select *I will configure partitioning* radio button. Finally click **DONE** at
-the top.
+visible. Click to select them so that both are ticked. In the bottom half of
+the screen, select *I will configure partitioning* radio button. Finally click
+**DONE** at the top.
 
 .. image:: device_selection.png
    :scale: 85%
@@ -58,9 +58,9 @@ Step 2: Destroy old data, if any
 
 The next screen is titled **MANUAL PARTITIONING** as shown below. If there are
 any partitions already on the two HDDs selected before, they will appear on the
-right under a collapsible menu. If you don't see any, your HDDs are clean and
+left under a collapsible menu. If you don't see any, your HDDs are clean and
 you can ignore this step. In our demonstration, HDDs are not clean and the
-existing partioning is titled **UNKNOWN**
+existing partitioning is titled **UNKNOWN**
 
 .. image:: manual_partitioning_1.png
    :scale: 85%
@@ -76,15 +76,15 @@ process until all of them are deleted.
 Step 3: Setup **/** partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Select **Standard Partitioning** from the dropdown menu and click **+** button
-at the bottom to create a new partition.
+Select **Standard Partitioning** from the drop down menu and click the **+**
+button at the bottom left to create a new partition.
 
 .. image:: manual_partitioning_3.png
    :scale: 85%
    :align: center
 
 A popup window will appear titled **ADD A NEW MOUNT POINT**. Select **/** from
-the dropdown, enter the size you planned out eariler(minimum 8GB) and click
+the drop down, enter the size you planned out earlier (minimum 8GB) and click
 *Add mount point* button.
 
 .. image:: root_partition_1.png
@@ -92,8 +92,8 @@ the dropdown, enter the size you planned out eariler(minimum 8GB) and click
    :align: center
 
 On the next screen, select **RAID** under **Device Type**, **RAID 1** under
-**RAID Level** and **ext4** under **File System**. Click *Update Settings*
-button to finalize **/** partition setup.
+**RAID Level** (the default) and **ext4** under **File System**. Click
+*Update Settings* button (bottom left) to finalize the **/** partition setup.
 
 .. image:: root_partition_2.png
    :scale: 85%
@@ -103,7 +103,7 @@ Step 4: Setup **/boot** partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Click on **+** button at the bottom left to add the **/boot** partition. The
-procedure is just like above but pick **/boot** from the dropdown, enter
+procedure is just like above but pick **/boot** from the drop down, enter the
 appropriate size(1-2GB recommended) and click *Add mount point*
 
 .. image:: boot_partition_1.png
@@ -111,8 +111,8 @@ appropriate size(1-2GB recommended) and click *Add mount point*
    :align: center
 
 On the next screen, select **RAID** under **Device Type**, **RAID 1** under
-**RAID Level** and **ext4** under **File System**. Click *Update Settings*
-button to finalize **/boot** partition setup.
+**RAID Level** (the default) and **ext4** under **File System**. Click
+*Update Settings* button (bottom left) to finalize **/boot** partition setup.
 
 .. image:: boot_partition_2.png
    :scale: 85%
@@ -121,20 +121,29 @@ button to finalize **/boot** partition setup.
 Step 5: Setup **swap** partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Just like in **/boot** above, click on **+** button and pick **swap** from the
-dropdown. Leave the size field blank and all of the remaining space will be
-used. As we planned the sizes ahead of time, this will come out to be same
+Just like in **/boot** above, click on the **+** button and pick **swap** from
+the drop down. Leave the size field blank and all of the remaining space will be
+used. As we planned the sizes ahead of time, this will come out to be the same
 without having to enter the exact number.
+
+*Alternatively, if installing on larger media than our 8GB demo, one could
+create the /boot and swap partitions first (and specify the size for swap) and
+then use all the remaining space for / where it will likely be more useful.*
 
 .. image:: swap_partition_1.png
    :scale: 85%
    :align: center
 
 On the next screen, select **RAID** under **Device Type** and **RAID 1** under
-**RAID Level**. Click *Update Settings* button to finalize **swap** partition
-setup. We really don't need redundancy for swap partition, and it also results
-in a performance overhead. So alternatively, you can keep the default **Standard
-Partitioning** selection.
+**RAID Level**. Click the *Update Settings* button to finalize the **swap**
+partition setup. We really don't need redundancy for the swap partition, and it
+also results in a performance overhead, but it does allow for hot swapping /
+replacement of a system raid drive if all partitions are setup that way.
+Otherwise it would be necessary to shut the machine down prior to removing
+a raid member dive. If live replacement is not a requirement or your hardware
+doesn't support hot swapping then you can keep the default **Standard
+Partitioning** selection. This will result in a single drives swap being used
+until full and then the second drives swap will be used there after.
 
 .. image:: swap_partition_2.png
    :scale: 85%
@@ -153,9 +162,9 @@ Changes** to finalize the manual partition scheme.
 
 The installer will then display the **INSTALLATION SUMMARY** screen. Click on
 *Begin Installation* button at the bottom right to start the install. In this
-demonstration, we did not show other configuration such as selecting Time Zone
-and making sure there's network connectivity. If you need assistance with them,
-refer to :ref:`quickstartguide`.
+demonstration, we did not show other configurations such as selecting Time Zone
+and making sure there's network connectivity. If you need assistance with these
+refer to our :ref:`quickstartguide` guide.
 
 .. image:: begin_installation.png
    :scale: 85%
@@ -190,22 +199,28 @@ the right size with the following command ::
   /dev/md126      5.4G  1.4G  3.8G  28% /
   /dev/md125      923M  100M  761M  12% /boot
 
+Note that that installer will by default continue this raid building / resync
+process on first boot and this will delay the systems availability. If you are
+experiencing slow response times on the first boot after install check the raid
+status using the above cat command. On slow hardware it may be advisable to
+wait until all the md devices have completed their resync.
+
 Disaster Recovery
 -----------------
 
 Up to this point, we have setup the mirror and verified that everything looks
 good. Over time, usually after a long time, one of the HDDs may start throwing
-errors indicating that it's time to replace it. Following steps will guide you
-through that process.
+errors indicating that it's time to replace it. The following steps will guide
+you through that process.
 
 Step 1: Remove failing HDD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your hardware supports hotswapping HDDs, you can pull out the failing drive
-and leave the system running while you replace it with a new HDD. After
-removing the failing drive, the System continues to run normally, but the
-mirror is no longer redundant as shown in the below output(note sdb parts are
-missing) ::
+If your hardware supports hot swapping HDDs, and you chose RAID1 for all your
+partitions, then you can pull out the failing drive and leave the system
+running while you replace it with a new HDD. After removing the failing drive,
+the System continues to run normally, but the mirror is no longer redundant
+as shown in the below output (note sdb parts are missing) ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -223,16 +238,16 @@ missing) ::
 Step 2: Add a replacement HDD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next step is to replace the failing HDD with a new HDD. Same size and brand is
-recommended, to keep things uniform. In our demonstration here, I've added a
-new 8GB virtual drive(similar to the failed HDD) and it appeared as **sdb** to
+The next step is to replace the removed HDD with a new one. The same size and
+brand is recommended, to keep things uniform. In our demonstration, I've added a
+new 8GB virtual drive (similar to the failed HDD) and it appeared as **sdb** to
 the system.
 
 Step 3: Partition the replacement HDD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The replacement HDD must be partitioned, much like during OS install. But this
-time we'll use command line tools to do so. The advantage of using the same
+time we'll use command line tools. The advantage of using the same
 size HDD is that we can just copy the partition scheme from the functioning
 HDD. In our demonstration, **sda** is the still functioning HDD and it's
 partition table looks as follows ::
