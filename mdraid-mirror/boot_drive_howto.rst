@@ -26,6 +26,8 @@ requirement / complexity but if all steps are followed in order then a working
 system should result. That system however will require expert administration in
 the event of a system drive failure.
 
+.. _mdraidos_why:
+
 Why mdraid for the OS
 ---------------------
 
@@ -44,6 +46,8 @@ have never installed Rockstor before, we recommend you read our
 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_ before proceeding with this
 howto as the default, kickstarter based install method is recommended for most
 users.
+
+.. _mdraidos_requirements:
 
 Requirements
 ------------
@@ -65,7 +69,7 @@ purposes in this howto, our **/boot** will be **1 GB**, our **swap** will be
 It is recommended not to have /boot and swap the same size as then it can be
 more difficult to tell them apart in a disaster recovery scenario.
 
-.. _mdraid_overview:
+.. _mdraidos_overview:
 
 Overview of mdraid install
 --------------------------
@@ -73,16 +77,17 @@ Overview of mdraid install
 Due to the reasons outline above this install is unusual in that it requires
 Rockstor be installed in effect twice. Once to setup mdraid and a second time
 to setup btrfs on top of the first installs mdraid setup. We have also to use
-the recovery system between these 2 installs in order that our btrfs / be
+the recovery system between these 2 installs in order that our btrfs / device be
 established ie:-
 
 * Steps 1 - 6 Regular hand partitioned mdraid install with ext4 as the root fs.
-* steps * - * Use Rescue mode to format our largest mdraid device as btrfs
-* Steps * - * Install for the final time using the btrfs on mdraid filesystem.
+* steps 7 - 8 Use Rescue mode to format our largest mdraid device as btrfs
+* Steps 9 - * Install for the final time using the btrfs on mdraid filesystem.
 
 Although this seems like a round about way to install it is currently the
-simplest way without using a custom installer and only requires a single command
-line intervention, helping to keep the process accessible to most users.
+simplest way without found without using a custom installer and only requires
+three command line interventions, helping to keep the process accessible to
+most users.
 
 
 Step 1: Device Selection
@@ -231,6 +236,127 @@ and making sure there's network connectivity. If you need assistance with these
 refer to our :ref:`quickstartguide` guide.
 
 .. image:: begin_installation.png
+   :scale: 85%
+   :align: center
+
+Let the installer finish but be sure to **leave the installation medium in
+place** ie do not remove the installer USB / CDROM / DVD as we must next boot
+into the troubleshooting section of the installer.
+
+
+Step 7: Start the Troubleshooting shell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If steps 1 to 6 were followed correctly we should now be rebooting into the
+installer once again. This is to use the Troubleshooting capabilities of the
+installer to reformat our ext4 root mdraid device to a btrfs one:-
+
+This time on booting the installer select the **Troubleshooting** section:-
+
+.. image:: troubleshooting.png
+   :scale: 85%
+   :align: center
+
+Then Select the **Rescue a Rockstor System** option:-
+
+.. image:: rescue.png
+   :scale: 85%
+   :align: center
+
+And at the following screen select **Skip** via the *Tab* and *Enter* keys.
+
+.. image:: rescue_skip.png
+   :scale: 85%
+   :align: center
+
+Enter to select **Skip**
+
+Step 8: Change our root mdraid to btrfs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can now use this shell system to reformat our largest mdraid device (ie root)
+
+* Find the largest md device by block count
+* Reformat that md device as btrfs with a label of rockstor_rockstor
+* Exit back to the installer
+
+::
+
+  cat /proc/mdstat
+  mkfs.btrfs -f -L rockstor_rockstor /dev/md###
+  exit
+
+Note that md### is the name for the largest md device displayed by mdstat.
+
+The following image shows the intended result of these commands:-
+
+.. image:: rescue_btrfs_root.png
+   :scale: 85%
+   :align: center
+
+Note you may not receive the TRIM message if not using ssd devices.
+
+Again **Leave the installer media in place** for the final install.
+
+Step 9: Reboot into the final install
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next we repeat our first install but this time we re-use the existing mdraid
+devices for /boot and swap and add our /home and /root subvolumes to the btrfs
+file system created in the previous step, ie labeled rockstor_rockstor.
+
+* make sure **both boot drives are ticked** as before
+* Use **I will configure partitioning** as before
+
+.. image:: mdraid_second_disk_selection.png
+   :scale: 85%
+   :align: center
+
+**Done** to proceed.
+
+Step 10: Reuse our boot mdraid
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Select **btrfs** for the partitioning scheme (centre left)
+
+
+Expand the **Unknown** section and highlight ext4 boot ie the 1GB device and
+configure it as our mdraid boot:-
+
+* Mount Point - **/boot**
+* File System - **ext4** and tick **Reformat**
+
+.. image:: reuse_md_boot.png
+   :scale: 85%
+   :align: center
+
+Click the **Update Settings** to save the mount point and reformat changes and
+see the partition move from the **unknown** section to the **SYSTEM** section.
+This is visible in the next steps first image.
+
+Step 11: Reuse our swap mdraid
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now highlight the **swap** entry in **Unknown** and configure the following:-
+
+* tick **Reformat**
+
+.. image:: reuse_md_swap.png
+   :scale: 85%
+   :align: center
+
+Again confirm the **Reformat** change using the **Update Settings** button.
+
+Step 12: Create our **root** subvolume
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now highlight the **btrfs rockstor_rockstor** entry in **Unknown** and click on
+the **+** icon in the lower left.
+
+* Mount point */*
+* Desired Capacity **leave blank**
+
+.. image:: md_root_subvol.png
    :scale: 85%
    :align: center
 
