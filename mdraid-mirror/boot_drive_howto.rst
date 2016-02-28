@@ -427,6 +427,21 @@ Remember that this time around we don't need to reboot into the installer
 again, ie on completion of the install we can change the bios to boot from one
 of the boot devices in our mdraid.
 
+Upon successful boot go through the usual process of point a browser at the
+indicated ip (in the Rockstor console) and completing the configuration via
+the Web interface.
+
+.. image:: first_boot_config.png
+   :scale: 85%
+   :align: center
+
+And the resulting Storage - Disks page is as indicated:-
+
+.. image:: first_boot_disks_page.png
+   :scale: 85%
+   :align: center
+
+For simplicity Rockstor ignores the swap and boot devices in this display.
 
 Verification of the mirror
 --------------------------
