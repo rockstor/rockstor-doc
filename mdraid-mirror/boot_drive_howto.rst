@@ -3,10 +3,31 @@
 Mirroring Rockstor OS using Linux Raid
 ======================================
 
-N.B. this howto is a work in progress and doesn't currently work for a Rockstor
-install as it requires btrfs on root and the installer as indicated doesn't
-allow for btrfs on top of an md device. We hope to improve / modify this howto
-in order to facilitate this requirement while still remaining accessible.
+This howto represents an advanced install scenario and should not be required
+for regular Rockstor use; but is provided as a guide on how to accomplish the
+specific install arrangement of a redundant system disk install using the more
+established technology of mdraid, the Linux software raid subsystem. Regular
+install requirements are met by the default install process covered in
+:ref:`quickstartguide` as this howto is specifically for an mdraid system disk
+install.
+
+Rockstor uses Anaconda, the CentOS default installer. Although there are many
+gains to using an upstream installer our specific requirement in this howto of
+btrfs root on top of mdraid is not catered for. Adding this ability to upstream
+may well be possible but may also compromise Anaconda's usability. This is due
+to the assumption in the installer that if one is using btrfs one will not be
+using mdraid; due most likely to the redundancy of this option given btrfs has
+raid capability build in. However, due to the btrfs filesytem's current maturity
+level there are still arguments for using mdraid instead of btrfs's raid for the
+system disk/disks.
+
+That is the context of this howto and in part explains it's multi step
+requirement / complexity but if all steps are followed in order then a working
+system should result. That system however will require expert administration in
+the event of a system drive failure.
+
+Why mdraid for the OS
+---------------------
 
 It's a common and recommended practice to setup redundancy for the OS bits
 while installing a mission critical Rockstor server. The idea is to combine two
@@ -16,19 +37,22 @@ re-install or downtime.
 
 In this howto we will use `Linux Raid
 <https://raid.wiki.kernel.org/index.php/Linux_Raid>`_ to setup the redundant OS
-drive mirror. This can be done easily as part of Rockstor's installation. If you
+drive mirror. This can be done as part of Rockstor's installation but requires
+many more additional steps from a default,non mdraid, install. If you
 have never installed Rockstor before, we recommend you read our
 :ref:`quickstartguide` guide and watch `this install video
 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_ before proceeding with this
-howto.
+howto as the default, kickstarter based install method is recommended for most
+users.
 
 Requirements
 ------------
 
 You need two HDDs to setup the mirror. We recommend HDDs of the same size and
-brand for uniformity. The drives can be as small as 16GB but in practice they
-are usually 100+ GB. In this howto we demonstrate with an 8GB virtual drives
-using VirtualBox.
+brand for uniformity. The drives can be as small as 8GB but in practice they
+are usually 100+ GB. In this howto we demonstrate with a pair of 8GB virtual
+drives using VirtualBox and then VMM for the later sections to help distinguish
+the sections of the install.
 
 We will create a mirrored setup for each of **/boot**, **/** and **swap**
 partitions. You should plan the sizing of each partition before proceeding
@@ -37,6 +61,28 @@ can be 1.5-4 GB or equal to the RAM in the system. **/** will store most of
 the OS bits and should be at least 5.5GB, more the better. For demonstration
 purposes in this howto, our **/boot** will be **1 GB**, our **swap** will be
 **1.5 GB**, and our **root** will be all of the remainder ie **5.5 GB**
+
+It is recommended not to have /boot and swap the same size as then it can be
+more difficult to tell them apart in a disaster recovery scenario.
+
+.. _mdraid_overview:
+
+Overview of mdraid install
+--------------------------
+
+Due to the reasons outline above this install is unusual in that it requires
+Rockstor be installed in effect twice. Once to setup mdraid and a second time
+to setup btrfs on top of the first installs mdraid setup. We have also to use
+the recovery system between these 2 installs in order that our btrfs / be
+established ie:-
+
+* Steps 1 - 6 Regular hand partitioned mdraid install with ext4 as the root fs.
+* steps * - * Use Rescue mode to format our largest mdraid device as btrfs
+* Steps * - * Install for the final time using the btrfs on mdraid filesystem.
+
+Although this seems like a round about way to install it is currently the
+simplest way without using a custom installer and only requires a single command
+line intervention, helping to keep the process accessible to most users.
 
 
 Step 1: Device Selection
@@ -188,6 +234,8 @@ refer to our :ref:`quickstartguide` guide.
    :scale: 85%
    :align: center
 
+
+
 Verification of the mirror
 --------------------------
 
@@ -207,6 +255,8 @@ do that simply with the following command ::
   md127 : active raid1 sda3[0] sdb3[1]
         1546240 blocks super 1.2 [2/2] [UU]
 
+Note that the actual block values will vary for different partition sizes.
+
 The three md* devices correspond to the mirror configuration we setup earlier
 during the install. Note that each partition is mirrored (raid1) where the
 counterparts of the mirror are from different drives (**sda** and **sdb** in
@@ -217,7 +267,12 @@ the right size with the following command ::
   /dev/md126      5.4G  1.4G  3.8G  28% /
   /dev/md125      923M  100M  761M  12% /boot
 
-Note that that installer will by default continue this raid building / resync
+The specific md* device names may vary from install to install, this is why it
+is a nice idea to have no 2 md devices of equal size ie /boot 1G and swap 1.5G
+as it can make discerning a partitions function easier in a crash recovery
+scenario.
+
+Note that the installer will by default continue this raid building / resync
 process on first boot which may reduce the systems performance. If you are
 experiencing slow response times on the first boot after install check the raid
 status using the above cat command. On slow hardware it may be advisable to
