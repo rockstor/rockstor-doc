@@ -314,8 +314,8 @@ file system created in the previous step, ie labeled rockstor_rockstor.
 
 **Done** to proceed.
 
-Step 10: Reuse our boot mdraid
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 10: Reuse our **boot** mdraid
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Select **btrfs** for the partitioning scheme (centre left)
 
@@ -334,8 +334,8 @@ Click the **Update Settings** to save the mount point and reformat changes and
 see the partition move from the **unknown** section to the **SYSTEM** section.
 This is visible in the next steps first image.
 
-Step 11: Reuse our swap mdraid
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 11: Reuse our **swap** mdraid
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now highlight the **swap** entry in **Unknown** and configure the following:-
 
@@ -353,13 +353,79 @@ Step 12: Create our **root** subvolume
 Now highlight the **btrfs rockstor_rockstor** entry in **Unknown** and click on
 the **+** icon in the lower left.
 
-* Mount point */*
-* Desired Capacity **leave blank**
+* Mount point **/**
+* Desired Capacity **leave blank** as quotas will define the size limit.
 
 .. image:: md_root_subvol.png
    :scale: 85%
    :align: center
 
+**Add mount point** to proceed.
+
+N.B. the default name given to our root subvolume is **root00** as an artifact
+of our method or as a bug in the installer. This does not respond to being
+changed but should be fine as is. This is a visible difference between an mdraid
+install and a default install.
+
+Step 13: Create our **home** subvolume
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now that the rockstor_rockstor btrfs mdraid device has been used we no longer
+have an *Unknown* section but we can still create further subvolumes so to
+end up with the same as a regular Rockstor default install we create a **home**
+subvolume by again clicking on the **+** icon:-
+
+* Mount point **/home**
+* Desired Capacity **leave blank** as quotas will define the size limit.
+
+.. image:: md_home_subvol.png
+   :scale: 85%
+   :align: center
+
+**Add mount point** to proceed. Notice how the installer puts the /home
+subvolume into the **DATA** section.
+
+Don't worry about the *Available Space* and *Total Space* readings as they are
+not apparently aware of our mdraid levels but this does not affect the final
+install.
+
+Step 14: Confirmation before final install
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If all has gone as planned we should have something along the lines of the
+following:-
+
+.. image:: md_final_partitions.png
+   :scale: 85%
+   :align: center
+
+Notice that due to the install not knowing our rockstor_rockstor btrfs is not
+on an mdraid it simply reports our /home and / mounts as *Device Type btrfs*
+and *Volume rockstor_rockstor*.
+
+So finally we have our btrfs on / with ext4 /boot and swap, each on their own
+mdraid device.
+
+N.B. if something is not right simply use the **refresh** icon and after
+clicking **Rescan** on the resulting dialog one can return to the stage in
+Step:9 above, ie selecting both drives and starting partitioning again.
+
+
+If all looks well then Click **Done** and proceed.
+
+.. image:: md_final_summary_of_changes.png
+   :scale: 85%
+   :align: center
+
+Note in the above that the format of the swap and boot are to be destroyed and
+re-created but there is no mention of our rockstor_rockstor file system, only
+the creation of the home and root00 subvolumes.
+
+**Accept Changes** and **Begin Installation** as in the first install.
+
+Remember that this time around we don't need to reboot into the installer
+again, ie on completion of the install we can change the bios to boot from one
+of the boot devices in our mdraid.
 
 
 Verification of the mirror
