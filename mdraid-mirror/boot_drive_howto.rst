@@ -11,7 +11,8 @@ install requirements are met by the default install process covered in
 :ref:`quickstartguide` as this howto is specifically for an mdraid system disk
 install.
 
-Rockstor uses Anaconda, the CentOS default installer. Although there are many
+Rockstor uses `Anaconda <https://en.wikipedia.org/wiki/Anaconda_(installer)>`_,
+the CentOS default installer. Although there are many
 gains to using an upstream installer our specific requirement in this howto of
 btrfs root on top of mdraid is not catered for. Adding this ability to upstream
 may well be possible but may also compromise Anaconda's usability. This is due
@@ -24,7 +25,8 @@ system disk/disks.
 That is the context of this howto and in part explains it's multi step
 requirement / complexity but if all steps are followed in order then a working
 system should result. That system however will require expert administration in
-the event of a system drive failure.
+the event of a system drive failure. This install is only suitable for Rockstor
+versions 3.8-12 and newer.
 
 .. _mdraidos_why:
 
@@ -40,7 +42,7 @@ re-install or downtime.
 In this howto we will use `Linux Raid
 <https://raid.wiki.kernel.org/index.php/Linux_Raid>`_ to setup the redundant OS
 drive mirror. This can be done as part of Rockstor's installation but requires
-many more additional steps from a default,non mdraid, install. If you
+many more additional steps from a default, non mdraid, install. If you
 have never installed Rockstor before, we recommend you read our
 :ref:`quickstartguide` guide and watch `this install video
 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_ before proceeding with this
