@@ -33,10 +33,11 @@ using VirtualBox.
 We will create a mirrored setup for each of **/boot**, **/** and **swap**
 partitions. You should plan the sizing of each partition before proceeding
 further. **/boot** can be as little as 1-2 GB and will store Kernels. **swap**
-can be 2-4 GB or twice the amount of RAM in the system. **/** will store most of
-the OS bits and should be at least 6GB, more the better. For demonstration
-purposes in this howto, our **/** will be **6GB**, our **/boot** will be
-**1GB**, and our **swap** will also be **1GB**.
+can be 1.5-4 GB or equal to the RAM in the system. **/** will store most of
+the OS bits and should be at least 5.5GB, more the better. For demonstration
+purposes in this howto, our **/boot** will be **1 GB**, our **swap** will be
+**1.5 GB**, and our **root** will be all of the remainder ie **5.5 GB**
+
 
 Step 1: Device Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,8 +79,8 @@ process until all of them are deleted.
    :scale: 85%
    :align: center
 
-Step 3: Setup **/** partition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Setup **/boot** partition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Select **Standard Partitioning** from the drop down menu and click the **+**
 button at the bottom left to create a new partition.
@@ -88,28 +89,9 @@ button at the bottom left to create a new partition.
    :scale: 85%
    :align: center
 
-A popup window will appear titled **ADD A NEW MOUNT POINT**. Select **/** from
-the drop down, enter the size you planned out earlier (minimum 8GB) and click
-*Add mount point* button.
-
-.. image:: root_partition_1.png
-   :scale: 85%
-   :align: center
-
-On the next screen, select **RAID** under **Device Type**, **RAID 1** under
-**RAID Level** (the default) and **ext4** under **File System**. Click
-*Update Settings* button (bottom left) to finalize the **/** partition setup.
-
-.. image:: root_partition_2.png
-   :scale: 85%
-   :align: center
-
-Step 4: Setup **/boot** partition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Click on **+** button at the bottom left to add the **/boot** partition. The
-procedure is just like above but pick **/boot** from the drop down, enter the
-appropriate size (1-2GB recommended) and click *Add mount point*
+A popup window will appear titled **ADD A NEW MOUNT POINT**. Select **/boot**
+from the drop down, enter the size you planned out earlier (minimum 1GB) and
+click *Add mount point* button.
 
 .. image:: boot_partition_1.png
    :scale: 85%
@@ -117,41 +99,64 @@ appropriate size (1-2GB recommended) and click *Add mount point*
 
 On the next screen, select **RAID** under **Device Type**, **RAID 1** under
 **RAID Level** (the default) and **ext4** under **File System**. Click
-*Update Settings* button (bottom left) to finalize **/boot** partition setup.
+*Update Settings* button (bottom right) to finalize the **/boot** partition
+setup.
 
 .. image:: boot_partition_2.png
    :scale: 85%
    :align: center
 
-Step 5: Setup **swap** partition
+Step 4: Setup **swap** partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Just like in **/boot** above, click on the **+** button and pick **swap** from
-the drop down. Leave the size field blank and all of the remaining space will be
-used. As we planned the sizes ahead of time, this will come out to be the same
-without having to enter the exact number.
-
-*Alternatively, if installing on larger media than our 8GB demo, one could
-create the /boot and swap partitions first (and specify the size for swap) and
-then use all the remaining space for / where it will likely be more useful.*
+Click on **+** button at the bottom left to add the **swap** partition. The
+procedure is just like above but pick **swap** from the drop down, enter the
+appropriate size (1.5-4GB recommended) and click *Add mount point*.
 
 .. image:: swap_partition_1.png
    :scale: 85%
    :align: center
 
-On the next screen, select **RAID** under **Device Type** and **RAID 1** under
-**RAID Level**. Click the *Update Settings* button to finalize the **swap**
-partition setup. We really don't need redundancy for the swap partition, and it
-also results in a performance overhead, but it does allow for hot swapping /
-replacement of a system raid drive if all partitions are setup that way.
+On the next screen, select **RAID** under **Device Type**, **RAID 1** under
+**RAID Level** (the default) and **swap** under **File System**. Click
+*Update Settings* button (bottom right) to finalize **swap** partition setup.
+
+.. image:: swap_partition_2.png
+   :scale: 85%
+   :align: center
+
+Redundancy on the swap partition may well introduce a performance overhead, but
+it does allow for hot replacement of a system raid drive if all partitions on
+the drive are setup with mdraid giving greater protection from drive faults.
 Otherwise it would be necessary to shut the machine down prior to removing
 or replacing a raid member drive. If live replacement is not a requirement or
 your hardware doesn't support hot swapping then you can keep the default
 **Standard Partitioning** selection. This will result in a single drives swap
 being used until full and then the second drives swap will be used there after.
-Assuming a swap is placed on each drive.
+Assuming a swap partition is placed on each drive. Note that this will not
+protect against drive failure as there will be no redundant mdraid device under
+the swap device.
 
-.. image:: swap_partition_2.png
+Step 5: Setup **/** partition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Just like in **/boot** above, click on the **+** button and pick **/** from
+the drop down. Leave the size field blank and all of the remaining space will be
+used. As we planned the sizes ahead of time, this will come out to be at least
+the minimum size given our install devices of 8 GB minus the /boot and root
+partitions. If we are using a larger than minimum system drive then any
+remaining space will result in a larger root partition which is where the space
+will be most useful anyway.
+
+.. image:: root_partition_1.png
+   :scale: 85%
+   :align: center
+
+On the next screen, select **RAID** under **Device Type** and **RAID 1** under
+**RAID Level**. Click the *Update Settings* button to finalize the **/**
+partition setup.
+
+.. image:: root_partition_2.png
    :scale: 85%
    :align: center
 
@@ -160,11 +165,18 @@ Step 6: Accept Changes and proceed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Click **DONE** at the top left of the screen and then click on **Accept
-Changes** to finalize the manual partition scheme.
+Changes** to finalize the manual partition scheme. N.B. due to edits in this
+document the *Destroy Format* entries are not reflective of the removed
+partitions indicated earlier. Depending on your existing partitions if any
+these entries will vary.
 
 .. image:: accept_changes.png
    :scale: 85%
    :align: center
+
+Note also in the above how the installer is about to create new partition
+tables on both devices and the associated partitions and the mdraid device
+counterparts for each of the /boot, swap, and / mount points.
 
 The installer will then display the **INSTALLATION SUMMARY** screen. Click on
 *Begin Installation* button at the bottom right to start the install. In this
@@ -197,7 +209,7 @@ do that simply with the following command ::
 
 The three md* devices correspond to the mirror configuration we setup earlier
 during the install. Note that each partition is mirrored (raid1) where the
-counter parts of the mirror are from different drives (**sda** and **sdb** in
+counterparts of the mirror are from different drives (**sda** and **sdb** in
 our example). We can also verify that **/** and **/boot** are mounted and are
 the right size with the following command ::
 
