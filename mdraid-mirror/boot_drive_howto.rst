@@ -7,9 +7,8 @@ This howto represents an advanced install scenario and should not be required
 for regular Rockstor use; but is provided as a guide on how to accomplish the
 specific install arrangement of a redundant system disk install using the more
 established technology of mdraid, the Linux software raid subsystem. Regular
-install requirements are met by the default install process covered in
-:ref:`quickstartguide` as this howto is specifically for an mdraid system disk
-install.
+install requirements are met by the default install process covered in our
+:ref:`quickstartguide`.
 
 Rockstor uses `Anaconda <https://en.wikipedia.org/wiki/Anaconda_(installer)>`_,
 the CentOS default installer. Although there are many
@@ -24,9 +23,10 @@ system disk/disks.
 
 That is the context of this howto and in part explains it's multi step
 requirement / complexity but if all steps are followed in order then a working
-system should result. That system however will require expert administration in
-the event of a system drive failure. This install is only suitable for Rockstor
-versions 3.8-12 and newer.
+system should result. Note though that the resulting system will require expert
+administration in the event of a system drive failure.
+
+This install is only suitable for Rockstor versions 3.8-12 and newer.
 
 .. _mdraidos_why:
 
@@ -46,7 +46,7 @@ many more additional steps from a default, non mdraid, install. If you
 have never installed Rockstor before, we recommend you read our
 :ref:`quickstartguide` guide and watch `this install video
 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_ before proceeding with this
-howto as the default, kickstarter based install method is recommended for most
+howto as the default kickstarter based install method is recommended for most
 users.
 
 .. _mdraidos_requirements:
@@ -55,18 +55,18 @@ Requirements
 ------------
 
 You need two HDDs to setup the mirror. We recommend HDDs of the same size and
-brand for uniformity. The drives can be as small as 8GB but in practice they
+brand for uniformity. The drives can be as small as 8 GB but in practice they
 are usually 100+ GB. In this howto we demonstrate with a pair of 8GB virtual
 drives using VirtualBox and then VMM for the later sections to help distinguish
 the sections of the install.
 
-We will create a mirrored setup for each of **/boot**, **/** and **swap**
+We will create a mirrored setup for each of the **/boot**, **/** and **swap**
 partitions. You should plan the sizing of each partition before proceeding
 further. **/boot** can be as little as 1-2 GB and will store Kernels. **swap**
-can be 1.5-4 GB or equal to the RAM in the system. **/** will store most of
-the OS bits and should be at least 5.5GB, more the better. For demonstration
+can be 1.5-4 GB (no greater than 1.5 times system RAM). **/** will store most of
+the OS bits and should be at least 5.5 GB, but more is better. For demonstration
 purposes in this howto, our **/boot** will be **1 GB**, our **swap** will be
-**1.5 GB**, and our **root** will be all of the remainder ie **5.5 GB**
+**1.5 GB**, and our **/** will be all of the remainder ie **5.5 GB**
 
 It is recommended not to have /boot and swap the same size as then it can be
 more difficult to tell them apart in a disaster recovery scenario.
@@ -76,20 +76,20 @@ more difficult to tell them apart in a disaster recovery scenario.
 Overview of mdraid install
 --------------------------
 
-Due to the reasons outline above this install is unusual in that it requires
+Due to the reasons outlined earlier this install is unusual in that it requires
 Rockstor be installed in effect twice. Once to setup mdraid and a second time
-to setup btrfs on top of the first installs mdraid setup. We have also to use
+to setup btrfs on top of the first installs mdraid setup. We also have to use
 the recovery system between these 2 installs in order that our btrfs / device be
 established ie:-
 
-* Steps 1 - 6 Regular hand partitioned mdraid install with ext4 as the root fs.
+* Steps 1 - 6 Regular custom partitioned mdraid install with ext4 as the root fs
 * steps 7 - 8 Use Rescue mode to format our largest mdraid device as btrfs
-* Steps 9 - * Install for the final time using the btrfs on mdraid filesystem.
+* Steps 9 - 14 Install for the final time using our btrfs on mdraid for root
 
 Although this seems like a round about way to install it is currently the
-simplest way without found without using a custom installer and only requires
-three command line interventions, helping to keep the process accessible to
-most users.
+simplest way found without using a custom installer and only requires
+three command line interventions which helps to keep the process accessible to
+most users while leaving it as open as possible to further customizations.
 
 
 Step 1: Device Selection
@@ -105,8 +105,8 @@ selection screen.
 
 On the next screen, the two HDDs we are about to mirror should be
 visible. Click to select them so that both are ticked. In the bottom half of
-the screen, select *I will configure partitioning* radio button. Finally click
-**DONE** at the top.
+the screen, select the *I will configure partitioning* radio button. Finally
+click **DONE** at the top left.
 
 .. image:: device_selection.png
    :scale: 85%
@@ -126,7 +126,7 @@ existing partitioning is titled **UNKNOWN**
    :align: center
 
 Click on the **-** button at the bottom to delete these partitions. Repeat this
-process until all of them are deleted.
+process until all of them are deleted, ot tick the dialog option to do the same.
 
 .. image:: manual_partitioning_2.png
    :scale: 85%
@@ -162,7 +162,7 @@ setup.
 Step 4: Setup **swap** partition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Click on **+** button at the bottom left to add the **swap** partition. The
+Click the **+** button at the bottom left to add the **swap** partition. The
 procedure is just like above but pick **swap** from the drop down, enter the
 appropriate size (1.5-4GB recommended) and click *Add mount point*.
 
@@ -196,8 +196,8 @@ Step 5: Setup **/** partition
 Just like in **/boot** above, click on the **+** button and pick **/** from
 the drop down. Leave the size field blank and all of the remaining space will be
 used. As we planned the sizes ahead of time, this will come out to be at least
-the minimum size given our install devices of 8 GB minus the /boot and root
-partitions. If we are using a larger than minimum system drive then any
+the minimum size of 5.5 GB given our 8 GB system devices minus the /boot and /
+partitions. If we are using a larger than minimum system drive size then any
 remaining space will result in a larger root partition which is where the space
 will be most useful anyway.
 
@@ -220,7 +220,7 @@ Step 6: Accept Changes and proceed
 Click **DONE** at the top left of the screen and then click on **Accept
 Changes** to finalize the manual partition scheme. N.B. due to edits in this
 document the *Destroy Format* entries are not reflective of the removed
-partitions indicated earlier. Depending on your existing partitions if any
+partitions indicated earlier. Depending on your existing partitions, if any,
 these entries will vary.
 
 .. image:: accept_changes.png
@@ -241,17 +241,17 @@ refer to our :ref:`quickstartguide` guide.
    :scale: 85%
    :align: center
 
-Let the installer finish but be sure to **leave the installation medium in
-place** ie do not remove the installer USB / CDROM / DVD as we must next boot
-into the troubleshooting section of the installer.
+Let the installer finish but be sure to **leave the installation media in
+place** ie do not remove the installer USB / CDROM / DVD as we **must next boot
+into the troubleshooting section** of the installer.
 
 
 Step 7: Start the Troubleshooting shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If steps 1 to 6 were followed correctly we should now be rebooting into the
-installer once again. This is to use the Troubleshooting capabilities of the
-installer to reformat our ext4 root mdraid device to a btrfs one:-
+installer once again. This is to use the Troubleshooting shell of the installer
+to reformat our ext4 root mdraid device to a btrfs one:-
 
 This time on booting the installer select the **Troubleshooting** section:-
 
@@ -265,7 +265,7 @@ Then Select the **Rescue a Rockstor System** option:-
    :scale: 85%
    :align: center
 
-And at the following screen select **Skip** via the *Tab* and *Enter* keys.
+And at the following screen select **Skip** using the *Tab* and *Enter* keys.
 
 .. image:: rescue_skip.png
    :scale: 85%
@@ -307,8 +307,8 @@ Next we repeat our first install but this time we re-use the existing mdraid
 devices for /boot and swap and add our /home and /root subvolumes to the btrfs
 file system created in the previous step, ie labeled rockstor_rockstor.
 
-* make sure **both boot drives are ticked** as before
-* Use **I will configure partitioning** as before
+* Make sure **both boot drives are ticked** as before
+* Select **I will configure partitioning** as before
 
 .. image:: mdraid_second_disk_selection.png
    :scale: 85%
@@ -316,11 +316,15 @@ file system created in the previous step, ie labeled rockstor_rockstor.
 
 **Done** to proceed.
 
+N.B. If a mistake is made in any of the following steps you can use the
+**refresh** icon (lower left) in all of the following **MANUAL PARTITIONING**
+screens and after clicking **Rescan** on the resulting dialog you will be
+returned to this stage where you can simply reselect both drives and try again.
+
 Step 10: Reuse our **boot** mdraid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Select **btrfs** for the partitioning scheme (centre left)
-
 
 Expand the **Unknown** section and highlight ext4 boot ie the 1GB device and
 configure it as our mdraid boot:-
@@ -333,8 +337,8 @@ configure it as our mdraid boot:-
    :align: center
 
 Click the **Update Settings** to save the mount point and reformat changes and
-see the partition move from the **unknown** section to the **SYSTEM** section.
-This is visible in the next steps first image.
+see the partition move from the **Unknown** section to the **SYSTEM** section.
+This is visible in the next step's first image.
 
 Step 11: Reuse our **swap** mdraid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -408,10 +412,8 @@ and *Volume rockstor_rockstor*.
 So finally we have our btrfs on / with ext4 /boot and swap, each on their own
 mdraid device.
 
-N.B. if something is not right simply use the **refresh** icon and after
-clicking **Rescan** on the resulting dialog one can return to the stage in
-Step:9 above, ie selecting both drives and starting partitioning again.
-
+If something is not right remember the **refresh** icon explained in Step: 9
+above as this is the last opportunity for it's use.
 
 If all looks well then Click **Done** and proceed.
 
@@ -429,7 +431,7 @@ Remember that this time around we don't need to reboot into the installer
 again, ie on completion of the install we can change the bios to boot from one
 of the boot devices in our mdraid.
 
-Upon successful boot go through the usual process of point a browser at the
+Upon successful boot, go through the usual process of point a browser at the
 indicated ip (in the Rockstor console) and completing the configuration via
 the Web interface.
 
@@ -449,7 +451,7 @@ Verification of the mirror
 --------------------------
 
 It's a good idea to verify the setup once the installation is finished. You can
-do that simply with the following command ::
+do that simply with the following command: ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
