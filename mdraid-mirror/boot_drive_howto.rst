@@ -438,7 +438,8 @@ first boot of the installed system before the web interface becomes available.
 Also note that it may be necessary to press the carrage return on the initial
 console display to acquire the ip message, this is also caused by the extended
 delays as the system is busy syncing the mdraid in the background. This issue
-mainly affects slow hardware and / or large boot devices.
+mainly affects slow hardware and / or large boot devices. See our
+:ref:`mdraid_verify` section for how to read the mdraid's status.
 
 Upon successful first boot, go through the usual process of pointing a browser
 at the indicated ip (in the Rockstor console) and completing the configuration
@@ -455,6 +456,8 @@ And the resulting Storage - Disks page is as indicated:-
    :align: center
 
 For simplicity Rockstor ignores the swap and boot devices in this display.
+
+.. _mdraid_verify:
 
 Verification of the mirror
 --------------------------
