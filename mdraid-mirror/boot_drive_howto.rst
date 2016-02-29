@@ -73,14 +73,15 @@ more difficult to tell them apart in a disaster recovery scenario.
 
 .. _mdraidos_overview:
 
-Overview of mdraid install
---------------------------
+The mdraid install
+------------------
 
 Due to the reasons outlined earlier this install is unusual in that it requires
 Rockstor be installed in effect twice. Once to setup mdraid and a second time
 to setup btrfs on top of the first installs mdraid setup. We also have to use
-the recovery system between these 2 installs in order that our btrfs / device be
-established ie:-
+the recovery system between these 2 installs in order that our proposed root
+md device be formatted as btrfs. The following list summarizes the necessary
+steps.
 
 * Steps 1 - 6 Regular custom partitioned mdraid install with ext4 as the root fs
 * steps 7 - 8 Use Rescue mode to format our largest mdraid device as btrfs
@@ -92,7 +93,7 @@ three command line interventions which helps to keep the process accessible to
 most users while leaving it as open as possible to further customizations.
 
 
-Step 1: Device Selection
+Step 1: Device selection
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start the Rockstor installation process and you'll soon see the **INSTALLATION
@@ -251,15 +252,15 @@ Step 7: Start the Troubleshooting shell
 
 If steps 1 to 6 were followed correctly we should now be rebooting into the
 installer once again. This is to use the Troubleshooting shell of the installer
-to reformat our ext4 root mdraid device to a btrfs one:-
+to reformat our ext4 root mdraid device to a btrfs one:
 
-This time on booting the installer select the **Troubleshooting** section:-
+This time on booting the installer select the **Troubleshooting** section:
 
 .. image:: troubleshooting.png
    :scale: 85%
    :align: center
 
-Then Select the **Rescue a Rockstor System** option:-
+Then Select the **Rescue a Rockstor System** option:
 
 .. image:: rescue.png
    :scale: 85%
@@ -290,7 +291,7 @@ We can now use this shell system to reformat our largest mdraid device (ie root)
 
 Note that md### is the name for the largest md device displayed by mdstat.
 
-The following image shows the intended result of these commands:-
+The following image shows the intended result of these commands:
 
 .. image:: rescue_btrfs_root.png
    :scale: 85%
@@ -327,7 +328,7 @@ Step 10: Reuse our **boot** mdraid
 * Select **btrfs** for the partitioning scheme (centre left)
 
 Expand the **Unknown** section and highlight ext4 boot ie the 1GB device and
-configure it as our mdraid boot:-
+configure it as our mdraid boot:
 
 * Mount Point - **/boot**
 * File System - **ext4** and tick **Reformat**
@@ -343,7 +344,7 @@ This is visible in the next step's first image.
 Step 11: Reuse our **swap** mdraid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now highlight the **swap** entry in **Unknown** and configure the following:-
+Now highlight the **swap** entry in **Unknown** and configure the following:
 
 * tick **Reformat**
 
@@ -379,7 +380,7 @@ Step 13: Create our **home** subvolume
 Now that the rockstor_rockstor btrfs mdraid device has been used we no longer
 have an *Unknown* section but we can still create further subvolumes so to
 end up with the same as a regular Rockstor default install we create a **home**
-subvolume by again clicking on the **+** icon:-
+subvolume by again clicking on the **+** icon:
 
 * Mount point **/home**
 * Desired Capacity **leave blank** as quotas will define the size limit.
@@ -399,7 +400,7 @@ Step 14: Confirmation before final install
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If all has gone as planned we should have something along the lines of the
-following:-
+following:
 
 .. image:: md_final_partitions.png
    :scale: 85%
@@ -431,7 +432,7 @@ Remember that this time around we don't need to reboot into the installer
 again, ie on completion of the install we can change the bios to boot from one
 of the boot devices in our mdraid.
 
-Upon successful boot, go through the usual process of point a browser at the
+Upon successful boot, go through the usual process of pointing a browser at the
 indicated ip (in the Rockstor console) and completing the configuration via
 the Web interface.
 
@@ -559,7 +560,7 @@ partition table looks as follows ::
   /dev/sda4 : start=        0, size=        0, Id= 0
 
 We can copy the partition table of **sda** to **sdb** with the following
-composite command ::
+composite command: ::
 
   # sfdisk -d /dev/sda > /tmp/sda.pt; sfdisk /dev/sdb < /tmp/sda.pt; rm -f /tmp/sda.pt
   Checking that no-one is using this disk right now ...
