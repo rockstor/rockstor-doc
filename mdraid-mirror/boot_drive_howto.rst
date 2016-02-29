@@ -459,12 +459,12 @@ do that simply with the following command: ::
         976832 blocks super 1.0 [2/2] [UU]
         bitmap: 0/1 pages [0KB], 65536KB chunk
 
-  md126 : active raid1 sda1[0] sdb1[1]
-        5859328 blocks super 1.2 [2/2] [UU]
-        bitmap: 1/1 pages [4KB], 65536KB chunk
+  md126 : active raid1 sdb1[1] sda1[0]
+        1464320 blocks super 1.2 [2/2] [UU]
 
-  md127 : active raid1 sda3[0] sdb3[1]
-        1546240 blocks super 1.2 [2/2] [UU]
+  md127 : active raid1 sdb3[1] sda3[0]
+        5941248 blocks super 1.2 [2/2] [UU]
+        bitmap: 0/1 pages [0KB], 65536KB chunk
 
 Note that the actual block values will vary for different partition sizes.
 
@@ -472,24 +472,32 @@ The three md* devices correspond to the mirror configuration we setup earlier
 during the install. Note that each partition is mirrored (raid1) where the
 counterparts of the mirror are from different drives (**sda** and **sdb** in
 our example). We can also verify that **/** and **/boot** are mounted and are
-the right size with the following command ::
+the right size with the following command: ::
 
   # df -h | grep md
-  /dev/md126      5.4G  1.4G  3.8G  28% /
-  /dev/md125      923M  100M  761M  12% /boot
+  /dev/md127      5.7G  1.5G  3.8G  29% /
+  /dev/md127      5.7G  1.5G  3.8G  29% /home
+  /dev/md125      923M  121M  739M  15% /boot
+  /dev/md127      5.7G  1.5G  3.8G  29% /mnt2/rockstor_rockstor
+
 
 The specific md* device names may vary from install to install, this is why it
-is a nice idea to have no 2 md devices of equal size ie /boot 1G and swap 1.5G
-as it can make discerning a partitions function easier in a crash recovery
-scenario.
+is a nice idea to have no two md devices of equal size ie /boot 1G and swap 1.5G
+as it can make discerning a partitions function easier.
+
+The following command shows our swap device: ::
+
+  cat /proc/swaps
+  Filename           Type        Size     Used  Priority
+  /dev/md126         partition   1464316  0	    -1
 
 Note that the installer will by default continue this raid building / resync
 process on first boot which may reduce the systems performance. If you are
 experiencing slow response times on the first boot after install check the raid
-status using the above cat command. On slow hardware it may be advisable to
-wait until all the md devices have completed their resync. This could take
-anywhere from minutes to hours, but an estimated time left is given for each md
-device listed.
+status using the above **cat /proc/mdstat** command. On slow hardware it may be
+advisable to wait until all the md devices have completed their resync. This
+could take anywhere from minutes to hours, but an estimated time left is given
+for each md device listed.
 
 Disaster Recovery
 -----------------
@@ -506,7 +514,7 @@ If your hardware supports hot swapping HDDs, and you chose RAID1 for all your
 partitions, then you can pull out the failing drive and leave the system
 running while you replace it with a new HDD. After removing the failing drive,
 the System continues to run normally, but the mirror is no longer redundant
-as shown in the below output (note sdb parts are missing) ::
+as shown in the below output (note sdb parts are missing): ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -520,6 +528,9 @@ as shown in the below output (note sdb parts are missing) ::
 
   md127 : active raid1 sda3[0]
         1546240 blocks super 1.2 [2/1] [U_]
+
+Note that the above md names and sizes differ from our demo install above but
+serve as an example nevertheless.
 
 Step 2: Add a replacement HDD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -589,7 +600,7 @@ Step 4: Rebuild the mirror
 
 This is the final and crucial step. We'll resync the partitions of the
 replacement HDD with its working counterpart in the mirror. This can be done
-with the following composite command ::
+with the following composite command: ::
 
   # mdadm --manage /dev/md125 --add /dev/sdb2; mdadm --manage /dev/md126 --add /dev/sdb1; mdadm --manage /dev/md127 --add /dev/sdb3
   mdadm: added /dev/sdb2
@@ -598,22 +609,22 @@ with the following composite command ::
 
 After the above step, the mirror is re-synchronized. It will take some time
 proportional to your HDD size. You can monitor the progress and confirm the
-finish by looking at the contents of the **/proc/mdstat** file as shown here ::
+finish by looking at the contents of the **/proc/mdstat** file as shown here: ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
   md125 : active raid1 sdb2[2] sda2[0]
-	976832 blocks super 1.0 [2/2] [UU]
-	bitmap: 0/1 pages [0KB], 65536KB chunk
+        976832 blocks super 1.0 [2/2] [UU]
+        bitmap: 0/1 pages [0KB], 65536KB chunk
 
   md126 : active raid1 sdb1[2] sda1[0]
-	5859328 blocks super 1.2 [2/1] [U_]
-	[=============>.......]  recovery = 68.0% (3985280/5859328) finish=2.0min speed=15366K/sec
-	bitmap: 1/1 pages [4KB], 65536KB chunk
+        5859328 blocks super 1.2 [2/1] [U_]
+        [=============>.......]  recovery = 68.0% (3985280/5859328) finish=2.0min speed=15366K/sec
+        bitmap: 1/1 pages [4KB], 65536KB chunk
 
   md127 : active raid1 sdb3[2] sda3[0]
-	1546240 blocks super 1.2 [2/1] [U_]
-	  resync=DELAYED
+        1546240 blocks super 1.2 [2/1] [U_]
+        resync=DELAYED
 
   unused devices: <none>
 
@@ -621,20 +632,20 @@ Note the estimated time for completion on md126 above ie **finnish=2.0mins**
 
 The above output indicates that md125 and md127 have finished their recovery
 (re-sync), but md126 is at 68%. It is completed after a short while as shown
-again here. ::
+again here: ::
 
   # cat /proc/mdstat
   Personalities : [raid1]
   md125 : active raid1 sdb2[2] sda2[0]
-	976832 blocks super 1.0 [2/2] [UU]
-	bitmap: 0/1 pages [0KB], 65536KB chunk
+        976832 blocks super 1.0 [2/2] [UU]
+        bitmap: 0/1 pages [0KB], 65536KB chunk
 
   md126 : active raid1 sdb1[2] sda1[0]
-	5859328 blocks super 1.2 [2/2] [UU]
-	bitmap: 0/1 pages [0KB], 65536KB chunk
+        5859328 blocks super 1.2 [2/2] [UU]
+        bitmap: 0/1 pages [0KB], 65536KB chunk
 
   md127 : active raid1 sdb3[2] sda3[0]
-	1546240 blocks super 1.2 [2/2] [UU]
+        1546240 blocks super 1.2 [2/2] [UU]
 
   unused devices: <none>
 
