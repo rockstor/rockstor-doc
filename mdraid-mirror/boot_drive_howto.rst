@@ -430,11 +430,19 @@ the creation of the home and root00 subvolumes.
 
 Remember that this time around we don't need to reboot into the installer
 again, ie on completion of the install we can change the bios to boot from one
-of the boot devices in our mdraid.
+of the devices in our mdraid system array.
 
-Upon successful boot, go through the usual process of pointing a browser at the
-indicated ip (in the Rockstor console) and completing the configuration via
-the Web interface.
+N.B. If the mdraid array did not complete it's initial sync phase by the end of
+the final install then expect extended delays of up to a few minutes on the
+first boot of the installed system before the web interface becomes available.
+Also note that it may be necessary to press the carrage return on the initial
+console display to acquire the ip message, this is also caused by the extended
+delays as the system is busy syncing the mdraid in the background. This issue
+mainly affects slow hardware and / or large boot devices.
+
+Upon successful first boot, go through the usual process of pointing a browser
+at the indicated ip (in the Rockstor console) and completing the configuration
+via the Web interface.
 
 .. image:: first_boot_config.png
    :scale: 85%
