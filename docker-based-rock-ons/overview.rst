@@ -87,7 +87,7 @@ as the repository for :ref:`rockons_available`. Please consider donating,
 or asking your favourite project to donate, a rock-on via a GitHub pull request
 to this repository. Note that it is also possible to add to the available
 Rock-ons by placing a suitably configured and named json file in the
-/opt/rockstor/rockons-metastor directory of your Rockstor install. Some
+/opt/rockstor/rockons-metastore directory of your Rockstor install. Some
 projects prefer to host their own Rock-on plugins and this feature enables the
 use of other projects official Rock-ons. An example of a project that takes
 advantage of this feature is `Emby <https://emby.media>`_ with their official
