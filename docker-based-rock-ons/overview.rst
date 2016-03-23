@@ -87,19 +87,49 @@ as the repository for :ref:`rockons_available`. Please consider donating,
 or asking your favourite project to donate, a rock-on via a GitHub pull request
 to this repository. Note that it is also possible to add to the available
 Rock-ons by placing a suitably configured and named json file in the
-/opt/rockstor/rockons-metastore directory of your Rockstor install. Some
-projects prefer to host their own Rock-on plugins and this feature enables the
-use of other projects official Rock-ons. An example of a project that takes
+*/opt/rockstor/rockons-metastore* directory of your Rockstor install. For full
+instructions and examples please see the rockon-registry
+`README.md <https://github.com/rockstor/rockon-registry/blob/master/README.md>`_.
+Some projects prefer to host their own Rock-on plugins and this feature enables
+the use of other projects official Rock-ons. An example of a project that takes
 advantage of this feature is `Emby <https://emby.media>`_ with their official
 `Rock-on <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
-definition file for the Emby server component.
+definition file for the Emby server component. However this same Emby Rock-on
+has now been added to the official Rockstor Rock-on registry.
 
 .. _rockons_available:
 
 Rock-ons Available by default
 -----------------------------
 
-Please see the following for specific Rock-on install details
+As this list is continually growing the best place to view the currently
+included by default Rock-ons is at the
+`rockon-registry <https://github.com/rockstor/rockon-registry>`_ or on the
+Rock-ons page *All* tab within the Rockstor WebUI directly after pressing the
+**Update** button.
+
+.. _rockons_without_writeups:
+
+Rock-ons without write-ups
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Although the following Rock-ons are currently without specific install
+instructions they are like all Rock-on installs, fairly self explanatory.
+
+* `CouchPotato <https://hub.docker.com/r/linuxserver/couchpotato/>`_ Downloader for usenet and bittorrent users
+* `EmbyServer <https://emby.media/>`_ Emby media server
+* `NZBGet <http://nzbget.net/>`_ The most efficient usenet downloader
+* `sabnzb <https://hub.docker.com/r/linuxserver/sabnzbd/>`_ The best usenet downloader
+* `Sonarr <https://hub.docker.com/r/linuxserver/sonarr/>`_ (formerly NZBdrone) A PVR for usenet and bittorrent users
+
+
+.. _rockons_with_writeups:
+
+Rock-ons with write-ups
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Please see the following sections for some specific Rock-on install details.
+Note that not all Rock-ons have their own specific instructions in these docs.
 
 .. toctree::
    :maxdepth: 2
