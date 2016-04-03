@@ -20,7 +20,7 @@ domestic media distribution system that acts
 both as a `DLNA <https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance>`_
 server and as its own more `flexible <https://plex.tv/features>`_ type of
 media server and client system.
-`plex client apps <https://plex.tv/downloads>`_ are available on nearly
+`Plex client apps <https://plex.tv/downloads>`_ are available on nearly
 every platform.  But in order to manage your media with the
 Plex system it is first necessary to have a
 **Plex Media Server**. This **Rock-on** is **exactly that**; and aims to make the install
@@ -49,11 +49,23 @@ Installing Plex Rock-on
 First please consider the pre-requisites for any Rockstor Rock-on; these
 are linked to at the :ref:`top <plex_rockon>` of this document. Note also
 that the Plex Rock-on will require a Share for your media and optionally
-(but recommended) another Share on which you store its configurations files.
-This makes a total of 3 shares, one for the Rock-on system itself ie
-:ref:`rockons_root` that may well already have been made and an additional 1 or 2
-shares depending on whether you wish to split your Plex config from its data;
-this is highly recommended though.
+(but recommended) another two more Shares, one to store its configuration files
+and one used internally as a temporary working during transcoding.
+This makes a total of 4 shares, one for the Rock-on system itself ie
+:ref:`rockons_root` that may well already have been made and an additional 1 to
+3 shares depending on whether you wish to split your Plex config, data, and
+transcoding working area. It is highly recommended that all 3 Plex Rock-on
+shares be created as their use and size varies greatly and will help to simplify
+upgrades and maintenance in the future; as well as helping to open up further
+possibilities for performance tuning, ie ssd for transcoding Share and varying
+scrub or de-fragmentation task schedules.
+
+It is also recommended that this Rock-on be run by a dedicated user and that the
+above shares be owned by that user. The following :ref:`plex_shares` section
+and the later :ref:`plex_uidgidver` section detail the relevant aspects. If you
+do not already have a *non-admin non-root* user under which you would like to
+run Plex then please first create a **plex** user, see our :ref:`users` section
+for instructions.
 
 .. image:: plex_install.png
    :scale: 80%
@@ -66,34 +78,94 @@ Click the **Install** button next to the Plex listing on the Rock-ons page.
 Plex Shares
 ^^^^^^^^^^^
 
-Next we select the **Storage areas** for the Plex Rock-on's **data** and
-**configuration** files.  Here we are using the **recommended names**.
+Next we select the **Storage areas** for the Plex Rock-on's **data**,
+**configuration**, and **transcode** files. Note that the order of these items
+may vary.
 
-* **plex-data** - room enough for your data and snapshots.
-* **plex-config** - min 1 GB
+Please note that it is best practice to have all these shares owned by a
+non-admin non-root user ie *plex*.
+
+* **Config Storage** - minimum 20 GB
+* **Data Storage** - room enough for your data and snapshots - minimum 100GB
+* **Transcode Storage** - minimum 10 GB
 
 If you find that these values are insufficient then please discus this on the
 `Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
 so that this document might be updated and improved.
 
+In the following image we are using the **recommended names** for all the
+pre-configured shares, the suggested names are provided by the mouse over
+*i* icons.
+
 .. image:: plex_shares.png
    :scale: 80%
    :align: center
 
-N.B. to create these Storage areas please see our :ref:`createshare`.
+N.B. to create these Shares or 'Storage areas' please see our
+:ref:`createshare`.
 
-.. _plex_port:
+The following image illustrates an example *Access Control* setting for the
+*plex-data* share; the *plex-config* and *plex-transcode* can be configured
+similarly.
 
-Plex Port
-^^^^^^^^^
-
-This is the **Default Port** and it is unlikely that you will have to alter it.
-
-.. image:: plex_port.png
+.. image:: plex_share_owner.png
    :scale: 80%
    :align: center
 
-This is the port you will use to access the :ref:`plex_ui`.
+Note that the plex user does not exist by default but can be created easily
+by following the :ref:`users` part of our documentation.
+**Please take a note of the created user's UID and GID** as they will be
+required in a later step.
+
+By visiting the **System - Users** page one can see the **UID** and **GID** of
+any user.
+
+.. image:: plex_user_info.png
+   :scale: 80%
+   :align: center
+
+In the above example we see our created **plex** user has UID and GID of 1001,
+if you have previously created any other users then your *plex* user may have a
+different UID and GID.
+
+.. _plex_port:
+
+Plex Ports
+^^^^^^^^^^
+
+These are the **Default Ports** and it is unlikely that you will have to alter
+them.
+
+* **DLNA port 1** & **DLNA port 2** - used by DLNA compatible equipment.
+* **WebUI port** - This is the port you will use to access the :ref:`plex_ui`.
+
+.. image:: plex_ports.png
+   :scale: 80%
+   :align: center
+
+In the above we see the default port numbers are automatically entered.
+
+.. _plex_uidgidver:
+
+Plex User, Group, and Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this section we select the **UID (User ID)** and the **GID (Group ID)** under
+which the Plex server will run. Note that these must be the same as the user who
+owns the shares configured in the :ref:`plex_shares` section above. We also get
+a chance to stipulate the version of Plex we want to use.
+
+* **VERSION** ie **latest** for latest version or **plexpass** for plexpass use.
+* **UID** User ID (number) to run Plex as.
+* **GID** Group ID (number) to run Plex as.
+
+Note the order of these options may change.
+
+.. image:: plex_uid_gid_version.png
+   :scale: 80%
+   :align: center
+
+The next screen is to confirm the details entered so far.
 
 .. image:: plex_verify.png
    :scale: 80%
@@ -115,8 +187,9 @@ and a few minutes later depending on internet and machine speed:-
    :scale: 80%
    :align: center
 
-N.B. Notice the **Plex UI** button and the **spanner** to view the Rock-on
-settings and add additional Rockstor Shares.
+N.B. Notice the **Plex UI** button to visit the installed Plex Web interface
+and the **spanner** icon to view the Rock-on settings and add additional
+Rockstor Shares.
 
 .. _plex_addshares:
 
