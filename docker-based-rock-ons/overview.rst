@@ -117,10 +117,16 @@ Although the following Rock-ons are currently without specific install
 instructions they are like all Rock-on installs, fairly self explanatory.
 
 * `CouchPotato <https://hub.docker.com/r/linuxserver/couchpotato/>`_ Downloader for usenet and bittorrent users
+* `Deluge <https://hub.docker.com/r/linuxserver/deluge/>`_ Deluge is a movie downloader for bittorrent users
 * `EmbyServer <https://emby.media/>`_ Emby media server
+* `GitLab CE <https://about.gitlab.com/>`_ Git repository hosting and collaboration
+* `Gogs <https://gogs.io/>`_ Go Git Service, a lightweight Git version control server and front end
+* `Logitech Squeezebox <http://mysqueezebox.com/index/Home>`_ Server for Squeezebox Devices
 * `NZBGet <http://nzbget.net/>`_ The most efficient usenet downloader
-* `sabnzb <https://hub.docker.com/r/linuxserver/sabnzbd/>`_ The best usenet downloader
+* `SaBnzbd <https://hub.docker.com/r/linuxserver/sabnzbd/>`_ The best usenet downloader
+* `Sickbeard <https://hub.docker.com/r/linuxserver/sickbeard/>`_ Internet PVR for your TV shows, by Linuxserver.io
 * `Sonarr <https://hub.docker.com/r/linuxserver/sonarr/>`_ (formerly NZBdrone) A PVR for usenet and bittorrent users
+* `Symform <http://www.symform.com/>`_ Symform backup service
 
 
 .. _rockons_with_writeups:
