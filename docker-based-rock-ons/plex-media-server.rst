@@ -47,7 +47,7 @@ in a certain way.
 Installing Plex Rock-on
 -----------------------
 First please consider the pre-requisites for any Rockstor Rock-on; these
-are linked to at the :ref:`top <syncthing_rockon>` of this document. Note also
+are linked to at the :ref:`top <plex_rockon>` of this document. Note also
 that the Plex Rock-on will require a Share for your media and optionally
 (but recommended) another Share on which you store its configurations files.
 This makes a total of 3 shares, one for the Rock-on system itself ie
