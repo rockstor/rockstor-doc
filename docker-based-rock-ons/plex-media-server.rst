@@ -232,11 +232,28 @@ As can be seen here there is an **Add Storage** button on the spanner dialog.
 
 Plex UI
 -------
-The **Default Plex UI** accessed via the **Plex UI** button on the
-Rock-ons page:-
+On first accessing the Plex UI via the **Plex UI** button on the Rock-ons page
+you should be greeted with a login screen, this enables the various remote and
+sync features co-ordinated by your Plex web account. If you do not already have
+one then you can create one from this page via the **Sign Up** link.
+
+Please see `Sign in to Your Plex Account
+<https://support.plex.tv/hc/en-us/articles/200878643-Sign-in-to-Your-Plex-Account>`_
+for details.
+
+.. image:: plex_first_screen.png
+   :scale: 80%
+   :align: center
+
+**Sign In** (with an existing Plex account) or **Sign Up** to remotely
+administer, sync, or share your various libraries, all co-ordinated via this
+Plex Web ID.
+
+The **Default Plex UI** once a plex account has been entered or created:-
 
 .. image:: plex_ui.png
    :scale: 80%
    :align: center
 
-You can now configure and populate your Plex Media Server Rock-on; :ref:`plex_doc`
+You can now configure and populate your Plex Media Server Rock-on;
+:ref:`plex_doc`
