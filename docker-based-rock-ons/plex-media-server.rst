@@ -78,16 +78,14 @@ Click the **Install** button next to the Plex listing on the Rock-ons page.
 Plex Shares
 ^^^^^^^^^^^
 
-Next we select the **Storage areas** for the Plex Rock-on's **data**,
-**configuration**, and **transcode** files. Note that the order of these items
-may vary.
+Next we select the **Storage areas** for the Plex Rock-on's **data** and
+**configuration** files. Note that the order of these items may vary.
 
 Please note that it is best practice to have all these shares owned by a
 non-admin non-root user ie *plex*.
 
 * **Config Storage** - minimum 20 GB
 * **Data Storage** - room enough for your data and snapshots - minimum 100GB
-* **Transcode Storage** - minimum 10 GB
 
 If you find that these values are insufficient then please discus this on the
 `Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
