@@ -192,13 +192,16 @@ Rockstor Shares.
 Adding Shares to Plex
 ---------------------
 This facility is only required if you wish to have the Plex Rock-on access more
-than one Rockstor Share.  It is not uncommon for all of a Plex Media Server's
-data to reside on a single Share.  N.B. the Shares are not the same as the
-Libraries within Plex, ie one can have multiple Plex libraries on a single
-Rockstor Share. Plex Libraries are configured from within the :ref:`plex_ui`
-and represent how the Plex Server organizes and shares your media. An example
-of requiring more than one Rockstor Share to be mapped into the Plex Rock-on
-is if you have all your Movies in one Share and all you Music in another Share.
+than one Rockstor Share.  However it is not uncommon for all of a Plex Media
+Server's data to reside on a single Share.  N.B. the Shares are not the same as
+the Libraries within Plex, ie one can have multiple Plex libraries on a single
+Rockstor Share by using different directories within that Share. Plex Libraries
+are configured from within the :ref:`plex_ui` and represent how the Plex Server
+organizes and shares your media. When configuring a Plex Library one can either
+choose and existing directory or choose to create a new one, all from within
+Plex itself. An example of requiring more than one Rockstor Share to
+be mapped into the Plex Rock-on is if you already have all your Movies in one
+Share and all you Music in another Share, or wish for this to be the case.
 
 From the information dialog **i icon** on the Plex Rock-on listing we get:-
 
