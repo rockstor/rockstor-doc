@@ -20,7 +20,7 @@ domestic media distribution system that acts
 both as a `DLNA <https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance>`_
 server and as its own more `flexible <https://plex.tv/features>`_ type of
 media server and client system.
-`plex client apps <https://plex.tv/downloads>`_ are available on nearly
+`Plex client apps <https://plex.tv/downloads>`_ are available on nearly
 every platform.  But in order to manage your media with the
 Plex system it is first necessary to have a
 **Plex Media Server**. This **Rock-on** is **exactly that**; and aims to make the install
@@ -47,13 +47,25 @@ in a certain way.
 Installing Plex Rock-on
 -----------------------
 First please consider the pre-requisites for any Rockstor Rock-on; these
-are linked to at the :ref:`top <syncthing_rockon>` of this document. Note also
+are linked to at the :ref:`top <plex_rockon>` of this document. Note also
 that the Plex Rock-on will require a Share for your media and optionally
-(but recommended) another Share on which you store its configurations files.
-This makes a total of 3 shares, one for the Rock-on system itself ie
-:ref:`rockons_root` that may well already have been made and an additional 1 or 2
-shares depending on whether you wish to split your Plex config from its data;
-this is highly recommended though.
+(but recommended) another two more Shares, one to store its configuration files
+and one used internally as a temporary working during transcoding.
+This makes a total of 4 shares, one for the Rock-on system itself ie
+:ref:`rockons_root` that may well already have been made and an additional 1 to
+3 shares depending on whether you wish to split your Plex config, data, and
+transcoding working area. It is highly recommended that all 3 Plex Rock-on
+shares be created as their use and size varies greatly and will help to simplify
+upgrades and maintenance in the future; as well as helping to open up further
+possibilities for performance tuning, ie ssd for transcoding Share and varying
+scrub or de-fragmentation task schedules.
+
+It is also recommended that this Rock-on be run by a dedicated user and that the
+above shares be owned by that user. The following :ref:`plex_shares` section
+and the later :ref:`plex_uidgidver` section detail the relevant aspects. If you
+do not already have a *non-admin non-root* user under which you would like to
+run Plex then please first create a **plex** user, see our :ref:`users` section
+for instructions.
 
 .. image:: plex_install.png
    :scale: 80%
@@ -67,20 +79,52 @@ Plex Shares
 ^^^^^^^^^^^
 
 Next we select the **Storage areas** for the Plex Rock-on's **data** and
-**configuration** files.  Here we are using the **recommended names**.
+**configuration** files. Note that the order of these items may vary.
 
-* **plex-data** - room enough for your data and snapshots.
-* **plex-config** - min 1 GB
+Please note that it is best practice to have all these shares owned by a
+non-admin non-root user ie *plex*.
+
+* **Config Storage** - minimum 20 GB
+* **Data Storage** - room enough for your data and snapshots - minimum 100GB
 
 If you find that these values are insufficient then please discus this on the
 `Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
 so that this document might be updated and improved.
 
+In the following image we are using the **recommended names** for all the
+pre-configured shares, the suggested names are provided by the mouse over
+*i* icons.
+
 .. image:: plex_shares.png
    :scale: 80%
    :align: center
 
-N.B. to create these Storage areas please see our :ref:`createshare`.
+N.B. to create these Shares or 'Storage areas' please see our
+:ref:`createshare`.
+
+The following image illustrates an example *Access Control* setting for the
+*plex-data* share; the *plex-config* and *plex-transcode* can be configured
+similarly.
+
+.. image:: plex_share_owner.png
+   :scale: 80%
+   :align: center
+
+Note that the plex user does not exist by default but can be created easily
+by following the :ref:`users` part of our documentation.
+**Please take a note of the created user's UID and GID** as they will be
+required in a later step.
+
+By visiting the **System - Users** page one can see the **UID** and **GID** of
+any user.
+
+.. image:: plex_user_info.png
+   :scale: 80%
+   :align: center
+
+In the above example we see our created **plex** user has UID and GID of 1001,
+if you have previously created any other users then your *plex* user may have a
+different UID and GID.
 
 .. _plex_port:
 
@@ -89,11 +133,35 @@ Plex Port
 
 This is the **Default Port** and it is unlikely that you will have to alter it.
 
+* **WebUI port** - This is the port you will use to access the :ref:`plex_ui`.
+
 .. image:: plex_port.png
    :scale: 80%
    :align: center
 
-This is the port you will use to access the :ref:`plex_ui`.
+In the above we see the default port number is automatically entered.
+
+.. _plex_uidgidver:
+
+Plex User, Group, and Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this section we select the **UID (User ID)** and the **GID (Group ID)** under
+which the Plex server will run. Note that these must be the same as the user who
+owns the shares configured in the :ref:`plex_shares` section above. We also get
+a chance to stipulate the version of Plex we want to use.
+
+* **VERSION** ie **latest** for latest version or a specific version if desired.
+* **UID** User ID (number) to run Plex as.
+* **GID** Group ID (number) to run Plex as.
+
+Note the order of these options may change.
+
+.. image:: plex_uid_gid_version.png
+   :scale: 80%
+   :align: center
+
+The next screen is to confirm the details entered so far.
 
 .. image:: plex_verify.png
    :scale: 80%
@@ -115,21 +183,25 @@ and a few minutes later depending on internet and machine speed:-
    :scale: 80%
    :align: center
 
-N.B. Notice the **Plex UI** button and the **spanner** to view the Rock-on
-settings and add additional Rockstor Shares.
+N.B. Notice the **Plex UI** button to visit the installed Plex Web interface
+and the **spanner** icon to view the Rock-on settings and add additional
+Rockstor Shares.
 
 .. _plex_addshares:
 
 Adding Shares to Plex
 ---------------------
 This facility is only required if you wish to have the Plex Rock-on access more
-than one Rockstor Share.  It is not uncommon for all of a Plex Media Server's
-data to reside on a single Share.  N.B. the Shares are not the same as the
-Libraries within Plex, ie one can have multiple Plex libraries on a single
-Rockstor Share. Plex Libraries are configured from within the :ref:`plex_ui`
-and represent how the Plex Server organizes and shares your media. An example
-of requiring more than one Rockstor Share to be mapped into the Plex Rock-on
-is if you have all your Movies in one Share and all you Music in another Share.
+than one Rockstor Share.  However it is not uncommon for all of a Plex Media
+Server's data to reside on a single Share.  N.B. the Shares are not the same as
+the Libraries within Plex, ie one can have multiple Plex libraries on a single
+Rockstor Share by using different directories within that Share. Plex Libraries
+are configured from within the :ref:`plex_ui` and represent how the Plex Server
+organizes and shares your media. When configuring a Plex Library one can either
+choose and existing directory or configure a non-existing one, all from within
+Plex itself. An example of requiring more than one Rockstor Share to
+be mapped into the Plex Rock-on is if you already have all your Movies in one
+Share and all you Music in another Share, or wish for this to be the case.
 
 From the information dialog **i icon** on the Plex Rock-on listing we get:-
 
@@ -159,11 +231,105 @@ As can be seen here there is an **Add Storage** button on the spanner dialog.
 
 Plex UI
 -------
-The **Default Plex UI** accessed via the **Plex UI** button on the
-Rock-ons page:-
+On first accessing the Plex UI via the **Plex UI** button on the Rock-ons page
+you should be greeted with a **Plex Terms of Service** screen:
 
-.. image:: plex_ui.png
+.. image:: plex_tos.png
    :scale: 80%
    :align: center
 
-You can now configure and populate your Plex Media Server Rock-on; :ref:`plex_doc`
+It is required that you *AGREE* in order to proceed with the server setup.
+
+Once you have agreed to the Plex Terms of Service you should be presented with
+the following screen which give you a chance to name this server. This defaults
+to the Rockstor's host name.
+
+.. image:: plex_server_setup.png
+   :scale: 80%
+   :align: center
+
+After setting the plex name we are given an option to add a library:
+
+.. image:: plex_ss_add_library.png
+   :scale: 80%
+   :align: center
+
+Selecting the type of media in this library is important as it defines how Plex
+will process and present the files found there in.
+
+* **Movies** These files will be treated as commercial films and will be subject to meta data lookups.
+* **TV Shows** Same as movies with regard to lookups but are expected to be multi part.
+* **Music** Again these files have meta data lookup executed as well as local analysis (linux only).
+* **Photos** Treated as not having publicly available meta data.
+* **Home Videos** Again treated as not having meta data available on the internet so no lookups.
+
+.. image:: plex_ss_add_library_type.png
+   :scale: 80%
+   :align: center
+
+On selecting Movies we are presented with a default name **Movies** and a
+language option.
+
+.. image:: plex_ss_add_library_movies.png
+   :scale: 80%
+   :align: center
+
+Once the Name has been confirmed we have the option to setup our directory
+options. Plex Libraries can consist of multiple directories or folders as they
+reference them:
+
+.. image:: plex_ss_add_library_folders.png
+   :scale: 80%
+   :align: center
+
+From the previous summary screen or via the **Plex Settings** panel opened via
+the **spanner icon** we have that our *plex-data* share was mapped to the
+**data** directory. Which we now select as there is as yet no other sub
+directories created or other shares mapped within our Plex Rock-on.
+
+.. image:: plex_ss_add_library_data.png
+   :scale: 80%
+   :align: center
+
+In this case we have chosen to add **Movies** to the end of our selection
+
+.. image:: plex_ss_add_library_data_movies.png
+   :scale: 80%
+   :align: center
+
+More plex libraries of various types and their associated directories can be
+setup and when done we are presented with the following options:
+
+.. image:: plex_ss_outside_stream.png
+   :scale: 80%
+   :align: center
+
+As in this example our Library directories are empty, so is our Plex Dashboard.
+
+.. image:: plex_dashboard.png
+   :scale: 80%
+   :align: center
+
+If you wish to register this server with an existing Plex account, please see
+the settings - server section within the Plex WebUI. This will enables the
+various remote and sync features co-ordinated by the Plex backend service. The
+facilities available will vary according to your Plex web account status. If you
+do not already have a Plex account you can create one from within the PlexUI.
+
+Please see `Sign in to Your Plex Account
+<https://support.plex.tv/hc/en-us/articles/200878643-Sign-in-to-Your-Plex-Account>`_
+for details.
+
+**Sign In** (with an existing Plex account) or **Sign Up** to remotely
+administer, sync, or share your various libraries, all co-ordinated via this
+Plex Web ID.
+
+Remember that our **Movies** library is expecting a directory called **Movies**.
+Make sure to create this Directory when uploading your Movies. Simply Export the
+plex-data share by your chosen means in order to be able to upload directly into
+your Plex Media Server over your local lan from any machine. The :ref:`shares`
+section contains links to methods by which this can be accomplished. The most
+common and compatible of these being via the :ref:`samba` protocol.
+
+You can now configure and populate your Plex Media Server Rock-on;
+:ref:`plex_doc`
