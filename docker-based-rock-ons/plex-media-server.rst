@@ -198,7 +198,7 @@ the Libraries within Plex, ie one can have multiple Plex libraries on a single
 Rockstor Share by using different directories within that Share. Plex Libraries
 are configured from within the :ref:`plex_ui` and represent how the Plex Server
 organizes and shares your media. When configuring a Plex Library one can either
-choose and existing directory or choose to create a new one, all from within
+choose and existing directory or configure a non-existing one, all from within
 Plex itself. An example of requiring more than one Rockstor Share to
 be mapped into the Plex Rock-on is if you already have all your Movies in one
 Share and all you Music in another Share, or wish for this to be the case.
@@ -232,27 +232,104 @@ As can be seen here there is an **Add Storage** button on the spanner dialog.
 Plex UI
 -------
 On first accessing the Plex UI via the **Plex UI** button on the Rock-ons page
-you should be greeted with a login screen, this enables the various remote and
-sync features co-ordinated by your Plex web account. If you do not already have
-one then you can create one from this page via the **Sign Up** link.
+you should be greeted with a **Plex Terms of Service** screen:
+
+.. image:: plex_tos.png
+   :scale: 80%
+   :align: center
+
+It is required that you *AGREE* in order to proceed with the server setup.
+
+Once you have agreed to the Plex Terms of Service you should be presented with
+the following screen which give you a chance to name this server. This defaults
+to the Rockstor's host name.
+
+.. image:: plex_server_setup.png
+   :scale: 80%
+   :align: center
+
+After setting the plex name we are given an option to add a library:
+
+.. image:: plex_ss_add_library.png
+   :scale: 80%
+   :align: center
+
+Selecting the type of media in this library is important as it defines how Plex
+will process and present the files found there in.
+
+* **Movies** These files will be treated as commercial films and will be subject to meta data lookups.
+* **TV Shows** Same as movies with regard to lookups but are expected to be multi part.
+* **Music** Again these files have meta data lookup executed as well as local analysis (linux only).
+* **Photos** Treated as not having publicly available meta data.
+* **Home Videos** Again treated as not having meta data available on the internet so no lookups.
+
+.. image:: plex_ss_add_library_type.png
+   :scale: 80%
+   :align: center
+
+On selecting Movies we are presented with a default name **Movies** and a
+language option.
+
+.. image:: plex_ss_add_library_movies.png
+   :scale: 80%
+   :align: center
+
+Once the Name has been confirmed we have the option to setup our directory
+options. Plex Libraries can consist of multiple directories or folders as they
+reference them:
+
+.. image:: plex_ss_add_library_folders.png
+   :scale: 80%
+   :align: center
+
+From the previous summary screen or via the **Plex Settings** panel opened via
+the **spanner icon** we have that our *plex-data* share was mapped to the
+**data** directory. Which we now select as there is as yet no other sub
+directories created or other shares mapped within our Plex Rock-on.
+
+.. image:: plex_ss_add_library_data.png
+   :scale: 80%
+   :align: center
+
+In this case we have chosen to add **Movies** to the end of our selection
+
+.. image:: plex_ss_add_library_data_movies.png
+   :scale: 80%
+   :align: center
+
+More plex libraries of various types and their associated directories can be
+setup and when done we are presented with the following options:
+
+.. image:: plex_ss_outside_stream.png
+   :scale: 80%
+   :align: center
+
+As in this example our Library directories are empty, so is our Plex Dashboard.
+
+.. image:: plex_dashboard.png
+   :scale: 80%
+   :align: center
+
+If you wish to register this server with an existing Plex account, please see
+the settings - server section within the Plex WebUI. This will enables the
+various remote and sync features co-ordinated by the Plex backend service. The
+facilities available will vary according to your Plex web account status. If you
+do not already have a Plex account you can create one from within the PlexUI.
 
 Please see `Sign in to Your Plex Account
 <https://support.plex.tv/hc/en-us/articles/200878643-Sign-in-to-Your-Plex-Account>`_
 for details.
 
-.. image:: plex_first_screen.png
-   :scale: 80%
-   :align: center
-
 **Sign In** (with an existing Plex account) or **Sign Up** to remotely
 administer, sync, or share your various libraries, all co-ordinated via this
 Plex Web ID.
 
-The **Default Plex UI** once a plex account has been entered or created:-
-
-.. image:: plex_ui.png
-   :scale: 80%
-   :align: center
+Remember that our **Movies** library is expecting a directory called **Movies**.
+Make sure to create this Directory when uploading your Movies. Simply Export the
+plex-data share by your chosen means in order to be able to upload directly into
+your Plex Media Server over your local lan from any machine. The :ref:`shares`
+section contains links to methods by which this can be accomplished. The most
+common and compatible of these being via the :ref:`samba` protocol.
 
 You can now configure and populate your Plex Media Server Rock-on;
 :ref:`plex_doc`
