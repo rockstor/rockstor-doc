@@ -128,20 +128,18 @@ different UID and GID.
 
 .. _plex_port:
 
-Plex Ports
-^^^^^^^^^^
+Plex Port
+^^^^^^^^^
 
-These are the **Default Ports** and it is unlikely that you will have to alter
-them.
+This is the **Default Port** and it is unlikely that you will have to alter it.
 
-* **DLNA port 1** & **DLNA port 2** - used by DLNA compatible equipment.
 * **WebUI port** - This is the port you will use to access the :ref:`plex_ui`.
 
-.. image:: plex_ports.png
+.. image:: plex_port.png
    :scale: 80%
    :align: center
 
-In the above we see the default port numbers are automatically entered.
+In the above we see the default port number is automatically entered.
 
 .. _plex_uidgidver:
 
