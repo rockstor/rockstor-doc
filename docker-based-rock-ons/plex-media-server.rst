@@ -155,7 +155,7 @@ which the Plex server will run. Note that these must be the same as the user who
 owns the shares configured in the :ref:`plex_shares` section above. We also get
 a chance to stipulate the version of Plex we want to use.
 
-* **VERSION** ie **latest** for latest version or **plexpass** for plexpass use.
+* **VERSION** ie **latest** for latest version or a specific version if desired.
 * **UID** User ID (number) to run Plex as.
 * **GID** Group ID (number) to run Plex as.
 
