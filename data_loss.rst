@@ -205,20 +205,20 @@ If multiple drives fail simultaneously but two of them belong to the same raid1
 mirror, then the scenario becomes catastrophic similar to a raid0 pool. In such
 case, follow the recovery strategy described in :ref:`datalossraid0`
 
-.. _datalossraid5:
+.. _datalossraid56:
 
-Data loss Prevention and Recovery in RAID5 Pools
-------------------------------------------------
+Data loss Prevention and Recovery in RAID5/6 Pools 
+------------------------------------------------------------
 
-A raid5 pool in Rockstor requires at least 3 drives. Parity information is
-distributed among the drives so the pool stays functional even when a single
-drive fails.
+A raid5 or raid6 pool in Rockstor requires at least 3 or 4 drives, respectively. Parity 
+information is distributed among the drives so the pool stays functional even when 
+a single drive fails (raid5) or two drives fail (raid6).
 
-Currently, raid5 is experimental and we suggest that you don't create a pool
-with the minimum configuration of 3 drives. It's very error prone to replace a
-failed drive of a 3 drive raid5 pool.
+Currently, raid5/6 is experimental and we suggest that you don't create a pool
+with the minimum configuration of drives. It's very error prone to replace a
+failed drive of a 3/4 drive raid5/6 pool.
 
-If your raid5 pool has 4 or more drives and a single drive fails, you can
+If your raid5/6 pool has 4/5 or more drives and a single drive fails, you can
 follow these steps to replace it with a new drive and balance(rebuild) the
 pool.
 
@@ -227,78 +227,50 @@ pool.
    <div class="alert">
    <strong>Important!</strong> These steps only apply to raid5 pools with 4+
    drives or raid6 pools with 5+ drives
-   <br>
+   <br />
    These steps are tested, but we cannot guarantee the accuracy given the
-   current state of raid5/6 in BTRFS
+   current state of raid5/6 in BTRFS. There are known but unresolved bugs
+   which may make balances for a small number of users take an order of magnitude
+   longer than expected.
+   <br />
+   The BTRFS replace command is highly experimental, may take an extrodinarily long
+   amount of time to complete in the case of a missing drive, suffers from a cirtical memory leak
+   on kernel versions <4.7 and may fail in a way that destroys data on repeated usage. The
+   recommended method for replacing a device is adding a new device then deleting the missing device
+   as outlined in this section.
    </div>
 
 0. Suppose there is a raid5 pool called "mypool" with drives: sda, sdb, sdc,
-   sdd. Say, sdd failed.
+   sdd. ssd is failed.
 
-1. mount the pool if it's not already::
+1. Hotswap a new drive in place of the failed one if your hardware supports hotswapping. Otherwise
+   power down the machine, take the bad drive out, insert the new drive, and power it up.
 
-     # mount /dev/sda /mnt2/mypool
+2. Let's assume that the new drive also appears as sdd (it doesn't matter, but just for simplicity)
 
-2. if "btrfs fi show" command output doesn't list sdd, or if it says "some
-   devices missing", skip to step 5. Else, go to the next step
+3. Mount the pool in degraded mode::
 
-3. remove the drive from the pool::
+     # mount -o degraded /dev/sda /mnt2/mypool
 
-     # btrfs device delete /dev/sdd /mnt2/mypool
+4. If the pool will not mount, attempt to mount the pool by passing each working device
+   to the mount command (you must still specify /dev/sda again before the mount point)::
 
-4. Go to step 7
+     # mount -o degraded,device=/dev/sda,device=/dev/sdb,device=/dev/sdc /dev/sda /mnt2/mypool
 
-5. Remove the first "missing" drive which should be sdd::
-
-     # btrfs device delete missing /mnt2/mypool
-
-6. Now btrfs fi show output should neither show the missing drive nor show that
-   drives are missing. As if sdd was never part of this pool.
-
-7. Hotswap a new drive in place of the failed one if your hardware supports hotswapping
-
-9. Otherwise, power down the machine, take the bad drive out, insert the new
-   drive and power it up.
-
-10. Let's assume that the new drive also appears as sdd (it doesn't matter, but just for simplicity)
-
-11. Make sure the new drive is clean of any old data::
-
-      # wipefs -a /dev/sdd
-
-12. Make sure the pool is mounted, if not, mount it::
-
-      # mount /dev/sda /mnt2/mypool
-
-13. Add the new drive to the pool::
+5. Add the new drive to the pool::
 
       # btrfs device add /dev/sdd /mnt2/mypool
 
-14. balance the pool (could take a while)::
+6. If you get an error about an existing filesystem use -f to force it to be overwritten. This
+   will wipe ALL data from the new drive so double check your drive designations if you get this error::
 
-      # btrfs balance start /mnt2/mypool
+      # btrfs device add -f /dev/sdd /mnt2/mypool
+
+7. Remove the missing drive. This will trigger an automatic rebalance. When it is complete
+   your pool should be returned to the same state of parity is was in before the failure::
+
+      # btrfs device delete missing /mnt2/mypool
 
 If multiple drives fail simultaneously, then the scenrio becomes catastrophic
 similar to a raid0 pool. In such case, follow the recovery strategy described
 in :ref:`datalossraid0`
-
-.. _datalossraid6:
-
-Data loss Prevention and Recovery in RAID6 Pools
-------------------------------------------------
-
-A raid6 pool is very similar to raid5. Unlike raid5, two copies of parity
-information is distributed among the drives, so the pool will be functional
-even when two drives simultaneously fail.
-
-Like raid5, raid6 is also experimental and we suggest that you don't create a
-pool with minimum configuration of 4 drives, but instead with at least 5
-drives.
-
-If your raid5 has 5 or more drives and one of them fails, you can follow the
-same steps laid out in :ref:`datalossraid5` to replace it with a new drive
-and balance(rebuild) the pool.
-
-If more than two drives fail simultaneously, then the scenario becomes
-catastrophic similar to a raid0 pool. In such case, follow the recovery
-strategy described in :ref:`datalossraid0`
