@@ -325,7 +325,7 @@ returned to this stage where you can simply reselect both drives and try again.
 Step 10: Reuse our **boot** mdraid
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Select **btrfs** for the partitioning scheme (centre left)
+* **IMPORTANT** Select **btrfs** for the partitioning scheme (centre left)
 
 Expand the **Unknown** section and highlight ext4 boot ie the 1GB device and
 configure it as our mdraid boot:
