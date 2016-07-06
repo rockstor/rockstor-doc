@@ -179,12 +179,13 @@ can find a `VirtualBox Rockstor install demo
 :ref:`kvmsetup` in our documentation. It need not be a VM, but using a physical
 machine just for this purpose could be an overkill.
 
-Note that when you first create the build VM, rockstor rpm package will already
+Note that when you first create the build VM, Rockstor rpm package will already
 be installed. The package files are located in /opt/rockstor. Further more, the
-rockstor service should be running. We don't want that as it interferes with
+Rockstor service should be running. We don't want that as it interferes with
 our development activity. Further down in this document, there is a buildout
-step. When that is run the first time, the rpm package and it's effects are
-removed.
+step. When that is run for the first time, the rpm package and it's effects are
+removed. Please note that this will destroy the existing Rockstor install and
+it's associated database details / settings.
 
 Helpful terms
 -------------
