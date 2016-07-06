@@ -35,12 +35,10 @@ parameters. Here's a video showing this operation.
 Redundancy profiles
 ^^^^^^^^^^^^^^^^^^^
 
-
-
 All standard BTRFS redundancy profiles are available when creating a pool.
 
 * **Single**: This profile offers no redundancy, and is the only valid option
-  for creating a Pool with a single disk drive. It is also recommened if you
+  for creating a Pool with a single disk drive. It is also recommended if you
   have multiple disks of different sizes, yielding higher total capacity
   compared to **Raid0**. Data is neither mirrored nor striped, so if a disk
   fails, the entire data of the Pool will be lost.
@@ -56,20 +54,23 @@ All standard BTRFS redundancy profiles are available when creating a pool.
   a single disk failure.
 
 * **Raid5**: Two or more disks can be used with this profile, which supports
-  striping + parity. Like **Raid1**, this profile can sustain a single disk
-  failure. The BTRFS community consensus is that **Raid5** support is not yet
-  fully stable.
+  striping + parity. Like Raid1, this profile can sustain a single disk
+  failure. The BTRFS community consensus is that Raid5 support is not yet
+  fully stable and so is ***not recommended for production use***.
 
 * **Raid6**: Three or more disks can be used with this profile, which supports
-  striping + dual-parity. Because of dual-parity, a **Raid6** Pool can sustain
-  upto two disk failures at the same time.  The BTRFS community consensus is
-  that **Raid6** support is not yet fully stable.
+  striping + dual-parity. Because of dual-parity, a Raid6 Pool can sustain
+  up to two disk failures at the same time.  The BTRFS community consensus is
+  that Raid6 support is not yet fully stable and so is ***not recommended
+  for production use***.
 
 * **Raid10**: This is a Raid0 of Raid1 mirrors, with a minimum requirement of
   four disk drives. It offers most redundancy at the cost of capacity where a
-  Pool can sustain multiple disk failures at the same time as long as they part
-  of different Raid1 groups.
+  Pool can sustain multiple disk failures at the same time as long as the failed
+  disks are part of different Raid1 groups.
 
+Please see the `btrfs wiki <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_
+for up to date information on all btrfs matters.
 
 Compression Options
 ^^^^^^^^^^^^^^^^^^^
