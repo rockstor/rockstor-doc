@@ -135,7 +135,8 @@ How do I prevent data loss with Rockstor?
 This is a very important question and a lot of our work with Rockstor revolves
 around minimizing data loss. There are a few measures you can take to prevent
 dataloss and have disaster recovery strategy for different possibilities. See
-:ref:`dataloss`
+:ref:`dataloss`. Also note that the btrfs raid5/6 profiles are not currently
+recommended for production use.
 
 
 Does Rockstor provide Block or Object storage?
@@ -162,21 +163,23 @@ regularly and can be requested on the `Forum <http://forum.rockstor.com>`_.
 How do I backup to Rockstor using Apple Time Machine?
 -----------------------------------------------------
 
-See `Time Machine backups with Rockstor
-<http://rockstor.com/blog/uncategorized/time-machine-backups-with-rockstor/>`_
-for details.
+Please see our :ref:`afp` section which details how to set this up using
+Rockstor's build in :ref:`time_machine` compatible afp settings. Also of
+interest is the following more dated blog entry `Time Machine backups with Rockstor
+<http://rockstor.com/blog/uncategorized/time-machine-backups-with-rockstor/>`_.
 
 
 Do you have examples on how to build complete NAS solutions for different storage capacities?
 ---------------------------------------------------------------------------------------------
 
 Rockstor is hardware agnostic, so you can build a complete Linux, BTRFS powered
-NAS solution using Rockstor NAS OS and hardware of your choice. If you are a
+NAS solution using the Rockstor NAS OS and hardware of your choice. If you are a
 home-user/prosumer, read `8TB DIY NAS using Rockstor
-<http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas/>`_. For bigger
+<http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas/>`_. For a bigger
 storage footprint, read `240TB DIY NAS using Rockstor
 <http://rockstor.com/blog/diy-nas/rockstor-on-45-drives-aka-the-rockinator/>`_
-.
+. The only requirement is that the system be of a 64bit Intel or compatible
+architecture.
 
 
 I run a small organization with 10TB and growing data needs. How can Rockstor help me?
@@ -204,8 +207,8 @@ and we will get in touch with you. We do storage services and support
 and are happy to enable you to use Rockstor for your storage requirements.
 
 
-Is BTRFS filesystem reliable?
------------------------------
+Is the BTRFS filesystem reliable?
+---------------------------------
 
 BTRFS is a newer Linux filesystem and is under heavy development. Some
 commercial Linux distribution vendors are supporting it to various levels and
@@ -215,6 +218,13 @@ your risk. In our experience, BTRFS has become very reliable. Also, Rockstor
 confines users from using BTRFS more freely, thus reducing the chances of
 hitting deep intricate bugs. The fact that BTRFS bugs being reported lately are
 only triggered by very special scenarios is an encouraging sign.
+
+However a proviso here is that The BTRFS community consensus is that **raid5 and
+raid6** levels of btrfs support are not yet fully stable and so are ***not
+recommended for production use***. Please see the `btrfs wiki
+<https://btrfs.wiki.kernel.org/index.php/Main_Page>`_ for up to date
+information on all btrfs matters.
+
 
 
 Why does Rockstor support only BTRFS and not other Linux filesystems?

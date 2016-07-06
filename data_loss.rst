@@ -3,7 +3,7 @@
 Data loss Prevention and Recovery in Rockstor
 =============================================
 
-There is no single cause of data loss as failures in hardware, software and
+There is no single cause of data loss as failures in hardware, software, and
 user errors can trigger removal or corruption of storage data in different and
 sometimes complicated ways.
 
@@ -13,11 +13,12 @@ diffs between them which can be used to efficiently restore files in case of
 accidental loss.
 
 BTRFS is also a newer Linux filesystem and is under heavy development. As of
-this writing, a lot of functionality has become considerably stable. However,
-raid5/6 support is still experimental, more so than all other
-features. Overall, BTRFS is still considered experimental even though it's
-acceptance increased so much over last few years. In our own experience and in
-the context of Rockstor usecases, it has become quite reliable.
+this writing a lot of functionality has become objectively stable. However the
+raid5/6 support is still considered experimental and so is not recommended for
+production use. Overall BTRFS is still thought of as a young filesystem but it's
+acceptance has increasing much over the last few years. In our own experience
+and in the context of Rockstor usecases, it has become quite reliable; given
+the above raid5/6 proviso.
 
 We have servers with different types of pools and usecases here at Rockstor
 which are constantly put to test. We also rely on Rockstor and BTRFS
