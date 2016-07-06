@@ -118,6 +118,7 @@ out more about each option from the `btrfs wiki mount options section
 * **nospace_cache**
 * **space_cache**
 * **ssd**
+* **nossd**
 * **ssd_spread**
 * **thread_pool**
 
