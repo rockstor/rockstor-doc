@@ -99,8 +99,8 @@ fields:
 * **NUT Mode** - A drop down and in this case **standalone** is required
 * **NUT Driver** - Please see NUT's `Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
 * **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine eg - **/dev/ttyS0** for the first serial port - **/dev/ttyUSB0** for the first USB to serial port adapter - **auto** for many directly usb connected UPSs.
-* **NUT User** - N.B. this is not a system user but reserved solely for NUT use.
-* **NUT User Password** - A password for the above nut user.
+* **NUT User** - N.B. this is **NOT** a system user but reserved solely for internal NUT use; if you have no specific requirement here then just enter the suggestion of *monuser*.
+* **NUT User Password** - A password for the above nut specific user; if you are going with the default 'NUT User' of *monuser* in the last field then simply make up and enter a fresh and unique password here.
 
 ..  image:: nut_standalone_eg.png
     :scale: 80%
