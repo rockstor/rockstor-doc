@@ -93,6 +93,38 @@ only using the following command:-
 Note that there are 2 "-" characters next to each other before the "force"
 switch.
 
+
+Mac OS X
+~~~~~~~~
+
+For Mac OS X (tested on El Capitan). You can also use dd and the diskutil
+program to create the USB stick.
+
+Insert the USB stick and open a terminal window (Open LaunchPad and type terminal 
+and click on the icon). Determine the device name below, make sure you specify
+the USB stick and not your OS X disk.  If you are unsure which is which, don't
+go any further.
+
+    diskutil list
+
+Under the IDENTIFIER column, you should see a disk# (you may see a disk#s# but
+just note the disk# since we need to format the whole USB Stick). Unmount and burn
+the Rockstor ISO to the USB drive using the following commands, replacing disk# with
+your IDENTIFIER name (this will DESTROY all data on the USB drive).
+
+    diskutil unmountDisk /dev/disk#
+    sudo dd if=~/Downloads/Rockstor-3.8.14.iso of=/dev/rdisk# bs=1m
+
+Note the 'r' is placed in front of the disk# and 'bs=1m' is for blocksize.  There is
+no progress bar, you will return to the command prompt once the command finishes. Once
+that happens, eject the disk and you are done.
+
+    diskutil eject /dev/disk#
+
+
+Windows
+~~~~~~~
+
 There is also `dd for Windows <http://www.chrysocome.net/dd>`_ but this is
 untested, please see our :ref:`makeusbinstalldiskgui`.
 
