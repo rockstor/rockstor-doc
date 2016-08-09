@@ -148,4 +148,5 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    plex-media-server
    syncthing
    transmission-bittorrent
+   zoneminder
 
