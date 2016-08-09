@@ -160,16 +160,21 @@ have a red notification. This is to indicate that popups are blocked:
 **Select "Always allow pop-ups from ..."**. Assuming the address listed
 matches that shown in your url (address) bar.
 
-.. _zoneminder_init_config:
+.. _zoneminder_config:
 
-Post Install Initial Configuration
-----------------------------------
+Post Install Configuration
+--------------------------
 
 Given ZoneMinder is extremely versatile it is inevitable that it has a
 significant number of options. The default configuration may well server but it
-is advised that the following changes be made to improve the base capabilities.
+is advised that the following initial changes be made to improve the base
+capabilities.
 
-The suggested base changes are detailed within the **i icon** dialog.
+Initial Configuration
+^^^^^^^^^^^^^^^^^^^^^
+
+The suggested initial configuration changes are detailed within the **i icon**
+dialog.
 
 .. image:: zoneminder_info.png
    :scale: 80%
@@ -238,12 +243,16 @@ ZoneMinder Rock-on.
 To achieve this restart simply Turn the Zoneminder Rockon-on **OFF** then **ON**
 again on the Rock-ons page, each action should take around 10 seconds.
 
+.. _zoneminder_auth:
+
 Enabling Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The previously referenced `Getting Started <https://zoneminder.readthedocs.io/en/latest/userguide/gettingstarted.html>`_
 has this information as it's first section. Please follow the instructions there
 if you wish your ZoneMinder to be more secure.
+
+.. _zoneminder_theme:
 
 Nicer Theme
 ^^^^^^^^^^^
@@ -259,6 +268,7 @@ The initial ZoneMinder Web-UI page with the suggested **Flat** theme.
 
 Much nicer
 
+.. _zoneminder_timezone:
 
 Time-Zone Trickery
 ^^^^^^^^^^^^^^^^^^
@@ -289,9 +299,10 @@ guide.
 A ZoneMinder Rock-on restart is required for this new time zone setting to take
 effect.
 
+.. _zoneminder_camera:
 
 Adding a Camera
----------------
+^^^^^^^^^^^^^^^
 
 In ZoneMinder terminology each camera is a **Monitor**. Until at least one
 camera (monitor) is add there are parts of the Web-UI that are inaccessible as
@@ -303,5 +314,5 @@ and the
 `Adding Monitors <https://zoneminder.readthedocs.io/en/latest/userguide/gettingstarted.html#adding-monitors>`_
 sections.
 
-You are now ready to add as many cameras as your hardware allows and name their
+You are now free to add as many cameras as your hardware allows and name their
 respective **Monitors** to fit their location.
