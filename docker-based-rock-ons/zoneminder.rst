@@ -158,7 +158,8 @@ have a red notification. This is to indicate that popups are blocked:
    :align: center
 
 **Select "Always allow pop-ups from ..."**. Assuming the address listed
-matches that shown in your url (address) bar.
+matches that shown in your url (address) bar. See `Block or allow pop-ups
+in Chrome <https://support.google.com/chrome/answer/95472?co=GENIE.Platform%3DDesktop&hl=en-GB>`_
 
 .. _zoneminder_config:
 
