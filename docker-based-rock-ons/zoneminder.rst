@@ -250,8 +250,8 @@ Enabling Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The previously referenced `Getting Started <https://zoneminder.readthedocs.io/en/latest/userguide/gettingstarted.html>`_
-has this information as it's first section. Please follow the instructions there
-if you wish your ZoneMinder to be more secure.
+project documentation has this information as it's first section. Please follow
+the instructions there if you wish your ZoneMinder to be more secure.
 
 .. _zoneminder_theme:
 
@@ -277,8 +277,8 @@ Time-Zone Trickery
 Unfortunately there is no **time zone** setting in Zoneminder and as per the
 above 'Tips and Tricks' we have to change the contents of a file by hand.
 
-If the default of **America/New_York** is in appropriate then you will first
-need to lookup you required *PHP* recognized time zone name in the following
+If the default of **America/New_York** is inappropriate then you will first
+need to lookup the required *PHP* recognized time zone name on the following
 page: http://php.net/manual/en/timezones.php
 
 So for the example of **Europe/London** we can apply this change with the
@@ -290,7 +290,7 @@ following 3 commands, assuming you have a ssh client program installed
    exit
 
 Note that after the first command you will be required to enter the root user's
-password, setup during the initial install of Rockstor.
+password which was setup during the initial install of Rockstor.
 
 Also note that the backslash in the middle of your chosen timezone will have to
 be *escaped* by adding a \\ character as in the example. Also note that this
