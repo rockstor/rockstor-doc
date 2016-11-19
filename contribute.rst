@@ -355,3 +355,16 @@ When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the "pull request" button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
+
+Commit history cleanup
+----------------------
+
+As you work on an issue in your feature/issue branch, you may have committed
+multiple times. Please squash all these commits into one at the very end. This
+will keep the master branch's history clean and makes it easier to revert,
+search for a change or track a regression.
+
+Squashing commits into one is straight forward and most editors and IDEs with
+git support make it super easy to do so. If you've never done this before, this
+`short how-to <https://ariejan.net/2011/07/05/git-squash-your-latests-commits-into-one/>`_ is
+helpful.
