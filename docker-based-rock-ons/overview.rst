@@ -119,12 +119,19 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `CouchPotato <https://hub.docker.com/r/linuxserver/couchpotato/>`_ Downloader for usenet and bittorrent users
 * `Deluge <https://hub.docker.com/r/linuxserver/deluge/>`_ Deluge is a movie downloader for bittorrent users
 * `EmbyServer <https://emby.media/>`_ Emby media server
+* `Ghost <https://ghost.org/>`_ A publishing platform for professional bloggers
 * `GitLab CE <https://about.gitlab.com/>`_ Git repository hosting and collaboration
 * `Gogs <https://gogs.io/>`_ Go Git Service, a lightweight Git version control server and front end
+* `Headphones <https://hub.docker.com/r/linuxserver/headphones/>`_ Headphones is an automated music downloader for NZB and Torrent
 * `Logitech Squeezebox <http://mysqueezebox.com/index/Home>`_ Server for Squeezebox Devices
+* `MariaDB <https://hub.docker.com/r/linuxserver/mariadb/>`_ MariaDB, relational database management system
 * `NZBGet <http://nzbget.net/>`_ The most efficient usenet downloader
+* `OwnCloud-Official <https://owncloud.org/>`_ Secure file sharing and hosting
+* `Plexpy <https://hub.docker.com/r/linuxserver/plexpy/>`_ Plexpy Is a Python-based Plex Usage tracker
+* `Rocket.Chat <https://rocket.chat/>`_ Open Source Chat Platform
 * `SaBnzbd <https://hub.docker.com/r/linuxserver/sabnzbd/>`_ The best usenet downloader
 * `Sickbeard <https://hub.docker.com/r/linuxserver/sickbeard/>`_ Internet PVR for your TV shows, by Linuxserver.io
+* `Sickrage <https://hub.docker.com/r/linuxserver/sickrage/>`_ Automatic Video Library Manager for TV Shows, by Linuxserver.io
 * `Sonarr <https://hub.docker.com/r/linuxserver/sonarr/>`_ (formerly NZBdrone) A PVR for usenet and bittorrent users
 * `Symform <http://www.symform.com/>`_ Symform backup service
 
@@ -148,4 +155,5 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    plex-media-server
    syncthing
    transmission-bittorrent
+   zoneminder
 
