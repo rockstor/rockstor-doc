@@ -315,30 +315,31 @@ smart_manager. Depending on your issue you may need to add a Django model,
 delete one, or change fields of an existing model. After editing models you
 need to create a migration and apply it.
 
-We use `South <http://south.aeracode.org/>`_ to manage database migrations. Due
-to the fact that running south to generate migrations requires all dependencies
-installed, it is easier to generate the migration on your VM and copy the
-migration file back to your laptop and add it in git once you are satisfied.
+We used `South <http://south.aeracode.org/>`_ to manage database migrations for
+a while, but since updating to Django 1.8, migrations are natively
+supported. The steps have changed only slightly. Generate the migration on your
+VM and copy the migration file back to your laptop and add it in git once you
+are satisfied.
 
 For model changes in storageadmin application, create a migration file using
 ::
 
-        [root@build_vm ]# /path/to/build_dir/bin/django schemamigration storageadmin --auto
+        [root@build_vm ]# /path/to/build_dir/bin/django makemigrations storageadmin
 
 The above command generates a migration file in
 /path/to/build_dir/src/rockstor/storageadmin/migrations/ Apply the migration with::
 
-        [root@build_vm ]# /path/to/build_dir/bin/django migrate storageadmin --database=default
+        [root@build_vm ]# /path/to/build_dir/bin/django migrate storageadmin
 
 For model changes in the smart_manager application, create a migration file using
 ::
 
-        [root@build_vm ]# /path/to/build_dir/bin/django schemamigration smart_manager --auto
+        [root@build_vm ]# /path/to/build_dir/bin/django makemigrations smart_manager
 
 Run the migration with
 ::
 
-        [root@build_vm ]# /path/to/build_dir/bin/django migrate smart_manager --database=smart_manager
+        [root@build_vm ]# /path/to/build_dir/bin/django migrate --database=smart_manager smart_manager
 
 .. _shipchanges:
 
