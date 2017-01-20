@@ -211,15 +211,15 @@ case, follow the recovery strategy described in :ref:`datalossraid0`
 Data loss Prevention and Recovery in RAID5/6 Pools 
 ------------------------------------------------------------
 
-A raid5 or raid6 pool in Rockstor requires at least 3 or 4 drives, respectively. Parity 
+A raid5 or raid6 pool in Rockstor requires at least 2 or 3 drives, respectively. Parity 
 information is distributed among the drives so the pool stays functional even when 
 a single drive fails (raid5) or two drives fail (raid6).
 
 Currently, raid5/6 is experimental and we suggest that you don't create a pool
 with the minimum configuration of drives. It's very error prone to replace a
-failed drive of a 3/4 drive raid5/6 pool.
+failed drive of a 2/3 drive raid5/6 pool.
 
-If your raid5/6 pool has 4/5 or more drives and a single drive fails, you can
+If your raid5/6 pool has 2/3 or more drives and a single drive fails, you can
 follow these steps to replace it with a new drive and balance(rebuild) the
 pool.
 
@@ -242,7 +242,7 @@ pool.
    </div>
 
 0. Suppose there is a raid5 pool called "mypool" with drives: sda, sdb, sdc,
-   sdd. ssd is failed.
+   sdd. sdd is failed.
 
 1. Hotswap a new drive in place of the failed one if your hardware supports hotswapping. Otherwise
    power down the machine, take the bad drive out, insert the new drive, and power it up.
