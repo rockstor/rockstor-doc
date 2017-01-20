@@ -219,15 +219,15 @@ Currently, raid5/6 is experimental and we suggest that you don't create a pool
 with the minimum configuration of drives. It's very error prone to replace a
 failed drive of a 2/3 drive raid5/6 pool.
 
-If your raid5/6 pool has 2/3 or more drives and a single drive fails, you can
+If your raid5/6 pool has 3/4 or more drives and a single drive fails, you can
 follow these steps to replace it with a new drive and balance(rebuild) the
 pool.
 
 .. raw:: html
 
    <div class="alert">
-   <strong>Important!</strong> These steps only apply to raid5 pools with 4+
-   drives or raid6 pools with 5+ drives
+   <strong>Important!</strong> These steps only apply to raid5 pools with 3+
+   drives or raid6 pools with 4+ drives
    <br />
    These steps are tested, but we cannot guarantee the accuracy given the
    current state of raid5/6 in BTRFS. There are known but unresolved bugs
