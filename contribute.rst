@@ -369,3 +369,22 @@ Squashing commits into one is straight forward and most editors and IDEs with
 git support make it super easy to do so. If you've never done this before, this
 `short how-to <https://ariejan.net/2011/07/05/git-squash-your-latests-commits-into-one/>`_ is
 helpful.
+
+Contributing and testing from another Rockstor contributor fork
+---------------------------------------------------------------
+
+If you want to test and/or contribute starting from another user fork,
+you can add his/her fork (or single branch)
+
+Adding another user forked repo to your remotes::
+
+        [you@laptop rockstor-core]# git remote add other_user_name git@github.com:other_user_name/rockstor-core.git
+
+Fetching another user branch::
+
+        [you@laptop rockstor-core]# git fetch other_user_name remote_branch_name
+
+After fetching other contributor branch you can checkout it and start your coding or have
+a complete new branch starting from it. Github pull requests then can be directly to Rockstor repo or
+other user branches
+
