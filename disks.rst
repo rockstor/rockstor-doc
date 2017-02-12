@@ -63,55 +63,165 @@ is freshly updated.
 
 ..  _btrfsdisk:
 
-Existing whole disk BTRFS
+Import whole disk BTRFS
+-----------------------
+
+If after *Rescan* or after a Rockstor reinstall the system finds an
+**existing whole disk BTRFS filesystem** a small **down arrow icon** next to
+the drive name will be visible. This down arrow can be used to import the
+btrfs filesystem, assuming all prior pool members are attached.
+
+*The import icon:*
+
+.. image:: images/existing-btrfs-whole-disk-import-tooltip.png
+   :width: 100%
+   :align: center
+
+**import icon tooltip** *"Click to import data (pools, shares and snapshots)
+on this disk automatically. Multi-device support included."*
+
+ the exiting **whole disk btrfs** filesystem - see :ref:`reinstall_import_data` in our :ref:`reinstall` HowTo.
+
+*or configure / wipe*
+
+.. image:: images/existing-btrfs-whole-disk-config-tooltip.png
+   :width: 100%
+   :align: center
+
+**configure or wipe icon tooltip** *"Disk is unusable because it has an
+existing whole disk BTRFS filesystem on it. Click to configure or wipe."*
+
+    * **configure or wipe** and re-use as if new - see :ref:`wipedisk` below.
+
+
+..  _btrfspartition:
+
+Import BTRFS in partition
 -------------------------
 
-If after scanning or after a Rockstor reinstall the system finds an
-**existing whole disk BTRFS filesystem** a small **down arrow icon** next to
-the drive name will indicate this. This down arrow can be used to import the
-discovered btrfs filesystem. In this situation there are two
-options:
+Rockstor can also import btrfs pools that have partitioned members (*although
+whole disk is recommended as this is a simpler arrangement*). If at least
+one member is a whole disk btrfs (ie no partition table or partitions) then the
+above :ref:`btrfsdisk` method can be used on this whole disk member. But if
+all pool members are partitions then a 'redirect role' will be needed on one of
+the pool members.
 
-* **import** the exiting **whole disk btrfs** filesystem - see :ref:`reinstall_import_data` in our :ref:`reinstall` HowTo
+The following shows the tooltip guide for an as yet un-imported pre exiting
+single device BTRFS in partition:
 
-*or*
-
-* **wipe the disk** and re-use as if new - see :ref:`wipedisk` below
-
-
-..  _partitioneddisks:
-
-Partitioned disks
------------------
-
-Rockstor works only with whole disk drives that do not contain a partition table.
-If a disk has a partition table, it is suspected to have data and
-Rockstor doesn't allow it's usage until the partition table is explicitly
-wiped. Such disks are displayed with a little **gear icon** next to their
-name. Relevant help text is displayed upon mousing over this icon indicating
-the above restriction. See the next section :ref:`wipedisk` for the procedure.
-
-.. image:: images/partitioned_disk.png
-   :scale: 65 %
+.. image:: images/existing-btrfs-partition-import-tooltip.png
+   :width: 100%
    :align: center
+
+**configure or wipe tooltip** *"Disk is unusable as it contains partitions:
+one of which has an existing BTRFS filesystem on it. A User Assigned redirect
+role is required prior to import. Click to configure or wipe."*
+
+.. _diskredirectrole:
+
+Adding a Redirect Role
+----------------------
+
+Rockstor has an ability to work with existing partitioned devices, however the
+recommendation is to use whole disks. But where this is specifically not
+desired or is otherwise unavoidable then a simple mechanism is available to
+allow the use of a single partition per disk. This covers most use cases
+and is a design decision intended to keep configuration simple.
+
+If a disk has a partition table, it is suspected to have data and Rockstor
+doesn't allow it's usage until a single partition is chosen (via a Redirect
+Role) or the partition table is explicitly wiped (removing all partitions and
+their contained data from the entire disk).
+
+Prior to configuration, partitioned disks are displayed with a little
+**gear icon** next to their name:
+
+.. image:: images/partitioned-disk-pre-redirect-role.png
+   :width: 100%
+   :align: center
+
+**configure or wipe tooltip** *"Disk is unusable as it contains partitions
+and no User Assigned Role. Click to configure or wipe."*
+
+N.B. a variation of this 'cog icon' tooltip message is observed if any of the
+exiting partitions are found to be un-imported BTRFS members. See the above
+:ref:`btrfspartition` section for more details and an image showing this
+variation.
+
+In either case clicking on this icon opens the :ref:`diskroleconfig` screen:
+
+
+.. _diskroleconfig:
+
+Disk Role Configuration
+-----------------------
+
+Disk roles are not required and are not advised for general purpose disk use.
+They are intended as a way to label individual disks for specific use. Example
+of such uses are documented on the configuration page:
+
+Disk role configuration page:
+
+.. image:: images/config-drive-role-page.png
+   :width: 100%
+   :align: center
+
+**N.B.** Currently the only implemented role is the **Redirect role**, quoting
+from the configuration page:
+
+*"The Redirect role. This role is always required for any drive that is
+partitioned. Without it Rockstor cannot be sure which of the partitions on a
+drive you wish to use. It is required even if there is only one partition
+found. Without the addition of this role the only way a partitioned drive can
+be used is for it's entire contents to first be wiped, including any and all
+partitions and all date there in: resulting in the drive no longer being
+partitioned. The drive can then be used in the Rockstor default Whole Disk
+configuration: no partitions and no roles. The only time Rockstor will add
+the redirect role itself is when a user imports a multi device pool that has
+a btrfs in partition member. All other cases require the user to manually set
+the desired partition, including the initial btrfs import device; only
+additional devices within the imported pool will automatically have a
+redirect role set if required.*
+
+*N.B.Rockstor only supports the use of one partition (redirect role) per
+device. Although other partitions may exist they will be ignored.*
+
+*Please note that a drive's Redirect role will affect the action taken when it
+is wiped from within the Rockstor interface. If a valid redirect to an
+existing partition exists then the contents of that partition will be
+deleted. But if there is no redirect role then the entire drive and all it's
+partitions and associated data will be wiped. The command used internally to
+accomplish the wipe is "wipefs -a devname"."*
 
 ..  _wipedisk:
 
-Wiping a Partitioned Disk
--------------------------
+Wiping a Partition or Whole Disk
+--------------------------------
 
-Before a partitioned or previously used disk can be deployed it's partition
-table or existing whole disk filesystem needs to be wiped, as
-indicated by the help text above. Click on the **gear icon** and a popup confirmation
-dialog will be displayed. Upon confirmation, the entire disk will be wiped and
-ready for use as shown below.
+If not importing data from a pre-existing filesystem (whole disk or partition)
+it is recommended that it first be wiped. This will remove all data and
+filesystem indicators on the wiped device; or in the case of a whole disk wipe
+all partitions and the partition table as well.
 
-**Please note that whole disk btrfs filesystems can also be imported, see:**
-:ref:`btrfsdisk`
+**N.B. In the case of reusing a partition it is the users responsibility to
+ensure that the partition type is correct for the intended use. In the case
+of 'BTRFS in partition' this would be type ext2.**
 
-.. image:: images/disk_wipe_partition.png
-   :scale: 65 %
+All partition or whole disk wiping is accomplished from the
+:ref:`diskroleconfig` screen and only an **active** selection can be wiped.
+If a partition or whole disk entry is not active, first select it and
+**Submit** this selection, this will change the "active" selection. Note
+however that changing the "active" selection of a device can cause data loss
+so please consider this action carefully and read the configuration page
+warnings.
+
+.. image:: images/whole-disk-wipe.png
+   :width: 100%
    :align: center
+
+**Note the accompanying warning that appears once the erase icon tick is
+selected.**
+
 
 Broken or removed disks
 -----------------------
