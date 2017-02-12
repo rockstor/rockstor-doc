@@ -4,28 +4,43 @@ Disks
 =====
 
 Disks can be Hard Disk Drives(HDDs), Solid State Drives(SSDs), USB drives,
-virtual disks from the hypervisor etc.. depending on your setup. Rockstor
-supports whole disks, but not partitions.
+virtual disks from a hypervisor or open LUKS mount, or even sdcards. Rockstor
+supports and recommends whole disk btrfs (ie no partitions or partition table),
+but can also recognise and configure btrfs pool members in partitions; but
+this is not encourages. The recommendation to use whole disk btrfs pool members
+arises from the simplification afforded by removing the partition 'layer' all
+together. This way partition types, partition table types, sizes relative to
+whole disk etc are all made irrelevant as each disk is simply and wholly a pool
+member and only a pool member. I.e. Keep it Simple and Straightforward (KISS).
 
-Disk related operations such as S.M.A.R.T monitoring, data importing etc.. can
-be managed from the **Disks** screen listed under the **Storage** tab of the
-Web-UI. At a first glance, an overview of disks **currently or previously
-known** to the system are displayed.
+Disk related operations such as S.M.A.R.T monitoring, data importing etc. can
+be managed from the **Disks** page listed under the **Storage** tab of the
+Web-UI. This page is an overview of disks **currently or previously known** to
+the system and is essentially a table where each row is an entry for a single
+real or virtual drive. **Previously attached drives** that are no longer found
+to be attached are re-named to **detached-<random-string>**. Attached devices
+are named according to their boot to boot stable udev assigned by-id names (ie
+/dev/disk/**by-id** entries). All devices require and are tracked by their
+unique **serial number** which allows for consistent settings even when a disk
+is moved from one pool to another (via sequential pool resize operations).
 
 *Table links from left to right:-*
 
-* **Drive Name** - see that drive's **SMART data** / status
-* **Bulb Icon** - to flash the drive's activity light ie to **identify its location**
-* **Pool Name** - that pool's specific **details** page
-* **S.M.A.R.T** - enable or disable for each device
+* **Drive 'by-id' Name** - see drive's **SMART data** / status.
+* **Bulb Icon** - flash drive's activity light to **identify it's physical location**.
+* **Pool Name** - :ref:`pools` specific **details** page.
+* **Pause Drive** - immediate **spin down** (suspend mode).
+* **Hour glass** - configure **auto spin down timer** given no activity.
+* **S.M.A.R.T Pen Icon** - configure **custom smart options**.
+* **S.M.A.R.T Switch** - enable or disable for each device.
 
 *Buttons:-*
 
-* **Rescan** - the hardware for any supported drives, see :ref:`scandisks` below
-* **S.M.A.R.T** - system wide **custom configuration** (advanced)
+* **Rescan** - the hardware for any supported drives, see :ref:`scandisks` below.
+* **S.M.A.R.T** - system wide **custom configuration** (advanced).
 
 .. image:: images/disks_overview.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 The disks table can be sorted by individual columns by clicking the small
@@ -37,12 +52,14 @@ buttons.
 
 ..  _scandisks:
 
-Scan for new disks
-------------------
+Scan for Disk Changes
+---------------------
 
-Clicking the **Rescan** button starts a scan for any new disks added to the
-system since the last scan. This is particularly useful if a drive has been
-added to the system since Rockstor was power-on ie *hot plugged*.
+Clicking the **Rescan** button forces an update of the Disk table. This is
+particularly useful if a drive has been added or removed since Rockstor was
+power-on ie *hot plugged/unplugged*. It is recommended that this action be
+taken just prior to *removing detached devices* to ensure the table contents
+is freshly updated.
 
 ..  _btrfsdisk:
 
