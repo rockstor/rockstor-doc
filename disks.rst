@@ -93,6 +93,17 @@ existing whole disk BTRFS filesystem on it. Click to configure or wipe."*
 
     * **configure or wipe** and re-use as if new - see :ref:`wipedisk` below.
 
+In this case we use the former **import** icon option and there after the
+disk table is as follows:
+
+.. image:: images/whole-disk-btrfs-import-done.png
+   :width: 100%
+   :align: center
+
+In the above the btrfs filesystem created (outside of Rockstor) was labeled
+"test-pool". Rockstor requires btrfs labels and will name imported pools by
+the label found during the import process.
+
 
 ..  _btrfspartition:
 
@@ -104,7 +115,7 @@ whole disk is recommended as this is a simpler arrangement*). If at least
 one member is a whole disk btrfs (ie no partition table or partitions) then the
 above :ref:`btrfsdisk` method can be used on this whole disk member. But if
 all pool members are partitions then a 'redirect role' will be needed on one of
-the pool members.
+the pool members in order to enable the import icon.
 
 The following shows the tooltip guide for an as yet un-imported pre exiting
 single device BTRFS in partition:
@@ -117,7 +128,7 @@ single device BTRFS in partition:
 one of which has an existing BTRFS filesystem on it. A User Assigned redirect
 role is required prior to import. Click to configure or wipe."*
 
-.. _diskredirectrole:
+.. _addingredirectrole:
 
 Adding a Redirect Role
 ----------------------
@@ -125,13 +136,15 @@ Adding a Redirect Role
 Rockstor has an ability to work with existing partitioned devices, however the
 recommendation is to use whole disks. But where this is specifically not
 desired or is otherwise unavoidable then a simple mechanism is available to
-allow the use of a single partition per disk. This covers most use cases
-and is a design decision intended to keep configuration simple.
+allow the use of a single partition per disk (system disk not included). This
+covers most use cases and is a design decision intended to keep configuration
+simple.
 
 If a disk has a partition table, it is suspected to have data and Rockstor
-doesn't allow it's usage until a single partition is chosen (via a Redirect
-Role) or the partition table is explicitly wiped (removing all partitions and
-their contained data from the entire disk).
+doesn't allow it's use until a single partition is chosen (via a Redirect
+Role); or the partition table is explicitly wiped (removing all partitions and
+their contained data from the entire disk) and the disk is then usable in the
+preferred "Whole Disk" no redirect role mode.
 
 Prior to configuration, partitioned disks are displayed with a little
 **gear icon** next to their name:
@@ -150,6 +163,56 @@ variation.
 
 In either case clicking on this icon opens the :ref:`diskroleconfig` screen:
 
+In the following we return to the :ref:`btrfspartition` example:
+
+In this image we see the selection having been made but not yet submitted.
+
+.. image:: images/select-btrfs-partition-redirect.png
+   :width: 100%
+   :align: center
+
+And once selected we **Submit** this **Redirect role**.
+
+The resulting disk page entry then gains the import icon as Rockstor now has
+confirmation to use this particular partition and as seen in the
+previous image, it contained a btrfs filesystem.
+
+.. image:: images/post-role-existing-btrfs-partition-import-tooltip.png
+   :width: 100%
+   :align: center
+
+**import icon tooltip** when importing from a partitioned pool member we have:
+"Click to import data (pools, shares and snapshots) on this partition
+automatically (Note: whole disk btrfs is recommended).
+
+Note the **Role tags** icon indicating this drive has a Role configured. If
+this was not a partitioned device the icon would be a single tag indicating a
+whole disk role (whole disk roles are a pending feature).
+
+Clicking on either the tags icon (Redirect Role active) or the wipe / erase
+icon will display the :ref:`diskroleconfig` page where the current "active"
+setting for this partition redirect is displayed.
+
+.. image:: images/active-btrfs-partition-redirect.png
+   :width: 100%
+   :align: center
+
+Note that the options now available mirror those of an existing as yet
+un-imported whole disk btrfs member: as seen in the :ref:`btrfsdisk` section:
+ie either import from, or wipe, the active selection.
+
+If a redirect role is configured to a non btrfs partition then no import or
+wipe icons are displayed. And once imported the same is true for a btrfs
+partition:
+
+.. image:: images/imported-btrfs-in-partition.png
+   :width: 100%
+   :align: center
+
+In the above the btrfs filesystem created (outside of Rockstor) was
+purposefully labeled "btrfs-in-partition" to aid in this example. Rockstor
+requires btrfs labels and will name imported pools by the label found during
+the import process.
 
 .. _diskroleconfig:
 
@@ -166,8 +229,14 @@ Disk role configuration page:
    :width: 100%
    :align: center
 
-**N.B.** Currently the only implemented role is the **Redirect role**, quoting
-from the configuration page:
+**N.B.** Currently the only implemented role is the :ref:`theredirectrole`
+
+.. _theredirectrole:
+
+The Disk Redirect Role
+^^^^^^^^^^^^^^^^^^^^^^
+
+Quoting from the configuration page:
 
 *"The Redirect role. This role is always required for any drive that is
 partitioned. Without it Rockstor cannot be sure which of the partitions on a
@@ -193,6 +262,14 @@ deleted. But if there is no redirect role then the entire drive and all it's
 partitions and associated data will be wiped. The command used internally to
 accomplish the wipe is "wipefs -a devname"."*
 
+The Redirect role is essentially a pointer to the partition one wants to use
+on a disk instead of using the whole disk (recommended). No Redirect role
+(default) means "use whole disk". The **Select Partition to use** option
+indicates the current setting by adding an **active** to that entry.
+
+* **Whole Disk (None) - active** means no redirect role and "(None)" = no whole disk filesystem found.
+* **part2 (btrfs) - active** an active redirect role to partition number 2 (btrfs filesystem).
+
 ..  _wipedisk:
 
 Wiping a Partition or Whole Disk
@@ -205,7 +282,7 @@ all partitions and the partition table as well.
 
 **N.B. In the case of reusing a partition it is the users responsibility to
 ensure that the partition type is correct for the intended use. In the case
-of 'BTRFS in partition' this would be type ext2.**
+of 'BTRFS in partition' this would be type ext2 (83 Linux).**
 
 All partition or whole disk wiping is accomplished from the
 :ref:`diskroleconfig` screen and only an **active** selection can be wiped.
@@ -213,7 +290,7 @@ If a partition or whole disk entry is not active, first select it and
 **Submit** this selection, this will change the "active" selection. Note
 however that changing the "active" selection of a device can cause data loss
 so please consider this action carefully and read the configuration page
-warnings.
+warnings carefully.
 
 .. image:: images/whole-disk-wipe.png
    :width: 100%
