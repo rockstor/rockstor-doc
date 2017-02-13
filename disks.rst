@@ -187,11 +187,14 @@ automatically (Note: whole disk btrfs is recommended).
 
 Note the **Role tags** icon indicating this drive has a Role configured. If
 this was not a partitioned device the icon would be a single tag indicating a
-whole disk role (whole disk roles are a pending feature).
+whole disk role (whole disk roles are a pending feature). Also note the
+difference / similarity of these two as yet un-imported pools, the first
+"Whole Disk" import option and the second "btrfs in partition" via a redirect
+role import option.
 
 Clicking on either the tags icon (Redirect Role active) or the wipe / erase
 icon will display the :ref:`diskroleconfig` page where the current "active"
-setting for this partition redirect is displayed.
+setting for this partition redirect are displayed.
 
 .. image:: images/active-btrfs-partition-redirect.png
    :width: 100%
@@ -270,34 +273,62 @@ indicates the current setting by adding an **active** to that entry.
 * **Whole Disk (None) - active** means no redirect role and "(None)" = no whole disk filesystem found.
 * **part2 (btrfs) - active** an active redirect role to partition number 2 (btrfs filesystem).
 
+Please note that there are some restrictions / safeguard in place that pertain
+to devices containing a btrfs formatted partition. In this circumstance it is
+only possible to redirect to the btrfs partition, all other partition redirect
+requests will be blocked with the following warning message in red:
+*"Existing btrfs partition found; if you wish to use the redirect role either
+select this btrfs partition or wipe it or the whole disk and re-assign.
+Redirecting is only supported to a non btrfs partition when no btrfs partition
+exists on the same device."*
+Also note that once a redirect role to a btrfs partition has been established
+it is by design that it cannot be changed to another partition until the
+btrfs filesystem in that partition is wiped. See related wipe restrictions
+towards the end of the :ref:`wipedisk` section.
+
 ..  _wipedisk:
 
 Wiping a Partition or Whole Disk
 --------------------------------
 
 If not importing data from a pre-existing filesystem (whole disk or partition)
-it is recommended that it first be wiped. This will remove all data and
-filesystem indicators on the wiped device; or in the case of a whole disk wipe
-all partitions and the partition table as well.
+it is recommended that each device first be wiped. This will remove all data
+and filesystem indicators on the wiped device; or in the case of a whole disk
+wipe, all partitions and the partition table as well.
 
-**N.B. In the case of reusing a partition it is the users responsibility to
-ensure that the partition type is correct for the intended use. In the case
-of 'BTRFS in partition' this would be type ext2 (83 Linux).**
+**N.B. When reusing a partition it is the users responsibility to
+ensure that the partition type is correct for the intended use. For 'BTRFS
+in partition' this would be type ext2 (83 Linux).** When using the default and
+recommended "Whole Disk" this caveat / complication is irrelevant as there
+will be no partitions or partition table (*N.B. not to be confused with a
+partition that occupies the whole disk*).
 
 All partition or whole disk wiping is accomplished from the
 :ref:`diskroleconfig` screen and only an **active** selection can be wiped.
 If a partition or whole disk entry is not active, first select it and
 **Submit** this selection, this will change the "active" selection. Note
-however that changing the "active" selection of a device can cause data loss
+that changing the "active" selection of a device can cause data loss
 so please consider this action carefully and read the configuration page
-warnings carefully.
+warnings carefully. In the case of btrfs in partition some safeguards are in
+place and appropriate warning messages will indicate their presence:
+consequently there are restrictions on what can be done and in what order,
+especially in the case of an existing btrfs partition.
+
+A further restriction is that only non Rockstor managed btrfs pool members can
+be wiped. If any device forms part of a Rockstor managed btrfs pool, attempts
+to wipe the device will be rejected with the following message in red:
+"Selected device is part of a Rockstor managed pool. Use Pool resize to
+remove it from the relevant pool which in turn will wipe it's filesystem."
+So it is first necessary to either remove the device from it pool or delete
+the entire pool before it's members can be wiped. This is to avoid
+accidentally deleting a pool member.
 
 .. image:: images/whole-disk-wipe.png
    :width: 100%
    :align: center
 
-**Note the accompanying warning that appears once the erase icon tick is
-selected.**
+**Note the accompanying RED WARNING** that appears once the erase icon
+tick is selected.
 
 
 Broken or removed disks
