@@ -182,8 +182,8 @@ previous image, it contained a btrfs filesystem.
    :align: center
 
 **import icon tooltip** when importing from a partitioned pool member we have:
-"Click to import data (pools, shares and snapshots) on this partition
-automatically (Note: whole disk btrfs is recommended).
+*"Click to import data (pools, shares and snapshots) on this partition
+automatically (Note: whole disk btrfs is recommended)."*
 
 Note the **Role tags** icon indicating this drive has a Role configured. If
 this was not a partitioned device the icon would be a single tag indicating a
@@ -232,7 +232,7 @@ Disk role configuration page:
    :width: 100%
    :align: center
 
-**N.B.** Currently the only implemented role is the :ref:`theredirectrole`
+**N.B.** Currently the only implemented role is :ref:`theredirectrole`
 
 .. _theredirectrole:
 
@@ -273,18 +273,30 @@ indicates the current setting by adding an **active** to that entry.
 * **Whole Disk (None) - active** means no redirect role and "(None)" = no whole disk filesystem found.
 * **part2 (btrfs) - active** an active redirect role to partition number 2 (btrfs filesystem).
 
-Please note that there are some restrictions / safeguard in place that pertain
+Please note that there are some restrictions / safeguards in place that pertain
 to devices containing a btrfs formatted partition. In this circumstance it is
 only possible to redirect to the btrfs partition, all other partition redirect
 requests will be blocked with the following warning message in red:
+
 *"Existing btrfs partition found; if you wish to use the redirect role either
-select this btrfs partition or wipe it or the whole disk and re-assign.
-Redirecting is only supported to a non btrfs partition when no btrfs partition
-exists on the same device."*
+select this btrfs partition and import/use it, or wipe it (or the whole disk)
+and then re-assign. Redirection is only supported to a non btrfs partition
+when no btrfs partition exists on the same device."*
+
 Also note that once a redirect role to a btrfs partition has been established
 it is by design that it cannot be changed to another partition until the
-btrfs filesystem in that partition is wiped. See related wipe restrictions
-towards the end of the :ref:`wipedisk` section.
+btrfs filesystem in that partition is wiped; either via a resize - remove disk
+operation if it is a member of a pool, or by simply wiping it in the
+:ref:`diskroleconfig` page if it is not associated with any Rockstor managed
+pools. In this case the warning message in red is:
+
+*"Active btrfs partition redirect found; if you wish to change this redirect
+role first wipe the partition and then re-assign. Redirection is only
+supported to a non btrfs partition when no btrfs partition exists on the
+same device."*
+
+See also related wipe restrictions towards the end of the
+:ref:`wipedisk` section.
 
 ..  _wipedisk:
 
@@ -309,17 +321,19 @@ If a partition or whole disk entry is not active, first select it and
 **Submit** this selection, this will change the "active" selection. Note
 that changing the "active" selection of a device can cause data loss
 so please consider this action carefully and read the configuration page
-warnings carefully. In the case of btrfs in partition some safeguards are in
-place and appropriate warning messages will indicate their presence:
+warnings before proceeding. In the case of btrfs in partition some safeguards
+are in place and appropriate warning messages will indicate their presence:
 consequently there are restrictions on what can be done and in what order,
 especially in the case of an existing btrfs partition.
 
-A further restriction is that only non Rockstor managed btrfs pool members can
+One such restriction is that only non Rockstor managed btrfs pool members can
 be wiped. If any device forms part of a Rockstor managed btrfs pool, attempts
 to wipe the device will be rejected with the following message in red:
+
 "Selected device is part of a Rockstor managed pool. Use Pool resize to
 remove it from the relevant pool which in turn will wipe it's filesystem."
-So it is first necessary to either remove the device from it pool or delete
+
+So it is first necessary to either remove the device from it's pool or delete
 the entire pool before it's members can be wiped. This is to avoid
 accidentally deleting a pool member.
 
@@ -330,22 +344,41 @@ accidentally deleting a pool member.
 **Note the accompanying RED WARNING** that appears once the erase icon
 tick is selected.
 
+..  _detacheddisks:
 
-Broken or removed disks
------------------------
+Detached Disks
+--------------
 
-Rockstor detects when a disk drive goes offline (damaged or removed from the
-system) and marks it as such. This is indicated by a **little trash icon** next
-to the disk name and relevant help text is displayed upon mousing over this icon.
+Rockstor detects when a device goes offline (dead or detached from the
+system) and marks it as such by changing it's name to:
 
-.. image:: images/disk_offline.png
-   :scale: 65 %
+    detached-<long-random-string>
+
+Drive entries in this state gain a **little trash icon** next to their
+'detached' name. This icon has the following tooltip text:
+
+
+.. image:: images/disk_detached.png
+   :width: 100%
    :align: center
 
-In order to remove the disk from Rockstor click on the trash icon and a popup
-confirmation dialog is displayed. Upon confirmation, the disk will be removed
-as shown below.
+**detached/bin icon tooltip** *"Disk is unusable because it is detached. Click
+to delete it from the system if it is not to be reattached."*
 
-.. image:: images/disk_remove.png
-   :scale: 65 %
+Clicking on the trash icon brings up a confirmation dialog. Upon confirmation,
+the disk will be removed:
+
+.. image:: images/disk_delete_confirmation.png
+   :width: 100%
    :align: center
+
+It is important to note that this operation should only be carried out if the
+drive in question is not to be re-attached. Also not that this is not a
+'remove from pool' operation but simply a 'remove from database' as there is
+not currently any btrfs pool functionality to this action so take care not to
+remove a detached drive that is part of a multi-device pool. It may be
+that the pool is not mounted as a result of this missing drive and simply
+re-attaching it (with the system off) is the way to go (ie failed connection).
+
+If you wish to remove a disk from a pool then please see :ref:`poolresize`
+in the :ref:`pools` section.
