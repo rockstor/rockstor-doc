@@ -61,15 +61,35 @@ power-on ie *hot plugged/unplugged*. It is recommended that this action be
 taken just prior to *removing detached devices* to ensure the table contents
 is freshly updated.
 
+..  _import_data:
+
+Import BTRFS Pool
+-----------------
+
+After having performed a :ref:`scandisks` any non Rockstor managed pools
+should be importable from any one of their Disk members, although if the
+chosen device member is a partition rather than a whole disk (as opposed to
+a whole disk partition) an additional step is required: that of
+:ref:`addingredirectrole`.
+
+The BTRFS Pool import procedure imports the following:-
+
+* Pools
+* Shares
+* Snapshots
+
+This process is detailed in the following sub-sections: :ref:`btrfsdisk`,
+:ref:`btrfspartition`, note that the latter section,
+
 ..  _btrfsdisk:
 
 Import whole disk BTRFS
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
-If after *Rescan* or after a Rockstor reinstall the system finds an
+If after a :ref:`scandisks` or after :ref:`reinstall` the system finds an
 **existing whole disk BTRFS filesystem** a small **down arrow icon** next to
-the drive name will be visible. This down arrow can be used to import the
-btrfs filesystem, assuming all prior pool members are attached.
+pool member drive names will be visible. This down arrow can be used to import
+the btrfs filesystem, assuming all prior pool members are attached.
 
 *The import icon:*
 
@@ -80,8 +100,6 @@ btrfs filesystem, assuming all prior pool members are attached.
 **import icon tooltip** *"Click to import data (pools, shares and snapshots)
 on this disk automatically. Multi-device support included."*
 
- the exiting **whole disk btrfs** filesystem - see :ref:`reinstall_import_data` in our :ref:`reinstall` HowTo.
-
 *or configure / wipe*
 
 .. image:: images/existing-btrfs-whole-disk-config-tooltip.png
@@ -89,9 +107,7 @@ on this disk automatically. Multi-device support included."*
    :align: center
 
 **configure or wipe icon tooltip** *"Disk is unusable because it has an
-existing whole disk BTRFS filesystem on it. Click to configure or wipe."*
-
-    * **configure or wipe** and re-use as if new - see :ref:`wipedisk` below.
+existing whole disk BTRFS filesystem on it. Click to configure or wipe."*.
 
 In this case we use the former **import** icon option and there after the
 disk table is as follows:
@@ -104,18 +120,19 @@ In the above the btrfs filesystem created (outside of Rockstor) was labeled
 "test-pool". Rockstor requires btrfs labels and will name imported pools by
 the label found during the import process.
 
-
 ..  _btrfspartition:
 
 Import BTRFS in partition
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Rockstor can also import btrfs pools that have partitioned members (*although
-whole disk is recommended as this is a simpler arrangement*). If at least
-one member is a whole disk btrfs (ie no partition table or partitions) then the
+whole disk is recommended as this is a simpler arrangement*). If at least one
+pool member is a whole disk btrfs (no partition table or partitions) then the
 above :ref:`btrfsdisk` method can be used on this whole disk member. But if
-all pool members are partitions then a 'redirect role' will be needed on one of
-the pool members in order to enable the import icon.
+all pool members are partitions then a manually applied 'redirect role' will
+be needed on one of the pool members in order to enable the import icon.
+During the import all other partitioned members of the pool will have their
+required redirect roles applied automatically.
 
 The following shows the tooltip guide for an as yet un-imported pre exiting
 single device BTRFS in partition:
@@ -128,10 +145,101 @@ single device BTRFS in partition:
 one of which has an existing BTRFS filesystem on it. A User Assigned redirect
 role is required prior to import. Click to configure or wipe."*
 
+Please see :ref:`addingredirectrole` to enable / activate the import icon for
+a partitioned pool member.
+
+
+
+
+.. _diskroleconfig:
+
+Disk Role Configuration
+-----------------------
+
+Disk roles are not required and are not advised for general purpose disk use.
+They are intended as a way to label individual disks for a specific use.
+Examples of such uses are documented on the configuration page:
+
+Disk role configuration page:
+
+.. image:: images/config-drive-role-page.png
+   :width: 100%
+   :align: center
+
+**N.B.** Currently the only implemented role is :ref:`theredirectrole`
+
+.. _theredirectrole:
+
+The Disk Redirect Role
+^^^^^^^^^^^^^^^^^^^^^^
+
+Quoting from the configuration page:
+
+*"The Redirect role. This role is always required for any drive that is
+partitioned. Without it Rockstor cannot be sure which of the partitions on a
+drive you wish to use. It is required even if there is only one partition
+found. Without the addition of this role the only way a partitioned drive can
+be used is for it's entire contents to first be wiped, including any and all
+partitions and all date there in: resulting in the drive no longer being
+partitioned. The drive can then be used in the Rockstor default Whole Disk
+configuration: no partitions and no roles. The only time Rockstor will add
+the redirect role itself is when a user imports a multi device pool that has
+a btrfs in partition member. All other cases require the user to manually set
+the desired partition, including the initial btrfs import device; only
+additional devices within the imported pool will automatically have a
+redirect role set if required.*
+
+**N.B.Rockstor only supports the use of one partition (redirect role) per
+device. Although other partitions may exist they will be ignored.**
+
+*Please note that a drive's Redirect role will affect the action taken when it
+is wiped from within the Rockstor interface. If a valid redirect to an
+existing partition exists then the contents of that partition will be
+deleted. But if there is no redirect role then the entire drive and all it's
+partitions and associated data will be wiped. The command used internally to
+accomplish the wipe is "wipefs -a devname"."*
+
+The Redirect role is essentially a pointer to the partition one wants to use
+on a disk instead of using the whole disk (recommended). No Redirect role
+(default) means "use whole disk". The **Select Partition to use** option
+indicates the current setting by adding an **active** to that entry.
+
+Examples of "Select Partition to use" entries and their explanation:
+
+* **Whole Disk (None) - active** means no redirect role and (None) means no whole disk filesystem found.
+* **part2 (btrfs) - active** an active redirect role to partition number 2 (btrfs filesystem).
+
+Note that there is only ever **one active** role at **any one time**.
+
+Please note that there are some restrictions / safeguards in place that pertain
+to devices containing a btrfs formatted partition. In this circumstance it is
+only possible to redirect to the btrfs partition; all other partition redirect
+requests will be blocked with the following warning message in red:
+
+*"Existing btrfs partition found; if you wish to use the redirect role either
+select this btrfs partition and import/use it, or wipe it (or the whole disk)
+and then re-assign. Redirection is only supported to a non btrfs partition
+when no btrfs partition exists on the same device."*
+
+Also note that once a redirect role to a btrfs partition has been established
+it is by design that it cannot be changed to another partition until the
+btrfs filesystem in that partition is wiped; either via a resize - remove disk
+operation if it is a member of a pool, or by simply wiping it in the
+:ref:`diskroleconfig` page if it is not associated with any Rockstor managed
+pools. In this case the warning message in red is:
+
+*"Active btrfs partition redirect found; if you wish to change this redirect
+role first wipe the partition and then re-assign. Redirection is only
+supported to a non btrfs partition when no btrfs partition exists on the
+same device."*
+
+See also related wipe restrictions towards the end of the
+:ref:`wipedisk` section.
+
 .. _addingredirectrole:
 
 Adding a Redirect Role
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Rockstor has an ability to work with existing partitioned devices, however the
 recommendation is to use whole disks. But where this is specifically not
@@ -217,87 +325,6 @@ purposefully labeled "btrfs-in-partition" to aid in this example. Rockstor
 requires btrfs labels and will name imported pools by the label found during
 the import process.
 
-.. _diskroleconfig:
-
-Disk Role Configuration
------------------------
-
-Disk roles are not required and are not advised for general purpose disk use.
-They are intended as a way to label individual disks for specific use. Example
-of such uses are documented on the configuration page:
-
-Disk role configuration page:
-
-.. image:: images/config-drive-role-page.png
-   :width: 100%
-   :align: center
-
-**N.B.** Currently the only implemented role is :ref:`theredirectrole`
-
-.. _theredirectrole:
-
-The Disk Redirect Role
-^^^^^^^^^^^^^^^^^^^^^^
-
-Quoting from the configuration page:
-
-*"The Redirect role. This role is always required for any drive that is
-partitioned. Without it Rockstor cannot be sure which of the partitions on a
-drive you wish to use. It is required even if there is only one partition
-found. Without the addition of this role the only way a partitioned drive can
-be used is for it's entire contents to first be wiped, including any and all
-partitions and all date there in: resulting in the drive no longer being
-partitioned. The drive can then be used in the Rockstor default Whole Disk
-configuration: no partitions and no roles. The only time Rockstor will add
-the redirect role itself is when a user imports a multi device pool that has
-a btrfs in partition member. All other cases require the user to manually set
-the desired partition, including the initial btrfs import device; only
-additional devices within the imported pool will automatically have a
-redirect role set if required.*
-
-*N.B.Rockstor only supports the use of one partition (redirect role) per
-device. Although other partitions may exist they will be ignored.*
-
-*Please note that a drive's Redirect role will affect the action taken when it
-is wiped from within the Rockstor interface. If a valid redirect to an
-existing partition exists then the contents of that partition will be
-deleted. But if there is no redirect role then the entire drive and all it's
-partitions and associated data will be wiped. The command used internally to
-accomplish the wipe is "wipefs -a devname"."*
-
-The Redirect role is essentially a pointer to the partition one wants to use
-on a disk instead of using the whole disk (recommended). No Redirect role
-(default) means "use whole disk". The **Select Partition to use** option
-indicates the current setting by adding an **active** to that entry.
-
-* **Whole Disk (None) - active** means no redirect role and "(None)" = no whole disk filesystem found.
-* **part2 (btrfs) - active** an active redirect role to partition number 2 (btrfs filesystem).
-
-Please note that there are some restrictions / safeguards in place that pertain
-to devices containing a btrfs formatted partition. In this circumstance it is
-only possible to redirect to the btrfs partition, all other partition redirect
-requests will be blocked with the following warning message in red:
-
-*"Existing btrfs partition found; if you wish to use the redirect role either
-select this btrfs partition and import/use it, or wipe it (or the whole disk)
-and then re-assign. Redirection is only supported to a non btrfs partition
-when no btrfs partition exists on the same device."*
-
-Also note that once a redirect role to a btrfs partition has been established
-it is by design that it cannot be changed to another partition until the
-btrfs filesystem in that partition is wiped; either via a resize - remove disk
-operation if it is a member of a pool, or by simply wiping it in the
-:ref:`diskroleconfig` page if it is not associated with any Rockstor managed
-pools. In this case the warning message in red is:
-
-*"Active btrfs partition redirect found; if you wish to change this redirect
-role first wipe the partition and then re-assign. Redirection is only
-supported to a non btrfs partition when no btrfs partition exists on the
-same device."*
-
-See also related wipe restrictions towards the end of the
-:ref:`wipedisk` section.
-
 ..  _wipedisk:
 
 Wiping a Partition or Whole Disk
@@ -354,7 +381,7 @@ system) and marks it as such by changing it's name to:
 
     detached-<long-random-string>
 
-Drive entries in this state gain a **little trash icon** next to their
+Also drive entries in this state gain a **little trash icon** next to their
 'detached' name. This icon has the following tooltip text:
 
 
