@@ -34,6 +34,9 @@ is moved from one pool to another (via sequential pool resize operations).
 * **S.M.A.R.T Pen Icon** - configure **custom smart options**.
 * **S.M.A.R.T Switch** - enable or disable for each device.
 
+For more information on configuring drive power down related settings please
+see the :ref:`diskpowerdown` HowTo.
+
 *Buttons:-*
 
 * **Rescan** - the hardware for any supported drives, see :ref:`scandisks` below.
