@@ -29,7 +29,7 @@ is moved from one pool to another (via sequential pool resize operations).
 * **Drive 'by-id' Name** - see drive's **SMART data** / status.
 * **Bulb Icon** - flash drive's activity light to **identify it's physical location**.
 * **Pool Name** - :ref:`pools` specific **details** page.
-* **Pause Drive** - immediate **spin down** (suspend mode).
+* **Pause Drive** - request an immediate **spin down** (suspend mode).
 * **Hour glass** - configure **auto spin down timer** given no activity.
 * **S.M.A.R.T Pen Icon** - configure **custom smart options**.
 * **S.M.A.R.T Switch** - enable or disable for each device.
@@ -79,7 +79,7 @@ The BTRFS Pool import procedure imports the following:-
 * Snapshots
 
 This process is detailed in the following sub-sections: :ref:`btrfsdisk`,
-:ref:`btrfspartition`, note that the latter section,
+:ref:`btrfspartition`.
 
 ..  _btrfsdisk:
 
@@ -147,9 +147,6 @@ role is required prior to import. Click to configure or wipe."*
 
 Please see :ref:`addingredirectrole` to enable / activate the import icon for
 a partitioned pool member.
-
-
-
 
 .. _diskroleconfig:
 
