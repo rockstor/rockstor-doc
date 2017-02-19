@@ -75,6 +75,7 @@ In the following image we see both drives having been configured for a
 .. image:: hdds_active_idle.png
    :width: 100%
    :align: center
+
 Both drives active/idle (still spinning) but set to 10 minutes.
 
 The following image shows both drives after having entered the **Standby**
