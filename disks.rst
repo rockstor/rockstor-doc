@@ -34,8 +34,10 @@ is moved from one pool to another (via sequential pool resize operations).
 * **S.M.A.R.T Pen Icon** - configure **custom smart options**.
 * **S.M.A.R.T Switch** - enable or disable for each device.
 
-For more information on configuring drive power down related settings please
-see the :ref:`diskpowerdown` HowTo.
+For more information on *configuring drive power down* related settings please
+see the :ref:`diskpowerdown` HowTo. Similarly please see the
+:ref:`diskcustomsmart` section of the :ref:`smart' HowTo for details of the
+function provided by the *S.M.A.R.T* column entries.
 
 *Buttons:-*
 

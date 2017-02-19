@@ -8,6 +8,7 @@ Howtos
    pre-install-howto/pre-install-howto
    reinstall/reinstall
    disk-power-down/disk_power_down
+   smart/smart
    mdraid-mirror/boot_drive_howto
    home_nas_guide
    soho
