@@ -66,10 +66,10 @@ S.M.A.R.T Switch
 ^^^^^^^^^^^^^^^^
 
 This option is both a control and an indicator of Rockstor's finding on SMART
-availability for the given device / disk. Obviously the state of the
-switch indicates if SMART monitoring is enabled or disabled, and can apply the
-same, but there is also a **Not Supported** text state that indicates no SMART
-availability or compatibility was found on the specific device:
+availability for the given device / disk. The state of the switch indicates
+if SMART monitoring is enabled or disabled, and can apply the same, but there
+is also a **Not Supported** text state that indicates no SMART availability
+or compatibility was found on the specific device.
 
 In the following example we see one disk with support (as switch is visible),
 and another device, a *SanDisk Extreme USB 3.0*, indicating **Not Supported**.
@@ -78,12 +78,14 @@ and another device, a *SanDisk Extreme USB 3.0*, indicating **Not Supported**.
    :width: 100%
    :align: center
 
-But note that in some cases the reason for no SMART support is down the a
+But note that in some cases the reason for no SMART support is down to the
 device, or rather the smartmontools subsystem, requiring a custom smart option.
 In many cases an indication of this requirement can be found in the *System -
 Logs Manager* shortly after using the **Rescan** button on the :ref:`disks`
-page. Using the default option of tailing the Rockstor Logs we see and
-example in the following image:
+page. Using the default option of tailing the Rockstor Logs we see an example
+in the following image:
+
+Example of an error suggesting the need for :ref:`diskcustomsmart`:
 
 .. image:: smart_d_logs.png
    :width: 100%
@@ -113,9 +115,10 @@ be specified. This can be done using the :ref:`smartpen`.
 S.M.A.R.T Pen Icon (Edit)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In some instances, such as the one detailed the previous :ref:`smartswitch`
+In some instances, such as the one detailed in the previous :ref:`smartswitch`
 section, additional functionality can be had by adding custom SMART options.
-The **Pen Icon** and it's consequent    is intended for this purpose.
+The **Pen Icon** and it's consequent :ref:`drivecustomsmart` page is intended
+for this purpose.
 
 .. _drivecustomsmart:
 
@@ -141,8 +144,8 @@ The research links contained within the configuration screen are duplicated
 here for convenience:
 
 * Main `Smartmontools <https://www.smartmontools.org/>`_ home page.
-* *Smartmontools* `manual <https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in>`_ page for the the smartctl program.
-* `USB Device Support <https://www.smartmontools.org/wiki/Supported_USB-Devices>`_ page.
+* *Smartmontools* `manual <https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in>`_ for the the smartctl program.
+* `USB Device Support <https://www.smartmontools.org/wiki/Supported_USB-Devices>`_ note the *Options* column in the *Supported Devices* table.
 * `Checking disks behind RAID controllers <https://www.smartmontools.org/wiki/Supported_RAID-Controllers>`_ page.
 
 In our "SanDisk Extreme USB 3.0" example the following is the resulting disk
@@ -153,8 +156,12 @@ page:
    :align: center
 
 Note that the custom options entered will be displayed in the S.M.A.R.T
-:ref:`disks` table column and in this example SMART support has now identified;
-via our custom smart option.
+:ref:`disks` table column and in this example SMART support has now been
+identified; via our custom smart option.
+
+**Note: The Rescan button below the Disks table will apply all custom smart
+options, prior to it's use their affect may not be visible.**
+
 
 .. _smartviahwraid:
 
@@ -167,11 +174,12 @@ hardware raid controller. In this instance there must of course be a one to
 one mapping of actual drives to the devices presented to Rockstor, ie JBOD
 or Just a Bunch Of Disks mode or otherwise know as pass-through or HBA mode,
 or IT (initiator target) mode. Essentially the hardware raid controller does
-no RAID functions and simply presents the drives 'as is'. However due to
-manufacture differences the way SMART data is retrieved differs also;
-smartmontools can cope with some of these differences but it often requires
-additional custom smart options. And these options are also controller
-specific. Please see the `Checking disks behind RAID
+no RAID functions and simply presents the drives 'as is'.
+
+Due to controller manufacture differences the way SMART data is retrieved
+differs; smartmontools can cope with some of these differences but it often
+requires additional custom smart options. And these options are also often
+controller model specific. Please see the `Checking disks behind RAID
 controllers <https://www.smartmontools.org/wiki/Supported_RAID-Controllers>`_
 for the specific options required.
 
@@ -186,13 +194,17 @@ helped to develop these options is shown in the following example:
 Thanks to `Rockstor forum <https://forum.rockstor.com/>`_ user **kcomer** for
 `helping with the development
 <https://forum.rockstor.com/t/s-m-a-r-t-support-is-not-available-for-this-disk/830>`_
-of this custom smart option.
+of this custom smart option and for supplying this image of it's use.
 
 **Note that in the above example the "/dev/twl0" identifies the first (and
-only in this case) controller and the "-d 3ware,X" identifies the raid port
+only in this case) controller and the "-d 3ware,X" identifies the card port
 that each drive is attached to.** Identifying which port relates to which
 drive is still a manual process that has yet to be automated in Rockstor and
 in this case care should be take to update these port when re-arranging
 drives. It is hoped that this facility is improved in the future.
+
+**It is always best to take a not of a SMART reports drive serial number to be
+sure which drive it references. Especially when connected to a hardware raid
+controller.**
 
 
