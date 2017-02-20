@@ -9,9 +9,9 @@ default settings. The Storage - :ref:`disks` Rockstor Web-UI page contains
 the Disks table which has a :ref:`powerstatus` to indicates the current
 drive status, and the :ref:`apmsetting` which reflects the current Advanced
 Power Management setting for each drive.  These configuration elements are
-related and as such are combined in a unified :ref:`drivespindown` Web-UI
-page arrived at by clicking on the **hour glass** icon withing the Power
-Status column.
+related and as such are combined in a :ref:`drivespindown` Web-UI
+page arrived at by clicking on the **hour glass** icon in the Power Status
+column of the :ref:`disks` table.
 
 .. _powerstatus:
 
@@ -33,10 +33,10 @@ Drive Specific Spin Down Time
 
 This page consists of 2 main elements.
 
-* **Idle Time prior to Spin Down** - drop down to configure this element.
-* **APM setting** - slider or text box to configure the balance between power use and performance.
+* **Idle Time prior to Spin Down** - drop down to configure, see: :ref:`idletime`.
+* **APM setting** - slider or text box to configure, the balance between power use and performance.
 
-**Power Status (hour glass icon) configuration screen**
+**Power Status (hour glass icon) configuration screen:**
 
 .. image:: hdd_spin_down_config.jpg
    :width: 100%
@@ -54,7 +54,7 @@ recommendations. As a rule of thumb it is usually not required to change the
 APM settings so only try changing away from the default if your desired Spin
 Down configuration time fails to work.
 
-Also note that some drives require a full power cycle to adopt a new settings
+Also note that some drives require a full power cycle to adopt new settings
 and that some BIOS settings can aid or inhibit a drives ability to spin itself
 down.
 
@@ -80,7 +80,7 @@ Both drives active/idle (still spinning) but set to 10 minutes.
 
 The following image shows both drives after having entered the **Standby**
 state (no disk rotation). Notice that in this state the **pause** icon is
-also disabled, since it's function is now redundant.
+disabled, since it's function is now redundant.
 
 .. image:: hdds_in_standby.png
    :width: 100%
@@ -94,8 +94,8 @@ APM Column
 These values reflect the current Advanced Power Management setting for each
 drive. This value is between 1 and 255 but if it couldn't be read, as not all
 devices support this setting, then it will be displayed as **???**. In this
-case the APM config enable tick option in the configuration screen will be
-disabled.
+case the APM config enable tick option in the :ref:`drivespindown`
+configuration screen will be disabled.
 
 .. _idletime:
 
