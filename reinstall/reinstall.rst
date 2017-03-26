@@ -89,12 +89,18 @@ if prompted to do so you can
 import the data that was present on your previous Rockstor install’s data
 disks; assuming you had separate data disks of course.
 
-N.B. given this is a new install it is advisable to reboot anyway to make sure
+*N.B. given this is a new install it is advisable to reboot anyway to make sure
 all is well before doing the data import, this will ensure you are using all of
-what has just been updated.
+what has just been updated.*
 
-Data import is initiated by using the **tiny down arrow** icon next to the
-relevant device on the **Storage** page **Disks** section.
+Data import is initiated by using the **tiny down arrow** icon next to a pool
+device member's name on the **Disks** table / page of the **Storage** section.
+
+Please see the :ref:`import_data` section of the :ref:`disks` page for details
+and note that when importing via a partitioned pool member, additional
+configuration is required, but only for the first partitioned pool member.
+
+**N.B. only one partition is supported per drive.**
 
 This process is intended to import the following:-
 
@@ -102,13 +108,7 @@ This process is intended to import the following:-
 * Shares
 * Snapshots
 
-.. image:: reinstall_import_data.png
-   :scale: 80%
-   :align: center
-
-This image shows the yellow **mouse over** popup info window explaining the
-**import icon**
-
+.. _reinstall_restore_config:
 
 Restoring Configuration
 -----------------------
