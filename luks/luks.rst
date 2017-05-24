@@ -57,13 +57,13 @@ Disk.* page which is arrived at via the **? icon** next to blank devices:
 Click the **? icon** - Assign an optional Whole Disk Role:
 
 .. image:: assign_whole_disk_role.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 The resulting *Role / Wipe / LUKS* page (only bottom half shown):
 
 .. image:: pre_luks_format_tick.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 Ensure *Whole Disk (None)* is the active configuration.
@@ -71,7 +71,7 @@ Ensure *Whole Disk (None)* is the active configuration.
 Tick to enable Whole Disk Encryption (LUKS Format):
 
 .. image:: post_luks_tick_password.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 And enter your chosen **LUKS Master Passphrase**.
@@ -83,7 +83,7 @@ longer be possible to unlock you container and all data there in will be lost.
 The resulting LUKS Containers (LUKS formatted disk) in the Disk Page:
 
 .. image:: luks_container_icon.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 The **lock icon** indicating a **LUKS Container**. Click this icon to set
@@ -123,7 +123,7 @@ convenience:
 Otherwise only some members will be unlocked and the pool will fail to mount.
 
 .. image:: luks_boot_up_config_page.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 Select the **Boot up Configuration** that best matches your use case.
@@ -131,7 +131,7 @@ Select the **Boot up Configuration** that best matches your use case.
 When selecting the recommended **Auto unlock via keyfile**:
 
 .. image:: luks_auto_unlock_keyfile_create.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 You must re-enter the LUKS Master passphrase you created in :ref:`luks_format`
@@ -141,7 +141,7 @@ creation and registration of the proposed keyfile.
 There after the UI returns to the :ref:`disks` page.
 
 .. image:: open_luks_volume.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 Once the *Boot up configuration* has been set and a reboot has taken place
@@ -158,7 +158,7 @@ Clicking on the **eye icon** next to the **Open LUKS Volume** opens the
 **Open LUKS Volume information page:**.
 
 .. image:: open_luks_volume_info_page.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 Note the device indicated is that of the container, ie the drive 'LUKS
@@ -177,7 +177,7 @@ volumes. It is not sufficient to have only a subset of a pool's members be
 LUKS formatted.**
 
 .. image:: luks_volume_indication_create_pool.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 An example of how each Open LUKS Volume is also accompanied by it's
@@ -186,20 +186,20 @@ An example of how each Open LUKS Volume is also accompanied by it's
 
 
 .. image:: luks_volume_indication_pools_page.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
-The pools page main table also indicates those members that are Full Disk
-Encrypted.
+The :ref:`pools` page main table also indicates those members that are Full
+Disk Encrypted.
 
-And finally we see the **Whole drive is mapped to a pool** icon in our Disks
-page:
+And finally we see the *Whole drive is mapped to a pool* **Map icon** in our
+:ref:`Disks` page:
 
 .. image:: open_luks_volume_mapped.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
-**Please we aware that the LUKS UI components within Rockstor hide quite a
+**Please be aware that the LUKS UI components within Rockstor hide quite a
 bit of complexity and are currently in the early stages of development. But
 the LUKS system itself is stable.** If you experience any difficulties please
 visit `our forum <http://forum.rockstor.com/>`_ and ask away.
