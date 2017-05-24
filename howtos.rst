@@ -9,6 +9,7 @@ Howtos
    reinstall/reinstall
    disk-power-down/disk_power_down
    smart/smart
+   luks/luks
    mdraid-mirror/boot_drive_howto
    home_nas_guide
    soho
