@@ -168,6 +168,8 @@ They are intended as a way to label individual disks for a specific use.
 Examples of such uses are documented on the configuration page:
 
 The disk role configuration page:
+Configure drive Role / :ref:`Wipe <wipedisk>` existing Filesystem /
+:ref:`LUKS <luks>` Format Whole Disk.
 
 .. image:: images/config-drive-role-page.png
    :width: 100%
@@ -182,29 +184,15 @@ The Disk Redirect Role
 
 Quoting from the configuration page:
 
-*"The Redirect role. This role is always required for any drive that is
-partitioned. Without it Rockstor cannot be sure which of the partitions on a
-drive you wish to use. It is required even if there is only one partition
-found. Without the addition of this role the only way a partitioned drive can
-be used is for it's entire contents to first be wiped, including any and all
-partitions and all date there in: resulting in the drive no longer being
-partitioned. The drive can then be used in the Rockstor default Whole Disk
-configuration: no partitions and no roles. The only time Rockstor will add
-the redirect role itself is when a user imports a multi device pool that has
-a btrfs in partition member. All other cases require the user to manually set
-the desired partition, including the initial btrfs import device; only
-additional devices within the imported pool will automatically have a
-redirect role set if required.*
+*"The Redirect role is always required for partitioned drives. Rockstor will
+only add the redirect role itself when importing a multi device pool with
+'btrfs in partition' members. All other cases require user selection of the
+desired partition, including on the initial import device. Only one Redirect
+role (partition) per device is supported.*
 
-**N.B.Rockstor only supports the use of one partition (redirect role) per
-device. Although other partitions may exist they will be ignored.**
-
-*Please note that a drive's Redirect role will affect the action taken when it
-is wiped from within the Rockstor interface. If a valid redirect to an
-existing partition exists then the contents of that partition will be
-deleted. But if there is no redirect role then the entire drive and all it's
-partitions and associated data will be wiped. The command used internally to
-accomplish the wipe is "wipefs -a devname"."*
+**A drive's Redirect role defines the Wipe action. A Redirect + Wipe erases a
+partitions data and filesystem. No Redirect + Wipe erases the entire drive
+and all it's partitions. The wipe command used is "wipefs -a devname".** "
 
 The Redirect role is essentially a pointer to the partition one wants to use
 on a disk instead of using the whole disk (recommended). No Redirect role
