@@ -22,6 +22,7 @@ recommendations.
 * 8GB hard disk space for the OS
 * One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)
+* All drives must have unique serial numbers (real drives do); not all VM systems default to this
 * a UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
 * DVD drive and a blank DVD, or a USB port and min 1 GB USB key (for the installation media)
 
