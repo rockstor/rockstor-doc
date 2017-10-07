@@ -22,10 +22,11 @@ recommendations.
 * 8GB hard disk space for the OS
 * One or more additional hard drives for data (recommended)
 * Ethernet interface (with internet access -- for updates)
-* All drives must have unique serial numbers (real drives do); not all VM systems default to this
-* a UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
+* All drives must have unique serial numbers (real drives do); not all VM[*]_ systems default to this
+* An UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
 * DVD drive and a blank DVD, or a USB port and min 1 GB USB key (for the installation media)
-* Unique HDD uuid's are required if running on a virtual host (e.g. under VMware ensure you have disk.EnableUUID="true" in your .vmx file)
+
+.. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx file
 
 Download Rockstor
 -----------------
