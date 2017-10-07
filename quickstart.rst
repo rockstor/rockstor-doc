@@ -25,6 +25,7 @@ recommendations.
 * All drives must have unique serial numbers (real drives do); not all VM systems default to this
 * a UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
 * DVD drive and a blank DVD, or a USB port and min 1 GB USB key (for the installation media)
+* Unique HDD uuid's are required if running on a virtual host (e.g. under VMware ensure you have disk.EnableUUID="true" in your .vmx file)
 
 Download Rockstor
 -----------------
