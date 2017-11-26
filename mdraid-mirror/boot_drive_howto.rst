@@ -473,7 +473,7 @@ and pressing control and D at the same time gives this message:
 To fix this and get the system to boot normal first edit the /etc/fstab
 ::
    nano /etc/fstab
-the fstab should look somthing like this
+the fstab should look something like this
 ::
    # 
    #/etc/fstab
@@ -499,7 +499,7 @@ remove the *"subvolid=5,"* from / and /home like so:
    UID=49749f09-67ef-4594-9421-e9c5dcefdeea /boot ext4 defaults   1 2
    UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 /home btrfs subvol=home 0 0
    UID=559159db-ccOb-4050-b712-eebc4722121e swap swap defaults 0 0
-press **control** and **x** and to exit and save then press **y** to confirm you would like to save and **enter** to confim the name
+press **control** and **x** and to exit and save then press **y** to confirm you would like to save and **enter** to confirm the name
 
 reboot the system (just type reboot and then enter) now the system should boot as normal.
 
