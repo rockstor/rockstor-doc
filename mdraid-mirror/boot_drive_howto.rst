@@ -262,6 +262,21 @@ This time on booting the installer select the **Troubleshooting** section:
 
 Then Select the **Rescue a Rockstor System** option:
 
+**Note:**
+
+Selecting this in the 3.9.1 version of the install image will result in a long list of
+::
+   Warning: dracut-initqueue timeout - starting timeout scripts
+before entering an emergency mode
+
+to prevent this press the **tab** key on the **Rescue a Rockstor System** option and change:
+::
+   vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203.0\x20x86_64 rescue quit
+to:
+::
+   vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203\x20x86_64 rescue quit
+and press **enter**
+
 .. image:: rescue.png
    :scale: 85%
    :align: center
