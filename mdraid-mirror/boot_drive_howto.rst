@@ -300,6 +300,7 @@ We can now use this shell system to reformat our largest mdraid device (ie root)
 
 ::
 
+  mdadm --assemble --scan
   cat /proc/mdstat
   mkfs.btrfs -f -L rockstor_rockstor /dev/md###
   exit
