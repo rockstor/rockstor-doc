@@ -85,7 +85,7 @@ steps.
 
 * Steps 1 - 6 Regular custom partitioned mdraid install with ext4 as the root fs
 * steps 7 - 8 Use Rescue mode to format our largest mdraid device as btrfs
-* Steps 9 - 14 Install for the final time using our btrfs on mdraid for root
+* Steps 9 - 15 Install for the final time using our btrfs on mdraid for root
 
 Although this seems like a round about way to install it is currently the
 simplest way found without using a custom installer and only requires
@@ -262,6 +262,10 @@ This time on booting the installer select the **Troubleshooting** section:
 
 Then Select the **Rescue a Rockstor System** option:
 
+.. image:: rescue.png
+   :scale: 85%
+   :align: center
+
 **Note:**
 
 Selecting this in the 3.9.1 version of the install image will result in a long list of
@@ -277,9 +281,6 @@ to:
    vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203\x20x86_64 rescue quit
 and press **enter**
 
-.. image:: rescue.png
-   :scale: 85%
-   :align: center
 
 And at the following screen select **Skip** using the *Tab* and *Enter* keys.
 
@@ -503,6 +504,8 @@ press **control** and **x** and to exit and save then press **y** to confirm you
 
 reboot the system (just type reboot and then enter) now the system should boot as normal.
 
+Step 15: Setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Upon successful first boot, go through the usual process of pointing a browser
 at the indicated ip (in the Rockstor console) and completing the configuration
