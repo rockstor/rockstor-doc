@@ -85,7 +85,7 @@ steps.
 
 * Steps 1 - 6 Regular custom partitioned mdraid install with ext4 as the root fs
 * steps 7 - 8 Use Rescue mode to format our largest mdraid device as btrfs
-* Steps 9 - 14 Install for the final time using our btrfs on mdraid for root
+* Steps 9 - 15 Install for the final time using our btrfs on mdraid for root
 
 Although this seems like a round about way to install it is currently the
 simplest way found without using a custom installer and only requires
@@ -262,11 +262,26 @@ This time on booting the installer select the **Troubleshooting** section:
 
 Then Select the **Rescue a Rockstor System** option:
 
+**Note:**
+
+Selecting this in the 3.9.1 version of the install image will result in a long list of
+::
+   Warning: dracut-initqueue timeout - starting timeout scripts
+before entering an emergency mode
+
+to prevent this press the **tab** key on the **Rescue a Rockstor System** option and change:
+::
+   vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203.0\x20x86_64 rescue quit
+to:
+::
+   vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203\x20x86_64 rescue quit
+and press **enter** to continue as normal
+
 .. image:: rescue.png
    :scale: 85%
    :align: center
 
-And at the following screen select **Skip** using the *Tab* and *Enter* keys.
+At the following screen select **Skip** using the *Tab* and *Enter* keys.
 
 .. image:: rescue_skip.png
    :scale: 85%
@@ -285,6 +300,7 @@ We can now use this shell system to reformat our largest mdraid device (ie root)
 
 ::
 
+  mdadm --assemble --scan
   cat /proc/mdstat
   mkfs.btrfs -f -L rockstor_rockstor /dev/md###
   exit
@@ -294,7 +310,7 @@ Note that md### is the name for the largest md device displayed by mdstat.
 The following image shows the intended result of these commands:
 
 .. image:: rescue_btrfs_root.png
-   :scale: 85%
+   :scale: 100%
    :align: center
 
 Note you may not receive the TRIM message if not using ssd devices.
@@ -440,6 +456,55 @@ console display to acquire the ip message, this is also caused by the extended
 delays as the system is busy syncing the mdraid in the background. This issue
 mainly affects slow hardware and / or large boot devices. See our
 :ref:`mdraid_verify` section for how to read the mdraid's status.
+
+**Note:**
+
+after installation you might encounter this message:
+::
+   Welcome to emergency mode? After logging in, type "journalctl -xb- to view
+   system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to
+   try again to boot into default mode.
+   Give root password for maintenance 
+   (or type Control-D to continue): 
+and pressing control and D at the same time gives this message:
+::
+   Error getting authority: Error initializing authority: Could not connect: No such file or directory (g-io-error-quark, 1)
+   [ 550.771204] BTRFS error (device md125): subvol 'home' does not match subvolid 5
+To fix this and get the system to boot normal first edit the /etc/fstab
+::
+   nano /etc/fstab
+the fstab should look something like this
+::
+   # 
+   #/etc/fstab
+   #Created by anaconda on Sun Nov 26 08:32:06 2017
+   #
+   #Accessible filesystems, by reference, are maintained under '/dev/disk' 
+   #See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info 
+   #
+   UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 / btrfs subvolid=5,subvol=root00 0 0
+   UID=49749f09-67ef-4594-9421-e9c5dcefdeea /boot ext4 defaults   1 2
+   UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 /home btrfs subvolid=5,subvol=home 0 0
+   UID=559159db-ccOb-4050-b712-eebc4722121e swap swap defaults 0 0
+remove the *"subvolid=5,"* from / and /home like so:
+::
+   # 
+   #/etc/fstab
+   #Created by anaconda on Sun Nov 26 08:32:06 2017
+   #
+   #Accessible filesystems, by reference, are maintained under '/dev/disk' 
+   #See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info 
+   #
+   UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 / btrfs subvol=root00 0 0
+   UID=49749f09-67ef-4594-9421-e9c5dcefdeea /boot ext4 defaults   1 2
+   UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 /home btrfs subvol=home 0 0
+   UID=559159db-ccOb-4050-b712-eebc4722121e swap swap defaults 0 0
+press **control** and **x** and to exit and save then press **y** to confirm you would like to save and **enter** to confirm the name
+
+reboot the system (just type reboot and then enter) now the system should boot as normal.
+
+Step 15: Setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Upon successful first boot, go through the usual process of pointing a browser
 at the indicated ip (in the Rockstor console) and completing the configuration
