@@ -125,8 +125,8 @@ subscription for $40.00 USD.
 .. _free_stable:
 
 Please note that any code or documentation contributions to the `Rockstor
-project repositories <https://github.com/rockstor>`_ makes the contributor
-eligible for unlimited Activation codes.
+project repositories <https://github.com/rockstor>`_ makes the
+contributor eligible for up to 10 subscriptions for personal use.
 
 .. _auto_updates:
 
