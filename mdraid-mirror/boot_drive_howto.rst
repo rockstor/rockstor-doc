@@ -1,3 +1,4 @@
+.. highlight:: none
 ..  _mdraid_bootdrive_howto:
 
 Mirroring Rockstor OS using Linux Raid
@@ -264,17 +265,21 @@ Then Select the **Rescue a Rockstor System** option:
 
 **Note:**
 
-Selecting this in the 3.9.1 version of the install image will result in a long list of
-::
-   Warning: dracut-initqueue timeout - starting timeout scripts
-before entering an emergency mode
+Selecting this in the 3.9.1 version of the install image will result in a long
+list of::
 
-to prevent this press the **tab** key on the **Rescue a Rockstor System** option and change:
-::
+  Warning: dracut-initqueue timeout - starting timeout scripts before entering
+  an emergency mode
+
+To prevent this press the **tab** key on the **Rescue a Rockstor System**
+option and change::
+
    vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203.0\x20x86_64 rescue quit
-to:
-::
+
+to::
+
    vm linuz initrd=initrd.img inst.stage2=hd:LABEL=Rockstor\x203\x20x86_64 rescue quit
+
 and press **enter** to continue as normal
 
 .. image:: rescue.png
@@ -459,22 +464,26 @@ mainly affects slow hardware and / or large boot devices. See our
 
 **Note:**
 
-after installation you might encounter this message:
-::
+After installation you might encounter this message::
+
    Welcome to emergency mode? After logging in, type "journalctl -xb- to view
    system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to
    try again to boot into default mode.
    Give root password for maintenance 
-   (or type Control-D to continue): 
-and pressing control and D at the same time gives this message:
-::
-   Error getting authority: Error initializing authority: Could not connect: No such file or directory (g-io-error-quark, 1)
-   [ 550.771204] BTRFS error (device md125): subvol 'home' does not match subvolid 5
-To fix this and get the system to boot normal first edit the /etc/fstab
-::
+   (or type Control-D to continue):
+
+and pressing control and D at the same time gives this message::
+
+   Error getting authority: Error initializing authority: Could not connect:
+   No such file or directory (g-io-error-quark, 1) [ 550.771204] BTRFS error
+   (device md125): subvol 'home' does not match subvolid 5
+
+To fix this and get the system to boot normal first edit the /etc/fstab::
+
    nano /etc/fstab
-the fstab should look something like this
-::
+
+the fstab should look something like this::
+
    # 
    #/etc/fstab
    #Created by anaconda on Sun Nov 26 08:32:06 2017
@@ -486,8 +495,9 @@ the fstab should look something like this
    UID=49749f09-67ef-4594-9421-e9c5dcefdeea /boot ext4 defaults   1 2
    UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 /home btrfs subvolid=5,subvol=home 0 0
    UID=559159db-ccOb-4050-b712-eebc4722121e swap swap defaults 0 0
-remove the *"subvolid=5,"* from / and /home like so:
-::
+
+remove the *"subvolid=5,"* from / and /home like so::
+
    # 
    #/etc/fstab
    #Created by anaconda on Sun Nov 26 08:32:06 2017
@@ -499,12 +509,15 @@ remove the *"subvolid=5,"* from / and /home like so:
    UID=49749f09-67ef-4594-9421-e9c5dcefdeea /boot ext4 defaults   1 2
    UID=a3a7ba80-54e3-43e5-8e1c-7991c1a8b174 /home btrfs subvol=home 0 0
    UID=559159db-ccOb-4050-b712-eebc4722121e swap swap defaults 0 0
-press **control** and **x** and to exit and save then press **y** to confirm you would like to save and **enter** to confirm the name
 
-reboot the system (just type reboot and then enter) now the system should boot as normal.
+press **control** and **x** to exit and save then press **y** to confirm
+you would like to save and **enter** to confirm the name
+
+Reboot the system (just type reboot and then enter) now the system should boot
+as normal.
 
 Step 15: Setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 Upon successful first boot, go through the usual process of pointing a browser
 at the indicated ip (in the Rockstor console) and completing the configuration
@@ -528,7 +541,7 @@ Verification of the mirror
 --------------------------
 
 It's a good idea to verify the setup once the installation is finished. You can
-do that simply with the following command: ::
+do that simply with the following command::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -549,7 +562,7 @@ The three md* devices correspond to the mirror configuration we setup earlier
 during the install. Note that each partition is mirrored (raid1) where the
 counterparts of the mirror are from different drives (**sda** and **sdb** in
 our example). We can also verify that **/** and **/boot** are mounted and are
-the right size with the following command: ::
+the right size with the following command::
 
   # df -h | grep md
   /dev/md127      5.7G  1.5G  3.8G  29% /
@@ -562,7 +575,7 @@ The specific md* device names may vary from install to install, this is why it
 is a nice idea to have no two md devices of equal size ie /boot 1G and swap 1.5G
 as it can make discerning a partitions function easier.
 
-The following command shows our swap device: ::
+The following command shows our swap device::
 
   cat /proc/swaps
   Filename           Type        Size     Used  Priority
@@ -591,7 +604,7 @@ If your hardware supports hot swapping HDDs, and you chose RAID1 for all your
 partitions, then you can pull out the failing drive and leave the system
 running while you replace it with a new HDD. After removing the failing drive,
 the System continues to run normally, but the mirror is no longer redundant
-as shown in the below output (note sdb parts are missing): ::
+as shown in the below output (note sdb parts are missing)::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -624,7 +637,7 @@ The replacement HDD must be partitioned, much like during OS install. But this
 time we'll use command line tools. The advantage of using the same
 size HDD is that we can just copy the partition scheme from the functioning
 HDD. In our demonstration, **sda** is the still functioning HDD and it's
-partition table looks as follows ::
+partition table looks as follows::
 
   # sfdisk -d /dev/sda
   # partition table of /dev/sda
@@ -636,7 +649,7 @@ partition table looks as follows ::
   /dev/sda4 : start=        0, size=        0, Id= 0
 
 We can copy the partition table of **sda** to **sdb** with the following
-composite command: ::
+composite command::
 
   # sfdisk -d /dev/sda > /tmp/sda.pt; sfdisk /dev/sdb < /tmp/sda.pt; rm -f /tmp/sda.pt
   Checking that no-one is using this disk right now ...
@@ -677,7 +690,7 @@ Step 4: Rebuild the mirror
 
 This is the final and crucial step. We'll resync the partitions of the
 replacement HDD with its working counterpart in the mirror. This can be done
-with the following composite command: ::
+with the following composite command::
 
   # mdadm --manage /dev/md125 --add /dev/sdb2; mdadm --manage /dev/md126 --add /dev/sdb1; mdadm --manage /dev/md127 --add /dev/sdb3
   mdadm: added /dev/sdb2
@@ -686,7 +699,7 @@ with the following composite command: ::
 
 After the above step, the mirror is re-synchronized. It will take some time
 proportional to your HDD size. You can monitor the progress and confirm the
-finish by looking at the contents of the **/proc/mdstat** file as shown here: ::
+finish by looking at the contents of the **/proc/mdstat** file as shown here::
 
   # cat /proc/mdstat
   Personalities : [raid1]
@@ -709,7 +722,7 @@ Note the estimated time for completion on md126 above ie **finnish=2.0mins**
 
 The above output indicates that md125 and md127 have finished their recovery
 (re-sync), but md126 is at 68%. It is completed after a short while as shown
-again here: ::
+again here::
 
   # cat /proc/mdstat
   Personalities : [raid1]
