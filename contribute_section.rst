@@ -6,3 +6,4 @@ Community Contributions
 
    contribute
    contribute_documentation
+   contribute_rockons
