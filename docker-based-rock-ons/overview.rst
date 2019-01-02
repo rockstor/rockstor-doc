@@ -187,7 +187,7 @@ to the ON / OFF toggle to display a summary of the Rock-on's settings.
 This summary table displays, all volumes, ports, environment variables, labels, and devices 
 used by the Rock-on (if any). After a fresh Rock-on install, all objects set during the 
 install are reported here. In our example, the *Syncthing* Rock-on has the Rockstor **shares** 
-*syncthing_conf* and *syncthing_sync* mapped to the ``/conf`` and ``/home/syncthing/Sync`` 
+*syncthing_conf* and *syncthing_sync* mapped to the ``/config`` and ``/home/syncthing/Sync`` 
 paths inside the Rock-on, respectively, exposes three different ports to the host, and 
 uses two environment variables (*PUID* and *GUID*). 
 
