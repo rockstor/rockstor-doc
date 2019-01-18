@@ -16,8 +16,8 @@ BTRFS is also a newer Linux filesystem and is under heavy development. As of
 this writing a lot of functionality has become objectively stable. However the
 raid5/6 support is still considered experimental and so is not recommended for
 production use. Overall BTRFS is still thought of as a young filesystem but it's
-acceptance has increasing much over the last few years. In our own experience
-and in the context of Rockstor usecases, it has become quite reliable; given
+acceptance has increased greatly over the last few years. In our own experience
+and in the context of Rockstor use cases, it has become quite reliable; given
 the above raid5/6 proviso.
 
 We have servers with different types of pools and usecases here at Rockstor
