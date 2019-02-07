@@ -2,7 +2,7 @@
 Basic Concepts
 ==============
 
-Disk
+`Disks <http://rockstor.com/docs/disks.html>`_
 ----
 
 A disk is a block device that is usable by Rockstor. Disks can be locally
@@ -18,7 +18,7 @@ partition tables so that those disks might become usable.
 Disks can be added online as long as it is supported by the underlying
 hardware. Rockstor can rescan to detect new disks and make them available.
 
-Pool
+`Pools <http://rockstor.com/docs/pools-btrfs.html>`_
 ----
 
 A pool is a collection of disks with predefined redundancy strategy.  Available
@@ -29,20 +29,20 @@ A pool can be resized at anytime by adding or removing drives. Obviously,
 success of these operations depends on the state of the pool including current
 usage.
 
-Share
+`Shares <http://rockstor.com/docs/shares-btrfs-subvolumes.html>`_
 -----
 
 A share is created by carving out a chunk from a pool. Shares can be resized
 at a later time as well as exported via NFS, SMB, or AFP protocols.
 
-Snapshot
+`Snapshots <https://rockstor.com/docs/snapshots-btrfs-snapshots.html>`_
 --------
 
 A snapshot is a read-only point in time copy of a share. Since BTRFS is a CoW
 filesystem, snapshots are created instantly and take up no extra space when
 created.
 
-Web UI
+`Web UI <http://rockstor.com/docs/uis.html#web-ui>`_
 ------
 
 The easiest way to manage your storage with Rockstor is via it's web-ui. It can
@@ -64,7 +64,7 @@ other features that increase operational efficiency of the storage
 infrastructure.
 
 
-Rock-ons
+`Rock-ons <http://rockstor.com/docs/docker-based-rock-ons/overview.html>`_
 --------
 
 This is our made up term to reference the built in `docker <https://www.docker.com/>`_
