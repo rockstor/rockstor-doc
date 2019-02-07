@@ -7,7 +7,7 @@ Rockstor USB install disk using Rufus
 purpose graphical utility for Windows 7 and newer systems to help in the
 creation of bootable USB flash drives. It is licensed under
 `GNU GPLv3 or later <https://www.gnu.org/licenses/gpl.html>`_. Using it's
-default settings it will **NOT** create a working Rockstor USB install disk, but
+default settings it will **NOT** create a working Rockstor USB install disk.  However, 
 using the following configuration options, it can successfully prepare a working
 USB flash drive to be used for Rockstor install. Please see the
 :ref:`makeusbinstalldisk` in our :ref:`quickstartguide` guide for other tested
@@ -86,11 +86,11 @@ and you should then get this warning.
    :scale: 100%
    :align: center
 
-Note the device label and size in the warning before preceding,
+Note the device label and size in the warning before proceeding,
 if they don't match your target device click the **Cancel button** and start over.  
 If it is correct click **OK Button** to continue.
 
-Upon confirming continuation we should see the progress bar update to track the operation.
+Upon confirming continuation you should see the progress bar update to track the operation.
 
 .. image:: rufus34_write_in_progress.png
    :scale: 100%
