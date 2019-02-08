@@ -1,8 +1,10 @@
+..  _Concepts:
+
 
 Basic Concepts
 ==============
 
-`Disks <http://rockstor.com/docs/disks.html>`_
+Disk
 ----
 
 A disk is a block device that is usable by Rockstor. Disks can be locally
@@ -16,9 +18,10 @@ unusable. However the UI does provide a facility to remove any existing
 partition tables so that those disks might become usable.
 
 Disks can be added online as long as it is supported by the underlying
-hardware. Rockstor can rescan to detect new disks and make them available.
+hardware. Rockstor can rescan to detect new disks and make them available.  
+See our :ref:`disks` section for a more detailed explanation.
 
-`Pools <http://rockstor.com/docs/pools-btrfs.html>`_
+Pool
 ----
 
 A pool is a collection of disks with predefined redundancy strategy.  Available
@@ -27,27 +30,29 @@ chosen during pool creation but cannot be changed afterwards.
 
 A pool can be resized at anytime by adding or removing drives. Obviously,
 success of these operations depends on the state of the pool including current
-usage.
+usage.  See our :ref:`pools` section for a more detailed explanation.
 
-`Shares <http://rockstor.com/docs/shares-btrfs-subvolumes.html>`_
+Share
 -----
 
 A share is created by carving out a chunk from a pool. Shares can be resized
-at a later time as well as exported via NFS, SMB, or AFP protocols.
+at a later time as well as exported via NFS, SMB, or AFP protocols.  
+See our :ref:`shares` section for a more detailed explanation.
 
-`Snapshots <https://rockstor.com/docs/snapshots-btrfs-snapshots.html>`_
+Snapshot
 --------
 
 A snapshot is a read-only point in time copy of a share. Since BTRFS is a CoW
 filesystem, snapshots are created instantly and take up no extra space when
-created.
+created.  See our :ref:`snapshots` section for a more detailed explanation.
 
-`Web UI <http://rockstor.com/docs/uis.html#web-ui>`_
+Web UI
 ------
 
 The easiest way to manage your storage with Rockstor is via it's web-ui. It can
 be accessed by visiting the appliance's management IP over https using the
-Firefox browser. Note that other browsers are not supported.
+Firefox browser. Note that other browsers are not supported.  
+See our :ref:`webui` section for a more detailed explanation.
 
 Secure Shell
 ------------
@@ -64,8 +69,8 @@ other features that increase operational efficiency of the storage
 infrastructure.
 
 
-`Rock-ons <http://rockstor.com/docs/docker-based-rock-ons/overview.html>`_
+Rock-ons
 --------
 
 This is our made up term to reference the built in `docker <https://www.docker.com/>`_
-based plugin system; see our :ref:`rockons_intro` section for an explanation.
+based plugin system.  See our :ref:`rockons_intro` section for a more detailed explanation.
