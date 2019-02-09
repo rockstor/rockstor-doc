@@ -16,7 +16,7 @@ Each Rock-on aims to provide a single additional service and the list of
 Initial Rock-ons Setup
 ----------------------
 
-As Rock_ons / docker containers are like mini linux installs they require
+As Rock-ons / docker containers are like mini linux installs they require
 somewhere to live.  In Rockstor it is recommend that you setup a Share
 specifically for this purpose.
 
@@ -156,4 +156,102 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    syncthing
    transmission-bittorrent
    zoneminder
+
+
+.. _rockons_advanced_config:
+
+Advanced Configuration
+----------------------
+
+While the installation and initial setup of Rock-ons is kept as simple and 
+user-friendly as possible, it is possible to further customize their configuration 
+post-install. At the time of writing, users can extend their existing Rock-on 
+installation with additional storage, or add customized docker container labels. 
+Note that this area is under active development to provide further customization.  
+
+.. _rockons_add_storage:
+
+Add Storage
+^^^^^^^^^^^^^^^^^
+The **Add Storage** feature allows the binding of any Rockstor share to an installed 
+Rock-on. As any share can be added as storage to multiple Rock-ons, this represents a 
+convenient and easy way to make a set of files accessible to multiple Rock-ons.  
+
+To start, make sure the Rock-on is turned OFF, and click on the little wrench icon next 
+to the ON / OFF toggle to display a summary of the Rock-on's settings.
+
+.. image:: addstorage_wrench.png
+   :scale: 100%
+   :align: center
+
+This summary table displays, all volumes, ports, environment variables, labels, and devices 
+used by the Rock-on (if any). After a fresh Rock-on install, all objects set during the 
+install are reported here. In our example, the *Syncthing* Rock-on has the Rockstor **shares** 
+*syncthing_conf* and *syncthing_sync* mapped to the ``/config`` and ``/home/syncthing/Sync`` 
+paths inside the Rock-on, respectively, exposes three different ports to the host, and 
+uses two environment variables (*PUID* and *GUID*). 
+
+.. image:: addstorage_settings_summary.png
+   :scale: 100%
+   :align: center
+
+To **Add Storage** to this Rock-on, click the *Add Storage* button on the bottom right corner. 
+Note that this button will only be displayed if the Rock-on supports this feature. In the 
+following dialog window, select a previously-created share (see our :ref:`createshare` section), 
+and define the path under which it will be seen from within the Rock-on.
+
+.. image:: addstorage_share_selection.png
+   :scale: 100%
+   :align: left
+
+In this example, the Rockstor **share** *test_share01* will be added as ``/opt/my_added_share01`` 
+from within the Rock-on.  
+
+The next window summarizes the already-existing and new settings to be applied (here: new share). 
+If everything is correct, click "Next" and then "Submit" to update the Rock-on settings with 
+the newly-added storage. Internally, Rockstor will first uninstall the Rock-on before 
+re-installing it with the updated settings summarized in the previous table. 
+
+.. image:: addstorage_settings_verification.png
+   :scale: 100%
+   :align: center
+
+
+
+.. _rockons_add_labels:
+
+Add Labels
+^^^^^^^^^^^^^^^^^
+The **Add Labels** feature allows to apply customized *docker container labels* 
+(`docker documentation <https://docs.docker.com/config/labels-custom-metadata/>`_) to any 
+installed Rock-on. To add a new label within an existing Rock-on, make sure the Rock-on is turned 
+OFF, and click on the little wrench icon next to the ON / OFF toggle to display a summary of the 
+Rock-on's settings (see :ref:`rockons_add_storage` for description of this table).  
+
+To add a label to a given Rock-on, click the **Add Label** button at the bottom of the Rock-on 
+settings summary page.
+
+.. image:: addlabels_settings_summary.png
+   :scale: 100%
+   :align: center
+
+Notably, as labels are applied at the *container* level, the next dialog 
+will allow you to select the container to which the label will be applied. Conveniently, Rockstor 
+will only list the containers included in the current Rock-on. In the example below, the Rock-on 
+includes two containers: *helloworld1* and *helloworld2*.
+
+.. image:: addlabels_container_selection.png
+   :scale: 100%
+   :align: center
+
+To apply two different labels to the container *helloworld2*, simply add as many label fields as 
+needed, and type your labels.
+
+.. image:: addlabels_labels_selection.png
+   :scale: 100%
+   :align: center
+
+Click "Next" and verify your new label-to-container mapping(s) before finishing the procedure by 
+clicking "Next" and "Submit". Internally, Rockstor will first un-install the Rock-on before 
+re-installing it with the newly-defined labels.
 
