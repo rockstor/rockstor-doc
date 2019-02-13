@@ -177,7 +177,7 @@ issue containing all relevant changes.
 
 When you are ready, open the pull request and please follow these 2 tips to expedite the review:
 
-    * When you've finished your edit, run the Sphinx *make html* command,and paste the output of the command into the issue discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
+    * When you've finished your edit, run the Sphinx *make html* command, and paste its output into the pull request discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
 
 
     * When you make a pull request, if you add a "Fixes #number-of-issue" on it's own line then when it gets merged it auto closes that issue. Just a nice to have and also provides a link to the relevant issue. See https://help.github.com/articles/closing-issues-using-keywords/ for details.
