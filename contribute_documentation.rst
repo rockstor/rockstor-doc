@@ -123,7 +123,7 @@ to check your work, you'll need these packages for the make to complete successf
 If you are generating videos, and prefer uploading your videos to the Rockstor Youtube channel,
 please, send an email to support@rockstor.com
 
-As of this writing, there is a minor problem with the sphinxcotrib.youtube extension for Python 3, below you'll find the
+As of this writing, there is a minor problem with the sphinxcontrib.youtube extension for Python 3, below you'll find the
 commands to install sphinxcontrib.youtube, and sphinxcontrib-fulltoc broken out in Python 2, and Python 3 sections.  The 
 Python 3 sphinxcontrib.youtube pulls a fixed version from github.
 
