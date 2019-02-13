@@ -175,7 +175,7 @@ request by clicking on the **pull request** button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
 
-When you are ready open the pull request please follow these 2 tips to expedite the review.
+When you are ready, open the pull request and please follow these 2 tips to expedite the review:
 
     * When you've finished your edit, run the Sphinx *make html* command,and paste the output of the command into the issue discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
 
