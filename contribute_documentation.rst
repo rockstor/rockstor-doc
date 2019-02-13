@@ -4,11 +4,11 @@ Contributing to Rockstor documentation
 ======================================
 
 Steps for contributing to **rockstor-doc** repo are similar to contributing to
-**rockstor-core**, as we follow the same fork and pull request model. We’ll
+**rockstor-core**, as we follow the same fork and pull request model. We'll
 assume you have basic proficiency with Git and are familiar with using a
-texteditor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
+text editor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
 recommendations. Or you may be able to use an online such as https://livesphinx.herokuapp.com/. 
-We’ll further assume that you have your laptop ready with git
+We'll further assume that you have your laptop ready with git
 and an editor installed. Since we rely on github services, you need to create a
 profile on github.com.
 
@@ -107,25 +107,27 @@ follow the appropriate installation guide for Sphinx.
 Installing Sphinx
 ^^^^^^^^^^^^^^^^^
 In order to properly develop and submit contributions you'll need to install Sphinx, plus two sphinx extensions
-sphinxcontrib-fulltoc - generates detialed sidebar table of contents
-sphinxcontrib.youtube - used if you create a video to demonstrate Rockstor functionality 
+
+`sphinxcontrib-fulltoc <https://pypi.org/project/sphinxcontrib-fulltoc/>`_ generates detailed sidebar table of contents.
+
+`sphinxcontrib.youtube <https://pypi.org/project/sphinxcontrib.youtube/>`_ used if you create a video to demonstrate Rockstor functionality 
 
 `Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms. Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
 
 Once you have Sphinx installed you'll need 2 more Sphinx extensions before you're fully ready.  The 
-sphinxcontrib-youtube package, allows you to embed videos into your doucmentation pages to explain 
+sphinxcontrib-youtube package, allows you to embed videos into your documentation pages to explain 
 Rockstor features or functionality.  The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
 
-While you may not use the functionality of these extensions in  your page, when you execute a make html
+While you may not use the functionality of these extensions in your page, when you execute a *make html*
 to check your work, you'll need these packages for the make to complete successfully.  
 If you are generating videos, and prefer uploading your videos to the Rockstor Youtube channel,
 please, send an email to support@rockstor.com
 
-As of this writing, there is a minor prolblem with the sphinxcotrib.youtube extension for Python 3, below you'll find the
-commands to install sphinxcontrib.youtube, and sphinxcontrib-fulltoc broken out in Python 2, adn Python 3 sections.  The 
-Python 3 sphinxcontrib.youtube pulls a fixec version from github.
+As of this writing, there is a minor problem with the sphinxcotrib.youtube extension for Python 3, below you'll find the
+commands to install sphinxcontrib.youtube, and sphinxcontrib-fulltoc broken out in Python 2, and Python 3 sections.  The 
+Python 3 sphinxcontrib.youtube pulls a fixed version from github.
 
-For a **Pyton 2** instalation, use these commnads. ::
+For a **Python 2** installation, use these commands. ::
 
 	[you@your_laptop /path/to/rockstor-doc]# sudo pip install sphinxcontrib.youtube
 
@@ -169,12 +171,13 @@ following command::
 	[you@your_laptop rockstor-doc] git push origin your_branch_name
 
 When you finish work for the issue and are ready to submit, create a pull
-request by clicking on the “pull request” button on github. This notifies the
+request by clicking on the **pull request** button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
 
-When you are ready open the pull request please follow these 2 tips to expdite the review.
+When you are ready open the pull request please follow these 2 tips to expedite the review.
 
-	* When you think you've made your final update after you run the Sphinx make html command, paste the output of the command into the issue discussion string to help speed up the review.  This will also give you a chance to check the functionality of your work prior to your pull request.
+    * When you've finished your edit, run the Sphinx *make html* command,and paste the output of the command into the issue discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
 
-    * When you do a pull request, if you pop in a "Fixes #number-of-issue" on it's own line then when it gets merged it auto closes that issue. Just a nice to have and also provides a link to the relevant issue. See https://help.github.com/articles/closing-issues-using-keywords/ for details.
+
+    * When you make a pull request, if you add a "Fixes #number-of-issue" on it's own line then when it gets merged it auto closes that issue. Just a nice to have and also provides a link to the relevant issue. See https://help.github.com/articles/closing-issues-using-keywords/ for details.
