@@ -33,7 +33,7 @@ a single user, ie for secure file access / storage across client platforms.
 
 Note also that the share or shares owned by the SFTP user will be mounted within
 a chroot environment, internally this is located at
-*/mnt3/<username>/<sharename>*.
+*/mnt2/<username>/<sharename>*.
 
 .. _create_sftp_share:
 
