@@ -46,7 +46,7 @@ Rockstor user to authenticate against this share. Finally the share must be
 exported via the SFTP method. The following list details a suggested order
 and gives links to the documentation on each of these steps.
 
-* Start with the :ref:`User Configuration page <users>` and follow the:ref:`Add a Rockstor user <adduser>` to create the user to use in the SFTP authentication process.
+* Start with the :ref:`User Configuration page <users>` and follow the :ref:`Add a Rockstor user <adduser>` to create the user to use in the SFTP authentication process.
 * If you don't already have a storage pool, refernce the :ref:`pools` page, :ref:`createpool` section to create the pool that will contain the SFTP Share.
 * A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare`.
 * Finally this Share is exported via :ref:`sftp_export`.
@@ -225,3 +225,37 @@ is also available for various versions of windows.
 A dedicated SFTP client application that has found favour in `our forum
 <http://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
 `GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
+
+SFTP Access From WinSCP
+^^^^^^^^^^^^^^^^^^^^
+
+When you install WinSCP, it will ask you to pick your prefred interface either 
+the commander interface, or the explorer interface.  Their recommendation is for
+Windows users to chose the explorer interface.  If you are used to working with
+ftp clients you may find the commander interface more familiar.  After you've installed
+WinSCP, when you start the program it will immediatly bring up the Login window to start
+an SFTP session.
+
+..  image:: winscp_login.png
+    :scale: 100%
+    :align: center
+
+In host Name you can enter your Rockstor appliance's name, or IP address.  For User name
+enter the user you created and made owner of the share, and use that users password.  Click
+the **Login** button, and it should open a session.  You Rockstor servers will have a self signed
+certificate which may generate a warning, if you are sure you're connected to your server accept
+the certificate.  Once the session is established you'll be viewing the interface you chose during install
+
+Either the Explorer interface:
+
+..  image:: winscp_explorer_view.png
+    :scale: 100%
+    :align: center
+Which povides of view of the files on the SFTP share in familiar Windows like interface or,
+you if you choose the Commander interface:
+
+..  image:: winscp_commander_view.png
+    :scale: 100%
+    :align: center
+your view will have local files on the left, SFTP share files on the right, and a satus window on the bottom.
+    
