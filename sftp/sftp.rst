@@ -46,9 +46,9 @@ Rockstor user to authenticate against this share. Finally the share must be
 exported via the SFTP method. The following list details a suggested order
 and gives links to the documentation on each of these steps.
 
-* :ref:`Add a Rockstor user <adduser>` to use in the SFTP authentication process, see the :ref:`users` section.
-* Create a storage pool (if need be) for the SFTP Share, see :ref:`createpool` in the :ref:`pools` section.
-* A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare` in the :ref:`pools` section.
+* Start with the :ref:`User Configuration page <users>` and follow the:ref:`Add a Rockstor user <adduser>` to create the user to use in the SFTP authentication process.
+* If you don't already have a storage pool, refernce the :ref:`pools` page, :ref:`createpool` section to create the pool that will contain the SFTP Share.
+* A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare`.
 * Finally this Share is exported via :ref:`sftp_export`.
 
 The following sections illustrate examples of the last 3 items in the above.
