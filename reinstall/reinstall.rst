@@ -7,6 +7,9 @@ When reinstalling Rockstor or when the **Installation Destination** disk is
 **not blank** it is necessary to take a few more steps within the installer to
 prepare the **system disk**.
 
+Prior to starting your reinstall, if you have a working installatin you may want to :ref:`Create a Configuration Backup <config_backup>`
+and download and save the file so you can :ref:`restore that configuration <config_restore>` after the reinstall is complete.
+
 .. _wiping_disk:
 
 Wiping the system disk
