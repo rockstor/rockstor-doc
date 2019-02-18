@@ -22,9 +22,10 @@ Following state information is saved as part of a backup
 * AFP configuration
 * Service configurations (ntp, smartd etc..)
 
-Since Rockstor can dynamically detects Pool, Share and Snapshot information
-after an external change like a reinstall, there is no need to save this
-information. While the above list covers the essentials of the whole state,
+Since Rockstor can dynamically detect :ref:'Pool <pools>', :ref:'Share <shares>', and :ref:'Snapshot <snapshots>' information
+after an external change like a :ref:'reinstall', there is no need to save this
+information. For more information visit the :ref:'reinstall_import_data' section
+in the :ref:'reinstall' howto.  While the above list covers the essentials of the whole state,
 the following state information is not currently saved to a backup. There are
 plans to add these states to the list of saved states in the future.
 
@@ -54,8 +55,8 @@ backup will be saved and named according to the date and time it was taken.
     :scale: 80%
     :align: center
 
-This shows a single save point; It's recommended that you download the backup
-and save it somewhere safe and secure. In case of a reinstall, you can upload
+This shows a single save point; It's recommended that you **download** the backup
+and save it somewhere safe and secure. In case of a :ref:'reinstall', you can upload
 it and restore the system to this save point as explained below.
 
 Note the icons in the actions column.  Mouse over tooltips assist with
