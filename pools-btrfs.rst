@@ -72,6 +72,9 @@ All standard BTRFS redundancy profiles are available when creating a pool.
 Please see the `btrfs wiki <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_
 for up to date information on all btrfs matters.
 
+For a BTRFS features stability status overview, including redundancy profiles,
+vist the  `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_.
+
 Compression Options
 ^^^^^^^^^^^^^^^^^^^
 
@@ -99,7 +102,7 @@ These are optional and meant for more advanced users to provide BTRFS specific
 mount options. Since a Pool is a filesystem, it is mounted with default options
 which can be altered by providing one or more of the following. You can find
 out more about each option from the `btrfs wiki mount options section
-<https://btrfs.wiki.kernel.org/index.php/Mount_options>`_.
+<https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs(5)#MOUNT_OPTIONS>`_.
 
 * **alloc_start**
 * **autodefrag**
@@ -225,3 +228,4 @@ wiki balance section
 
 To start a balance, go to the Pool's detail page and click on the **Start a new
 balance** button in the **Balances** tab.
+
