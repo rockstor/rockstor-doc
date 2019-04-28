@@ -4,10 +4,11 @@ Contributing to Rockstor documentation
 ======================================
 
 Steps for contributing to **rockstor-doc** repo are similar to contributing to
-**rockstor-core**, as we follow the same fork and pull request model. We’ll
+**rockstor-core**, as we follow the same fork and pull request model. We'll
 assume you have basic proficiency with Git and are familiar with using a
-texteditor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
-recommendations. We’ll further assume that you have your laptop ready with git
+text editor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
+recommendations. Or you may be able to use an online such as https://livesphinx.herokuapp.com/. 
+We'll further assume that you have your laptop ready with git
 and an editor installed. Since we rely on github services, you need to create a
 profile on github.com.
 
@@ -48,7 +49,7 @@ want to document something for which there is no issue, feel free to create
 one.
 
 First, start with the latest documentation by rebasing your local repo's master
-branch with the upstream ::
+branch with the upstream. ::
 
         [you@your_laptop rockstor-doc]# git checkout master
         [you@your_laptop rockstor-doc]# git pull --rebase upstream master
@@ -58,7 +59,7 @@ Checkout a new/separate branch for your issue. For example::
         [you@your_laptop rockstor-doc]# git checkout -b issue#1234_brief_label
 
 You can then start making changes in this branch. Once done you can add your
-changes ::
+changes. ::
 
 	[you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
 
@@ -98,23 +99,46 @@ should add your name to the `rockstor-doc AUTHORS
 
 
 Unlike for code contributions, there is no need for a build VM. We use `Sphinx
-<http://sphinx-doc.org/contents.html>`_ to generate the html content from .rst
-files we edit. Installation procedure varies if you are on Mac or Linux, so
+<http://www.sphinx-doc.org>`_ to generate the html content from .rst
+files we edit. Installation procedure varies if you are on Mac, Windows, or Linux, so
 follow the appropriate installation guide for Sphinx.
 
 
 Installing Sphinx
 ^^^^^^^^^^^^^^^^^
+In order to properly develop and submit contributions you'll need to install Sphinx, plus two sphinx extensions
 
-Sphinx official documentation gives guidelines for installating Sphinx on various platforms. Follow
-the documentation `here <http://sphinx-doc.org/latest/install.html>`_.
+`sphinxcontrib-fulltoc <https://pypi.org/project/sphinxcontrib-fulltoc/>`_ generates detailed sidebar table of contents.
 
-If you want to create a video to explain Rockstor feature or functionality, you need to
-install an extra Sphinx package. If you prefer uploading your videos to Rockstor Youtube channel,
-please, send an email to support@rockstor.com ::
+`sphinxcontrib.youtube <https://pypi.org/project/sphinxcontrib.youtube/>`_ used if you create a video to demonstrate Rockstor functionality 
+
+`Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms. Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
+
+Once you have Sphinx installed you'll need 2 more Sphinx extensions before you're fully ready.  The 
+sphinxcontrib-youtube package, allows you to embed videos into your documentation pages to explain 
+Rockstor features or functionality.  The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
+
+While you may not use the functionality of these extensions in your page, when you execute a *make html*
+to check your work, you'll need these packages for the make to complete successfully.  
+If you are generating videos, and prefer uploading your videos to the Rockstor Youtube channel,
+please, send an email to support@rockstor.com
+
+As of this writing, there is a minor problem with the sphinxcontrib.youtube extension for Python 3, below you'll find the
+commands to install sphinxcontrib.youtube, and sphinxcontrib-fulltoc broken out in Python 2, and Python 3 sections.  The 
+Python 3 sphinxcontrib.youtube pulls a fixed version from github.
+
+For a **Python 2** installation, use these commands. ::
 
 	[you@your_laptop /path/to/rockstor-doc]# sudo pip install sphinxcontrib.youtube
 
+	[you@your_laptop /path/to/rockstor-doc]# sudo pip install --user sphinxcontrib-fulltoc
+	
+For a **Python 3** installation, use these commands.  ::
+
+	[you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user git+https://github.com/shomah4a/sphinxcontrib.youtube.git@404e8f17c2505333a0781a62800c5a8a08ba3c52
+
+	[you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxcontrib-fulltoc
+	
 Generating html files with Sphinx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 As you edit the content in .rst files, you can periodically generate html files
@@ -147,6 +171,13 @@ following command::
 	[you@your_laptop rockstor-doc] git push origin your_branch_name
 
 When you finish work for the issue and are ready to submit, create a pull
-request by clicking on the “pull request” button on github. This notifies the
+request by clicking on the **pull request** button on github. This notifies the
 maintainers of your changes. As a best practice only open one pull request per
 issue containing all relevant changes.
+
+When you are ready, open the pull request and please follow these 2 tips to expedite the review:
+
+    * When you've finished your edit, run the Sphinx *make html* command, and paste its output into the pull request discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
+
+
+    * When you make a pull request, adding a "Fixes #number-of-issue" on its own line will automatically close the related issue when it gets merged. Just a nice thing to have and also provides a link to the relevant issue. See https://help.github.com/articles/closing-issues-using-keywords/ for details.
