@@ -36,7 +36,7 @@ Welcome to Rockstor
    share_replication
    services
    network
-   config_backup
+   config_backup/config_backup
    ups-setup/ups_setup
    clients
    support

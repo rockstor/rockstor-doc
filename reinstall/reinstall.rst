@@ -7,13 +7,16 @@ When reinstalling Rockstor or when the **Installation Destination** disk is
 **not blank** it is necessary to take a few more steps within the installer to
 prepare the **system disk**.
 
+Prior to starting your reinstall, if you have a working installation you may want to :ref:`Create a Configuration Backup <config_backup>`
+and download and save the file so you can :ref:`restore that configuration <config_restore>` after the reinstall is complete.
+
 .. _wiping_disk:
 
 Wiping the system disk
 ----------------------
 
-As Rockstor’s semi-automated installer expects a blank disk we must arrange
-this whenever the system disk already has partitions on it.  This will be
+As Rockstor's semi-automated installer expects a blank disk we must arrange
+this whenever the system disk already has partitions on it.  This will be
 evident from the **Installation Summary** screen by an **exclamation mark**
 next to **Installation Destination**.
 
@@ -21,8 +24,8 @@ next to **Installation Destination**.
    :scale: 80%
    :align: center
 
-Note in the above we have attention required  in **Data & Time** and
-**Installation Destination**.  Date and Time simply needs to know your
+Note in the above we have attention required  in **Data & Time** and
+**Installation Destination**.  Date and Time simply needs to know your
 location to set the time zone.
 
 When Selecting the **Installation Destination** menu option we see the
@@ -60,7 +63,7 @@ this is in fact the correct disk, click on the **Delete all** button.
 **Delete all**
 
 Note now how the Action column entries are all **Delete** and the
-**Reclaim space** button has become available:-  
+**Reclaim space** button has become available:-  
 
 .. image:: reinstall_reclaim_space.png
    :scale: 80%
@@ -86,7 +89,7 @@ Data Import
 Once Rockstor has been :ref:`reinstalled <reinstall>` and
 you have applied the updates via the automated prompt in the WebUI and rebooted
 if prompted to do so you can
-import the data that was present on your previous Rockstor install’s data
+import the data that was present on your previous Rockstor install's data
 disks; assuming you had separate data disks of course.
 
 *N.B. given this is a new install it is advisable to reboot anyway to make sure
@@ -116,3 +119,4 @@ Restoring Configuration
 If you have previously :ref:`Created a Configuration Backup <config_backup>`
 and downloaded the relevant file then you can now :ref:`restore that
 configuration <config_restore>`.
+
