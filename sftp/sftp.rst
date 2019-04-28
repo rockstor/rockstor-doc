@@ -8,7 +8,7 @@ and insecure File Transfer Protocol (FTP), only updated to be more secure. The
 internal system used by Rockstor is that included as a subsystem within the
 openssh server.
 
-Unlike other file sharing systems like :ref:`samba` or :ref:`afp` sftp has
+Unlike other file sharing systems like :ref:`samba` or :ref:`afp` SFTP has
 no built in discovery or service publishing components. This makes it a
 simpler system but one that requires a little more effort to connect with.
 Most notably is it required that you manually enter the Rockstor's hostname
@@ -21,19 +21,19 @@ The Rockstor SFTP System
 
 By default no user other than root are allowed to login via ssh or use SFTP.
 This restriction improves security but means there are certain conditions that
-must be met to gain sftp access to a Rockstor share.
+must be met to gain SFTP access to a Rockstor share.
 
 * the **SFTP user** must be a **Rockstor user**
 * the **SFTP user** must also be the **owner** of an **exported SFTP share**
 
-These restrictions make Rockstor's SFTP implimentation more suited for
+These restrictions make Rockstor's SFTP implementation more suited for
 individual storage needs as opposed to a shared storage area accessed by
 multiple users. In the following example we will setup a secure share for use by
 a single user, ie for secure file access / storage across client platforms.
 
 Note also that the share or shares owned by the SFTP user will be mounted within
 a chroot environment, internally this is located at
-*/mnt3/<username>/<sharename>*.
+*/mnt2/<username>/<sharename>*.
 
 .. _create_sftp_share:
 
@@ -43,12 +43,12 @@ Creating a SFTP Share
 In order to establish a SFTP share it is first necessary to have a
 pre-configured storage pool, a share of this pool or part there of, and a
 Rockstor user to authenticate against this share. Finally the share must be
-exported via the SFTP method. The following list details a suggested order
+exported via the SFTP method. The following list details in the suggested order
 and gives links to the documentation on each of these steps.
 
-* :ref:`Add a Rockstor user <adduser>` to use in the SFTP authentication process, see the :ref:`users` section.
-* Create a storage pool (if need be) for the SFTP Share, see :ref:`createpool` in the :ref:`pools` section.
-* A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare` in the :ref:`pools` section.
+* Start with the :ref:`User Configuration page <users>` and follow the :ref:`Add a Rockstor user <adduser>` instructions to create a user to assign as owner of the share and use in the SFTP authentication process.
+* If you don't already have a storage pool for your SFTP share, reference the :ref:`pools` page, :ref:`createpool` section to create the pool that will contain the SFTP Share.
+* A :ref:`Share <shares>` of a storage pool area is then required, see :ref:`createshare`.
 * Finally this Share is exported via :ref:`sftp_export`.
 
 The following sections illustrate examples of the last 3 items in the above.
@@ -157,7 +157,7 @@ Here we see the minimal content associated with a chroot environment and the
 share or shares owned by this use; in this case the **philip-sftp-share**.
 
 Once connected the resource is available to other GUI programs via their
-respective open / save dialogs and the connection can be bookmarked to ease
+respective open / save dialogues and the connection can be bookmarked to ease
 future access.
 
 .. _sftp_osx:
@@ -168,7 +168,7 @@ SFTP Access From OSX
 A popular SFTP client program on OSX is `Cyberduck <https://cyberduck.io>`_.
 This is a particularly feature full client available directly from the link
 given or if preferred via a paid version on the Mac App Store where updates
-will then be automated. Cyberduck is licenced under GNUv2 and is available
+will then be automated. Cyberduck is licensed under GNUv2 and is available
 for OSX 10.7 (Lion) or later. Source code and issue tracking are available
 at `trac.cyberduck.io <https://trac.cyberduck.io/>`_.
 
@@ -179,7 +179,7 @@ protocols including SFTP.
 Here we see the dialog resulting from the **Open Connection** button filled out
 with the example used in this guide. Note the generated url in blue from the
 information entered. The 22 at the end of the url is required by some clients
-and is the default port used by ssh /sftp.
+and is the default port used by SSH/SFTP.
 
 ..  image:: cyberduck_sftp.png
     :scale: 80%
@@ -209,7 +209,7 @@ SFTP Access from Windows
 Most versions of MS Windows do not have a build in ability to access a SFTP
 resource. To partially get around this limitation one can install
 an explorer extension such as `Swish <http://www.swish-sftp.org/>`_ which is
-Licenced under GPLv2 with source code available on their `Swish GitHub page
+Licensed under GPLv2 with source code available on their `Swish GitHub page
 <https://github.com/alamaison/swish/blob/develop/LICENSE.txt>`_. Note also
 that Swish has been translated to over 20 languages via `their Transifex
 account <https://www.transifex.com/alamaison/swish/>`_.
@@ -225,3 +225,41 @@ is also available for various versions of windows.
 A dedicated SFTP client application that has found favour in `our forum
 <http://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
 `GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
+
+.. _sftp_winscp:
+
+SFTP Access From WinSCP
+^^^^^^^^^^^^^^^^^^^^^^^
+
+When you install WinSCP, it will ask you to pick your preferred interface either 
+the commander interface, or the explorer interface pictured below.  The WinSCP recommendation
+is for Windows users to chose the explorer interface.  If you have worked with ftp clients
+in the past, you may find the commander interface more familiar.  After you've installed
+WinSCP, when you start the program it will immediately bring up the Login window to start
+an SFTP session.
+
+..  image:: winscp_login.png
+    :scale: 100%
+    :align: center
+
+In host Name you can enter your Rockstor appliance's hostname, or IP address.  For User name
+enter the  :ref:`user you created <adduser>` and made owner of the SFTP share, and enter that users password.  Click
+the **Login** button, and it should open a session.  Your Rockstor server will have a self signed
+certificate which may generate a warning the first time you connect.  If you are sure you're
+connected to your server, accept the certificate.  Once the session is established you'll
+be viewing the interface you chose during install
+
+Either the Explorer interface.
+
+..  image:: winscp_explorer_view.png
+    :scale: 100%
+    :align: center
+
+Which provides of view of the files on the SFTP share in familiar Windows Explorer like interface, or 
+if you choose the Commander interface.
+
+..  image:: winscp_commander_view.png
+    :scale: 100%
+    :align: center
+
+Your view will have local files on the left, server files on the right, and a status window on the bottom. 
