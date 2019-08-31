@@ -17,14 +17,14 @@ Rockstor is a complete Linux distribution (iso) to be installed directly on
 hardware or as a VM with the following minimum system requirements and
 recommendations.
 
-* 64-bit Intel or AMD processor
-* 2GB RAM or more (recommended)
-* 8GB hard disk space for the OS
-* One or more additional hard drives for data (recommended)
-* Ethernet interface (with internet access -- for updates)
-* All drives must have unique serial numbers (real drives do); not all VM [*]_ systems default to this
-* A UPS (if desired) that is supported by `NUT <http://www.networkupstools.org/>`_
-* DVD drive and a blank DVD, or a USB port and min 1 GB USB key (for the installation media)
+* 64-bit Intel or AMD processor (2+ cores recommended).
+* 2GB RAM (4GB+ recommended).
+* 8GB drive for Rockstor; if USB key use only fast variants (16GB+ SSD recommended).
+* One or more additional drives for data use only (less than 1GB ignored, 5GB+ recommended).
+* Ethernet interface (with internet access for updates).
+* All drives must have unique serial numbers (real drives do); not all VM [*]_ systems default to this.
+* A UPS (recommended) that is supported by `NUT <http://www.networkupstools.org/>`_.
+* USB port and 1GB+ USB key for the installation media; or DVD drive and a blank DVD.
 
 .. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx file
 
