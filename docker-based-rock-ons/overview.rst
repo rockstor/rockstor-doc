@@ -175,7 +175,6 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `uTorrent <https://www.github.com/domibarton/docker-utorrent>`_: BitTorrent client
 * `Watchtower <https://github.com/containrrr/watchtower>`_: A process for automating Docker container base image updates
 * `Xeoma <http://felenasoft.com/xeoma/>`_: Video surveillance
-* `YouTrack <https://www.jetbrains.com/youtrack/>`_: Issue tracker designed for development teams
 * `Zabbix-XXL <https://github.com/monitoringartist/zabbix-xxl>`_: Network and application monitoring
 * `ZeroNet <https://zeronet.io>`_: Decentralized websites using Bitcoin crypto and the BitTorrent network
 
@@ -198,6 +197,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    plex-media-server
    syncthing
    transmission-bittorrent
+   youtrack
    zoneminder
 
 
