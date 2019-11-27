@@ -21,9 +21,10 @@ The following state information is saved as part of a backup
 * NFS configuration
 * AFP configuration
 * Service configurations (ntp, smartd etc..)
+* Scheduled task configuration
 
 Since Rockstor can dynamically detect  :ref:`Pool <pools>`,  :ref:`Share <shares>`, and :ref:`Snapshot <snapshots>` information
-after an external change like a :ref:`reinstallation <reinstall>` , there is no need to save this
+after an external change like a :ref:`reinstallation <reinstall>`, there is no need to save this
 information. For more information visit the :ref:`reinstall_import_data` section
 in the :ref:`reinstall` howto.  While the above list covers the essentials of the whole state,
 the following state information is not currently saved to a backup. There are
@@ -32,7 +33,6 @@ plans to add these states to the list of saved states in the future.
 * Appliance configurations
 * Dashboard customizations
 * Network interface settings
-* Schedule task configuration
 * Rock-on configuration
 
 This feature is found in the **Config Backups** section on the **System** page.
