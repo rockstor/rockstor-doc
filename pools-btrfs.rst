@@ -25,9 +25,9 @@ imported. For more information, see :ref:`reinstall_import_data`.
 
 Click on **Create Pool** button and submit the create pool form to create a
 pool. There is a tooltip for each input field to help you choose appropriate
-parameters. Here's a video showing this operation.
+parameters.
 
-.. youtube:: https://www.youtube.com/watch?v=T5sg8xSoH1E
+See YouTube `Creating a Pool <https://www.youtube.com/watch?v=T5sg8xSoH1E>`_.
 
 
 .. _redundancyprofiles:
@@ -152,20 +152,18 @@ to finish.
 Redundancy profile changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can change :ref:`redundancyprofiles` online with very few
-restrictions. This video shows how to change a Pool from RAID1 to RAID10.
+You can change :ref:`redundancyprofiles` online with very few restrictions.
 
-.. youtube:: https://www.youtube.com/watch?v=DouOx8gX5yE
+See YouTube `Change Pool's RAID profile <https://www.youtube.com/watch?v=DouOx8gX5yE>`_.
 
 .. _pooladddisks:
 
 Adding Disks
 ^^^^^^^^^^^^
 
-Disks can be added to a Pool online and expand capacity.  This video shows how
-to expand a RAID1 Pool by adding three disks.
+Disks can be added to a Pool online and expand capacity.
 
-.. youtube:: https://www.youtube.com/watch?v=E37rzWcwGu0
+See YouTube `Adding disks to a Pool <https://www.youtube.com/watch?v=E37rzWcwGu0>`_.
 
 .. _poolremovedisks:
 
@@ -174,10 +172,9 @@ Removing Disks
 
 Disks can be removed from a Pool online similar to adding Disks. However, since
 it results in reduced capacity, this operation can succeed only if the
-resulting capacity after removal is greater than the current usage. This video
-shows how to remove two disks from a RAID1 Pool made up of four disks.
+resulting capacity after removal is greater than the current usage.
 
-.. youtube:: https://www.youtube.com/watch?v=535pxsF16Pk
+See YouTube `Removing disks from a Pool <https://www.youtube.com/watch?v=535pxsF16Pk>`_.
 
 
 Pool deletion

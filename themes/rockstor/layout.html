@@ -8,6 +8,10 @@
 <title>Rockstor | Linux and BTRFS powered Opensource NAS solution</title>
 <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 <script src="{{ pathto('_static/' + 'js/libs/bootstrap.js', 1) }}"></script>
+<script type="text/javascript">
+    <!-- Adds target=_blank to external links -->
+    $(document).ready(function () {$('a[href^="http://"], a[href^="https://"]').not('a[class*=internal]').attr('target', '_blank');});
+</script>
 <link rel="shortcut icon" href="{{ pathto('_static/' + 'img/ico/favicon.ico', 1) }}" type="image/x-icon" />
 {%- endblock %}
 
@@ -50,7 +54,6 @@
                         <li><a href="https://github.com/rockstor/rockstor-core/issues" target="_blank">Issue Tracker</a></li>
                     </ul>
                 </li>
-                <li><a href="/blog">Blog</a></li>
                 <li>&nbsp;</li>
                 <li>&nbsp;</li>
 

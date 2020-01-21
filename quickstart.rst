@@ -136,8 +136,11 @@ untested, please see our :ref:`makeusbinstalldiskgui`.
 Installation
 ------------
 
-Installing Rockstor is quick and straight forward as shown in `this install
-video <https://www.youtube.com/watch?v=yEL8xMhMctw>`_. Since Rockstor is based
+Installing Rockstor is quick and straight forward.
+
+See YouTube `How to install Rockstor 3.8-7 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_.
+
+Since Rockstor is based
 on CentOS and uses the same anaconda installer the installation looks similar
 to that of CentOS or Fedora. You can also read
 :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup` for more information

@@ -31,7 +31,6 @@ import os
 extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.fulltoc',
-    'sphinxcontrib.youtube',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
