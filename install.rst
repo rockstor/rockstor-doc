@@ -13,14 +13,14 @@ that we have a :ref:`pre_install`.
 Quick evaluation using a virtual environment
 --------------------------------------------
 
-Rockstor can also be evaluated quickly using a virtual machine.
+Rockstor can also be evaluated quickly using a virtual machine, see our  :ref:`kvmsetup`.
 
-See our YouTube `VirtualBox Rockstor install demo
-<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ or our :ref:`kvmsetup`
+See YouTube `VirtualBox Rockstor install demo <https://www.youtube.com/watch?v=00k_RwwC5Ms>`_.
 
 Before proceeding with a serious installation that may require hardware
-procurement, you can evaluate Rockstor on Amazon AWS. See our YouTube video on `Rockstor on ec2
-<https://www.youtube.com/watch?v=ys_8FLVov2U>`_.
+procurement, you can evaluate Rockstor on Amazon AWS.
+
+See YouTube `Rockstor on ec2 <https://www.youtube.com/watch?v=ys_8FLVov2U>`_.
 
 Hardware recommendations
 -------------------------
@@ -80,7 +80,9 @@ Rockstor is under continuous development and we push tested updates in small bat
 
 Rockstor updates can be installed in two ways :
 
-1. Install updates from the Web-UI : On the Rockstor Web-UI, on the top-right side of the navigation bar, you will see an upward facing arrow. If you click on that arrow, and if there is an update available, you will see *Software Update* highlighted, with details on the screen. This `video <https://www.youtube.com/watch?v=srn6vgQNkbc>`_ also illustrates the process of update from Web-UI.
+1. Install updates from the Web-UI : On the Rockstor Web-UI, on the top-right side of the navigation bar, you will see an upward facing arrow. If you click on that arrow, and if there is an update available, you will see *Software Update* highlighted, with details on the screen.
+
+See YouTube `How to keep Rockstor upto date <https://www.youtube.com/watch?v=srn6vgQNkbc>`_.
 
 .. image:: images/install-update.png
    :scale: 60%

@@ -106,36 +106,26 @@ follow the appropriate installation guide for Sphinx.
 
 Installing Sphinx
 ^^^^^^^^^^^^^^^^^
-In order to properly develop and submit contributions you'll need to install Sphinx, plus two sphinx extensions
+In order to properly develop and submit contributions you'll need to install Sphinx, plus one Sphinx extensions
+
+`Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms.
+Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
+
+Once you have Sphinx installed you'll need 1 more Sphinx extensions before you're fully ready.
+The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
 
 `sphinxcontrib-fulltoc <https://pypi.org/project/sphinxcontrib-fulltoc/>`_ generates detailed sidebar table of contents.
-
-`sphinxcontrib.youtube <https://pypi.org/project/sphinxcontrib.youtube/>`_ used if you create a video to demonstrate Rockstor functionality 
-
-`Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms. Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
-
-Once you have Sphinx installed you'll need 2 more Sphinx extensions before you're fully ready.  The 
-sphinxcontrib-youtube package, allows you to embed videos into your documentation pages to explain 
-Rockstor features or functionality.  The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
 
 While you may not use the functionality of these extensions in your page, when you execute a *make html*
 to check your work, you'll need these packages for the make to complete successfully.  
 If you are generating videos, and prefer uploading your videos to the Rockstor Youtube channel,
 please, send an email to support@rockstor.com
 
-As of this writing, there is a minor problem with the sphinxcontrib.youtube extension for Python 3, below you'll find the
-commands to install sphinxcontrib.youtube, and sphinxcontrib-fulltoc broken out in Python 2, and Python 3 sections.  The 
-Python 3 sphinxcontrib.youtube pulls a fixed version from github.
-
 For a **Python 2** installation, use these commands. ::
-
-	[you@your_laptop /path/to/rockstor-doc]# sudo pip install sphinxcontrib.youtube
 
 	[you@your_laptop /path/to/rockstor-doc]# sudo pip install --user sphinxcontrib-fulltoc
 	
-For a **Python 3** installation, use these commands.  ::
-
-	[you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user git+https://github.com/shomah4a/sphinxcontrib.youtube.git@404e8f17c2505333a0781a62800c5a8a08ba3c52
+For a **Python 3** installation, favoured, use these commands.  ::
 
 	[you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxcontrib-fulltoc
 	

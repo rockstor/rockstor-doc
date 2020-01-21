@@ -30,9 +30,9 @@ https://<appliance_ip> in your browser.
 The setup process consists of two screens. In the first screen, an admin user
 must be created by entering desired credentials. In the second screen, all
 disks detected in the system are displayed. Click next to finish the setup
-process as shown below.
+process.
 
-.. youtube:: https://www.youtube.com/watch?v=MvdkoPeTLm8
-   
+See YouTube `Rockstor Web UI <https://www.youtube.com/watch?v=MvdkoPeTLm8>`_.
+
 Once the setup process is complete, the newly created admin user is logged in
 and the Rockstor dashboard is displayed.

@@ -88,8 +88,9 @@ Go to `rockstor-core repo <https://github.com/rockstor/rockstor-core>`_ and
 click on the "Fork" button. This will fork the repository into your profile
 which serves as your private git remote called origin. The next few git steps are
 demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
-have ways to completely avoid the terminal, but using the terminal makes you
-`look cool <https://www.youtube.com/watch?v=51lGCTgqE_w>`_.
+have ways to completely avoid the terminal, but using the terminal makes you look cool:
+
+See YouTube `Trinity in the UNIX shell..... <https://www.youtube.com/watch?v=51lGCTgqE_w>`_.
 
 Your development machine can be a Linux system or a Mac. In my case, it's a
 Lenovo laptop running Ubuntu. There are other contributors using Mac, so this
@@ -171,13 +172,14 @@ Build VM
 
 You need a Virtual Machine (VM) to build and test your changes. An easy
 solution is to create a Rockstor VM using either Oracle's `VirtualBox
-<https://www.virtualbox.org/>`_ or if you are using a Linux desktop then
-`Virtual Machine Manager <https://virt-manager.org>`_ is also an option. You
-can find a `VirtualBox Rockstor install demo
-<https://www.youtube.com/watch?v=00k_RwwC5Ms>`_ on our `YouTube channel
-<https://www.youtube.com/channel/UCOr8Q4DA7gYDpeSv09BVCRQ>`_ and a
-:ref:`kvmsetup` in our documentation. It need not be a VM, but using a physical
-machine just for this purpose could be an overkill.
+<https://www.virtualbox.org/>`_:
+
+See YouTube `Rockstor 3 0 installation demo <https://www.youtube.com/watch?v=00k_RwwC5Ms>`_.
+
+or if you are using a Linux desktop then `Virtual Machine Manager (VMM) <https://virt-manager.org>`_ is a more native option.
+VMM is used in our :ref:`kvmsetup` howto.
+It need not be a VM, but using a physical machine just for this purpose could be overkill.
+
 
 Note that when you first create the build VM, Rockstor rpm package will already
 be installed. The package files are located in /opt/rockstor. Further more, the

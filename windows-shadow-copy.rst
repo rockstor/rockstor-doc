@@ -29,10 +29,7 @@ should choose the *Snapshot prefix* field to be unique enough that it will not
 clash with directory or filenames. Eg: SNAPSHOT. The rest of the input in the
 form is same as it would be for any other Samba export.
 
-Here's an example video demonstration.
-
-.. youtube:: https://www.youtube.com/watch?v=XAe8OlO3O38
-
+See YouTube `Rockstor shadow copy support part 1 of 3 <https://www.youtube.com/watch?v=XAe8OlO3O38>`_.
 
 Step 2: Schedule Snapshots
 --------------------------
@@ -43,9 +40,7 @@ clicking the *Schedule a Task* button. The important input parameter here is
 the *Snapshot prefix*. It must be the same string from the previous step. Eg:
 SNAPSHOT. Choose rest of the input according to your needs.
 
-Here's an example video demonstration.
-
-.. youtube:: https://www.youtube.com/watch?v=kh4O11x5vy8
+See YouTube `Rockstor shadow copy support part 2 of 3 <https://www.youtube.com/watch?v=kh4O11x5vy8>`_.
 
 
 Step 3: Access Snapshots from Windows
@@ -60,6 +55,6 @@ As the time goes by, files are added, edited and deleted from the
 Share by the client. Meanwhile, Snapshots are taken on Rockstor periodically and result in
 *Previous versions* or *Shadow copies* for files. To access previous versions
 of a file from Windows, go to it's *Properties* window and
-click on *Previous Versions* tab as shown in this video.
+click on *Previous Versions* tab.
 
-.. youtube:: https://www.youtube.com/watch?v=_YxIEc0OD-M
+See YouTube `Rockstor shadow copy support part 3 of 3 <https://www.youtube.com/watch?v=_YxIEc0OD-M>`_.
