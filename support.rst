@@ -4,7 +4,7 @@
 Support
 =======
 
-Our `commercial <http://rockstor.com/commercial_support.html>`_ support options.
+See our website for `Commercial Support <http://rockstor.com/commercial_support.html>`_ options.
 
-Our `free forum <http://rockstor.com/free_support.html>`_ support.
+Or visit our friendly `Community Forum <https://forum.rockstor.com/>`_ for free support.
 
