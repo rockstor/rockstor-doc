@@ -14,14 +14,26 @@ extensive configuration changes as it provides the possibility to revert to a
 known good configuration. Once a configuration backup has been generated and
 downloaded it can also be used in system migration scenarios.
 
+.. raw:: html
+
+   <div class="alert alert-warning">
+   Upon restore, the configuration of most features included in the backup
+   will be restored regardless of their current state. As a result, their current
+   configuration will be overwritten (to the exception of <em>Users</em> and
+   <em>Groups</em>, see <a href="#special-notes-on-configuration-restore">below</a>).
+   </div>
+
 The following state information is saved as part of a backup
 
 * Users and Groups
-* Samba configuration
-* NFS configuration
-* AFP configuration
+* Samba configuration and exports
+* NFS configuration and exports
+* AFP configuration and exports
+* Schedule task configuration
 * Service configurations (ntp, smartd etc..)
+* Service status (on / off)
 * Scheduled task configuration
+* Rock-on configuration
 
 Since Rockstor can dynamically detect  :ref:`Pool <pools>`,  :ref:`Share <shares>`, and :ref:`Snapshot <snapshots>` information
 after an external change like a :ref:`reinstallation <reinstall>`, there is no need to save this
@@ -33,7 +45,6 @@ plans to add these states to the list of saved states in the future.
 * Appliance configurations
 * Dashboard customizations
 * Network interface settings
-* Rock-on configuration
 
 This feature is found in the **Config Backups** section on the **System** page.
 
@@ -99,3 +110,23 @@ previously and is now ready to be applied using the **Play** icon as usual.
 **All configuration backups are stored in zipped json format in the
 /opt/rockstor/static/config-backups directory**
 
+..  _config_notes:
+
+Special Notes on Configuration Restore
+--------------------------------------
+
+As mentioned above, restoring a configuration backup will reset your system
+configuration but a few points should be mentioned:
+
+* **Preparation**: a lot of configuration settings such as NFS/Samba exports,
+  services configuration, or rock-ons, depend on the presence of specific shares
+  on the system. In a Rockstor reinstallation scenario, it is thus recommended to
+  first :ref:`import pools and shares <reinstall_import_data>` from the disk before
+  restore a configuration backup.
+* **Time**: upon restore, all settings may take some time to propagate, depending
+  on the size of the backup. If a particular setting doesn't seem to be restored
+  immediately, try refreshing the page after a few minutes. Rock-ons, for instance,
+  can take several seconds to minutes to be re-installed if necessary.
+* **Users and Groups**: only those present in the backup but not in the current
+  system will be restored. This means that users and groups  created after the backup
+  will not be deleted upon config backup restore.
