@@ -122,7 +122,7 @@ configuration but a few points should be mentioned:
   services configuration, or rock-ons, depend on the presence of specific shares
   on the system. In a Rockstor reinstallation scenario, it is thus recommended to
   first :ref:`import pools and shares <reinstall_import_data>` from the disk before
-  restore a configuration backup.
+  restoring a configuration backup.
 * **Time**: upon restore, all settings may take some time to propagate, depending
   on the size of the backup. If a particular setting doesn't seem to be restored
   immediately, try refreshing the page after a few minutes. Rock-ons, for instance,
