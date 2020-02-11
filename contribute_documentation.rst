@@ -106,7 +106,7 @@ follow the appropriate installation guide for Sphinx.
 
 Installing Sphinx
 ^^^^^^^^^^^^^^^^^
-In order to properly develop and submit contributions you'll need to install Sphinx, plus one Sphinx extensions
+In order to properly develop and submit contributions you'll need to install Sphinx, plus one Sphinx extension
 
 `Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms.
 Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
@@ -139,9 +139,15 @@ following command ::
 
 HTML files are generated in _build/html directory. From a separate terminal
 window, you can have a simple Python webserver always serving up this content
-with the following command ::
+with one of the following commands ::
+
+For a **Python 2** installation, use the following command. ::
 
         [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
+
+For a **Python 3** installation, use the following command. ::
+
+        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
 
 You can now go to http://localhost:8000 in your browser to review your
 changes. The webserver is to be started only once and it will continue to serve
