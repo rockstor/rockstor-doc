@@ -3,11 +3,11 @@
 Email Notifications
 ===================
 
-Rockstor integrates an easy to use e-mail/postfix configuration section that
-enables e-mail notifications.  By default all local root (system) e-mail will
-be forwarded to a specified e-mail address.  This is accomplished by using a
-dedicated (configurable) e-mail account that Rockstor can login too and send
-e-mail from.
+Rockstor integrates an easy to use email/postfix configuration section that
+enables email notifications.  By default all local root (system) email will
+be forwarded to a specified email address.  This is accomplished by using a
+dedicated (configurable) email account that Rockstor can login too and send
+email from.
 
 .. _email_setup:
 
@@ -20,7 +20,7 @@ Navigate to the **Email Alerts** section of the **System** page:-
     :scale: 80%
     :align: center
 
-Press the **Add an E-Mail account** button to begin.
+Press the **Add an Email account** button to begin.
 
 Complete the following required fields
 

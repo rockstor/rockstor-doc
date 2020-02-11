@@ -155,7 +155,7 @@ about installation.
 
    <div class="alert alert-info">
    If you need further assistance during or post install, you
-   can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an e-mail to support@rockstor.com
+   can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an email to support@rockstor.com
    </div>
 
 1. Boot your machine with the Rockstor CD or USB and the splash screen will

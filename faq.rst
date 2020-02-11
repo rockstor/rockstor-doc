@@ -249,7 +249,7 @@ How can I contribute to Rockstor?
 
 Thanks for asking and welcome to the Rockstor community. Depending on your
 needs and interests, there are a few ways to participate. See
-:ref:`contributetorockstor` for more details. Don't feel shy and e-mail any of
+:ref:`contributetorockstor` for more details. Don't feel shy and email any of
 the developers if you like to discuss more before jumping in!
 
 
