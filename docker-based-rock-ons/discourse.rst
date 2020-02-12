@@ -91,7 +91,7 @@ Discourse Mail Credentials
 
 Discourse now requires the following email details / credentials:-
 
-* **Admin e-mail** - email of the forum admin eg suman@rockstor.com
+* **Admin email** - email of the forum admin eg suman@rockstor.com
 * **Forum web address** - FQDN eg forum.rockstor.com
 * **SMTP server** - eg smtp.gmail.com
 * **SMTP port** - eg 587
