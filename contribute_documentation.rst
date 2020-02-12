@@ -139,7 +139,7 @@ following command ::
 
 HTML files are generated in _build/html directory. From a separate terminal
 window, you can have a simple Python webserver always serving up this content
-with one of the following commands ::
+with one of the following commands:
 
 For a **Python 2** installation, use the following command. ::
 
