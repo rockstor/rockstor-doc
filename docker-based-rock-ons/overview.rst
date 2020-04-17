@@ -83,9 +83,9 @@ Adding your own Rock-on
 
 The `rockon-registry <https://github.com/rockstor/rockon-registry>`_ contains
 the current list of freely available rock-on definition files and servers
-as the repository for :ref:`rockons_available`. Please consider donating,
-or asking your favourite project to donate, a rock-on via a GitHub pull request
-to this repository (see :ref:`contributerockons` for more information). Note 
+as the repository for :ref:`rockons_available`. Please consider contributing,
+or asking your favourite project to contribute, a rock-on via a GitHub pull request
+to this repository (see :ref:`contributerockons` for more information). Note
 that it is also possible to add to the available Rock-ons by placing a suitably 
 configured and named json file in the */opt/rockstor/rockons-metastore* directory 
 of your Rockstor install. For full instructions and examples please see the 
