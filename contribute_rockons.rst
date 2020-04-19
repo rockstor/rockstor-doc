@@ -60,7 +60,7 @@ Deleting a Rock-on
 
 The Rock-ons repository is predominantly community maintained/led.
 As such we depend on community involvement to maintain its health.
-On occasions a Rock-on will fall into dis-repair.
+On occasions a Rock-on will fall into disrepair.
 If you find such a Rock-on, ie broken or build on an abandoned/deprecated docker image,
 then please report this on our `friendly forum <https://forum.rockstor.com/>`_.
 If there is then no community will/effort to maintain/repair that rock-on then we will happily accept a pull request to delete it.
