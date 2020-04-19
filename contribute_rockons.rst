@@ -63,7 +63,7 @@ As such we depend on community involvement to maintain its health.
 On occasions a Rock-on will fall into disrepair.
 If you find such a Rock-on, ie broken or build on an abandoned/deprecated docker image,
 then please report this on our `friendly forum <https://forum.rockstor.com/>`_.
-If there is then no community will/effort to maintain/repair that rock-on then we will happily accept a pull request to delete it.
+If there is then no community will/effort to maintain/repair that rock-on, then we will happily accept a pull request to delete it.
 Such a pull request would include the removal/deletion of the associated JSON definition file and it's associated entry within the root.json file.
 Please reference the relevant forum discussion upon submitting such a pull request and limit each such Rock-on delete request to a single Rock-on.
 Such 'weeding' is definitely encouraged and contributes to the overall health of this repository and the project as a whole.
