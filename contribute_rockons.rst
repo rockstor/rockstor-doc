@@ -58,7 +58,7 @@ the following guidelines can help:
 Deleting a Rock-on
 ==================
 
-The Rock-ons repository is predominantly community maintained / lead.
+The Rock-ons repository is predominantly community maintained/led.
 As such we depend on community involvement to maintain it's health.
 On occasions a Rock-on will fall into dis-repair.
 If you find such a Rock-on, ie broken or build on an abandoned/deprecated docker image,
