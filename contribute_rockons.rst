@@ -20,7 +20,7 @@ A GitHub account is required.
 
 1. Create a *New issue* (button) in the **rockon-registry** `issues section <https://github.com/rockstor/rockon-registry/issues>`_ and explain what you are proposing.
 2. Creating your own *Fork* (button) of the `rockon-registry <https://github.com/rockstor/rockon-registry>`_ (GitHub login required).
-3. Write and test your Rock-on definition file following the `README.md <https://github.com/rockstor/rockon-registry/blob/master/README.md>`_.
+3. Write and test your Rock-on JSON definition file following the `README.md <https://github.com/rockstor/rockon-registry/blob/master/README.md>`_.
 4. In your forked copy on GitHub select **create new file** (button) and paste your JSON file and name it (no spaces).
 5. Before **Commit new file** (button) ensure  **"Create a new branch for this commit and start a pull request..."** is selected.
 6. After the selection in 5. change the suggested branch name to e.g. **"#1234 Add project Y as Rock-on"** where the number is that of your issue.
