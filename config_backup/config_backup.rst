@@ -28,12 +28,13 @@ The following state information is saved as part of a backup
 * Users and Groups
 * Samba configuration and exports
 * NFS configuration and exports
-* AFP configuration and exports
 * Schedule task configuration
 * Service configurations (ntp, smartd etc..)
 * Service status (on / off)
 * Scheduled task configuration
 * Rock-on configuration
+
+*Note: as of Rockstor-3.9.2-56, AFP configuration and exports are no-longer supported.*
 
 Since Rockstor can dynamically detect  :ref:`Pool <pools>`,  :ref:`Share <shares>`, and :ref:`Snapshot <snapshots>` information
 after an external change like a :ref:`reinstallation <reinstall>`, there is no need to save this

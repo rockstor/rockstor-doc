@@ -48,14 +48,6 @@ In Rockstor user owned shares exported via this method are mounted withing a
 minimal chroot environment for enhance security. Please see out :ref:`sftp`
 section.
 
-AFP
----
-
-Apple Filing Protocol is the native / proprietary equivalent of NFS in Linux /
-Unix and SMB/CIFS from Windows. However as of OSX 10.9 Mavericks the default
-network sharing protocol in OSX is SMB/CIFS. See the :ref:`afp` section for
-details.
-
 NTP
 ---
 

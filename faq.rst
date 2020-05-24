@@ -62,9 +62,9 @@ a small subscription fee. See :ref:`update_channels` for more information.
 How can I share files using Rockstor?
 -------------------------------------
 
-Rockstor supports popular file sharing protocols like Samba/CIFS, NFS, SFTP and
-AFP. Linux, Apple and Windows clients can easily share files using
-Rockstor. Rockstor also supports apps like OwnCloud, Syncthing and others in
+Rockstor supports popular file sharing protocols like Samba/CIFS, NFS, and SFTP.
+Linux, Apple and Windows clients can easily share files using Rockstor.
+Rockstor also supports apps like OwnCloud, Nextcloud, Syncthing and others in
 the form of :ref:`rockons_intro` that provide more advanced and easier ways to
 share and access your files.
 
@@ -163,10 +163,10 @@ regularly and can be requested on the `Forum <http://forum.rockstor.com>`_.
 How do I backup to Rockstor using Apple Time Machine?
 -----------------------------------------------------
 
-Please see our :ref:`afp` section which details how to set this up using
-Rockstor's build in :ref:`time_machine` compatible afp settings. Also of
-interest is the following more dated blog entry `Time Machine backups with Rockstor
-<http://rockstor.com/blog/uncategorized/time-machine-backups-with-rockstor/>`_.
+Samba exports can be used for Time Machine backups as of Rockstor-3.9.2-56, as a replacement
+for the now-deprecated AFP exports. The following forum post can be of interest for instructions
+on how to create a compatible Samba export: `Time Machine backups with Rockstor
+<https://forum.rockstor.com/t/3-9-2-stable-channel-changelog/5741/22>`_.
 
 
 Do you have examples on how to build complete NAS solutions for different storage capacities?
