@@ -6,6 +6,7 @@ Howtos
    :maxdepth: 2
 
    pre-install-howto/pre-install-howto
+   installer-howto/installer-howto
    reinstall/reinstall
    disk-power-down/disk_power_down
    smart/smart
