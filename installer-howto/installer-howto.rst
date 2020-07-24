@@ -13,7 +13,7 @@ Specifically with our fledgling move / rebase on openSUSE Leap15.2 our thanks go
 and the larger community for the extreme generosity we all benefit from in a myriad of seen and unseen ways.
 
 **Please note: Rockstor is in no way affiliated with openSUSE / SuSE and does not wish, under any circumstances, to misrepresent these organisations.**
-*Any errors you encounter are most likely our fault and we try, on a current volunteer basis, to support our users via our* `friendly forum: <https://forum.rockstor.com/.>`_.
+*Any errors you encounter are most likely our fault and we try, on a current volunteer basis, to support our users via our* `friendly forum <https://forum.rockstor.com/.>`_.
 
 It is hoped that Rockstor’s ongoing small contribution back to the larger community is of value,
 and if this is so for you please consider either subscribing to our Stable Channel updates or taking part in our developer orientated Testing Channel.
