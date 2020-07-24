@@ -25,7 +25,7 @@ See :ref:`dash_and_updates` later in this guide for the details.
 
 .. _our_kiwi_ng_installer:
 
-Our "Built on openSUSE" Wiki-ng created installer
+Our "Built on openSUSE" Kiwi-ng created installer
 -------------------------------------------------
 
 The existence of this installer, and those of many Linux distributions, is down in a major part to the Kiwi installer creation tool.
