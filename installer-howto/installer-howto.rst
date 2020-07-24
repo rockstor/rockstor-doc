@@ -210,7 +210,7 @@ Dashboard and System updates
 
 As the GPLv2 + licensed "rockstor" package stands on the shoulders of numerous OSS giants,
 it is possible to update all upstream, read openSUSE/SuSE, provided/curated packages
-via the flashing ico to the left of the "Uses openSUSE ..." text in the top right of the Web-UI:
+via the flashing icon to the left of the "Uses openSUSE ..." text in the top right of the Web-UI:
 
 .. image:: dashboard.png
    :scale: 80%
