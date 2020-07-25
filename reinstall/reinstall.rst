@@ -4,11 +4,15 @@ Reinstalling Rockstor
 =====================
 
 When reinstalling Rockstor or when the **Installation Destination** disk is
-**not blank** it is necessary to take a few more steps within the installer to
+**not blank** it is necessary to take a few more steps within our legacy installer to
 prepare the **system disk**.
+However all installers after version 4.0.0-0 behave identically irrespective of system target disk content.
+For our non legacy installer behaviour, install or re-install, please see :ref:`installer_howto`.
+But for both installers note the following:
 
 Prior to starting your reinstall, if you have a working installation you may want to :ref:`Create a Configuration Backup <config_backup>`
 and download and save the file so you can :ref:`restore that configuration <config_restore>` after the reinstall is complete.
+For the non legacy installer re-installs you can skip to :ref:`reinstall_import_data` later within this howto.
 
 .. _wiping_disk:
 
