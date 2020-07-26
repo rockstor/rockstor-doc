@@ -192,6 +192,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
 
    discourse
    jenkins
+   minio
    openvpn-server
    owncloud
    plex-media-server
