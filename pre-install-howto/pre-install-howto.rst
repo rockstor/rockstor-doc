@@ -70,7 +70,7 @@ Wiping Disks (DBAN)
 -------------------
 
 A popular tool to securely erase HDDs prior to their deployment or disposal is
-`Darils Boot and Nuke <http://www.dban.org/>`_. This tools essentially writes
+`Darils Boot and Nuke <https://www.dban.org/>`_. This tools essentially writes
 to every part of a
 disks surface and in the process exercises the drive across it's entire
 working area. This like the :ref:`memory_test` will stress the system; in this

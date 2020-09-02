@@ -36,18 +36,13 @@ Can I run Rockstor from a USB flash drive?
 Yes. Rockstor is optimized to do less writes if it detects the root
 drive to be USB flash drive or SSD. As expected, USB 2.0 can be pretty
 slow. So we recommend a USB 3.0 drive even if your motherboard doesn't support
-USB 3.0 as it'll still be faster. You can also purchase a 16 GB USB 3.0
-drive from our `shop
-<http://shop.rockstor.com/collections/diy-accessories/products/usb-stick>`_ and
-support our effort!
+USB 3.0 as it'll still be faster.
 
 Are there faster alternatives to running from USB?
 --------------------------------------------------
 
 Yes. If your motherboard has a spare PCI-Express slot you can get an SSD boot
-drive `from our shop <http://shop.rockstor.com/collections/diy-accessories/products/pcie-msata-boot-drive>`_.
-This is a cheap yet much faster alternative to a USB flash drive. Here's a short
-`blog post <http://rockstor.com/blog/diy-nas/ssd-boot-drive-for-diy-rockstor-systems>`_ with more information.
+drive.
 
 How much does Rockstor cost?
 ----------------------------
@@ -172,14 +167,11 @@ on how to create a compatible Samba export: `Time Machine backups with Rockstor
 Do you have examples on how to build complete NAS solutions for different storage capacities?
 ---------------------------------------------------------------------------------------------
 
-Rockstor is hardware agnostic, so you can build a complete Linux, BTRFS powered
-NAS solution using the Rockstor NAS OS and hardware of your choice. If you are a
-home-user/prosumer, read `8TB DIY NAS using Rockstor
-<http://rockstor.com/blog/uncategorized/8tb-rockstor-diy-nas/>`_. For a bigger
-storage footprint, read `240TB DIY NAS using Rockstor
-<http://rockstor.com/blog/diy-nas/rockstor-on-45-drives-aka-the-rockinator/>`_
-. The only requirement is that the system be of a 64bit Intel or compatible
-architecture.
+Rockstor is hardware agnostic, so you can build a complete Linux, BTRFS-powered
+NAS solution using the Rockstor NAS OS and hardware of your choice. The only
+requirement is that the system be of a 64bit Intel or compatible architecture.
+Don't hesitate to visit our `Forum <http://forum.rockstor.com>`_ to find user
+stories, example builds, or ask for advice from our community!
 
 
 I run a small organization with 10TB and growing data needs. How can Rockstor help me?
@@ -194,9 +186,10 @@ limited only by system resources like CPU, RAM etc. Feel free to `contact us
 Can I run a small home personal cloud using Rockstor?
 -----------------------------------------------------
 
-Yes. Rockstor can be installed on many small computeres like ASUS VivoPC or Intel
-NUC. Here's a blog post describing `Rockstor on Intel NUC
-<http://rockstor.com/blog/tutorials/rockstor-on-the-intel-nuc/>`_.
+Yes. Rockstor can be installed on many small computers like ASUS VivoPC or
+Intel NUC. We recommend visiting our `Forum <http://forum.rockstor.com>`_ for
+user stories, examples builds, and request advice or recommendation from the
+community.
 
 
 Can Rockstor support my specific storage use case?

@@ -91,7 +91,7 @@ Here's what you need before proceeding with installation
 7. (Optional) 1 GB USB drive if you choose to install from the USB instead of
    CD/DVD ROM.
 8. The Rockstor ISO file, downloadable from
-   `http://rockstor.com/downloads. <http://rockstor.com/downloads.html>`_
+   `http://rockstor.com/download. <http://rockstor.com/download.html>`_
 9. A blank CD-R/RW to burn the ISO file to. This is not necessary if installing
    from a USB flash drive as mentioned in step 7.
 10. A monitor, keyboard and a mouse to drive the install process.

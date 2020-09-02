@@ -25,7 +25,7 @@ Setup
 
 Once Rockstor installation is finished, as described in the
 :ref:`installation` section, the new appliance can be setup by visiting
-https://<appliance_ip> in your browser.
+:code:`https://<appliance_ip>` in your browser.
 
 The setup process consists of two screens. In the first screen, an admin user
 must be created by entering desired credentials. In the second screen, all

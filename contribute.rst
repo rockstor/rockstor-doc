@@ -47,7 +47,7 @@ company. We welcome you to join our community. Please begin by joining our
 Our development process is simple and straight forward. There is currently one
 main repository called `rockstor-core on Github
 <https://github.com/rockstor/rockstor-core>`_. Begin by `forking it
-<https://github.com/rockstor/rockstor-core#fork-destination-box>`_.
+<https://github.com/rockstor/rockstor-core/fork>`_.
 
 We use the wonderful `Git <http://git-scm.com/>`_ for source code
 management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
@@ -60,7 +60,7 @@ After you've forked the rockstor-core repo, clone the fork onto your
 laptop. The high level flow of a new contribution is as follows.
 
 1. Search for an existing issue or start a new issue using the `Issue
-Tracker <https://github.com/organizations/rockstor/dashboard/issues>`_.
+Tracker <https://github.com/rockstor/rockstor-core/issues>`_.
 
 2. Make code changes
 .
@@ -277,7 +277,7 @@ rockstor.log should be the first place to look for errors or debug logs.
 
 When making frontend changes, Developer Tools in Chrome/Firefox are your
 friends. You can `inspect elements
-<https://developer.chrome.com/devtools/docs/dom-and-styles#inspecting-elements>`_
+<https://developers.google.com/web/tools/chrome-devtools/dom>`_
 for html/css changes, log to the browser console from javascript code with
 console.log(), and use the debugger and step through javascript from your
 browser.

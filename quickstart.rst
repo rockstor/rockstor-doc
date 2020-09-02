@@ -207,7 +207,7 @@ about installation.
    Package installation takes a few minutes and once it's complete you can
    reboot, remove the install cd and boot into Rockstor. Once the system boots
    up, the url for web-ui is displayed above the login prompt. The url is
-   simply https://<IP_ADDRESS_OF_THE_SYSTEM>
+   simply :code:`https://<IP_ADDRESS_OF_THE_SYSTEM>`.
 
 5. **Setup Rockstor**
 
