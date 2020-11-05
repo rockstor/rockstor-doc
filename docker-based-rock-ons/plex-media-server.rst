@@ -33,12 +33,12 @@ Plex Documentation
 
 Plex's `own documentation <https://support.plex.tv/hc/en-us>`_ is extensive and
 well presented and a good kicking off point might well be their `Getting Started
-<https://support.plex.tv/hc/en-us/categories/200007268-Getting-Started>`_ guide
+<https://support.plex.tv/articles/200288286-what-is-plex/>`_ guide
 that has a thorough
-`Step by Step <https://support.plex.tv/hc/en-us/articles/200264746-Quick-Start-Step-by-Step>`_
+`Step by Step <https://support.plex.tv/articles/200264746-quick-start-step-by-step-guides/>`_
 introductions to the Plex system.  Also note that the Plex Media Server
 requires your media to be
-`organized <https://support.plex.tv/hc/en-us/categories/200028098-Media-Preparation>`_
+`organized <https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/>`_
 in a certain way.
 
 

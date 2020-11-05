@@ -153,7 +153,7 @@ This one-off login is required to find the Web-UI's address for use in your brow
    :scale: 80%
    :align: center
 
-Enter your systems' https://.. address into your browser, Chrome/Firefox/.., for the Web-UI.
+Enter your systems' :code:`https://...` address into your browser, Chrome/Firefox/.., for the Web-UI.
 
 Visit Rockstor's Web-UI
 ^^^^^^^^^^^^^^^^^^^^^^^

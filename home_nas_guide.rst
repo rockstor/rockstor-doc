@@ -53,7 +53,7 @@ Hard drives to hold your data. Multiple hard drives are recommended, to create p
       
 **Software**
       
-Download the Rockstor iso at `http://www.rockstor.com/downloads <http://rockstor.com/downloads.html>`_
+Download the Rockstor iso at `http://www.rockstor.com/downloads <http://rockstor.com/download.html>`_
 
 If you are using a USB drive as the installation media, prepare the USB drive with the Rockstor iso by following `these instructions <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
 
