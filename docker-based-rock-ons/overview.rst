@@ -76,6 +76,19 @@ If no Rock-ons are showing on the **All** tab then click the **Update** button
 to refresh the list of available Rock-ons. To install a listed Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
+.. _user_group:
+
+UID and GID usage in Rock-ons
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+During the configuration of Rock-ons, quite a few require the specification of a User ID (UID) and/or a User Group ID (GID). Aside from the various options using the command line to determine existing or creating new UIDs or GIDs, the simplest way is to take advantage of the User and/or Group management screen. Navigate to System --> Users (or Groups if necessary).
+
+.. image:: users_page.png
+   :scale: 30%
+   :align: center
+   
+The two highlighted columns show the UID and GID. For example, the user plex had the UID 1001, as well as the GID 1001, which could then be used to set up the Plex Rock-on.
+
 .. _adding_rockons:
 
 Adding your own Rock-on
