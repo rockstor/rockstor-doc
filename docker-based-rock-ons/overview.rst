@@ -76,7 +76,7 @@ If no Rock-ons are showing on the **All** tab then click the **Update** button
 to refresh the list of available Rock-ons. To install a listed Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
-.. _user_group:
+.. _rockons_user_group:
 
 UID and GID usage in Rock-ons
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
