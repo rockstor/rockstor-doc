@@ -87,7 +87,9 @@ During the configuration of Rock-ons, quite a few require the specification of a
    :scale: 30%
    :align: center
    
-The two highlighted columns show the UID and GID. For example, the user plex had the UID 1001, as well as the GID 1001, which could then be used to set up the Plex Rock-on.
+The two highlighted columns show the UID and GID. In the example above, the
+user :code:`plex` has the UID 1001, as well as the GID 1001, which could then
+be used to set up the Plex rock-on.
 
 .. _adding_rockons:
 
@@ -310,4 +312,3 @@ needed, and type your labels.
 Click "Next" and verify your new label-to-container mapping(s) before finishing the procedure by 
 clicking "Next" and "Submit". Internally, Rockstor will first un-install the Rock-on before 
 re-installing it with the newly-defined labels.
-
