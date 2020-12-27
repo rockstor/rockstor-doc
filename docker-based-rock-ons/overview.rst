@@ -76,6 +76,25 @@ If no Rock-ons are showing on the **All** tab then click the **Update** button
 to refresh the list of available Rock-ons. To install a listed Rock-on use
 its **Install** button on the Rock-ons WebUI page.
 
+.. _rockons_user_group:
+
+UID and GID usage in Rock-ons
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+During the configuration of Rock-ons, quite a few require the specification of a
+User ID (UID) and/or a Group ID (GID). Aside from the various options using the
+command line to determine existing UIDs and GIDs, the simplest way is to take
+advantage of the User and/or Group management screens. Navigate to System
+--> Users (or Groups if necessary).
+
+.. image:: users_page.png
+   :scale: 30%
+   :align: center
+   
+The two highlighted columns show the UID and GID. In the example above, the
+user :code:`plex` has the UID 1001, as well as the GID 1001, which could then
+be used to set up the Plex rock-on.
+
 .. _adding_rockons:
 
 Adding your own Rock-on
@@ -297,4 +316,3 @@ needed, and type your labels.
 Click "Next" and verify your new label-to-container mapping(s) before finishing the procedure by 
 clicking "Next" and "Submit". Internally, Rockstor will first un-install the Rock-on before 
 re-installing it with the newly-defined labels.
-
