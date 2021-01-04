@@ -13,7 +13,7 @@ the **System** tab. Rockstor fetches the current state and lists all ethernet
 devices and connection information on this screen.
 
 .. image:: images/network_interfaces.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 
@@ -33,7 +33,7 @@ Adding a network connection
 To **add** a network connection, simply click on the **Add Connection** button.
 
 .. image:: images/network_add_connection.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 The following types of connection can be chosen:
@@ -90,7 +90,7 @@ deployments. Just select *Auto (DHCP)* in the **Config Method** dropdown and
 submit. An example of this default configuration is shown below.
 
 .. image:: images/network_dhcp.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 
@@ -104,7 +104,7 @@ installations. Select *Manual* in the **Config Method** dropdown and provide
 appropriate input. The following is an example of a Static IP configuration.
 
 .. image:: images/network_static.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 

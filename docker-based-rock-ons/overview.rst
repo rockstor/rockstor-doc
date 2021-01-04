@@ -47,7 +47,7 @@ The following shows a **Recommended Minimum 5 GB rock-ons-root** share backed
 by a previously created pool named **rock-pool**.
 
 .. image:: rockons_root_share.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 Note that during the lifetime of Rock-ons several snapshots will be created so
@@ -57,13 +57,13 @@ Then click on the **spanner** next to the **Rock-on service** on the **System**
 page.
 
 .. image:: small_services.png
-   :scale: 100%
+   :width: 100%
    :align: center
 
 Now to **select** the share to use for your **Rock-ons root**.
 
 .. image:: rockons_root_config.png
-   :scale: 100%
+   :width: 100%
    :align: center
 
 **Select** the **rock-on-root** share that we created earlier and **Submit**
@@ -72,7 +72,7 @@ You can now **enable** the **Rock-on service** and proceed to the Rock-ons
 page.
 
 .. image:: rockons_page.png
-   :scale: 80%
+   :width: 100%
    :align: center
 
 If no Rock-ons are showing on the **All** tab then click the **Update** button
