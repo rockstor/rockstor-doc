@@ -3,16 +3,16 @@
 Services
 ========
 
-Rockstor supports many services that are necessary or useful in a storage system.
-Service management, ie turning on or off and configuration can be done via
-the **System** - **Services** page of the web-ui. Note that the **spanner icon**
-next to each service name is used to **configure** that service.
+Rockstor supports many services that are necessary or useful in a storage
+system. Service management, *i.e.* turning on or off, and configuration can be
+done via the **System** - **Services** page of the web-UI. Note that the
+**spanner icon** next to each service name is used to **configure** that
+service.
 
-This section is the default for the System page: all services and their
-current state are displayed.
+On the **Services** page, all services and their current state are displayed.
 
-.. image:: services.png
-   :scale: 70 %
+.. image:: images/services/services_list.png
+   :width: 100 %
    :align: center
 
 To **start** or **stop** a service, click its respective **ON** or **OFF**
@@ -22,8 +22,8 @@ Some services need to be configured before they can be turned on. To access
 the configuration page for a service, click the **wrench** icon next to the
 service name.
 
-Please note that not all services are documented here, we are currently working
-on upgrading the documentation
+Please note that not all services are documented here as we are currently
+working on upgrading the documentation.
 
 NFS
 ---
@@ -64,48 +64,67 @@ server in the NTP configuration page.
 AD
 --
 
-AD is a directory service to connect to Active Directory. It must be turned on
-in order to be part of AD.
+AD is a directory service to connect to an Active Directory domain. It must be
+turned ON in order to be part of the AD.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. To configure AD, click on the **wrench** icon and submit the form with
-appropriate values as shown below.
+Before configuring the AD service, however, some preparations are required.
+First, the Samba service must be configured with the AD domain realm as the
+workgroup. For an AD domain of :code:`samdom.example.com`, for instance, the
+Samba workgroup should be set as :code:`SAMDOM` as illustrated below. Note that
+while the Samba service needs to be configured, it doesn't need to be turned
+ON.
 
-.. image:: ad-config.png
+.. image:: images/services/ad_samba_config.png
+   :scale: 70 %
+   :align: center
+
+Next, as correct time synchronization with the AD domain is necessary for good
+performance, the NTP service should be configured and turned ON. Ideally, both
+the AD domain and Rockstor machines should thus use the same NTP time server.
+
+Now that the Samba workgroup has been defined, and the NTP service configured
+and running, the AD service can be configured. To do so, click on the
+**wrench** icon and fill the form with the values corresponding to your AD
+domain.
+
+.. image:: images/services/ad_config.png
    :scale: 70 %
    :align: center
 
 The individual fields of the form are described below.
 
-* **Domain**: Specifies the Windows Active Directory or domain controller to
-  connect to.
-* **Controllers**: domain controller to use.
-* **Security**:  The security model to use, which configures how clients should
-  respond to Samba. The options are
+* **Domain/Realm name**: Specifies the Windows Active Directory or domain
+  controller to which to connect.
+* **Administrator Username**:  Name of the user to use for the enrollment to
+  the AD. Tihs should be the AD's administrator account.
+* **Allow offline login**: Password for the Administrator username.
+* **Enable enumeration**: Fetch and display all users/groups values. As this
+  option can have a notable performance cost in some servers (with high number
+  of users, for instance), this option is disabled by default. Note, however,
+  that this option must be enabled for Rockstor to be able to list AD users and
+  groups in the web-UI. See `SSSD FAQ <https://sssd.io/docs/users/faq.html#when-should-i-enable-enumeration-in-sssd-or-why-is-enumeration-disabled-by-default>`_ for
+  further details.
+* **Disable automatic ID mapping**: By default, the AD provider will map UID
+  and GID values from the objectSID parameter in Active Directory. Check this
+  option if you want to disable ID mapping and instead rely on POSIX attributes
+  defined in Active Directory. See `SSSD documentation <https://linux.die.net/man/5/sssd-ad>`_ for
+  furhter details.
+* **Treat user and group names as case-sensitive**
 
-   1. user. A client must first log in with a valid username and password.
-   2. server. In this mode, Samba will attempt to validate the username/password by authenticating it through another SMB server (for example, a Windows NT Server). If the attempt fails, the user mode will take effect instead.
-   3. domain. In this mode, Samba will attempt to validate the username/password by authenticating it through a Windows NT Primary or Backup Domain Controller, similar to how a Windows NT Server would.
-   4. ads. This mode instructs Samba to act as a domain member in an Active Directory Server (ADS) realm.
+Rockstor relies on `SSSD <https://sssd.io/>`_ for the management of identities
+provided by AD. As a result, one can edit :code:`/etc/sssd/sssd.conf` to
+further customize the enrollment into an AD.
 
-* **Realm**: When the ads Security Model is selected, this allows you to
-  specify the ADS Realm the Samba server should act as a domain member of.
-* **Template shell**: The login shell for the user
-* **Allow offline login**
+Upon submission of the AD configuration form, Rockstor will test the
+configuration settings by attempting to *discover* the AD domain and save the
+configuration if successful. If Rockstor cannot discover the AD domain, it will
+report the error back to the web-UI; notably, verify that the AD domain can be
+resolved by name via DNS (see `Red Hat Windows Integration Guide <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/windows_integration_guide/sssd-integration-intro#sssd-ad-proc>`_ for
+further documentation).
 
-To start or stop the service, click the corresponding ON or OFF button.
-
-For example, for an environment with the Winbind domain as *rockstorad*, and the AD controller as *WIN-H323VCUT6GT.ROCKSTORAD.LOCAL*, these are the values used to configure AD.
-
-    * Winbind Domain - rockstorad
-    * Security Model - ads
-    * Winbind ADS Realm - rockstorad.local
-    * Winbind Domain Controllers - WIN-H323VCUT6GT.ROCKSTORAD.LOCAL
-    * Template shell - /bin/bash
-    * Don't check Allow offline login box.
-
-Once the AD service is configured, click *Join Domain* and enter the AD Administrator username and password, and click Submit. The appliance will now attempt to join the domain and will display a *Join Ok* message if successful.
+Note that a successful configuration of the AD service does not enroll the
+system into the AD. To do so, the AD service must be turned ON. To leave the
+AD, simply turn the AD service OFF.
 
 LDAP
 ----
