@@ -110,7 +110,7 @@ The individual fields of the form are described below.
   furhter details.
 * **Treat user and group names as case-sensitive**
 
-Rockstor relies on `SSSD <https://sssd.io/>`_ for the management of identities
+Rockstor 4 relies on `SSSD <https://sssd.io/>`_ for the management of identities
 provided by AD. As a result, one can edit :code:`/etc/sssd/sssd.conf` to
 further customize the enrollment into an AD.
 
