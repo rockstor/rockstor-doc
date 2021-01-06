@@ -96,7 +96,7 @@ The individual fields of the form are described below.
 * **Domain/Realm name**: Specifies the desired Active Directory or Domain.
 * **Administrator Username**:  Name of the user to use for the enrollment to
   the AD. Tihs should be the AD's administrator account.
-* **Allow offline login**: Password for the Administrator username.
+* **Password**: Password for the Administrator username.
 * **Enable enumeration**: Fetch and display all users/groups values. As this
   option can have a notable performance cost in some servers (with high number
   of users, for instance), this option is disabled by default. Note, however,
