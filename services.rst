@@ -84,7 +84,7 @@ the AD domain and Rockstor machines should thus use the same NTP time server.
 
 Now that the Samba workgroup has been defined, and the NTP service configured
 and running, the AD service can be configured. To do so, click on the
-**wrench** icon and fill the form with the values corresponding to your AD
+**wrench** icon and fill in the form with the values corresponding to your AD
 domain.
 
 .. image:: images/services/ad_config.png
