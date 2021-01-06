@@ -122,7 +122,7 @@ resolved by name via DNS (see `Red Hat Windows Integration Guide <https://access
 further documentation).
 
 Note that a successful configuration of the AD service does not enroll the
-system into the AD. To do so, the AD service must be turned ON. To leave the
+system into the AD. To do this, the AD service must be turned ON. To leave the
 AD, simply turn the AD service OFF.
 
 LDAP
