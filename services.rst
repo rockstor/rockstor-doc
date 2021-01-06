@@ -93,8 +93,7 @@ domain.
 
 The individual fields of the form are described below.
 
-* **Domain/Realm name**: Specifies the Windows Active Directory or domain
-  controller to which to connect.
+* **Domain/Realm name**: Specifies the desired Active Directory or Domain.
 * **Administrator Username**:  Name of the user to use for the enrollment to
   the AD. Tihs should be the AD's administrator account.
 * **Allow offline login**: Password for the Administrator username.
