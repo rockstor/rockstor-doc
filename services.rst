@@ -61,8 +61,8 @@ server in the NTP configuration page.
    :scale: 70 %
    :align: center
 
-AD
---
+Active Directory (AD)
+---------------------
 
 AD is a directory service to connect to an Active Directory domain. It must be
 turned ON in order to be part of the AD.
@@ -125,33 +125,40 @@ Note that a successful configuration of the AD service does not enroll the
 system into the AD. To do this, the AD service must be turned ON. To leave the
 AD, simply turn the AD service OFF.
 
-LDAP
-----
+Lightweight Directory Access Protocol (LDAP)
+--------------------------------------------
 
-LDAP is a directory service to connect to LDAP server.
+LDAP is a directory service to connect to a LDAP server. It must be turned ON
+in order to fetch users from the LDAP directory.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
-serves as the *Services* view, which is selected by default in the left
-sidebar. To configure LDAP, click on the **wrench** icon and submit the form
-with appropriate values as shown below.
+First, the LDAP service needs to be configured: click on the **wrench** icon
+and fill the form with the values corresponding to your LDAP server.
 
-.. image:: ldap-config.png
+.. image:: images/services/ldap_config.png
    :scale: 70 %
    :align: center
 
 The individual fields of the form are described below.
 
-* **LDAP Server**: The IP address of the LDAP server.
+* **LDAP Server**: The hostname of the LDAP server.
 * **Search base DN**: Specifies that user information should be retrieved using
   the listed Distinguished Name (DN).
-* **Enable TLS**: If this is checked, TLS will be used to encrypt passwords
-  sent to the LDAP server.
-* **Certificate URL**: If the ``Enable TLS`` checkbox is checked, you can
-  specify a URL from which to download a valid CA (Certificate Authority)
-  Certificate. A valid CA Certificate must be in PEM (Privacy Enhanced Mail)
-  format.
+* **Certificate path**: Absolute path to the TLS certificate of the LDAP
+  server.
 
-To start or stop the service, click the corresponding ON or OFF button.
+Rockstor 4 relies on `SSSD <https://sssd.io/>`_ for the management of identities
+provided by LDAP. As a result, one can edit :code:`/etc/sssd/sssd.conf` to
+further customize the connection to the LDAP server.
+
+.. note::
+  The LDAP implementation is an area under active development. As a result, we
+  are seeking feedback from users on further customizations and settings to
+  implement in Rockstor web-UI. Please visit our `friendly forum <https://forum.rockstor.com>`_
+  to share your feedback or provide input on further LDAP expansion.
+
+Note that a successful configuration of the LDAD service does not connect the
+system to the LDAP server. To do this, the LDAD service must be turned ON. To
+disconnect from the LDAP server, simply turn the LDAD service OFF.
 
 NIS
 ---
