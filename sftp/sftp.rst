@@ -144,13 +144,13 @@ option in Nautilus. This is akin to **Ubuntu's** Unity **Connect to Server**. A
 similar facility is possible via KDE's dolphin file manager.
 
 ..  image:: gnome_sftp.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 And the consequent connection along with the associated eject icon.
 
 ..  image:: gnome_sftp_connected.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 Here we see the minimal content associated with a chroot environment and the
@@ -207,20 +207,11 @@ SFTP Access from Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Most versions of MS Windows do not have a build in ability to access a SFTP
-resource. To partially get around this limitation one can install
-an explorer extension such as `Swish <http://www.swish-sftp.org/>`_ which is
-Licensed under GPLv2 with source code available on their `Swish GitHub page
-<https://github.com/alamaison/swish/blob/develop/LICENSE.txt>`_. Note also
-that Swish has been translated to over 20 languages via `their Transifex
-account <https://www.transifex.com/alamaison/swish/>`_.
+resource. The easiest solution to access an SFTP share from Windows is thus to
+use one of the many dedicated SFTP clients available.
 
-An important aspect to the use of Swish is that it is an explorer extension
-only and `does not map a drive <http://www.swish-sftp.org/wiki/FAQ>`_ in the
-traditional Windows way so does not make the SFTP resource available to other
-programs. Ie it is not a filesystem driver.
-
-Also note that Cyberduck, as referenced in the :ref:`sftp_osx` section above,
-is also available for various versions of windows.
+As such, note that Cyberduck, as referenced in the :ref:`sftp_osx` section
+above, is also available for various versions of Windows.
 
 A dedicated SFTP client application that has found favour in `our forum
 <http://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
@@ -231,35 +222,79 @@ A dedicated SFTP client application that has found favour in `our forum
 SFTP Access From WinSCP
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-When you install WinSCP, it will ask you to pick your preferred interface either 
-the commander interface, or the explorer interface pictured below.  The WinSCP recommendation
-is for Windows users to chose the explorer interface.  If you have worked with ftp clients
-in the past, you may find the commander interface more familiar.  After you've installed
-WinSCP, when you start the program it will immediately bring up the Login window to start
-an SFTP session.
+When you install WinSCP, it will ask you to pick your preferred interface
+either the commander interface, or the explorer interface pictured below. The
+WinSCP recommendation is for Windows users to chose the explorer interface.If
+you have worked with FTP clients in the past, you may find the commander
+interface more familiar. After you've installed WinSCP, when you start the
+program it will immediately bring up the Login window to start an SFTP session.
 
 ..  image:: winscp_login.png
     :scale: 100%
     :align: center
 
-In host Name you can enter your Rockstor appliance's hostname, or IP address.  For User name
-enter the  :ref:`user you created <adduser>` and made owner of the SFTP share, and enter that users password.  Click
-the **Login** button, and it should open a session.  Your Rockstor server will have a self signed
-certificate which may generate a warning the first time you connect.  If you are sure you're
-connected to your server, accept the certificate.  Once the session is established you'll
-be viewing the interface you chose during install
+In *Host name* you can enter your Rockstor appliance's hostname, or IP address.
+For *User name* enter the :ref:`user you created <adduser>` and made owner of
+the SFTP share, and enter that user's password. Click the **Login** button, and
+it should open a session. Your Rockstor server will have a self-signed
+certificate which may generate a warning the first time you connect. If you are
+sure you're connected to your server, accept the certificate. Once the session
+is established you'll be viewing the interface you chose during install:
 
-Either the Explorer interface.
+The Explorer interface, which provides a view of the files on the SFTP share
+in familiar Windows Explorer-like interface:
 
 ..  image:: winscp_explorer_view.png
     :scale: 100%
     :align: center
 
-Which provides of view of the files on the SFTP share in familiar Windows Explorer like interface, or 
-if you choose the Commander interface.
+Or the Commander interface, displaying local files on the left, and server
+files on the right atop of status window on the bottom:
 
 ..  image:: winscp_commander_view.png
     :scale: 100%
     :align: center
 
-Your view will have local files on the left, server files on the right, and a status window on the bottom. 
+.. _sftp_filezilla:
+
+SFTP Access From FileZilla
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`FileZilla <https://filezilla-project.org/>`_ is a free open-source (S)FTP
+client distributed under the `GNU General Public License (GPL) version 2
+<https://filezilla-project.org/misc/gpl-2.0-standalone.html>`_.
+
+To begin, we need to add the Rockstor server as a target **Site**. To do so,
+open the **Site Manager** by clicking on *File* > *Site Manager*:
+
+..  image:: filezilla_welcome_screen.png
+    :width: 100%
+    :align: center
+
+Then, click the **New site** button to create a new site (named *Rockstor*
+below), and fill the required information:
+
+..  image:: filezilla_new_connection.png
+    :width: 100%
+    :align: center
+
+The settings should be filled as follows:
+
+* **Protocol**: use *SFTP - SSH File Transfer Protocol*.
+* **Host**: use the hostname of your Rocsktor machine if your network supports
+  name resolution, or its IP address instead.
+* **Port**: can be left empty.
+* **Logon Type**: use *Normal*.
+* **User**: name of the user owning the share to be accessed.
+* **Password**: password for the above user.
+
+Once all settings are correct, press the **Connect** button to save the changes
+and open a connection to this *Site*. Note that upon first connection, FileZilla
+will request to confirm the server's fingerprint. You should now be able to
+successfully connect to the SFTP share hosted by Rockstor and transfer files
+between it and your local Windows machine.
+
+..  image:: filezilla_connection_established.png
+    :width: 100%
+    :align: center
+
