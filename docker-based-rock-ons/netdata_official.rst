@@ -33,7 +33,7 @@ better fit your needs, hardware, and preferences. Fortunately, Netdata provides
 `extensive documentation <https://learn.netdata.cloud/>`_ to learn how to do
 so. Note that out-of-the-box, Netdata (and thus this rock-on) already gathers a
 very large number of metrics suitable for most users; further customization is
-thus only optional.
+thus optional.
 
 .. _netdata_install:
 
