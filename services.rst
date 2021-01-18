@@ -132,7 +132,7 @@ LDAP is a directory service to connect to a LDAP server. It must be turned ON
 in order to fetch users from the LDAP directory.
 
 First, the LDAP service needs to be configured: click on the **wrench** icon
-and fill the form with the values corresponding to your LDAP server.
+and fill in the form with the values corresponding to your LDAP server.
 
 .. image:: images/services/ldap_config.png
    :scale: 70 %
