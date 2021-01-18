@@ -156,9 +156,9 @@ further customize the connection to the LDAP server.
   implement in Rockstor web-UI. Please visit our `friendly forum <https://forum.rockstor.com>`_
   to share your feedback or provide input on further LDAP expansion.
 
-Note that a successful configuration of the LDAD service does not connect the
-system to the LDAP server. To do this, the LDAD service must be turned ON. To
-disconnect from the LDAP server, simply turn the LDAD service OFF.
+Note that a successful configuration of the LDAP service does not connect the
+system to the LDAP server. To do this, the LDAP service must be turned ON. To
+disconnect from the LDAP server, simply turn the LDAP service OFF.
 
 NIS
 ---
