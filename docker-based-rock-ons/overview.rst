@@ -171,7 +171,6 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Minecraft <https://www.minecraft.net/en-us/>`_: Minecraft server
 * `Muximux <https://github.com/mescon/Muximux>`_: Lightweight portal to view & manage your HTPC apps
 * `Mylar <https://github.com/evilhero/mylar>`_: Automated Comic Book (cbr/cbz) downloader
-* `Netdata <https://www.netdata.cloud>`_: Real-time performance and health monitoring solution
 * `Nextcloud <https://www.nextcloud.com/>`_: Next generation open source enterprise file sync and share
 * `NZBGet <http://nzbget.net/>`_: The most efficient usenet downloader
 * `NZBHydra <https://github.com/theotherp/nzbhydra>`_: Meta search for NZB indexers
@@ -215,6 +214,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    discourse
    jenkins
    minio
+   netdata_official
    openvpn-server
    owncloud
    plex-media-server
