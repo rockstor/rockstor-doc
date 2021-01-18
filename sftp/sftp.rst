@@ -272,7 +272,7 @@ open the **Site Manager** by clicking on *File* > *Site Manager*:
     :align: center
 
 Then, click the **New site** button to create a new site (named *Rockstor*
-below), and fill the required information:
+below), and fill in the required information:
 
 ..  image:: filezilla_new_connection.png
     :width: 100%
