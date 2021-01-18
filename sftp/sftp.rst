@@ -224,7 +224,7 @@ SFTP Access From WinSCP
 
 When you install WinSCP, it will ask you to pick your preferred interface
 either the commander interface, or the explorer interface pictured below. The
-WinSCP recommendation is for Windows users to chose the explorer interface.If
+WinSCP recommendation is for Windows users to choose the explorer interface.If
 you have worked with FTP clients in the past, you may find the commander
 interface more familiar. After you've installed WinSCP, when you start the
 program it will immediately bring up the Login window to start an SFTP session.
@@ -297,4 +297,3 @@ between it and your local Windows machine.
 ..  image:: filezilla_connection_established.png
     :width: 100%
     :align: center
-
