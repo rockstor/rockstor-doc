@@ -30,7 +30,7 @@ Netdata Documentation
 
 Netdata's features and possibilities can be greatly expanded and customized to
 better fit your needs, hardware, and preferences. Fortunately, Netdata provides
-and `extensive documentation <https://learn.netdata.cloud/>`_ to learn how to do
+`extensive documentation <https://learn.netdata.cloud/>`_ to learn how to do
 so. Note that out-of-the-box, Netdata (and thus this rock-on) already gathers a
 very large number of metrics suitable for most users; further customization is
 thus only optional.
