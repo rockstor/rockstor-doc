@@ -278,7 +278,7 @@ below), and fill in the required information:
     :width: 100%
     :align: center
 
-The settings should be filled as follows:
+The settings should be filled in as follows:
 
 * **Protocol**: use *SFTP - SSH File Transfer Protocol*.
 * **Host**: use the hostname of your Rocsktor machine if your network supports
