@@ -71,8 +71,8 @@ For home or small business use, we've seen Rockstor install flawlessly on
 HP, DELL and Supermicro servers and desktops. The developers of Rockstor
 use HP Micro servers for individual use.
 
-Rockstor also installs smoothly on the latest generation of servers from vendors like
-HP and Supermicro.
+Rockstor also installs smoothly on the latest generation of servers from
+vendors like HP and Supermicro.
 
 
 I have Rockstor installed. How do I get software updates?
@@ -112,16 +112,16 @@ License version 2. See `here <http://www.gnu.org/licenses>`_ for more details.
 What Linux flavor is rockstor based on?
 ---------------------------------------
 
-Rockstor 3.x is based on `CentOS 7 <http://www.centos.org/>`_. We rebrand CentOS, add Rockstor software in
-the form of additional rpms and change the installer to make it a bit more
-straight forward and specific.
+Rockstor 3.x is based on `CentOS 7 <http://www.centos.org/>`_. We rebrand
+CentOS, add Rockstor software in the form of additional rpms and change the
+installer to make it a bit more straightforward and specific.
 
 
 What Filesystems are supported by Rockstor?
 -------------------------------------------
 
-BTRFS all the way! Though there's a lot more to Rockstor than the filesystem, at
-the core Rockstor productizes neat features of the BTRFS.
+BTRFS all the way! Though there's a lot more to Rockstor than the filesystem,
+at the core Rockstor productizes neat features of the BTRFS.
 
 
 How do I prevent data loss with Rockstor?
@@ -137,8 +137,13 @@ recommended for production use.
 Does Rockstor provide Block or Object storage?
 ----------------------------------------------
 
-Not currently. But since Rockstor is open source, anyone in our community can
-work with us to get new features added in the future.
+While Rockstor does not currently offer native object storage, it is possible
+to leverage one of our :ref:`rockons_intro`, `MinIO <https://min.io>`_,
+which provides high-performance object storage. See our :ref:`minio_rockon`
+write-up for additional details.
+
+In addition, since Rockstor is open source, anyone in our community can work
+with us to get new features added in the future.
 
 
 Does Rockstor support plugins?
@@ -158,10 +163,11 @@ regularly and can be requested on the `Forum <http://forum.rockstor.com>`_.
 How do I backup to Rockstor using Apple Time Machine?
 -----------------------------------------------------
 
-Samba exports can be used for Time Machine backups as of Rockstor-3.9.2-56, as a replacement
-for the now-deprecated AFP exports. The following forum post can be of interest for instructions
-on how to create a compatible Samba export: `Time Machine backups with Rockstor
-<https://forum.rockstor.com/t/3-9-2-stable-channel-changelog/5741/22>`_.
+Samba exports can be used for Time Machine backups as of Rockstor-3.9.2-56, as
+a replacement for the now-deprecated AFP exports. The following forum post can
+be of interest for instructions on how to create a compatible Samba export:
+`Time Machine backups with Rockstor <https://forum.rockstor
+.com/t/3-9-2-stable-channel-changelog/5741/22>`_.
 
 
 Do you have examples on how to build complete NAS solutions for different storage capacities?
@@ -195,9 +201,10 @@ community.
 Can Rockstor support my specific storage use case?
 --------------------------------------------------
 
-You can `contact us <http://rockstor.com/about-us.html#contact>`_ with your requirements
-and we will get in touch with you. We do storage services and support
-and are happy to enable you to use Rockstor for your storage requirements.
+You can `contact us <http://rockstor.com/about-us.html#contact>`_ with your
+requirements and we will get in touch with you. We do storage services and
+support and are happy to enable you to use Rockstor for your storage
+requirements.
 
 
 Is the BTRFS filesystem reliable?
@@ -212,8 +219,8 @@ confines users from using BTRFS more freely, thus reducing the chances of
 hitting deep intricate bugs. The fact that BTRFS bugs being reported lately are
 only triggered by very special scenarios is an encouraging sign.
 
-However a proviso here is that The BTRFS community consensus is that **raid5 and
-raid6** levels of btrfs support are not yet fully stable and so are ***not
+However a proviso here is that The BTRFS community consensus is that **raid5
+and raid6** levels of btrfs support are not yet fully stable and so are ***not
 recommended for production use***. Please see the `btrfs wiki
 <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_ for up to date
 information on all btrfs matters.
