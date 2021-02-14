@@ -218,6 +218,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    openvpn-server
    owncloud
    plex-media-server
+   scrutiny
    syncthing
    transmission-bittorrent
    youtrack
