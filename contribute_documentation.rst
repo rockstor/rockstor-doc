@@ -23,29 +23,29 @@ look cool.
 
 .. code-block:: bash
 
-	[you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-doc.git
+        [you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-doc.git
 
 The above command creates a local **rockstor-doc** git repo in a new directory
 by the same name(rockstor-doc). Change into it.
 
 .. code-block:: bash
 
-	[you@your_laptop ~/projects]# cd rockstor-doc
+        [you@your_laptop ~/projects]# cd rockstor-doc
 
 Configure this new git repo with your name and email address. This is required
 to accurately record collaboration.
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git config user.name "Firstname Lastname"
-	[you@your_laptop rockstor-doc]# git config user.email your_email_address
+        [you@your_laptop rockstor-doc]# git config user.name "Firstname Lastname"
+        [you@your_laptop rockstor-doc]# git config user.email your_email_address
 
 Add a remote called upstream to periodically rebase your local repository with
 changes in the upstream made by other contributors.
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git remote add upstream https://github.com/rockstor/rockstor-doc.git
+        [you@your_laptop rockstor-doc]# git remote add upstream https://github.com/rockstor/rockstor-doc.git
 
 
 Making changes
@@ -61,21 +61,21 @@ branch with the upstream.
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git checkout master
-	[you@your_laptop rockstor-doc]# git pull --rebase upstream master
+        [you@your_laptop rockstor-doc]# git checkout master
+        [you@your_laptop rockstor-doc]# git pull --rebase upstream master
 
 Checkout a new/separate branch for your issue. For example:
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git checkout -b issue#1234_brief_label
+        [you@your_laptop rockstor-doc]# git checkout -b issue#1234_brief_label
 
 You can then start making changes in this branch. Once done you can add your
 changes.
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
+        [you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
 
 
 We strongly encourage you to commit changes a certain way to help other
@@ -86,7 +86,7 @@ independent commits.
 
 .. code-block:: bash
 
-	[you@your_laptop rockstor-doc]# git commit new_file_added.rst existing_file.rst
+        [you@your_laptop rockstor-doc]# git commit new_file_added.rst existing_file.rst
 
 We request that you divide a commit message into three parts. Start the message
 with a single line summary, about 50-70 characters in length. Add a blank line
@@ -97,19 +97,19 @@ a fictional example:
 
 .. code-block:: bash
 
-	foobar functionality documentation for rockstor
+        foobar functionality documentation for rockstor
 
-	This document describes foobar functionality. This feature is based on algorithm called
-	recursive transaction launcher to generate transactional foobars.
+        This document describes foobar functionality. This feature is based on algorithm called
+        recursive transaction launcher to generate transactional foobars.
 
-	# Please enter the commit message for your changes. Lines starting
-	# with '#' will be ignored, and an empty message aborts the commit.
-	# On branch issue#1234_test
-	# Changes to be committed:
-	#   (use "git reset HEAD <file>..." to unstage)
-	#
-	#       new file:   foobar.py
-	#
+        # Please enter the commit message for your changes. Lines starting
+        # with '#' will be ignored, and an empty message aborts the commit.
+        # On branch issue#1234_test
+        # Changes to be committed:
+        #   (use "git reset HEAD <file>..." to unstage)
+        #
+        #       new file:   foobar.py
+        #
 
 If you'd like credit for your patch or if you are a frequent contributor, you
 should add your name to the `rockstor-doc AUTHORS
@@ -143,13 +143,13 @@ For a **Python 2** installation, use these commands.
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc]# sudo pip install --user sphinxcontrib-fulltoc
+        [you@your_laptop /path/to/rockstor-doc]# sudo pip install --user sphinxcontrib-fulltoc
 
 For a **Python 3** installation, favoured, use these commands.
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxcontrib-fulltoc
+        [you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxcontrib-fulltoc
 
 
 Using Sphinx as a Docker container
@@ -162,16 +162,16 @@ This can be easily done by creating a simple :code:`Dockerfile` containing this:
 
 .. code-block:: Dockerfile
 
-	FROM sphinxdoc/sphinx
+        FROM sphinxdoc/sphinx
 
-	WORKDIR /docs
-	RUN pip3 install sphinxcontrib-fulltoc
+        WORKDIR /docs
+        RUN pip3 install sphinxcontrib-fulltoc
 
 Now you can just build the container with this command:
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/sphinx-rockstor]# docker build -t sphinx-rockstor .
+        [you@your_laptop /path/to/sphinx-rockstor]# docker build -t sphinx-rockstor .
 
 Generating html files with Sphinx
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,13 +181,13 @@ following command :
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc]# make html
+        [you@your_laptop /path/to/rockstor-doc]# make html
 
 If you use :code:`docker-sphinx` you can use the following command:
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs sphinx-rockstor make html
+        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs sphinx-rockstor make html
 
 HTML files are generated in _build/html directory. From a separate terminal
 window, you can have a simple Python webserver always serving up this content
@@ -197,13 +197,13 @@ For a **Python 2** installation, use the following command.
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
+        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
 
 For a **Python 3** installation, use the following command.
 
 .. code-block:: bash
 
-	[you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
+        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
 
 You can now go to :code:`http://localhost:8000` in your browser to review your
 changes. The webserver is to be started only once and it will continue to serve
@@ -221,8 +221,8 @@ following command:
 
 .. code-block:: bash
 
-	[you@your_laptop ]# cd /path/to/rockstor-doc
-	[you@your_laptop rockstor-doc]# git push origin your_branch_name
+        [you@your_laptop ]# cd /path/to/rockstor-doc
+        [you@your_laptop rockstor-doc]# git push origin your_branch_name
 
 When you finish work for the issue and are ready to submit, create a pull
 request by clicking on the **pull request** button on github. This notifies the
