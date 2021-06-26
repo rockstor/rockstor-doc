@@ -1,0 +1,28 @@
+name: "Sphinx checks on pull-request"
+on:
+- pull_request
+
+jobs:
+  build_docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout source code
+      uses: actions/checkout@v2
+    - name: install sphinx
+      run: pip3 install -U sphinx
+    - name: install sphinxcontrib-fulltoc
+      run: pip3 install sphinxcontrib-fulltoc
+    - name: build docs
+      run: make html
+
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout source code
+      uses: actions/checkout@v2
+    - name: install sphinx
+      run: pip3 install -U sphinx
+    - name: install sphinxcontrib-fulltoc
+      run: pip3 install sphinxcontrib-fulltoc
+    - name: check links
+      run: make linkcheck
