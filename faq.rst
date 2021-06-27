@@ -106,13 +106,13 @@ How is Rockstor licensed?
 -------------------------
 
 Rockstor is free software licenced under the terms of GNU General Public
-License version 2. See `here <http://www.gnu.org/licenses>`_ for more details.
+License version 2. See `here <https://www.gnu.org/licenses>`_ for more details.
 
 
 What Linux flavor is rockstor based on?
 ---------------------------------------
 
-Rockstor 3.x is based on `CentOS 7 <http://www.centos.org/>`_. We rebrand
+Rockstor 3.x is based on `CentOS 7 <https://www.centos.org/>`_. We rebrand
 CentOS, add Rockstor software in the form of additional rpms and change the
 installer to make it a bit more straightforward and specific.
 
@@ -157,7 +157,7 @@ What is the current list of supported Rock-ons?
 -----------------------------------------------
 
 For the current list see :ref:`rockons_available`. Note that new ones are added
-regularly and can be requested on the `Forum <http://forum.rockstor.com>`_.
+regularly and can be requested on the `Forum <https://forum.rockstor.com>`_.
 
 
 How do I backup to Rockstor using Apple Time Machine?
@@ -176,7 +176,7 @@ Do you have examples on how to build complete NAS solutions for different storag
 Rockstor is hardware agnostic, so you can build a complete Linux, BTRFS-powered
 NAS solution using the Rockstor NAS OS and hardware of your choice. The only
 requirement is that the system be of a 64bit Intel or compatible architecture.
-Don't hesitate to visit our `Forum <http://forum.rockstor.com>`_ to find user
+Don't hesitate to visit our `Forum <https://forum.rockstor.com>`_ to find user
 stories, example builds, or ask for advice from our community!
 
 
@@ -186,14 +186,14 @@ I run a small organization with 10TB and growing data needs. How can Rockstor he
 With Rockstor, you can scale your infrastructure with low incremental cost to
 support your growing data needs. You can have very large storage capacity,
 limited only by system resources like CPU, RAM etc. Feel free to `contact us
-<http://rockstor.com/about-us.html#contact>`_ with your questions.
+<https://rockstor.com/about-us.html#contact>`_ with your questions.
 
 
 Can I run a small home personal cloud using Rockstor?
 -----------------------------------------------------
 
 Yes. Rockstor can be installed on many small computers like ASUS VivoPC or
-Intel NUC. We recommend visiting our `Forum <http://forum.rockstor.com>`_ for
+Intel NUC. We recommend visiting our `Forum <https://forum.rockstor.com>`_ for
 user stories, examples builds, and request advice or recommendation from the
 community.
 
@@ -201,7 +201,7 @@ community.
 Can Rockstor support my specific storage use case?
 --------------------------------------------------
 
-You can `contact us <http://rockstor.com/about-us.html#contact>`_ with your
+You can `contact us <https://rockstor.com/about-us.html#contact>`_ with your
 requirements and we will get in touch with you. We do storage services and
 support and are happy to enable you to use Rockstor for your storage
 requirements.
@@ -239,7 +239,7 @@ providing the best solution based on BTRFS.
 How can I stay in touch with the latest Rockstor news?
 ------------------------------------------------------
 
-We recommend you join our `community forum <http://forum.rockstor.com>`_,
+We recommend you join our `community forum <https://forum.rockstor.com>`_,
 follow the `rockstor-core project <https://github.com/rockstor/rockstor-core>`_
 on github, and follow us on `twitter <https://twitter.com/rockstorinc>`_.
 
@@ -258,4 +258,4 @@ How can I report bugs and request features?
 
 You can create issues or add comments to existing ones on our `github issue
 tracker <https://github.com/rockstor/rockstor-core>`_. The `forum
-<http://forum.rockstor.com>`_ is also a good place to start.
+<https://forum.rockstor.com>`_ is also a good place to start.

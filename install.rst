@@ -34,28 +34,26 @@ that are known to work with Rockstor. Below is a list of these recommendations.
 Please note, however, that the following examples are to be taken as
 illustrations of possible builds at the time of writing and will likely be
 rapidly outpaced by the rapidly evolving hardware market. We always recommend
-visiting our `Forum <http://forum.rockstor.com>`_ for user stories, example
+visiting our `Forum <https://forum.rockstor.com>`_ for user stories, example
 builds, and request advice on hardware choice or recommendations.
 
 Complete Builds for Home and small organizations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can find user stories and example builds on our
-`Forum <http://forum.rockstor.com>`_, but some excerpts are listed below:
+`Forum <https://forum.rockstor.com>`_, but some excerpts are listed below:
 
 1. A build used by Rockstor developers and at least some known
    community members uses `ASRock C2550D4I
    <https://www.asrockrack.com/general/productdetail.asp?Model=C2550D4I>`_
    with `this memory
-   <http://www.kingston.com/us/memory/search/?partid=kvr16le11/8>`_. The
+   <https://www.kingston.com/unitedstates/us/memory/search/discontinuedmodels?partId=kvr16le11%2F8>`_. The
    motherboard provides 12 SATA ports, so `this
-   <http://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
+   <https://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
    case to hold up to 12 hard drives.
 
-2. Yet another recommendation used by Rockstor team is `HP Microserver
-   <http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860>`_. Note
-   that the link refers to gen8 which may be in use by some community members,
-   but gen7 is the one in use by the Rockstor team.
+2. Yet another recommendation used by some community members is HP Proliant
+   Microserver Gen8.
 
 Upgrading Rockstor
 ------------------

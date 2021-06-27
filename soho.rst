@@ -25,7 +25,7 @@ Server requirements and suggestions
 
 The first step in building the Rockstor Fileserver is to procure
 hardware. Since Rockstor is a `Free software
-<http://en.wikipedia.org/wiki/Free_software>`_ product based on Linux, there is
+<https://en.wikipedia.org/wiki/Free_software>`_ product based on Linux, there is
 a lot of flexibility. You can purchase hardware that fits your budget and
 performance requirements. See :ref:`minsysreqs` for general guidance. You can
 easily convert an old PC into a Fileserver with Rockstor as long
@@ -38,11 +38,11 @@ examples:
 **Disclaimer: Rockstor is a software only product. We don't recommend or
 certify any particular hardware. These are mere suggestions based on known deployments in our community**
 
-* `HP Proliant Microserver <http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860#!tab=features">`_ is chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage. This is ideal for a simple setup with a small footprint that meets most file storage needs of a small or home office.
+* HP Proliant Microserver is chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage. This is ideal for a simple setup with a small footprint that meets most file storage needs of a small or home office.
 
-* `Dell Poweredge T300 <http://www.dell.com/us/dfb/p/poweredge-t300/pd>`_ is a powerful server tower with Intel Xeon processor that can have upto 24GB Memory and 4 hard drives. This model is officially discontinued by Dell and newer more powerful options are available in it's place.
+* `Dell Poweredge T300 <https://outlet.us.dell.com/ARBOnlineSales/Online/InventorySearch.aspx?brandId=2804&c=us&cs=28&l=en&s=dfb>`_ is a powerful server tower with Intel Xeon processor that can have upto 24GB Memory and 4 hard drives. This model is officially discontinued by Dell and newer more powerful options are available in it's place.
 
-* `IBM System x3400 <http://www-947.ibm.com/support/entry/portal/docdisplay?lndocid=migr-64905>`_ is a powerful server tower similar to the Dell mentioned above. It can have upto 32GB Memory and 8 hard drives.
+* `IBM System x3400 <https://www.ibm.com/support/pages/node/807406>`_ is a powerful server tower similar to the Dell mentioned above. It can have upto 32GB Memory and 8 hard drives.
 
 .. _hdds:
 
@@ -91,7 +91,7 @@ Here's what you need before proceeding with installation
 7. (Optional) 1 GB USB drive if you choose to install from the USB instead of
    CD/DVD ROM.
 8. The Rockstor ISO file, downloadable from
-   `http://rockstor.com/download. <http://rockstor.com/download.html>`_
+   `https://rockstor.com/download. <https://rockstor.com/download.html>`_
 9. A blank CD-R/RW to burn the ISO file to. This is not necessary if installing
    from a USB flash drive as mentioned in step 7.
 10. A monitor, keyboard and a mouse to drive the install process.
@@ -129,13 +129,13 @@ A USB flash drive of at least 1 GB in size is required. **All data on the USB
 drive will be erased**. So backup your data as needed before proceeding
 further.
 
-On Windows or Fedora operating systems, Liveusb-creator program can be used to
-prepare your USB flash drive with the Rockstor ISO file. If you are using the
-Windows operating system then liveusb-creator can be download from
-`liveusb-creator. <https://fedorahosted.org/releases/l/i/liveusb-creator/liveusb-creator-3.12.0-setup.exe>`_
+On Windows or Fedora operating systems, the Fedora Media Writer program can be
+used to prepare your USB flash drive with the Rockstor ISO file. If you are
+using the Windows operating system then Fedora Media Writer can be downloaded
+from `GetFedora.org <https://getfedora.org/fmw/FedoraMediaWriter-win32-latest.exe>`_
 and install it. On Fedora, run the following command::
 
-    # yum install liveusb-creator
+    # sudo dnf install mediawriter
 
 On Mac or any Linux operating system, use the **dd** program to prepare the USB
 flash drive by running the following command::

@@ -209,7 +209,7 @@ Reproduced here for clarity:-
 
    The default timezone for php is set as America/New_York if you would like
    to change it, edit the php.ini in the config folder.
-   Here's a list of available timezone options: http://php.net/manual/en/timezones.php"
+   Here's a list of available timezone options: https://php.net/manual/en/timezones.php"
 
 It is only required that you do the PATH_ZMS change but all the other changes
 are optional but should enhance your experience.
@@ -279,7 +279,8 @@ above 'Tips and Tricks' we have to change the contents of a file by hand.
 
 If the default of **America/New_York** is inappropriate then you will first
 need to lookup the required *PHP* recognized time zone name on the following
-page: http://php.net/manual/en/timezones.php
+page: `https://www.php.net/manual/en/timezones.php <https://www.php
+.net/manual/en/timezones.php>`_
 
 So for the example of **Europe/London** we can apply this change with the
 following 3 commands, assuming you have a ssh client program installed

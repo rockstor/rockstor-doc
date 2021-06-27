@@ -7,20 +7,21 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `ownCloud Rock-on forum <http://forum.rockstor.com/t/owncloud-rock-on/182>`_ area.
+Our `ownCloud Rock-on forum <https://forum.rockstor.com/t/owncloud-rock-on/182>`_ area.
 
 .. _owncloud_whatis:
 
 What is OwnCloud
 ----------------
 
-`OwnCloud <https://owncloud.org/>`_ is an Open Source self hosting general cloud services system that is
+`OwnCloud <https://owncloud.com/>`_ is an Open Source self hosting general
+cloud services system that is
 gaining popularity with those wishing to take greater control of their internet
-based services. It's `features <https://owncloud.org/features/>`_ include sync
+based services. It's `features <https://owncloud.com/features/>`_ include sync
 and share capabilities across devices and users with; files, contacts,
 calendars, a news reader, photos management etc.  Is also has a plugins
 capability so can be extended via ownCloud *apps*.
-An `online demo <https://demo.owncloud.org/>`_ is availalbe.
+An `online demo <https://demo.owncloud.org/login>`_ is availalbe.
 
 .. _owncloud_doc:
 
@@ -28,8 +29,8 @@ OwnCloud Documentation
 ----------------------
 
 OwnCloud's `own documentation page <https://doc.owncloud.org/>`_ is a good
-place to start, see also their `Get Started <https://owncloud.org/install/>`_
-page and their `FAQ <https://owncloud.org/faq/>`_. Take care to select the
+place to start, see also their `Get Started <https://owncloud
+.com/download-server/>`_ page and their `FAQ <https://owncloud.com/faq/>`_. Take care to select the
 appropriate documentation version appropriate to your install as ownCloud is
 rapidly developing. Rockstor 3.8-2 introduced our ownCloud Rock-on which on
 release installed version 8.0.4 of ownCloud. Since ownCloud is quite a large
@@ -73,7 +74,7 @@ Next we select the **Storage areas** for ownCloud's **data**,
 * **owncloud-db** - min 1 GB
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/t/owncloud-rock-on/182>`_ so that
+`Rockstor forum <https://forum.rockstor.com/t/owncloud-rock-on/182>`_ so that
 this document might be updated and improved.
 
 .. image:: owncloud_shares.png

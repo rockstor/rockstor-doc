@@ -36,7 +36,7 @@ See YouTube `Create NFS export of a share <https://www.youtube.com/watch?v=4xRsI
 Various fields of the form are explained as follows.
 
 * **Shares to export**: Choose one or more shares to be exported.
-* **NFS Clients** or **Host String**: This field can be a single host, comma sep  arated host names,hostnames with wildcards or IP networks. This field can be c  omplex. For a detailed explanation, read the `manpage <http://linux.die.net/ma  n/5/exports>`_ of exports.
+* **NFS Clients** or **Host String**: This field can be a single host, comma sep  arated host names,hostnames with wildcards or IP networks. This field can be c  omplex. For a detailed explanation, read the `manpage <https://linux.die.net/ma  n/5/exports>`_ of exports.
 * **Writable**: Choose ro to make the share(s) available read-only or rw for
   read-write.
 * **Sync**: async mode is the default and the norm. For synchronous IO, select

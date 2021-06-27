@@ -15,7 +15,7 @@ example.
 In the Windows world, this feature is called `Shadow Copy
 <https://en.wikipedia.org/wiki/Shadow_Copy>`_. The server side of this feature
 is what Rockstor supports by using Samba's `vfs_shadow_copy2
-<https://www.samba.org/samba/docs/man/manpages/vfs_shadow_copy2.8.html>`_ which
+<https://www.samba.org/samba/docs/current/man-html/vfs_shadow_copy2.8.html>`_ which
 understands BTRFS Snapshots and exposes them to Windows clients as shadow
 copies.
 

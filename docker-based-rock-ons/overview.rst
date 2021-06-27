@@ -140,7 +140,7 @@ Although the following Rock-ons are currently without specific install
 instructions they are like all Rock-on installs, fairly self explanatory.
 
 * `Bitcoin <https://bitcoin.com/>`_: Bitcoin full node
-* `Bitwarden <https://github.com/dani-garcia/bitwarden_rs>`_: Unofficial server written in Rust for the password manager Bitwarden
+* `Bitwarden <https://github.com/dani-garcia/vaultwarden>`_: Unofficial server written in Rust for the password manager Bitwarden
 * `Booksonic <https://booksonic.org>`_: Audiobooks streaming server
 * `Cardigann <https://github.com/cardigann/cardigann>`_: A proxy server for adding new indexers to Sonarr and other media managers
 * `Collabora online <https://www.collaboraoffice.com/code/>`_: LibreOffice-based online office suite
@@ -148,7 +148,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `CouchPotato <https://couchpota.to/>`_: Downloader for usenet and bittorrent users
 * `Crashplan <https://www.crashplan.com/en-us/>`_: Automatic cloud-based backups
 * `Deluge <https://deluge-torrent.org/>`_: Deluge is a movie downloader for bittorrent users
-* `Dropbox <https://dropbox.com>`_: Cloud-based file syncing solution
+* `Dropbox <https://www.dropbox.com>`_: Cloud-based file syncing solution
 * `Duck DNS <https://www.duckdns.org>`_: Free dynamic DNS service
 * `Duplicati 2.0 <https://www.duplicati.com>`_: Free backup software to store encrypted backups online
 * `ecoDMS <https://www.ecodms.de/index.php/en/>`_: Electronic Document Managing System
@@ -159,43 +159,43 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Gollum <https://github.com/gollum/gollum>`_: Gollum is a simple wiki system built on top of Git
 * `Haproxy <https://github.com/daniel-illi/docker-haproxy-letsencrypt/tree/rock-on>`_: Reliable, High Performance TCP/HTTP Load Balancer with letsencrypt integration
 * `Headphones <https://github.com/rembo10/headphones>`_: Automated music downloader for NZB and Torrent
-* `Home Assistant <https://home-assistant.io/>`_: Open-source home automation platform
+* `Home Assistant <https://www.home-assistant.io/>`_: Open-source home automation platform
 * `HTTP to HTTPS redirect <https://github.com/geldim/docker-https-redirect>`_: Access the Rockstor web UI without having to remember to type "https:"
 * `Jackett <https://github.com/Jackett/Jackett>`_: Proxy server for queries from apps such as Sonarr, CouchPotato, and Mylar
-* `JDownloader 2 <http://jdownloader.org/>`_: Free, open-source download management tool
-* `Koel <https://koel.phanan.net/>`_: Simple web-based personal audio streaming service
+* `JDownloader 2 <https://jdownloader.org/>`_: Free, open-source download management tool
+* `Koel <https://koel.dev/>`_: Simple web-based personal audio streaming service
 * `Lazy Librarian <https://lazylibrarian.gitlab.io>`_: Automated ebook downloader for NZB and Torrent
-* `Logitech Squeezebox <http://mysqueezebox.com/index/Home>`_: Server for Squeezebox Devices
+* `Logitech Squeezebox <https://mysqueezebox.com/index/Home>`_: Server for Squeezebox Devices
 * `MariaDB <https://mariadb.org/>`_: MariaDB, relational database management system
 * `Medusa <https://pymedusa.com>`_: Automatic video library manager for TV shows
 * `Minecraft <https://www.minecraft.net/en-us/>`_: Minecraft server
 * `Muximux <https://github.com/mescon/Muximux>`_: Lightweight portal to view & manage your HTPC apps
 * `Mylar <https://github.com/evilhero/mylar>`_: Automated Comic Book (cbr/cbz) downloader
-* `Nextcloud <https://www.nextcloud.com/>`_: Next generation open source enterprise file sync and share
-* `NZBGet <http://nzbget.net/>`_: The most efficient usenet downloader
+* `Nextcloud <https://nextcloud.com/>`_: Next generation open source enterprise file sync and share
+* `NZBGet <https://nzbget.net/>`_: The most efficient usenet downloader
 * `NZBHydra <https://github.com/theotherp/nzbhydra>`_: Meta search for NZB indexers
 * `Ombi <https://ombi.io/>`_: Host your own Plex Request and user management system
-* `OwnCloud-Official <https://owncloud.org/>`_: Secure file sharing and hosting
+* `OwnCloud-Official <https://owncloud.com/>`_: Secure file sharing and hosting
 * `Pi-hole <https://pi-hole.net/>`_: A black hole for Internet advertisements
-* `Plexpy <https://github.com/JonnyWong16/plexpy>`_: Python-based Plex usage tracker
 * `PocketMine <https://www.pocketmine.net/>`_: Server software for Minecraft: Pocket Edition
 * `Radarr <https://github.com/Radarr/Radarr>`_: Radarr is a PVR for Movies on Usenet and Torrents
 * `Resilio Synch <https://www.resilio.com/>`_: Fast, private file sharing for teams and individuals
 * `Rocket.Chat <https://rocket.chat/>`_: Open Source Chat Platform
-* `SaBnzbd <http://sabnzbd.org/>`_: The best usenet downloader
+* `SaBnzbd <https://sabnzbd.org/>`_: The best usenet downloader
 * `Seafile <https://www.seafile.com/>`_: Secure file sharing and hosting
-* `Sickbeard <http://sickbeard.com/>`_: Internet PVR for your TV shows, by Linuxserver.io
+* `Sickbeard <https://sickbeard.com/>`_: Internet PVR for your TV shows, by Linuxserver.io
 * `SmokePing <https://oss.oetiker.ch/smokeping/>`_: Network latency history monitor
 * `Sonarr <https://sonarr.tv/>`_: (formerly NZBdrone) A PVR for usenet and bittorrent users
 * `Subsonic <http://www.subsonic.org>`_: Music server
+* `Tautulli <https://github.com/Tautulli/Tautulli>`_: Plex usage tracker
 * `Teamspeak <https://teamspeak.com/en/>`_: VoIP software
 * `TFTP server <https://github.com/jumanjihouse/docker-tftp-hpa>`_: TFTP server
 * `Transmission with OpenVPN <https://haugene.github.io/docker-transmission-openvpn/>`_: Transmission torrent client with webUI while connecting to OpenVPN
-* `Ubuiquiti Unifi by Linuxserver.io <https://unifi-network.ui.com/>`_: Unifi Access Point controller, provided by Linuxserver.io
-* `Unifi Controller <https://unifi-network.ui.com/>`_: Unifi Access Point controller
-* `uTorrent <https://www.github.com/domibarton/docker-utorrent>`_: BitTorrent client
+* `Ubuiquiti Unifi by Linuxserver.io <https://ui.com/consoles//>`_: Unifi Access Point controller, provided by Linuxserver.io
+* `Unifi Controller <https://ui.com/consoles/>`_: Unifi Access Point controller
+* `uTorrent <https://github.com/domibarton/docker-utorrent>`_: BitTorrent client
 * `Watchtower <https://github.com/containrrr/watchtower>`_: A process for automating Docker container base image updates
-* `Xeoma <http://felenasoft.com/xeoma/>`_: Video surveillance
+* `Xeoma <https://felenasoft.com/xeoma/en>`_: Video surveillance
 * `Zabbix-XXL <https://github.com/monitoringartist/zabbix-xxl>`_: Network and application monitoring
 * `ZeroNet <https://zeronet.io>`_: Decentralized websites using Bitcoin crypto and the BitTorrent network
 

@@ -26,7 +26,7 @@ for this purpose.
 
 Internally, Snapshots are BTRFS Snapshots. To find out more about internal
 implementation, go `here
-<http://forum.rockstor.com/t/internal-implementation-of-pools-shares-snapshots-and-clones/453>`_.
+<https://forum.rockstor.com/t/internal-implementation-of-pools-shares-snapshots-and-clones/453>`_.
 
 Snapshot related operations can be managed from the **Snapshots** screen listed
 under the **Storage** tab of the Web-UI.

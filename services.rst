@@ -101,7 +101,7 @@ The individual fields of the form are described below.
   option can have a notable performance cost in some servers (with high number
   of users, for instance), this option is disabled by default. Note, however,
   that this option must be enabled for Rockstor to be able to list AD users and
-  groups in the web-UI. See `SSSD FAQ <https://sssd.io/docs/users/faq.html#when-should-i-enable-enumeration-in-sssd-or-why-is-enumeration-disabled-by-default>`_ for
+  groups in the web-UI. See `SSSD FAQ <https://docs.pagure.org/sssd.sssd/users/faq.html#when-should-i-enable-enumeration-in-sssd-or-why-is-enumeration-disabled-by-default>`_ for
   further details.
 * **Disable automatic ID mapping**: By default, the AD provider will map UID
   and GID values from the objectSID parameter in Active Directory. Check this
@@ -180,7 +180,7 @@ with appropriate values as shown below.
 NUT-UPS
 -------
 
-A (Currently Beta) `Network UPS Tools <http://www.networkupstools.org/>`_
+A (Currently Beta) `Network UPS Tools <https://networkupstools.org/>`_
 based service to orchestrate gracefull system shutdown in the event of a power
 outage. Please see our: :ref:`ups_setup` section for more details.
 

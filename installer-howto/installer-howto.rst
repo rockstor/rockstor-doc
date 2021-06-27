@@ -13,11 +13,11 @@ Specifically with our fledgling move / rebase on openSUSE Leap15.2 our thanks go
 and the larger community for the extreme generosity we all benefit from in a myriad of seen and unseen ways.
 
 **Please note: Rockstor is in no way affiliated with openSUSE / SuSE and does not wish, under any circumstances, to misrepresent these organisations.**
-*Any errors you encounter are most likely our fault and we try, on a current volunteer basis, to support our users via our* `friendly forum <https://forum.rockstor.com/.>`_.
+*Any errors you encounter are most likely our fault and we try, on a current volunteer basis, to support our users via our* `friendly forum <https://forum.rockstor.com/>`_.
 
 It is hoped that Rockstor’s ongoing small contribution back to the larger community is of value,
 and if this is so for you please consider either subscribing to our Stable Channel updates or taking part in our developer orientated Testing Channel.
-Details of these Rockstor package update services are available in our `Official Docs <http://rockstor.com/docs/>`_ subsection `Update Channels <http://rockstor.com/docs/update-channels/update_channels.html>`_.
+Details of these Rockstor package update services are available in our `Official Docs <https://rockstor.com/docs/>`_ subsection `Update Channels <https://rockstor.com/docs/update-channels/update_channels.html>`_.
 Rockstor’s ongoing development is wholly dependent on community support via either of these channels and by positively participating in our forum, linked above.
 It is hoped that in time we can contribute back more significantly, and possibly financially, as our own community and Stable Channel subscriptions grow.
 Also note that irrespective of Rockstor update channel selection or otherwise, upstream updates are available by normal command line means and via our Web-UI.

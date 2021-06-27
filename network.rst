@@ -122,4 +122,4 @@ Implementation details
 
 NetworkManager is used to configure and manage connections. For more
 information see `implementation details
-<http://forum.rockstor.com/t/network-management-implementation-details/441>`_.
+<https://forum.rockstor.com/t/network-management-implementation-details/441>`_.

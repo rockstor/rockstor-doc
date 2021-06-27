@@ -28,9 +28,9 @@ hardware components for a home NAS build
       
 **A Server**
           
-A server with at least `minimum system requirements <http://rockstor.com/docs/quickstart.html#minimum-system-requirements>`_
+A server with at least `minimum system requirements <https://rockstor.com/docs/quickstart.html#minimum-system-requirements>`_
           
-`HP Proliant Microserver <http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860#!tab=features">`_ (Chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage)
+HP Proliant Microserver (Chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage)
 
 Sample configuration:
 
@@ -43,19 +43,20 @@ Sample configuration:
 **Hard drives**
           
 Hard drives to hold your data. Multiple hard drives are recommended, to create pools for RAID capability.</p> 
-`Western Digital Red <http://www.wd.com/en/products/products.aspx?id=810>`_ series or the `Seagate NAS <http://www.seagate.com/internal-hard-drives/nas-drives/nas-hdd/>`_ series.
+`Western Digital Red <https://shop.westerndigital.com/c/all-products?id=810>`_ series or the `Seagate NAS <https://www.seagate.com/products/nas-drives/ironwolf-hard-drive/>`_ series.
           
 **USB Flash drives**
 
 2 USB flash drives, one for the installation media (at least 1GB), and one that will hold the OS (at least 8GB). If you have a CD drive installed, and blank CDs available, you can use a CD as the installation media.</p>
 
-`SanDisk Cruzer Fit <http://www.sandisk.com/products/usb/drives/cruzer-fit/>`_
+`SanDisk Cruzer Fit <https://shop.westerndigital.com/products/usb-flash-drives/sandisk-cruzer-fit-usb-2-0>`_
       
 **Software**
       
-Download the Rockstor iso at `http://www.rockstor.com/downloads <http://rockstor.com/download.html>`_
+Download the Rockstor iso at `https://www.rockstor.com/downloads <https://rockstor.com/download.html>`_
 
-If you are using a USB drive as the installation media, prepare the USB drive with the Rockstor iso by following `these instructions <https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB>`_
+If you are using a USB drive as the installation media, prepare the USB drive
+with the Rockstor iso by following `these instructions <https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/index.html#proc_creating-and-using-live-usb>`_
 
 **Installation and Setup**
 

@@ -95,7 +95,8 @@ Here is a basic example for email notifications:
          - "smtp://mail@address.org:password@smtp.server.org:465/?fromAddress=mail@address.org&toAddresses=mail2@address.org"
 
 
-More information can be found on `Scrutiny GitHub <https://github.com/AnalogJ/scrutiny#configuration>`_
+More information can be found on `Scrutiny GitHub <https://github
+.com/AnalogJ/scrutiny#user-content-configuration>`_
 
 .. _scrutiny_install:
 

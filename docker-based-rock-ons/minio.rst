@@ -35,12 +35,12 @@ installation. This would violate the '"all-in-one" user experience' guideline in
 MinIO Documentation
 -----------------------
 
-If you want a deep dive into the full range of MinIO capabilities, the MinIO project 
-maintains extensive, well-written `documentation <https://docs.min.io/>`_ covering 
-many different deployment models.  You don't need to worry about all that to use this 
-Rock-on, though.  Simply point your MinIO-enabled client at the URL for your server 
-("http://domain-name:port") and use the Access Key (username) and Secret Key (password) 
-that you specified during installation.
+If you want a deep dive into the full range of MinIO capabilities, the MinIO
+project maintains extensive, well-written `documentation <https://docs.min.io/>`_
+covering many different deployment models.  You don't need to worry about all
+that to use this Rock-on, though.  Simply point your MinIO-enabled client at the
+URL for your server (``http://domain-name:port``) and use the Access Key
+(username) and Secret Key (password) that you specified during installation.
 
 
 .. _minio_install:

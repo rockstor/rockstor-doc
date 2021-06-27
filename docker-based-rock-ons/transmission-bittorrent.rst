@@ -7,14 +7,14 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `Transmission Rock-on forum <http://forum.rockstor.com/t/transmission-bittorrent-client-rock-on/181>`_ area.
+Our `Transmission Rock-on forum <https://forum.rockstor.com/t/transmission-bittorrent-client-rock-on/181>`_ area.
 
 .. _transmission_whatis:
 
 What is Transmission
 --------------------
 
-`Transmission <http://www.transmissionbt.com/>`_ is a cross platform Open
+`Transmission <https://transmissionbt.com/>`_ is a cross platform Open
 Source BitTorrent client; is is know for its easy of use. It also has a
 :ref:`WebUI <transmission_ui>` making it a good fit with Rockstor.
 
@@ -23,7 +23,7 @@ Source BitTorrent client; is is know for its easy of use. It also has a
 Transmission Documentation
 --------------------------
 
-Transmission's `about <http://www.transmissionbt.com/about/>`_ page has a number
+Transmission's `about <https://transmissionbt.com/about/>`_ page has a number
 of useful links that should serve as a starting point.
 
 
@@ -112,5 +112,5 @@ We now have the **Default Transmission UI** with a Rockstor torrent in progress:
    :align: center
 
 You can now trial your Transmission Rock-on using a
-`Rockstor Torrent <http://rockstor.com/download.html>`_;
+`Rockstor Torrent <https://rockstor.com/download.html>`_;
 :ref:`transmission_doc`

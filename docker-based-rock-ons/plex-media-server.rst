@@ -7,20 +7,22 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `Plex Media Server Rock-on forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_ area.
+Our `Plex Media Server Rock-on forum <https://forum.rockstor.com/t/plex-media-server-rock-on/179>`_ area.
 
 .. _plex_whatis:
 
 What is Plex
 ------------
 
-`Plex <https://plex.tv/>`_ is a
-`centralized <https://support.plex.tv/hc/en-us/articles/200288286-What-is-Plex->`_
+`Plex <https://www.plex.tv/>`_ is a
+`centralized <https://support.plex.tv/articles/200288286-what-is-plex/>`_
 domestic media distribution system that acts
 both as a `DLNA <https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance>`_
-server and as its own more `flexible <https://plex.tv/features>`_ type of
+server and as its own more `flexible <https://www.plex.tv/>`_ type of
 media server and client system.
-`Plex client apps <https://plex.tv/downloads>`_ are available on nearly
+`Plex client apps <https://www.plex.tv/media-server-downloads/>`_ are available
+on
+nearly
 every platform.  But in order to manage your media with the
 Plex system it is first necessary to have a
 **Plex Media Server**. This **Rock-on** is **exactly that**; and aims to make the install
@@ -31,7 +33,7 @@ and media provisioning of a Plex server as simple as possible.
 Plex Documentation
 ------------------
 
-Plex's `own documentation <https://support.plex.tv/hc/en-us>`_ is extensive and
+Plex's `own documentation <https://support.plex.tv/articles/>`_ is extensive and
 well presented and a good kicking off point might well be their `Getting Started
 <https://support.plex.tv/articles/200288286-what-is-plex/>`_ guide
 that has a thorough
@@ -88,7 +90,7 @@ non-admin non-root user ie *plex*.
 * **Data Storage** - room enough for your data and snapshots - minimum 100GB
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
+`Rockstor forum <https://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
 so that this document might be updated and improved.
 
 In the following image we are using the **recommended names** for all the
@@ -317,7 +319,7 @@ facilities available will vary according to your Plex web account status. If you
 do not already have a Plex account you can create one from within the PlexUI.
 
 Please see `Sign in to Your Plex Account
-<https://support.plex.tv/hc/en-us/articles/200878643-Sign-in-to-Your-Plex-Account>`_
+<https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`_
 for details.
 
 **Sign In** (with an existing Plex account) or **Sign Up** to remotely
