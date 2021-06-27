@@ -49,7 +49,7 @@ You can find user stories and example builds on our
    with `this memory
    <http://www.kingston.com/us/memory/search/?partid=kvr16le11/8>`_. The
    motherboard provides 12 SATA ports, so `this
-   <http://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
+   <https://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
    case to hold up to 12 hard drives.
 
 2. Yet another recommendation used by Rockstor team is `HP Microserver
