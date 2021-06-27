@@ -369,7 +369,7 @@ search for a change or track a regression.
 
 Squashing commits into one is straight forward and most editors and IDEs with
 git support make it super easy to do so. If you've never done this before, this
-`short how-to <https://ariejan.net/2011/07/05/git-squash-your-latests-commits-into-one/>`_ is
+`short how-to <https://levelup.gitconnected.com/how-to-squash-git-commits-9a095c1bc1fc>`_ is
 helpful.
 
 Contributing and testing from another Rockstor contributor fork
