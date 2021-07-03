@@ -3,7 +3,7 @@
 LUKS Full Disk Encryption
 =========================
 
-LUKS `(Linux Unified Key Setup) <https://gitlab.com/philipg/cryptsetup/blob/master/README.md>`_
+LUKS `(Linux Unified Key Setup) <https://gitlab.com/cryptsetup/cryptsetup/-/blob/master/README.md>`_
 is a cross distribution, kernel based disk encryption standard. A central
 component of which is that all necessary setup information is stored within
 the format header; giving full decryption portability.
