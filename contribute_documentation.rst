@@ -205,7 +205,7 @@ For a **Python 3** installation, use the following command.
 
         [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
 
-You can now go to :code:`https://localhost:8000` in your browser to review your
+You can now go to :code:`http://localhost:8000` in your browser to review your
 changes. The webserver is to be started only once and it will continue to serve
 the files and changes you make to them.
 
