@@ -7,12 +7,12 @@ UPS / NUT Setup
 for production use.**
 
 *Bug reports or suggestions are always welcome on*
-`our friendly forum <http://forum.rockstor.com/>`_.
+`our friendly forum <https://forum.rockstor.com/>`_.
 
 Overview
 --------
 
-Rockstor uses the `NUT software collection <http://www.networkupstools.org/>`_
+Rockstor uses the `NUT software collection <https://networkupstools.org/>`_
 to orchestrate a graceful system shutdown in the presence of mains power
 failure. It does this by continuously monitoring a UPS device to maintain a
 knowledge of safe power conditions. In the event of those conditions changing
@@ -49,7 +49,7 @@ time in use is sufficient to meet this *safe shutdown* criteria.
 What is NUT
 -----------
 
-NUT stand for `Network UPS Tools <http://www.networkupstools.org/>`_ and is a
+NUT stand for `Network UPS Tools <https://networkupstools.org/>`_ and is a
 collection of GPLv2 licenced packages that enables communication between UPS
 systems and their protected equipment. It also has the facility to share this
 information on the local lan so that equipment that is powered by the UPS but
@@ -97,7 +97,7 @@ the mains / ups data with any other machine. This mode requires the following
 fields:
 
 * **NUT Mode** - A drop down and in this case **standalone** is required
-* **NUT Driver** - Please see NUT's `Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
+* **NUT Driver** - Please see NUT's `Hardware Compatibility List <https://networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
 * **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine eg - **/dev/ttyS0** for the first serial port - **/dev/ttyUSB0** for the first USB to serial port adapter - **auto** for many directly usb connected UPSs.
 * **NUT User** - N.B. this is **NOT** a system user but reserved solely for internal NUT use; if you have no specific requirement here then just enter the suggestion of *monuser*.
 * **NUT User Password** - A password for the above nut specific user; if you are going with the default 'NUT User' of *monuser* in the last field then simply make up and enter a fresh and unique password here.
@@ -108,7 +108,7 @@ fields:
 
 Note in the above mouse over hint there is a web link to assist in driver
 selection; repeated here for convenience:-
-`Hardware Compatibility List <http://www.networkupstools.org/stable-hcl.html>`_
+`Hardware Compatibility List <https://networkupstools.org/stable-hcl.html>`_
 
 .. _nut_netserver:
 

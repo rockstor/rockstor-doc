@@ -8,7 +8,7 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `Discourse Rock-on forum <http://forum.rockstor.com/t/discourse-rock-on/941>`_ area.
+Our `Discourse Rock-on forum <https://forum.rockstor.com/t/discourse-rock-on/941>`_ area.
 
 .. _discourse_whatis:
 
@@ -16,15 +16,15 @@ What is Discourse
 -----------------
 
 Discourse is open source forum / discussion server software and is what the
-`Rockstor forum <http://forum.rockstor.com/>`_ itself uses; in fact Rockstor's
+`Rockstor forum <https://forum.rockstor.com/>`_ itself uses; in fact Rockstor's
 forum is in fact hosted as a Rock-on on a Rockstor system. It is available in
 `17 languages and counting
 <https://www.transifex.com/discourse/discourse-org/>`_ and supports such
 features as `single sign on
-<https://meta.discourse.org/t/official-single-sign-on-for-discourse/13045>`_
+<https://meta.discourse.org/t/discourseconnect-official-single-sign-on-for-discourse-sso/13045>`_
 and real time notifications. The source code for Discourse is available on `the
 Discourse GitHub Page <https://github.com/discourse/discourse>`_. Visit the
-Discourse `online sandbox <http://try.discourse.org/>`_ for a demonstration.
+Discourse `online sandbox <https://try.discourse.org/>`_ for a demonstration.
 
 .. _discourse_doc:
 
@@ -32,7 +32,7 @@ Discourse Documentation
 -----------------------
 
 Discourse's `About Page <https://www.discourse.org/about/>`_ is a good place to
-start along with their `FAQ <https://www.discourse.org/faq/>`_ and their
+start along with their `FAQ <https://www.discourse.org/about>`_ and their
 `Blog <https://blog.discourse.org/>`_.
 
 .. _discourse_install:

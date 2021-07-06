@@ -15,7 +15,7 @@ Non developers
 
 There is a lot you can do other than coding that is essential to the
 project. First, please join our `community discussion forum
-<http://forum.rockstor.com>`_. It's the central location where all discussions
+<https://forum.rockstor.com>`_. It's the central location where all discussions
 take place. If you need help, want to share an idea, suggest a new feature etc..
 the forum is a great place to start. Being active on the forum is very helpful
 to the project and the community as a whole.
@@ -42,14 +42,14 @@ Developing Rockstor to deliver on its unique value proposition of being a
 Smart, Powerful, and Open storage platform is a major effort. If you are
 passionate about Open Source and Storage like us, you are in the right
 company. We welcome you to join our community. Please begin by joining our
-`community discussion forum <http://forum.rockstor.com>`_.
+`community discussion forum <https://forum.rockstor.com>`_.
 
 Our development process is simple and straight forward. There is currently one
 main repository called `rockstor-core on Github
 <https://github.com/rockstor/rockstor-core>`_. Begin by `forking it
 <https://github.com/rockstor/rockstor-core/fork>`_.
 
-We use the wonderful `Git <http://git-scm.com/>`_ for source code
+We use the wonderful `Git <https://git-scm.com/>`_ for source code
 management and `Rockstor on Github <https://github.com/rockstor>`_ for issue
 tracking. We'll assume you have basic proficiency with Git and are familiar
 with it using a text editor or IDE of your choice. Emacs, Vim,
@@ -66,7 +66,7 @@ Tracker <https://github.com/rockstor/rockstor-core/issues>`_.
 .
 
 3. Submit your changes in a single `pull request
-<https://help.github.com/articles/using-pull-requests>`_.
+<https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_.
 
 4. Use the issue tracker for discussions as necessary
 .
@@ -277,7 +277,7 @@ rockstor.log should be the first place to look for errors or debug logs.
 
 When making frontend changes, Developer Tools in Chrome/Firefox are your
 friends. You can `inspect elements
-<https://developers.google.com/web/tools/chrome-devtools/dom>`_
+<https://developer.chrome.com/docs/devtools/dom/>`_
 for html/css changes, log to the browser console from javascript code with
 console.log(), and use the debugger and step through javascript from your
 browser.
@@ -311,13 +311,13 @@ pull-request process is same as it is for this(rockstor-core repo) one.
 Database migrations
 -------------------
 
-We use `PostgreSQL <http://www.postgresql.org/>`_ as the database backend for
+We use `PostgreSQL <https://www.postgresql.org/>`_ as the database backend for
 Rockstor. There are two databases, (1) storageadmin and (2)
 smart_manager. Depending on your issue you may need to add a Django model,
 delete one, or change fields of an existing model. After editing models you
 need to create a migration and apply it.
 
-We used `South <http://south.aeracode.org/>`_ to manage database migrations for
+We used `South <https://south.aeracode.org/>`_ to manage database migrations for
 a while, but since updating to Django 1.8, migrations are natively
 supported. The steps have changed only slightly. Generate the migration on your
 VM and copy the migration file back to your laptop and add it in git once you
@@ -369,7 +369,7 @@ search for a change or track a regression.
 
 Squashing commits into one is straight forward and most editors and IDEs with
 git support make it super easy to do so. If you've never done this before, this
-`short how-to <https://ariejan.net/2011/07/05/git-squash-your-latests-commits-into-one/>`_ is
+`short how-to <https://levelup.gitconnected.com/how-to-squash-git-commits-9a095c1bc1fc>`_ is
 helpful.
 
 Contributing and testing from another Rockstor contributor fork

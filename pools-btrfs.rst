@@ -89,10 +89,10 @@ level. Instead, selectively enable it on Shares.
 Besides not enabling compression at all, there are two additional choices
 
 * **zlib**: Provides slower but higher compression ratio. You can find out
-  more from `zlib.net <http://www.zlib.net/manual.html>`_.
+  more from `zlib.net <https://www.zlib.net/manual.html>`_.
 * **lzo**: A faster compression algorithm but provides lower ratio compared to
   **zlib**. You can find out more from `oberhumer.com
-  <http://www.oberhumer.com/opensource/lzo/>`_.
+  <https://www.oberhumer.com/opensource/lzo/>`_.
 
 
 Mount Options

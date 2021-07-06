@@ -6,7 +6,7 @@ Pre-Install Best Practice (PBP)
 This howto sets
 out to establish **Best Practice** prior to a **Rockstor install**. It has grown
 out of a number of suggestions on the `Rockstor forum
-<http://forum.rockstor.com/>`_ where problems have been
+<https://forum.rockstor.com/>`_ where problems have been
 encountered that might otherwise have been avoided. The basic premise is to
 first ensure that the hardware you are to install Rockstor on is fit for
 purpose and tested reasonably with the readily available tools.
@@ -17,7 +17,7 @@ Memory Test (memtest86+)
 ------------------------
 
 Built into the Rockstor installer (inherited from the upstream CentOS installer)
-is the famous `memtest86+ <http://www.memtest.org/>`_ boot option. This program
+is the famous `memtest86+ <https://www.memtest.org/>`_ boot option. This program
 is actually derived from the linux kernel itself, the core of the operating
 system that Rockstor is built on, and is a boot option within the Rockstor
 *Troubleshooting* installer menu. Memtest86+ is licensed under the GPL.
@@ -61,7 +61,7 @@ during this test. Version 5.01 and on have a built in CPU temperature monitor.
 If you find that your version of the Rockstor installer doesn't include the 5
 .01 or newer version of memtest86+ and you would like to monitor your CPU
 temperature then download a `Pre-Compiled Bootable ISO
-<http://www.memtest.org/#downiso>`_ from their official page and write it to a
+<https://www.memtest.org/#downiso>`_ from their official page and write it to a
 USB key in exactly the same way you do for a Rockstor install ISO.
 
 .. _wiping_disks:
@@ -70,7 +70,7 @@ Wiping Disks (DBAN)
 -------------------
 
 A popular tool to securely erase HDDs prior to their deployment or disposal is
-`Darils Boot and Nuke <https://www.dban.org/>`_. This tools essentially writes
+`Darils Boot and Nuke <https://dban.org/>`_. This tools essentially writes
 to every part of a
 disks surface and in the process exercises the drive across it's entire
 working area. This like the :ref:`memory_test` will stress the system; in this
@@ -108,7 +108,7 @@ Check Integrity of Downloaded ISO File
 If the original download is corrupt then all else that follows is likely to have
 problems. ISO is computer slang short for ISO9660 which is the
 `International Organization for Standardization
-<http://www.iso.org/iso/home.html>`_ official definition of the structure of
+<https://www.iso.org/home.html>`_ official definition of the structure of
 data on a CD/DVD. If this structure is wrong or the data contained within it is
 corrupt then problems are bound to follow. To avoid this there is a simple
 command that can be executed once the download of the Rockstor iso file is

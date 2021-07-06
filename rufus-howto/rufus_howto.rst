@@ -15,7 +15,7 @@ methods.
 
 N.B. The following method and screen captures were proved and
 provided by @D_Jones a
-`Rockstor forum <http://forum.rockstor.com/>`_ member.
+`Rockstor forum <https://forum.rockstor.com/>`_ member.
 
 .. _rufus_steps:
 
@@ -23,7 +23,7 @@ Steps required
 --------------
 
 First download the latest
-`Rockstor iso image <http://rockstor.com/download.html>`_ and the latest
+`Rockstor iso image <https://rockstor.com/download.html>`_ and the latest
 version of `Rufus <https://rufus.ie/>`_ then insert your USB key and run
 Rufus:-
 

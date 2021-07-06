@@ -117,7 +117,7 @@ should add your name to the `rockstor-doc AUTHORS
 
 
 Unlike for code contributions, there is no need for a build VM. We use `Sphinx
-<http://www.sphinx-doc.org>`_ to generate the html content from .rst
+<https://www.sphinx-doc.org>`_ to generate the html content from .rst
 files we edit. Installation procedure varies if you are on Mac, Windows, or Linux, so
 follow the appropriate installation guide for Sphinx.
 
@@ -126,8 +126,8 @@ Installing Sphinx
 ^^^^^^^^^^^^^^^^^
 In order to properly develop and submit contributions you'll need to install Sphinx, plus one Sphinx extension
 
-`Sphinx official documentation <http://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms.
-Details of how to install Sphinx is covered in their  `Installing Spinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
+`Sphinx official documentation <https://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms.
+Details of how to install Sphinx is covered in their  `Installing Spinx <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
 
 Once you have Sphinx installed you'll need 1 more Sphinx extensions before you're fully ready.
 The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
@@ -231,7 +231,13 @@ issue containing all relevant changes.
 
 When you are ready, open the pull request and please follow these 2 tips to expedite the review:
 
-    * When you've finished your edit, run the Sphinx *make html* command, and paste its output into the pull request discussion string to help speed up the review.  After you've generated the html, you can use the webserver detailed above to check the functionality of your work prior to your pull request
+* When you've finished your edit, run the Sphinx :code:`make html` command, and
+  paste its output into the pull request discussion string to help speed up the
+  review. After you've generated the html, you can use the webserver detailed
+  above to check the functionality of your work prior to your pull request.
 
-
-    * When you make a pull request, adding a "Fixes #number-of-issue" on its own line will automatically close the related issue when it gets merged. Just a nice thing to have and also provides a link to the relevant issue. See https://help.github.com/articles/closing-issues-using-keywords/ for details.
+* When you make a pull request, adding a "Fixes #number-of-issue" on its own
+  line will automatically close the related issue when it gets merged. Just a
+  nice thing to have and also provides a link to the relevant issue. See
+  `GitHub documentation <https://docs.github
+  .com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue>`_ for details.

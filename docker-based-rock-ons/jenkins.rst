@@ -7,7 +7,7 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `Jenkins Rock-on forum <http://forum.rockstor.com/t/jenkins-rock-on/947>`_
+Our `Jenkins Rock-on forum <https://forum.rockstor.com/t/jenkins-rock-on/947>`_
 area.
 
 .. _jenkins_whatis:
@@ -15,32 +15,28 @@ area.
 What is Jenkins
 -----------------
 
-`Jenkins, <https://jenkins-ci.org/>`_ previously known as *Hudson*, is an
+`Jenkins, <https://www.jenkins.io/>`_ previously known as *Hudson*, is an
 `MIT Licenced <https://github.com/jenkinsci/jenkins/blob/master/LICENSE.txt>`_
 open source automated testing and deployment system, ie a continuous integration
 and continuous delivery system. The idea is that such a system can be used
 to automate repetitive tasks such as those associated with testing and
 deployment. This reduces the possibility of human error and is aimed at
 increasing productivity and shortening the time to deploy fixes to production.
-The Rockstor organisation itself uses Jenkins and in the form of this very
-Rock-on running on Rockstor. Other currently more famous organisations :) that
-use Jenkin are; Dell, NASA, Netflix, and GitHub. A
+Famous organisations that use Jenkin are; Dell, NASA, Netflix, and GitHub. A
 `more extensive list
-<https://wiki.jenkins-ci.org/pages/viewpage.action?pageId=58001258>`_
-is available from the *Meet Jenkins* link that follows.
+<https://wiki.jenkins.io/pages/viewpage.action?pageId=58001258>`_
+is available from the Jenkins documentation linked below.
 
 .. _jenkins_doc:
 
 Jenkins Documentation
 -----------------------
 
-The `Meet Jenkins <https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins>`_
-page is a good place to start. There you will find a quick 'What is' a list of
-features, introductory articles, how to take a test drive via their Jave Web
-Start facility, install instructions, and the aforementioned list of
-organisations benefiting from Jenkins. See also the
-`Jenkins Blog <https://jenkins-ci.org/node/>`_ and
-`Jenkins Wiki <https://wiki.jenkins-ci.org/display/JENKINS/Home>`_ pages.
+The `Jenkins documentation <https://www.jenkins.io/>`_ page is a good place to
+start. There you will find a quick 'What is' a list of features, introductory
+articles, how to take a test drive via their Java Web Start facility, install
+instructions, and the aforementioned list of organisations benefiting from
+Jenkins. See also the `Jenkins Blog <https://www.jenkins.io/node/>`_ page.
 
 .. _jenkins_install:
 

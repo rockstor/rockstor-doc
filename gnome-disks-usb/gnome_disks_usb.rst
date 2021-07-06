@@ -4,7 +4,7 @@ Rockstor USB install disk using Gnome Disks
 ===========================================
 
 Many popular linux desktop distributions including
-`Ubuntu <http://www.ubuntu.com/desktop>`_,
+`Ubuntu <https://ubuntu.com/desktop>`_,
 `Fedora <https://getfedora.org/>`_, and many others, include the
 gnome-disks program by default and as such have a built-in graphical way to
 create a Rockstor USB install disk from the downloadable iso file. What follows
@@ -16,7 +16,7 @@ Steps required
 --------------
 
 First download the latest
-`Rockstor iso image <http://rockstor.com/download.html>`_ then **insert your
+`Rockstor iso image <https://rockstor.com/download.html>`_ then **insert your
 USB key**.
 
 * In Nautilus (the file manager) **Right Click** on the Rockstor iso file and navigate to **Open With** then **Disk Image Writer**

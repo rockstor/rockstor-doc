@@ -11,17 +11,17 @@ GNU GPLv2 Licenced
 The code that makes Rockstor possible is developed under the
 `GNU GPLv2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`_ licence
 and is therefore fully Open Source, there is no contributor agreement and everyone is encouraged to help in what ever way they can.
-It is very much developed in the open with key decisions made by the community and their interaction with Rockstor contributors and maintainers `Our Mission <http://rockstor.com/about-us.html>`_.
-This flow of ideas and open development is held as a founding principal and is instantiated in the `Rockstor forum <http://forum.rockstor.com/>`_ and within the code itself
+It is very much developed in the open with key decisions made by the community and their interaction with Rockstor contributors and maintainers `Our Mission <https://rockstor.com/about-us.html>`_.
+This flow of ideas and open development is held as a founding principal and is instantiated in the `Rockstor forum <https://forum.rockstor.com/>`_ and within the code itself
 `on GitHub <https://github.com/rockstor>`_.
 
-`Rockstor <http://rockstor.com/>`_ the project
+`Rockstor <https://rockstor.com/>`_ the project
 embodies an identifiable software distributor and coordinator of the Open Source product that is the scheduled Rockstor releases.
 It also forms an identifiable entity necessary for the support of the releases (where needed) and infrastructure necessary to maintain the open development
 that is essential in modern non trivial software appliances that have any hope of qualifying as **future-proof**.
 
 After an initial development of 2.5 years the sustainable nature of this endeavour was approached and redressed in
-`a thread on the community forum <http://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
+`a thread on the community forum <https://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
 The consensus was to adopt a two-tiered updates model; testing and stable.
 
 ..  image:: update_channel_options.png

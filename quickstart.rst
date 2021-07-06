@@ -23,7 +23,7 @@ recommendations.
 * One or more additional drives for data use only (less than 1GB ignored, 5GB+ recommended).
 * Ethernet interface (with internet access for updates).
 * All drives must have unique serial numbers (real drives do); not all VM [*]_ systems default to this.
-* A UPS (recommended) that is supported by `NUT <http://www.networkupstools.org/>`_.
+* A UPS (recommended) that is supported by `NUT <https://networkupstools.org/>`_.
 * USB port and 1GB+ USB key for the installation media; or DVD drive and a blank DVD.
 
 .. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx file
@@ -31,14 +31,14 @@ recommendations.
 Download Rockstor
 -----------------
 
-Rockstor `download options <http://rockstor.com/download.html>`_. Create a
+Rockstor `download options <https://rockstor.com/download.html>`_. Create a
 bootable CD or USB drive from the downloaded iso and proceed to the
 :ref:`installation` section.
 
 .. raw:: html
 
    <div class="alert alert-info">
-   For convenience, you can also purchase a USB install disk from <a href="http://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">our shop</a>.
+   For convenience, you can also purchase a USB install disk from <a href="https://shop.rockstor.com/collections/diy-accessories/products/rockstor-usb-install-disk" target="_blank">our shop</a>.
    Thanks for your support!
    </div>
 
@@ -60,7 +60,7 @@ GUI options
 On a Linux Unity or Gnome Desktop see our :ref:`gnome_disks_howto`.
 
 On a Windows Desktop consider using
-`Rawrite32 <http://www.netbsd.org/~martin/rawrite32/>`_.
+`Rawrite32 <https://www.netbsd.org/~martin/rawrite32/>`_.
 
 **Please note** the following USB image writing programs have been found to
 produce **NON working USB install disks** when used with the Rockstor iso and
@@ -155,7 +155,7 @@ about installation.
 
    <div class="alert alert-info">
    If you need further assistance during or post install, you
-   can post a topic on our <a href="http://forum.rockstor.com">Forum</a> or send an email to support@rockstor.com
+   can post a topic on our <a href="https://forum.rockstor.com">Forum</a> or send an email to support@rockstor.com
    </div>
 
 1. Boot your machine with the Rockstor CD or USB and the splash screen will

@@ -3,7 +3,7 @@
 LUKS Full Disk Encryption
 =========================
 
-LUKS `(Linux Unified Key Setup) <https://gitlab.com/philipg/cryptsetup/blob/master/README.md>`_
+LUKS `(Linux Unified Key Setup) <https://gitlab.com/cryptsetup/cryptsetup/-/blob/master/README.md>`_
 is a cross distribution, kernel based disk encryption standard. A central
 component of which is that all necessary setup information is stored within
 the format header; giving full decryption portability.
@@ -202,4 +202,4 @@ And finally we see the *Whole drive is mapped to a pool* **Map icon** in our
 **Please be aware that the LUKS UI components within Rockstor hide quite a
 bit of complexity and are currently in the early stages of development. But
 the LUKS system itself is stable.** If you experience any difficulties please
-visit `our forum <http://forum.rockstor.com/>`_ and ask away.
+visit `our forum <https://forum.rockstor.com/>`_ and ask away.

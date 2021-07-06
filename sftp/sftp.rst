@@ -214,7 +214,7 @@ As such, note that Cyberduck, as referenced in the :ref:`sftp_osx` section
 above, is also available for various versions of Windows.
 
 A dedicated SFTP client application that has found favour in `our forum
-<http://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
+<https://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is
 `GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
 
 .. _sftp_winscp:

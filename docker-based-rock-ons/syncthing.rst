@@ -7,7 +7,7 @@ Please be aware of the common prerequisites for all Rockstor :ref:`rockons_intro
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirement.
 
-Our `Syncthing Rock-on forum <http://forum.rockstor.com/t/syncthing-rock-on/180>`_ area.
+Our `Syncthing Rock-on forum <https://forum.rockstor.com/t/syncthing-rock-on/180>`_ area.
 
 .. _syncthing_whatis:
 
@@ -27,13 +27,13 @@ features an easy to use WebGUI making it a nice fit with Rockstor.
 Syncthing Documentation
 -----------------------
 
-Syncthing's `own documentation <http://docs.syncthing.net/>`_ is the best place
+Syncthing's `own documentation <https://docs.syncthing.net/>`_ is the best place
 to start with understanding its nature and capabilities, they also have a very
 accessible `getting started
-<http://docs.syncthing.net/intro/getting-started.html#getting-started>`_ guide.
+<https://docs.syncthing.net/intro/getting-started.html#getting-started>`_ guide.
 N.B. if your network gateway router does not have UPnP or you don't wish to
 enable it then please see the
-`Firewall Setup <http://docs.syncthing.net/users/firewall.html#firewall-setup>`_
+`Firewall Setup <https://docs.syncthing.net/users/firewall.html#firewall-setup>`_
 section of syncthing's docs.
 
 .. _syncthing_install:
@@ -67,7 +67,7 @@ Next we select the **Storage areas** for Syncthing's **data** and
 * **syncthing-data** - room enough for your data and snapshots.
 
 If you find that these values are insufficient then please discus this on the
-`Rockstor forum <http://forum.rockstor.com/>`_ so that this document might be
+`Rockstor forum <https://forum.rockstor.com/>`_ so that this document might be
 updated and improved.
 
 .. image:: syncthing_shares.png
