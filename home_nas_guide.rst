@@ -28,7 +28,7 @@ hardware components for a home NAS build
       
 **A Server**
           
-A server with at least `minimum system requirements <https://rockstor.com/docs/quickstart.html#minimum-system-requirements>`_
+A server with at least the :ref:`minsysreqs`.
           
 HP Proliant Microserver (Chosen for its small form factor, 4 easily accessible hard drive slots, and eSata capability to expand storage)
 
