@@ -4,6 +4,6 @@ Community Contributions
 .. toctree::
    :maxdepth: 2
 
-   contribute
-   contribute_documentation
-   contribute_rockons
+   contribute/contribute
+   contribute/contribute_documentation
+   contribute/contribute_rockons
