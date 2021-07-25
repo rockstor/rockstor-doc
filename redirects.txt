@@ -52,7 +52,7 @@
 "contribute_rockons.rst" "contribute/contribute_rockons.rst"
 "docker-based-rock-ons/minio.rst" "interface/docker-based-rock-ons/minio.rst"
 "docker-based-rock-ons/youtrack.rst" "interface/docker-based-rock-ons/youtrack.rst"
-"update-channels\update_channels.rst" "interface/system/update_channels.rst"
+"update-channels/update_channels.rst" "interface/system/update_channels.rst"
 
 # Deleted files
 "intro.rst" "index.rst"

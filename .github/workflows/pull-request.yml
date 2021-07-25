@@ -32,6 +32,8 @@ jobs:
     steps:
     - name: checkout source code
       uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - name: install sphinx
       run: pip3 install -U sphinx
     - name: install sphinxext-rediraffe
