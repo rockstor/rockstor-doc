@@ -10,8 +10,8 @@ jobs:
       uses: actions/checkout@v2
     - name: install sphinx
       run: pip3 install -U sphinx
-    - name: install sphinxcontrib-fulltoc
-      run: pip3 install sphinxcontrib-fulltoc
+    - name: install sphinxext-rediraffe
+      run: pip3 install sphinxext-rediraffe
     - name: build docs
       run: make html
 
@@ -22,7 +22,19 @@ jobs:
       uses: actions/checkout@v2
     - name: install sphinx
       run: pip3 install -U sphinx
-    - name: install sphinxcontrib-fulltoc
-      run: pip3 install sphinxcontrib-fulltoc
+    - name: install sphinxext-rediraffe
+      run: pip3 install sphinxext-rediraffe
     - name: check links
       run: make linkcheck
+
+  rediraffecheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout source code
+      uses: actions/checkout@v2
+    - name: install sphinx
+      run: pip3 install -U sphinx
+    - name: install sphinxext-rediraffe
+      run: pip3 install sphinxext-rediraffe
+    - name: check redirects
+      run: sphinx-build -b rediraffecheckdiff . _build/rediraffe
