@@ -70,36 +70,43 @@ Do you have any hardware recommendations?
 
 For home or small business use, we've seen Rockstor install flawlessly on
 HP, DELL and Supermicro servers and desktops. The developers of Rockstor
-use HP Micro servers for individual use.
+have use HP Micro servers for individual use.
 
 Rockstor also installs smoothly on the latest generation of servers from
 vendors like HP and Supermicro.
+
+For hobby and small home installs the Pi4 / RPi400 is also known to work:
+(Rockstor 4 only).
 
 
 I have Rockstor installed. How do I get software updates?
 ---------------------------------------------------------
 
-Rockstor should be updated directly from the web-ui when it indicates that an
+Rockstor can be updated directly from the Web-UI when it indicates that an
 update is available. It's a simple, non-disruptive process and takes only a
-couple of mouse clicks and a few minutes.
+couple of mouse clicks. Note however that you must select an
+:ref:`Update Channel <update_channels>` before you will receive any 'rockstor'
+package updates. All upstream OS updates are enabled by default.
 
 
 How frequent are the software updates?
 --------------------------------------
 
-Rockstor development happens at a reasonably fast pace. We create test releases
-almost every other day. Once we are satisfied with a batch of changes, we
-release a stable update. This happens roughly once or twice a month.
+Rockstor development depends on the number of our contributors & Stable Channel
+subscribers. Testing channel releases are always more frequent.
+
+Once we are assured off all recent changes in the Testing Channel we release a
+Stable Channel update.
 
 
 Why is Rockstor updated so frequently?
 --------------------------------------
 
-While we make major releases that require complete OS install, we try to make
-these releases as infrequent as possible. However, we constantly improve
-Rockstor and push tested updates in small batches which can be updated online
-right from the web-ui. We do this because we want our users to get the best of
-Rockstor without any unnecessary disruption or delay.
+While we make major releases that require complete OS re-installs, i.e. such as
+when moving from Rockstor 3 to 4, we try to make these releases as infrequent
+as possible. Generally we push small tested updates as often as we can, and
+base our Stable Updates channel releases on the field testing carried out by
+our community in the Testing Channel.
 
 .. _faq_license:
 
@@ -110,13 +117,58 @@ Rockstor is free software licenced under the terms of GNU General Public
 License version 2. See `here <https://www.gnu.org/licenses>`_ for more details.
 
 
-What Linux flavor is rockstor based on?
+What Linux flavor is Rockstor based on?
 ---------------------------------------
 
-Rockstor 3.x is based on `CentOS 7 <https://www.centos.org/>`_. We rebrand
-CentOS, add Rockstor software in the form of additional rpms and change the
-installer to make it a bit more straightforward and specific.
+Rockstor 4 is "Built on openSUSE" and resembles most closely the upstream JeOS
+variants.
+Our `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ uses
+openSUSE's own `kiwi-ng <https://github.com/OSInside/kiwi>`_ installer builder.
+We host a bare minimum of re-branding apps on the
+`Open Build Service <https://build.opensuse.org/project/subprojects/home:
+rockstor>`_ (see also Overview) courtesy of openSUSE/SuSE/AMD. Otherwise we
+favour openSUSE's own \*-branding-upstream options.
 
+
+Our near legacy Rockstor 3.x is based on `CentOS 7 <https://www.centos.org/>`_.
+We re-brand CentOS, add Rockstor software in the form of additional rpms and
+change the installer to make it a bit more straightforward and specific.
+
+
+.. _faq_rockstor4_repos:
+
+What Repositories does Rockstor 4 use?
+--------------------------------------
+
+The following repositories are included and enabled in :ref:`installer_howto`.
+
+* `OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only)
+
+* `Update <https://en.opensuse.org/Package_repositories#Update>`_ (security and bugfix updates for OSS packages)
+
+Aliased as per the installer profile: e.g. "Leap_15_2" & "Leap_15_2_Updates".
+
+**Leap 15.2 profiles** have the following additional repos:-
+
+* `shells <https://build.opensuse.org/project/show/shells>`_
+  An OBS repo for shellinabox - used by our Web-UI shell.
+
+* `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
+  Rockstor's OBS repo for branding packages.
+
+We are required to de/re-brand packages that have no
+"...branding-upstream" equivalent". See: `Making_an_openSUSE_based_distribution
+<https://en.opensuse.org/Archive:Making_an_openSUSE_based_distribution>`_
+
+
+**Leap 15.3 profiles** and newer - shells is replaced with Rockstor's OBS
+home_rockstor; there was no Leap 15.3 ARM64 shellinabox package:-
+
+* `home_rockstor <https://build.opensuse.org/project/show/home:rockstor>`_
+  Multi-arch Shellinabox with no changes from upstream:
+
+* `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
+  As for Leap 15.2 Profiles.
 
 What Filesystems are supported by Rockstor?
 -------------------------------------------
