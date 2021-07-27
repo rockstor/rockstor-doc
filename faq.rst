@@ -57,11 +57,12 @@ a small subscription fee. See :ref:`update_channels` for more information.
 How can I share files using Rockstor?
 -------------------------------------
 
-Rockstor supports popular file sharing protocols like Samba/CIFS, NFS, and SFTP.
-Linux, Apple and Windows clients can easily share files using Rockstor.
-Rockstor also supports apps like OwnCloud, Nextcloud, Syncthing and others in
-the form of :ref:`rockons_intro` that provide more advanced and easier ways to
-share and access your files.
+Rockstor supports popular file sharing protocols like Samba/CIFS, NFS, and
+SFTP. See :ref:`services` & :ref:`filesharing` for details on how to setup and
+configure these. Linux, Apple, and Windows clients can easily share files using
+Rockstor (see :ref:`accessshares`). Rockstor also supports apps like OwnCloud,
+Nextcloud, Syncthing, Seafile, and others in the form of :ref:`rockons_intro`
+that provide more advanced and/or easier ways to share and access your files.
 
 
 Do you have any hardware recommendations?

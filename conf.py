@@ -30,7 +30,7 @@ import os
 # ones.
 extensions = [
     'sphinx.ext.todo',
-    'sphinxcontrib.fulltoc',
+    'sphinxext.rediraffe',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -265,3 +265,7 @@ texinfo_documents = [
 # -- Options for linkcheck ------------------------------------------------
 linkcheck_retries = 2
 linkcheck_timeout = 20
+
+# -- Options for sphinxext.rediraffe --------------------------------------
+rediraffe_redirects = "redirects.txt"
+rediraffe_branch = "origin/master"

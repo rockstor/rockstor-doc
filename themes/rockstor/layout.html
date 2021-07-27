@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/"><img src="{{ pathto('_static/' + 'img/rockstorlogo-font2.png', 1) }}" style="padding-top: 8px;" width="150px">
+            <a href="/docs"><img src="{{ pathto('_static/' + 'img/rockstorlogo-font2.png', 1) }}" style="padding-top: 8px;" width="150px">
             </a>
         </div>
 
@@ -91,8 +91,17 @@
         <div class="row-fluid">
             <div class="col-lg-4 col-xs-12">
                 <div class="sphinxsidebarwrapper">
-                    <a href="index.html"><h3>Table of contents</h3></a>
-                    {{ toctree() }}
+                    <a href="/docs"><h3>Table of contents</h3></a>
+                    {%- set toctree = toctree(
+                        collapse=True,
+                        maxdepth = 3
+                    ) %}
+                    {%- if toctree %}
+                        {{ toctree }}
+                    {%- else %}
+                    <!-- Local TOC -->
+                        {{ toc }}
+                    {%- endif %}                
                 </div>
             </div>
             <div class="col-lg-8 col-xs-12">
