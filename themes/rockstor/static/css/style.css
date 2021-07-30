@@ -40,13 +40,13 @@ h1, h2, h3, h4, h5, h6 {
   /* Fonts */
   /*body { font: 14px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif; }*/
   body { 
-    font-family: source-sans-pro, sans-serif;
+    font-family: Arial, Verdana, sans-serif;
     font-size: 16px;
     line-height: 1.5em; 
   }
   
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-    font-family: source-sans-pro, sans-serif;
+    font-family: Arial, Verdana, sans-serif;
     font-weight: normal;
     color: #333;
   }
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0px;
     font-size: 12px/1.5em;
     /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
-    font-family: source-sans-pro, sans-serif;
+    font-family: Arial, Verdana, sans-serif;
   }
   
   .navbar-inner {
@@ -899,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
   
   #main-story-download { 
     font-size: 24px; 
-    font-family: source-sans-pro, sans-serif;
+    font-family: Arial, Verdana, sans-serif;
     padding: 12px 18px; 
   }
   
