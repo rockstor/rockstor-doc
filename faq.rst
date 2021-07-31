@@ -70,7 +70,7 @@ Do you have any hardware recommendations?
 
 For home or small business use, we've seen Rockstor install flawlessly on
 HP, DELL and Supermicro servers and desktops. The developers of Rockstor
-have use HP Micro servers for individual use.
+have used HP Micro servers for personal use.
 
 Rockstor also installs smoothly on the latest generation of servers from
 vendors like HP and Supermicro.
@@ -95,7 +95,7 @@ How frequent are the software updates?
 Rockstor development depends on the number of our contributors & Stable Channel
 subscribers. Testing channel releases are always more frequent.
 
-Once we are assured off all recent changes in the Testing Channel we release a
+Once we are assured of all recent changes in the Testing Channel we release a
 Stable Channel update.
 
 
