@@ -79,7 +79,7 @@ Command line options
 
 To create a USB install disk on Linux or Mac one can use the dd command.
 For example if your USB device is /dev/sdc then from within the directory
-containing your downloaded or self built
+containing your downloaded or self-built
 (see:`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_)
 file (iso for X86_64's) the single line command would be:-
 
