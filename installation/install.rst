@@ -67,7 +67,7 @@ You can find user stories and example builds on our
    Microserver Gen8.
 
 3. Raspberry Pi4 and RPi 400 have also both been reported as working as
-   intended via our newer Rockstor 4 "Build on openSUSE" variant. N.B. RPi 400
+   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi 400
    requires at least a 15.3 profile for the internal keyboard to work.
 
 Upgrading Rockstor
