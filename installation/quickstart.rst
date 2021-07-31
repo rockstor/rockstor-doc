@@ -29,7 +29,7 @@ recommendations.
 * A UPS (recommended) that is supported by `NUT <https://networkupstools.org/>`_.
 * USB port and 1GB+ USB key for the x86_64 installation media; or a DVD drive.
   Rasbperry Pi 4 / RPi 400 installs are via a self expanding system disk image,
-  and so do not required separate install media.
+  and so do not require a separate install media.
 
 
 .. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx
@@ -79,7 +79,7 @@ Command line options
 
 To create a USB install disk on Linux or Mac one can use the dd command.
 For example if your USB device is /dev/sdc then from within the directory
-containing your downloaded or self built
+containing your downloaded or self-built
 (see:`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_)
 file (iso for X86_64's) the single line command would be:-
 
@@ -108,7 +108,7 @@ instructions then you can forgo the initial xzcat extraction step and use
 
     dd bs=4M if=Rockstor-Leap15.2-RaspberryPi4.aarch64-4.0.7-0.raw of=/dev/sdc iflag=fullblock conv=notrunc status=progress
 
-For the more technically interested we create our xz download image files from
+For the more technically interested, we create our xz download image files from
 the raw installer created by the `kiwi-ng <https://github.com/OSInside/kiwi>`_
 system that our
 `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ is a
@@ -117,7 +117,7 @@ to enable multi-threaded decompress.
 
 **The ARM64EFI generic images**, when downloaded, are available in both the
 raw.zx file format, like the Pi4 images, and in pre-sized (16GB) qcow2 formats.
-For the raw.zx downloaded files the single line command is identical to the Pi4
+For the raw.zx downloaded files, the single line command is identical to the Pi4
 raw.zx example above, except for the filename (single line command):
 
         xzcat Rockstor-Leap15.2-ARM64EFI.aarch64-4.0.7-0.raw.xz | dd bs=4M of=/dev/sdc iflag=fullblock conv=notrunc status=progress

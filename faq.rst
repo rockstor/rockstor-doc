@@ -140,7 +140,7 @@ change the installer to make it a bit more straightforward and specific.
 What Repositories does Rockstor 4 use?
 --------------------------------------
 
-The following repositories are included and enabled in :ref:`installer_howto`.
+The following repositories are included and enabled in :ref:`installer_howto`:
 
 * `OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only)
 

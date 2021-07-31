@@ -36,7 +36,7 @@ Hardware recommendations
 
 There is nothing about Rockstor that requires special hardware. It's Linux, and
 specifically Rockstor 4 is "Built on openSUSE" while v3 used CentOS, so it can
-be installed on a wide range of commodity hardware. With 4 gaining ARM64
+be installed on a wide range of commodity hardware, with 4 gaining ARM64
 compatibility.
 See :ref:`minsysreqs` for basic requirements.
 
@@ -67,14 +67,14 @@ You can find user stories and example builds on our
    Microserver Gen8.
 
 3. Raspberry Pi4 and RPi 400 have also both been reported as working as
-   intended via our newer Rockstor 4 "Build on openSUSE" variant. N.B. RPi 400
+   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi 400
    requires at least a 15.3 profile for the internal keyboard to work.
 
 Upgrading Rockstor
 ------------------
 Rockstor is under continuous development and we generally release updates in
 small batches. These updates are easy to install. But we do roll-out major
-releases that require a complete re-installs. Upgrading from Rockstor 3 (CentOS
+releases that require a complete re-install. Upgrading from Rockstor 3 (CentOS
 based) to Rockstor 4 "Built on openSUSE" is one such update.
 But such updates are very rare.
 
@@ -94,13 +94,13 @@ wifi-like icon. Again, this is not shown if no update is available, but it
 does show, as per the up-arrow, if there is a rockstor package update
 available.
 But only the up-arrow will actually update the main rockstor package.
-These disparate but related mechanisms allows folks to choose to only update
+These disparate but related mechanisms allow users to choose to only update what they want:
 all packages bar the rockstor package (wifi-like icon).
 
 See the following section for details on upgrading the Rockstor package plus
 all pending upstream updates :ref:`update_channels`.
 
-2. Alternatively, for advanced users only, one can updated from the Command
+2. Alternatively, for advanced users only, one can update from the Command
 Line Interface (CLI).
 
 Just the main rockstor package::
