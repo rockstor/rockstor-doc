@@ -29,7 +29,7 @@ recommendations.
 * A UPS (recommended) that is supported by `NUT <https://networkupstools.org/>`_.
 * USB port and 1GB+ USB key for the x86_64 installation media; or a DVD drive.
   Rasbperry Pi 4 / RPi 400 installs are via a self expanding system disk image,
-  and so do not required separate install media.
+  and so do not require a separate install media.
 
 
 .. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx
