@@ -94,7 +94,7 @@ all packages bar the rockstor package (wifi-like icon).
 See the following section for details on upgrading the Rockstor package plus
 all pending upstream updates :ref:`update_channels`.
 
-2. Alternatively, for advanced users only, one can updated from the Command
+2. Alternatively, for advanced users only, one can update from the Command
 Line Interface (CLI).
 
 Just the main rockstor package::
