@@ -35,8 +35,10 @@ Hardware recommendations
 -------------------------
 
 There is nothing about Rockstor that requires special hardware. It's Linux, and
-specifically a CentOS/Fedora fork, so it can be installed on a wide range of
-commodity hardware. See :ref:`minsysreqs` for basic requirements.
+specifically Rockstor 4 is "Built on openSUSE" while v3 used CentOS, so it can
+be installed on a wide range of commodity hardware, with 4 gaining ARM64
+compatibility.
+See :ref:`minsysreqs` for basic requirements.
 
 Over time, the Rockstor developers and community at large share hardware specs
 that are known to work with Rockstor. Below is a list of these recommendations.
@@ -64,32 +66,64 @@ You can find user stories and example builds on our
 2. Yet another recommendation used by some community members is HP Proliant
    Microserver Gen8.
 
+3. Raspberry Pi4 and RPi 400 have also both been reported as working as
+   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi 400
+   requires at least a 15.3 profile for the internal keyboard to work.
+
 Upgrading Rockstor
 ------------------
-Rockstor is under continuous development and we push tested updates in small
-batches. These updates are easy to install. While we roll-out major releases
-that require complete OS install, we try to make these releases as infrequent
-as possible. We strive to make most updates non-disruptive.
+Rockstor is under continuous development and we generally release updates in
+small batches. These updates are easy to install. But we do roll-out major
+releases that require a complete re-install. Upgrading from Rockstor 3 (CentOS
+based) to Rockstor 4 "Built on openSUSE" is one such update.
+But such updates are very rare.
 
-Rockstor updates can be installed in two ways :
+Non re-install Rockstor updates can be installed in two ways :
 
-1. Install updates from the Web-UI : On the Rockstor Web-UI, on the top-right
-side of the navigation bar, you will see an upward facing arrow. If you click
-on that arrow, and if there is an update available, you will see *Software
-Update* highlighted, with details on the screen.
+1. Install updates from the Web-UI (recommended):
+On the Rockstor Web-UI, far top-right, you will see an upward facing arrow next
+to the Rockstor version number if any Rockstor package updates are available.
 
-See YouTube `How to keep Rockstor up-to-date <https://www.youtube.com/watch?v=srn6vgQNkbc>`_.
-
-.. image:: /images/install-update.png
+.. image:: /images/installation/install/update-arrow.png
    :width: 100%
    :align: center
 
+All upstream packages except the
+'rockstor' package can similarly be installed by clicking on a flashing
+wifi-like icon. Again, this is not shown if no update is available, but it
+does show, as per the up-arrow, if there is a rockstor package update
+available.
+But only the up-arrow will actually update the main rockstor package.
+These disparate but related mechanisms allow users to choose to only update what they want:
+all packages bar the rockstor package (wifi-like icon).
 
+See the following section for details on upgrading the Rockstor package plus
+all pending upstream updates :ref:`update_channels`.
 
-2. Install updates from the CLI : You can safely update Rockstor anytime with
-the following command::
+2. Alternatively, for advanced users only, one can update from the Command
+Line Interface (CLI).
+
+Just the main rockstor package::
+
+    [root@localhost ~]# zypper update rockstor
+
+The entire Rockstor 4 system including all upstream updates. Our login message
+has a reminder of these commands::
+
+    [root@localhost ~]# zypper refresh
+    [root@localhost ~]# zypper up --no-recommends
+
+- And Rockstor 3 similarly via::
 
     [root@localhost ~]# yum update rockstor
+
+and::
+
+    [root@localhost ~]# yum update
+
+On both OS bases a reboot is recommended, but only after the update has
+completed. This can take some time, depending on how many updates have to be
+downloaded and established.
 
 If an update is disruptive, the update process prompts for user action and
 provides the necessary information to choose to update or not. You can safely

@@ -1,7 +1,7 @@
 .. _installer_howto:
 
-Rockstor’s “Built on openSUSE” installer - Beta release
-=======================================================
+Rockstor’s “Built on openSUSE” installer
+========================================
 
 .. _installer_thanks:
 
@@ -17,7 +17,8 @@ and unseen ways.
 **Please note: Rockstor is in no way affiliated with openSUSE / SuSE and does
 not wish, under any circumstances, to misrepresent these organisations.**
 *Any errors you encounter are most likely our fault and we try, on a current
-volunteer basis, to support our users via our* `friendly forum <https://forum.rockstor.com/>`_.
+volunteer basis, to support our users via our*
+`friendly forum <https://forum.rockstor.com/>`_.
 
 It is hoped that Rockstor’s ongoing small contribution back to the larger
 community is of value, and if this is so for you please consider either
@@ -167,7 +168,8 @@ browser.
 .. image:: /images/installation/installer-howto/root_login_myip.png
    :align: center
 
-Enter your systems' :code:`https://...` address into your browser, Chrome/Firefox/.., for the Web-UI.
+Enter your systems' :code:`https://...` address into your browser,
+Chrome/Firefox/.., for the Web-UI.
 
 Visit Rockstor's Web-UI
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,8 +242,8 @@ Your Rockstor installation is now up and running and ready to be configured.
 Update Channel reminder banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Until an Update Channel selection has been made, a reminder banner appears
-whenever the dashboard is visited:
+Until an :ref:`Update Channel <update_channels>` selection has been made,
+a reminder banner appears whenever the dashboard is visited:
 
 .. image:: /images/installation/installer-howto/update_channel_reminder_banner.png
    :align: center
@@ -250,18 +252,7 @@ Enjoy your Rockstor DIY NAS 'Built on openSUSE'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All upstream (openSUSE) updates, at time of installer creation, are
-pre-applied. The following repositories are included and enabled in the
-resulting install.
+pre-applied and their respective repositories enabled by default.
 
-
-`OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only)
-
-`Update <https://en.opensuse.org/Package_repositories#Update>`_ (security and bugfix updates for OSS packages)
-
-`shells <https://build.opensuse.org/project/show/shells>`_ (An OBS repo to provide our Web-UI integrated shell via shellinabox)
-
-`NetTime <https://build.opensuse.org/project/show/network:time>`_ (to address a chrony Network-Manager related bug)
-
-
-**No Rockstor package update repository is configured until an Update Channel
-is selected.**
+**NOTE: No Rockstor package update repository is configured until an
+Update Channel is selected.**

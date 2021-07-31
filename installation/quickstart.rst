@@ -17,18 +17,20 @@ Rockstor is a complete Linux distribution (iso) to be installed directly on
 hardware or as a VM with the following minimum system requirements and
 recommendations.
 
-* 64-bit Intel or AMD processor (2+ cores recommended).
+* 64-bit Intel/AMD, or ARM64 processor (2+ cores recommended).
 * 2GB RAM (4GB+ recommended).
-* 8GB drive for Rockstor; if USB key use only fast variants (16GB+ SSD
-  recommended).
+* 16GB drive for Rockstor's system disk; if USB key use only fast variants
+  (32GB+ SSD recommended).
 * One or more additional drives for data use only (less than 1GB ignored, 5GB+
   recommended).
 * Ethernet interface (with internet access for updates).
 * All drives must have unique serial numbers (real drives do); not all VM [*]_
   systems default to this.
 * A UPS (recommended) that is supported by `NUT <https://networkupstools.org/>`_.
-* USB port and 1GB+ USB key for the installation media; or DVD drive and a
-  blank DVD.
+* USB port and 1GB+ USB key for the x86_64 installation media; or a DVD drive.
+  Rasbperry Pi 4 / RPi 400 installs are via a self expanding system disk image,
+  and so do not require a separate install media.
+
 
 .. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx
    file.
@@ -37,8 +39,8 @@ Download Rockstor
 -----------------
 
 Rockstor `download options <https://rockstor.com/download.html>`_. Create a
-bootable CD or USB drive from the downloaded iso and proceed to the
-:ref:`installation` section.
+bootable USB installer, or system disk, from a downloaded or via our self build
+installer option and proceed to the :ref:`installation` section.
 
 .. _makeusbinstalldisk:
 
@@ -75,21 +77,69 @@ USB install disk.
 Command line options
 ~~~~~~~~~~~~~~~~~~~~
 
-To create a USB install disk on Linux or Mac one can use the dd command. For
-example if your USB device is /dev/sdc then from within the directory
-containing your downloaded Rockstor iso file the command would be:-
+To create a USB install disk on Linux or Mac one can use the dd command.
+For example if your USB device is /dev/sdc then from within the directory
+containing your downloaded or self-built
+(see:`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_)
+file (iso for X86_64's) the single line command would be:-
 
-    dd if=Rockstor-3.8-9.iso of=/dev/sdc
+    dd if=Rockstor-Leap15.2-generic.x86_64-4.0.7-0.install.iso of=/dev/sdc
 
-Note that the .iso file name will vary depending on the Rockstor version.
+Note that the installer file name will vary depending on the Rockstor
+installer profile used: i.e. the base OS version, the general or machine
+specific nature, i.e.: "generic", "ARM64EFI", or specific Pi4; and the
+target architecture. If the suggested edits were not performed during the DIY
+installer builder method then the file name & required single line command
+will be more like:
+
+    dd if=Rockstor-NAS.x86_64-4.0.7-0.install.iso of=/dev/sdc
+
+**The Pi4 specific installer**, when downloaded, is a raw.zx image of a self
+expanding system disk.
+To transfer this file to the example proposed system disk of /dev/sdc the
+following single line command could be used:
+
+    xzcat Rockstor-Leap15.2-RaspberryPi4.aarch64-4.0.7-0.raw.xz | dd bs=4M of=/dev/sdc iflag=fullblock conv=notrunc status=progress
+
+If you **built your own Pi4 installer** via our
+`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_
+instructions then you can forgo the initial xzcat extraction step and use
+(single line command):
+
+    dd bs=4M if=Rockstor-Leap15.2-RaspberryPi4.aarch64-4.0.7-0.raw of=/dev/sdc iflag=fullblock conv=notrunc status=progress
+
+For the more technically interested, we create our xz download image files from
+the raw installer created by the `kiwi-ng <https://github.com/OSInside/kiwi>`_
+system that our
+`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ is a
+configuration for via "xz --threads=4 --memlimit-compress=80% Rockstor-...raw"
+to enable multi-threaded decompress.
+
+**The ARM64EFI generic images**, when downloaded, are available in both the
+raw.zx file format, like the Pi4 images, and in pre-sized (16GB) qcow2 formats.
+For the raw.zx downloaded files, the single line command is identical to the Pi4
+raw.zx example above, except for the filename (single line command):
+
+        xzcat Rockstor-Leap15.2-ARM64EFI.aarch64-4.0.7-0.raw.xz | dd bs=4M of=/dev/sdc iflag=fullblock conv=notrunc status=progress
+
+*N.B.* The qcow2 images of the ARM64EFI profile do NOT self expand. They are
+set at 16 GB. However our
+`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_
+can configure this via the *<size unit="G">16</size>* parameter.
+
+When built via the DIY
+`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ the
+resulting images are the qcow2 type. These files can be booted directly on
+most common Hypervisors.
 
 Another option on linux systems is the ddrescue command which gives
-more reassuring feedback whilst the USB key is being written. On Debian and
-Ubuntu systems install via *sudo apt-get install gddrescue* and on Fedora
-systems install via *sudo dnf install ddrescue*. Use similarly to dd above
-only using the following command:-
+more reassuring feedback whilst the USB key is being written. On an
+openSUSE/SuSE system install via *zypper in ddrescue*. On Debian and
+Ubuntu systems install via *sudo apt-get install gddrescue* and on
+Fedora/RehHat systems install via *sudo dnf install ddrescue*. Use is similar
+to dd above only using the following single command:-
 
-    sudo ddrescue -d -D --force Rockstor-3.8-9.iso /dev/sdc
+    sudo ddrescue -d -D --force Rockstor-Leap15.2-generic.x86_64-4.0.7-0.install.iso /dev/sdc
 
 Note that there are 2 "-" characters next to each other before the "force"
 switch.
@@ -114,7 +164,7 @@ burn the Rockstor ISO to the USB drive using the following commands, replacing
 disk# with your IDENTIFIER name (this will DESTROY all data on the USB drive).
 
     diskutil unmountDisk /dev/disk#
-    sudo dd if=~/Downloads/Rockstor-3.8.14.iso of=/dev/rdisk# bs=1m
+    sudo dd if=~/Downloads/Rockstor-Leap15.2-generic.x86_64-4.0.7-0.install.iso of=/dev/rdisk# bs=1m
 
 Note the 'r' is placed in front of the disk# and 'bs=1m' is for blocksize.
 There is no progress bar, you will return to the command prompt once the
@@ -134,21 +184,30 @@ untested, please see our :ref:`makeusbinstalldiskgui`.
 Installation
 ------------
 
-Installing Rockstor is quick and straight forward.
+Rockstor 4
+^^^^^^^^^^
 
-See YouTube `How to install Rockstor 3.8-7 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_.
+Installing Rockstor 4 is particularly quick and straight forward.
+See the following dedicated doc section for details :ref:`installer_howto`.
 
-Since Rockstor is based
-on CentOS and uses the same anaconda installer the installation looks similar
-to that of CentOS or Fedora. You can also read
+Rockstor 3
+^^^^^^^^^^
+
+Since Rockstor 3 is based on CentOS and uses it's anaconda installer the
+installation looks similar to that of a CentOS or Fedora. Note however that not
+all non-default configurations within this installer are supported by the
+resulting Rockstor 3 install. So it is advised to stick to the defaults where
+possible.
+
+You can also read (for a Rockstor 3 example)
 :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup` for more information
-about installation.
+about our older Rockstor 3 installation.
 
 .. raw:: html
 
    <div class="alert alert-warning">
-   <strong>Important!</strong> Installing Rockstor deletes existing data on the system
-   drive(s) selected as installation destination.
+   <strong>Important!</strong> Installing Rockstor deletes existing data on the
+   system drive(s) selected as installation destination.
    </div>
 
    <div class="alert alert-info">

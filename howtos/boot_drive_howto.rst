@@ -4,6 +4,11 @@
 Mirroring Rockstor OS using Linux Raid
 ======================================
 
+**Note: this howto is for our near legacy Rockstor 3 only.**
+
+*Rockstor 4 intends to support a multi-device btrfs system pool as developer
+time, and upstream support allows*
+
 This howto represents an advanced install scenario and should not be required
 for regular Rockstor use; but is provided as a guide on how to accomplish the
 specific install arrangement of a redundant system disk install using the more
