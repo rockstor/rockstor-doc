@@ -88,7 +88,7 @@ wifi-like icon. Again this is not shown if no updates are available. But it
 does show, as per the up-arrow, if there is a rockstor package update
 available.
 But only the up-arrow will actually update the main rockstor package.
-These disparate but related mechanisms allows folks to choose to only update
+These disparate but related mechanisms allow users to choose to only update what they want:
 all packages bar the rockstor package (wifi-like icon).
 
 See the following section for details on upgrading the Rockstor package plus
