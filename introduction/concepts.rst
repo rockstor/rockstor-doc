@@ -72,6 +72,6 @@ infrastructure.
 Rock-ons
 --------
 
-This is our made up term to reference the built in
+This is our made-up term to reference the built-in
 `docker <https://www.docker.com/>`_ based plugin system.
 See our :ref:`rockons_intro` section for a more detailed explanation.
