@@ -74,7 +74,7 @@ Upgrading Rockstor
 ------------------
 Rockstor is under continuous development and we generally release updates in
 small batches. These updates are easy to install. But we do roll-out major
-releases that require a complete re-installs. Upgrading from Rockstor 3 (CentOS
+releases that require a complete re-install. Upgrading from Rockstor 3 (CentOS
 based) to Rockstor 4 "Built on openSUSE" is one such update.
 But such updates are very rare.
 
