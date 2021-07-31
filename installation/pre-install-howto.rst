@@ -27,7 +27,7 @@ Memtest86+ can place a very intense load on your system, especially if run in
 the new Multithreaded mode (version 5.01 and onwards via F2 on initial start)
 but a sufficiently cooled system should be able to execute this test
 indefinitely; however, if your system has cooling issues then it may lockup
-or even sustain damage. Please take care to monitor your systems temperate
+or even sustain damage. Please take care to monitor your system's temperatures
 during this test. Version 5.01 and on have a built in CPU temperature monitor.
 If you find that your version of the Rockstor installer doesn't include the 5
 .01 or newer version of memtest86+, or any version at all (Rockstor 4) then
