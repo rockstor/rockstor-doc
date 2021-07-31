@@ -36,7 +36,7 @@ Hardware recommendations
 
 There is nothing about Rockstor that requires special hardware. It's Linux, and
 specifically Rockstor 4 is "Built on openSUSE" while v3 used CentOS, so it can
-be installed on a wide range of commodity hardware. With 4 gaining ARM64
+be installed on a wide range of commodity hardware, with 4 gaining ARM64
 compatibility.
 See :ref:`minsysreqs` for basic requirements.
 
