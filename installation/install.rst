@@ -81,10 +81,16 @@ But such updates are very rare.
 Non re-install Rockstor updates can be installed in two ways :
 
 1. Install updates from the Web-UI (recommended):
-On the Rockstor Web-UI, far top-right, you will see an upward facing arrow if
-any Rockstor package updates are available. All upstream packages except the
+On the Rockstor Web-UI, far top-right, you will see an upward facing arrow next
+to the Rockstor version number if any Rockstor package updates are available.
+
+.. image:: /images/installation/install/update-arrow.png
+   :width: 100%
+   :align: center
+
+All upstream packages except the
 'rockstor' package can similarly be installed by clicking on a flashing
-wifi-like icon. Again this is not shown if no updates are available. But it
+wifi-like icon. Again, this is not shown if no update is available, but it
 does show, as per the up-arrow, if there is a rockstor package update
 available.
 But only the up-arrow will actually update the main rockstor package.
