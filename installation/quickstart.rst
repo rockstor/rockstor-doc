@@ -117,7 +117,7 @@ to enable multi-threaded decompress.
 
 **The ARM64EFI generic images**, when downloaded, are available in both the
 raw.zx file format, like the Pi4 images, and in pre-sized (16GB) qcow2 formats.
-For the raw.zx downloaded files the single line command is identical to the Pi4
+For the raw.zx downloaded files, the single line command is identical to the Pi4
 raw.zx example above, except for the filename (single line command):
 
         xzcat Rockstor-Leap15.2-ARM64EFI.aarch64-4.0.7-0.raw.xz | dd bs=4M of=/dev/sdc iflag=fullblock conv=notrunc status=progress
