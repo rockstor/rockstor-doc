@@ -108,7 +108,7 @@ instructions then you can forgo the initial xzcat extraction step and use
 
     dd bs=4M if=Rockstor-Leap15.2-RaspberryPi4.aarch64-4.0.7-0.raw of=/dev/sdc iflag=fullblock conv=notrunc status=progress
 
-For the more technically interested we create our xz download image files from
+For the more technically interested, we create our xz download image files from
 the raw installer created by the `kiwi-ng <https://github.com/OSInside/kiwi>`_
 system that our
 `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ is a
