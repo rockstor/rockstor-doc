@@ -3,12 +3,6 @@
 UPS / NUT Setup
 ===============
 
-**Please note that this feature is in beta testing and not yet recommended
-for production use.**
-
-*Bug reports or suggestions are always welcome on*
-`our friendly forum <https://forum.rockstor.com/>`_.
-
 Overview
 --------
 
