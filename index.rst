@@ -57,57 +57,67 @@ in *prod* status are production ready where as *beta* indicates a features is
 not yet ready for prime time. Some unsupported and planned features are also
 listed.
 
-+--------------------------------+---------+--------------------------------+
-| Feature                        | status  | notes                          |
-|                                |         |                                |
-+================================+=========+================================+
-| Online pool management         | beta    |                                |
-+--------------------------------+---------+--------------------------------+
-| Online share management        | beta    |                                |
-+--------------------------------+---------+--------------------------------+
-| CoW snapshots                  | beta    |                                |
-+--------------------------------+---------+--------------------------------+
-| sharing via NFS(v3 and v4)     | prod    | Network File System cross      |
-|                                |         | platform enterprise file access|
-+--------------------------------+---------+--------------------------------+
-| sharing via SMB                | beta    | also known as CIFS / Samba     |
-+--------------------------------+---------+--------------------------------+
-| Time Machine backups           | beta    | via Samba exports              |
-+--------------------------------+---------+--------------------------------+
-| WebDAV                         | planned |                                |
-+--------------------------------+---------+--------------------------------+
-| SFTP                           | beta    | Secure File Transport Protocol |
-+--------------------------------+---------+--------------------------------+
-| Asynchronous share             | beta    | replicate shares between       |
-| replication                    |         | multiple Rockstor appliances   |
-+--------------------------------+---------+--------------------------------+
-| WebUI                          | prod    | efficient management through   |
-|                                |         | Chrome browser                 |
-+--------------------------------+---------+--------------------------------+
-| SSH                            | prod    | standard bash shell            |
-+--------------------------------+---------+--------------------------------+
-| RESTful API                    | prod    | integrate applications with    |
-|                                |         | Rockstor                       |
-+--------------------------------+---------+--------------------------------+
-| Active directory               | beta    |                                |
-+--------------------------------+---------+--------------------------------+
-| LDAP                           | prod    | Lightweight Directory Access   |
-+--------------------------------+---------+--------------------------------+
-| NIS                            | prod    | Network Information System     |
-+--------------------------------+---------+--------------------------------+
-| NTP client                     | prod    | set system time from NTP server|
-+--------------------------------+---------+--------------------------------+
-| SNMP                           | beta    | enterprise monitoring facility |
-+--------------------------------+---------+--------------------------------+
-| S.M.A.R.T                      | beta    | disk health information system |
-+--------------------------------+---------+--------------------------------+
-| Docker based Plugin system     | beta    | We call these Rock-ons         |
-+--------------------------------+---------+--------------------------------+
-| Critical event alerts          | beta    | via email notification system  |
-+--------------------------------+---------+--------------------------------+
-| Scheduled tasks                | beta    | snapshots and scrubs           |
-+--------------------------------+---------+--------------------------------+
-| Config Backup and Restore      | beta    | for recovery / migration use   |
-+--------------------------------+---------+--------------------------------+
-| UPS support via NUT            | beta    | Configure a UPS from the GUI   |
-+--------------------------------+---------+--------------------------------+
++--------------------------------+---------+---------------------------------+
+| Feature                        | status  | notes                           |
++================================+=========+=================================+
+| Web-UI                         | prod    | System management via browser   |
++--------------------------------+---------+---------------------------------+
+| Web-UI Live Dashboard          | prod    | Overview of system activity     |
++--------------------------------+---------+---------------------------------+
+| Online Pool management         | prod    | Re-naming capability planned    |
++--------------------------------+---------+---------------------------------+
+| Online Share management        | prod    | Re-naming capability planned    |
++--------------------------------+---------+---------------------------------+
+| Snapshots                      | prod    | Instant btrfs subvol snapshots  |
++--------------------------------+---------+---------------------------------+
+| Sharing via NFS                | prod    | Network File-System cross       |
+|                                |         | platform enterprise file access |
++--------------------------------+---------+---------------------------------+
+| Sharing via SMB                | prod    | Also known as CIFS / Samba      |
++--------------------------------+---------+---------------------------------+
+| Apple Time Machine Backups     | beta    | Samba options in Rockstor v4    |
++--------------------------------+---------+---------------------------------+
+| SFTP                           | prod    | Secure File Transport Protocol  |
++--------------------------------+---------+---------------------------------+
+| Asynchronous Share             | beta    | Replicate btrfs subvols between |
+| Replication                    |         | multiple Rockstor appliances    |
++--------------------------------+---------+---------------------------------+
+| SSH                            | prod    | Standard bash shell             |
++--------------------------------+---------+---------------------------------+
+| Active Directory               | prod    | Rockstor v4 uses sssd           |
++--------------------------------+---------+---------------------------------+
+| LDAP                           | prod    | Rockstor v4 uses sssd           |
++--------------------------------+---------+---------------------------------+
+| NIS                            | prod    | Network Information System      |
++--------------------------------+---------+---------------------------------+
+| NTP Client                     | prod    | System time from NTP server     |
++--------------------------------+---------+---------------------------------+
+| SNMP                           | prod    | Enterprise monitoring facility  |
++--------------------------------+---------+---------------------------------+
+| S.M.A.R.T                      | prod    | Dsk health information system   |
++--------------------------------+---------+---------------------------------+
+| IPv4 Network Config via Web-UI | prod /  | Includes Teaming & Bonding /    |
+| / IPv6                         | planned | IPv6 currently disabled at boot |
++--------------------------------+---------+---------------------------------+
+| Docker Based Plugin System     | prod    | We call these Rock-ons          |
++--------------------------------+---------+---------------------------------+
+| Docker Private Networking      | beta    | We call these Rocknets, v4 only |
++--------------------------------+---------+---------------------------------+
+| Email Alerts                   | prod    | Via root user email forwarding  |
++--------------------------------+---------+---------------------------------+
+| Scheduled Tasks                | prod /  | Snapshots & Scrubs /            |
+|                                | beta    | Reboot, Shutdown & Suspend.     |
++--------------------------------+---------+---------------------------------+
+| Config Backup and Restore      | beta    | Reinstate subset of config.     |
+|                                |         | Rock-ons auto reinstalled.      |
++--------------------------------+---------+---------------------------------+
+| UPS Support via NUT            | prod    | Configure a UPS from the Web-UI |
++--------------------------------+---------+---------------------------------+
+| Shell in Web-UI                | prod    | Via "Shell In A Box"            |
++--------------------------------+---------+---------------------------------+
+| SSL Certificate Entry          | prod    | Add your own cert via Web-UI    |
++--------------------------------+---------+---------------------------------+
+| Log Manager                    | prod    | View & download system logs     |
++--------------------------------+---------+---------------------------------+
+| User & Group Management        | prod    | Can choose if Rockstor managed  |
++--------------------------------+---------+---------------------------------+
