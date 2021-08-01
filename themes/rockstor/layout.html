@@ -104,19 +104,22 @@
                 </div>
             </div>
             <div class="col-lg-8 col-xs-12">
-                {% block body %}{% endblock %}
-		<div class="pull-left">
-		  {% if prev %}
-		  <a href="{{ prev.link|e }}">{{ prev.title }}</a>&nbsp;&nbsp;
-		  <span class="fa fa-arrow-circle-left"></span>
-		  {% endif %}
-		</div>
-		<div class="pull-right">
-		  {% if next %}
-		  <span class="fa fa-arrow-circle-right"></span>&nbsp;&nbsp;
-		  <a href="{{ next.link|e }}">{{ next.title }}</a>
-		  {% endif %}
-		</div>
+                <!-- role="main" required to display search result contents -->
+                <div role="main">
+                    {% block body %}{% endblock %}
+                </div>
+                <div class="pull-left">
+                    {% if prev %}
+                    <a href="{{ prev.link|e }}">{{ prev.title }}</a>&nbsp;&nbsp;
+                    <span class="fa fa-arrow-circle-left"></span>
+                    {% endif %}
+                </div>
+                <div class="pull-right">
+                    {% if next %}
+                    <span class="fa fa-arrow-circle-right"></span>&nbsp;&nbsp;
+                    <a href="{{ next.link|e }}">{{ next.title }}</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
 
