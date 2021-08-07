@@ -14,14 +14,11 @@ extensive configuration changes as it provides the possibility to revert to a
 known good configuration. Once a configuration backup has been generated and
 downloaded it can also be used in system migration scenarios.
 
-.. raw:: html
-
-   <div class="alert alert-warning">
+.. warning::
    Upon restore, the configuration of most features included in the backup
    will be restored regardless of their current state. As a result, their current
-   configuration will be overwritten (to the exception of <em>Users</em> and
-   <em>Groups</em>, see <a href="#special-notes-on-configuration-restore">below</a>).
-   </div>
+   configuration will be overwritten (to the exception of *Users* and
+   *Groups*, see :ref:`below <config_notes>`).
 
 The following state information is saved as part of a backup
 
