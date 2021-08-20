@@ -1,8 +1,9 @@
-.. raw:: html
-
-   <div class="alert alert-warning">
-   <strong>Note:</strong> Following the loss of support for AFP in newer macOS versions, the AFP service is no longer supported as of Rockstor-3.9.2-56. We thus recommend users to use the <a href="https://rockstor.com/docs/samba_ops.html#samba" target="_blank">Samba service</a> instead (see <a href="https://forum.rockstor.com/t/3-9-2-stable-channel-changelog/5741/22" target="_blank">this forum post</a> for details).
-   </div>
+.. warning::
+   **Note:** Following the loss of support for AFP in newer macOS versions, the
+   AFP service is no longer supported as of Rockstor-3.9.2-56. We thus
+   recommend users to use the :ref:`Samba service <samba>` instead (see
+   `this forum post <https://forum.rockstor.com/t/3-9-2-stable-channel-changelog/5741/22>`_
+   for details).
 
 ..  _afp:
 

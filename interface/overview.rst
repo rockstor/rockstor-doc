@@ -91,7 +91,7 @@ take advantage of the User and/or Group management screens. Navigate to System
 --> Users (or Groups if necessary).
 
 .. image:: /images/interface/docker-based-rock-ons/users_page.png
-   :scale: 30%
+   :width: 100%
    :align: center
 
 The two highlighted columns show the UID and GID. In the example above, the
@@ -370,13 +370,10 @@ description, port number on host, and port number mapped on the corresponding
 container. Finally, a checkbox allows each port to be published (if checked) or
 unpublished (if unchecked).
 
-.. raw:: html
-
-   <div class="alert alert-warning">
-   <strong>Important!</strong> Unpublishing a port defined for the rock-on's webUI will make it
-   inaccessible from Rockstor's rock-ons page. For convenience, such ports are accompanied by a warning
-   icon next to the checkbox.
-   </div>
+.. warning::
+   **Important!** Unpublishing a port defined for the Rock-on's web-UI will
+   make it inaccessible from Rockstor's Rock-ons page. For convenience, such
+   ports are accompanied by a warning icon next to the checkbox.
 
 Click *Next* and verify the new publication state for each port before
 finishing the procedure by clicking *Next* and *Submit*. Internally, Rockstor
@@ -406,14 +403,12 @@ connected to the given container.
 To disconnect a container from a rocknet, simply delete the rocknet's name or
 click the "x" next to it.
 
-.. raw:: html
-
-   <div class="alert alert-warning">
-   <strong>Important!</strong> Rocknets newly-defined directly from this page will be created using docker's
-   default parameters. If different settings are desired, please create the rocknet first from the <em>System</em> >
-   <em>Network</em> menu, and then connect the container to it. Alternatively, it is also possible to edit an
-   existing rocknet's settings from the <em>System</em> > <em>Network</em> menu.
-   </div>
+.. warning::
+   **Important!** Rocknets newly-defined directly from this page will be
+   created using Docker's default parameters. If different settings are
+   desired, please create the rocknet first from the *System* > *Network* menu,
+   and then connect the container to it. Alternatively, it is also possible to
+   edit an existing rocknet's settings from the *System* > *Network* menu.
 
 .. image:: /images/interface/docker-based-rock-ons/rocknets_join.png
    :width: 100%

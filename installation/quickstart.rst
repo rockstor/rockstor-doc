@@ -203,17 +203,14 @@ You can also read (for a Rockstor 3 example)
 :ref:`vmmrockstorinstall` section of our :ref:`kvmsetup` for more information
 about our older Rockstor 3 installation.
 
-.. raw:: html
+.. warning::
+   **Important!** Installing Rockstor deletes existing data on the system
+   drive(s) selected as installation destination.
 
-   <div class="alert alert-warning">
-   <strong>Important!</strong> Installing Rockstor deletes existing data on the
-   system drive(s) selected as installation destination.
-   </div>
-
-   <div class="alert alert-info">
-   If you need further assistance during or post install, you
-   can post a topic on our <a href="https://forum.rockstor.com">Forum</a> or send an email to support@rockstor.com
-   </div>
+.. note::
+   If you need further assistance during or post install, you can post a topic
+   on our `Forum <https://forum.rockstor.com>`_ or send an email to
+   support@rockstor.com
 
 1. Boot your machine with the Rockstor CD or USB and the splash screen will
    appear. Press enter and the graphical installer will start momentarily and
@@ -242,12 +239,9 @@ about our older Rockstor 3 installation.
       scheme. However, note that Rockstor only supports **BTRFS** for its root
       filesystem.
 
-    .. raw:: html
-
-        <div class="alert alert-warning">
-        <strong>Important!</strong> Installing Rockstor deletes existing data on the system
-        drive(s) selected as installation destination.
-        </div>
+   .. warning::
+      **Important!** Installing Rockstor deletes existing data on the system
+      drive(s) selected as installation destination.
 
    d. Once the installation configuration is complete and there are no amber
       icons, click on **Begin Installation** button to start the package

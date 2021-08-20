@@ -24,12 +24,9 @@ We have servers with different types of pools and usecases here at Rockstor
 which are constantly put to test. We also rely on Rockstor and BTRFS
 communities to report and fix issues and help improve Rockstor.
 
-.. raw:: html
-
-   <div class="alert">
-   We strongly recommend that you have a backup of all critical Shares
-   on Rockstor to another system.
-   </div>
+.. warning::
+   We strongly recommend that you have a backup of all critical Shares on
+   Rockstor to another system.
 
 Backup Recommendations
 ----------------------
@@ -223,23 +220,23 @@ If your raid5/6 pool has 3/4 or more drives and a single drive fails, you can
 follow these steps to replace it with a new drive and balance(rebuild) the
 pool.
 
-.. raw:: html
+.. warning::
+   **Important!**
 
-   <div class="alert">
-   <strong>Important!</strong> These steps only apply to raid5 pools with 3+
-   drives or raid6 pools with 4+ drives
-   <br />
+   These steps only apply to raid5 pools with 3+ drives or raid6
+   pools with 4+ drives.
+
    These steps are tested, but we cannot guarantee the accuracy given the
-   current state of raid5/6 in BTRFS. There are known but unresolved bugs
-   which may make balances for a small number of users take an order of magnitude
+   current state of raid5/6 in BTRFS. There are known but unresolved bugs that
+   may make balances for a small number of users take an order of magnitude
    longer than expected.
-   <br />
-   The BTRFS replace command is highly experimental, may take an extrodinarily long
-   amount of time to complete in the case of a missing drive, suffers from a cirtical memory leak
-   on kernel versions <4.7 and may fail in a way that destroys data on repeated usage. The
-   recommended method for replacing a device is adding a new device then deleting the missing device
-   as outlined in this section.
-   </div>
+
+   The BTRFS :code:`replace` command is highly experimental, may take an
+   extraordinarily long amount of time to complete in the case of a missing
+   drive, suffer from a critical memory leak on kernel versions <4.7 and may
+   fail in a way that destroys data on repeated usage. The recommended method
+   for replacing a device is adding a new device then deleting the missing
+   device as outlined in this section.
 
 0. Suppose there is a raid5 pool called "mypool" with drives: sda, sdb, sdc,
    sdd. sdd is failed.
@@ -272,6 +269,6 @@ pool.
 
       # btrfs device delete missing /mnt2/mypool
 
-If multiple drives fail simultaneously, then the scenrio becomes catastrophic
+If multiple drives fail simultaneously, then the scenario becomes catastrophic
 similar to a raid0 pool. In such case, follow the recovery strategy described
-in :ref:`datalossraid0`
+in :ref:`datalossraid0`.

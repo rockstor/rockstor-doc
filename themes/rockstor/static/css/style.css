@@ -926,4 +926,31 @@ h1, h2, h3, h4, h5, h6 {
   li { line-height: 24px; }
   
   #top-search { padding-top: 12px; }
-  
+
+/*Style Admonitions*/
+.admonition {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.admonition.note {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.admonition.warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.admonition-title {
+  display: none;
+}
+
+.admonition p {
+  margin: 0;
+}

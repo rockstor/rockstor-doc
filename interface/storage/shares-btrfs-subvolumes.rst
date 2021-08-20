@@ -44,14 +44,11 @@ set. To find out more see the btrfs wiki entry
 Share size enforcement temporarily disabled
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. raw:: html
-
-   <div class="alert alert-warning">
+.. warning::
    Currently, as of 3.8-7 version, Share size enforcement has been disabled. So
-   the Size input during Share creation has no real effect. Any Share can grow up
-   to the Pool's capacity. Consequently, resizing a Share also has no effect. We
-   will re enable the enforcement when support in BTRFS improves.
-   </div>
+   the Size input during Share creation has no real effect. Any Share can grow
+   up to the Pool's capacity. Consequently, resizing a Share also has no
+   effect. We will re enable the enforcement when support in BTRFS improves.
 
 
 Deleting a Share
