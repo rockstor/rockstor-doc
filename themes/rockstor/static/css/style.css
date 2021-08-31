@@ -923,6 +923,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 4px 20px 20px 20px !important;
       border-radius: 3px;
   }
+
+  .sphinxsidebarwrapper ul {
+    padding-left: 1.2em;
+  }
+
+  .sphinxsidebarwrapper a.current {
+    font-weight: bold;
+  }
+
   li { line-height: 24px; }
   
   #top-search { padding-top: 12px; }
