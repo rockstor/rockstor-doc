@@ -17,15 +17,11 @@ What is Jenkins
 
 `Jenkins, <https://www.jenkins.io/>`_ previously known as *Hudson*, is an
 `MIT Licenced <https://github.com/jenkinsci/jenkins/blob/master/LICENSE.txt>`_
-open source automated testing and deployment system, ie a continuous
+open source automated testing and deployment system, *i.e.* a continuous
 integration and continuous delivery system. The idea is that such a system can
 be used to automate repetitive tasks such as those associated with testing and
 deployment. This reduces the possibility of human error and is aimed at
 increasing productivity and shortening the time to deploy fixes to production.
-Famous organisations that use Jenkin are; Dell, NASA, Netflix, and GitHub. A
-`more extensive list
-<https://wiki.jenkins.io/pages/viewpage.action?pageId=58001258>`_
-is available from the Jenkins documentation linked below.
 
 .. _jenkins_doc:
 

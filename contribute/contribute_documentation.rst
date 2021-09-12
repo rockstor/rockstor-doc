@@ -8,31 +8,37 @@ Steps for contributing to **rockstor-doc** repo are similar to contributing to
 assume you have basic proficiency with Git and are familiar with using a
 text editor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
 recommendations. Or you may be able to use an online such as https://livesphinx.herokuapp.com/.
-We'll further assume that you have your laptop ready with git
-and an editor installed. Since we rely on github services, you need to create a
-profile on github.com.
 
-Once you have your profile set-up on github.com, follow these steps
+Environment setup
+-----------------
+
+Clone the repository
+^^^^^^^^^^^^^^^^^^^^
+
+We'll assume that you have your laptop ready with Git and an editor installed.
+Since we rely on github services, you need to create a profile on github.com.
+Once you have your profile set-up on `github.com <https://github.com>`_, follow
+these steps:
 
 Go to `rockstor-doc repo <https://github.com/rockstor/rockstor-doc>`_ and click
 on the **Fork** button. This will fork the repository into your profile which
-serves as your private git remote called origin. The next few git steps are
+serves as your private Git remote called *origin*. The next few Git steps are
 demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
 have ways to completely avoid the terminal, but using the terminal makes you
 look cool.
 
 .. code-block:: bash
 
-        [you@your_laptop ~/projects]# git clone git@github.com:your_github_username/rockstor-doc.git
+        git clone git@github.com:your_github_username/rockstor-doc.git
 
-The above command creates a local **rockstor-doc** git repo in a new directory
-by the same name(rockstor-doc). Change into it.
+The above command creates a local **rockstor-doc** Git repo in a new directory
+by the same name (rockstor-doc). Change into it.
 
 .. code-block:: bash
 
         [you@your_laptop ~/projects]# cd rockstor-doc
 
-Configure this new git repo with your name and email address. This is required
+Configure this new Git repo with your name and email address. This is required
 to accurately record collaboration.
 
 .. code-block:: bash
@@ -47,11 +53,59 @@ changes in the upstream made by other contributors.
 
         [you@your_laptop rockstor-doc]# git remote add upstream https://github.com/rockstor/rockstor-doc.git
 
+If desired, you can now verify these settings are correct by displaying the Git
+configuration for the local repository:
+
+.. code-block:: bash
+
+        [you@your_laptop rockstor-doc]# git config --list --local
+
+
+Installing Sphinx
+^^^^^^^^^^^^^^^^^
+
+Unlike for code contributions, there is no need for a dedicated virtual machine
+to build the documentation. Indeed, source pages for Rockstor's documentation
+are written in `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+(*.rst* files) that can be easily edited manually to fit our needs. We then use
+the documentation generator `Sphinx <https://www.sphinx-doc.org>`_ to generate
+the HTML content from these *.rst* files.
+
+`Sphinx official documentation <https://www.sphinx-doc.org/en/master/#>`_ gives
+guidelines for its installation on various platforms. We thus refer to their
+instructions on how to install Sphinx: `Installing Spinx <https://www.sphinx-doc.org/en/master/usage/installation.html>`_.
+
+Once you have Sphinx installed, you'll need 1 more Sphinx extension before
+you're fully ready. The `sphinxext-rediraffe <https://github.com/wpilibsuite/sphinxext-rediraffe>`_
+extension is used to generate redirections for pages that no longer exist or
+have been moved. While you may not use the functionality of this extension in
+your page, when you execute :code:`make html` to check your work, you'll need
+it for :code:`make` to complete successfully.
+
+To install **sphinxext-rediraffe**, use this command:
+
+.. code-block:: bash
+
+        [you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxext-rediraffe
+
+
+.. _dockersphinx:
+
+Using Sphinx as a Docker container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sphinx can also be used as a Docker container, without needing to install it on
+your computer. As the base `docker-sphinx <https://github.com/sphinx-doc/docker>`_
+image doesn't contain the **sphinxext-rediraffe** extension needed to build
+Rockstor's documentation, we need to use a custom Docker image. This can easily
+be done using a `custom Dockerfile <https://github.com/rockstor/rockstor-doc/blob/master/docker/Dockerfile>`_.
+For convenience, we provide `the corresponding Docker image <https://github.com/rockstor/rockstor-doc/pkgs/container/rockstor-doc>`_.
+Its use is documented below.
 
 Making changes
 --------------
 
-We'll assume you have identified an issue(eg: #1234) from the `github issue
+We'll assume you have identified an issue (eg: #1234) from the `github issue
 tracker <https://github.com/rockstor/rockstor-doc/issues>`_ to work on. If you
 want to document something for which there is no issue, feel free to create
 one.
@@ -70,19 +124,78 @@ Checkout a new/separate branch for your issue. For example:
 
         [you@your_laptop rockstor-doc]# git checkout -b issue#1234_brief_label
 
-You can then start making changes in this branch. Once done you can add your
-changes.
+You can then start making changes in this branch.
+
+
+Guidelines
+^^^^^^^^^^
+
+To keep in line with Rockstor's goal to make its features as accessible as
+possible, this documentation should strive to keep non-technical users as its
+primary target. As such, the use of external references and links to additional
+documentation to provide the reader with further technical information is
+encouraged.
+
+If you are generating videos, and prefer uploading your videos to the Rockstor
+Youtube channel, please send an email to support@rockstor.com.
+
+
+Building HTML files with Sphinx
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As you edit the content in *.rst* files, you can periodically generate HTML
+files and review them in your browser. To generate or update the HTML files,
+use the following command:
+
+.. code-block:: bash
+
+        [you@your_laptop /path/to/rockstor-doc]# make html
+
+If you use our :ref:`docker image<dockersphinx>`, you can use the following
+command:
+
+.. code-block:: bash
+
+        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main make html
+
+HTML files are generated in the :code:`_build/html` directory. From a separate
+terminal window, you can have a simple Python webserver always serving up this
+content with the following command:
+
+.. code-block:: bash
+
+        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
+
+You can now go to :code:`http://localhost:8000` in your browser to review your
+changes. The webserver is to be started only once and it will continue to serve
+the files and changes you make to them.
+
+After making any changes to a *.rst* file, run :code:`make html` as shown above
+and refresh your browser to display your changes.
+
+
+Submit your changes
+-------------------
+
+Once you are satisfied with your changes, you can start preparing them for
+submission.
+
+
+Add and commit your changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, let's add your changes:
 
 .. code-block:: bash
 
         [you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
 
 
-We strongly encourage you to commit changes a certain way to help other
-contributors and keep the merge process smooth. Below guidelines are more
-pertinent to code contributions, but feel free to be as perfect as you like. As
-a guiding principle, separate your changes into one or more logically
-independent commits.
+Then, you can commit them. We strongly encourage you to commit changes a
+certain way to help other contributors and keep the merge process smooth. The
+guidelines below pertain more to code contributions but feel free to be as
+perfect as you like. As a guiding principle, separate your changes into one or
+more logically independent commits.
 
 .. code-block:: bash
 
@@ -116,131 +229,81 @@ should add your name to the `rockstor-doc AUTHORS
 <https://github.com/rockstor/rockstor-doc/blob/master/AUTHORS>`_ file.
 
 
-Unlike for code contributions, there is no need for a build VM. We use `Sphinx
-<https://www.sphinx-doc.org>`_ to generate the html content from .rst
-files we edit. Installation procedure varies if you are on Mac, Windows, or Linux, so
-follow the appropriate installation guide for Sphinx.
+Moving pages
+^^^^^^^^^^^^
 
-
-Installing Sphinx
-^^^^^^^^^^^^^^^^^
-In order to properly develop and submit contributions you'll need to install
-Sphinx, plus one Sphinx extension.
-
-`Sphinx official documentation <https://www.sphinx-doc.org/en/master/#>`_ gives guidelines for installating Sphinx on various platforms.
-Details of how to install Sphinx is covered in their  `Installing Spinx <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ documentation.
-
-Once you have Sphinx installed you'll need 1 more Sphinx extensions before
-you're fully ready.
-The sphinxcontrib-fulltoc package, generates the sidebar table of contents.
-
-`sphinxcontrib-fulltoc <https://pypi.org/project/sphinxcontrib-fulltoc/>`_ generates detailed sidebar table of contents.
-
-While you may not use the functionality of these extensions in your page, when
-you execute :code:`make html` to check your work, you'll need these packages
-for :code:`make` to complete successfully.
-If you are generating videos, and prefer uploading your videos to the Rockstor
-Youtube channel, please, send an email to support@rockstor.com.
-
-For a **Python 2** installation, use these commands.
+If your changes involve a page relocation or removal, we need to ensure any
+eventual external link to it remains valid and provide a valid redirection. To
+do so, we leverage the excellent Sphinx extension `sphinxext-rediraffe <https://github.com/wpilibsuite/sphinxext-rediraffe>`_.
+Indeed, Rediraffe can simplify the process by comparing your current Git branch
+to your *master* branch and automatically write redirections for pages that
+were renamed or relocated.
+To do so, you simply need to run the :code:`rediraffewritediff` builder:
 
 .. code-block:: bash
 
-        [you@your_laptop /path/to/rockstor-doc]# sudo pip install --user sphinxcontrib-fulltoc
+        [you@your_laptop /path/to/rockstor-doc]# sphinx-build -b rediraffewritediff . _build/rediraffe
 
-For a **Python 3** installation, favoured, use these commands.
-
-.. code-block:: bash
-
-        [you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxcontrib-fulltoc
-
-
-Using Sphinx as a Docker container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Sphinx can also be used as a docker container, without needing to install it on
-your computer. But the base image `docker-sphinx <https://github.com/sphinx-doc/docker>`_
-doesn't contain **sphinxcontrib-fulltoc** which is needed by Rockstor
-documentation, in order to add this package, you must build your own docker
-image. This can be easily done by creating a simple :code:`Dockerfile`
-containing this:
-
-.. code-block:: Dockerfile
-
-        FROM sphinxdoc/sphinx
-
-        WORKDIR /docs
-        RUN pip3 install sphinxcontrib-fulltoc
-
-Now you can just build the container with this command:
+If you use Docker image, you can use the following command:
 
 .. code-block:: bash
 
-        [you@your_laptop /path/to/sphinx-rockstor]# docker build -t sphinx-rockstor .
+        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main sphinx-build -b rediraffewritediff . _build/rediraffe
 
-Generating html files with Sphinx
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As you edit the content in .rst files, you can periodically generate html files
-and review them in your browser. To generate or update the HTML files, use the
-following command :
+You should now see the needed redirects in :code:`redirects.txt`.
 
-.. code-block:: bash
+.. note::
+        Make sure to commit your changes with Git **before** running the :code:`rediraffewritediff`
+        builder as the latter will otherwise not be able to detect your changes.
 
-        [you@your_laptop /path/to/rockstor-doc]# make html
+While we strive to limit such occasion, special circumstances might require the
+deletion of page. As **sphinxext-rediraffe** cannot yet automatically write a
+redirection for a deleted page, one needs to manually instruct it. Fortunately,
+this is a simple as writing a new line in :code:`redirects.txt`, listing the
+name of the deleted page and the name of the page to which it should redirect.
+Below is an excerpt of :code:`redirects.txt` detailing redirections for deleted
+files:
 
-If you use :code:`docker-sphinx` you can use the following command:
+.. code-block:: text
 
-.. code-block:: bash
+        # Deleted files
+        # "deleted_file.rst" "redirection_target.rst"
+        "intro.rst" "index.rst"
+        "analytics.rst" "index.rst"
+        "benchmarks.rst" "index.rst"
 
-        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs sphinx-rockstor make html
+In the example above, the now deleted files :code:`intro.rst`,
+:code:`analytics.rst`, and :code:`benchmarks.rst`, are all redirected to :code:`index.rst`.
 
-HTML files are generated in _build/html directory. From a separate terminal
-window, you can have a simple Python webserver always serving up this content
-with one of the following commands:
 
-For a **Python 2** installation, use the following command.
+Pushing changes
+^^^^^^^^^^^^^^^
 
-.. code-block:: bash
-
-        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m SimpleHTTPServer 8000
-
-For a **Python 3** installation, use the following command.
-
-.. code-block:: bash
-
-        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
-
-You can now go to :code:`http://localhost:8000` in your browser to review your
-changes. The webserver is to be started only once and it will continue to serve
-the files and changes you make to them.
-
-After making any changes to a .rst file, run *make html* as shown above and
-refresh your browser.
-
-Once you are satisfied with changes and committed them to your branch following
-the steps outlined here, you can open a pull request.
-
-As you continue to work on an issue, commit and push changes to the issue
-branch of your fork.  You can periodically push your changes to github with the
+As you continue to work on an issue, commit and push your changes to the issue
+branch of your fork. You can periodically push your commits to Github with the
 following command:
 
 .. code-block:: bash
 
-        [you@your_laptop ]# cd /path/to/rockstor-doc
         [you@your_laptop rockstor-doc]# git push origin your_branch_name
 
-When you finish work for the issue and are ready to submit, create a pull
-request by clicking on the **pull request** button on github. This notifies the
-maintainers of your changes. As a best practice only open one pull request per
-issue containing all relevant changes.
 
-When you are ready, open the pull request and please follow these 2 tips to
-expedite the review:
 
-* When you've finished your edit, run the Sphinx :code:`make html` command, and
-  paste its output into the pull request discussion string to help speed up the
-  review. After you've generated the html, you can use the webserver detailed
-  above to check the functionality of your work prior to your pull request.
+Create a pull request
+^^^^^^^^^^^^^^^^^^^^^
+
+Once you're finished with your work for the issue and are ready to submit,
+create a pull request by clicking on the **pull request** button on Github.
+This notifies the maintainers of your changes. As a best practice, only open
+one pull request per issue containing all the relevant changes.
+
+To expedite the review, please follow these two tips:
+
+* Make sure that the Sphinx :code:`make html` command completes successfully
+  without generating any error. You can also verify that all tests ran by
+  the Github Actions complete without error or warning. In the event one of
+  these tests fails, you can click on the *Details* button to inspect the
+  Github Action's logs and identify the problem.
 
 * When you make a pull request, adding a "Fixes #number-of-issue" on its own
   line will automatically close the related issue when it gets merged. Just a
