@@ -183,7 +183,6 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Rocket.Chat <https://rocket.chat/>`_: Open Source Chat Platform
 * `SaBnzbd <https://sabnzbd.org/>`_: The best usenet downloader
 * `Seafile <https://www.seafile.com/>`_: Secure file sharing and hosting
-* `Sickbeard <https://sickbeard.com/>`_: Internet PVR for your TV shows, by Linuxserver.io
 * `SmokePing <https://oss.oetiker.ch/smokeping/>`_: Network latency history monitor
 * `Sonarr <https://sonarr.tv/>`_: (formerly NZBdrone) A PVR for usenet and bittorrent users
 * `Subsonic <http://www.subsonic.org>`_: Music server
