@@ -191,8 +191,8 @@ First, let's add your changes:
         [you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
 
 
-Then, you can commit them. We strongly encourage you to commit changes a
-certain way to help other contributors and keep the merge process smooth. The
+Then, you can commit them. We strongly encourage you to commit changes in a
+certain way to help other contributors, and to keep the merge process smooth. The
 guidelines below pertain more to code contributions but feel free to be as
 perfect as you like. As a guiding principle, separate your changes into one or
 more logically independent commits.
