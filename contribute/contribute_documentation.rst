@@ -242,7 +242,7 @@ To do so, you simply need to run the :code:`rediraffewritediff` builder:
 
         [you@your_laptop /path/to/rockstor-doc]# sphinx-build -b rediraffewritediff . _build/rediraffe
 
-If you use Docker image, you can use the following command:
+If you use the Docker image, you must use the following command:
 
 .. code-block:: bash
 
