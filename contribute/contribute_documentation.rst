@@ -136,8 +136,6 @@ primary target. As such, the use of external references and links to additional
 documentation to provide the reader with further technical information is
 encouraged.
 
-If you are generating videos, and prefer uploading your videos to the Rockstor
-Youtube channel, please send an email to support@rockstor.com.
 
 
 Building HTML files with Sphinx
