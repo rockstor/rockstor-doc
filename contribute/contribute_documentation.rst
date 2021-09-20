@@ -254,8 +254,8 @@ You should now see the needed redirects in :code:`redirects.txt`.
         Make sure to commit your changes with Git **before** running the :code:`rediraffewritediff`
         builder as the latter will otherwise not be able to detect your changes.
 
-While we strive to limit such occasion, special circumstances might require the
-deletion of page. As **sphinxext-rediraffe** cannot yet automatically write a
+While we strive to limit such occasions, special circumstances might require the
+deletion of one or more pages. As **sphinxext-rediraffe** cannot yet automatically write a
 redirection for a deleted page, one needs to manually instruct it. Fortunately,
 this is a simple as writing a new line in :code:`redirects.txt`, listing the
 name of the deleted page and the name of the page to which it should redirect.
