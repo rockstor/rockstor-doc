@@ -257,7 +257,7 @@ You should now see the needed redirects in :code:`redirects.txt`.
 While we strive to limit such occasions, special circumstances might require the
 deletion of one or more pages. As **sphinxext-rediraffe** cannot yet automatically write a
 redirection for a deleted page, one needs to manually instruct it. Fortunately,
-this is a simple as writing a new line in :code:`redirects.txt`, listing the
+this is as simple as writing a new line in :code:`redirects.txt`, listing the
 name of the deleted page and the name of the page to which it should redirect.
 Below is an excerpt of :code:`redirects.txt` detailing redirections for deleted
 files:
