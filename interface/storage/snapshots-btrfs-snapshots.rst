@@ -44,6 +44,9 @@ more help.
 
 See YouTube `Create a Snapshot <https://www.youtube.com/watch?v=QTQePwrYMS0>`_.
 
+
+.. _schedulesnapshot:
+
 Scheduling Snapshots
 --------------------
 
@@ -86,6 +89,8 @@ See YouTube `Clone a Snapshot <https://www.youtube.com/watch?v=aySlQCx65GM>`_.
 
 To clone a Share, see :ref:`cloneshare`.
 
+.. _rollingbackshare:
+
 Rolling back a Share
 --------------------
 
@@ -96,5 +101,6 @@ Click on the **Rollback** button in the Share's detail screen.
 
 See YouTube `Rollback a Share to a specific Snapshot <https://www.youtube.com/watch?v=r0SbCZ_kEBg>`_.
 
-*Note:* Shares that are exported through NFS or Samba cannot be rolled back.
-The NFS or Samba shares should be deleted before the share can be rolled back.
+.. note::
+  Shares that are exported through NFS or Samba cannot be rolled back. The NFS
+  or Samba exports must be deleted before the Share can be rolled back.

@@ -48,6 +48,8 @@ In Rockstor user owned shares exported via this method are mounted withing a
 minimal chroot environment for enhance security. Please see out :ref:`sftp`
 section.
 
+.. _ntp:
+
 NTP
 ---
 
@@ -60,6 +62,8 @@ server in the NTP configuration page.
 .. image:: /images/interface/system/services/ntp-config.png
    :width: 100 %
    :align: center
+
+.. _activedirectory:
 
 Active Directory (AD)
 ---------------------
@@ -125,6 +129,8 @@ Note that a successful configuration of the AD service does not enroll the
 system into the AD. To do this, the AD service must be turned ON. To leave the
 AD, simply turn the AD service OFF.
 
+.. _ldap:
+
 Lightweight Directory Access Protocol (LDAP)
 --------------------------------------------
 
@@ -160,8 +166,10 @@ Note that a successful configuration of the LDAP service does not connect the
 system to the LDAP server. To do this, the LDAP service must be turned ON. To
 disconnect from the LDAP server, simply turn the LDAP service OFF.
 
-NIS
----
+.. _nis:
+
+Network Information Server (NIS)
+--------------------------------
 
 NIS is a directory service to connect to a NIS server.
 
@@ -184,11 +192,11 @@ A (currently Beta) `Network UPS Tools <https://networkupstools.org/>`_
 based service to orchestrate gracefull system shutdown in the event of a power
 outage. Please see our: :ref:`ups_setup` section for more details.
 
-ROCK-ON (DOCKER PLUGIN SYSTEM)
-------------------------------
+Rock-Ons (Docker plugin system)
+-------------------------------
 
 This is a very new service that is still in Beta, please see :ref:`rockons_intro`
-for an introduction to Rockstor's `docker <https://www.docker.com/>`_ based
+for an introduction to Rockstor's `Docker <https://www.docker.com/>`_ based
 plugin system.
 
 **To start or stop any service, click the corresponding ON or OFF button**

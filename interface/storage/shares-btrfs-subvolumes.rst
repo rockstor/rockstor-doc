@@ -26,6 +26,8 @@ field to help you choose appropriate parameters.
 
 See YouTube `Create a Rockstor Share <https://www.youtube.com/watch?v=k537gsx8ifQ>`_.
 
+.. _resizeshare:
+
 Resizing a share
 ----------------
 
