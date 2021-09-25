@@ -21,11 +21,11 @@ explanation.
 
 * Secure access via HTTPS.
 
-* Efficiently perform storage management including pool and share
-  creation, snapshots, nfs exports, etc..
+* Efficiently perform storage management including pool and share creation,
+  snapshots, NFS exports, etc...
 
 * Efficiently perform necessary system management including
-  directory services, user management etc..
+  directory services, user management, etc...
 
 * Customize dashboard per admin user by choosing relevant widgets and their
   layout.
@@ -34,63 +34,67 @@ explanation.
 
 * Manage other Rockstor appliances by quick switching.
 
-* Extend functionality using Docker-based plugins called *Rock-ons*
+* Extend functionality using Docker-based plugins called *Rock-ons*.
 
-* Contact Rockstor support
+* Contact Rockstor support.
 
 Online Disk Management
 ----------------------
 
-* Rescan the system for any new disks and make them available instantly for
-  pools. (Hardware support may be necessary)
+* :ref:`Rescan <scandisks>` the system for any new disks and make them
+  available instantly for pools (hardware support may be necessary).
 
-* Visualize top disks based on activity
+* :ref:`Visualize <dashboard>` top disks based on activity.
 
 * Act on disk alerts, repair and remove disks from the system if necessary
-  without unnecessary disruption.
+  without unnecessary disruption. See our :ref:`disks` section for more
+  details.
 
 Online Pool Management
 ----------------------
 
-* Create pools instantly using the Web-UI or CLI.
+* :ref:`Create pools <createpool>` instantly using the Web-UI or CLI.
 
-* Resize pools online by adding or removing whole disk drives.
+* :ref:`Resize pools <poolresize>` online by adding or removing whole disk
+  drives.
 
-* Schedule scrub operations for periodic maintenance
+* :ref:`Schedule scrub <poolscrub>` operations for periodic maintenance.
 
 Online Share and Snapshot Management
 ------------------------------------
 
-* Create shares instantly using the Web-UI or CLI.
+* :ref:`Create a share <createshare>` instantly using the Web-UI or CLI.
 
-* Resize pools online, thin provision or over provision according to your
-  needs.
+* :ref:`Resize shares online <resizeshare>`, thin provision or over provision
+  according to your needs.
 
-* Export shares via NFS, SMB, and SFTP protocols.
+* Export shares via :ref:`NFS <nfs>`, :ref:`Samba <samba>`, and
+  :ref:`SFTP <sftp>` protocols.
 
-* Create snapshots for shares instantly or schedule snapshots to be created
-  periodically.
+* :ref:`Create snapshots <createsnapshot>` for shares instantly or
+  :ref:`schedule snapshots <schedulesnapshot>` to be created periodically.
 
 * Create unlimited number of snapshots for a given share.
 
 * Toggle snapshot visibility to the end user via NFS or Windows
   :ref:`Shadow Copy <windowsshadowcopy>`.
 
-* Rollback a share to one of it's snapshots.
+* :ref:`Rollback a share <rollingbackshare>` to one of its snapshots.
 
 Share Replication
 -----------------
 
-* Replicate shares from one Rockstor appliance to others.
+* Replicate shares from one Rockstor appliance to others. See our
+  :ref:`sharereplication` section for further details.
 
 Directory Services
 ------------------
 
-* LDAP
+* :ref:`ldap`
 
-* NIS
+* :ref:`nis`
 
-* AD
+* :ref:`activedirectory`
 
 NFS Analytics
 -------------
@@ -110,36 +114,37 @@ workloads. The following probes are available
 * Call metadata with specific uid and gid information.
 
 
-A Docker-based Plugin system
+A Docker-based Plugin System
 ----------------------------
 
-Used to extend Rockstors features; we call these :ref:`rockons_intro`
+Used to extend Rockstor's features; we call these :ref:`rockons_intro`.
 
-Email notifications
+Email Notifications
 -------------------
 
 Rockstor includes an easy to use Postfix configuration facility to enable
 :ref:`email_notifications` on system events and drive health status.
 
-S.M.A.R.T drive monitoring
+S.M.A.R.T Drive Monitoring
 --------------------------
 
-The S.M.A.R.T technology in most modern drives is integrated
-into Rockstor so that many aspect of a drive's status can be examined. It is
-possible, thanks to smartmontools, to receive emails via Rockstor's
-notification system when drives have heath issues or when they reach a warning
-or critical temperature; or even is their temperature varies by more than a
-configured value over time.
+The S.M.A.R.T technology in most modern drives is integrated into Rockstor so
+that many aspect of a drive's status can be examined. It is possible, thanks to
+smartmontools, to receive emails via Rockstor's notification system when drives
+have heath issues or when they reach a warning or critical temperature, or even
+if their temperature varies by more than a configured value over time.
 
-UPS managed Shutdown
+See our guide on using :ref:`smart` in Rockstor.
+
+UPS Managed Shutdown
 --------------------
 
 By integrating the well established `NUT <https://networkupstools.org/>`_
 software package and providing a Web-UI, :ref:`rockstor_nut_config` aims to
-make UPS setup easy and straight forward. Defaulting to graceful system
+make UPS setup easy and straight forward -- Defaulting to graceful system
 Shutdown in the event of power outage and a UPS battery low state. If
-:ref:`email_notifications` have been enabled then power events of note will
-be part of these notifications.
+:ref:`email_notifications` have been enabled, then notable power events will be
+part of these notifications.
 
 Support
 -------

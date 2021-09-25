@@ -130,15 +130,15 @@ out more about each option from the `btrfs wiki mount options section
 Pool resizing
 -------------
 
-A really cool feature in Pool management(powered by BTRFS) is the ability to
+A really cool feature in Pool management (powered by BTRFS) is the ability to
 add or remove disks and change redundancy profile online without access
 disruption. You can resize a Pool easily from the Web-UI for one of the
 following reasons
 
-1. To change it's redundancy profile. For example, to go from a RAID10 to
+1. To change its redundancy profile. For example, to go from a RAID10 to
    RAID1. See :ref:`poolraidchange`.
 
-2. To add more disks and increase it's capacity. See :ref:`pooladddisks`.
+2. To add more disks and increase its capacity. See :ref:`pooladddisks`.
 
 3. To remove disks and decrease capacity. Removed disks can be reused for other
    Pools. See :ref:`poolremovedisks`.
@@ -192,6 +192,8 @@ screen under the *Storage* tab of the Web-UI.
 
 A Pool can also be deleted using the **Delete** button inside it's detail
 screen.
+
+.. _poolscrub:
 
 Scrubbing a Pool
 ----------------
