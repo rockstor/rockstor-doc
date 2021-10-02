@@ -51,6 +51,7 @@ the bottom table (*Other system groups*). In the example below, the **docker**
 group has a :code:`GID` of :code:`476`.
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_docker_group.png
+   :width: 100%
    :align: center
 
 We are now ready to start the installation of the Netdata rock-on. Click the
@@ -58,6 +59,7 @@ We are now ready to start the installation of the Netdata rock-on. Click the
 page.
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_install.png
+   :width: 100%
    :align: center
 
 
@@ -69,6 +71,7 @@ This corresponds to the port used to reach Netdata's web-UI. Note that
 this port **must** be set to **19999**.
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_webUI_port.png
+   :width: 100%
    :align: center
 
 
@@ -80,6 +83,7 @@ This corresponds to the **docker group GID** that was identified above (see
 :ref:`netdata_install` above).
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_PGID.png
+   :width: 100%
    :align: center
 
 
@@ -90,11 +94,13 @@ Verify and Submit
 Verify the information you've provided is correct, then click **Submit**.
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_verify.png
+   :width: 100%
    :align: center
 
 You'll see a screen indicating the Rock-on is being installed.  Click "Close".
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_final.png
+   :width: 100%
    :align: center
 
 
@@ -104,4 +110,5 @@ Congratulations! You can use the **Netdata (official) UI** button to go to the
 web interface to view and monitor all the metrics collected by Netdata.
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_UI.png
+   :width: 100%
    :align: center

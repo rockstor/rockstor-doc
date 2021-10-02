@@ -79,7 +79,7 @@ while the Samba service needs to be configured, it doesn't need to be turned
 ON.
 
 .. image:: /images/interface/system/services/ad_samba_config.png
-   :width: 100 %
+   :width: 75 %
    :align: center
 
 Next, as correct time synchronization with the AD domain is necessary for good
@@ -92,7 +92,7 @@ and running, the AD service can be configured. To do so, click on the
 domain.
 
 .. image:: /images/interface/system/services/ad_config.png
-   :width: 100 %
+   :width: 75 %
    :align: center
 
 The individual fields of the form are described below.
@@ -141,7 +141,7 @@ First, the LDAP service needs to be configured: click on the **wrench** icon
 and fill in the form with the values corresponding to your LDAP server.
 
 .. image:: /images/interface/system/services/ldap_config.png
-   :width: 100 %
+   :width: 75 %
    :align: center
 
 The individual fields of the form are described below.

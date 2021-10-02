@@ -49,7 +49,7 @@ The OpenVPN install wizard will first request that you set a port and will
 suggest the default:-
 
 .. image:: /images/interface/docker-based-rock-ons/openvpn_port.png
-   :width: 1000%
+   :width: 100%
    :align: center
 
 You may well have to open and forward the configured port on your Rockstor's

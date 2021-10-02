@@ -273,7 +273,6 @@ previously-created share (see our :ref:`createshare` section), and define the
 path under which it will be seen from within the Rock-on.
 
 .. image:: /images/interface/docker-based-rock-ons/addstorage_share_selection.png
-   :width: 100%
    :align: left
 
 In this example, the Rockstor **share** *test_share01* will be added as
@@ -316,14 +315,12 @@ Rock-on. In the example below, the Rock-on includes two containers:
 *helloworld1* and *helloworld2*.
 
 .. image:: /images/interface/docker-based-rock-ons/addlabels_container_selection.png
-   :width: 100%
    :align: center
 
 To apply two different labels to the container *helloworld2*, simply add as
 many label fields as needed, and type your labels.
 
 .. image:: /images/interface/docker-based-rock-ons/addlabels_labels_selection.png
-   :width: 100%
    :align: center
 
 Click "Next" and verify your new label-to-container mapping(s) before finishing

@@ -120,6 +120,7 @@ Pre-installation requirements
 First, navigate to *System* > *Users*, and create a new user:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_create_uid.png
+   :width: 100%
    :align: center
 
 
@@ -127,12 +128,14 @@ Take note of the new **user ID (UID)**, you will need this during the
 installation of the Rock-on.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_get_uid.png
+   :width: 100%
    :align: center
 
 
 Then navigate to *Storage* > *Shares*, and create a new share:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_config_share.png
+   :width: 100%
    :align: center
 
 
@@ -140,6 +143,7 @@ Select the newly created share and navigate to the *Access control* tab then
 click *Edit* and select "scrutiny" user as owner.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_config_share_permissions.png
+   :width: 100%
    :align: center
 
 Scrutiny rock-on installation
@@ -150,12 +154,14 @@ done, you will be in the tab with all Rock-ons. Search for "Scrutiny" Rock-on
 and click *Install* button.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install.png
+   :width: 100%
    :align: center
 
 
 First step of the wizzard, select the "Scrutiny-Config-Share" earlier created:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step1.png
+   :width: 100%
    :align: center
 
 
@@ -163,6 +169,7 @@ Step 2, enter a port number that is not in use by another rock-on (Default
 8088).
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step2.png
+   :width: 100%
    :align: center
 
 
@@ -176,6 +183,7 @@ Step 3, enter the **user ID (UID)** and **group ID (GID)** for "scrutiny" user.
 - Run the metrics collector, this should remain :code:`true`.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step3.png
+   :width: 100%
    :align: center
 
 
@@ -183,12 +191,14 @@ Step 4, review your configuration, then click **Submit** to start the Rock-on
 installation.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step4.png
+   :width: 100%
    :align: center
 
 
 Step 5, installation in progress, you can close the wizzard.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step5.png
+   :width: 100%
    :align: center
 
 
@@ -197,6 +207,7 @@ web interface to view and monitor all the metrics collected from your server
 disks.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_installed.png
+   :width: 100%
    :align: center
 
 Scrutiny initial configuration
@@ -206,6 +217,7 @@ Scrutiny initial configuration
 First time you install and access the Scrutiny UI, the dashboard will be empty.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_no_devices.png
+   :width: 100%
    :align: center
 
 Why? Because the container is using cron to refresh all data, and by default
@@ -221,6 +233,7 @@ server via SSH  and type the following command:
 :code:`docker exec -it scrutiny sh -c "scrutiny-collector-metrics run"`
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_shell_metrics_run.png
+   :width: 100%
    :align: center
 
 
@@ -231,12 +244,14 @@ Congratulations! You successfully installed and configured **Scrutiny**, your
 dashboard should now be filled with valuable information about all your disks:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_dashboard.png
+   :width: 100%
    :align: center
 
 
 More detailed information is available for each disks as well:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_hdd_details.png
+   :width: 100%
    :align: center
 
 

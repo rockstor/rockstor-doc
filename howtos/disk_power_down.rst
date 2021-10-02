@@ -118,7 +118,6 @@ An example of a share's background access that may interfere with drive power
 down settings is with the Plex Rock-on:
 
 .. image:: /images/howtos/disk-power-down/plex_update_library.png
-   :width: 100%
    :align: center
 
 Here we see some settings that relate to how often a library should be scanned

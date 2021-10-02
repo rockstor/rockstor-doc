@@ -58,7 +58,6 @@ The easiest way to do this is by using the KVM GUI "Virtual Machine Manager" or
 :code:`virt-manager` via command line.
 
 .. image:: /images/howtos/kvm-setup/vmm.png
-   :width: 100%
    :align: center
 
 This graphical assistant is fairly intuitive and can get a virtual machine up
@@ -77,7 +76,6 @@ Double click on the localhost (QEMU) and select the storage tab
 Click on the New Volume button and create the system drive volume eg
 
 .. image:: /images/howtos/kvm-setup/vmm_system_drive.png
-   :width: 100%
    :align: center
 
 In the above we used the provided defaults but named our volume
@@ -106,13 +104,11 @@ the icon bar should show the first of 5 configuration dialogs.
 Step 1 - Method of install ie via **iso**
 
 .. image:: /images/howtos/kvm-setup/vmm_iso_step1.png
-   :width: 100%
    :align: center
 
 Step 2 - Select our install media; in this case the **Rockstor-#.#-#.iso**
 
 .. image:: /images/howtos/kvm-setup/vmm_iso_os_step2.png
-   :width: 100%
    :align: center
 
 N.B. In the above dialog we must also select OS type **Linux** and Version
@@ -122,7 +118,6 @@ Step 3 - Set the RAM / memory (minimum **2048MB**) and **CPU count** eg 1 or 2
 on a quad core host
 
 .. image:: /images/howtos/kvm-setup/vmm_ram_step3.png
-   :width: 100%
    :align: center
 
 Step 4 - Set the **system drive** to install Rockstor on. As we have already
@@ -130,7 +125,6 @@ created our named volumes tick **Select managed or other existing storage**.
 Then, click the **Browse** button.
 
 .. image:: /images/howtos/kvm-setup/vmm_system_disk_step4.png
-   :width: 100%
    :align: center
 
 We should then be presented with the following dialog where we can select our
@@ -144,7 +138,6 @@ Step 5 - Set our virtual machine's **Name** and **tick "Customise configuration
 before install"**
 
 .. image:: /images/howtos/kvm-setup/vmm_customise_tick_step5.png
-   :width: 100%
    :align: center
 
 As we ticked customize we get the chance to modify our virtual machine prior to
@@ -250,14 +243,12 @@ Start by **double clicking** on the **Rockstor VM** listing within the main
 window of Virtual Machine Manager:
 
 .. image:: /images/howtos/kvm-setup/vmm_rockstor_listing.png
-   :width: 100%
    :align: center
 
 The resulting dialog once you select **View** then **Details** or clicking on
 the **lightbulb** icon will be similar to:
 
 .. image:: /images/howtos/kvm-setup/vmm_rockstor_details_system_drive_only.png
-   :width: 100%
    :align: center
 
 To add our previously prepared data volumes as virtual drives we **Add
@@ -266,7 +257,6 @@ only this time we select our data-drive-1 and data-drive-2 volumes, each in
 turn.
 
 .. image:: /images/howtos/kvm-setup/vmm_add_data_drive_1.png
-   :width: 100%
    :align: center
 
 The above image shows where **Select managed or other existing storage** has
@@ -280,7 +270,6 @@ Once both drives have been added our virtual machine details should look
 something like:
 
 .. image:: /images/howtos/kvm-setup/vmm_added_the_data_drives_sata.png
-   :width: 100%
    :align: center
 
 We can now boot our Rockstor virtual machine with its two shiny new 2GB virtual
@@ -289,31 +278,3 @@ SATA drives for experimental / developmental purposes.
 .. image:: /images/howtos/kvm-setup/rockstor_storage_2_data_drives.png
    :width: 100%
    :align: center
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
