@@ -30,6 +30,7 @@ endeavour was approached and redressed in `a thread on the community forum <http
 The consensus was to adopt a two-tiered updates model; testing and stable.
 
 ..  image:: /images/interface/system/update-channels//update_channel_options.png
+    :width: 100%
     :align: center
 
 The **update alternatives** offered in Rockstor.
@@ -71,6 +72,7 @@ intended to mark the re-birth of this developer favoured channel.*
 **No charge**
 
 ..  image:: /images/interface/system/update-channels//activate_testing_channel.png
+    :width: 100%
     :align: center
 
 There is really no better testing alternative than thousands of willing testers
@@ -123,6 +125,7 @@ discount / promotional codes are occasionally issued.
 **Yearly subscription managed by appman**
 
 ..  image:: /images/interface/system/update-channels//activate_stable_channel.png
+    :width: 100%
     :align: center
 
 .. _free_stable:
@@ -143,6 +146,7 @@ applying them; this advice is down to the more unstable nature of
 the testing channel and its inevitably greater chance of breakage or bugs.
 
 ..  image:: /images/interface/system/update-channels//enable_auto_updates.png
+    :width: 100%
     :align: center
 
 **N.B. Auto updates are only recommended when on the stable updates channel**

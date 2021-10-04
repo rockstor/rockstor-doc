@@ -74,7 +74,7 @@ the **Nut Mode** is the first option to consider in any nut configuration and
 will dictate the number of other options presented.
 
 ..  image:: nut_modes.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 The three modes are detailed in the following sections;
@@ -91,13 +91,21 @@ the mains / ups data with any other machine. This mode requires the following
 fields:
 
 * **NUT Mode** - A drop down and in this case **standalone** is required
-* **NUT Driver** - Please see NUT's `Hardware Compatibility List <https://networkupstools.org/stable-hcl.html>`_ to select the correct driver for your particular UPS make and model.
-* **UPS Port** - the port name for how the UPS data cable is connected to the Rockstor machine eg - **/dev/ttyS0** for the first serial port - **/dev/ttyUSB0** for the first USB to serial port adapter - **auto** for many directly usb connected UPSs.
-* **NUT User** - N.B. this is **NOT** a system user but reserved solely for internal NUT use; if you have no specific requirement here then just enter the suggestion of *monuser*.
-* **NUT User Password** - A password for the above nut specific user; if you are going with the default 'NUT User' of *monuser* in the last field then simply make up and enter a fresh and unique password here.
+* **NUT Driver** - Please see NUT's `Hardware Compatibility List <https://networkupstools.org/stable-hcl.html>`_
+  to select the correct driver for your particular UPS make and model.
+* **UPS Port** - the port name for how the UPS data cable is connected to the
+  Rockstor machine, *e.g.*: **/dev/ttyS0** for the first serial port,
+  **/dev/ttyUSB0** for the first USB to serial port adapter, **auto** for many
+  directly usb connected UPSs.
+* **NUT User** - N.B. this is **NOT** a system user but reserved solely for
+  internal NUT use; if you have no specific requirement here then just enter
+  the suggestion of *monuser*.
+* **NUT User Password** - A password for the above nut specific user; if you
+  are going with the default 'NUT User' of *monuser* in the last field then
+  simply make up and enter a fresh and unique password here.
 
 ..  image:: nut_standalone_eg.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 Note in the above mouse over hint there is a web link to assist in driver
@@ -115,16 +123,21 @@ way of those machines running NUT client software. In addition to the options
 available in :ref:`nut_standalone` there are also the following:
 
 * **Monitor Mode** - Select either **master** or **slave**
-    - **master** - (Default) This System is most likely directly connected to the UPS; this system will shutdown last allowing slave nut systems time to shutdown first.
-    - **slave** - This system will not wait for other nut clients to shutdown, UPS is most likely not directly connected to this system.
-* **Internal UPS name** -  Single word, ie "ups" and no special characters (" = # space, backslash). Netclient systems will use this in their nut monitor reference, ie the **ups** in ups@rockstor.lan.
+    - **master** - (Default) This System is most likely directly connected to
+      the UPS; this system will shutdown last allowing slave nut systems time
+      to shutdown first.
+    - **slave** - This system will not wait for other nut clients to shutdown,
+      UPS is most likely not directly connected to this system.
+* **Internal UPS name** -  Single word, ie "ups" and no special characters
+  (" = # space, backslash). Netclient systems will use this in their nut
+  monitor reference, ie the **ups** in ups@rockstor.lan.
 * **UPS Description** - Human friendly name for this UPS.
 
 **Please note that there are additional security concerns with running nut in
 netserver mode: if you are not aware of these then please use standalone mode**
 
 ..  image:: nut_netserver.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 Note the helpful **Monitor Mode** mouse over hint; if you are unsure which to
@@ -141,10 +154,11 @@ another nut instance running in :ref:`nut_netserver`. Additional
 configuration items to those detailed in the :ref:`nut_standalone` and
 :ref:`nut_netserver` sections are detailed below:
 
-* **Nut Server** This is the name or IP address of a lan machine running a NUT instance in :ref:`nut_netserver` and probably also in master monitor mode.
+* **Nut Server** This is the name or IP address of a lan machine running a NUT
+  instance in :ref:`nut_netserver` and probably also in master monitor mode.
 
 ..  image:: nut_netclient.png
-    :scale: 80%
+    :width: 100%
     :align: center
 
 In the above the nut server is rather unimaginatively called nutserver on a lan

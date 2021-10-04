@@ -38,7 +38,6 @@ Select **Disk Image Writer** from the right click menu.
 Here we see the **Restore Disk Image** dialog, we need to select our USB key.
 
 ..  image:: /images/howtos/gnome-disks-usb/disks_restore_disk_image_dialog.png
-    :width: 100%
     :align: center
 
 Note that this dialog is part of the Disks program that was automatically
@@ -57,7 +56,6 @@ The **Start Restoring** button should now be available.
 A confirmation dialog should now be displayed
 
 ..  image:: /images/howtos/gnome-disks-usb/disks_confirmation_dialog.png
-    :width: 100%
     :align: center
 
 Note the **Affected Devices** information and size in the warning before

@@ -57,6 +57,7 @@ Once your share is ready, click the "Install" button next to the MinIO listing
 on the Rock-ons page.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_install.png
+   :width: 100%
    :align: center
 
 
@@ -67,6 +68,7 @@ MinIO Share
 Specify the share you created for MinIO.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_share.png
+   :width: 100%
    :align: center
 
 
@@ -78,6 +80,7 @@ The default port for MinIO is 9000, but you can choose a different port if you
 are already using 9000 for another application.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_port.png
+   :width: 100%
    :align: center
 
 
@@ -92,6 +95,7 @@ username and password you will use on the Web interface and in your
 S3-compatible client software.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_environment.png
+   :width: 100%
    :align: center
 
 
@@ -102,11 +106,13 @@ MinIO Verify and Submit
 Verify the information you've provided is correct, then click "Submit".
 
 .. image:: /images/interface/docker-based-rock-ons/minio_submit.png
+   :width: 100%
    :align: center
 
 You'll see a screen indicating the Rock-on is being installed.  Click "Close".
 
 .. image:: /images/interface/docker-based-rock-ons/minio_installing.png
+   :width: 100%
    :align: center
 
 MinIO Installation Successful
@@ -117,4 +123,5 @@ your S3-compatible application at your new server. The Web interface and the
 S3-compatible interface share the same port and can be used simultaneously.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_finished.png
+   :width: 100%
    :align: center

@@ -43,7 +43,6 @@ in more detail.
 First select the destination USB key using the **Device** drop down.
 
 .. image:: /images/howtos/rufus-howto/rufus34_select_device.png
-   :width: 100%
    :align: center
 
 In the above example the Device selected was a 16GB device.
@@ -54,7 +53,6 @@ your system, and select the ISO file,
 and click the **Open button** in the dialog box.
 
 .. image:: /images/howtos/rufus-howto/rufus34_rockstor_selected.png
-   :width: 100%
    :align: center
 
 The Rockstor iso file name should now be visible in the "Boot Selection" box,
@@ -69,7 +67,6 @@ Note: If you downloaded through BitTorrent, this check is completed as part of
 its internal workings.
 
 .. image:: /images/howtos/rufus-howto/rufus34_hash_complete.png
-   :width: 100%
    :align: center
 
 Click the **OK Button** to close the window, and we can proceed with USB
@@ -81,7 +78,6 @@ Image, and give you 2 choices. Select the radio button next to
 **Write in DD Image Mode**
 
 .. image:: /images/howtos/rufus-howto/rufus34_select_dd.png
-   :width: 100%
    :align: center
 
 In the above we see the **Write in DD Image Mode** selected.
@@ -90,7 +86,6 @@ You're now ready to write.  Click the **OK Button**, in the "ISOHybrid" box,
 and you should then get this warning.
 
 .. image:: /images/howtos/rufus-howto/rufus34_warning.png
-   :width: 100%
    :align: center
 
 Note the device label and size in the warning before proceeding,
@@ -101,19 +96,14 @@ Upon confirming continuation you should see the progress bar update to track
 the operation.
 
 .. image:: /images/howtos/rufus-howto/rufus34_write_in_progress.png
-   :width: 100%
    :align: center
 
 When the write is complete Rufus will look like this.
 
 .. image:: /images/howtos/rufus-howto/rufus34_write_complete.png
-   :width: 100%
    :align: center
 
 Click the **CLOSE Button** to end the session.
 
 **Before removing USB device be sure to eject / remove / unmount
 appropriately**
-
-
-
