@@ -67,63 +67,98 @@ You can find user stories and example builds on our
    Microserver Gen8.
 
 3. Raspberry Pi4 and RPi 400 have also both been reported as working as
-   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi 400
-   requires at least a 15.3 profile for the internal keyboard to work.
+   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi
+   400 requires at least a 15.3 profile for the internal keyboard to work.
 
-Upgrading Rockstor
+.. _updating_rockstor:
+
+Updating Rockstor
 ------------------
 Rockstor is under continuous development and we generally release updates in
-small batches. These updates are easy to install. But we do roll-out major
-releases that require a complete re-install. Upgrading from Rockstor 3 (CentOS
-based) to Rockstor 4 "Built on openSUSE" is one such update.
-But such updates are very rare.
+small batches. These updates are easy to install and distributed in two
+distinct *update channels* described in our :ref:`update_channels` section. On
+rare occasions, we roll-out major releases that require a complete re-install;
+upgrading from Rockstor 3 (CentOS-based) to Rockstor 4 "Built on openSUSE" is
+one such update.
 
-Non re-install Rockstor updates can be installed in two ways :
+.. note::
+   Would you like to see a specific feature added or updated? Come share your
+   idea on our `friendly forum <https://forum.rockstor.com/>`_ or see how you
+   can contribute to Rockstor in our :ref:`contributetorockstor` section.
 
-1. Install updates from the Web-UI (recommended):
-On the Rockstor Web-UI, far top-right, you will see an upward facing arrow next
-to the Rockstor version number if any Rockstor package updates are available.
+
+Non re-install Rockstor updates can be installed in two ways:
+
+1. from the :ref:`Web-UI<updaterockstorwebui>` (**recommended**):
+2. from the :ref:`command line<updaterockstorcli>`
+
+.. _updaterockstorwebui:
+
+Install updates from the Web-UI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rockstor distinguishes between two types of software updates:
+
+* updates of the Rockstor package itself
+* updates to the base OS (system updates)
+
+The presence of both these updates is signaled on the Rockstor Web-UI, in the
+top-right corner:
 
 .. image:: /images/installation/install/update-arrow.png
-   :width: 100%
    :align: center
 
-All upstream packages except the
-'rockstor' package can similarly be installed by clicking on a flashing
-wifi-like icon. Again, this is not shown if no update is available, but it
-does show, as per the up-arrow, if there is a rockstor package update
-available.
-But only the up-arrow will actually update the main rockstor package.
-These disparate but related mechanisms allow users to choose to only update what they want:
-all packages bar the rockstor package (wifi-like icon).
+As you can see in the screenshot above, we have:
 
-See the following section for details on upgrading the Rockstor package plus
-all pending upstream updates :ref:`update_channels`.
+* an upward facing arrow next to the Rockstor version number: this indicates an
+  update to the Rockstor package itself is available.
+* a flashing WiFi-like icon: this indicates updates for the base OS are
+  available.
 
-2. Alternatively, for advanced users only, one can update from the Command
-Line Interface (CLI).
+To update, simply click on either one of these icons to see details about the
+update(s) and proceed with their installation.
 
-Just the main rockstor package::
+.. note::
+   While an update to the Rocsktor package itself will also be listed among
+   system updates, only clicking the upward facing arrow next to Rockstor's
+   version will actually update the Rockstor package.
 
-    [root@localhost ~]# zypper update rockstor
+This allows you to choose to only update what you want:
 
-The entire Rockstor 4 system including all upstream updates. Our login message
-has a reminder of these commands::
+* all system updates bar the Rockstor package: WiFi-like icon
+* only the Rockstor package: upward facing arrow next to Rockstor's version
 
-    [root@localhost ~]# zypper refresh
-    [root@localhost ~]# zypper up --no-recommends
+.. _updaterockstorcli:
 
-- And Rockstor 3 similarly via::
+Install updates from the command line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Alternatively, for advanced users only, one can update from the Command
+Line Interface (CLI). In Rockstor 4 "Built on openSUSE", the procedure is as
+follows:
 
-    [root@localhost ~]# yum update rockstor
+To update the Rockstor package *only*:
 
-and::
+.. code-block:: bash
 
-    [root@localhost ~]# yum update
+   [root@localhost ~]# zypper update rockstor
 
-On both OS bases a reboot is recommended, but only after the update has
-completed. This can take some time, depending on how many updates have to be
-downloaded and established.
+To update the entire Rockstor 4 system including all upstream updates (note
+that our shell login message has a reminder of these commands):
+
+.. code-block:: bash
+
+   [root@localhost ~]# zypper refresh
+   [root@localhost ~]# zypper up --no-recommends
+
+
+Similarly, in our legacy Rockstor 3 version, run :code:`yum update rockstor` or
+:code:`yum update` to update the Rockstor package itself or the entire system,
+respectively.
+
+.. warning::
+
+   On both OS bases a reboot is recommended, but only after the update has
+   completed. This can take some time, depending on how many updates have to be
+   downloaded and established.
 
 If an update is disruptive, the update process prompts for user action and
 provides the necessary information to choose to update or not. You can safely
