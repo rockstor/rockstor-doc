@@ -140,7 +140,6 @@ Although the following Rock-ons are currently without specific install
 instructions they are like all Rock-on installs, fairly self explanatory.
 
 * `Bitcoin <https://bitcoin.com/>`_: Bitcoin full node
-* `Bitwarden <https://github.com/dani-garcia/vaultwarden>`_: Unofficial server written in Rust for the password manager Bitwarden
 * `Booksonic <https://booksonic.org>`_: Audiobooks streaming server
 * `Cardigann <https://github.com/cardigann/cardigann>`_: A proxy server for adding new indexers to Sonarr and other media managers
 * `Collabora online <https://www.collaboraoffice.com/code/>`_: LibreOffice-based online office suite
@@ -193,6 +192,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Ubuiquiti Unifi by Linuxserver.io <https://ui.com/consoles//>`_: Unifi Access Point controller, provided by Linuxserver.io
 * `Unifi Controller <https://ui.com/consoles/>`_: Unifi Access Point controller
 * `uTorrent <https://github.com/domibarton/docker-utorrent>`_: BitTorrent client
+* `Vaultwarden <https://github.com/dani-garcia/vaultwarden>`_: Unofficial server written in Rust for the password manager Bitwarden
 * `Watchtower <https://github.com/containrrr/watchtower>`_: A process for automating Docker container base image updates
 * `Xeoma <https://felenasoft.com/xeoma/en>`_: Video surveillance
 * `Zabbix-XXL <https://github.com/monitoringartist/zabbix-xxl>`_: Network and application monitoring
