@@ -416,3 +416,79 @@ modifications made to the rock-on, Rockstor will apply the new settings on the
 fly without first uninstalling the rock-on. If a port's publication state was
 also modified, however, Rockstor will proceed with the full update procedure
 (uninstalling and re-installing the rock-on with the new settings).
+
+.. _rockons_uninstall:
+
+Uninstall of a Rock-on
+----------------------
+Uninstalling a Rock-on is straightforward:
+
+1. Toggle the Rock-on OFF. The *Uninstall* button will appear.
+2. Click the *Uninstall* button, and confirm the process in the dialog window.
+
+This will remove the underlying Docker container(s) and related entries in
+Rockstor's database. Note that this will **not** delete or alter data in the
+Share(s) that were used for the uninstalled Rock-on. This therefore represents
+a convenient way to update a Rock-on if desired
+(:ref:`see below <rockons_update>`).
+
+.. _rockons_force_delete:
+
+Force uninstall of a Rock-on
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the event the uninstallation process of a Rock-on is not possible, we
+provide a script to force the deletion of a Rock-on. While we do not yet have
+integrated this tool in Rockstor's :ref:`web-UI <webui>`, it can easily be
+used from the command line as follows. Running this script without argument
+will detail its usage:
+
+.. code-block:: bash
+
+    /opt/rockstor/bin/delete-rockon
+    Delete metadata, containers and images of a Rock-on
+    Usage: /opt/rockstor/bin/delete-rockon <rockon name>
+
+Note that the :code:`rockon name` refers to the name of the Rock-on as it is
+displayed in the list of available Rock-ons in Rockstor's web-UI. As the
+Rock-on name is case-sensitive, we recommend wrapping it in quotes. For the
+Rock-on named *Emby server*, for instance, the command should thus be:
+
+.. code-block:: bash
+
+    /opt/rockstor/bin/delete-rockon "Emby server"
+
+
+.. _rockons_update:
+
+Updating a Rock-on
+------------------
+Updating a Rock-on implies updating its underlying Docker image(s). Given
+Docker images are designed to be ephemeral, updating a Rock-on can simply be
+achieved by *pulling* the latest Docker image, *removing* the currently used
+image, and then *re-creating* the container(s) using the newly-pulled image(s).
+In Rockstor, this can all be achieved through the web-UI as follows:
+
+1. Stop the Rock-on
+2. Uninstall the Rock-on
+3. Re-install the Rock-on using the same Shares and settings as before
+
+Upon re-install, Docker will check if a newer version of the image exists and
+download it if it does. The newly-installed Rock-on will thus use the
+latest image available while keeping the same data *Shares*, ensuring the
+latter will remain intact. If you re-used the same *Shares* for the Rock-on as
+before its uninstallation, you should thus be back in the same state as before,
+but with the latest Docker image available.
+
+Note, however, that some Rock-ons use pinned versions for their underlying
+image(s); these therefore cannot be updated. These include the *PostgreSQL 9.5*,
+*PostgreSQL 10.6*, and *YouTrack official* Rock-ons.
+
+.. note::
+    Although some of the applications ran inside Rock-ons have an "Update"
+    in their own user interface, it is generally not functional due to the
+    nature of Docker containers. It is therefore always recommended to follow
+    the procedure described above to update a Rock-on.
+
+    There are very few exceptions to this rule, however, so make sure to have a
+    look at the "more info" window for each Rock-on (if present) for
+    instructions!
