@@ -27,8 +27,6 @@ Click on **Create Pool** button and submit the create pool form to create a
 pool. There is a tooltip for each input field to help you choose appropriate
 parameters.
 
-See YouTube `Creating a Pool <https://www.youtube.com/watch?v=T5sg8xSoH1E>`_.
-
 
 .. _redundancyprofiles:
 
@@ -154,16 +152,12 @@ Redundancy profile changes
 
 You can change :ref:`redundancyprofiles` online with very few restrictions.
 
-See YouTube `Change Pool's RAID profile <https://www.youtube.com/watch?v=DouOx8gX5yE>`_.
-
 .. _pooladddisks:
 
 Adding Disks
 ^^^^^^^^^^^^
 
 Disks can be added to a Pool online and expand capacity.
-
-See YouTube `Adding disks to a Pool <https://www.youtube.com/watch?v=E37rzWcwGu0>`_.
 
 .. _poolremovedisks:
 
@@ -173,8 +167,6 @@ Removing Disks
 Disks can be removed from a Pool online similar to adding Disks. However, since
 it results in reduced capacity, this operation can succeed only if the
 resulting capacity after removal is greater than the current usage.
-
-See YouTube `Removing disks from a Pool <https://www.youtube.com/watch?v=535pxsF16Pk>`_.
 
 
 Pool deletion

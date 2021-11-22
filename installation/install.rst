@@ -24,13 +24,6 @@ Quick evaluation using a virtual environment
 Rockstor can also be evaluated quickly using a virtual machine, see our
 :ref:`kvmsetup`.
 
-See YouTube `VirtualBox Rockstor install demo <https://www.youtube.com/watch?v=00k_RwwC5Ms>`_.
-
-Before proceeding with a serious installation that may require hardware
-procurement, you can evaluate Rockstor on Amazon AWS.
-
-See YouTube `Rockstor on ec2 <https://www.youtube.com/watch?v=ys_8FLVov2U>`_.
-
 Hardware recommendations
 -------------------------
 

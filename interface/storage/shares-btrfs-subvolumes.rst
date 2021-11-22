@@ -24,8 +24,6 @@ grow and shrink capacity at a later time. Click on **Create Share** button and
 submit the Share creation form to create one. There is a tooltip for each input
 field to help you choose appropriate parameters.
 
-See YouTube `Create a Rockstor Share <https://www.youtube.com/watch?v=k537gsx8ifQ>`_.
-
 .. _resizeshare:
 
 Resizing a share
@@ -33,8 +31,6 @@ Resizing a share
 
 A share can be resized by increasing or decreasing it's provisioned
 capacity. To resize a Share, Click the **Resize** button in it's detail screen.
-
-See YouTube `Resize a Rockstor Share <https://www.youtube.com/watch?v=vMCNZFDwKLQ>`_.
 
 Note that a share cannot be decreased to a capacity lower than it's current
 usage. Internally, Share capacity enforcement is done via BTRFS qgroup feature
@@ -82,7 +78,5 @@ created from, at the time that it was created.
 In Rockstor, both Shares and Snapshots can be cloned to create new Shares.
 
 To clone a Share, got to it's detail screen and click on the **Clone** button.
-
-See YouTube `Clone a Share <https://www.youtube.com/watch?v=DhXUyDoBVMY>`_.
 
 To clone a Snapshot, see :ref:`clonesnapshot`.
