@@ -50,12 +50,9 @@ In this howto we will use `Linux Raid
 drive mirror. This can be done as part of Rockstor's installation but requires
 many more additional steps from a default, non mdraid, install. If you
 have never installed Rockstor before, we recommend you read our
-:ref:`quickstartguide`, also:
+:ref:`quickstartguide`.
 
-See YouTube `How to install Rockstor 3.8-7 <https://www.youtube.com/watch?v=yEL8xMhMctw>`_
-
-before proceeding with this howto as the default kickstarter based install
-method is recommended for most users.
+The default kickstarter based install method is recommended for most users.
 
 .. _mdraidos_requirements:
 

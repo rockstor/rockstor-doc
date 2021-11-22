@@ -33,8 +33,6 @@ Set *Guest OK* to *yes* if you want to permit guest access.
 
 Set *Read only* to *yes* if the share should not be writable by clients.
 
-See YouTube `Create a Samba SMB export of a share <https://www.youtube.com/watch?v=hZ7FQWuF6TI>`_.
-
 View Samba Export
 ^^^^^^^^^^^^^^^^^
 
