@@ -71,8 +71,11 @@ In the following sections we assume:
 4. **buildvm**: is your target build machine's hostname; the name chosen during the rockstor install.
 
 TIP: you can add your buildvm's IP address to /etc/hosts on your laptop (linux assumed).
-An example IP entry would be (checked via :code:`grep "buildvm" /etc/hosts`)::
+E.g.
 
+.. code-block:: console
+
+    you@laptop:~> grep "buildvm" /etc/hosts
     192.168.2.170   buildvm
 
 Then a :code:`ping -c2  buildvm` on your laptop should complete without error.
@@ -95,21 +98,29 @@ They should also work with little or no modification in an OSX console.
 Clone, in turn, your GitHub profiles fork of rockstor-core onto your local machine.
 You can do this in any directory; but the following assume the ~/dev directory.
 
+.. code-block:: console
+
         you@laptop:~> mkdir ~/dev; cd ~/dev
         you@laptop:~/dev> git clone https://github.com/your_github_username/rockstor-core.git
 
 The above creates a local rockstor-core git repo in a new directory by
-the same name: "rockstor-core". Change into this new directory/repo clone via::
+the same name: "rockstor-core". Change into this new directory/repo clone via:
+
+.. code-block:: console
 
         you@laptop:~/dev> cd rockstor-core
 
 Configure this new git repo with your name and email address. This is required
-to accurately record collaboration::
+to accurately record collaboration:
+
+.. code-block:: console
 
         you@laptop:~/dev/rockstor-core> git config user.name "Firstname Lastname"
         you@laptop:~/dev/rockstor-core> git config user.email your_email_address
 
-Add a remote called **upstream** to periodically rebase your local repository with upstream changes by other contributors::
+Add a remote called **upstream** to periodically rebase your local repository with upstream changes by other contributors:
+
+.. code-block:: console
 
         you@laptop:~/dev/rockstor-core> git remote add upstream https://github.com/rockstor/rockstor-core.git
 
@@ -120,12 +131,16 @@ Making changes
 
 Assuming you have identified or created an issue to work on (eg: #1234) from
 `GitHub issue tracker <https://github.com/rockstor/rockstor-core/issues>`_.
-First ensure your local code fork is up-to-date by rebasing on upstream::
+First ensure your local code fork is up-to-date by rebasing on upstream:
+
+.. code-block:: console
 
         you@laptop:~/dev/rockstor-core> git checkout master
         you@laptop:~/dev/rockstor-core> git pull --rebase upstream master
 
-Then checkout a new/issue-specific branch, e.g.::
+Then checkout a new/issue-specific branch, e.g.:
+
+.. code-block:: console
 
         you@laptop:~/dev/rockstor-core> git checkout -b 1234_issue_title
 
@@ -140,7 +155,9 @@ We request that you divide a commit message into two parts.
 Start the message with a single line summary, about 70 characters in length ending in #issue-number.
 Add a blank line after that.
 Further details can then follow in paragraphs less than 80 characters wide.
-Below is a fictional example::
+Below is a fictional example:
+
+.. code-block:: console
 
         foobar functionality for rockstor #1234
 
@@ -202,7 +219,9 @@ The prior existing rpm install must be removed as it will otherwise interfere.
 The following does this, updates the os, and installs the dev dependencies.
 Around 30 packages will already be installed and a similar number will be added:
 if you are using the suggested rockstor-installer derived os instance.
-This change will be around 60 MB download and 250 MB installed. ::
+This change will be around 60 MB download and 250 MB installed.
+
+.. code-block:: console
 
     zypper --non-interactive remove rockstor
     rm -rf /opt/rockstor  # remove dangling rockstor rpm related files.
@@ -221,11 +240,15 @@ Build VM initial setup
 ----------------------
 
 Transfer the code from your laptop to the build VM.
-A password will likely be requested and this is for the buildvm machine's root user.::
+A password will likely be requested and this is for the buildvm machine's root user.
+
+.. code-block:: console
 
         you@laptop:~> rsync -avz --exclude=.git ~/dev/rockstor-core/ root@buildvm:/opt/rockstor-dev/
 
-And via your ssh session to, or console on, **the target buildvm machine** (as root)::
+And via your ssh session to, or console on, **the target buildvm machine** (as root):
+
+.. code-block:: console
 
         buildvm:~ # zypper --non-interactive install python2-pip
         buildvm:~ # pip2 install zc.buildout
@@ -239,7 +262,8 @@ We now have all the tools and code in place on the buildvm machine ready to:
 
 1. Code configure/re-configure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-::
+
+.. code-block:: console
 
         buildvm:~ # cd /opt/rockstor-dev/
         buildvm:/opt/rockstor-dev # buildout bootstrap
@@ -252,13 +276,17 @@ This step can take a few minutes, depending on cpu and internet speed.
 An internet connection is required as the process downloads all required Python eggs/wheels etc.
 We are running the bin/buildout script generated/updated in :ref:`code_config` step above.
 This stage takes considerably longer if you have also just configured/reconfigured the code.
-::
+
+.. code-block:: console
+
 
          buildvm:/opt/rockstor-dev # bin/buildout -N -c buildout.cfg
 
 The build process, towards the end, enables and starts the following rockstor systemd services.
 **All are installed in /etc/systemd/system/**
-Note that all paths indicated are within the rockstor source tree.::
+Note that all paths indicated are within the rockstor source tree.
+
+.. code-block:: console
 
     rockstor-pre.service  # starts bin/initrock after postgresql.service
     rockstor  # starts bin/supervisord -c etc/supervisord.conf after rockstor-pre.service
@@ -266,6 +294,8 @@ Note that all paths indicated are within the rockstor source tree.::
 
 If a custom HDD power (APM) and/or spin-down setting is enabled, the following service is added.
 But only if the drive is confirmed as rotational.
+
+.. code-block:: console
 
     rockstor-hdparm.service  # Configures drives APM & spindown settings via hdparm
 
@@ -278,7 +308,7 @@ The Rockstor Web-UI references this file itself for the current settings.
 There is no db component to this configuration setting.
 
 At this point the Rockstor Web-UI should be available to verify your changes.
-In our example setup the link on **laptop** would be `https://buildvm/ <https://buildvm/>`_.
+In our example setup the URL from **laptop** would be :code:`https://buildvm/`.
 
 It is very important to ensure that your code changes survive a reboot.
 Sometimes, especially when db changes are made, this can be an issue.
@@ -317,12 +347,16 @@ Changes fall into two main categories.
 1. Backend changes involving python coding.
 2. Frontend changes involving javascript, html and css.
 
-To test any change, you need to transfer files from your laptop to the VM::
+To test any change, you need to transfer files from your laptop to the VM:
+
+.. code-block:: console
 
         you@laptop:~> rsync -avz --exclude=.git ~/dev/rockstor-core/ root@buildvm:/opt/rockstor-dev/
 
 If you made any javascript, html or css changes,
-you need to collect the static files with the following after the above transfer::
+you need to collect the static files with the following after the above transfer:
+
+.. code-block:: console
 
         buildvm:~ # /opt/rockstor-dev/bin/buildout -c /opt/rockstor-dev/buildout.cfg install collectstatic
 
@@ -339,7 +373,9 @@ Consider having multiple terminals open simultaneously.
 - Another for browsing through the logs.
 
 When making backend changes, you may want to view/tail logs.
-Everything that your code or any rockstor service logs goes into the following logs: ::
+Everything that your code or any rockstor service logs goes into the following logs:
+
+.. code-block:: console
 
     buildvm:~ # ls -la /opt/rockstor-dev/var/log
     total 128
@@ -361,7 +397,9 @@ Everything that your code or any rockstor service logs goes into the following l
 rockstor.log should be the first place to look for errors or debug logs.
 
 Some things such as rockstor-pre/bootstrap are logged directly to the system log.
-And so are accessible via commands such as::
+And so are accessible via commands such as:
+
+.. code-block:: console
 
     journalctl  # akin to "less /var/log/messages" of old. N.B. cursor/page keys to navigate.
     journalctl -f  # tail system log
@@ -377,7 +415,9 @@ Adding third party Javascript libraries
 
 The frontend code uses third party javascript libraries such as jquery,bootstrap, d3 and many others.
 These are not part of the rockstor-core repository but are dynamically generated during the build.
-They are placed in the below directory on your build VM::
+They are placed in the below directory on your build VM:
+
+.. code-block:: console
 
     buildvm:~ # ls /opt/rockstor-dev/static/js/lib/
     additional-methods.min.js    cubism.v1.js                 jquery.flot.resize.js        jquery.validate.js
@@ -407,10 +447,10 @@ Database migrations
 -------------------
 
 We use `PostgreSQL10 <https://www.postgresql.org/>`_ as the database backend for Rockstor.
-There are two databases: ::
+There are two databases:
 
-    1. storageadmin
-    2. smart_manager
+1. storageadmin
+2. smart_manager
 
 Depending on your issue you may need to add a Django model, delete one, or change fields of an existing model.
 After editing models you need to create a database migration file and apply it.
@@ -422,22 +462,30 @@ Generate the migration on buildvm and copy the resulting file back to your lapto
 This migration file should now be added to the git soruce control.
 It represents a necessary part of your proposed changes and enables the update mechanism.
 
-E.g.for model changes in storageadmin application, create a migration file using: ::
+E.g.for model changes in storageadmin application, create a migration file using:
+
+.. code-block:: console
 
         buildvm:~ # /opt/rockstor-dev/bin/django makemigrations storageadmin
 
 The above command generates a migration file in
 :code:`/opt/rockstor-dev/src/rockstor/storageadmin/migrations/`. Apply the
-migration with::
+migration with:
+
+.. code-block:: console
 
         buildvm:~ # /opt/rockstor-dev/bin/django migrate storageadmin
 
 For model changes in the smart_manager application, create a migration file
-using::
+using:
+
+.. code-block:: console
 
         buildvm:~ # /opt/rockstor-dev/bin/django makemigrations smart_manager
 
-Run the migration with: ::
+Run the migration with:
+
+.. code-block:: console
 
         buildvm:~ # /opt/rockstor-dev/bin/django migrate --database=smart_manager smart_manager
 
@@ -447,7 +495,9 @@ Shipping changes
 ----------------
 
 As you continue to work on an issue, commit and push changes to the issue branch of your fork.
-You can periodically push your changes to GitHub with the following command: ::
+You can periodically push your changes to GitHub with the following command:
+
+.. code-block:: console
 
         you@laptop:~> cd ~/dev/rockstor-core; git push origin 1234_issue_title
 
@@ -480,11 +530,15 @@ Contributing and testing from another Rockstor contributor fork
 
 If you want to test and/or contribute starting from another user's fork, you can add his/her fork (or single branch).
 
-Adding another user's forked repo to your remotes: ::
+Adding another user's forked repo to your remotes:
+
+.. code-block:: console
 
         your@laptop:~/dev/rockstor-core> git remote add other_user_name git@github.com:other_user_name/rockstor-core.git
 
-Fetching another user's branch from the above added remote fork: ::
+Fetching another user's branch from the above added remote fork:
+
+.. code-block:: console
 
         your@laptop:~/dev/rockstor-core> git fetch other_user_name remote_branch_name
 

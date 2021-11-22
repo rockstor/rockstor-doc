@@ -23,42 +23,41 @@ these steps:
 Go to `rockstor-doc repo <https://github.com/rockstor/rockstor-doc>`_ and click
 on the **Fork** button. This will fork the repository into your profile which
 serves as your private Git remote called *origin*. The next few Git steps are
-demonstrated on a Linux terminal. They work the same on a Mac too. Your IDE may
-have ways to completely avoid the terminal, but using the terminal makes you
-look cool.
+demonstrated on a Linux terminal. They work the same on a Mac too.
 
-.. code-block:: bash
+.. code-block:: console
 
-        git clone git@github.com:your_github_username/rockstor-doc.git
+        you@laptop:~> mkdir ~/dev; cd ~/dev
+        you@laptop:~/dev> git clone git@github.com:your_github_username/rockstor-doc.git
 
 The above command creates a local **rockstor-doc** Git repo in a new directory
-by the same name (rockstor-doc). Change into it.
+by the same name (rockstor-doc) inside the new "~/dev" directory. Change into it.
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop ~/projects]# cd rockstor-doc
+         you@laptop:~/dev> cd rockstor-doc
 
 Configure this new Git repo with your name and email address. This is required
 to accurately record collaboration.
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git config user.name "Firstname Lastname"
-        [you@your_laptop rockstor-doc]# git config user.email your_email_address
+        you@laptop:~/dev/rockstor-doc> git config user.name "Firstname Lastname"
+        you@laptop:~/dev/rockstor-doc> git config user.email your_email_address
 
 Add a remote called upstream to periodically rebase your local repository with
 changes in the upstream made by other contributors.
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git remote add upstream https://github.com/rockstor/rockstor-doc.git
+        you@laptop:~/dev/rockstor-doc> git remote add upstream https://github.com/rockstor/rockstor-doc.git
 
 If desired, you can now verify these settings are correct by displaying the Git
 configuration for the local repository:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git config --list --local
+         you@laptop:~/dev/rockstor-doc> git config --list --local
 
 
 Installing Sphinx
@@ -84,9 +83,9 @@ it for :code:`make` to complete successfully.
 
 To install **sphinxext-rediraffe**, use this command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc]# sudo pip3 install --user sphinxext-rediraffe
+        you@laptop:~/dev/rockstor-doc> sudo pip3 install --user sphinxext-rediraffe
 
 
 .. _dockersphinx:
@@ -113,16 +112,16 @@ one.
 First, start with the latest documentation by rebasing your local repo's master
 branch with the upstream.
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git checkout master
-        [you@your_laptop rockstor-doc]# git pull --rebase upstream master
+        you@laptop:~/dev/rockstor-doc> git checkout master
+        you@laptop:~/dev/rockstor-doc> git pull --rebase upstream master
 
 Checkout a new/separate branch for your issue. For example:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git checkout -b issue#1234_brief_label
+        you@laptop:~/dev/rockstor-doc> git checkout -b issue#1234_brief_label
 
 You can then start making changes in this branch.
 
@@ -145,24 +144,24 @@ As you edit the content in *.rst* files, you can periodically generate HTML
 files and review them in your browser. To generate or update the HTML files,
 use the following command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc]# make html
+        you@laptop:~/dev/rockstor-doc> make html
 
 If you use our :ref:`docker image<dockersphinx>`, you can use the following
 command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main make html
+        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main make html
 
 HTML files are generated in the :code:`_build/html` directory. From a separate
 terminal window, you can have a simple Python webserver always serving up this
 content with the following command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc/_build/html]# python -m http.server 8000
+        you@laptop:~/dev/rockstor-doc> pushd ./_build/html; python3 -m http.server 8000; popd
 
 You can now go to :code:`http://localhost:8000` in your browser to review your
 changes. The webserver is to be started only once and it will continue to serve
@@ -184,9 +183,9 @@ Add and commit your changes
 
 First, let's add your changes:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git add new_file_added.rst existing_file.rst
+        you@laptop:~/dev/rockstor-doc> git add new_file_added.rst existing_file.rst
 
 
 Then, you can commit them. We strongly encourage you to commit changes in a
@@ -195,9 +194,9 @@ guidelines below pertain more to code contributions but feel free to be as
 perfect as you like. As a guiding principle, separate your changes into one or
 more logically independent commits.
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git commit new_file_added.rst existing_file.rst
+        you@laptop:~/dev/rockstor-doc> git commit new_file_added.rst existing_file.rst
 
 We request that you divide a commit message into three parts. Start the message
 with a single line summary, about 50-70 characters in length. Add a blank line
@@ -206,7 +205,7 @@ describe the change in more detail in plain text format where each line is no
 more than 80 characters. This description should be in present tense. Below is
 a fictional example:
 
-.. code-block:: bash
+.. code-block:: console
 
         foobar functionality documentation for rockstor
 
@@ -238,15 +237,15 @@ to your *master* branch and automatically write redirections for pages that
 were renamed or relocated.
 To do so, you simply need to run the :code:`rediraffewritediff` builder:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc]# sphinx-build -b rediraffewritediff . _build/rediraffe
+        you@laptop:~/dev/rockstor-doc> sphinx-build -b rediraffewritediff . _build/rediraffe
 
 If you use the Docker image, you must use the following command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop /path/to/rockstor-doc]# docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main sphinx-build -b rediraffewritediff . _build/rediraffe
+        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main sphinx-build -b rediraffewritediff . _build/rediraffe
 
 You should now see the needed redirects in :code:`redirects.txt`.
 
@@ -281,9 +280,9 @@ As you continue to work on an issue, commit and push your changes to the issue
 branch of your fork. You can periodically push your commits to Github with the
 following command:
 
-.. code-block:: bash
+.. code-block:: console
 
-        [you@your_laptop rockstor-doc]# git push origin your_branch_name
+        you@laptop:~/dev/rockstor-doc> git push origin your_branch_name
 
 
 
