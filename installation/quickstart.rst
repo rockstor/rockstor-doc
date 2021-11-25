@@ -18,7 +18,7 @@ Virtual Machine installs can work but are not recommended without full drive or 
 Hardware raid underneath btrfs, Rockstor's chosen filesystem, will weaken data integrity assurances.
 Raid controllers, if used, should thus be configured to HBA / JBOD operation.
 
-* x86_64 celeron/AMD equiv, or ARM64 A53 processor (2+ cores i3+ or A72+ recommended).
+* x86_64 celeron/AMD equivalent, or ARM64 A53 processor (2+ cores i3+ or A72+ recommended).
 * 2 GB RAM (4 GB+ recommended).
 * 16 GB drive dedicated to the Operating System (32 GB+ SSD recommended, 5 TB+ ignored by installer). See :ref:`usbwarning`.
 * One or more additional drives dedicated to data use (less than 1 GB ignored, 5 GB+ recommended).
