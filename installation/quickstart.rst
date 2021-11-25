@@ -13,27 +13,42 @@ install.
 Minimum system requirements
 ---------------------------
 
-Rockstor is a complete Linux distribution (iso) to be installed directly on
-hardware or as a VM with the following minimum system requirements and
-recommendations.
+Rockstor is a complete Linux distribution "Built on openSUSE" intended for direct hardware installation.
+Virtual Machine installs can work but are not recommended without full drive or preferably hole drive controller pass-through.
+Hardware raid underneath btrfs, Rockstor's chosen filesystem, will weaken data integrity assurances.
+Raid controllers, if used, should be configured to HBA / JBOD operation.
 
-* 64-bit Intel/AMD, or ARM64 processor (2+ cores recommended).
-* 2GB RAM (4GB+ recommended).
-* 16GB drive for Rockstor's system disk; if USB key use only fast variants
-  (32GB+ SSD recommended).
-* One or more additional drives for data use only (less than 1GB ignored, 5GB+
-  recommended).
+* x86_64 celeron/AMD equiv, or ARM64 A53 processor (2+ cores i3+ or A72+ recommended).
+* 2 GB RAM (4 GB+ recommended).
+* 16 GB drive dedicated to the Operating System (32 GB+ SSD recommended, 5 TB+ ignored by installer). See :ref:`usbwarning`.
+* One or more additional drives dedicated to data use (less than 1 GB ignored, 5 GB+ recommended).
 * Ethernet interface (with internet access for updates).
-* All drives must have unique serial numbers (real drives do); not all VM [*]_
-  systems default to this.
+* All drives must have unique serial numbers (real drives do); not all VM
+  systems default to, or are capable of this. See: :ref:`vmwarewarning`.
 * A UPS (recommended) that is supported by `NUT <https://networkupstools.org/>`_.
-* USB port and 1GB+ USB key for the x86_64 installation media; or a DVD drive.
-  Rasbperry Pi 4 / RPi 400 installs are via a self expanding system disk image,
+* USB port and 1 GB+ USB key for the x86_64 installation media; or a DVD drive.
+  Raspberry Pi 4 / RPi 400 / ARM64EFI .raw.zx installers are self expanding system disk images,
   and so do not require a separate install media.
 
+.. _usbwarning:
 
-.. [*] For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx
-   file.
+USB advisory
+^^^^^^^^^^^^
+
+.. warning::
+
+    Rockstor cannot work reliable when installed on regular USB keys.
+    Only fast variants, or preferably HDD and SSD class devices are appropriate.
+    If USB is used then 2.0 is bare minimum and 3.0 and better is recommended.
+
+.. _vmwarewarning:
+
+VMware advisory
+^^^^^^^^^^^^^^^
+
+.. warning::
+
+    For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx file.
 
 Download Rockstor
 -----------------
@@ -116,7 +131,7 @@ configuration for via "xz --threads=4 --memlimit-compress=80% Rockstor-...raw"
 to enable multi-threaded decompress.
 
 **The ARM64EFI generic images**, when downloaded, are available in both the
-raw.zx file format, like the Pi4 images, and in pre-sized (16GB) qcow2 formats.
+raw.zx file format, like the Pi4 images, and in pre-sized (16 GB) qcow2 formats.
 For the raw.zx downloaded files, the single line command is identical to the Pi4
 raw.zx example above, except for the filename (single line command):
 
