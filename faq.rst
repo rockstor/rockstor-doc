@@ -27,31 +27,39 @@ Installation of Rockstor is a very easy and short process. See
 What kind of hardware do I need to install Rockstor?
 ----------------------------------------------------
 
-Rockstor runs on 64-bit commodity hardware. You can install it on bare metal or
-a hypervisor. See :ref:`quickstartguide` for more information.
+Rockstor runs on 64-bit commodity hardware, both x86_64 and ARM64 (i.e. Pi4).
+You can install it on bare metal or a hypervisor. See :ref:`quickstartguide` for more information.
 
 Can I run Rockstor from a USB flash drive?
 ------------------------------------------
 
-Yes. Rockstor is optimized to do less writes if it detects the root
-drive to be USB flash drive or SSD. As expected, USB 2.0 can be pretty
-slow. So we recommend a USB 3.0 drive even if your motherboard doesn't support
-USB 3.0 as it'll still be faster.
+Yes.
+Rockstor is optimized to do less writes if it detects the system drive to be non-rotational.
+*Older USB 2.0 ports and devices are not recommended.*
+So **we recommend USB 3.0 devices** even if your motherboard doesn't support USB 3.0.
+Ideally use the combination of a new fast USB 3.0 device **in a USB 3.0 port**.
+See :ref:`minsysreqs` subsection :ref:`usbwarning` for more context and better options.
 
 Are there faster alternatives to running from USB?
 --------------------------------------------------
 
-Yes. If your motherboard has a spare PCI-Express slot you can get an SSD boot
-drive.
+Yes.
+SATA or pci-e attached devices are generally a far better option;
+with non-rotational media such as SSD via for example mSATA or m.2 preferred.
 
 How much does Rockstor cost?
 ----------------------------
 
-Little to nothing, depending on how you choose to receive software updates. You
-can download and install Rockstor from the ISO file free of cost. However, we
-release rolling updates. These updates are divided into a Stable channel and a
-Testing channel. Testing channel is free, but access to Stable channel requires
-a small subscription fee. See :ref:`update_channels` for more information.
+Little to nothing, depending on how you choose to receive Rockstor package updates.
+You can install Rockstor using our x86_64 and ARM64 installers free of cost.
+These installers include the last major stable version, or the latest stable Release Candidates.
+Depending on if the testing channel has been recently restarted or is in Release Candidate state.
+The Testing channel is free, but access to the Stable channel interim updates requires a small subscription fee.
+Stable channel interim updates are limited to small "hot fixes" to existing features only.
+
+See :ref:`update_channels` for more information.
+
+**N.B. There are no feature difference between the channels bar those in pre-stable status.**
 
 
 How can I share files using Rockstor?
@@ -70,13 +78,14 @@ Do you have any hardware recommendations?
 
 For home or small business use, we've seen Rockstor install flawlessly on
 HP, DELL and Supermicro servers and desktops. The developers of Rockstor
-have used HP Micro servers for personal use.
+have used HP Micro servers and Pi4's for personal use.
 
-Rockstor also installs smoothly on the latest generation of servers from
-vendors like HP and Supermicro.
+Rockstor also installs easily on the latest generation of servers from
+vendors like HP and Supermicro and more recently Traverse Technologies' Ten64 platform.
 
-For hobby and small home installs the Pi4 / RPi400 is also known to work:
-(Rockstor 4 only).
+For hobby and small home installs the Pi4 / RPi400 are also supported.
+
+See the `downloads page <https://rockstor.com/dls.html>`_ for both x86_64 and ARM64 installers.
 
 
 I have Rockstor installed. How do I get software updates?
@@ -86,18 +95,15 @@ Rockstor can be updated directly from the Web-UI when it indicates that an
 update is available. It's a simple, non-disruptive process and takes only a
 couple of mouse clicks. Note however that you must select an
 :ref:`Update Channel <update_channels>` before you will receive any 'rockstor'
-package updates. All upstream OS updates are enabled by default.
+package updates. All upstream OS updates are offered by default.
 
 
 How frequent are the software updates?
 --------------------------------------
 
-Rockstor development depends on the number of our contributors & Stable Channel
-subscribers. Testing channel releases are always more frequent.
-
-Once we are assured of all recent changes in the Testing Channel we release a
-Stable Channel update.
-
+Rockstor development depends on the number of contributors and Stable Channel subscribers.
+Testing channel releases are always more frequent.
+See the :ref:`Update Channel <update_channels>` documentation for more information.
 
 Why is Rockstor updated so frequently?
 --------------------------------------
@@ -130,9 +136,9 @@ rockstor>`_ (see also Overview) courtesy of openSUSE/SuSE/AMD. Otherwise we
 favour openSUSE's own \*-branding-upstream options.
 
 
-Our near legacy Rockstor 3.x is based on `CentOS 7 <https://www.centos.org/>`_.
-We re-brand CentOS, add Rockstor software in the form of additional rpms and
-change the installer to make it a bit more straightforward and specific.
+Our now legacy Rockstor 3.x was based on `CentOS 7 <https://www.centos.org/>`_.
+We re-branded CentOS, added Rockstor software in the form of additional rpms and
+changed the installer to make it a bit more straightforward and specific.
 
 
 .. _faq_rockstor4_repos:
