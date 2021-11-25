@@ -484,7 +484,7 @@ image(s); these therefore cannot be updated. These include the *PostgreSQL 9.5*,
 *PostgreSQL 10.6*, and *YouTrack official* Rock-ons.
 
 .. note::
-    Although some of the applications ran inside Rock-ons have an "Update"
+    Although some of the applications inside Rock-ons have an "Update"
     in their own user interface, it is generally not functional due to the
     nature of Docker containers. It is therefore always recommended to follow
     the procedure described above to update a Rock-on.
