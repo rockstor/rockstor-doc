@@ -37,7 +37,7 @@ USB advisory
 
 .. warning::
 
-    Rockstor cannot work reliable when installed on regular USB keys.
+    Rockstor cannot work reliably when installed on regular USB keys.
     Only fast variants, or preferably HDD and SSD class devices are appropriate.
     If USB is used then 2.0 is bare minimum and 3.0 and better is recommended.
 
