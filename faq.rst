@@ -146,18 +146,22 @@ changed the installer to make it a bit more straightforward and specific.
 What Repositories does Rockstor 4 use?
 --------------------------------------
 
+Optional Rockstor package :ref:`Update Channel <update_channels>` selection exclusively adds one of either:
+
+The :ref:`testing_channel` or :ref:`stable_channel` repositories.
+
 The following repositories are included and enabled in :ref:`installer_howto`:
 
 * `OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only)
 
 * `Update <https://en.opensuse.org/Package_repositories#Update>`_ (security and bugfix updates for OSS packages)
 
-Aliased as per the installer profile: e.g. "Leap_15_2" & "Leap_15_2_Updates".
+Aliased as per the installer profile: e.g. "Leap_15_3" & "Leap_15_3_Updates" respectively.
 
-**Leap 15.2 profiles** have the following additional repos:-
+**Leap 15.2 profiles** have the following additional repositories:-
 
 * `shells <https://build.opensuse.org/project/show/shells>`_
-  An OBS repo for shellinabox - used by our Web-UI shell.
+  An OBS repo for shellinabox - used by our Web-UI shell function.
 
 * `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
   Rockstor's OBS repo for branding packages.
@@ -168,13 +172,28 @@ We are required to de/re-brand packages that have no
 
 
 **Leap 15.3 profiles** and newer - shells is replaced with Rockstor's OBS
-home_rockstor; there was no Leap 15.3 ARM64 shellinabox package:-
+home_rockstor; there was no Leap 15.3 ARM64 shellinabox package available otherwise:-
 
 * `home_rockstor <https://build.opensuse.org/project/show/home:rockstor>`_
   Multi-arch Shellinabox with no changes from upstream:
 
 * `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
   As for Leap 15.2 Profiles.
+
+The following are new in upstream openSUSE Leap 15.3: see
+`Upstream release notes <https://doc.opensuse.org/release-notes/x86_64/openSUSE/Leap/15.3/#installation-new-update-repos>`_
+They are included but no persisted by our installer build process.
+However they are identical to those added by a regular openSUSE Leap 15.3 update.
+And so are also auto included in the resulting install.
+
+* `repo-backports-update <http://download.opensuse.org/update/leap/15.3/backports/>`_
+  Update repository of openSUSE Backports
+
+* `repo-sle-update <http://download.opensuse.org/update/leap/15.3/sle/>`_
+  Update repository with updates from SUSE Linux Enterprise 15
+
+Debug-info counterparts "repo-backports-debug-update" & "repo-sle-debug-update" are also added but are not enabled.
+These are not used during the installer build.
 
 What Filesystems are supported by Rockstor?
 -------------------------------------------
