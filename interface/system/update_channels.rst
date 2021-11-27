@@ -138,15 +138,34 @@ qualify for up to 10 personal use activation codes.
 Auto Updates
 ------------
 
-When enabled, **auto update** checks for all system updates and installs them
-automatically on a daily basis. This is the **recommended** setting when on the
-:ref:`stable_channel` only. If you are on the :ref:`testing_channel` it is not
-recommended to enable auto updates but instead to evaluate all updates prior to
-applying them; this advice is down to the more unstable nature of
-the testing channel and its inevitably greater chance of breakage or bugs.
+Rockstor's current Web-UI does not include auto updates configuration.
+Although such a facility is planned by way of a YaST2 wrapper.
+Pull requests, as always, are welcome; see: :ref:`contributetorockstor`.
 
-..  image:: /images/interface/system/update-channels//enable_auto_updates.png
+In the interim the well proven YaST2 can be used directly.
+See `Automatic online update <https://doc.opensuse.org/documentation/leap/startup/html/book-startup/cha-onlineupdate-you.html#sec-onlineupdate-you-automatically>`_.
+A minimum (60 MB) console only YaST2 can be installed via:
+
+.. code-block:: console
+
+    zypper install --no-recommends yast2-online-update-configuration
+
+and the resulting online update module invoked there-after via:
+
+.. code-block:: console
+
+    yast2 online_update_configuration
+
+..  image:: /images/interface/system/update-channels/enable_auto_updates.png
     :width: 100%
     :align: center
 
-**N.B. Auto updates are only recommended when on the stable updates channel**
+The above shows the default settings once **Automatic Online Update** is selected (**Alt+m**).
+Use the onscreen instructions to make any required changes.
+
+When enabled, all qualifying updates are auto installed at the chosen interval.
+This is only **recommended** when on the :ref:`stable_channel`.
+The :ref:`testing_channel`, due to it's developmental nature, is likely to break.
+
+**N.B. Rockstor is not necessarily compatible with other YaST modules.**
+Although again pull requests are welcome in this regard.
