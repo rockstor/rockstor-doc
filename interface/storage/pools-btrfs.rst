@@ -107,6 +107,7 @@ out more about each option from the `btrfs wiki mount options section
 * **clear_cache**
 * **commit**
 * **compress-force**
+* **degraded**
 * **discard**
 * **fatal_errors**
 * **inode_cache**
@@ -117,9 +118,12 @@ out more about each option from the `btrfs wiki mount options section
 * **nodatacow**
 * **nodatasum**
 * **nospace_cache**
+* **nossd**
+* **ro**
+* **rw**
+* **skip_balance**
 * **space_cache**
 * **ssd**
-* **nossd**
 * **ssd_spread**
 * **thread_pool**
 
