@@ -50,8 +50,8 @@ release cycle affords fast development and widespread field testing of what
 ultimately becomes the :ref:`stable_channel` at curated points.
 
 However, it must be understood that appliance development is a complicated
-business and it is inevitable that along the way fixing one thing will break
-another. All reasonable efforts will be made to avoid obvious breakage. But
+business and it is inevitable that along the way, fixing one thing will break
+another. All reasonable efforts are made to avoid obvious breakage. But
 ultimately this testing channel is intended to find problems by way of
 tester/developer reports and collaboration and will involve partially
 implemented features of an experiment nature. The intention is to provide a
@@ -62,12 +62,6 @@ Participation in the testing channel along with considered bug, code, or
 documentation contributions is the heart of Rockstor development and along
 with patience and understanding can only benefit all those involved.
 Please see :ref:`additional benefits <free_stable>`.
-
-*N.B. due to recent resource shortages we have had to temporarily suspend the
-testing channel in favour of serving our Stable channel subscribers. But all
-efforts are under way to re-establish this valuable and previously popular
-development facility. Our pending and long planned move to openSUSE is
-intended to mark the re-birth of this developer favoured channel.*
 
 **No charge**
 
