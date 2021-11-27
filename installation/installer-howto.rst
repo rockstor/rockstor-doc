@@ -253,6 +253,7 @@ Enjoy your Rockstor DIY NAS 'Built on openSUSE'
 
 All upstream (openSUSE) updates, at time of installer creation, are
 pre-applied and their respective repositories enabled by default.
+See our FAQ entry: :ref:`faq_rockstor4_repos`
 
 **NOTE: No Rockstor package update repository is configured until an
 Update Channel is selected.**
