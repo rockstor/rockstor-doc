@@ -328,7 +328,7 @@ In (1.) above a db wipe is initiated helping to test the self-start code capabil
 See the initrock script and it's systemd trigger service: rockstor-init.
 
 We also have **automated tests** in place that cover our API's and core critical path functionality.
-It is expected that any changes to critical path code e.g. fs management / updates / Web-UI / services;
+It is expected that any changes to critical path code e.g. fs management / updates / Web-UI / services,
 include counterpart contributions to prove the expected function, if required.
 This is an oft neglected element in software development;
 but we are attempting to better our own standing in this regard.
