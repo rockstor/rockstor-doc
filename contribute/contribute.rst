@@ -257,6 +257,7 @@ We now have all the tools and code in place on the buildvm machine ready to:
 
 1. configure
 2. build
+3. test
 
 .. _code_config:
 
@@ -272,6 +273,7 @@ We now have all the tools and code in place on the buildvm machine ready to:
 
 2. Code build
 ~~~~~~~~~~~~~
+
 This step can take a few minutes, depending on cpu and internet speed.
 An internet connection is required as the process downloads all required Python eggs/wheels etc.
 We are running the bin/buildout script generated/updated in :ref:`code_config` step above.
@@ -307,6 +309,11 @@ The rockstor-hdparm.service is our way to re-establish custom config on boot-up.
 The Rockstor Web-UI references this file itself for the current settings.
 There is no db component to this configuration setting.
 
+.. _code_test:
+
+3. Code test
+~~~~~~~~~~~~
+
 At this point the Rockstor Web-UI should be available to verify your changes.
 In our example setup the URL from **laptop** would be :code:`https://buildvm/`.
 
@@ -319,6 +326,23 @@ Be sure to check that the resulting build behaves as expected over:
 
 In (1.) above a db wipe is initiated helping to test the self-start code capability.
 See the initrock script and it's systemd trigger service: rockstor-init.
+
+We also have **automated tests** in place that cover our API's and core critical path functionality.
+It is expected that any changes to critical path code e.g. fs management / updates / Web-UI / services,
+include counterpart contributions to prove the expected function, if required.
+This is an oft neglected element in software development;
+but we are attempting to better our own standing in this regard.
+
+The following will run all tests following the source installation detailed above:
+
+.. code-block:: console
+
+    buildvm:~ # cd /opt/rockstor-dev/
+    buildvm:/opt/rockstor-dev # ./bin/test -v 2
+
+All included tests, **numbering over 200**, are expected to pass;
+however it is always worth checking our `current issues <https://github.com/rockstor/rockstor-core/issues>`_
+for known failures in this area.
 
 A note on updating
 ``````````````````
