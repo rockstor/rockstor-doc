@@ -333,7 +333,7 @@ include counterpart contributions to prove the expected function, if required.
 This is an oft neglected element in software development;
 but we are attempting to better our own standing in this regard.
 
-The following will run all tests post the above detailed source install:
+The following will run all tests following the source installation detailed above:
 
 .. code-block:: console
 
