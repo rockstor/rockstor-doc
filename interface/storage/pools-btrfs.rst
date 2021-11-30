@@ -129,56 +129,159 @@ out more about each option from the `btrfs wiki mount options section
 
 .. _poolresize:
 
-Pool resizing
--------------
+Pool Resize/ReRaid
+------------------
 
-A really cool feature in Pool management (powered by BTRFS) is the ability to
-add or remove disks and change redundancy profile online without access
-disruption. You can resize a Pool easily from the Web-UI for one of the
-following reasons
+A convenience feature of btrfs Pool management is the ability to add or remove disks,
+and change redundancy profiles, while still using the Pool.
+The persistence of a pool's accessibility is otherwise known as it's 'online' state.
+And so these changes are referenced as it's online capabilities.
 
-1. To change its redundancy profile. For example, to go from a RAID10 to
-   RAID1. See :ref:`poolraidchange`.
+A performance reduction is expected during any changes of this sort,
+but depending on your hardware overhead, this can be unnoticeable.
 
-2. To add more disks and increase its capacity. See :ref:`pooladddisks`.
+**Note that increases in; disk count, percent usage, snapshots count, and Pool size can all impact on the memory and CPU required,
+and the time for any changes to be enacted.**
 
-3. To remove disks and decrease capacity. Removed disks can be reused for other
-   Pools. See :ref:`poolremovedisks`.
+Pool Resize / ReRaid may be done for the following reasons.
 
-Pool resize is an online operation that does not cause access
-disruption. However, depending on size of the Pool, it could take a long time
-to finish.
+1. Change redundancy profiles. E.g. from btrfs RAID10 to btrfs RAID1. See :ref:`poolraidchange`.
+2. Add disks and increase capacity. See :ref:`pooladddisks`.
+3. Remove disks and decrease capacity. See :ref:`poolremovedisks`.
+
+The following is the **first page of the Resize/ReRaid wizard**:
+
+.. image:: /images/interface/storage/pool-resize-reraid-wizard-1.png
+   :width: 100%
+   :align: center
 
 .. _poolraidchange:
 
 Redundancy profile changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can change :ref:`redundancyprofiles` online with very few restrictions.
+You can change :ref:`redundancyprofiles` online with only a few restrictions.
+
+1. The resulting pool must have sufficient space for the existing data.
+2. The target drive count will be sufficient for the target btrfs raid profile.
+3. Rockstor can simultaneously changing raid levels while :ref:`pooladddisks`, but NOT while :ref:`poolremovedisks`.
+
+Because of (3.) above, when removing for example a drive from a pool which is already at the minimum drive count,
+attached or detached, we have to first change the raid level of that pool.
+
+This situation is most common in non industrial DIY setups where a pool will often have the minimum number of disks.
+A better solution is to instead add a disk, then remove the problem/detached/missing on.
+But this is not always an option and our example serves us there to show both raid level change and detached disk removal.
+
+In the following example we have a btrfs raid 1 Pool (minimum 2 disks) that has a detached/missing member.
+We have already refreshed our backups via the suggested ro,degraded mount;
+from the Pool details maintenance section that appeared.
+And have since then switched to a rw,degraded mount to allows for the Pool changes.
+
+A degraded mount option is required when there is a detached/missing disk.
+Otherwise any mount operation is refused.
+And a Pool may well go read only on it's own, by design, shortly after loosing access to one of it's members.
+
+Following on from the above first page of the Resize/ReRaid wizard, if we selected **Remove disks**.
+
+We would receive the following error:
+
+.. image:: /images/interface/storage/pool-resize-reraid-below-min-disk-count.png
+   :width: 100%
+   :align: center
+
+So we must first change this Pool's btrfs raid level to one that can sustain our examples target single disk count.
+This leaves only btrfs raid single.
+Note that we would not need this additional risky step if we were not running our raid 1 with it's minimum disk count.
+Then if/when the first disk died/became unusable,
+we could simply select the Remove disk wizard option and still be within the 2 disk minimum for our raid level.
+Extra steps are considered risky as it stresses the remaining disks when on of their kin has recently died.
+Often drives are of a similar age and wear level so this may not bode well for the remaining pool members.
+
+So we must, in this example case, select **Modify RAID level only**.
+And then select "Single" from the dropdown.
+
+.. image:: /images/interface/storage/pool-resize-reraid-single.png
+   :width: 100%
+   :align: center
+
+We are then presented with the proposed actions to be taken:
+
+.. image:: /images/interface/storage/pool-resize-reraid-single-summary.png
+   :width: 100%
+   :align: center
+
+
+And if all looks to be as intended, and we **Resize** (which also means ReRaid),
+We are presented with the wizard complete dialog:
+
+.. image:: /images/interface/storage/pool-resize-reraid-wizard-complete.png
+   :width: 100%
+   :align: center
+
+Which warns of the expected potential performance hit during the operation,
+and that the operation, depending on many factors, can last many hours to complete.
+
+Once this re-raid operation is complete,
+indicated by the new **Raid configuration:** entry in the pool details page,
+we can :ref:`remove our detached disk <poolremovedisks>`.
+As we are now no longer restricted by our prior raid level and it's associated 2 disk count minimum.
+Again this raid level change would not have been required if we had not run our Pool at it's minim disk count for it's raid level.
 
 .. _pooladddisks:
 
 Adding Disks
 ^^^^^^^^^^^^
 
-Disks can be added to a Pool online and expand capacity.
+Disks of any size can be added, online, to an existing Pool.
+The same Resize/ReRaid operation can also change the current btrfs raid level.
+Combining both operations can result in a reduction of available storage, but this is usually the exception.
 
 .. _poolremovedisks:
 
 Removing Disks
 ^^^^^^^^^^^^^^
 
-Disks can be removed from a Pool online similar to adding Disks. However, since
-it results in reduced capacity, this operation can succeed only if the
-resulting capacity after removal is greater than the current usage.
+Disks can be removed from a Pool, online, similar to adding Disks.
+But unlike when adding disks, Rockstor cannot change raid levels in the same Resize/ReRaid operation.
+Given the above removing a disk always results in a reduced Pool capacity.
+As such this operation can succeed only if the resulting capacity is greater than the current usage.
+And if the resulting member count is not taken below the minimum for the btrfs raid level and mount options.
 
+In the following we have a btrfs single raid level pool with a detached disk we wish to remove.
+This is a convenient follow-on from the example used in the earlier :ref:`poolraidchange`.
+
+From the **first page of the Resize/ReRaid wizard** indicated in the earlier :ref:`poolresize` section,
+we select (this second go around) the **Remove disks** option.
+This gives the following disk member selection dialog; in this example we have selected our detached member:
+
+.. image:: /images/interface/storage/pool-resize-reraid-wizard-remove-selection.png
+   :width: 100%
+   :align: center
+
+And it's consequent summary page:
+
+.. image:: /images/interface/storage/pool-resize-reraid-wizard-remove-summary.png
+   :width: 100%
+   :align: center
+
+And finally after committing via the Resize button,
+we have the same Resize ReRaid wizard complete dialog shown at the end of the earlier :ref:`poolraidchange` example.
+
+Our example degraded pool, post disk removal, has now been returned to a non degraded state.
+And consequently the Web-UI header warning about this 'emergency' state is no longer displayed.
+But note that a page refresh in the Pool Details page is required as unlike the leader it does not yet auto refresh.
+
+**Be very sure, after having used a degraded mount option,
+that it is removed from the custom mount options after a Pool has been returned to a non degraded state.**
+*A reboot may be necessary to effectively remove this option from actively applying.*
+
+.. _pooldelete:
 
 Pool deletion
 -------------
 
-A *Pool* can be deleted as long as it is empty, i.e., there are no *Shares*
-remaining in it. So, if you need to delete a Pool, first delete every Share in
-it. Then, click on the corresponding **trash** icon for it in the *Pools*
+A *Pool* can be deleted by click on the corresponding **trash** icon for it in the *Pools*
 screen under the *Storage* tab of the Web-UI.
 
 
@@ -188,6 +291,10 @@ screen under the *Storage* tab of the Web-UI.
 
 A Pool can also be deleted using the **Delete** button inside it's detail
 screen.
+
+.. warning::
+
+    **ALL ASSOCIATED DATA AND SHARES (BTRFS SUBVOLUMES) WILL BE DESTROYED.**
 
 .. _poolscrub:
 

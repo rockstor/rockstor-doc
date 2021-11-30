@@ -382,31 +382,74 @@ system) and marks it as such by changing it's name to:
 
     **detached-<long-random-string>**
 
-Also drive entries in this state gain a **bin/trash icon** next to their
-'detached' name. This icon has the following tooltip text:
+The serial numbers of such devices, Rockstor's canonical disk reference, are maintained.
+This is critical to identifying the problematic device without ambiguity.
 
+..  _detacheddisks_pool_associated:
+
+Pool Associated
+^^^^^^^^^^^^^^^
+
+Detached/missing disks generate Pool level warnings i.e **Pool Degraded Alert** in the Web-UI header,
+and **(SOME MISSING)** references within the affected pools overview and details page disk sections.
+An affected Pool's details page will also show a **Maintenance required** advice section regarding recovery in this situation:
+
+1. adding the *ro,degraded* mount options to allow the refreshing of backups - assuming a redundant profile was used.
+2. switching to *rw,degraded* to allow for the removal of this detached/missing disks Pool association.
+
+While simultaneously displaying the current mount/repair options/status (page refresh often advised).
+Also note that in some cases,
+i.e. after importing a poorly pool via a degraded option where Rockstor has never seen the missing disk,
+the following link text is shown *"Delete a missing disk if pool has no detached members."*.
+This serves the exact same purpose as removing a known disk but will remove the first 'missing' member.
+The link server as a work-around for the situation where Rockstor has no knowledge of the disk specifics.
+In all other cases it is more intuitive to remove a named/known detached member.
+
+In the following we see the normal map-pin/info icon associated with Rockstor managed pool members,
+and the additional detached exclamation mark indicator.
+
+The following details the respective mouse-over tooltip text for the detached disk's icons.
+
+- **detached map-pin/info icon tooltip** *"Drive is a detached member of a Rockstor managed Pool"*
+- **detached exclamation mark link icon tooltip** *"Use linked Pool page Resize / ReRaid 'remove disks' option if no reattachment is planned."*
+
+.. image:: /images/interface/storage/disk_detached_exclamation.png
+   :width: 100%
+   :align: center
+
+The **exclamation mark** links to the :ref:`poolresize` section within the Web_UI.
+From there it's pool association/membership can be removed via the 'remove disks' option.
+Although in some situation a re-raid (raid level change) may be required before a disk can be removed.
+This is primarily required where removing a disk, detached or otherwise,
+would reduce the member count below the minimum for the current btrfs raid level.
+
+If you wish to remove a disk from a pool,
+or change the pools raid level, then please see :ref:`poolresize` in the :ref:`pools` section.
+
+..  _detacheddisks_non_pool_associated:
+
+Non Pool Associated
+^^^^^^^^^^^^^^^^^^^
+
+Detached drives with no Rockstor managed Pool association gain a **bin/trash icon** next to their 'detached' name.
+This icon has the following tooltip text:
+
+- **detached bin/trash icon tooltip** *"Disk is unusable because it is detached.
+  Click to delete it from the system if it is not to be reattached."*
 
 .. image:: /images/interface/storage/disk_detached.png
    :width: 100%
    :align: center
 
-**detached bin/trash icon tooltip** *"Disk is unusable because it is detached.
-Click to delete it from the system if it is not to be reattached."*
-
 Clicking on the trash icon brings up a confirmation dialog. Upon confirmation,
 the disk will be removed:
 
-.. image:: /images/interface/storage/disk_delete_confirmation.png
+.. image:: /images/interface/storage/disk_trash_confirmation.png
    :width: 100%
    :align: center
 
-It is important to note that this operation should only be carried out if the
-drive in question is not to be re-attached. Also not that this is not a
-'remove from pool' operation but simply a 'remove from database' as there is
-not currently any btrfs pool functionality to this action so take care not to
-remove a detached drive that is part of a multi-device pool. It may be
-that the pool is not mounted as a result of this missing drive and simply
-re-attaching it (with the system off) is the way to go (ie failed connection).
+**It is important to note that removing a detached disk, pool associated or not,
+should only be carried out if the disk in question is not to be re-attached.**
+*Otherwise all associated data and settings for this drive will be lost*
 
-If you wish to remove a disk from a pool then please see :ref:`poolresize`
-in the :ref:`pools` section.
+
