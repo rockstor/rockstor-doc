@@ -128,6 +128,35 @@ This process can take from a few seconds to a minute or so, depending on pool si
 **Note: Rockstor requires/uses btrfs labels.
 Imported pools are named after their respective labels.**
 
+..  _btrfsunwellimport:
+
+Import unwell Pool
+^^^^^^^^^^^^^^^^^^
+
+If a pool is unwell or degraded (missing members) before import,
+or otherwise requires a custom mount option then a special import procedure is required.
+Rockstor can only specify custom mount options after import, not before.
+The following is a work-around for this current limitation.
+
+A Rockstor pool import first checks to see if a pool is mounted.
+If not then it will attempt a mount with the btrfs default options.
+So if we mount the pool by-hand, via the command line, at the usual Rockstor mount point,
+we can dictate our own custom mount options.
+
+In the following we have a pool that refuses to mount rw,
+and has a pending balance that is aggravating our data recovery situation.
+
+.. code-block:: console
+
+    mkdir /mnt2/<pool-label-here>
+    mount -o ro,skip_balance /dev/disk/by-id/<a-pool-member-disk-name> /mnt2/<pool-label-here>
+
+Use :code:`btrfs fi label /dev/disk/by-id/<a-pool-member-disk-name>` to get the pool label.
+
+A regular Web-UI pool import via the given pool member will now skip the default mount step.
+After the import the Web-UI can then be used to enact the same options on subsequent mounts, if required.
+And facilitate refreshing backups, remounting rw, / :ref:`poolresize` / :ref:`poolscrub` etc.
+
 ..  _btrfspartition:
 
 Import BTRFS in partition
