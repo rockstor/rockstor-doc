@@ -40,11 +40,25 @@ The Rock-ons root
 All Rock-ons require the **Rock-on service** to be enabled and prior to
 enabling this service it must be configured. This is a simple matter of
 configuring a sufficiently large share for the rock-ons to be installed into.
-It is possible to use the existing 'out of the box' home share but this is not
-recommended.
 
-The following shows a **Recommended Minimum 5 GB rock-ons-root** share backed
-by a previously created pool named **rock-pool**.
+We recommend creating a *dedicated* share to be used as the rock-ons root.
+While any share can be chosen as the rock-ons root, we **strongly** recommend
+to create a share to be used *only* as the rock-ons root to prevent any
+conflict that may arise with a mixed-used share. The rock-ons root share is
+indeed used by Docker to store permanent data such as images and container
+layers. As a result, any conflict or alteration of these data that might result
+from a mixed used share has the potential to break the installed Rock-ons.
+Note also that the rock-ons root share can be part of any :ref:`pool<pools>`
+and does not require the creation of a dedicated pool.
+
+.. note::
+    While it is possible to use the existing 'out of the box' home share but
+    this is **not recommended** for the reason described above. Similarly,
+    while it is possible to create the rock-ons root share on the system pool,
+    this is **not recommended** either.
+
+As an example, the following shows a **Recommended Minimum 5 GB rock-ons-root**
+share backed by a previously created pool named **rock-pool**.
 
 .. image:: /images/interface/docker-based-rock-ons/rockons_root_share.png
    :width: 100%
