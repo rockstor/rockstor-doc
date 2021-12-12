@@ -45,7 +45,7 @@ We recommend creating a *dedicated* share to be used as the rock-ons root.
 While any share can be chosen as the rock-ons root, we **strongly** recommend
 to create a share to be used *only* as the rock-ons root to prevent any
 conflict that may arise with a mixed-used share. The rock-ons root share is
-indeed used by Docker to store permanent data such as images and container
+used by Docker to store permanent data such as images and container
 layers. As a result, any conflict or alteration of these data that might result
 from a mixed used share has the potential to break the installed Rock-ons.
 Note also that the rock-ons root share can be part of any :ref:`pool<pools>`
