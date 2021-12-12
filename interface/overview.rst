@@ -52,7 +52,7 @@ Note also that the rock-ons root share can be part of any :ref:`pool<pools>`
 and does not require the creation of a dedicated pool.
 
 .. note::
-    While it is possible to use the existing 'out of the box' home share but
+    While it is possible to use the existing 'out of the box' home share
     this is **not recommended** for the reason described above. Similarly,
     while it is possible to create the rock-ons root share on the system pool,
     this is **not recommended** either.
