@@ -5,6 +5,7 @@ How-tos & Guides
 .. toctree::
    :maxdepth: 2
 
+   howtos/stable_kernel_backport
    howtos/reinstall
    howtos/disk_power_down
    howtos/clients

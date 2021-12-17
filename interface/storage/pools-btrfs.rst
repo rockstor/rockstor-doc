@@ -63,15 +63,20 @@ All standard BTRFS redundancy profiles are available when creating a pool.
   for production use***.
 
 * **Raid10**: This is a Raid0 of Raid1 mirrors, with a minimum requirement of
-  four disk drives. It offers most redundancy at the cost of capacity where a
-  Pool can sustain multiple disk failures at the same time as long as the
-  failed disks are part of different Raid1 groups.
+  four disk drives. It offers the best overall performance with redundancy.
+  Note however that there is still, practically, a single disk failure limit.
 
 Please see the `btrfs wiki <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_
 for up to date information on all btrfs matters.
 
 For a BTRFS features stability status overview, including redundancy profiles,
 vist the  `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_.
+
+.. warning::
+
+    As of Rocksor v4 "Built on openSUSE" Leap 15.3 base, the far younger parity raid levels of 5 & 6 are read-only by default.
+    Write access can be enabled by :ref:`stable_kernel_backport`: **advanced users only**.
+    See also our :ref:`raid1c3_raid1c4` doc section on the same page.
 
 Compression Options
 ^^^^^^^^^^^^^^^^^^^
@@ -316,6 +321,7 @@ A periodic scrub is a proactive strategy to fix errors before too many
 accumulate. You can schedule it using the **Scheduled Tasks** screen under
 **System** tab of the Web-UI.
 
+.. _poolbalance:
 
 Balance a pool
 --------------
