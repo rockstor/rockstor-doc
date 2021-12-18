@@ -4,70 +4,25 @@ Accessing Shares from Clients
 =============================
 
 Data is stored and organized for use in Shares which are exported to clients
-via various protocols ie :ref:`samba`, :ref:`nfs`, and :ref:`sftp`.
-Before storing any data at least one :ref:`Share <shares>` must be
-created. See :ref:`createshare` for a detailed description.
+via various protocols: :ref:`samba_export`, :ref:`nfs`, and :ref:`sftp`.
+Before storing any data, at least one :ref:`Share <shares>` must be
+created. See :ref:`createshare` for detailed instructions.
 
-Accessing Shares via Samba/CIFS
--------------------------------
+The choice of sharing protocol depends on a variety of factors. The most
+important one is the nature of the client(s) that will be used to access the
+share. For instance, while **Samba** exports can be accessed by Linux, Windows,
+and macOS clients alike, **NFS** exports cannot be easily accessed from Windows
+clients. In addition, each protocol varies in its performance and ease of
+access. As a result, the decision of using a protocol over another for a given
+share ultimately depends on your exact needs. We can however make the general
+recommendations below:
 
-Samba/CIFS is the standard way to store and access data in Shares from Windows,
-Mac, and Linux clients such as desktops and laptops. In order to access a
-Share, it must first be made available. See :ref:`sharesamba` for details.
-Once a Share is configured for Samba/CIFS availability, data can be stored
-and accessed from various clients as described below.
+- If your share needs to be accessed by at least one Windows clients, use
+  **Samba**. See our :ref:`samba_export` section for details.
+- If your share needs to be accessed by Linux clients *only*, use **NFS**.
+  See our :ref:`nfs` section for details.
 
-Unix/Linux
-^^^^^^^^^^
+.. note::
 
-On a Unix/Linux client, the Rockstor server will appear in the File explorer
-application as an entry of the form **Rockstor@<ip-address>** under **Browse
-Network**. Clicking on the server will display the available exported shares
-that have Browseable true.
-
-If the Rockstor server does not appear in the File explorer, a connection can
-be made by selecting 'Connect to Server'.
-
-.. image:: /images/howtos/clients/smb_linux_network.png
-   :width: 100%
-   :align: center
-
-Connecting to a Share can be done by clicking on it, and authenticating as a
-specific user who has permissions to access the Share, or as a guest user.
-
-.. image:: /images/howtos/clients/smb_linux_share.png
-   :width: 100%
-   :align: center
-
-Windows
-^^^^^^^
-
-Coming soon...
-
-Mac OS
-^^^^^^
-
-On a Mac OS, the Rockstor server will appear in the Finder sidebar, as an entry
-of the form **Rockstor@<ip-address>**. Connecting to the server can be done by
-clicking on the entry, and authenticating as a specific user who has
-permissions to access the Share, (or as a guest user, if the Share has Guest OK
-set to true) as shown below.
-
-.. image:: /images/howtos/clients/smb_mac_auth.png
-   :width: 100%
-   :align: center
-
-If the Share has browseable set to true, it will appear as a folder in the
-**Finder** after successfully connecting to the server.
-
-.. image:: /images/howtos/clients/smb_mac_share.png
-   :scale: 65%
-   :align: center
-
-On the OSX command line, the available exported Shares will appear as folders
-under /Volumes.
-
-Accessing NFS shares
----------------------
-
-   Coming soon...
+   Still unsure of what file sharing protocol to use? Don't hesitate to come
+   ask for feedback on our `friendly forum! <https://forum.rockstor.com>`_

@@ -73,9 +73,9 @@ listed.
 || Sharing via :ref:`NFS<nfs>`                     || prod    || Network File-System cross                                 |
 ||                                                 ||         || platform enterprise file access                           |
 +--------------------------------------------------+----------+------------------------------------------------------------+
-| Sharing via :ref:`Samba<samba>`                  | prod     | Also known as CIFS / Samba                                 |
+| Sharing via :ref:`Samba<samba_export>`           | prod     | Also known as CIFS / Samba                                 |
 +--------------------------------------------------+----------+------------------------------------------------------------+
-| Apple Time Machine Backups                       | beta     | :ref:`Samba<samba>` options in Rockstor v4                 |
+| Apple Time Machine Backups                       | beta     | :ref:`Samba<samba_export>` options in Rockstor v4          |
 +--------------------------------------------------+----------+------------------------------------------------------------+
 | :ref:`sftp`                                      | prod     | Secure File Transport Protocol                             |
 +--------------------------------------------------+----------+------------------------------------------------------------+

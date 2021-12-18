@@ -8,7 +8,7 @@ and insecure File Transfer Protocol (FTP), only updated to be more secure. The
 internal system used by Rockstor is that included as a subsystem within the
 openssh server.
 
-Unlike other file sharing systems like :ref:`samba`, SFTP has
+Unlike other file sharing systems like :ref:`samba_export`, SFTP has
 no built in discovery or service publishing components. This makes it a
 simpler system but one that requires a little more effort to connect with.
 Most notably is it required that you manually enter the Rockstor's hostname

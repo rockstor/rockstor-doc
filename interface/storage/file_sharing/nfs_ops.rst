@@ -64,3 +64,8 @@ enter *NFS* view. In the displayed table of NFS exports, click on the
 .. image:: /images/interface/storage/file_sharing/nfs_ops/delete_nfs_export.png
    :width: 100%
    :align: center
+
+Accessing NFS shares
+---------------------
+
+   Coming soon...

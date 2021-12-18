@@ -338,7 +338,7 @@ Simply Export the plex-data share by your chosen means in order to be able to
 upload directly into your Plex Media Server over your local lan from any
 machine. The :ref:`shares` section contains links to methods by which this can
 be accomplished. The most common and compatible of these being via the
-:ref:`samba` protocol.
+:ref:`samba_export` protocol.
 
 You can now configure and populate your Plex Media Server Rock-on;
 :ref:`plex_doc`
