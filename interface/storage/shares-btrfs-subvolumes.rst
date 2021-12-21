@@ -80,3 +80,31 @@ In Rockstor, both Shares and Snapshots can be cloned to create new Shares.
 To clone a Share, got to it's detail screen and click on the **Clone** button.
 
 To clone a Snapshot, see :ref:`clonesnapshot`.
+
+
+.. _accesscontrol:
+
+Access control
+--------------
+
+Rockstor allows you to easily set user/group permissions on a per-share basis.
+To do so, from the *Shares* page listing all your currently existing shares,
+simply click on the share you want to edit to see its *details* page, and then
+click on the **Access control** tab:
+
+.. image:: /images/interface/storage/shares_details_page.png
+   :width: 100%
+   :align: center
+
+
+In this tab, you can see the current settings for the given share:
+
+.. image:: /images/interface/storage/shares_access_control.png
+   :width: 100%
+   :align: center
+
+
+As we can see above, this lists the current **owner** and **group**, as well as
+permissions for the given share. To change any of these settings, click on the
+**Edit** button to make your changes, and then click **Save**. Your changes
+will be effective immediately.
