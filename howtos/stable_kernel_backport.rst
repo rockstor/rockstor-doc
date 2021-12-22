@@ -71,7 +71,7 @@ Keeping both in sync is important, especially in the context of Rockstor's NAS f
 .. code-block:: console
 
     zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/Kernel:/stable:/Backport/standard/ Kernel_stable_Backport
-    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/filesystems/openSUSE_Leap_15.3/ filesystems
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/filesystems/15.3/ filesystems
     zypper --non-interactive --gpg-auto-import-keys refresh
 
 .. _kernel_stable_repo:
