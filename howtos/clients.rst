@@ -19,7 +19,7 @@ recommendations below:
 
 - If your share needs to be accessed by at least one Windows clients, use
   **Samba**. See our :ref:`samba_export` section for details.
-- If your share needs to be accessed by Linux clients *only*, use **NFS**.
+- If your share needs to be accessed by Linux clients *only*, consider also **NFS**.
   See our :ref:`nfs` section for details.
 
 .. note::
