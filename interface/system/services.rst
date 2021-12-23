@@ -68,7 +68,7 @@ When ready, press the *Submit* button to save the
 configuration changes.
 
 Once you are done configuring it, the Samba service can now be turned ON by
-toggling the ON/OFF slider located to its right.
+toggling the ON/OFF switch located to its right.
 
 You can now proceed to :ref:`create_samba_export` and :ref:`access shares from clients<accessshares_samba>`.
 
