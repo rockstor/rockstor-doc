@@ -234,7 +234,10 @@ In the Windows Explorer menu, click *Add a network location*. This will open a
 dedicated wizard. When asked for the address of the network location, enter the
 address of the Rockstor share using the following format:
 
-    \\\\<rockstor-appliance-ip>\\<share-name>
+.. code-block:: text
+
+    \\<rockstor-appliance-ip>\<share-name>
+
 
 In our *Photos* share example, this corresponds to:
 
@@ -279,7 +282,10 @@ In the Windows Explorer menu, click *Map network drive*. This will open a
 dedicated wizard. When asked for the address of the network location, enter the
 address of the Rockstor share using the following format:
 
-    \\\\<rockstor-appliance-ip>\\<share-name>
+.. code-block:: text
+
+    \\<rockstor-appliance-ip>\<share-name>
+
 
 In our *Photos* share example, this corresponds to:
 
