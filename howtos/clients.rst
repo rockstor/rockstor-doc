@@ -13,7 +13,7 @@ important one is the nature of the client(s) that will be used to access the
 share. For instance, while **Samba** exports can be accessed by Linux, Windows,
 and macOS clients alike, **NFS** exports cannot be easily accessed from Windows
 clients. In addition, each protocol varies in its performance and ease of
-access. As a result, the decision of using a protocol over another for a given
+access. As a result, the decision to use one protocol over another for a given
 share ultimately depends on your exact needs. We can however make the general
 recommendations below:
 
