@@ -192,7 +192,10 @@ Manually entering the share's path
 In the address bar, simply enter the path to your Rockstor share using the
 the following format:
 
-    \\\\<rockstor-appliance-ip>\\<share-name>
+.. code-block:: text
+
+    \\<rockstor-appliance-ip>\<share-name>
+
 
 In our *Photos* share example, this corresponds to:
 
