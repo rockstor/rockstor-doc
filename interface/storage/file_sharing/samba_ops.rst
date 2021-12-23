@@ -255,7 +255,7 @@ password. As we set up the *Photos* share to be accessed by the user named
 
 Check *Remember my credentials*, and click OK.
 
-You will then be asked to enter the name of your choice for this share. This
+You will then be asked to enter a name of your choice for this share. This
 will be the *display* name of this share in Windows and will not affect the
 name of the share in Rockstor. You can thus enter any name or description you
 would like. We thus recommend using a short and explicit name. In our *Photos*
