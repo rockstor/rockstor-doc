@@ -286,7 +286,7 @@ In our *Photos* share example, this corresponds to:
 
 Click *Next*. When asked for credentials, use the corresponding username and
 password. As we set up the *Photos* share to be accessed by the user named
-*media_user*, we will enter its login and password:
+*media_user*, we will enter their login name and password:
 
 .. image:: /images/interface/storage/file_sharing/samba_ops/samba_access_win_login_prompt.png
    :align: center
