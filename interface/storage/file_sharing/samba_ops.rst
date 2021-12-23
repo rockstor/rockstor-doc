@@ -55,7 +55,7 @@ the form with the appropriate values as explained below.
 - **Comment**: comment string to be associated with the exported share(s).
 - **Is this export for Time Machine?**: check if the exported share is to be
   used for Apple Time Machine.
-- **Enable Shadow Copy?**: check to enable support for "Previous versions"
+- **Enable Shadow Copy?**: select to enable support for "Previous versions"
   feature in Windows clients. See :ref:`windowsshadowcopy` for more details.
 - **Custom configuration** (optional): you can provide custom parameters that
   will be added to the exported share's section in the :code:`smb.conf` file.
