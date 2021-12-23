@@ -80,7 +80,7 @@ table:
    :width: 100%
    :align: center
 
-All the details about the samba export are present in the table. Here is what
+Most of the details about the samba export(s) are shown in the overview table. Here is what
 the columns in the table mean:
 
 - **Share**: Name of the exported share (click to see the share's details page)
