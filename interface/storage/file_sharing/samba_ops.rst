@@ -203,7 +203,7 @@ In our *Photos* share example, this corresponds to:
 
 Press *Enter* and you will then be presented with a prompt for the username and
 password. As we set up the *Photos* share to be accessed by the user named
-*media_user*, we will enter its login and password:
+*media_user*, we will enter their login name and password:
 
 .. image:: /images/interface/storage/file_sharing/samba_ops/samba_access_win_login_prompt.png
    :align: center
