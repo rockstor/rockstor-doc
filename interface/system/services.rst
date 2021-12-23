@@ -64,7 +64,7 @@ The Samba service configuration window will then open:
   file. See the `Samba wiki <https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html>`_
   for a full list of options and their documentation.
 
-When ready, the Samba service, press the *Submit* button to save the
+When ready, press the *Submit* button to save the
 configuration changes.
 
 Once you are done configuring it, the Samba service can now be turned ON by
