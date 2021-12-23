@@ -1,7 +1,7 @@
 .. warning::
    **Note:** Following the loss of support for AFP in newer macOS versions, the
    AFP service is no longer supported as of Rockstor-3.9.2-56. We thus
-   recommend users to use the :ref:`Samba service <samba>` instead (see
+   recommend users to use the :ref:`Samba service <samba_export>` instead (see
    `this forum post <https://forum.rockstor.com/t/3-9-2-stable-channel-changelog/5741/22>`_
    for details).
 
@@ -10,7 +10,7 @@
 Apple Filing Protocol (AFP)
 ===========================
 
-An Apple / OSX native network sharing system akin to :ref:`samba` from
+An Apple / OSX native network sharing system akin to :ref:`samba_export` from
 MS Windows and :ref:`nfs` from Unix. However as of OSX 10.9 Mavericks and 10.10
 Yosemite the default network sharing protocol in OSX is SMB/CIFS
 (`apple reference <https://support.apple.com/en-gb/HT204445>`_). However AFP

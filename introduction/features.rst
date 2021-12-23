@@ -68,7 +68,7 @@ Online Share and Snapshot Management
 * :ref:`Resize shares online <resizeshare>`, thin provision or over provision
   according to your needs.
 
-* Export shares via :ref:`NFS <nfs>`, :ref:`Samba <samba>`, and
+* Export shares via :ref:`NFS <nfs>`, :ref:`Samba <samba_export>`, and
   :ref:`SFTP <sftp>` protocols.
 
 * :ref:`Create snapshots <createsnapshot>` for shares instantly or

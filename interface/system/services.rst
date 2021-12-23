@@ -32,13 +32,45 @@ Rockstor uses Linux NFS server to support exporting Shares to remote clients
 via NFS. Custom NFS configuration is not supported, but the service must be
 turned on in order to export shares. See the :ref:`nfs` section for details.
 
+
+.. _configure_samba:
+
 Samba
 -----
 
-Rockstor supports making Shares available to SMB and CIFS clients via Samba
-software suite. Custom Samba server configuration is not supported, but the
-service must be turned on before exposing shares. See the :ref:`samba` section
-for details.
+Rockstor supports making shares available to SMB and CIFS clients via the
+`Samba <https://www.samba.org/>`_ software suite. Samba is the recommended way
+to access your Rockstor shares from a Windows client, but can also be used to
+access shares from a Linux or MacOS client. See our :ref:`accessshares` section
+for more details.
+
+Before turning on the Samba service, it must be configured. To do so, simply
+click on the little wrench icon:
+
+.. image:: /images/interface/system/services/samba_wrench_icon.png
+   :align: center
+
+The Samba service configuration window will then open:
+
+.. image:: /images/interface/system/services/samba_configuration.png
+   :align: center
+
+- **Workgroup** is the only *required* setting. This should be set to the
+  Windows NT domain or the workgroup name. Unless changed, the default domain
+  name for a Windows machine is :code:`WORKGROUP`.
+- The **Custom global configuration** (*optional*) box allows you to enter any
+  custom samba setting needed to customize the Samba service to your needs. The
+  possible options are thus all those supported by Samba in its :code:`smb.conf`
+  file. See the `Samba wiki <https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html>`_
+  for a full list of options and their documentation.
+
+When ready, press the *Submit* button to save the
+configuration changes.
+
+Once you are done configuring it, the Samba service can now be turned ON by
+toggling the ON/OFF switch located to its right.
+
+You can now proceed to :ref:`create_samba_export` and :ref:`access shares from clients<accessshares_samba>`.
 
 SFTP
 ----
