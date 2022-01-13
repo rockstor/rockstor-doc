@@ -6,6 +6,7 @@ How-tos & Guides
    :maxdepth: 2
 
    howtos/stable_kernel_backport
+   howtos/15-2_to_15-3
    howtos/reinstall
    howtos/disk_power_down
    howtos/clients

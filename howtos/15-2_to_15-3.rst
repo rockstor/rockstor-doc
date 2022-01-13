@@ -1,0 +1,187 @@
+.. _152_to_153:
+
+Distribution update from 15.2 to 15.3
+=====================================
+
+Rockstor version 4 has been released in the testing channel for the entire life of openSUSE Leap 15.2.
+As such there are many installs "Build on openSUSE" Leap 15.2 - End of Life (EOL) December 2021.
+This How-to includes instruction on moving an existing 15.2 based install over, **in-place** to the new openSUSE Leap 15.3 base.
+
+.. note::
+
+    There are always less unknowns for fresh installs.
+    It is advisable to consider a fresh-start via the latest recommended Rockstor installer.
+    See `Downloads <https://rockstor.com/dls.html>`_ for the available options.
+    See also our :ref:`installer_howto`.
+
+    Existing :ref:`pools` and :ref:`config_backup` files remain compatible and importable.
+
+.. warning::
+
+    For both **in-place** and **re-install/import** approaches; always ensure all backups are refreshed.
+    For re-install/import all data on a re-used system disk ('ROOT' pool) will be irreversibly destroyed.
+    Alternatively use a fresh system disk to provide a fail over of reverting to the original system disk.
+    Do not attach both old and new system disks simultaneously.
+    Only one Rockstor system disk must be attached at any one time.
+
+Before attempting an **in-place** distribution update (15.2->15.3) be sure that you have applied all regular updates first.
+The :ref:`updating_rockstor` section covers how to do this either via the Web-UI or via the command line.
+
+.. _152_153-overview:
+
+Overview
+--------
+
+This procedure is well established in our upstream base of openSUSE Leap and is know as a **Distribution Update**.
+Below we detail the following steps, each in their own sections:
+
+- Remove deprecated repositories
+- Add Rockstor home repository
+- Update the remaining repositories
+- Add new SLES repositories
+- Distribution update
+- Reporting issues
+
+See our FAQ entry :ref:`faq_rockstor4_repos` to see the initial and target repository configuration.
+
+.. _152_153-deprecated:
+
+Remove deprecated repositories
+------------------------------
+
+In our "Built on openSUSE" Leap 15.2 we used the `shells <https://build.opensuse.org/project/show/shells>`_
+repo for `shellinabox <https://build.opensuse.org/package/show/shells/shellinabox>`_.
+
+To remove this now redundant repository execute the following:
+
+.. code-block:: console
+
+    zypper rr shells
+
+Shellinabox is now build in our own rockstor_home
+
+.. _152_153-rockstor_home:
+
+Add Rockstor home repository
+----------------------------
+
+For our Leap 15.3 based profiles we now build shellinabox in our own OBS repository:
+`rockstor_home <https://build.opensuse.org/project/show/home:rockstor>`_
+copied directly from the shells repository.
+This represents a vendor change: obs://build.opensuse.org/shells -> obs://build.opensuse.org/home:rockstor.
+
+The following adds the home_rockstor repo:
+
+.. code-block:: console
+
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/home:/rockstor/openSUSE_Leap_15.3/ home_rockstor
+
+.. _152_153-update_repos:
+
+Update the remaining repositories
+---------------------------------
+
+Here we stream edit/replace all :code:`15.2` and :code:`15_2` instances with :code:`15.3` and :code:`15_3` via
+
+.. code-block:: console
+
+    sed -i 's/15_2/15_3/g' /etc/zypp/repos.d/*.repo
+    sed -i 's/15\.2/15\.3/g' /etc/zypp/repos.d/*.repo
+
+.. note::
+
+    This does not change the repository configuration file names themselves.
+    This is not important and can serve as an indicator of a systems history.
+    The filenames for these repositories are cosmetic only.
+
+.. _152_153-sles-repos:
+
+Add new SLES repositories
+-------------------------
+
+The Leap 15.3 upstream effort involved the interim `Jump <https://en.opensuse.org/Portal:Jump>`_ endeavour.
+This introduced a binary compatibility between Leap 15.3 and SLES 15.3.
+As such some packages now come directly from shared repositories with SLES.
+But these repositories are were not included in the initial release of openSUSE 15.3.
+We add these repositories before hand to avoid an inevitable downgrade and consequent upgrade process.
+This helps to speed up the entire process and avoids downgrades where possible.
+For more details on this approach see our installer pull request that does the same:
+`Add repo-backports-update & repo-sle-update in Leap 15.3 profiles ... <https://github.com/rockstor/rockstor-installer/pull/72>`_
+
+.. code-block:: console
+
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/update/leap/15.3/backports/ repo-backports-update
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/update/leap/15.3/sle/ repo-sle-update
+
+.. _152_153-distro-update:
+
+Distribution update
+-------------------
+
+Before the big **Distribution Update** we must import all the new repository keys from all of the changes made above.
+
+.. code-block:: console
+
+    zypper --non-interactive --gpg-auto-import-keys refresh
+
+The following command should output a very similar list of repositories to those indicated.
+:ref:`Rockstor-Testing <testing_channel>` may be replaced by :ref:`Rockstor-Stable <stable_channel>`, or neither may be present;
+depending on your update :ref:`channel selection <update_channels>`
+
+.. code-block:: console
+
+    zypper lr -u
+
+    Repository priorities in effect:                                                                                                                                                                                               (See 'zypper lr -P' for details)
+          97 (raised priority)  :  1 repository
+          99 (default priority) :  6 repositories
+
+    # | Alias                              | Name                               | Enabled | GPG Check | Refresh | URI
+    --+------------------------------------+------------------------------------+---------+-----------+---------+------------------------------------------------------------------------------------------------------
+    1 | Leap_15_3                          | Leap_15_3                          | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.3/repo/oss/
+    2 | Leap_15_3_Updates                  | Leap_15_3_Updates                  | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/update/leap/15.3/oss/
+    3 | Rockstor-Testing                   | Rockstor-Testing                   | Yes     | (r ) Yes  | Yes     | http://updates.rockstor.com:8999/rockstor-testing/leap/15.3
+    4 | home_rockstor                      | home_rockstor                      | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/repositories/home:/rockstor/openSUSE_Leap_15.3/
+    5 | home_rockstor_branches_Base_System | home_rockstor_branches_Base_System | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/repositories/home:/rockstor:/branches:/Base:/System/openSUSE_Leap_15.3/
+    6 | repo-backports-update              | repo-backports-update              | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/update/leap/15.3/backports/
+    7 | repo-sle-update                    | repo-sle-update                    | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/update/leap/15.3/sle/
+
+
+And finally the actual 15.2 to 15.3 base OS update itself.
+Here we instruct zypper to download all packages first.
+This helps to avoid a download failure part-way through this rather sensitive process.
+
+.. code-block:: console
+
+    zypper dup --download-in-advance --allow-vendor-change --no-recommends
+
+We use --allow-vendor-change as many prior openSUSE packages are now supplied directly from SuSE.
+The --no-recommends is to keep to our JeOS (Just enough Operating System) origin.
+I.e. don't install things like manuals etc and other 'extra' packages.
+
+The download size and extra disk space required will be around 350 MB.
+So ensure that you have at least 2 GB to 3 GB free on your system disk, ROOT pool, before proceeding.
+
+.. note::
+
+    As we are changing the legs upon which the entire system is running,
+    it is best to have the system under as minimal load as possible.
+
+.. warning::
+
+    It is imperative that the system is not rebooted during this process.
+    However it is also important to reboot the system after the above "zypper dup ..." command has completed.
+    This enables the new legs to be the ones running the show.
+
+.. _152_153-report:
+
+Reporting issues
+----------------
+
+As always we welcome feedback to improve what we do.
+So please consider reporting your experience or suggestions to our friendly
+`Community Forum <https://forum.rockstor.com/>`_.
+
+A distribution update is in many ways more complex than an entirely fresh install.
+And given Rockstor's overall size a re-install can be very quick.
+But if you have a complex install an in-place distribution update can be the way to go.
