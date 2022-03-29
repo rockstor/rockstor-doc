@@ -74,12 +74,14 @@ Specify the share you created for MinIO.
 
 .. _minio_port:
 
-MinIO Port
+MinIO Ports
 ^^^^^^^^^^^^^^^
-The default port for MinIO is 9000, but you can choose a different port if you
-are already using 9000 for another application.
+The default "MinIO Admin Portal Port" is 9001; the default "MinIO API Port"  
+is 9000.  You can choose different ports if you are already using 9000/9001 
+for another application, but it is wise to stick with the standard ports, 
+if possible.
 
-.. image:: /images/interface/docker-based-rock-ons/minio_port.png
+.. image:: /images/interface/docker-based-rock-ons/minio_ports.png
    :width: 100%
    :align: center
 
@@ -88,11 +90,12 @@ are already using 9000 for another application.
 
 MinIO Environment
 ^^^^^^^^^^^^^^^^^^^^^^
-MinIO needs values for three environment variables.  "Web Portal Access" set
-to "on" provides a basic Web interface for creating and deleting storage
-objects on the MinIO server. "MinIO Access Key" and "MinIO Secret Key" are the
-username and password you will use on the Web interface and in your
-S3-compatible client software.
+MinIO needs values for three environment variables.  "MinIO Admin User" and 
+"MinIO Admin Password" are the username and password you will use on the Web 
+interface and in your S3-compatible client software.  "MinIO Console Address" 
+must be set to the same port you chose in the previous dialog for 
+"MinIO Admin Portal Port", but with a colon in front.  (":9001", for 
+example.)
 
 .. image:: /images/interface/docker-based-rock-ons/minio_environment.png
    :width: 100%
