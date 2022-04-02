@@ -122,8 +122,7 @@ MinIO Installation Successful
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Congratulations!  You can use the "MinIO UI" button to go to the Web
 management interface to view and create storage objects, and you can point
-your S3-compatible application at your new server. The Web interface and the
-S3-compatible interface share the same port and can be used simultaneously.
+your S3-compatible application at your new server. 
 
 .. image:: /images/interface/docker-based-rock-ons/minio_finished.png
    :width: 100%
