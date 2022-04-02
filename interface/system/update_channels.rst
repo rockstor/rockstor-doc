@@ -107,11 +107,13 @@ patient as we work our the teething problems expected with newly release
 systems. Specific documentation will follow once we have established the less
 self explanatory elements.
 
-Participation in the stable channel is key to the future of Rockstor
-development. The ability to continue to improve and provide future-proof
-services, by way of advanced file system facilities made easy, is dependant on
-a financial component. The stable channel is that financial component.
-Currently a one-year subscription costs £20.00 (GBP).
+Participation in the stable channel is key to the future of Rockstor development.
+The ability to continue to improve and provide future-proof services,
+by way of advanced file system facilities made easy, is dependant on a financial component.
+The stable channel, and it's associated
+`Commercial Support <https://rockstor.com/commercial_support.html>`_
+option, is that financial component.
+See our `Shop <https://shop.rockstor.com/>`_ for the current cost of a **Stable Updates subscription**.
 
 Please keep an eye on our `friendly forum <https://forum.rockstor.com/>`_ as
 discount / promotional codes are occasionally issued.
