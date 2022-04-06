@@ -90,8 +90,10 @@ if possible.
 
 MinIO Environment
 ^^^^^^^^^^^^^^^^^^^^^^
-MinIO needs values for three environment variables.  "MinIO Admin User" and 
-"MinIO Admin Password" are the username and password you will use on the Web 
+MinIO needs values for three environment variables.  "MinIO Admin User" 
+(3 to 128 alphanumeric characters) and 
+"MinIO Admin Password" (8 to 128 alphanumeric characters) 
+are the username and password you will use on the Web 
 interface and in your S3-compatible client software.  "MinIO Console Address" 
 must be set to the same port you chose in the previous dialog for 
 "MinIO Admin Portal Port", but with a colon in front.  (":9001", for 
