@@ -20,15 +20,13 @@ video surveillance software system. Licenced as GPLv2 or later. Capabilities
 include the use of pretty much any camera, either directly connected or
 IP-enabled, and the capability to run on general purpose hardware. The source
 code can be found on their `GitHub page <https://github.com/ZoneMinder/ZoneMinder/>`_.
-The web interface is mobile capable but there are also Android and IOS apps
-available that interface with the open third-party friendly APIs. The
-`zmNinja app <https://pliablepixels.github.io/>`_ is one such example and is
-featured on the ZoneMinder main page; this app is also
-`open source and on GitHub <https://github.com/pliablepixels/zmNinja>`_
-with a `dual licenced
-<https://github.com/pliablepixels/zmNinja/blob/master/LICENSE>`_
-source code (CC BY-NC-SA/4.0 and commercial). This app is written with the aid
-of the ionic framework and so should mimic native behaviour.
+The web interface is mobile capable but there are also Android, IOS, and Desktop apps
+available that interface with the open third-party friendly APIs.
+`zmNinja <https://zmninja.readthedocs.io/en/latest/index.html>`_
+is one such app that is now maintained by the ZoneMinder developers:
+gracefully handed-on after 6 years of development by `Pliable Pixels <https://github.com/pliablepixels>`_.
+This app is also `open source and on GitHub <https://github.com/ZoneMinder/zmNinja>`_
+and more recently re-licenced as `GPLv3 <https://github.com/ZoneMinder/zmNinja/blob/master/LICENSE>`_.
 
 .. _zoneminder_doc:
 

@@ -104,8 +104,8 @@ Mount Options
 These are optional and meant for more advanced users to provide BTRFS specific
 mount options. Since a Pool is a filesystem, it is mounted with default options
 which can be altered by providing one or more of the following. You can find
-out more about each option from the `btrfs wiki mount options section
-<https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs(5)#MOUNT_OPTIONS>`_.
+out more about each option from the `BTRFS documentation mount options section
+<https://btrfs.readthedocs.io/en/latest/btrfs-man5.html#mount-options>`_.
 
 * **alloc_start**
 * **autodefrag**
