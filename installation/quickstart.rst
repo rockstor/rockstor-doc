@@ -74,8 +74,8 @@ GUI options
 
 On a Linux Unity or Gnome Desktop see our :ref:`gnome_disks_howto`.
 
-On a Windows Desktop consider using
-`Rawrite32 <https://www.netbsd.org/~martin/rawrite32/>`_.
+On a Windows Desktop consider using a fairly intuitive solution like
+`balenaEtcher <https://www.balena.io/etcher/>`_.
 
 **Please note** the following USB image writing programs have been found to
 produce **NON working USB install disks** when used with the Rockstor iso and
