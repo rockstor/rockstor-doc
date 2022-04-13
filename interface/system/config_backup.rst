@@ -12,12 +12,13 @@ The current configuration of Rockstor can be saved at any time and restored to
 any previously saved point.  This is a particularly useful feature when making
 extensive configuration changes as it provides the possibility to revert to a
 known good configuration. Once a configuration backup has been generated and
-downloaded it can also be used in system migration scenarios.
+downloaded it can also be used in system migration scenarios;
+e.g. see: :ref:`v3_to_v4`.
 
 .. warning::
    Upon restore, the configuration of most features included in the backup
    will be restored regardless of their current state. As a result, their current
-   configuration will be overwritten (to the exception of *Users* and
+   configuration will be overwritten (with the exception of *Users* and
    *Groups*, see :ref:`below <config_notes>`).
 
 The following state information is saved as part of a backup
