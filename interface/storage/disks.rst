@@ -154,8 +154,16 @@ and has a pending balance that is aggravating our data recovery situation.
 Use :code:`btrfs fi label /dev/disk/by-id/<a-pool-member-disk-name>` to get the pool label.
 
 A regular Web-UI pool import via the given pool member will now skip the default mount step.
-After the import the Web-UI can then be used to enact the same options on subsequent mounts, if required.
+After the import the Web-UI can then be used to enact the same :ref:`poolmountoptions` on subsequent mounts, if required.
 And facilitate refreshing backups, remounting rw, / :ref:`poolresize` / :ref:`poolscrub` etc.
+
+.. note::
+    In some extreme case it can be required to specify all member devices to achieve a mount.
+    If so add to the :code:`ro,skip_balance` all the devices like so:
+    :code:`ro,skip_balance,device=/dev/member1,device=/dev/member2`.
+    You will still need to specify one of these again as the next mount option.
+    Note also that other mount options can similarly be added if required:
+    i.e. such as :code:`degraded` if not all prior members are available.
 
 ..  _btrfspartition:
 
