@@ -247,8 +247,8 @@ drive is still a manual process that has yet to be automated in Rockstor and
 in this case care should be take to update these port when re-arranging
 drives. It is hoped that this facility is improved in the future.
 
-**It is always best to take a not of a SMART reports drive serial number to be
-sure which drive it references. Especially when connected to a hardware raid
+**It is always best to take a note of a SMART reports drive serial number to be
+sure which drive it references. Especially when connected to a hardware RAID
 controller.**
 
 
