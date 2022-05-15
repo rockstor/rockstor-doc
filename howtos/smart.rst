@@ -35,6 +35,7 @@ in a multi tabbed view. What follows are examples of these tabs.
    :width: 100%
    :align: center
 
+
 .. image:: /images/howtos/smart/smart_perform_test_tab.png
    :width: 100%
    :align: center
@@ -50,6 +51,49 @@ smartmontools by default), may require custom options to 'assist'
 smartmontools in it's job of reporting SMART capability and or status. The
 next section covers how Rockstor enables configuration of these additional
 manual settings.
+
+.. _configsmart:
+
+Configure Monitoring
+--------------------
+Aside from using the above mentioned **Refresh** button to view S.M.A.R.T. on 
+demand, there are additional directives in the S.M.A.R.T. service definition 
+that can be added to be more specific about S.M.A.R.T monitoring. These 
+additional directives will be written to the Rockstor section of /etc/smartd.conf.
+By default, there are no options maintained. This is to prevent unwanted log spamming 
+that could occur when continuous monitoring is active. The most basic directive 
+that can be enabled to monitor all detected S.M.A.R.T. devices is to use 
+the *DEVICESCAN -a* option. This will monitor all possible errors on all disks.
+
+
+.. image:: /images/howtos/smart/devicescan_a_directive.png
+   :width: 100%
+   :align: center
+
+
+In the tooltip a few more directives of interest are listed:
+
+- to monitor specific devices but ignore all others:
+
+  **/dev/sdb -a**
+  
+  **/dev/sdc -a**
+  
+- to email potential problems: 
+  
+  **DEVICESCAN -m user@example.com**
+  
+  for sending to the root user, the *root@localhost* address can be used
+  
+- to alert on specific temperature changes (in degrees Celsius), where the first parameter reports on
+  a difference of 4 degrees since the last report, the second logs an informal message at 35 degrees, and
+  the third parameter issues a warning message at 45 degrees.
+
+  **DEVICESCAN -W 4,35,40**
+  
+For a complete explanation of all directives read the *smartd.conf* man page, also
+available here:
+`smartd.conf man page <https://www.smartmontools.org/browser/trunk/smartmontools/smartd.conf.5.in>`_
 
 ..  _diskcustomsmart:
 
