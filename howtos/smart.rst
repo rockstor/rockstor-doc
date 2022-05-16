@@ -86,7 +86,7 @@ In the tooltip a few more directives of interest are listed:
   for sending to the root user, the *root@localhost* address can be used
   
 - to alert on specific temperature changes (in degrees Celsius), where the first parameter reports on
-  a difference of 4 degrees since the last report, the second logs an informal message at 35 degrees, and
+  a difference of 4 degrees since the last report, the second logs an informational message at 35 degrees, and
   the third parameter issues a warning message at 45 degrees.
 
   **DEVICESCAN -W 4,35,40**
