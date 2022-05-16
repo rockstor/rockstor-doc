@@ -61,6 +61,8 @@ Use cursor keys to highlight, then the "Enter" key to select.
 Only use Failsafe if the 'Install ...' option fails, i.e. the screen goes blank
 and does not return.
 
+.. _installer_select_disk:
+
 Select Installation Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -72,7 +74,7 @@ If unsure do not proceed and select <Cancel> via Tab key and then Enter.
    :align: center
 
 Use cursor keys to highlight, then the "Enter" key to select.
-Only devices less than 500 GB are shown. Larger disks are assumed to be data
+Only devices less than 5000 GB (5 TB) are shown. Larger disks are assumed to be data
 disks.
 
 Destroying ALL data on ..., continue ?

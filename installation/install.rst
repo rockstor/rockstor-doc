@@ -71,8 +71,7 @@ Rockstor is under continuous development and we generally release updates in
 small batches. These updates are easy to install and distributed in two
 distinct *update channels* described in our :ref:`update_channels` section. On
 rare occasions, we roll-out major releases that require a complete re-install;
-upgrading from Rockstor 3 (CentOS-based) to Rockstor 4 "Built on openSUSE" is
-one such update.
+see: :ref:`v3_to_v4` as an example.
 
 .. note::
    Would you like to see a specific feature added or updated? Come share your
