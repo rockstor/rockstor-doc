@@ -83,7 +83,7 @@ In the tooltip a few more directives of interest are listed:
   
   **DEVICESCAN -m user@example.com**
   
-  for sending to the root user, the *root@localhost* address can be used
+  for sending to the root user, the **root@localhost** address can be used
   
 - to alert on specific temperature changes (in degrees Celsius), where the first parameter reports on
   a difference of 4 degrees since the last report, the second logs an informational message at 35 degrees, and
