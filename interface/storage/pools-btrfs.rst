@@ -17,15 +17,13 @@ the **Storage** tab of the Web-UI.
 Creating a Pool
 ---------------
 
-Only whole disk drives can be used to create Pools. But they don't have to be
-of the same size, which is a great feature of BTRFS. Disks that are partitioned
-with other filesystems including BTRFS won't be touched. Whole disks with BTRFS
-created outside of Rockstor or from a previous install, can however be
-imported. For more information, see :ref:`reinstall_import_data`.
+Whole disks (un-partitioned) drives are very much preferred as Rockstor Pool members.
 
-Click on **Create Pool** button and submit the create pool form to create a
-pool. There is a tooltip for each input field to help you choose appropriate
-parameters.
+See :ref:`import_data` to re-establish a prior Rockstor installs Pool.
+It may also be possible to import similarly structured btrfs volumes, single or multi member.
+
+Click on **Create Pool** button and submit the create pool form to create a pool.
+There is a tooltip for each input field to help you choose appropriate parameters.
 
 
 .. _redundancyprofiles:
@@ -35,46 +33,62 @@ Redundancy profiles
 
 All standard BTRFS redundancy profiles are available when creating a pool.
 
-* **Single**: This profile offers no redundancy, and is the only valid option
-  for creating a Pool with a single disk drive. It is also recommended if you
-  have multiple disks of different sizes, yielding higher total capacity
-  compared to **Raid0**. Data is neither mirrored nor striped, so if a disk
-  fails, the entire data of the Pool will be lost.
+.. warning::
+    Please see :ref:`btrfsnature` to avoid some surprises regarding the way btrfs does raid.
 
-* **Raid0**: Two or more disks can be used with this profile when there is no
-  need for redundancy. Both metadata and data are striped across the disks. It
-  is recommended for same size disks. If you have different size disks and no
-  need for redundancy, **Single** profile provides higher capacity. If a disk
-  fails, the entire data of the Pool will be lost.
+.. note::
+    No btrfs-raid profile requires that its member disks be matched in size.
+    But in the case of btrfs-raid0 particularly,
+    the available space is maximised if they are similar, or ideally the same.
 
-* **Raid1**: Two or more disks can be used with this profile. And both metadata
-  and data are replicated on 2 devices. So a Pool with this profile can sustain
-  a single disk failure.
+* **Single**: This profile offers no redundancy.
+    A single disk failure will result in the entire Pool being lost.
+    It is the only valid option for creating a Pool with a single disk drive.
+    It is also recommended if you have multiple disks of very different sizes,
+    yielding higher total capacity compared to **Raid0** in this setting.
 
-* **Raid5**: Two or more disks can be used with this profile, which supports
-  striping + parity. Like Raid1, this profile can sustain a single disk
-  failure. The BTRFS community consensus is that Raid5 support is not yet
-  fully stable and so is ***not recommended for production use***.
+* **Raid0**: This profile offers no redundancy.
+    A single disk failure will result in the entire Pool being lost.
+    Two or more disks are required for this profile.
+    It is recommended only when there is no need for redundancy,
+    and offers better performance than the **Single** btrfs-raid option.
+    Both data and metadata are striped across the disks.
+    It is recommended for same/similar size disks.
+    If you have very differently sized disks and no need for redundancy,
+    the **Single** profile provides higher capacity.
 
-* **Raid6**: Three or more disks can be used with this profile, which supports
-  striping + dual-parity. Because of dual-parity, a Raid6 Pool can sustain
-  up to two disk failures at the same time.  The BTRFS community consensus is
-  that Raid6 support is not yet fully stable and so is ***not recommended
-  for production use***.
+* **Raid1**: Two or more disks are required for this profile.
+    This profile can sustain **a maximum of one disk failure**.
+    Data and metadata are replicated on 2 independent devices,
+    irrespective of the total pool member count.
 
-* **Raid10**: This is a Raid0 of Raid1 mirrors, with a minimum requirement of
-  four disk drives. It offers the best overall performance with redundancy.
-  Note however that there is still, practically, a single disk failure limit.
+* **Raid5**: Two or more disks are requried for this profile.
+    This profile can sustain **a maximum of one disk failure**.
+    Uses parity and striping.
+    The BTRFS community consensus is that btrfs-raid5 is not yet
+    fully stable and so is ***not recommended for production use***.
+
+* **Raid6**: Three or more disks are requried for this profile.
+    This profile can sustain **a maximum of two disk failures**.
+    Uses dual-parity and striping.
+    The BTRFS community consensus is that btrfs-raid6 is not yet
+    fully stable and so is ***not recommended for production use***.
+
+* **Raid10**: Four or more disks are required for this profile.
+    This profile can sustain **a practical maximum of one disk failures**.
+    Uses a Raid0 (strip) of Raid1 mirrors.
+    Btrfs-raid 10 offers the best overall performance with single disk redundancy.
 
 Please see the `btrfs wiki <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_
 for up to date information on all btrfs matters.
 
 For a BTRFS features stability status overview, including redundancy profiles,
-vist the  `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_.
+visit the  `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_.
 
 .. warning::
 
-    As of Rocksor v4 "Built on openSUSE" Leap 15.3 base, the far younger parity raid levels of 5 & 6 are read-only by default.
+    As of Rocksor v4 "Built on openSUSE" Leap 15.3 base,
+    the far younger parity raid levels of 5 & 6 are read-only by default.
     Write access can be enabled by :ref:`stable_kernel_backport`: **advanced users only**.
     See also our :ref:`raid1c3_raid1c4` doc section on the same page.
 
@@ -97,6 +111,7 @@ Besides not enabling compression at all, there are two additional choices
   **zlib**. You can find out more from `oberhumer.com
   <https://www.oberhumer.com/opensource/lzo/>`_.
 
+.. _poolmountoptions:
 
 Mount Options
 ^^^^^^^^^^^^^
@@ -169,25 +184,34 @@ You can change :ref:`redundancyprofiles` online with only a few restrictions.
 
 1. The resulting pool must have sufficient space for the existing data.
 2. The target drive count will be sufficient for the target btrfs raid profile.
-3. Rockstor can simultaneously changing raid levels while :ref:`pooladddisks`, but NOT while :ref:`poolremovedisks`.
+3. Rockstor can simultaneously change btrfs-raid levels while :ref:`pooladddisks`, but NOT while :ref:`poolremovedisks`.
 
 Because of (3.) above, when removing for example a drive from a pool which is already at the minimum drive count,
 attached or detached, we have to first change the raid level of that pool.
+A better approach is to instead add a disk, then remove the problem/detached/missing one.
+But this is not always an option and the following example serves to show both raid level change and detached disk removal.
 
-This situation is most common in non industrial DIY setups where a pool will often have the minimum number of disks.
-A better solution is to instead add a disk, then remove the problem/detached/missing on.
-But this is not always an option and our example serves us there to show both raid level change and detached disk removal.
 
-In the following example we have a btrfs raid 1 Pool (minimum 2 disks) that has a detached/missing member.
+.. _poolbelowminimummembers:
+
+Pool has below minimum members
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This situation is most common in non industrial DIY setups where a pool will often have only the minimum number of disks.
+
+In the following example we have a btrfs-raid1 Pool (minimum 2 disks) that has a detached/missing member.
 We have already refreshed our backups via the suggested ro,degraded mount;
 from the Pool details maintenance section that appeared.
-And have since then switched to a rw,degraded mount to allows for the Pool changes.
+And we have then switched to a rw,degraded mount to allow for the Pool changes.
 
-A degraded mount option is required when there is a detached/missing disk.
+A degraded mount option is required when there is a detached/missing disk; irrespective of drive count and btrfs-raid level.
 Otherwise any mount operation is refused.
+The intention of the obligatory 'degraded' option is to ensure conscious intervention during an enhanced data loss state.
 And a Pool may well go read only on it's own, by design, shortly after loosing access to one of it's members.
+Again this is a data loss prevention tactic.
+Continuing to write new data to a degraded pool incurs a progressively increasing risk of data loss.
 
-Following on from the above first page of the Resize/ReRaid wizard, if we selected **Remove disks**.
+Following on from the last image of the first page of the Resize/ReRaid wizard, if we selected **Remove disks**.
 
 We would receive the following error:
 
@@ -308,8 +332,8 @@ Scrubbing a Pool
 
 The scrub operation initiates a BTRFS scrub process in the background. It reads
 all data from all disks of the Pool, verifies checksums and fixes corruptions
-if detected and possible. To find out more, see the `btrfs wiki scrub section
-<https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-scrub>`_.
+if detected and possible. To find out more, see the `btrfs-scrub manual entry
+<https://btrfs.readthedocs.io/en/latest/btrfs-scrub.html>`_.
 
 To start a scrub, go to the Pool's detail page and click on the **Start a new
 scrub** button in the Scrubs tab. The button will be disabled during the scrub
@@ -317,9 +341,14 @@ process and enabled again once the scrub finishes. The progress of a running
 scrub operation is displayed in a table. Refresh the page to update the
 information.
 
+.. _poolautomatedscrubs:
+
+Automated Scrubs
+^^^^^^^^^^^^^^^^
+
 A periodic scrub is a proactive strategy to fix errors before too many
-accumulate. You can schedule it using the **Scheduled Tasks** screen under
-**System** tab of the Web-UI.
+accumulate. You can :ref:`scrubtask` on the :ref:`tasks` page under the
+:ref:`system` menu item.
 
 .. _poolbalance:
 

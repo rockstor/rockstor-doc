@@ -133,6 +133,7 @@ At least in the underlying operating system.
     Rockstor 'allows' these raid levels but is currently un-aware of them.
     As such if any Pool modifications are enacted via the Web-UI,
     e.g :ref:`poolbalance` or :ref:`poolresize` the Rockstor defaults will be reasserted.
+    See :ref:`dlbalance_re_raid` to reassert a custom raid profile.
 
 .. _mixed_raid_levels:
 
@@ -146,7 +147,7 @@ is to use:
 - **data** - btrfs raid5 or preferred raid6
 - **metadata** - btrfs raid1c3 or preferred raid1c4
 
-Note that with the preferred options above btrs can have a 2 disk failure capability per pool.
+Note that with the preferred options above btrfs can have a 2 disk failure capability per pool.
 This is of particular interest to those running pools consisting of many devices.
 
 .. note::
@@ -154,4 +155,5 @@ This is of particular interest to those running pools consisting of many devices
     As per the :ref:`raid1c3_raid1c4` note, Rockstor is unaware of some non standard data/metadata mixes.
     And likewise the Web-UI Pool operations of :ref:`poolbalance` or :ref:`poolresize`
     will undo any custom pool data/metadata mixed raid setup and revert to Rockstor defaults.
+    See :ref:`dlbalance_re_raid` to re-assert a custom mixed raid arrangement.
     All other operations however should function as normal.
