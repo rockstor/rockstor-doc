@@ -153,7 +153,7 @@ command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main make html
+        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:master make html
 
 HTML files are generated in the :code:`_build/html` directory. From a separate
 terminal window, you can have a simple Python webserver always serving up this
@@ -245,7 +245,7 @@ If you use the Docker image, you must use the following command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:main sphinx-build -b rediraffewritediff . _build/rediraffe
+        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:master sphinx-build -b rediraffewritediff . _build/rediraffe
 
 You should now see the needed redirects in :code:`redirects.txt`.
 
