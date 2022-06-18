@@ -1,4 +1,6 @@
 FROM sphinxdoc/sphinx
+LABEL maintainer="The Rockstor Project <https://rockstor.com>"
+LABEL org.opencontainers.image.authors="The Rockstor Project <https://rockstor.com>"
 
 WORKDIR /docs
 
