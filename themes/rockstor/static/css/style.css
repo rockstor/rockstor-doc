@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Tables */
   
-  #disks-table, #shares-table { width: 100%; }
+  table { width: 100%; }
   
   .table-title {
   
