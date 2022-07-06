@@ -5,7 +5,6 @@
 "mdraid-mirror/boot_drive_howto.rst" "howtos/boot_drive_howto.rst"
 "disk-power-down/disk_power_down.rst" "howtos/disk_power_down.rst"
 "gnome-disks-usb/gnome_disks_usb.rst" "howtos/gnome_disks_usb.rst"
-"home_nas_guide.rst" "howtos/home_nas_guide.rst"
 "luks/luks.rst" "howtos/luks.rst"
 "multi_period_snapshots.rst" "howtos/multi_period_snapshots.rst"
 "reinstall/reinstall.rst" "howtos/reinstall.rst"
@@ -59,3 +58,4 @@
 "intro.rst" "index.rst"
 "analytics.rst" "index.rst"
 "benchmarks.rst" "index.rst"
+"home_nas_guide.rst" "index.rst"
