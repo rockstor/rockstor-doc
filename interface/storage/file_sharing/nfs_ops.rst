@@ -69,6 +69,32 @@ click on *NFS* in the left sidebar to enter *NFS* view. In the displayed table
 of NFS exports, click on the **trash** icon of corresponding export to delete
 the NFS export; note that this does **not** delete the Rockstor Share.
 
+.. _nfs_advanced_edit:
+
+Advanced edit
+-------------
+
+If you would like to use further customization than offered using the :ref:`add_nfs_export`
+button, click on the "Advanced Edit" button. This will open the following page:
+
+.. image:: /images/interface/storage/file_sharing/nfs_ops/nfs_advanced_edit.png
+   :width: 100%
+   :align: center
+
+The top part of this page lists the NFS exports that have been already created
+using the :ref:`add_nfs_export` button. The bottom part of this page, however,
+allows you to manually add an NFS export to the :code:`/etc/export` file. As a
+result, one or more NFS exports can be added by entering it/them as if you were
+directly editing this file. In the example below, we create a new NFS export of
+the *share02* Share, with the :code:`rw,sync,no_root_squash,no_subtree_check`
+options.
+
+.. image:: /images/interface/storage/file_sharing/nfs_ops/nfs_advanced_edit_form.png
+   :width: 100%
+   :align: center
+
+Click the *Submit* button, and the new NFS export(s) will be created.
+
 .. _accessshares_nfs:
 
 Accessing NFS shares
