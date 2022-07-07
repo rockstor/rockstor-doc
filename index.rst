@@ -94,10 +94,11 @@ listed.
 +--------------------------------------------------+----------+------------------------------------------------------------+
 | SNMP                                             | prod     | Enterprise monitoring facility                             |
 +--------------------------------------------------+----------+------------------------------------------------------------+
-| :ref:`S.M.A.R.T<smart>`                          | prod     | Dsk health information system                              |
+| :ref:`S.M.A.R.T<smart>`                          | prod     | Disk health information system                             |
 +--------------------------------------------------+----------+------------------------------------------------------------+
-|| IPv4 Network Config via Web-UI                  || prod /  || Includes Teaming & Bonding /                              |
-|| / IPv6                                          || planned || IPv6 currently disabled at boot                           |
+|  IPv4 Network Config via Web-UI                  |  prod    | Includes Teaming & Bonding                                 |
++--------------------------------------------------+----------+------------------------------------------------------------+
+|  IPv6 Network Config via Web-UI                  |  planned | Possible at command line                                   |
 +--------------------------------------------------+----------+------------------------------------------------------------+
 | Docker Based Plugin System                       | prod     | We call these :ref:`Rock-ons<rockons_intro>`               |
 +--------------------------------------------------+----------+------------------------------------------------------------+
