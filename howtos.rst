@@ -14,7 +14,6 @@ How-tos & Guides
    howtos/smart
    howtos/luks
    howtos/boot_drive_howto
-   howtos/home_nas_guide
    howtos/soho
    howtos/kvm_setup
    howtos/reset-root-password
