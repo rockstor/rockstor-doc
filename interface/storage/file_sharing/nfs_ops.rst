@@ -81,7 +81,7 @@ button, click on the "Advanced Edit" button. This will open the following page:
    :width: 100%
    :align: center
 
-The top part of this page lists the NFS exports that have been already created
+The top part of the resulting page (see below) lists the NFS exports that have been already created
 using the :ref:`add_nfs_export` button. The bottom part of this page, however,
 allows you to manually add an NFS export to the :code:`/etc/export` file. As a
 result, one or more NFS exports can be added by entering it/them as if you were
