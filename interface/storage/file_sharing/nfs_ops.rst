@@ -75,7 +75,7 @@ Advanced edit
 -------------
 
 If you would like to use further customization than offered using the :ref:`add_nfs_export`
-button, click on the "Advanced Edit" button. This will open the following page:
+button, click on the "Advanced Edit" button.
 
 .. image:: /images/interface/storage/file_sharing/nfs_ops/nfs_advanced_edit.png
    :width: 100%
