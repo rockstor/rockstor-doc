@@ -187,15 +187,15 @@ Time taken-up on trivial interactions there may not be fair to the world of btrf
 Also take careful note of what you are expected to include:
 i.e. the *"What information to provide when asking a support question"* section on the above linked mailing list page.
 
-.. _datalossraid0:
+.. _datalossraid0_single:
 
-Data Recovery: btrfs-raid0 Pools
---------------------------------
+Data Recovery: btrfs-raid0 and btrfs-single Pools
+-------------------------------------------------
 
-See our :ref:`redundancyprofiles` for the nature of btrfs-raid0.
+See our :ref:`redundancyprofiles` for the nature of btrfs-raid0 and btrfs-single.
 
 If a drive is only suspected of poor health, but still functional, see: :ref:`btrfsreplace`.
-But if a drive in btrfs-raid0 fails, the pool becomes completely unusable.
+But if a drive in btrfs-raid0 or btrfs-single fails, the pool becomes completely unusable.
 The recovery strategy is then:
 
 - :ref:`pooldelete`.
@@ -212,7 +212,7 @@ All Pool/Share/Export operations can be done from within the Web-UI, which is th
 Note that recreating File sharing and Rock-ons may be done by using :ref:`config_backup`.
 
 .. note::
-    As btrfs-raid0 has no redundancy there is no capability for drive loss.
+    As btrfs-raid0 and btrfs-single have no redundancy there is no capability for drive loss.
     Hence having to re-do all prior configuration associated directly with the affected Pool
 
 .. _datalossraid1_10:
@@ -246,7 +246,7 @@ If desired, to return the prior, and recommended, greater-than-minimum disk coun
 simply use the :ref:`poolresize` -> :ref:`pooladddisks` option.
 
 If more than one drive in a raid1 or raid10 pool simultaneously fail, the scenario becomes catastrophic.
-In which case follow the recovery strategy described in :ref:`datalossraid0`.
+In which case follow the recovery strategy described in :ref:`datalossraid0_single`.
 
 .. _datalossraid56:
 
@@ -279,7 +279,7 @@ Once you have the suggested degraded,rw mount option in place (post backup refre
 
 If more than one drive (btrfs-raid5) or two drives (btrfs-raid6) fail simultaneously,
 the scenario becomes catastrophic.
-In which case, follow the recovery strategy described in :ref:`datalossraid0`.
+In which case, follow the recovery strategy described in :ref:`datalossraid0_single`.
 
 .. _btrfsreplace:
 
