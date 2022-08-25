@@ -246,7 +246,7 @@ If desired, to return the prior, and recommended, greater-than-minimum disk coun
 simply use the :ref:`poolresize` -> :ref:`pooladddisks` option.
 
 If more than one drive in a raid1 or raid10 pool simultaneously fail, the scenario becomes catastrophic.
-In which case follow the recovery strategy described in :ref:`datalossraid0`.
+In which case follow the recovery strategy described in :ref:`datalossraid0_single`.
 
 .. _datalossraid56:
 
@@ -279,7 +279,7 @@ Once you have the suggested degraded,rw mount option in place (post backup refre
 
 If more than one drive (btrfs-raid5) or two drives (btrfs-raid6) fail simultaneously,
 the scenario becomes catastrophic.
-In which case, follow the recovery strategy described in :ref:`datalossraid0`.
+In which case, follow the recovery strategy described in :ref:`datalossraid0_single`.
 
 .. _btrfsreplace:
 
