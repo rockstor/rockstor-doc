@@ -21,7 +21,7 @@ Raid controllers, if used, should thus be configured to HBA / JBOD operation.
 * x86_64 celeron/AMD equivalent, or ARM64 A53 processor (2+ cores i3+ or A72+ recommended).
 * 2 GB RAM (4 GB+ recommended).
 * 16 GB drive dedicated to the Operating System (32 GB+ SSD recommended, 5 TB+ ignored by installer). See :ref:`usbwarning`.
-* One or more additional drives dedicated to data use (less than 1 GB ignored, 5 GB+ recommended).
+* One or more additional drives dedicated to data use (less than 5 GiB ignored, 16 GiB+ recommended). See :ref:`drivewarning`.
 * Ethernet interface (with internet access for updates).
 * All drives must have unique serial numbers (real drives do); not all VM
   systems default to, or are capable of this. See: :ref:`vmwarewarning`.
@@ -40,6 +40,31 @@ USB advisory
     Rockstor cannot work reliably when installed on regular USB keys.
     Only fast variants, or preferably HDD and SSD class devices are appropriate.
     If USB is used then 2.0 is bare minimum and 3.0 and better is recommended.
+
+.. _drivewarning:
+
+Data drives advisory
+^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+
+    Rockstor v4.1.0-0 and older have a 1 GiB 'ignore' threshold.
+    See `if your device is small <https://btrfs.wiki.kernel.org/index.php/FAQ#if_your_device_is_small>`_
+    in the btrfs wiki regarding our 16 GiB recommended minimum.
+    Note: Rockstor does not use the "--mixed" format option; irrespective of drive size.
+
+.. note::
+
+    Raid requires compliant drive members: NAS capable drives are strongly advised.
+    I.e. drives that can at least support a 7 second max:
+
+        - Time Limited Error Recovery (TLER) - Wester Digital.
+        - Error Recovery Control (ERC) - Seagate.
+        - Command Completion Time Limit (CCTL) Hitachi.
+
+    Non NAS drives often default to unlimited error recovery time,
+    causing the entire drive to be reset via the linux kernel's 30s block layer timeout.
+    N.B. non NAS drives may also not persist error timeout reconfiguration over a power cycle.
 
 .. _vmwarewarning:
 
