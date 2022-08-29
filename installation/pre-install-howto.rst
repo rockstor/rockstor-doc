@@ -59,7 +59,7 @@ Wiping Disks
 There are limited instances where Rockstors Web-UI may falter, or be confused by a pre-used disks format.
 Rendering the capability to first wipe these disks via the Web-UI's :ref:`wipedisk` inaccessible.
 On these rare occasions one can simply resource the linux command line tool "wipefs" to achieve the same.
-Behind the scenes Rockstor's partition and/or disk wipe procedure execute a "wipefs -a dev-name-here".
+Behind the scenes Rockstor's partition and/or disk wipe procedure executes a "wipefs -a dev-name-here".
 Pre-used mdraid members may require additional mdraid configuration removal.
 
 .. warning::
