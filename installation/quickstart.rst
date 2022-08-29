@@ -15,7 +15,8 @@ Minimum system requirements
 
 Rockstor is a complete Linux distribution "Built on openSUSE" intended for direct hardware installation.
 Virtual Machine installs can work but are not recommended without full drive or preferably whole drive controller pass-through.
-Hardware raid underneath btrfs, Rockstor's chosen filesystem, will weaken data integrity assurances.
+Hardware raid, or md/dm software raid, underneath btrfs, Rockstor's chosen filesystem, will weaken data integrity assurances.
+Multi-layered raid/drive-management arrangements, including any LVM, are not supported.
 Raid controllers, if used, should thus be configured to HBA / JBOD operation.
 
 * x86_64 celeron/AMD equivalent, or ARM64 A53 processor (2+ cores i3+ or A72+ recommended).
