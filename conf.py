@@ -265,6 +265,7 @@ texinfo_documents = [
 # -- Options for linkcheck ------------------------------------------------
 linkcheck_retries = 2
 linkcheck_timeout = 20
+linkcheck_ignore = [r'https://web.libera.chat/#btrfs']
 
 # -- Options for sphinxext.rediraffe --------------------------------------
 rediraffe_redirects = "redirects.txt"
