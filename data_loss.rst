@@ -173,19 +173,24 @@ The Web-UI will also display the cumulative 'btrfs device stats' output for all 
 
 Cumulative Pool device errors per member.
 
-Ask us for help
+Asking for help
 ---------------
 
 If you are in a data loss scenario, we would like to help.
-Though we cannot of course guarantee any recovery.
 See our :ref:`support` options.
 
 If you are already knowledgeable in btrfs and system administration,
-you might also consider seeking help on the `btrfs mailing list <https://btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list>`_.
-Note however that this lists is primarily for btrfs developer use.
-Time taken-up on trivial interactions there may not be fair to the world of btrfs development.
-Also take careful note of what you are expected to include:
-i.e. the *"What information to provide when asking a support question"* section on the above linked mailing list page.
+see the upstream community `Libera Chat - #btrfs channel <https://web.libera.chat/#btrfs>`_.
+Finally, if your needs are extreme, consider seeking help on the
+`btrfs mailing list <https://btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list>`_.
+
+.. note::
+
+    The **btrfs mailing lists** is primarily for btrfs developer use.
+    Time taken-up on trivial interactions there may not be fair to the world of btrfs development.
+    Also take careful note of what you are expected to include:
+    i.e. the *"What information to provide when asking a support question"*
+    section on the above linked mailing list page.
 
 .. _datalossraid0_single:
 
