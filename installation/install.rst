@@ -27,41 +27,19 @@ Rockstor can also be evaluated quickly using a virtual machine, see our
 Hardware recommendations
 -------------------------
 
-There is nothing about Rockstor that requires special hardware. It's Linux, and
-specifically Rockstor 4 is "Built on openSUSE" while v3 used CentOS, so it can
-be installed on a wide range of commodity hardware, with 4 gaining ARM64
-compatibility.
-See :ref:`minsysreqs` for basic requirements.
+There is nothing about Rockstor that requires special hardware.
+It is build on the Linux operating system:
 
-Over time, the Rockstor developers and community at large share hardware specs
-that are known to work with Rockstor. Below is a list of these recommendations.
-Please note, however, that the following examples are to be taken as
-illustrations of possible builds at the time of writing and will likely be
-rapidly outpaced by the rapidly evolving hardware market. We always recommend
-visiting our `Forum <https://forum.rockstor.com>`_ for user stories, example
-builds, and request advice on hardware choice or recommendations.
+- v4 is "Built on openSUSE" and adds ARM64 compatibility: e.g. Pi4, Ten64, etc.
+- v3 is now legacy and was based on CentOS and was X86_64 only.
 
-Complete Builds for Home and small organizations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+As such Rockstor can be installed on a wide range of commodity hardware.
+See :ref:`minsysreqs` for the basic requirements.
 
-You can find user stories and example builds on our
-`Forum <https://forum.rockstor.com>`_, but some excerpts are listed below:
-
-1. A build used by Rockstor developers and at least some known
-   community members uses `ASRock C2550D4I
-   <https://www.asrockrack.com/general/productdetail.asp?Model=C2550D4I>`_
-   with `this memory
-   <https://www.kingston.com/unitedstates/us/memory/search/discontinuedmodels?partId=kvr16le11%2F8>`_. The
-   motherboard provides 12 SATA ports, so `this
-   <https://www.silverstonetek.com/product.php?pid=452>`_ is a recommended tower
-   case to hold up to 12 hard drives.
-
-2. Yet another recommendation used by some community members is HP Proliant
-   Microserver Gen8.
-
-3. Raspberry Pi4 and RPi 400 have also both been reported as working as
-   intended via our newer Rockstor 4 "Built on openSUSE" variant. *N.B.* RPi
-   400 requires at least a 15.3 profile for the internal keyboard to work.
+Rockstor developers and the user community share hardware specs known to work well with Rockstor.
+Visiting our `Forum <https://forum.rockstor.com>`_
+for user stories, example builds, and to request advice on hardware choice or current recommendations.
+There is also a `Hardware <https://forum.rockstor.com/c/hardware/l/latest>`_ tag available.
 
 .. _updating_rockstor:
 
