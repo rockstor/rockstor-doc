@@ -3,6 +3,11 @@
 
 Rockstor in Virtual Machine Manager guide
 =========================================
+.. warning::
+    This How-to was based our now legacy/unsupported v3 CentOS based variant.
+    However a very similar procedure should work for our v4 "Build on openSUSE".
+    N.B. support for virtio devices is conditional on them each having a unique serial number assigned.
+
 A quick and easy way to evaluate Rockstor is by using a virtual machine. A
 virtual machine instance of Rockstor is also invaluable as part of a build
 environment.
