@@ -36,16 +36,33 @@ all those choosing to subscribe to the :ref:`stable_channel` updates where all t
 Developers
 ----------
 
-Developing Rockstor as an open storage platform is non trivial endeavour.
+Developing Rockstor as an open storage platform is a non trivial endeavour.
 If you are passionate about Open Source and Storage like us, you are in the right place.
-The`community discussion forum <https://forum.rockstor.com>`_ is the place to start.
+The `community discussion forum <https://forum.rockstor.com>`_ is the place to start.
 
 Our development process is relatively simple and straight forward.
 We use `Git <https://git-scm.com/>`_ for source code management and
 `Rockstor on Github <https://github.com/rockstor>`_ for issue tracking.
 There is currently one main code repository called
 `rockstor-core on Github <https://github.com/rockstor/rockstor-core>`_.
-Begin by `forking it <https://github.com/rockstor/rockstor-core/fork>`_ via GitHub's Web-UI.
+This repository has 2 main git branches:
+
+- master
+    Used to build the Stable channel packages.
+- testing
+    Main target for development, and used to build our testing channel packages.
+
+.. note::
+
+    Unless your development contribution is both a trivial and critical fix,
+    it likely belongs as a modification against the testing channel only.
+    If all is well during field testing via our testing channel packages,
+    the exact same patch may be cherry picked for inclusion in the stable release.
+
+Begin by `Creating your own forking <https://github.com/rockstor/rockstor-core/fork>`_ via GitHub's Web-UI.
+
+.. warning::
+    You must **untick** *"Copy the master branch only"* if you intend to contribute to the testing channel.
 
 After you've forked the rockstor-core repo, clone your personal GitHub fork onto your laptop/desktop.
 The high level flow of an individual contribution is as follows.
@@ -90,6 +107,10 @@ Local git repo setup
 Since we rely on GitHub services, you need to create a profile on `github.com <https://github.com/>`_.
 
 Go to `rockstor-core repo <https://github.com/rockstor/rockstor-core>`_ and click on the "Fork" button.
+
+.. warning::
+    You must **untick** *"Copy the master branch only"* if you intend to contribute to the testing channel.
+
 You should then have a fork of this repository in your own GitHub profile.
 This repo then serves as your private git remote called origin.
 The next few git steps are demonstrated on a Linux terminal.
@@ -135,8 +156,8 @@ First ensure your local code fork is up-to-date by rebasing on upstream:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-core> git checkout master
-        you@laptop:~/dev/rockstor-core> git pull --rebase upstream master
+        you@laptop:~/dev/rockstor-core> git checkout testing
+        you@laptop:~/dev/rockstor-core> git pull --rebase upstream testing
 
 Then checkout a new/issue-specific branch, e.g.:
 
@@ -144,7 +165,8 @@ Then checkout a new/issue-specific branch, e.g.:
 
         you@laptop:~/dev/rockstor-core> git checkout -b 1234_issue_title
 
-You can then start making changes in this dedicated branch.
+You can then start making changes in this dedicated issue-specific branch,
+which is itself based on the upstream testing branch in this example.
 
 We strongly encourage the following commit guidelines.
 As a guiding principle, separate your changes into one or more logically independent commits.
@@ -152,7 +174,7 @@ This can help with the review process but only do this on larger more complex co
 Otherwise we advise to squash your local 'working steps' commits into a single commit before submission.
 
 We request that you divide a commit message into two parts.
-Start the message with a single line summary, about 70 characters in length ending in #issue-number.
+Start the message with a single line summary, max 70 characters in length ending in #issue-number.
 Add a blank line after that.
 Further details can then follow in paragraphs less than 80 characters wide.
 Below is a fictional example:
@@ -527,8 +549,15 @@ You can periodically push your changes to GitHub with the following command:
 
 When you finish the associated issue changes, and are ready to submit your pull/merge reqeust,
 create a pull request by clicking on the "pull request" button on GitHub.
-This notifies the maintainers of your changes.
-As a best practice only open one pull request per issue containing all relevant changes.
+
+.. warning::
+    Be very careful to select the correct upstream branch against which you want to contribute.
+    This will very likely be the same branch you initially checked out above, i.e. **testing**.
+    For specific reasons, the *testing* branch is not the default in GitHub currently.
+    You will be required to select *testing* if you are not working against master directly.
+
+This pull-request process notifies the maintainers of your proposed changes.
+As a best practice only open one pull request per issue, containing all relevant changes.
 
 Commit history cleanup
 ----------------------
