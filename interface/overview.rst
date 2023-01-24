@@ -21,9 +21,9 @@ somewhere to live.  In Rockstor it is recommended that you setup a Share
 specifically for this purpose.
 
 .. warning::
-It is recommended to *not* use the system disk to store Rock-ons and their
-configurations on. Storing Rock-ons on the system disk will make Rock-on
-restores more difficult. See :ref:`dataloss` for more information.
+    It is recommended to **not** use the system disk to store Rock-ons and their
+    configurations on. Storing Rock-ons on the system disk will make Rock-on
+    restores more difficult. See :ref:`dataloss` for more information.
 
 Note that all Rock-ons will then be installed into this shared area but each
 will remain independent and during the setup of each Rock-on you are given the
