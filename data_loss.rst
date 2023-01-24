@@ -71,8 +71,9 @@ Here are some recommendations.
 * Use Rockstor's replication feature to asynchronously and automatically
   replicate important shares on another Rockstor system.
 * Use reputable backup orientated software configured to replicate important Shares,
-  ideally to both on and off site sources.
-* Note that we have a number of backup orientated :ref:`rockons_intro` available.
+  ideally to both on and off site sources (note that we have a number of backup orientated 
+  :ref:`rockons_intro` available).
+* Create periodic backups of your Rockstor configuration (See :ref:`config_backup`).
 
 .. _btrfsnature:
 
@@ -473,3 +474,24 @@ The following command can be used to monitor the progress of any ongoing balance
 .. code-block:: console
 
     btrfs balance status /mnt2/pool-name
+
+Rock-on Restore
+^^^^^^^^^^^^^^^
+
+.. warning::
+    It is recommended to **not** store Rock-ons and their configuration on the system drive.
+
+Rock-ons not stored on system drive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this case it should suffice to restore your Rockstor configuration after you restored your pools, shares and data.
+Restoring the configuration will re-configure the Rock-ons. If the configuration is not restored it is possible
+that the containers are running in the background, however, since Rockstor is not aware of them, you will not be 
+able to manage them via the Rockstor UI.
+
+Rock-ons stored on system drive
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this case you will have to restore your pools, shares and data first. Once that is done you will need to re-install
+the Rock-ons with the exact same configuration you installed them before. When done you will be able to manage the
+Rock-ons via the UI again.
