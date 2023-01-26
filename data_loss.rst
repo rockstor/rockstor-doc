@@ -475,23 +475,29 @@ The following command can be used to monitor the progress of any ongoing balance
 
     btrfs balance status /mnt2/pool-name
 
+.. _rockonrestore:
+
 Rock-on Restore
 ^^^^^^^^^^^^^^^
 
-.. warning::
-    It is recommended to **not** store Rock-ons and their configuration on the system drive.
+When Rock-ons are not visible after data restore it is possible that they are either running silently in the background
+or Rockstor does not have the needed information to restore the Rock-ons. Here is how to get your Rock-ons back up and
+running.
 
-Rock-ons not stored on system drive
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Rock-on data was not stored on system drive (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this case it should suffice to restore your Rockstor configuration after you restored your pools, shares and data.
-Restoring the configuration will re-configure the Rock-ons. If the configuration is not restored it is possible
-that the containers are running in the background, however, since Rockstor is not aware of them, you will not be 
-able to manage them via the Rockstor UI.
+1. Restore your data, pools and shares to make sure the Rock-on data is available
+2. Restore your Rockstor configuration
 
-Rock-ons stored on system drive
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This should be enough for Rockstor to restore your Rock-ons and make them visible and manageable from the UI again.
 
-In this case you will have to restore your pools, shares and data first. Once that is done you will need to re-install
-the Rock-ons with the exact same configuration you installed them before. When done you will be able to manage the
-Rock-ons via the UI again.
+
+Rock-on data stored on system drive (discouraged)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Restore your Rock-on data and the needed shares of your system drive to make sure the Rock-on data is available again (this would be the ideal moment to move the data to a share that is not on the system drive!)
+2. Re-install the Rock-ons with the same configuration you installed them with before. In case you moved the Rock-on data to a share not on the system drive, be sure to point the Rock-on's storage location to the correct share.
+3. Start the Rock-on
+
+You should now be able to manage the Rock-ons via the UI again.
