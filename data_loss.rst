@@ -493,7 +493,7 @@ Rock-on associated shares are not stored on the system drive (recommended)
 This should be enough for Rockstor to restore your Rock-ons and make them visible and manageable from the UI again.
 
 
-Rock-on data stored on system drive (discouraged)
+Rock-on associated shares were stored on the system drive (discouraged)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Restore your Rock-on data and the needed shares of your system drive to make sure the Rock-on data is available again (this would be the ideal moment to move the data to a share that is not on the system drive!)
