@@ -496,7 +496,7 @@ This should be enough for Rockstor to restore your Rock-ons and make them visibl
 Rock-on associated shares were stored on the system drive (discouraged)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Restore your Rock-on data and the needed shares of your system drive to make sure the Rock-on data is available again (this would be the ideal moment to move the data to a share that is not on the system drive!)
+1. Restore your Rock-on associated shares on your system drive to make sure they are available again (this would be the ideal moment to instead restore/move them to a share that is not on the system drive!)
 2. Re-install the Rock-ons with the same configuration you installed them with before. In case you moved the Rock-on data to a share not on the system drive, be sure to point the Rock-on's storage location to the correct share.
 3. Start the Rock-on
 
