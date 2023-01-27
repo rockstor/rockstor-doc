@@ -484,7 +484,7 @@ When Rock-ons are not visible after data restore it is possible that they are ei
 or Rockstor does not have the needed information to restore the Rock-ons. Here is how to get your Rock-ons back up and
 running.
 
-Rock-on data was not stored on system drive (recommended)
+Rock-on associated shares are not stored on the system drive (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Restore your data, pools and shares to make sure the Rock-on data is available
