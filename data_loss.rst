@@ -480,7 +480,7 @@ The following command can be used to monitor the progress of any ongoing balance
 Rock-on Restore
 ^^^^^^^^^^^^^^^
 
-When Rock-ons are not visible after data restore it is possible that they are either running silently in the background
+When Rock-ons are not visible after data restore, or pool import, it is possible that they are either running silently in the background
 or Rockstor does not have the needed information to restore the Rock-ons. Here is how to get your Rock-ons back up and
 running.
 
