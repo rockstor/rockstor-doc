@@ -9,8 +9,8 @@ Thanks
 ------
 
 Rockstor’s developers would like to thank the entire OSS community for making
-any of this possible. Specifically with our fledgling move / rebase on openSUSE
-Leap 15.2 our thanks go to the openSUSE/SuSE organisations and the larger
+any of this possible. Specifically with our recent move / rebase on openSUSE
+Leap, our thanks go to the openSUSE/SuSE organisations and the larger
 community for the extreme generosity we all benefit from in a myriad of seen
 and unseen ways.
 
@@ -117,10 +117,15 @@ Select Keyboard Layout
 
 Use cursor keys to highlight, then the "Enter" key to select.
 
-GPLv2 & openSUSE based Rockstor License Agreement
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Rockstor is "Built on openSUSE" and so our installer and the consequent
+.. _installer_license:
+
+Rockstor "Built on openSUSE" installer License Agreement
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Rockstor installer is "Built on openSUSE" and so the consequent
 installs are considered modified copies of the indicated openSUSE variant.
+
+The included **rockstor** package is :ref:`rockstor_license`
 
 .. image:: /images/installation/installer-howto/gplv2_license_agreement.png
    :width: 100%
@@ -230,7 +235,7 @@ explaining these channels is included:
 Dashboard and System updates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As the GPLv2 + licensed "rockstor" package stands on the shoulders of numerous
+As the entirety of this installer stands on the shoulders of numerous
 OSS giants, it is possible to update all upstream, read openSUSE/SuSE,
 provided/curated packages via the flashing icon to the left of the "Uses
 openSUSE ..." text in the top right of the Web-UI:

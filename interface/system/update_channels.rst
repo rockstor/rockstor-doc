@@ -3,23 +3,42 @@
 Software update
 ================
 
-.. _rockstor_licence:
+.. _rockstor_license:
 
-GNU GPLv2 Licenced
-------------------
+Licensed: FSF Free/Libre & OSI approved
+---------------------------------------
 
-The code that makes Rockstor possible is developed under the
-`GNU GPLv2 <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`_ licence
-and is therefore fully Open Source, there is no contributor agreement and
+The Rockstor package code, as distributed, is developed under two main repositories:
+
+* Source0: `rockstor-core <https://github.com/rockstor/rockstor-core>`_ is
+  `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ licensed.
+
+* Source1: `rockstor-jslibs <https://github.com/rockstor/rockstor-jslibs>`_ is
+  (`MIT <https://opensource.org/licenses/MIT>`_ AND
+  `Apache-2.0 <https://opensource.org/licenses/Apache-2.0>`_ AND
+  `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ AND
+  `LGPL-3.0-or-later <https://www.gnu.org/licenses/lgpl-3.0-standalone.html>`_ AND
+  `ISC <https://spdx.org/licenses/ISC.html>`_) licensed.
+  Indicating the combined works in this jslibs repository.
+
+Making the package license, as per the `Fedora Project Wiki (Packaging:LicensingGuidelines)
+<https://fedoraproject.org/wiki/Packaging:LicensingGuidelines#Mixed_Source_Licensing_Scenario>`_:
+
+* *"GPL-3.0-or-later AND (MIT AND Apache-2.0 AND GPL-3.0-or-later AND LGPL-3.0-or-later AND ISC)"*
+
+See the `SPDX License List <https://spdx.org/licenses/>`_ for details on the above assertions.
+
+As such Rockstor the package is fully Open Source, there is no contributor agreement, and
 everyone is encouraged to help in what ever way they can. It is very much
 developed in the open with key decisions made by the community and their
-interaction with Rockstor contributors and maintainers `Our Mission <https://rockstor.com/about-us.html>`_.
+interaction with Rockstor contributors and maintainers.
+See: `Our Endeavour <https://rockstor.com/about-us.html>`_.
 This flow of ideas and open development is held as a founding principal and is
 instantiated in the `Rockstor forum <https://forum.rockstor.com/>`_ and within
 the code itself `on GitHub <https://github.com/rockstor>`_.
 
-`Rockstor <https://rockstor.com/>`_ the project embodies an identifiable
-software distributor and coordinator of the Open Source product that is the
+`The Rockstor Project <https://rockstor.com/>`_ embodies an identifiable
+software maintainer and coordinator of the Open Source product that is the
 scheduled Rockstor releases. It also forms an identifiable entity necessary
 for the support of the releases (where needed) and infrastructure necessary to
 maintain the open development that is essential in modern non trivial software
@@ -27,7 +46,7 @@ appliances that have any hope of qualifying as **future-proof**.
 
 After an initial development of 2.5 years the sustainable nature of this
 endeavour was approached and redressed in `a thread on the community forum <https://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
-The consensus was to adopt a two-tiered updates model; testing and stable.
+The consensus was to adopt a two-tiered updates model; Testing and Stable.
 
 ..  image:: /images/interface/system/update-channels//update_channel_options.png
     :width: 100%
