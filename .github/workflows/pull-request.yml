@@ -13,7 +13,7 @@ jobs:
     - name: install sphinxext-rediraffe
       run: pip3 install sphinxext-rediraffe
     - name: build docs
-      run: make html
+      run: sphinx-build -b html -E -W --keep-going . _build/html
 
   linkcheck:
     runs-on: ubuntu-latest
