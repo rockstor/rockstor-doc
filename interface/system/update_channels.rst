@@ -28,7 +28,7 @@ Making the package license, as per the `Fedora Project Wiki (Packaging:Licensing
 
 See the `SPDX License List <https://spdx.org/licenses/>`_ for details on the above assertions.
 
-As such Rockstor the package is fully Open Source, there is no contributor agreement, and
+As such, Rockstor the package is fully Open Source; there is no contributor agreement, and
 everyone is encouraged to help in what ever way they can. It is very much
 developed in the open with key decisions made by the community and their
 interaction with Rockstor contributors and maintainers.
