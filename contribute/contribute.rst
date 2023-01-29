@@ -42,9 +42,9 @@ The `community discussion forum <https://forum.rockstor.com>`_ is the place to s
 
 Our development process is relatively simple and straight forward.
 We use `Git <https://git-scm.com/>`_ for source code management and
-`Rockstor on Github <https://github.com/rockstor>`_ for issue tracking.
+`Rockstor on GitHub <https://github.com/rockstor>`_ for issue tracking.
 There is currently one main code repository called
-`rockstor-core on Github <https://github.com/rockstor/rockstor-core>`_.
+`rockstor-core on GitHub <https://github.com/rockstor/rockstor-core>`_.
 This repository has 2 main git branches:
 
 - master
@@ -57,7 +57,7 @@ This repository has 2 main git branches:
     Unless your development contribution is both a trivial and critical fix,
     it likely belongs as a modification against the testing channel only.
     If all is well during field testing via our testing channel packages,
-    the exact same patch may be cherry picked for inclusion in the stable release.
+    the exact same patch may be cherry-picked for inclusion in the stable release.
 
 Begin by `Creating your own forking <https://github.com/rockstor/rockstor-core/fork>`_ via GitHub's Web-UI.
 
@@ -84,20 +84,20 @@ In the following sections we assume:
 
 1. You have a basic working knowledge of the linux command line, git, and GitHub.
 2. **laptop** = your local laptop or desktop with git, ssh client, and an editor/IDE installed.
-3. **~/dev/rockstor-core**: = your (laptop/desktop) local git clone & dev branch directory.
-4. **buildvm**: is your target build machine's hostname; the name chosen during the rockstor install.
+3. **~/dev/rockstor-core** = your (laptop/desktop) local git clone & dev branch directory.
+4. **buildvm** = your target build machine's hostname; the name chosen during the rockstor install.
 
-TIP: you can add your buildvm's IP address to /etc/hosts on your laptop (linux assumed).
-E.g.
+TIP: you can add your buildvm's IP address to :code:`/etc/hosts` on your laptop (linux assumed).
+E.g.:
 
 .. code-block:: console
 
     you@laptop:~> grep "buildvm" /etc/hosts
     192.168.2.170   buildvm
 
-Then a :code:`ping -c2  buildvm` on your laptop should complete without error.
-And :code:`ssh root@buildvm` should provide a root user shell on the target buildvm machine.
-Assuming they are both on the same network.
+Then, a :code:`ping -c2  buildvm` on your laptop should complete without error and
+:code:`ssh root@buildvm` should provide a root user shell on the target buildvm machine
+(assuming they are both on the same network).
 
 .. _localrepo:
 
@@ -112,12 +112,12 @@ Go to `rockstor-core repo <https://github.com/rockstor/rockstor-core>`_ and clic
     You must **untick** *"Copy the master branch only"* if you intend to contribute to the testing channel.
 
 You should then have a fork of this repository in your own GitHub profile.
-This repo then serves as your private git remote called origin.
-The next few git steps are demonstrated on a Linux terminal.
-They should also work with little or no modification in an OSX console.
+This repo then serves as your private git remote called *origin*.
+The next few git steps are demonstrated on a Linux terminal;
+they should, however, also work with little or no modification in an OSX console.
 
-Clone, in turn, your GitHub profiles fork of rockstor-core onto your local machine.
-You can do this in any directory; but the following assume the ~/dev directory.
+Clone, in turn, your GitHub profile's fork of rockstor-core onto your local machine.
+You can do this in any directory but the following assumes the :code:`~/dev` directory.
 
 .. code-block:: console
 
@@ -150,9 +150,9 @@ Add a remote called **upstream** to periodically rebase your local repository wi
 Making changes
 --------------
 
-Assuming you have identified or created an issue to work on (eg: #1234) from
-`GitHub issue tracker <https://github.com/rockstor/rockstor-core/issues>`_.
-First ensure your local code fork is up-to-date by rebasing on upstream:
+Assuming you have identified or created an issue to work on (eg: #1234) from our
+`GitHub issue tracker <https://github.com/rockstor/rockstor-core/issues>`_,
+first ensure your local code fork is up-to-date by rebasing on upstream:
 
 .. code-block:: console
 
@@ -204,10 +204,10 @@ Build VM
 You need a Virtual Machine (VM) to build and test your changes.
 An easy solution is to create a Rockstor VM using either Oracle's
 `VirtualBox <https://www.virtualbox.org/>`_
-or if you are using a Linux desktop then the
-`Virtual Machine Manager (VMM) <https://virt-manager.org>`_
+or, if you are using a Linux desktop,
+the `Virtual Machine Manager (VMM) <https://virt-manager.org>`_
 is a more native option.
-VMM is used in our :ref:`kvmsetup` howto.
+Please see our :ref:`kvmsetup` howto for more details on using VMM.
 A 'real' machine is another option and may be required in some scenarios,
 i.e. where a hardware compatibility feature is being developed.
 
@@ -216,32 +216,32 @@ i.e. where a hardware compatibility feature is being developed.
 Build VM OS
 ~~~~~~~~~~~
 
-It is suggested that a fresh Rockstor install be used for the target development machine OS.
-I.e. the resulting install from a
-`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_
-Pre-built installers are available from our `Downloads page <https://rockstor.com/dls.html>`
-Only v4 "Built on openSUSE" and newer bases are considered.
-V3 and older (CentOS based) instances are now deprecated and no longer developed.
+It is suggested that a fresh Rockstor install be used for the target development machine OS,
+i.e. the resulting install from a
+`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_.
+Pre-built installers are available from our `Downloads page <https://rockstor.com/dls.html>`_.
+Note that only v4 "Built on openSUSE" and newer bases are considered
+as v3 and older (CentOS-based) instances are now deprecated and no longer developed.
 
-N.B. the existing rpm based rockstor instance will be destroyed, hence the 'fresh' suggestion.
+.. note::
 
-Alternatively an upstream (openSUSE) JeOS instance is also an option:
-but only if:
+    The existing rpm-based Rockstor instance will be destroyed, hence the 'fresh' suggestion.
 
-- It's root filesystem is btrfs and setup for boot to snapshot.
-- It uses NetworkManager not wicked for it's network configuration.
+Alternatively, an upstream (openSUSE) JeOS instance is also an option, but only if:
+
+- Its root filesystem is btrfs and setup for boot to snapshot.
+- It uses NetworkManager and not wicked for its network configuration.
 - Shellinabox is installed and enabled/running under systemd.
-- Apparmour is disabled if installed: "systemctl disable apparmor".
+- Apparmor is disabled if installed: :code:`systemctl disable apparmor`.
 
 .. _remove_rpm:
 
 Remove the Existing Rockstor RPM install
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The prior existing rpm install must be removed as it will otherwise interfere.
-The following does this, updates the os, and installs the dev dependencies.
-Around 30 packages will already be installed and a similar number will be added:
-if you are using the suggested rockstor-installer derived os instance.
-This change will be around 60 MB download and 250 MB installed.
+The following does this, updates the OS, and installs the missing build dependencies.
+Only 1 dependency (:code:`wget`) will be installed if you are using the suggested Rockstor installers.
+This will download less than 800 KiB, and slightly more than 3 MiB will be used after installation.
 
 .. code-block:: text
 
@@ -303,8 +303,12 @@ Simply run each of these steps:
    look into the build log recorded in :code:`/opt/rockstor/poetry-install.txt`.
 
 The build process, towards the end, enables and starts the following rockstor systemd services.
-**All are installed in /etc/systemd/system/**
-Note that all paths indicated are within the rockstor source tree.
+
+.. note::
+
+   All are installed in :code:`/usr/lib/systemd/system/`
+
+Note that all paths indicated below are within the rockstor source tree.
 
 .. code-block:: console
 
@@ -312,8 +316,8 @@ Note that all paths indicated are within the rockstor source tree.
     rockstor  # starts .venv/bin/supervisord -c etc/supervisord.conf after rockstor-pre.service
     rockstor-bootstrap  # starts .venv/bin/bootstrap after rockstor.service
 
-If a custom HDD power (APM) and/or spin-down setting is enabled, the following service is added.
-But only if the drive is confirmed as rotational.
+If a custom HDD power (APM) and/or spin-down setting is enabled, the following service is added,
+but only if the drive is confirmed as rotational:
 
 .. code-block:: console
 
@@ -321,11 +325,14 @@ But only if the drive is confirmed as rotational.
 
 It is entirely safe to disable and delete the rockstor-hdparm.service.
 The only consequence is a return to defaults for all drives on next power cycle.
-N.B. power cycle, not necessarily reboot; as drive settings are often reboot sticky.
-And so require an actual power cycle to return to their.
-The rockstor-hdparm.service is our way to re-establish custom config on boot-up.
-The Rockstor Web-UI references this file itself for the current settings.
-There is no db component to this configuration setting.
+
+.. note::
+
+   *N.B.*: power cycle, not necessarily reboot, may be required as drive settings are often reboot sticky
+   and so require an actual power cycle to return to their defaults.
+   The rockstor-hdparm.service is our way to re-establish custom config on boot-up.
+   The Rockstor Web-UI references this file itself for the current settings,
+   and no database component is thus linked to this configuration setting.
 
 .. _code_test:
 
@@ -333,10 +340,10 @@ There is no db component to this configuration setting.
 ~~~~~~~~~~~~
 
 At this point the Rockstor Web-UI should be available to verify your changes.
-In our example setup the URL from **laptop** would be :code:`https://buildvm/`.
+In our example setup, the URL from **laptop** would be :code:`https://buildvm/`.
 
 It is very important to ensure that your code changes survive a reboot.
-Sometimes, especially when db changes are made, this can be an issue.
+Sometimes, especially when database changes are made, this can be an issue.
 Be sure to check that the resulting build behaves as expected over:
 
 1. A config reset - removing :code:`/opt/rockstor/.initrock` and rebooting
@@ -346,9 +353,9 @@ In (1.) above, a database wipe is initiated helping to test the self-start code 
 See the :code:`initrock.py` script and its systemd trigger service: :code:`rockstor-pre.service` for more details.
 
 We also have **automated tests** in place that cover our API's and core critical path functionality.
-It is expected that any changes to critical path code e.g. fs management / updates / Web-UI / services,
+It is expected that any changes to critical path code e.g. filesystem management/updates/Web-UI/services,
 include counterpart contributions to prove the expected function, if required.
-This is an oft neglected element in software development;
+This is an oft neglected element in software development
 but we are attempting to better our own standing in this regard.
 
 The following will run all tests following the source installation detailed above:
@@ -359,13 +366,13 @@ The following will run all tests following the source installation detailed abov
     buildvm:/opt/rockstor/src/rockstor # poetry run django-admin test -v 2
 
 All included tests, **numbering over 200**, are expected to pass;
-however it is always worth checking our `current issues <https://github.com/rockstor/rockstor-core/issues>`_
+however, it is always worth checking our `current issues <https://github.com/rockstor/rockstor-core/issues>`_
 for known failures in this area.
 
 A note on updating
 ``````````````````
 A source install will consider any rpm version to be an update.
-And this 'update' will necessarily delete all prior settings / db setup.
+And this 'update' will necessarily delete all prior settings/database setup.
 This is by design as a source release is intended only for development.
 Identifying itself as *ROCKSTOR UNKNOWN VERSION* within the top-right of the Web-UI.
 For example, if work on a hardware compatibility issue is submitted,
@@ -373,19 +380,19 @@ the author can 'update' in-place upon that work being merged and released in the
 This would thus return the specific hardware instance to a recognised upgrade path
 and also verify that the released rpm, fix included, works as intended.
 
-All :ref:`import_data` and :ref:`config_backup` functionality is supported similarly;
-as there is no source difference between a source and rpm install, just the packaging/update/support service.
-Unless of course there has been a breaking change involved in the submitted code.
-Breaking changes in these areas are strongly discouraged but unavoidable at time.
-An example: one cannot restore a new features settings to an older Rockstor instance.
+All :ref:`import_data` and :ref:`config_backup` functionality is supported similarly
+as there is no source difference between a source and rpm install, just the packaging/update/support service,
+unless of course there has been a breaking change involved in the submitted code.
+Breaking changes in these areas are strongly discouraged but unavoidable at times.
+An example: one cannot restore a new feature's settings to an older Rockstor instance.
 
 Change -> Test cycle
 --------------------
 
 Changes fall into two main categories.
 
-1. Backend changes involving python coding.
-2. Frontend changes involving javascript, html and css.
+1. Backend changes involving Python coding.
+2. Frontend changes involving JavaScript, HTML and CSS.
 
 To test any change, you need to transfer files from your laptop to the VM:
 
@@ -393,7 +400,7 @@ To test any change, you need to transfer files from your laptop to the VM:
 
         you@laptop:~> rsync -avz --exclude=.git ~/dev/rockstor-core/ root@buildvm:/opt/rockstor/
 
-If you made any javascript, html or css changes,
+If you made any JavaScript, HTML or CSS changes,
 you need to collect the static files with the following after the above transfer:
 
 .. code-block:: text
@@ -404,7 +411,7 @@ you need to collect the static files with the following after the above transfer
 
 N.B. An overall :ref:`code_build` may be required before this will work without error.
 
-Then, refresh the browser to test new changes in the Web-UI.
+Then, refresh the browser to test the new changes in the Web-UI.
 
 Terminal hint
 ~~~~~~~~~~~~~
@@ -443,10 +450,10 @@ Everything that your code or any Rockstor service logs goes into the following f
     -rw-r--r-- 1 root root    694 Nov 21 18:14 supervisord_ztask-daemon_stderr.log
     -rw-r--r-- 1 root root      0 Nov 21 16:52 supervisord_ztask-daemon_stdout.log
 
-rockstor.log should be the first place to look for errors or debug logs.
+:code:`rockstor.log` should be the first place to look for errors or debug logs.
 
-Some things such as rockstor-pre/bootstrap are logged directly to the system log.
-And so are accessible via commands such as:
+Some things such as rockstor-pre/bootstrap are logged directly to the system log
+and are thus accessible via commands such as:
 
 .. code-block:: console
 
@@ -455,14 +462,14 @@ And so are accessible via commands such as:
     journalctl --no-pager  # to avoid line truncation.
 
 When making frontend changes, "Developer Tools" in Chrome/Firefox are critically important.
-You can `inspect elements <https://developer.chrome.com/docs/devtools/dom/>`_ for html/css changes.
-Log to the browser console from javascript code with console.log().
-And use the debugger to step through javascript; all from your browser.
+You can `inspect elements <https://developer.chrome.com/docs/devtools/dom/>`_ for HTML/CSS changes.
+Log to the browser console from your JavaScript code with :code:`console.log()` statements,
+and use the debugger to step through JavaScript; all from your browser.
 
 Adding third party Javascript libraries
 ---------------------------------------
 
-The frontend code uses third party javascript libraries such as jquery,bootstrap, d3 and many others.
+The frontend code uses third party JavaScript libraries such as jQuery, Bootstrap, D3.js and many others.
 These are not part of the rockstor-core repository but are dynamically generated during the build.
 They are placed in the below directory on your build VM:
 
@@ -471,9 +478,9 @@ They are placed in the below directory on your build VM:
     /opt/rockstor/static/js/lib/
 
 If you need to add a new library,
-place all of it's files in the above lib directory (on buildvm) and continue your development process.
+place all of its files in the above lib directory (on buildvm) and continue your development process.
 After you open the pull request on the rockstor-core repo,
-it's time to open a separate pull request for merging the additional libaries.
+it's time to open a separate pull request for merging the additional libraries.
 This separate pull request must be opened on another repository named
 `rockstor-jslibs <https://github.com/rockstor/rockstor-jslibs>`_,
 which mirrors the contents of the lib directory shown above.
@@ -491,14 +498,12 @@ There are two databases:
 Depending on your issue you may need to add a Django model, delete one, or change fields of an existing model.
 After editing models you need to create a database migration file and apply it.
 
-We used `South <https://south.aeracode.org/>`_ to manage database migrations for a while,
+In the past, we used `South <https://south.aeracode.org/>`_ to manage database migrations for a while
 but since updating to Django 1.8, migrations are natively supported.
 The steps have changed only slightly.
-Generate the migration on buildvm and copy the resulting file back to your laptop.
-This migration file should now be added to the git soruce control.
-It represents a necessary part of your proposed changes and enables the update mechanism.
 
-E.g.for model changes in storageadmin application, create a migration file using:
+1. Generate the migration on buildvm and copy the resulting file back to your laptop.
+2. Add this migration file to the git source control. It represents a necessary part of your proposed changes and enables the update mechanism.
 
 E.g. for model changes in the storageadmin application, create a migration file using:
 
@@ -518,8 +523,7 @@ Apply the migration with:
         buildvm:~ # export DJANGO_SETTINGS_MODULE=settings
         buildvm:~ # poetry run django-admin migrate storageadmin
 
-For model changes in the smart_manager application, create a migration file
-using:
+For model changes in the smart_manager application, create a migration file using:
 
 .. code-block:: text
 
@@ -547,32 +551,34 @@ You can periodically push your changes to GitHub with the following command:
 
         you@laptop:~> cd ~/dev/rockstor-core; git push origin 1234_issue_title
 
-When you finish the associated issue changes, and are ready to submit your pull/merge reqeust,
+When you finish the associated issue changes and are ready to submit your pull/merge reqeust,
 create a pull request by clicking on the "pull request" button on GitHub.
 
 .. warning::
-    Be very careful to select the correct upstream branch against which you want to contribute.
+    Be very careful to select the correct upstream branch to which you want to contribute.
     This will very likely be the same branch you initially checked out above, i.e. **testing**.
     For specific reasons, the *testing* branch is not the default in GitHub currently.
     You will be required to select *testing* if you are not working against master directly.
 
 This pull-request process notifies the maintainers of your proposed changes.
-As a best practice only open one pull request per issue, containing all relevant changes.
+As a best practice, only open one pull request per issue, containing all relevant changes.
 
 Commit history cleanup
 ----------------------
 
 As you work on an issue in your feature/issue branch, you may have committed multiple times.
 This is good practice as you have 'save points' and a backup of sorts.
-But submitting your pull request please squash all commits into one at the very end.
-Or if a pull request is non trivial, or spans multiple logically distinct areas.
-Try and squash your working commit history to a meaningfully, simple to understand, set.
+Before submitting your pull request, however, please squash all commits into one at the very end.
 This will help to keep the upstream branch histories cleaner,
-and makes it easier to research, or revert, issue related changes.
-This can help a lot when tracking down regressions.
+and make it easier to research, or revert, issue-related changes.
+This can also help a lot when tracking down regressions.
+
+.. note::
+   If a pull request is non trivial, or spans multiple logically distinct areas,
+   try to squash your working commit history to a meaningfully, simple to understand, set.
 
 Squashing commits into one is relatively straight-forward.
-Most editors and IDEs with git intergration make this relatively easy to do so.
+Most editors and IDEs with git integration make this relatively easy to do so.
 If you've never done this before, this
 `short how-to <https://levelup.gitconnected.com/how-to-squash-git-commits-9a095c1bc1fc>`_
 may help.
@@ -581,20 +587,20 @@ See also `PyCharm's excellent git capabilities <https://www.jetbrains.com/help/p
 Contributing and testing from another Rockstor contributor fork
 ---------------------------------------------------------------
 
-If you want to test and/or contribute starting from another user's fork, you can add his/her fork (or single branch).
+If you want to test and/or contribute starting from another user's fork, you can add their fork (or single branch).
 
-Adding another user's forked repo to your remotes:
+To add another user's forked repo to your remotes:
 
 .. code-block:: console
 
         your@laptop:~/dev/rockstor-core> git remote add other_user_name git@github.com:other_user_name/rockstor-core.git
 
-Fetching another user's branch from the above added remote fork:
+To fetch another user's branch from the remote fork added above:
 
 .. code-block:: console
 
         your@laptop:~/dev/rockstor-core> git fetch other_user_name remote_branch_name
 
-After fetching another contributor's branch you can checkout from it and start your development,
+After fetching another contributor's branch, you can checkout from it and start your development
 or create a complete new branch starting from one of theirs.
-Github pull requests can then be made directly to the Rockstor repo or other user's forks/branches.
+GitHub pull requests can then be made directly to the appropriate Rockstor repo or other user's forks/branches.
