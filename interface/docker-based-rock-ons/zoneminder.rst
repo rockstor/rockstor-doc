@@ -16,7 +16,7 @@ What is ZoneMinder
 ------------------
 
 `ZoneMinder <https://zoneminder.com/>`_ is a full-featured and open source
-video surveillance software system. Licenced as GPLv2 or later. Capabilities
+video surveillance software system. Licensed as GPLv2 or later. Capabilities
 include the use of pretty much any camera, either directly connected or
 IP-enabled, and the capability to run on general purpose hardware. The source
 code can be found on their `GitHub page <https://github.com/ZoneMinder/ZoneMinder/>`_.
@@ -26,7 +26,7 @@ available that interface with the open third-party friendly APIs.
 is one such app that is now maintained by the ZoneMinder developers:
 gracefully handed-on after 6 years of development by `Pliable Pixels <https://github.com/pliablepixels>`_.
 This app is also `open source and on GitHub <https://github.com/ZoneMinder/zmNinja>`_
-and more recently re-licenced as `GPLv3 <https://github.com/ZoneMinder/zmNinja/blob/master/LICENSE>`_.
+and more recently re-licensed as `GPLv3 <https://github.com/ZoneMinder/zmNinja/blob/master/LICENSE>`_.
 
 .. _zoneminder_doc:
 

@@ -44,7 +44,7 @@ What is NUT
 -----------
 
 NUT stand for `Network UPS Tools <https://networkupstools.org/>`_ and is a
-collection of GPLv2 licenced packages that enables communication between UPS
+collection of GPLv2 licensed packages that enables communication between UPS
 systems and their protected equipment. It also has the facility to share this
 information on the local lan so that equipment that is powered by the UPS but
 is not directly connected to the UPS data wise can be informed of the critical

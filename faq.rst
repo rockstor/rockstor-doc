@@ -10,6 +10,13 @@ Rockstor is a **free and open source NAS (Network Attached Storage) operating
 system**. It's a software solution and can be installed on commodity hardware
 or a hypervisor satisfying :ref:`minsysreqs`
 
+.. _faq_license:
+
+How is Rockstor licensed?
+-------------------------
+
+* The **rockstor** package is :ref:`rockstor_license`.
+* :ref:`our_kiwi_ng_installer` is licensed according to the :ref:`installer_license`.
 
 What is a quick way to evaluate Rockstor?
 -----------------------------------------
@@ -113,15 +120,6 @@ when moving from Rockstor 3 to 4, we try to make these releases as infrequent
 as possible. Generally we push small tested updates as often as we can, and
 base our Stable Updates channel releases on the field testing carried out by
 our community in the Testing Channel.
-
-.. _faq_license:
-
-How is Rockstor licensed?
--------------------------
-
-Rockstor is free software licenced under the terms of GNU General Public
-License version 2. See `here <https://www.gnu.org/licenses>`_ for more details.
-
 
 What Linux flavor is Rockstor based on?
 ---------------------------------------
