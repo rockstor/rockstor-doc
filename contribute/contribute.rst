@@ -471,7 +471,7 @@ Adding third party Javascript libraries
 
 The frontend code uses third party JavaScript libraries such as jQuery, Bootstrap, D3.js and many others.
 These are not part of the rockstor-core repository but are dynamically generated during the build.
-They are placed in the below directory on your build VM:
+They are unzipped into the below directory on your build VM by the build script (build.sh):
 
 .. code-block:: console
 
