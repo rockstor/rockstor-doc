@@ -349,7 +349,7 @@ Be sure to check that the resulting build behaves as expected over:
 1. A config reset - removing :code:`/opt/rockstor/.initrock` and rebooting
 2. Several reboots
 
-In (1.) above, a database wipe is initiated helping to test the self-start code capability
+In (1.) above, a database wipe is initiated helping to test the self-start code capability.
 See the :code:`initrock.py` script and its systemd trigger service: :code:`rockstor-pre.service` for more details.
 
 We also have **automated tests** in place that cover our API's and core critical path functionality.
