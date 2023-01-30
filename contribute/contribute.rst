@@ -435,7 +435,7 @@ Everything that your code or any Rockstor service logs goes into the following f
 
 .. code-block:: text
 
-    buildvm:~ # ls -la /opt/rockstor-dev/var/log
+    buildvm:~ # ls -la /opt/rockstor/var/log
     total 128
     drwxr-xr-x 1 root root    618 Nov 21 16:52 .
     drwxr-xr-x 1 root root      6 Nov 21 16:51 ..
