@@ -71,7 +71,7 @@ Here are some recommendations.
 * Use Rockstor's replication feature to asynchronously and automatically
   replicate important shares on another Rockstor system.
 * Use reputable backup orientated software configured to replicate important Shares,
-  ideally to both on and off site sources (note that we have a number of backup orientated 
+  ideally to both on- and off-site sources (note that we have a number of backup-orientated 
   :ref:`rockons_intro` available).
 * Create periodic backups of your Rockstor configuration (See :ref:`config_backup`).
 
