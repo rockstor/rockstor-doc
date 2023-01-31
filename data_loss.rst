@@ -480,21 +480,21 @@ The following command can be used to monitor the progress of any ongoing balance
 Rock-on Restore
 ^^^^^^^^^^^^^^^
 
-When Rock-ons are not visible after data restore, or pool import, it is possible that they are either running silently in the background
+When Rock-ons are not visible after data restore or pool import, it is possible that they are either running silently in the background
 or Rockstor does not have the needed information to restore the Rock-ons. Here is how to get your Rock-ons back up and
 running.
 
 Rock-on associated shares were not stored on the system drive (recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Restore your data, pools and shares to make sure the Rock-on data is available
 2. Restore your Rockstor configuration
 
-This should be enough for Rockstor to restore your Rock-ons and make them visible and manageable from the UI again.
+This should be enough for Rockstor to restore and start your Rock-ons, and make them visible and manageable from the UI again.
 
 
 Rock-on associated shares were stored on the system drive (discouraged)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Restore your Rock-on associated shares on your system drive to make sure they are available again (this would be the ideal moment to instead restore/move them to a share that is not on the system drive!)
 2. Re-install the Rock-ons with the same configuration you installed them with before. In case you moved the Rock-on data to a share not on the system drive, be sure to point the Rock-on's storage location to the correct share.
