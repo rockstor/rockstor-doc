@@ -24,7 +24,7 @@ Almost all of these patches are backports from newer kernels,
 applied to a designated 'base' kernel version.
 As such the running kernel is newer than its 'base' version indicates.
 
-Rockstor V4 "Built on openSUSE" no longer installs newer kernels than it's upstream OS,
+Rockstor V4 "Built on openSUSE" no longer installs newer kernels than its upstream OS,
 as it once did when based on CentOS 7 (Rockstor v3).
 That is primarily because it is no longer necessary,
 our new upstream actively maintains btrfs and employs some of the key btrfs contributors.
