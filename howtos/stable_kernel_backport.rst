@@ -19,12 +19,14 @@ please indicate if you have applied these changes.
 Install all updates before following these instructions.
 And test your system again after a reboot to ensure that this procedure is still necessary.
 
-As of writing, the Leap 15.3 used in our v4 "Built on openSUSE" comes with many openSUSE/SuSE organised patches.
+As of writing, the Leap version used in our v4 "Built on openSUSE" comes with many openSUSE/SuSE organised patches.
 Almost all of these patches are backports from newer kernels,
-applied to a designated 'base' kernel version of, in the case of Leap 15.3, **5.3.18**.
+applied to a designated 'base' kernel version.
+As such the running kernel is newer than its 'base' version indicates.
 
-Rockstor no longer installs newer kernels than it's openSUSE/SuSE upstream, as it once did when based on CentOS 7 (Rockstor v3).
-That is primarily because it is no longer necessary to do so,
+Rockstor V4 "Built on openSUSE" no longer installs newer kernels than its upstream OS,
+as it once did when based on CentOS 7 (Rockstor v3).
+That is primarily because it is no longer necessary,
 our new upstream actively maintains btrfs and employs some of the key btrfs contributors.
 As a result all relevant btrfs backports are already in our upstream default kernel.
 But in some situations it may be desirable to enable a newer base kernel version.
@@ -44,7 +46,7 @@ There are two main reasons:
 Btrfs raid 5/6 read-only
 ------------------------
 
-OpenSUSE Leap 15.3's default kernel restricts the parity raid levels of 5 & 6 to read-only.
+OpenSUSE's Leap 15.3/15.4 default kernels restrict the parity raid levels of 5 & 6 to read-only.
 This decision was taken as the parity raid levels are far younger than the non parity levels of 0, 1, and 10.
 Rockstor's Web-UI supports btrfs raid 0, 1, 10, 5, and 6.
 See the following links for how other newer raid levels such as :ref:`raid1c3_raid1c4` and :ref:`mixed_raid_levels` are treated.
@@ -53,7 +55,7 @@ When creating a parity raid pool (volume in btrfs parlance) we see the following
 
 .. code-block:: console
 
-    Dec 12 18:57:55 rleap15-3 kernel: btrfs: RAID56 is supported read-only, load module with allow_unsupported=1
+    kernel: btrfs: RAID56 is supported read-only, load module with allow_unsupported=1
 
 Rather than just *allowing unsupported* it is proposed that instead we take advantage of a newer kernel.
 In this case the upstream-of-openSUSE latest stable kernel version back-ported to openSUSE.
@@ -66,13 +68,7 @@ Adding the repositories
 
 Here we add not only the Stable_kernel_Backport repository but also it's filesystems counterpart.
 That is because we are concerned primarily with the entire btrfs software stack: kernel and userland.
-Keeping both in sync is important, especially in the context of Rockstor's NAS functions.
-
-.. code-block:: console
-
-    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/Kernel:/stable:/Backport/standard/ Kernel_stable_Backport
-    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/filesystems/15.3/ filesystems
-    zypper --non-interactive --gpg-auto-import-keys refresh
+Keeping both in sync is very important, especially in the context of Rockstor's NAS functions.
 
 .. _kernel_stable_repo:
 
@@ -92,6 +88,16 @@ This repo is also cross architecture and so provides for both x86_64 and ARM64 a
 
 See the OBS page: `filesystems <https://build.opensuse.org/project/show/filesystems>`_.
 
+.. warning::
+
+    NOTE: Correct the filesystems repository line in the following for your Leap version.
+
+.. code-block:: text
+
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/Kernel:/stable:/Backport/standard/ Kernel_stable_Backport
+    zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/filesystems/15.X/ filesystems
+    zypper --non-interactive --gpg-auto-import-keys refresh
+
 .. _newer_kernel_install:
 
 Installing the updates
@@ -103,8 +109,8 @@ Once both repositories are in-place we must instruct the system to update from t
 
     zypper up --no-recommends --allow-vendor-change
 
-The above command will install packages requiring around 250 MB more space on the ROOT pool.
-Rockstor's package selection is JeOS (Just enought Operating System) themed.
+The above command will install packages requiring around 300 MB more space on the ROOT pool.
+Rockstor's package selection is JeOS (Just enough Operating System) themed.
 Hence the "--no-recommends" option above.
 It may well be that your particular hardware requires additional firmware as well as the kernel update.
 In which case omit the "--no-recommends" option to also install these firmware
