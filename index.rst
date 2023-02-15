@@ -6,13 +6,14 @@
 Welcome to Rockstor
 ===================
 
-Rockstor is an Open Source GPLv2 + **Linux & BTRFS based** Network Attached
+Rockstor (:ref:`rockstor_license`) is a **Linux & BTRFS based** Network Attached
 Storage **(NAS) Appliance**, with **Private Cloud** capabilities.
-**Rockstor 4 is "Built on openSUSE"** while our near legacy 3 and older
-versions used CentOS 7 with newer elrepo kernels.
-Our focus is on easy install and use.
+**Rockstor 4 is "Built on openSUSE"**
+and :ref:`our_kiwi_ng_installer` is licensed according to the
+:ref:`installer_license`.
+**We focus on easy-install, setup, and use.**
 
-We extend our advanced NAS features, via docker, to host an ever growing range
+We extend our advanced NAS features, via Docker, to host an ever growing range
 of easy to install apps we call :ref:`rockons_intro`.
 This in turn moves us nicely into the realms of a private cloud server.
 
@@ -31,7 +32,7 @@ are a valued contributor to our
 `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_, and
 `rockon-registry <https://github.com/rockstor/rockon-registry>`_ GitHub
 repositories. We also have installer profiles for the **Raspberry Pi4** and
-**RPi 400** SBCs: the latter requires at least a Leap 15.3 profile.
+**RPi 400** SBCs.
 
 .. toctree::
    :maxdepth: 1

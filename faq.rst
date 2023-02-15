@@ -6,9 +6,9 @@ Product FAQ
 What is Rockstor?
 -----------------
 
-Rockstor is a **free and open source NAS (Network Attached Storage) operating
-system**. It's a software solution and can be installed on commodity hardware
-or a hypervisor satisfying :ref:`minsysreqs`
+Rockstor is an **Open Source NAS (Network Attached Storage) operating
+system**. It is a software solution that can be installed on commodity hardware
+or on most hypervisors satisfying :ref:`minsysreqs`
 
 .. _faq_license:
 

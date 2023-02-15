@@ -1,17 +1,25 @@
 {% extends "basic/layout.html" %}
 
-{% set css_files = ['_static/css/font-awesome.min.css', '_static/css/bootstrap.min.css', '_static/css/style.css', '_static/css/syntax.css']  %}
+{% set css_files = [
+'_static/fontawesome/css/fontawesome.min.css',
+'_static/fontawesome/css/brands.min.css',
+'_static/css/bootstrap.min.css',
+'_static/css/style.css',
+'_static/css/syntax.css'
+]
+%}
 
 {%- block extrahead %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rockstor | Linux and BTRFS powered Opensource NAS solution</title>
+<title>Rockstor | Linux and BTRFS powered Open Source NAS appliance</title>
 <script src="{{ pathto('_static/' + 'js/libs/bootstrap.js', 1) }}"></script>
 <script type="text/javascript">
     <!-- Adds target=_blank to external links -->
     $(document).ready(function () {$('a[href^="http://"], a[href^="https://"]').not('a[class*=internal]').attr('target', '_blank');});
 </script>
 <link rel="shortcut icon" href="{{ pathto('_static/' + 'img/ico/favicon.ico', 1) }}" type="image/x-icon" />
+<link rel="me" href="https://mastodon.world/@TheRockstorProject">
 {%- endblock %}
 
 {%- block doctype -%}
@@ -60,10 +68,12 @@
                 <li>&nbsp;</li>
                 <li>&nbsp;</li>
 
+                <li style="display: inline-block"><span class="social_icons"><a href="https://forum.rockstor.com" target="_blank"><i
+                        class="fa-brands fa-discourse fa-xl"></i></a></span></li>
+                <li style="display: inline-block"><span class="social_icons"><a href="https://mastodon.world/@TheRockstorProject" target="_blank"><i
+                        class="fa-brands fa-mastodon fa-xl"></i></a></span></li>
                 <li style="display: inline-block"><span class="social_icons"><a href="https://github.com/rockstor" target="_blank"><i
-                        class="fa fa-github"></i></a></span></li>
-                <li style="display: inline-block"><span class="social_icons"><a href="https://twitter.com/rockstor4" target="_blank"><i
-                        class="fa fa-twitter"></i></a></span></li>
+                        class="fa-brands fa-github-alt fa-xl"></i></a></span></li>
             </ul>
 
         </div>
@@ -105,14 +115,12 @@
                 </div>
                 <div class="pull-left">
                     {% if prev %}
-                    <a href="{{ prev.link|e }}">{{ prev.title }}</a>&nbsp;&nbsp;
-                    <span class="fa fa-arrow-circle-left"></span>
+                    <a href="{{ prev.link|e }}">{{ prev.title }} <-</a>&nbsp;&nbsp;
                     {% endif %}
                 </div>
                 <div class="pull-right">
                     {% if next %}
-                    <span class="fa fa-arrow-circle-right"></span>&nbsp;&nbsp;
-                    <a href="{{ next.link|e }}">{{ next.title }}</a>
+                    <a href="{{ next.link|e }}">-> {{ next.title }}</a>
                     {% endif %}
                 </div>
             </div>

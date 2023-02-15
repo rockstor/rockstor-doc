@@ -14,8 +14,8 @@ The Rockstor package code, as distributed, is developed under two main repositor
   `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ licensed.
 
 * Source1: `rockstor-jslibs <https://github.com/rockstor/rockstor-jslibs>`_ is
-  (`MIT <https://opensource.org/licenses/MIT>`_ AND
-  `Apache-2.0 <https://opensource.org/licenses/Apache-2.0>`_ AND
+  (`MIT <https://opensource.org/license/mit-0>`_ AND
+  `Apache-2.0 <https://opensource.org/license/apache2.0>`_ AND
   `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ AND
   `LGPL-3.0-or-later <https://www.gnu.org/licenses/lgpl-3.0-standalone.html>`_ AND
   `ISC <https://spdx.org/licenses/ISC.html>`_) licensed.
