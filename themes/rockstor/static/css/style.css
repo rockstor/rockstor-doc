@@ -255,55 +255,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 25px;
     opacity:.8;
   }
-  
-  
-  
-  .social_icons .fa-facebook {
-    background: #404040;
+
+  .social_icons .fa-brands:hover{
+    background: #777;
   }
-  
-  .social_icons .fa-twitter {
-    background: #404040;
-  }
-  
-  .social_icons .fa-youtube-play {
-    background: #404040;
-  }
-  
-  .social_icons .fa-linkedin {
-    background: #404040;
-  }
-  
-  .social_icons .fa-github{
-    background: #404040;
-  }
-  
-  
-  
-  
-  
-  
-  .social_icons .fa-facebook:hover {
-    background: #3b5998;
-  }
-  
-  .social_icons .fa-twitter:hover {
-    background: #20B8FF;
-  }
-  
-  .social_icons .fa-youtube-play:hover {
-    background: #D34836;
-  }
-  
-  .social_icons .fa-linkedin:hover{
-    background: #0976b4;
-  }
-  
-  .social_icons .fa-github:hover{
-    background: #666;
-  }
-  
-  
   
   /* Tables */
   
