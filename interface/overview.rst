@@ -457,25 +457,38 @@ Force uninstall of a Rock-on
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In the event the uninstallation process of a Rock-on is not possible, we
 provide a script to force the deletion of a Rock-on. While we do not yet have
-integrated this tool in Rockstor's :ref:`web-UI <webui>`, it can easily be
-used from the command line as follows. Running this script without argument
-will detail its usage:
+this tool integrated into Rockstor's :ref:`web-UI <webui>`, it can easily be
+used from the command line as follows.
+Running this script (as the 'root' user) without argument will detail its usage:
 
-.. code-block:: bash
+**Rockstor versions 4.5.4-0 and newer**
+
+.. code-block:: console
+
+    cd /opt/rockstor
+    poetry run delete-rockon
+    Delete metadata, containers and images of a Rock-on
+        Usage: delete-rockon <rockon name>
+
+**Older Rockstor versions**
+
+.. code-block:: console
 
     /opt/rockstor/bin/delete-rockon
     Delete metadata, containers and images of a Rock-on
-    Usage: /opt/rockstor/bin/delete-rockon <rockon name>
+        Usage: /opt/rockstor/bin/delete-rockon <rockon name>
 
 Note that the :code:`rockon name` refers to the name of the Rock-on as it is
 displayed in the list of available Rock-ons in Rockstor's web-UI. As the
-Rock-on name is case-sensitive, we recommend wrapping it in quotes. For the
-Rock-on named *Emby server*, for instance, the command should thus be:
+Rock-on name is case-sensitive, and can contain spaces, we recommend wrapping it in quotes.
+For the Rock-on named *Emby server*, for instance, the commands would be:
 
-.. code-block:: bash
+.. code-block:: console
 
-    /opt/rockstor/bin/delete-rockon "Emby server"
+    cd /opt/rockstor
+    poetry run delete-rockon "Emby server"
 
+*This example is for newer Rockstor versions.*
 
 .. _rockons_update:
 
