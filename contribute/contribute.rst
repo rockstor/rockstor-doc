@@ -344,10 +344,13 @@ In our example setup, the URL from **laptop** would be :code:`https://buildvm/`.
 
 It is very important to ensure that your code changes survive a reboot.
 Sometimes, especially when database changes are made, this can be an issue.
-Be sure to check that the resulting build behaves as expected over:
+Be sure to also check that the resulting build behaves as expected over a hard-reset:
 
-1. A config reset - removing :code:`/opt/rockstor/.initrock` and rebooting
-2. Several reboots
+  1. Do a total config reset by removing :code:`/opt/rockstor/.initrock` and rebooting.
+  2. Redo the :ref:`webui_setup` :code:`userdel username` first if reusing username.
+
+.. note::
+    Ensure all is as expected over **several reboots** there-after.
 
 In (1.) above, a database wipe is initiated helping to test the self-start code capability.
 See the :code:`initrock.py` script and its systemd trigger service: :code:`rockstor-pre.service` for more details.
@@ -363,9 +366,10 @@ The following will run all tests following the source installation detailed abov
 .. code-block:: text
 
     buildvm:~ # cd /opt/rockstor/src/rockstor
+    buildvm:~ # export DJANGO_SETTINGS_MODULE=settings
     buildvm:/opt/rockstor/src/rockstor # poetry run django-admin test -v 2
 
-All included tests, **numbering over 200**, are expected to pass;
+All included tests, **numbering over 240**, are expected to pass;
 however, it is always worth checking our `current issues <https://github.com/rockstor/rockstor-core/issues>`_
 for known failures in this area.
 
