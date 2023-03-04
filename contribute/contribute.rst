@@ -347,7 +347,8 @@ Sometimes, especially when database changes are made, this can be an issue.
 Be sure to also check that the resulting build behaves as expected over a hard-reset:
 
   1. Do a total config reset by removing :code:`/opt/rockstor/.initrock` and rebooting.
-  2. Redo the :ref:`webui_setup` :code:`userdel username` first if reusing username.
+  2. Delete the Rockstor admin user: :code:`userdel username`.
+  3. Redo the :ref:`webui_setup` .
 
 .. note::
     Ensure all is as expected over **several reboots** there-after.
