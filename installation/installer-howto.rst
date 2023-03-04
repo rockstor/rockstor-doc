@@ -203,10 +203,14 @@ Then "Accept the Risk and Continue".
 You can use a 'real' domain certificate with Rockstor but this is an advanced
 topic beyond the scope of this installer guide.
 
+.. _webui_setup:
+
 Rockstor Setup and EULA
 ^^^^^^^^^^^^^^^^^^^^^^^
 The following shows example entries for this initial Web-UI setup screen, they
 are blank by default.
+
+.. note:: An unprivileged linux user will also be created by this step (UID=1000 GID=100).
 
 .. image:: /images/installation/installer-howto/initial_rockstor_setup_screen.png
    :width: 100%
