@@ -6,33 +6,26 @@
 Welcome to Rockstor
 ===================
 
-Rockstor (:ref:`rockstor_license`) is a **Linux & BTRFS based** Network Attached
-Storage **(NAS) Appliance**, with **Private Cloud** capabilities.
-**Rockstor 4 is "Built on openSUSE"**
-and :ref:`our_kiwi_ng_installer` is licensed according to the
-:ref:`installer_license`.
+Rockstor (:ref:`rockstor_license`) is a **Linux & BTRFS-based** Network Attached Storage **(NAS) Appliance**, with **Private Cloud** capabilities.
+**Rockstor 4 is "Built on openSUSE"** and :ref:`our_kiwi_ng_installer` is licensed according to the :ref:`installer_license`.
 **We focus on easy-install, setup, and use.**
 
-We extend our advanced NAS features, via Docker, to host an ever growing range
-of easy to install apps we call :ref:`rockons_intro`.
+We extend our advanced NAS features, via Docker, to host an ever growing range of easy to install apps we call :ref:`rockons_intro`.
 This in turn moves us nicely into the realms of a private cloud server.
 
-See our :ref:`features_overview` section for a list of features & capabilities:
-available and planned.
+See our :ref:`features_overview` section for a list of features & capabilities: available and planned.
 
 Rockstor 4 can be installed on commodity x86_64 and ARM64 hardware.
-AArch64 server compatibility relies on
-`Embedded Boot <https://github.com/ARM-software/ebbr>`_ or
-`Server boot <https://github.com/ARM-software/sbsa-acs>`_ standards, e.g. like
-the recently released
-`Ten64 <https://www.crowdsupply.com/traverse-technologies/ten64>`_ platform.
-The designers of which `Traverse technologies <https://traverse.com.au/>`_
-are a valued contributor to our
-`rockstor-core <https://github.com/rockstor/rockstor-core>`_,
-`rockstor-installer <https://github.com/rockstor/rockstor-installer>`_, and
-`rockon-registry <https://github.com/rockstor/rockon-registry>`_ GitHub
-repositories. We also have installer profiles for the **Raspberry Pi4** and
-**RPi 400** SBCs.
+AArch64 server compatibility relies on `Embedded Boot <https://github.com/ARM-software/ebbr>`_ or `Server boot <https://github.com/ARM-software/sbsa-acs>`_ standards,
+e.g. like the recently released `Ten64 <https://www.crowdsupply.com/traverse-technologies/ten64>`_ platform--the designers of which `Traverse technologies <https://traverse.com.au/>`_
+are valued contributors to our `rockstor-core <https://github.com/rockstor/rockstor-core>`_, `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_, and
+`rockon-registry <https://github.com/rockstor/rockon-registry>`_ GitHub repositories.
+We also have installer profiles for the **Raspberry Pi4** and **RPi 400** SBCs.
+
+.. note::
+   **Want to dive right in?**
+
+   See our :ref:`quickstartguide` and :doc:`/faq`.
 
 .. toctree::
    :maxdepth: 1
@@ -53,10 +46,9 @@ repositories. We also have installer profiles for the **Raspberry Pi4** and
 Features
 --------
 
-Below is a summary of all features supported by Rockstor. Features
-in *prod* status are production ready where as *beta* indicates a features is
-not yet ready for prime time. Some unsupported and planned features are also
-listed.
+Below is a summary of all features supported by Rockstor.
+Features in *prod* status are production ready whereas *beta* indicates a feature is not yet ready for prime time.
+Some unsupported and planned features are also listed.
 
 .. table::
    :widths: 45 10 45
