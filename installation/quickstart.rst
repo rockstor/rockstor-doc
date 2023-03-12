@@ -4,9 +4,16 @@
 Quick start
 ===========
 
-Please take note of the information in our :ref:`pre_install` guide, though
-not strictly required it may help in avoiding problems encountered during
-install.
+.. note::
+
+    Please take note of the information in our :ref:`pre_install` guide.
+    Though not strictly required, it may help avoid problems during the installation process.
+
+Getting up and running with Rockstor is easy and only takes a few minutes. Briefly:
+
+1. :ref:`Download <quickstart_download_rockstor>` the ISO and create a bootable USB drive
+2. :ref:`Install <osinstall>` Rockstor
+3. Visit the :doc:`web-UI </interface/uis>` at :code:`https://<IP_ADDRESS_OF_THE_SYSTEM>`
 
 .. _minsysreqs:
 
@@ -76,12 +83,18 @@ VMware advisory
 
     For VMware ensure you have :code:`disk.EnableUUID="true"` in your .vmx file.
 
+.. _quickstart_download_rockstor:
+
 Download Rockstor
 -----------------
 
-Rockstor `download options <https://rockstor.com/download.html>`_. Create a
-bootable USB installer, or system disk, from a downloaded or via our self build
-installer option and proceed to the :ref:`installation` section.
+Visit our `Downloads page <https://rockstor.com/dls.html>`_ to download an ISO appropriate for your architecture.
+Then, create a bootable USB installer, or system disk, and proceed to the :ref:`installation` section.
+
+.. note::
+
+    You can also create a custom installer based on your specific needs or preferences.
+    See our `rockstor-install GitHub repository <https://github.com/rockstor/rockstor-installer>`_ for more details.
 
 .. _makeusbinstalldisk:
 

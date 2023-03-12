@@ -34,6 +34,11 @@ are a valued contributor to our
 repositories. We also have installer profiles for the **Raspberry Pi4** and
 **RPi 400** SBCs.
 
+.. note::
+   **Want to dive right in?**
+
+   See our :ref:`quickstartguide` and :doc:`/faq`.
+
 .. toctree::
    :maxdepth: 1
 
