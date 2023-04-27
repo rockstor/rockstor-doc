@@ -158,7 +158,7 @@ and click *Install* button.
    :align: center
 
 
-First step of the wizzard, select the "Scrutiny-Config-Share" earlier created:
+In the first step of the wizard, select the "Scrutiny-Config-Share" created earlier:
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step1.png
    :width: 100%
@@ -166,21 +166,20 @@ First step of the wizzard, select the "Scrutiny-Config-Share" earlier created:
 
 
 Step 2, enter a port number that is not in use by another rock-on (Default
-8088).
+8080).
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step2.png
    :width: 100%
    :align: center
 
 
-Step 3, enter the **user ID (UID)** and **group ID (GID)** for "scrutiny" user.
+Step 3, enter a CRON expression, which manages when the statistics will be collected.
 
-- API endpoint of the scrutiny UI should be :code:`http://localhost:8080`. Do
-  not change unless using as a remote collector.
+- The CRON expression used here contains 5 parts. For a handy tool to create this expression, 
+  use something like https://crontab-generator.com/.
 
-- Run the web service, this should remain :code:`true`.
-
-- Run the metrics collector, this should remain :code:`true`.
+In this example, to schedule the data collection at midnight every day, the expression
+would be `0 0 * * *`.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step3.png
    :width: 100%
@@ -195,14 +194,14 @@ installation.
    :align: center
 
 
-Step 5, installation in progress, you can close the wizzard.
+Step 5, with the installation in progress, close the wizard.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_install_step5.png
    :width: 100%
    :align: center
 
 
-Once the installation done, you can use the **Scrutiny UI** button to go to the
+Once the installation finishes, use the **Scrutiny UI** button to go to the
 web interface to view and monitor all the metrics collected from your server
 disks.
 
@@ -214,21 +213,24 @@ Scrutiny initial configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **No Devices detected!**
 
-First time you install and access the Scrutiny UI, the dashboard will be empty.
+Right after the installation, when accessing the Scrutiny UI, the dashboard can be empty.
+However, newer versions of the underlying container automatically trigger the data 
+collection at the first startup.
 
 .. image:: /images/interface/docker-based-rock-ons/scrutiny_no_devices.png
    :width: 100%
    :align: center
 
-Why? Because the container is using cron to refresh all data, and by default
-it's scheduled at midnight. You can wait for the next scheduled refresh, or you
-can do it manually.
+Why? Because the container is using a cron schedule to refresh all data periodically. 
+In the above example it would not be collecting statistics before midnight for the first time.
+You can wait for the next scheduled refresh, or you can do it manually.
 
 
 Manual refresh
 ^^^^^^^^^^^^^^
 In order to refresh the dashboad manually, you must connect to your Rockstor
-server via SSH  and type the following command:
+server via SSH (or use the server terminal directly if the server is connected to a
+monitor and keyboard) and type the following command:
 
 :code:`docker exec -it scrutiny sh -c "scrutiny-collector-metrics run"`
 
@@ -237,8 +239,8 @@ server via SSH  and type the following command:
    :align: center
 
 
-Scrutiny Installation Successful
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Scrutiny Rockon Installation Successful
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Congratulations! You successfully installed and configured **Scrutiny**, your
 dashboard should now be filled with valuable information about all your disks:
