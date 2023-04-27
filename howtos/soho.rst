@@ -32,23 +32,11 @@ easily convert an old PC into a Fileserver with Rockstor as long
 as it meets these requirements. You can also purchase small office servers from
 various places like newegg, ebay and Dell.
 
-In our community, Rockstor is humming on different hardware. Here are some
-examples:
-
-**Disclaimer: Rockstor is a software only product. We don't recommend or
-certify any particular hardware. These are mere suggestions based on known
-deployments in our community**
-
-* HP Proliant Microserver is chosen for its small form factor, 4 easily
-  accessible hard drive slots, and eSata capability to expand storage. This is
-  ideal for a simple setup with a small footprint that meets most file storage
-  needs of a small or home office.
-
-* `Dell Poweredge T300 <https://outlet.us.dell.com/ARBOnlineSales/Online/InventorySearch.aspx?brandId=2804&c=us&cs=28&l=en&s=dfb>`_ is a powerful server tower with Intel Xeon processor that can have upto 24GB Memory and 4 hard drives. This model is officially discontinued by Dell and newer more powerful options are available in it's place.
-
-* `IBM System x3400 <https://www.ibm.com/support/pages/node/807406>`_ is a
-  powerful server tower similar to the Dell mentioned above. It can have up to
-  32GB Memory and 8 hard drives.
+.. note::
+   Disclaimer: Rockstor is a software product only. We don't recommend or
+   certify any particular hardware. Feel free to peruse the `Rockstor Forum
+   <https://forum.rockstor.com>`_ for recommendations or ask
+   for insights on hardware they have used for their deployments.
 
 .. _hdds:
 
