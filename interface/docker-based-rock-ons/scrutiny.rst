@@ -201,7 +201,7 @@ Step 5, with the installation in progress, close the wizard.
    :align: center
 
 
-Once the installation done, use the **Scrutiny UI** button to go to the
+Once the installation finishes, use the **Scrutiny UI** button to go to the
 web interface to view and monitor all the metrics collected from your server
 disks.
 
