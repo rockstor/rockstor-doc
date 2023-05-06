@@ -1,8 +1,6 @@
 {% extends "basic/layout.html" %}
 
 {% set css_files = [
-'_static/fontawesome/css/fontawesome.min.css',
-'_static/fontawesome/css/brands.min.css',
 '_static/css/bootstrap.min.css',
 '_static/css/style.css',
 '_static/css/syntax.css'
@@ -51,29 +49,8 @@
 
         <div class="collapse navbar-collapse navbar-right" id="togglebar">
             <ul class="nav navbar-nav">
-                <li><a href="/docs">Home</a></li>
-                <li><a href="/">Main Website</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle"
-                       data-toggle="dropdown">Community<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://forum.rockstor.com" target="_blank">Forum</a></li>
-                        <li><a href="https://github.com/rockstor/rockstor-core/issues" target="_blank">Issue Tracker</a></li>
-                    </ul>
-                </li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-
-                <li><a href="/dls.html">Downloads</a></li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-
-                <li style="display: inline-block"><span class="social_icons"><a href="https://forum.rockstor.com" target="_blank"><i
-                        class="fa-brands fa-discourse fa-xl"></i></a></span></li>
-                <li style="display: inline-block"><span class="social_icons"><a href="https://mastodon.world/@TheRockstorProject" target="_blank"><i
-                        class="fa-brands fa-mastodon fa-xl"></i></a></span></li>
-                <li style="display: inline-block"><span class="social_icons"><a href="https://github.com/rockstor" target="_blank"><i
-                        class="fa-brands fa-github-alt fa-xl"></i></a></span></li>
+                <li><a href="https://rockstor.com/" target="_blank">Website</a></li>
+                <li><a href="https://opencollective.com/the-rockstor-project" target="_blank">Open Collective</a></li>
             </ul>
 
         </div>
@@ -139,7 +116,7 @@
                 <div id="footer-links" class="span12 centertext">
                     Copyright &copy; 2015 RockStor, Inc.&nbsp;
                     <a rel="license"
-                       href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+                       href="https://creativecommons.org/licenses/by-sa/4.0/"><img
                         alt="Creative Commons Licence" style="border-width:0"
                         src="{{ pathto('_static/' + 'img/cc-by-sa-4.0-88x31.png', 1) }}"/></a><br/><span
 
@@ -148,7 +125,7 @@
                           href="https://github.com/rockstor/rockstor-doc/blob/master/AUTHORS"
                           property="cc:attributionName" rel="cc:attributionURL">various
                     authors</a> is licensed under a <a rel="license"
-                                                       href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                                       href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
                     Commons Attribution-ShareAlike 4.0 International License</a>.<br/>Based
                     on a work at <a xmlns:dct="http://purl.org/dc/terms/"
                                     href="https://github.com/rockstor/rockstor-doc"
