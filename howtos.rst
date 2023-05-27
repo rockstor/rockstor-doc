@@ -7,6 +7,7 @@ How-tos & Guides
 
    howtos/stable_kernel_backport
    howtos/15-2_to_15-3
+   howtos/15-3_to_15-4
    howtos/rpm_install
    howtos/v3_to_v4
    howtos/reinstall
