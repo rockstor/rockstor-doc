@@ -1,0 +1,171 @@
+.. _153_to_154:
+
+Distribution update from 15.3 to 15.4
+=====================================
+
+Rockstor version 4 has been released in the testing channel for the entire life of openSUSE Leap 15.3.
+As such there are many installs "Build on openSUSE" Leap 15.3 - **End of Life (EOL) December 2022**.
+This How-to includes instruction on moving an existing 15.3 based install over, **in-place**,
+to the newer "Build on openSUSE" Leap 15.4.
+
+.. note::
+
+    There are always less unknowns for fresh installs.
+    It is advisable to consider a fresh-start via the latest recommended Rockstor installer.
+    See `Downloads <https://rockstor.com/dls.html>`_ for the available options.
+    See also our :ref:`installer_howto`.
+
+    Existing :ref:`pools` and :ref:`config_backup` files remain compatible and importable.
+
+.. warning::
+
+    For both **in-place** and **re-install/import** approaches; always ensure all backups are refreshed.
+    For re-install/import all data on a re-used system disk ('ROOT' Pool) will be irreversibly destroyed.
+    Alternatively use a fresh system disk to provide a fail over of reverting to the original system disk.
+    Do not attach both old and new system disks simultaneously.
+    Only one Rockstor system disk must be attached at any one time.
+
+Before attempting an **in-place** distribution update (15.3->15.4) be sure that you have applied all regular updates first.
+The :ref:`updating_rockstor` section covers how to do this either via the Web-UI or via the command line.
+
+.. _153_154-overview:
+
+Overview
+--------
+
+This procedure is well established in our upstream base of openSUSE Leap and is know as a **Distribution Update**.
+Below we detail the following steps, each in their own sections:
+
+- Change Rockstor's OBS URLs
+- Update the remaining repositories
+- Distribution update
+- Reporting issues
+
+See our FAQ entry :ref:`faq_rockstor4_repos` for more context.
+
+
+.. _153_154-rockstor_obs:
+
+Change Rockstor's OBS URLs
+--------------------------
+
+When openSUSE moved to Leap version 15.4 there was a simplification in their
+`OBS <https://build.opensuse.org/>`_ repository URLs.
+The pre-text of "openSUSE_Leap\_" within URLs of prior versions was dropped.
+
+This change affects our **home_rockstor** and **home_rockstor_branches_Base_System** repositories.
+
+Run the following stream/edit as root to update all instances of *"openSUSE_Leap_15.3"* to *"15.4"*:
+
+.. code-block:: console
+
+    sed -i 's/openSUSE_Leap_15\.3/15\.4/g' /etc/zypp/repos.d/*.repo
+
+.. _153_154-update_repos:
+
+Update the remaining repositories
+---------------------------------
+
+Here we stream edit/replace all :code:`15.3` and :code:`15_3` instances with :code:`15.4` and :code:`15_4` respectively via:
+
+.. code-block:: console
+
+    sed -i 's/15_3/15_4/g' /etc/zypp/repos.d/*.repo
+    sed -i 's/15\.3/15\.4/g' /etc/zypp/repos.d/*.repo
+
+.. note::
+
+    This does not change the repository configuration file names themselves.
+    This is not important and can serve as an indicator of a system's history/origin.
+    The filenames for these repositories are cosmetic only.
+
+.. _153_154-distro-update:
+
+Distribution update
+-------------------
+
+**Double check all repositories are as-expected.**
+The following command should output a very similar list of repositories to those indicated.
+:ref:`Rockstor-Testing <testing_channel>` may be replaced by :ref:`Rockstor-Stable <stable_channel>`, or neither may be present;
+depending on your update :ref:`channel selection <update_channels>`
+
+.. code-block:: console
+
+    zypper --releasever=15.4 lr -U
+
+    Warning: Enforced setting: $releasever=15.4
+    Repository priorities in effect:                                                                                                                                                                                                (See 'zypper lr -P' for details)
+          97 (raised priority)  :  1 repository
+          99 (default priority) :  5 repositories
+         105 (lowered priority) :  1 repository
+
+    # | Alias                              | Name                                                                                        | Enabled | GPG Check | Refresh | URI
+    --+------------------------------------+---------------------------------------------------------------------------------------------+---------+-----------+---------+----------------------------------------------------------------------------------------
+    8 | repo-sle-debug-update              | Update repository with debuginfo for updates from SUSE Linux Enterprise 15                  | No      | ----      | ----    | http://download.opensuse.org/debug/update/leap/15.4/sle/
+    1 | Leap_15_4                          | Leap_15_4                                                                                   | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.4/repo/oss/
+    7 | repo-backports-update              | Update repository of openSUSE Backports                                                     | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/backports/
+    6 | repo-backports-debug-update        | Update repository with updates for openSUSE Leap debuginfo packages from openSUSE Backports | No      | ----      | ----    | http://download.opensuse.org/update/leap/15.4/backports_debug/
+    9 | repo-sle-update                    | Update repository with updates from SUSE Linux Enterprise 15                                | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.4/sle/
+    3 | Rockstor-Testing                   | Rockstor-Testing                                                                            | Yes     | (r ) Yes  | Yes     | http://updates.rockstor.com:8999/rockstor-testing/leap/15.4
+    4 | home_rockstor                      | home_rockstor                                                                               | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/repositories/home:/rockstor/15.4/
+    5 | home_rockstor_branches_Base_System | home_rockstor_branches_Base_System                                                          | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/repositories/home:/rockstor:/branches:/Base:/System/15.4/
+    2 | Leap_15_4_Updates                  | Leap_15_4_Updates                                                                           | Yes     | (r ) Yes  | Yes     | https://download.opensuse.org/update/leap/15.4/oss/
+
+Before the big **Distribution Update**
+we must import all the new repository keys and information from all of the changes made above.
+
+.. code-block:: console
+
+    zypper --releasever=15.4 --non-interactive --gpg-auto-import-keys refresh
+
+And finally the actual 15.3 to 15.4 base OS update itself.
+Here we instruct zypper to download all packages first.
+This helps to avoid a download failure part-way through this rather sensitive process.
+
+.. code-block:: console
+
+    zypper --releasever=15.4 dup --download-in-advance --allow-vendor-change --no-recommends
+
+We use --allow-vendor-change as some prior openSUSE packages are now supplied directly from SuSE.
+The --no-recommends is to keep to our JeOS (Just enough Operating System) origin.
+I.e. don't install things like manuals etc and other 'extra' packages.
+
+The download size and extra disk space required will be around 330 MiB.
+So ensure that you have at least 2 GB free on your system disk ('ROOT' Pool), before proceeding.
+
+.. note::
+
+    As we are changing the legs upon which the entire system is running,
+    it is best to have the system under as minimal load as possible.
+    As such it is advisable to close any Rockstor Web-UI browser tabs during this process.
+
+.. warning::
+
+    It is imperative that the system is not rebooted during this process.
+    It is also important to reboot the system after the above
+    "zypper ... dup ..." command has completed.
+    This enables the new legs to be the ones running the show.
+    **Upstream reference**:
+    `SDB:System upgrade to Leap 15.4 <https://en.opensuse.org/SDB:System_upgrade_to_Leap_15.4>`_
+
+To reboot from the command line once the above "zypper ... dup ..." command has finished,
+enter the following commands as root:
+
+.. code-block::
+
+    sync
+    reboot
+
+.. _153_154-report:
+
+Reporting issues
+----------------
+
+As always we welcome feedback to improve what we do.
+So please consider reporting your experience or suggestions on our friendly
+`Community Forum <https://forum.rockstor.com/>`_.
+
+A distribution update is in many ways more complex than an entirely fresh install.
+And given Rockstor's overall size a re-install can be very quick.
+But if you have a complex install an in-place distribution update can be the way to go.
+
