@@ -30,7 +30,7 @@ especially if run in the new multi-threaded mode (version 5.01 and newer via F2 
 but a sufficiently cooled system should be able to execute this test indefinitely.
 
 .. warning::
-    If your system has cooling issues then it may lockup or even sustain damage.
+    If your system has cooling issues then it may lock up or even sustain damage.
     Please take care to monitor your system's temperatures during this test.
     Version 5.01 and newer have a built-in CPU temperature monitor.
 
@@ -72,19 +72,22 @@ Pre-used mdraid members may require additional mdraid configuration removal.
     has been associated with prior mdraid use and some LVM configurations.
     Neither of which are supported by Rockstor's Web-UI.
 
-.. _dban:
+.. _nwipe:
 
-DBAN
-^^^^
+ShredOS/nwipe
+^^^^^^^^^^^^^
 
-`Darils Boot and Nuke <https://dban.org/>`_
-is a popular tool to securely erase HDDs prior to their deployment or disposal.
-In brief, this tool writes to every part of a disks surface to exercises the entire storage.
+`ShredOS <https://github.com/PartialVolume/shredos.x86_64>`_
+is an Open Source tool to securely erase HDDs prior to their deployment or disposal. It is very
+similar to the popular (Darik's Boot and Nuke) tool based on `dwipe`. Unfortunately, DBAN
+has not really been updated since 2015. ShredOS is based on a fork of `dwipe`, which created
+the `nwipe` functionality which is available in various Linux distributions.
+In brief, this tool writes to every part of a disks surface to exercise the entire storage.
 Akin to :ref:`memory_test` this will stress the tested parts of the system;
 in this case the drives selected for wiping.
 
-DBAN Purpose
-^^^^^^^^^^^^
+ShredOS/nwipe Purpose
+^^^^^^^^^^^^^^^^^^^^^
 
 1. Securely remove all data on a per drive basis.
 2. Test the drive/s ability to write to all its available sectors,
@@ -94,27 +97,27 @@ via the built in SMART system, until an attempts is made to write to a faulty se
 Writes can trigger a drives own built-in ability to swap-in spare/redundant sectors.
 These spare sectors are a very limited resource, and should not be relied upon.
 
-Note that the zero fill *fast* option is probably sufficient for testing purposes.
+Note that the *Fill with Zeros* option is probably sufficient for testing purposes.
 There are however many more exotic and official wiping algorithms available.
 All options will take a considerable amount of time to complete,
 i.e. in the region of a few hours per drive minimum.
 
-It is **not** strongly recommended that drives be DBAN tested prior to using them for Rockstor.
+It is **not** strongly recommended that drives be ShredOS tested prior to using them for Rockstor.
 But this tool can be a valuable resource, especially if a drive's hardware is suspect.
 Keep in mind however that this test procedure will stress the drive concerned,
 and likely its associated cooling.
 
-DBAN Cautionary Note
-^^^^^^^^^^^^^^^^^^^^
+ShredOS/nwipe Cautionary Note
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
-    The DBAN program / procedure will **Irreversibly Erase/Overwrite all data**.
+    The ShredOS/nwipe program / procedure will **Irreversibly Erase/Overwrite all data**.
     Use with extreme caution.
-    Be sure to disconnect all drives that you wish not to be affected before booting/running DBAN.
+    Be sure to disconnect all drives that you wish not to be affected before booting/running ShredOS/nwipe.
 
 .. note::
     Due to the comparatively limited write cycles of earlier generation SSDs
-    further wear consideration should be given prior to running DBAN on these devices.
+    further wear consideration should be given prior to running ShredOS/nwipe on these devices.
 
 .. _installer_checksum:
 
