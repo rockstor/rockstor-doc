@@ -120,34 +120,43 @@ The above indicated steps are reproduced here for clarity:-
 Run the following commands as the **root** user on your Rockstor system ie via
 a ssh console.
 
-**Initialize PKI    The OpenVPN Rock-on will not start without it**::
+**Initialize PKI    The OpenVPN Rock-on will not start without it**
 
-   /opt/rockstor/bin/ovpn-initpki
+.. code-block:: console
 
-Note this command will ask for a PEM pass phrase, a Common Name (after which a
-long list of .'s and +'s will appear as the key is generated), and a
+   /opt/rockstor/.venv/bin/ovpn-initpki
+
+This command will ask for a PEM pass phrase, a Common Name (after which a
+long list of :code:`.'s` and :code:`+'s` will appear as the key is generated), and a
 passphrase for the private key.
 
-**Generate a client certificate    One for every client**::
+**Generate a client certificate. You need to generate one for every client**
 
-   /opt/rockstor/bin/ovpn-client-gen
+.. code-block:: console
 
-N.B this command will ask for the client name (no spaced) and a pass phrase
+   /opt/rockstor/.venv/bin/ovpn-client-gen
+
+This command will ask for the client name (no spaces) and a pass phrase.
 
 **Retrieve the client configuration. For any one of your clients. The resulting
-.ovpn file can be used to connect to this OpenVPN server.**::
+.ovpn file can be used to connect to this OpenVPN server.**
 
-   /opt/rockstor/bin/ovpn-client-print
+.. code-block:: console
 
-N.B. this command will ask for the name of the client you wish the .ovpn
-file to be created for; the file will be placed in **/tmp** ie:-::
+   /opt/rockstor/.venv/bin/ovpn-client-print
+
+This command will ask for the name of the client you wish the :code:`.ovpn`
+file to be created for; the file will be placed in :code:`/tmp`, i.e.:
+
+.. code-block:: console
 
    /tmp/<clientname>.ovpn
 
-**Please note that if you change your hostname you will need to regenerate
-your client authentication credentials and re-deploy them as they contain this
-information in order to inform the Client OpenVPN software on how to find your
-Rockstor's OpenVPN Server Rock-on.**
+.. warning::
+   Please note that if you change your hostname you will need to regenerate
+   your client authentication credentials and re-deploy them as they contain this
+   information in order to inform the Client OpenVPN software on how to find your
+   Rockstor's OpenVPN Server Rock-on.
 
 
 Now we just need to turn the OpenVPN Rock-on ON:-
