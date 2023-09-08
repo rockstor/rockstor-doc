@@ -11,7 +11,7 @@ Last updates per channel:
 
 Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers aim to have the most recent Stable channel
 release preinstalled. Below is a non-exhaustive list of notes, recommendations and warnings
-for user planning on going through the upgrade process.
+for those planning on going through the upgrade process.
 
 .. note::
 
