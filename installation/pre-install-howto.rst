@@ -12,48 +12,60 @@ is fit for purpose and tested with readily available tools.
 
 .. _memory_test:
 
-Memory Test (memtest86+)
-------------------------
+Memory testing
+--------------
+
+Accurately working memory is key to an appliance like Rockstor. Regardless of what memory type
+will be used, it is important to ensure that it is functioning error-free, otherwise it could
+cause inconsistencies in the data stored, moved or changed. There are a few tools available,
+some closed-source, some open source. While not endorsing one or the other, below is the
+open-source tool that is frequently being used.
+
+Memtest86+
+^^^^^^^^^^
 
 The `memtest86+ <https://www.memtest.org/>`_ program is derived from the linux kernel itself,
 the core of the operating system that Rockstor is built on.
-Memtest86+ v6 is licensed under the GPL v2.
-This project has more recently undergone a re-write under the v6 version.
-V6's code base was originally named PCMemTest, which was in turn based on memtest86+ v5.
+The current version of Memtest86+ is licensed under the GPL v2.
 Technical reference: `GitHub memtest86plus <https://github.com/memtest86plus/memtest86plus/>`_.
 
-Memtest86+ Cautionary Note
+Memtest86+ cautionary note
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Memtest86+ can place a very intense load on your system,
-especially if run in the new multi-threaded mode (version 5.01 and newer via F2 on initial start)
-but a sufficiently cooled system should be able to execute this test indefinitely.
+Memtest86+ can place a very intense load on your system, especially if run in the
+new multi-threaded mode (via F2 on initial start) but a sufficiently cooled
+system should be able to execute this test indefinitely.
 
 .. warning::
     If your system has cooling issues then it may lock up or even sustain damage.
-    Please take care to monitor your system's temperatures during this test.
-    Version 5.01 and newer have a built-in CPU temperature monitor.
+    Please take care to monitor your system's temperatures during this test,
+    for example using the CPU temperature monitor available in memtest86+.
 
-N.B. This memory test will **continue indefinitely** until you either:
-
-    1. turn off the system (which is safe to do)
-    2. press the **ESC Key**
+.. note::
+    This memory test will **continue indefinitely** until you either:
+        1. turn off the system (which is safe to do)
+        2. press the **ESC Key**
 
 It is **recommended that two full test cycles** be completed.
 But a single full pass of all available tests is better than no memory testing at all!
+Depending on the size of memory to be tested and the other hardware involved, a single
+test cycle may well take several hours.
 
-A single test cycle may well take several hours,
-depending on the speed of the hardware involved and the size of memory tested.
+Additional features can be activated/deactivated at startup of the memtest86+ image.
+For more details see the `Operations section <https://memtest.org/readme#operation>`_
+of the `Readme <https://memtest.org/readme>`_.
 
-Download
-^^^^^^^^
 
-The official website has `Pre-Compiled Bootable ISO images <https://www.memtest.org>`_.
-Along with advise on creating a bootable USB key.
+Memtest86+ download
+^^^^^^^^^^^^^^^^^^^
+
+The official website offers `bootable images and installers <https://www.memtest.org>`_.
+There is also advice on how to install memtest86+ onto removable media in the FAQs of the
+homepage.
 
 .. _wiping_disks:
 
-Wiping Disks
+Wiping disks
 ------------
 
 There are limited instances where Rockstors Web-UI may falter, or be confused by a pre-used disks format.
@@ -86,7 +98,7 @@ In brief, this tool writes to every part of a disks surface to exercise the enti
 Akin to :ref:`memory_test` this will stress the tested parts of the system;
 in this case the drives selected for wiping.
 
-ShredOS/nwipe Purpose
+ShredOS/nwipe purpose
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. Securely remove all data on a per drive basis.
@@ -107,7 +119,7 @@ But this tool can be a valuable resource, especially if a drive's hardware is su
 Keep in mind however that this test procedure will stress the drive concerned,
 and likely its associated cooling.
 
-ShredOS/nwipe Cautionary Note
+ShredOS/nwipe cautionary note
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning::
@@ -121,11 +133,11 @@ ShredOS/nwipe Cautionary Note
 
 .. _installer_checksum:
 
-Check Integrity of Downloaded installer
----------------------------------------
+Check integrity of downloaded Rockstor installer
+------------------------------------------------
 
 .. note::
-    It is highly recommended that you check your downloaded installers integrity.
+    It is highly recommended that you check your downloaded installer's integrity.
     If the original download is corrupt then all else that follows is likely to have problems.
 
 ISO is computer-slang/short for ISO9660 which is the
