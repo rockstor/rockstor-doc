@@ -1,7 +1,7 @@
 .. _dataloss:
 
-Data Loss-prevention and Recovery in Rockstor
-=============================================
+Data loss - prevention and recovery in Rockstor
+===============================================
 
 There is no single cause of data loss, as failures in power, hardware, software,
 or setup and maintenance, can trigger whole pool failure, or part corruption of its data/metadata.
@@ -9,7 +9,7 @@ As such, given no raid arrangement in isolation fulfills the purpose of a backup
 always make sure you have a robust and tested backup system for any critical data.
 
 .. warning::
-    We strongly recommend that you have a backup of all critical Shares (btrfs sub-volumes).
+    We strongly recommend that you create periodic backups of all critical Shares (btrfs sub-volumes).
 
 .. note::
     The data loss risks associated with power failure can, in part,
@@ -90,16 +90,17 @@ For redundancy/repair capabilities see our :ref:`redundancyprofiles`.
 The core mechanisms used to counter corruption are:
 
 - Checksumming: a metadata component to verify data/metadata integrity: all btrfs-raid levels.
-- Copy-on-Write or 'CoW': no existing data/metadata is overwritten by it's own update: all btrfs-raid levels.
+- Copy-on-Write or 'CoW': no existing data/metadata is overwritten by its own update: all btrfs-raid levels.
 - Duplication of data/metadata: depends on btrfs-raid level.
 
 .. note::
     Btrfs-raid levels are like, but not identical too, traditional hardware or software RAID.
-    Btrfs manages redundancy on a `Chunk <https://btrfs.wiki.kernel.org/index.php/Glossary>`_,
-    not just a device level. See the btrfs `SysadminGuide <https://btrfs.wiki.kernel.org/index.php/SysadminGuide>`_
+    Btrfs manages redundancy on a `Chunk <https://btrfs.readthedocs.io/en/latest/Glossary.html>`_,
+    not just a device level. For a detailed description of the btrfs design take a look at
+    `Btrfs design <https://btrfs.readthedocs.io/en/latest/dev/dev-btrfs-design.html>`_
 
 .. warning::
-    Please see the `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_
+    Please see the `btrfs status page <https://btrfs.readthedocs.io/en/latest/Status.html>`_
     for known btrfs-raid level related issues.
     Specifically the less mature parity btrfs-raid levels of 5 and 6.
     Btrfs-raid levels of 5/6 are not currently considered production ready;
@@ -109,10 +110,10 @@ The core mechanisms used to counter corruption are:
 
 .. _dlthread_monitoring:
 
-Web-UI and Data-Integrity threat monitoring
+Web-UI and Data Integrity threat monitoring
 -------------------------------------------
 
-The modern Rocksor Web-UI is able to indicates btrfs 'device missing', and btrfs sensed errors;
+The modern Rockstor Web-UI is able to indicate btrfs 'device missing', and btrfs sensed errors;
 such as Write, Read, Flush, Corruption, and Generation;
 all on a per :ref:`Pool<Pools>` and per :ref:`Disk<disks>` basis.
 We also have, within the Web-UI, the ability to do on-the-spot :ref:`smart` reports, and tests.
@@ -183,15 +184,29 @@ See our :ref:`support` options.
 If you are already knowledgeable in btrfs and system administration,
 see the upstream community `Libera Chat - #btrfs channel <https://web.libera.chat/#btrfs>`_.
 Finally, if your needs are extreme, consider seeking help on the
-`btrfs mailing list <https://btrfs.wiki.kernel.org/index.php/Btrfs_mailing_list>`_.
+`btrfs mailing list <http://vger.kernel.org/vger-lists.html#linux-btrfs>`_.
+More details on subscribing to the mailing list are available `here <http://vger.kernel.org/majordomo-info.html#taboo>`_.
 
-.. note::
+.. warning::
 
     The **btrfs mailing lists** is primarily for btrfs developer use.
     Time taken-up on trivial interactions there may not be fair to the world of btrfs development.
-    Also take careful note of what you are expected to include:
-    i.e. the *"What information to provide when asking a support question"*
-    section on the above linked mailing list page.
+
+Also take note of what you are usually expected to include:
+
+.. code-block:: console
+
+   uname -a
+   btrfs --version
+   btrfs fi show
+   btrfs fi df /home # Replace /home with the mount point of your btrfs-filesystem 
+   dmesg > dmesg.log
+
+.. note::
+
+   The :code:`dmesg` information output may be very large. If it is, instead of pasting it into the mail body,
+   it should be attached to the mail. However, check the restrictions on overall mail size
+   `here <http://vger.kernel.org/majordomo-info.html#taboo>`_.
 
 .. _datalossraid0_single:
 
@@ -218,8 +233,8 @@ All Pool/Share/Export operations can be done from within the Web-UI, which is th
 Note that recreating File sharing and Rock-ons may be done by using :ref:`config_backup`.
 
 .. note::
-    As btrfs-raid0 and btrfs-single have no redundancy there is no capability for drive loss.
-    Hence having to re-do all prior configuration associated directly with the affected Pool
+    As btrfs-raid0 and btrfs-single have no redundancy, there is no capability for drive loss.
+    Hence having to re-do all prior configuration associated directly with the affected Pool.
 
 .. _datalossraid1_10:
 
@@ -308,7 +323,7 @@ drive count in the context of the btrfs-raid level etc.
 The drive to be replaced can also be missing, see :ref:`btrfsreplacemissing`.
 
 .. note::
-    An important function of ´btrfs replace´ is it's ability, via an optional switch "-r",
+    An important function of ´btrfs replace´ is its ability, via an optional switch "-r",
     to only read from the to-be-replaced drive if no other zero-defect mirror exists.
     This is particularly noteworthy in a data recovery scenario.
     Failing drives often have read errors or are very slow to achieve error free reads.
@@ -337,7 +352,7 @@ as the drive that is to replace it.
 Resize larger replacements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The btrfs replace command, by it's nature of a direct byte-for-byte operation,
+The btrfs replace command, by its nature of a direct byte-for-byte operation,
 ends up with the replacement drive having the exact same filesystem 'size' as the drive it replaced.
 It is therefore, currently at least, necessary to then maximally resize the replacement.
 
