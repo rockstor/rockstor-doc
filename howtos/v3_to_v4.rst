@@ -185,7 +185,7 @@ courtesy of openSUSE's extreme heritage in ARM support.
 Also note the following, now we are past the `Jump <https://en.opensuse.org/Portal:Jump>`_ initiative:
 
 - In v3 our upstream of CentOS had in turn its upstream of RedHat's RHEL.
-- In v4 our upstream of openSUSE has in turn its increasingly binary compatible upstream with SuSE SLES.
+- In v4 our upstream of openSUSE has in turn its binary compatible upstream of SuSE SLES.
 
 So, if your prior v3 install had a customization involving a CentOS/RHEL compatibility,
 you should now, in v4, look first for an openSUSE equivalent and then for a SLES equivalent.
