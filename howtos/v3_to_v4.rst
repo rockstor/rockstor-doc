@@ -3,14 +3,15 @@
 Migrating from Legacy V3 to V4 "Built on openSUSE"
 ==================================================
 
-Rocksor v3 was based on CentOS 7 and is no longer supported.
+Rockstor v3 was based on CentOS 7 and is no longer supported.
 Last updates per channel:
 
 - Stable (3.9.2-57) - April 2020
 - Testing (3.9.1-16) - November 2017
 
-Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers have Stable channel release
-(`4.1.0 <https://forum.rockstor.com/t/v4-built-on-opensuse-stable-channel-changelog/8212>`_) - Jan 2022 pre-installed.
+Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers aim to have the most recent Stable channel
+release preinstalled. Below is a non-exhaustive list of notes, recommendations and warnings
+for those planning on going through the upgrade process.
 
 .. note::
 
@@ -26,11 +27,12 @@ Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers have Stable ch
 
     In v4 we auto label the system pool as "ROOT" in line with our JeOS upstream.
     Previous v3 installs use the label "rockstor_rockstor".
-    V4 has also removed the inadvertent, in v3, appearance of the "root" share (subvolume).
+    V4 has also removed the inadvertent (as seen in v3) appearance of the "root"
+    share (subvolume).
 
 .. warning::
 
-    As this migration requries an operating system re-install,
+    As this migration requires an operating system re-install,
     it is imperative that you ensure your backups have been refreshed and verified.
     Greater hardware compatibility is assumed given the years newer kernel.
     But there is always the possibility of regressions.
@@ -61,12 +63,16 @@ Try to avoid this in the future.
 Rock-ons 'root' on system disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One common pragmatic setup in small to medium Rockstor installs
+One common pragmatic setup in small to medium-sized Rockstor installs
 is the use of the system pool for the :ref:`rockons_root` share.
 However the contents of this share, if used exclusively for the indicated purpose,
-is freely downloadable again via the respective setup of the associated Rock-ons.
+are freely downloadable again via the respective setup of the associated Rock-ons.
 This compromise is common in small setups as the system disk, often an SSD,
 makes for a low power store for the docker images that back Rock-ons.
+Since the Rock-ons root is separate from associated data or configuration shares
+that would be stored on shares of the non-system pool(s), they will not be affected by
+recreating the Rock-ons root share after upgrade.
+
 
 .. _use_new_system_disk:
 
@@ -97,7 +103,7 @@ As a purely precautionary measure,
 it is highly advisable that all data disks be detached prior to the v4 install.
 Take careful note of their connections to the host system.
 This connection concern relates to potential hardware compatibility of these interconnects.
-Btrfs, our underlying filesystem and device manager, is not normally concerned with such changes.
+Btrfs, our underlying file system and device manager, is not normally concerned with such changes.
 But the existing hardware pairings, assuming prior function, are best noted never-the-less.
 Ready for the planned re-connection after v4 is installed, updated, and tested successfully.
 Just in case.
@@ -114,14 +120,14 @@ This is simply to avoid an accidental selection of a data pool member for the fr
 V4 Installer
 ------------
 
-See our :ref:`installer_howto` for a step by step explanation and guide.
+See our :ref:`installer_howto` for a step-by-step explanation and guide.
 And again, take great care on the early :ref:`installer_select_disk` (intended v4 target system disk) choice.
-If the advise above is followed there will only be one newly attached proposed system disk anyway.
+If the above advise is followed, there will only be one newly attached proposed system disk anyway.
 
-Once the new install is in place it is advisable to at least apply all upstream updates.
+Once the new install is in place, it is advisable to apply all upstream updates.
 See: :ref:`updaterockstorwebui`.
 Take care to ensure these have all been applied prior to rebooting.
-The Dashboard can help to indicate this by observing the network and cpu activity.
+The Dashboard can help to indicate this by observing the network and CPU activity.
 *We have an outstanding bug where our 'wifi like' busy indicator does not last the duration of the installs.*
 
 Make sure that the system does reboot and return as expected before re-attaching all prior pool members,
@@ -158,9 +164,9 @@ V4 Config restore is as per v3. See: :ref:`config_backup`.
     Although older config save files are compatible,
     there has been much work done on extending this features capability.
     Earlier config saves cover less elements of the system than later ones.
-    E.g. Rock-ons installed and their associated share settings
+    E.g., Rock-ons installed and their associated share settings
     are not included in config saves before 3.9.2-52.
-    Note that Rock-ons restore capability depends upon a non system disk
+    Note that Rock-ons restore capability depends upon a non-system disk
     :ref:`rockons_root` share location.
 
 Other differences
@@ -170,7 +176,7 @@ Many bug fixes
 ^^^^^^^^^^^^^^
 
 In the process of moving from a CentOS base to a "Built on openSUSE" one,
-we have found and fixed a large number of bug, and inherited such things as our
+we have found and fixed a large number of bugs, and inherited such things as our
 `Rockstor 4 Installer Recipe <https://github.com/rockstor/rockstor-installer>`_
 that trivially enables highly customised installer creation.
 We also now have ARM64 (e.g. Pi4 / Ten64) compatibility, baring some Rock-ons,
@@ -178,11 +184,11 @@ courtesy of openSUSE's extreme heritage in ARM support.
 
 Also note the following, now we are past the `Jump <https://en.opensuse.org/Portal:Jump>`_ initiative:
 
-- In v3 our upstream of CentOS had in turn it's upstream of RedHat's RHEL.
-- In v4 our upstream of openSUSE has in turn it's increasing binary compatible with SuSE SLES.
+- In v3 our upstream of CentOS had in turn its upstream of RedHat's RHEL.
+- In v4 our upstream of openSUSE has in turn its binary compatible upstream of SuSE SLES.
 
-So if your prior v3 install had a customization involving a CentOS/RHEL compatibility.
-You should now, in v4, look first for an openSUSE equivalent and then for a SLES SP3 equivalent.
+So, if your prior v3 install had a customization involving a CentOS/RHEL compatibility,
+you should now, in v4, look first for an openSUSE equivalent and then for a SLES equivalent.
 This is most likely only going to affect advanced users and is not a concern for mainly Web-UI users.
 
 Users and default group
@@ -193,4 +199,4 @@ there are other more subtle differences that may only come to light in time.
 One such difference is the default use of the "users" group in v4 for newly added users.
 Our prior CentOS base defaulted to individual user group creation named after the user concerned.
 It is thought that the newer default is more suited to a shared resource.
-But this difference may come as a surprise to prior v3 administrator.
+But this difference may come as a surprise to prior v3 administrators.
