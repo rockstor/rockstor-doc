@@ -9,7 +9,7 @@ Last updates per channel:
 - Stable (3.9.2-57) - April 2020
 - Testing (3.9.1-16) - November 2017
 
-Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers have the most Stable channel
+Our `downloadable <https://rockstor.com/dls.html>`_ v4 installers aim to have the most recent Stable channel
 release preinstalled. Below is a non-exhaustive list of notes, recommendations and warnings
 for user planning on going through the upgrade process.
 
