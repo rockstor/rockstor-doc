@@ -203,7 +203,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Ombi <https://ombi.io/>`_: Host your own Plex Request and user management system
 * `OwnCloud-Official <https://owncloud.com/>`_: Secure file sharing and hosting
 * `Pi-hole <https://pi-hole.net/>`_: A black hole for Internet advertisements
-* `PocketMine <https://www.pocketmine.net/>`_: Server software for Minecraft: Pocket Edition
+* `PocketMine <https://pmmp.io/>`_: Server software for Minecraft: Pocket Edition
 * `Radarr <https://github.com/Radarr/Radarr>`_: Radarr is a PVR for Movies on Usenet and Torrents
 * `Resilio Synch <https://www.resilio.com/>`_: Fast, private file sharing for teams and individuals
 * `Rocket.Chat <https://rocket.chat/>`_: Open Source Chat Platform
