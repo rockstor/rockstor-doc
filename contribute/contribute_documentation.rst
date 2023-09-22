@@ -27,37 +27,37 @@ demonstrated on a Linux terminal. They work the same on a Mac too.
 
 .. code-block:: console
 
-        you@laptop:~> mkdir ~/dev; cd ~/dev
-        you@laptop:~/dev> git clone git@github.com:your_github_username/rockstor-doc.git
+    you@laptop:~> mkdir ~/dev; cd ~/dev
+    you@laptop:~/dev> git clone git@github.com:your_github_username/rockstor-doc.git
 
 The above command creates a local **rockstor-doc** Git repo in a new directory
 by the same name (rockstor-doc) inside the new "~/dev" directory. Change into it.
 
 .. code-block:: console
 
-         you@laptop:~/dev> cd rockstor-doc
+    you@laptop:~/dev> cd rockstor-doc
 
 Configure this new Git repo with your name and email address. This is required
 to accurately record collaboration.
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> git config user.name "Firstname Lastname"
-        you@laptop:~/dev/rockstor-doc> git config user.email your_email_address
+    you@laptop:~/dev/rockstor-doc> git config user.name "Firstname Lastname"
+    you@laptop:~/dev/rockstor-doc> git config user.email your_email_address
 
 Add a remote called upstream to periodically rebase your local repository with
 changes in the upstream made by other contributors.
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> git remote add upstream https://github.com/rockstor/rockstor-doc.git
+    you@laptop:~/dev/rockstor-doc> git remote add upstream https://github.com/rockstor/rockstor-doc.git
 
 If desired, you can now verify these settings are correct by displaying the Git
 configuration for the local repository:
 
 .. code-block:: console
 
-         you@laptop:~/dev/rockstor-doc> git config --list --local
+    you@laptop:~/dev/rockstor-doc> git config --list --local
 
 
 Installing Sphinx
@@ -85,7 +85,7 @@ To install **sphinxext-rediraffe**, use this command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> sudo pip3 install --user sphinxext-rediraffe
+    you@laptop:~/dev/rockstor-doc> sudo pip3 install --user sphinxext-rediraffe
 
 
 .. _dockersphinx:
@@ -114,14 +114,14 @@ branch with the upstream.
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> git checkout master
-        you@laptop:~/dev/rockstor-doc> git pull --rebase upstream master
+    you@laptop:~/dev/rockstor-doc> git checkout master
+    you@laptop:~/dev/rockstor-doc> git pull --rebase upstream master
 
 Checkout a new/separate branch for your issue. For example:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> git checkout -b issue#1234_brief_label
+    you@laptop:~/dev/rockstor-doc> git checkout -b issue#1234_brief_label
 
 You can then start making changes in this branch.
 
@@ -146,14 +146,14 @@ use the following command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> make html
+    you@laptop:~/dev/rockstor-doc> make html
 
 If you use our :ref:`docker image<dockersphinx>`, you can use the following
 command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:master make html
+    you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:master make html
 
 HTML files are generated in the :code:`_build/html` directory. From a separate
 terminal window, you can have a simple Python webserver always serving up this
@@ -161,7 +161,7 @@ content with the following command:
 
 .. code-block:: console
 
-        you@laptop:~/dev/rockstor-doc> pushd ./_build/html; python3 -m http.server 8000; popd
+    you@laptop:~/dev/rockstor-doc> pushd ./_build/html; python3 -m http.server 8000; popd
 
 You can now go to :code:`http://localhost:8000` in your browser to review your
 changes. The webserver is to be started only once and it will continue to serve
@@ -169,6 +169,27 @@ the files and changes you make to them.
 
 After making any changes to a *.rst* file, run :code:`make html` as shown above
 and refresh your browser to display your changes.
+
+In order to check hyperlinks that are part of the changed files, it is also recommended
+to run the `linkcheck <https://www.sphinx-doc.org/en/master/usage/builders/index.html>`_
+tool that comes with Sphinx. During PR submission that link check is also runs automatically.
+If you don't make changes to any existing links or don't add new ones, it is not as important.
+As above, with Sphinx installed you can run it directly in the documentation directory:
+
+.. code-block:: console
+
+    you@laptop:~/dev/rockstor-doc> make linkcheck
+
+If you use our :ref:`docker image<dockersphinx>`, you can use the following
+command:
+
+.. code-block:: console
+
+    you@laptop:~/dev/rockstor-doc> docker run --rm -v $PWD:/docs ghcr.io/rockstor/rockstor-doc:master make linkcheck
+
+If linkcheck errors occur in documents you have not modified and they are not in scope
+of your changes, you can probably ignore them and/or open another issue on github
+to address required changes (so this knowledge is not lost over time).
 
 
 Submit your changes
