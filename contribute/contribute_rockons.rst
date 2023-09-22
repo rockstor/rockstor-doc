@@ -108,7 +108,7 @@ Environment setup
 
 Go to the `rockon-registry repo <https://github.com/rockstor/rockon-registry>`_
 and click on the **Fork** button. This will fork the repository into your
-profile which serves as your private git remote called origin. The next few
+profile which serves as your personal git remote called origin. The next few
 git steps are demonstrated on a Linux terminal.
 
 Create a local clone of your fork.
