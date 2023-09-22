@@ -172,7 +172,7 @@ and refresh your browser to display your changes.
 
 In order to check hyperlinks that are part of the changed files, it is also recommended
 to run the `linkcheck <https://www.sphinx-doc.org/en/master/usage/builders/index.html>`_
-tool that comes with Sphinx. During PR submission that link check is also runs automatically.
+tool that comes with Sphinx. During PR submission that link check is also run automatically.
 If you don't make changes to any existing links or don't add new ones, it is not as important.
 As above, with Sphinx installed you can run it directly in the documentation directory:
 
