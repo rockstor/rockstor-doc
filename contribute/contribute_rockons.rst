@@ -26,7 +26,7 @@ the Rock-on structure described in the Rock-on repository
 3. Upload the file to ``/opt/rockstor/rockons-metastore/[app].json``. Hit
 update in the Web-UI and install your brand new Rock-on!
 
-If you like to share your app with rest of the Rockstor community, open
+If you would like to share your app with the rest of the Rockstor community, open
 an issue describing what you are trying to contribute and then a subsequently
 linked pull request in this repository.
 Please follow these guidelines when opening a pull request:
