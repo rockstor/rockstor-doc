@@ -134,7 +134,7 @@ with changes in the upstream made by other contributors.
     git remote add upstream https://github.com/rockstor/rockon-registry.git
 
 The above 4 steps help you setup your local environment. If you are familiar
-with git and use an IDE like Eclipse, you can achieve the same outcome in a
+with git and use an IDE, you can achieve the same outcome in a
 different way. Here, we listed the simple terminal way of setting it up.
 
 Steps to Contribute a Rock-on with a Pull Request
