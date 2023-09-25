@@ -44,10 +44,10 @@ a new NFS export.
 Various fields of the form are explained as follows.
 
 * **Shares to export**: Choose one or more shares to be exported.
-* **NFS Clients** or **Host String**: This field can be a single host, comma separated host names, hostnames with wildcards or IP networks. This field can be complex. For a detailed explanation, read the `manpage <https://linux.die.net/man/5/exports>`_ of exports.
+* **NFS Clients** or **Host String**: This field can be a single host, comma separated host names, hostnames with wildcards or IP networks. This field can be complex. For a detailed explanation, read the `manpage <https://manpages.opensuse.org/Tumbleweed/nfs-kernel-server/exports.5.en.html>`_ of exports.
 * **Writable**: Choose ro to make the share(s) available read-only or rw for read-write.
 * **Sync**: Sync (synchronous) mode is the default and the norm. For asynchronous IO, select
-  async. See the `manpage <https://linux.die.net/man/5/exports>`_ of exports for more information.
+  async. See the `manpage <https://manpages.opensuse.org/Tumbleweed/nfs-kernel-server/exports.5.en.html>`_ of exports for more information.
 
 .. _edit_nfs_export:
 
@@ -154,7 +154,7 @@ you can manually edit your :code:`/etc/fstab` file to contain the following line
 .. note::
 
     The above can take many important options to control the behavior of this NFS mount.
-    See the `nfs mount manpage <https://linux.die.net/man/5/nfs>`_ for further details.
+    See the `nfs mount manpage <https://manpages.opensuse.org/Tumbleweed/nfs-client/nfs.5.en.html>`_ for further details.
 
 .. _accessshares_nfs_macos:
 

@@ -5,7 +5,7 @@ Services
 
 Rockstor supports many services that are necessary or useful in a storage
 system. Service management, *i.e.* turning on or off, and configuration can be
-done via the **System** - **Services** page of the web-UI. Note that the
+done via the **System** - **Services** page of the Web-UI. Note that the
 **spanner icon** next to each service name is used to **configure** that
 service.
 
@@ -131,19 +131,19 @@ The individual fields of the form are described below.
 
 * **Domain/Realm name**: Specifies the desired Active Directory or Domain.
 * **Administrator Username**:  Name of the user to use for the enrollment to
-  the AD. Tihs should be the AD's administrator account.
+  the AD. This should be the AD's administrator account.
 * **Password**: Password for the Administrator username.
 * **Enable enumeration**: Fetch and display all users/groups values. As this
   option can have a notable performance cost in some servers (with high number
   of users, for instance), this option is disabled by default. Note, however,
   that this option must be enabled for Rockstor to be able to list AD users and
-  groups in the web-UI. See `SSSD FAQ <https://docs.pagure.org/sssd.sssd/users/faq.html#when-should-i-enable-enumeration-in-sssd-or-why-is-enumeration-disabled-by-default>`_ for
+  groups in the Web-UI. See `SSSD FAQ <https://docs.pagure.org/sssd.sssd/users/faq.html#when-should-i-enable-enumeration-in-sssd-or-why-is-enumeration-disabled-by-default>`_ for
   further details.
 * **Disable automatic ID mapping**: By default, the AD provider will map UID
   and GID values from the objectSID parameter in Active Directory. Check this
   option if you want to disable ID mapping and instead rely on POSIX attributes
-  defined in Active Directory. See `SSSD documentation <https://linux.die.net/man/5/sssd-ad>`_ for
-  furhter details.
+  defined in Active Directory. See `SSSD documentation <https://manpages.opensuse.org/Tumbleweed/sssd-ad/sssd-ad.5.en.html>`_ for
+  further details.
 * **Treat user and group names as case-sensitive**
 
 Rockstor 4 relies on `SSSD <https://sssd.io/>`_ for the management of identities
@@ -153,7 +153,7 @@ further customize the enrollment into an AD.
 Upon submission of the AD configuration form, Rockstor will test the
 configuration settings by attempting to *discover* the AD domain and save the
 configuration if successful. If Rockstor cannot discover the AD domain, it will
-report the error back to the web-UI; notably, verify that the AD domain can be
+report the error back to the Web-UI; notably, verify that the AD domain can be
 resolved by name via DNS (see `Red Hat Windows Integration Guide <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/windows_integration_guide/sssd-integration-intro#sssd-ad-proc>`_ for
 further documentation).
 
@@ -191,7 +191,7 @@ further customize the connection to the LDAP server.
 .. note::
   The LDAP implementation is an area under active development. As a result, we
   are seeking feedback from users on further customizations and settings to
-  implement in Rockstor web-UI. Please visit our `friendly forum <https://forum.rockstor.com>`_
+  implement in Rockstor Web-UI. Please visit our `friendly forum <https://forum.rockstor.com>`_
   to share your feedback or provide input on further LDAP expansion.
 
 Note that a successful configuration of the LDAP service does not connect the
@@ -205,7 +205,7 @@ Network Information Server (NIS)
 
 NIS is a directory service to connect to a NIS server.
 
-In the web-ui, click on *System* tab to go to the *System* view. This also
+In the Web-UI, click on *System* tab to go to the *System* view. This also
 serves as the *Services* view, which is selected by default in the left
 sidebar. To configure NIS, click on the **wrench** icon and submit the form
 with appropriate values as shown below.
@@ -221,14 +221,12 @@ NUT-UPS
 -------
 
 A (currently Beta) `Network UPS Tools <https://networkupstools.org/>`_
-based service to orchestrate gracefull system shutdown in the event of a power
+based service to orchestrate graceful system shutdown in the event of a power
 outage. Please see our: :ref:`ups_setup` section for more details.
 
 Rock-Ons (Docker plugin system)
 -------------------------------
-
-This is a very new service that is still in Beta, please see :ref:`rockons_intro`
-for an introduction to Rockstor's `Docker <https://www.docker.com/>`_ based
-plugin system.
+Please see :ref:`rockons_intro` for an introduction to Rockstor's
+`Docker <https://www.docker.com/>`_ based plugin system.
 
 **To start or stop any service, click the corresponding ON or OFF button**
