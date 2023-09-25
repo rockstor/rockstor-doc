@@ -3,21 +3,26 @@
 Rock-ons (Docker Plugins)
 =========================
 
-**Rock-ons** are Rockstor's name for it's use of `docker
-<https://www.docker.com/>`_ containers to provide a **Plugin System** to easily
-expand the functions of a base Rockstor install. This feature is relatively new
-to Rockstor but is proving to be quite popular and is under active development.
+**Rock-ons** are Rockstor's name for its use of `docker
+<https://www.docker.com/>`_ containers to provide a **Plugin System** to
+easily expand the functions of a base Rockstor install.
 
 Each Rock-on aims to provide a single additional service and the list of
 :ref:`rockons_available` is expanding all the time.
+
+.. note::
+    We are striving to provide Rock-ons as multi-architecture apps,
+    namely for :code:`amd64` (Intel/AMD CPUs) and :code:`arm64` (ARM-based) devices.
+    This is not always possible, however the supported architectures are
+    usually noted in the Rock-on description in the WebUI.
 
 .. _rockons_preinstall:
 
 Initial Rock-ons Setup
 ----------------------
 
-As Rock-ons / docker containers are like mini linux installs they require
-somewhere to live.  In Rockstor it is recommended that you setup a Share
+As Rock-ons/docker containers are like mini linux installs, they require
+somewhere to live. In Rockstor it is recommended that you setup a Share
 specifically for this purpose.
 
 .. warning::
@@ -25,12 +30,14 @@ specifically for this purpose.
     configurations on. Storing Rock-ons on the system disk will make Rock-on
     restores more difficult. See :ref:`rockonrestore` for more information.
 
-Note that all Rock-ons will then be installed into this shared area but each
-will remain independent and during the setup of each Rock-on you are given the
-option to store their respective configuration and data in other shares. This
-is good practice as it keeps your Rock-on config and data apart from the
-Rock-ons themselves. You do not have to separate the config and data within
-each rock-on but that is also good practice, and is why this option is offered.
+.. note::
+    All Rock-ons will then be installed into this shared area but each
+    will remain independent and during the setup of each Rock-on you are given
+    the option to store their respective configuration and data in other shares.
+    This is good practice as it keeps your Rock-on config and data apart from
+    the Rock-ons themselves. You do not have to separate the config and data
+    within each rock-on but that is also good practice, and is why this option
+    is offered.
 
 It is assumed you have already setup your :ref:`pools` and one or more
 shares in those pools (see our :ref:`createshare`) appropriate for your
@@ -127,24 +134,26 @@ the current list of freely available rock-on definition files and servers
 as the repository for :ref:`rockons_available`. Please consider contributing,
 or asking your favourite project to contribute, a rock-on via a GitHub pull
 request to this repository (see :ref:`contributerockons` for more
-information). Note that it is also possible to add to the available Rock-ons
-by placing a suitably configured and named json file in the
-*/opt/rockstor/rockons-metastore* directory of your Rockstor install. For full
-instructions and examples please see the rockon-registry
-`README.md <https://github.com/rockstor/rockon-registry/blob/master/README.md>`_.
-Some projects prefer to host their own Rock-on plugins and this feature enables
-the use of other projects official Rock-ons. An example of a project that takes
-advantage of this feature is `Emby <https://emby.media>`_ with their official
-`Rock-on <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
-definition file for the Emby server component. However this same Emby Rock-on
-has now been added to the official Rockstor Rock-on registry.
+information).
+
+.. note::
+    It is also possible to add to the available Rock-ons by placing a suitably
+    configured and named json file in the :code:`/opt/rockstor/rockons-metastore`
+    directory of your Rockstor install. For full instructions and examples
+    please see the :ref:`addmyownrockon` section. Some projects prefer to host
+    their own Rock-on plugins and this feature enables the use of other projects'
+    official Rock-ons. An example of a project that takes advantage of this
+    feature is `Emby <https://emby.media>`_ with their official `Rock-on
+    <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
+    definition file for the Emby server component. However this same Emby
+    Rock-on has now been added to the official Rockstor Rock-on registry.
 
 .. _rockons_available:
 
 Rock-ons available by default
 -----------------------------
 
-As this list is continually growing the best place to view the currently
+As this list is continually growing, the best place to view the currently
 included by default Rock-ons is at the
 `rockon-registry <https://github.com/rockstor/rockon-registry>`_ or on the
 Rock-ons page *All* tab within the Rockstor WebUI directly after pressing the
@@ -158,7 +167,6 @@ Rock-ons without write-ups
 Although the following Rock-ons are currently without specific install
 instructions they are like all Rock-on installs, fairly self explanatory.
 
-* `Bitcoin <https://bitcoin.com/>`_: Bitcoin full node
 * `Booksonic <https://booksonic.org>`_: Audiobooks streaming server
 * `Cardigann <https://github.com/cardigann/cardigann>`_: A proxy server for adding new indexers to Sonarr and other media managers
 * `Collabora online <https://www.collaboraoffice.com/code/>`_: LibreOffice-based online office suite
@@ -195,7 +203,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Ombi <https://ombi.io/>`_: Host your own Plex Request and user management system
 * `OwnCloud-Official <https://owncloud.com/>`_: Secure file sharing and hosting
 * `Pi-hole <https://pi-hole.net/>`_: A black hole for Internet advertisements
-* `PocketMine <https://www.pocketmine.net/>`_: Server software for Minecraft: Pocket Edition
+* `PocketMine <https://pmmp.io/>`_: Server software for Minecraft: Pocket Edition
 * `Radarr <https://github.com/Radarr/Radarr>`_: Radarr is a PVR for Movies on Usenet and Torrents
 * `Resilio Synch <https://www.resilio.com/>`_: Fast, private file sharing for teams and individuals
 * `Rocket.Chat <https://rocket.chat/>`_: Open Source Chat Platform
