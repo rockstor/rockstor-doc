@@ -55,6 +55,8 @@ Disk activity Widget
 The disk activity widget displays the top 5 disks sorted by read/write
 activity. Activity can be sorted by reads, writes or both.
 
+.. _network_activity_widget:
+
 Network activity Widget
 ^^^^^^^^^^^^^^^^^^^^^^^
 
