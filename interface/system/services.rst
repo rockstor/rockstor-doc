@@ -162,7 +162,7 @@ The Replication service leverages Btrfs send & receive features to replicate Sha
 This can be used, for instance, to asynchronously and automatically replicate important shares on another Rockstor system.
 To use this feature, first configure the Replication service by clicking the **wrench** icon next to its name.
 
-.. image:: /images/interface/system/services/rockstor_config.png
+.. image:: /images/interface/system/services/replication_config.png
    :width: 70 %
    :align: center
 
