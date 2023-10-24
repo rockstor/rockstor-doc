@@ -167,7 +167,7 @@ To use this feature, first configure the Replication service by clicking the **w
    :align: center
 
 * **Network Interface**: select the network interface to be used by the listener.
-* **Listener port**: select the port to be used by the listener. You can choose any number between 0 and 65535.
+* **Listener port**: select the port to be used by the listener. You can choose any unused port number between 0 and 65535.
 
 When ready, click on the **Submit** button to save changes.
 
