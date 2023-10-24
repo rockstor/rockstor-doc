@@ -188,7 +188,7 @@ To do so, click the **wrench** icon next to the service name, and the change the
 
 * **Network Interface**: select the network interface. If left blank (*default*), it will listen on all interfaces.
 * **HTTPS Port**: by default, Rockstor is accessible on port 443 but you can change it to another port if desired.
-  Note that the port *must be* between 0 and 65535.
+  Note that the port *must be* unused, and between 0 and 65535.
 
 When ready, click on the **Submit** button to save changes and Rockstor will automatically restart.
 It should thus become accessible again momentarily.
