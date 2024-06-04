@@ -23,7 +23,6 @@
 "docker-based-rock-ons/jenkins.rst" "interface/docker-based-rock-ons/jenkins.rst"
 "docker-based-rock-ons/netdata_official.rst" "interface/docker-based-rock-ons/netdata_official.rst"
 "docker-based-rock-ons/openvpn-server.rst" "interface/docker-based-rock-ons/openvpn-server.rst"
-"docker-based-rock-ons/owncloud.rst" "interface/docker-based-rock-ons/owncloud.rst"
 "docker-based-rock-ons/plex-media-server.rst" "interface/docker-based-rock-ons/plex-media-server.rst"
 "docker-based-rock-ons/scrutiny.rst" "interface/docker-based-rock-ons/scrutiny.rst"
 "docker-based-rock-ons/syncthing.rst" "interface/docker-based-rock-ons/syncthing.rst"
