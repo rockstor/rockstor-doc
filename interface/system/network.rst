@@ -57,8 +57,8 @@ Rocknets can, for instance, be used to connect several rock-ons with each
 other, granting external access to some, while preventing it from others. As a
 result, docker networks (rocknets) are ideal ways to connect a front-end
 container to a back-end database container, or connect multiple rock-ons
-together hidden behind a reverse-proxy rock-on. Please see the
-`docker's documentation <https://docs.docker.com/network/bridge/>`_
+together hidden behind a reverse-proxy rock-on. Please see
+`Docker's documentation <https://docs.docker.com/network/drivers/bridge>`_
 for further details on the different features and settings of such networks.
 
 .. note::

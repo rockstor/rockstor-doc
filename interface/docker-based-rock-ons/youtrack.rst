@@ -21,10 +21,10 @@ be found on the `project's main page <https://www.jetbrains.com/youtrack/feature
 
 YouTrack Documentation
 -----------------------
-YouTrack's `online documentation <https://www.jetbrains.com/youtrack/documentation/>`_
-is a good place to start along with their `complete manual
-<https://www.jetbrains.com/help/youtrack/index.html>`_ and their `Blog
-<https://blog.jetbrains.com/youtrack/>`_.
+YouTrack's `online documentation <https://www.jetbrains.com/help/youtrack/>`_
+is a good place to start along with their
+`Getting Started guide <https://www.jetbrains.com/help/youtrack/server/getting-started-with-youtrack.html>`_
+and their `Blog <https://blog.jetbrains.com/youtrack/>`_.
 
 
 .. _youtrack_preinstall:
@@ -61,7 +61,7 @@ Create a dedicated user
 ^^^^^^^^^^^^^^^^^^^^^^^^
 The YouTrack rock-on uses a specific user account to run the YouTrack service
 inside the container (for more information, see `YouTrack's documentation
-<https://www.jetbrains.com/help/youtrack/standalone/youtrack-docker-installation.html#create-and-configure-directories>`__).
+<https://www.jetbrains.com/help/youtrack/server/youtrack-docker-installation.html#create-and-configure-directories>`_).
 While the name of this user account is up to the user's preference, its UID and
 GID must be as follows:
 
@@ -107,8 +107,9 @@ which we set the ownership of the *youtrack-backup* share.
 Please note in the screenshot above that we also changed the *Permissions* to
 **750** by unchecking the *Read* and *Write* permissions for *Others*. While
 this is not necessary to YouTrack's function, it provides enhanced security and
-is the recommended setting in `YouTrack's documentation
-<https://www.jetbrains.com/help/youtrack/standalone/youtrack-docker-installation.html#create-and-configure-directories>`__.
+is the recommended setting in
+`YouTrack's documentation <https://www.jetbrains.com/help/youtrack/server/youtrack-docker-installation.html#create-and-configure-directories>`_.
+
 
 
 .. _youtrack_install:
@@ -184,9 +185,8 @@ YouTrack's configuration process as desired.
 Upgrading from a previous version
 ----------------------------------
 
-While upgrading from a previous installation of YouTrack is possible (see
-`YouTrack's documentation <https://www.jetbrains.com/help/youtrack/standalone/upgrade-with-docker-image.html#upgrading-docker-image>`__), it
+While upgrading from a previous installation of YouTrack is possible, it
 is recommended to follow the *Backup* / *Restore* procedure as detailed in
-YouTrack's documentation. We refer the user to the `YouTrack's documentation
-<https://www.jetbrains.com/help/youtrack/standalone/upgrade-with-docker-image.html#youtrack-zip-msi-to-docker>`__,
+YouTrack's documentation. We refer the user to the `Upgrade an Existing Installation ...
+<https://www.jetbrains.com/help/youtrack/server/upgrade-with-docker-image.html#youtrack-zip-msi-to-docker>`_,
 which provides detailed step-by-step instructions.

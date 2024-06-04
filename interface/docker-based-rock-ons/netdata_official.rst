@@ -14,15 +14,14 @@ requirements.
 What is Netdata
 ---------------
 
-`Netdata <https://www.netdata.cloud/agent>`_ Agent is a free an open-source
+`Netdata <https://www.netdata.cloud/open-source/>`_ Agent is a free an open-source
 tool to monitor and analyze the performance of your system in real time. It
 gathers a wealth of metrics from the operating system, hardware, as well as
 applications (including rock-ons), and display them in a modern and descriptive
 interface. Netdata also allows you to set different alerts to get notified when
 a specific metric reaches a designated threshold.
 For further details and up-to-date description of Netdata, please visit the
-`project's documentation <https://learn.netdata
-.cloud/docs/overview/what-is-netdata>`_.
+`project's documentation <https://learn.netdata.cloud/docs/deployment-guides>`_.
 
 .. _netdata_doc:
 

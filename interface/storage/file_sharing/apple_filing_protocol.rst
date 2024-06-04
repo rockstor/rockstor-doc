@@ -13,7 +13,7 @@ Apple Filing Protocol (AFP)
 An Apple / OSX native network sharing system akin to :ref:`samba_export` from
 MS Windows and :ref:`nfs` from Unix. However as of OSX 10.9 Mavericks and 10.10
 Yosemite the default network sharing protocol in OSX is SMB/CIFS
-(`apple reference <https://support.apple.com/en-gb/HT204445>`_). However AFP
+(`apple reference <https://support.apple.com/en-gb/guide/mac-help/mh17131/mac>`_). However AFP
 is still enabled by default and if SMB is not available then AFP is used. AFP
 is also necessary for network based Time Machine backups.
 
@@ -23,7 +23,7 @@ Time Machine
 ------------
 
 Time Machine is the built in backup system in Apple's OSX (Operating System
-10). It is a `requirement <https://support.apple.com/en-us/HT202784>`_ of Time
+10). It is a `requirement <https://support.apple.com/en-us/102423>`_ of Time
 Machine that network volumes be over AFP. By way of example this document steps
 through the configuration of a Time Machine compatible network volume hosted on
 Rockstor and how to backup to this volume from an OSX client machine.

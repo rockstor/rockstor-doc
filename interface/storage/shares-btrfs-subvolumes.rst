@@ -34,8 +34,8 @@ capacity. To resize a Share, Click the **Resize** button in it's detail screen.
 
 Note that a share cannot be decreased to a capacity lower than it's current
 usage. Internally, Share capacity enforcement is done via BTRFS qgroup feature
-set. To find out more see the btrfs wiki entry
-`Quota_support <https://btrfs.wiki.kernel.org/index.php/Quota_support>`_.
+set.
+`btrfs docs Subvolume Quota <https://btrfs.readthedocs.io/en/latest/Qgroups.html#subvolume-quota-groups>`_.
 
 .. _sizedisabled:
 

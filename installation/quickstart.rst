@@ -57,7 +57,8 @@ Data drives advisory
 .. warning::
 
     Rockstor v4.1.0-0 and older have a 1 GiB 'ignore' threshold.
-    See `if your device is small <https://btrfs.wiki.kernel.org/index.php/FAQ#if_your_device_is_small>`_
+    Newer stable versions have a 5 GiB 'ignore' threshold.
+    See `btrfs docs --mixed <https://btrfs.readthedocs.io/en/latest/mkfs.btrfs.html#options>`_
     in the btrfs wiki regarding our 16 GiB recommended minimum.
     Note: Rockstor does not use the "--mixed" format option; irrespective of drive size.
 
@@ -111,7 +112,7 @@ GUI options
 
 On a Linux Unity or Gnome Desktop see our :ref:`gnome_disks_howto`.
 
-On a Windows Desktop consider using a fairly intuitive solution like `balenaEtcher <https://www.balena.io/etcher/>`_.
+On a Windows Desktop consider using a fairly intuitive solution like `balenaEtcher <https://etcher.balena.io>`_.
 
 **Please note** the following USB image writing programs have been found to produce **NON working USB install disks** when used with the Rockstor ISO and their default settings.
 

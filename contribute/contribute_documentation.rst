@@ -94,7 +94,7 @@ Using Sphinx as a Docker container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sphinx can also be used as a Docker container, without needing to install it on
-your computer. As the base `docker-sphinx <https://github.com/sphinx-doc/docker>`_
+your computer. As the base `docker-sphinx <https://github.com/sphinx-doc/sphinx-docker-images>`_
 image doesn't contain the **sphinxext-rediraffe** extension needed to build
 Rockstor's documentation, we need to use a custom Docker image. This can easily
 be done using a `custom Dockerfile <https://github.com/rockstor/rockstor-doc/blob/master/docker/Dockerfile>`_.
