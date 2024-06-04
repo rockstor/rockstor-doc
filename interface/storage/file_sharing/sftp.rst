@@ -151,10 +151,9 @@ Once connected, the resource is available to other GUI programs via their respec
 SFTP Access From OSX
 ^^^^^^^^^^^^^^^^^^^^
 
-A popular SFTP client program on OSX is `Cyberduck <https://cyberduck.io>`_.
+A popular SFTP client program on OSX is `Cyberduck <https://docs.cyberduck.io/>`_.
 This is a particularly feature-full client available directly from the link given or if preferred via a paid version on the Mac App Store where updates will then be automated.
 Cyberduck is licensed under GNUv2 and is available for OSX 10.7 (Lion) or later.
-Source code and issue tracking are available at `trac.cyberduck.io <https://trac.cyberduck.io/>`_.
 
 A partner project by the same founding author of Cyberduck is Mountain Duck, which allows for drive mappings to be made in the Finder over a variety of protocols including SFTP.
 
@@ -190,7 +189,8 @@ The easiest solution to access an SFTP share from Windows is thus to use one of 
 
 As such, note that Cyberduck, as referenced in the :ref:`sftp_osx` section above, is also available for various versions of Windows.
 
-A dedicated SFTP client application that has found favour in `our forum <https://forum.rockstor.com/>`_ is `WinSCP <https://winscp.net>`_ which is `GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
+A dedicated SFTP client application that has found favour in `our forum <https://forum.rockstor.com/>`_
+is `WinSCP <https://winscp.net/eng/index.php>`_ which is `GPLv3 Licenced <https://winscp.net/eng/docs/license>`_.
 
 .. _sftp_winscp:
 

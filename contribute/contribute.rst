@@ -59,7 +59,7 @@ This repository has 2 main git branches:
     If all is well during field testing via our testing channel packages,
     the exact same patch may be cherry-picked for inclusion in the stable release.
 
-Begin by `Creating your own forking <https://github.com/rockstor/rockstor-core/fork>`_ via GitHub's Web-UI.
+Begin by creating your own GitHub **fork** at `rockstor-core <https://github.com/rockstor/rockstor-core>`_ via GitHub's Web-UI.
 
 .. warning::
     You must **untick** *"Copy the master branch only"* if you intend to contribute to the testing channel.
@@ -69,7 +69,7 @@ The high level flow of an individual contribution is as follows.
 
 1. Search for an existing issue or start a new issue using the `Issue Tracker <https://github.com/rockstor/rockstor-core/issues>`_.
 2. Make and test code changes locally on a Rockstor install with the rpm package removed.
-3. Submit your changes in a single `pull request <https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_.
+3. Submit your changes in a single `pull request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>`_.
 4. Use the issue tracker for discussions as necessary.
 5. Close the issue when your pull request is merged.
 

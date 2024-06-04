@@ -14,10 +14,10 @@ requirement.
 What is MinIO
 -----------------
 
-`MinIO <https://min.io>`_ is an open-source, high-performance, distributed
+`MinIO <https://min.io/product/overview>`_ is an open-source, high-performance, distributed
 S3-compatible object storage system. MinIO can scale from a single server with
 a single object store all the way to a fault-tolerant commercial-grade
-distributed infrastrucure. This MinIO Rock-on targets the low end, creating a
+distributed infrastructure. This MinIO Rock-on targets the low end, creating a
 single MinIO server using a single Rockstor share as its object store. This
 configuration should be perfect for catching backups on a home server, for
 example.
@@ -31,16 +31,7 @@ certificate management in addition to the MinIO Rock-on installation. This
 would violate the '"all-in-one" user experience' guideline in
 :ref:`contributerockons`.
 
-
-.. _minio_doc:
-
-MinIO Documentation
--------------------
-
-If you want a deep dive into the full range of MinIO capabilities, the MinIO
-project maintains extensive, well-written `documentation <https://docs.min.io/>`_
-covering many different deployment models.  You don't need to worry about all
-that to use this Rock-on, though.  Simply point your MinIO-enabled client at
+Simply point your MinIO-enabled client at
 the URL for your server (``http://domain-name:port``) and use the Access Key
 (username) and Secret Key (password) that you specified during installation.
 
