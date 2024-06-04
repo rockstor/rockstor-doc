@@ -127,7 +127,7 @@ further.
 On Windows or Fedora operating systems, the Fedora Media Writer program can be
 used to prepare your USB flash drive with the Rockstor ISO file. If you are
 using the Windows operating system then Fedora Media Writer can be downloaded
-from `GetFedora.org <https://getfedora.org/fmw/FedoraMediaWriter-win32-latest.exe>`_
+from `GetFedora.org <https://fedoraproject.org/fmw/FedoraMediaWriter-win32-latest.exe>`_
 and install it. On Fedora, run the following command::
 
     # sudo dnf install mediawriter

@@ -79,11 +79,11 @@ All standard BTRFS redundancy profiles are available when creating a pool.
     Uses a Raid0 (strip) of Raid1 mirrors.
     Btrfs-raid 10 offers the best overall performance with single disk redundancy.
 
-Please see the `btrfs wiki <https://btrfs.wiki.kernel.org/index.php/Main_Page>`_
+Please see the `btrfs docs <https://btrfs.readthedocs.io/en/latest/Introduction.html>`_
 for up to date information on all btrfs matters.
 
 For a BTRFS features stability status overview, including redundancy profiles,
-visit the  `btrfs wiki status page <https://btrfs.wiki.kernel.org/index.php/Status>`_.
+visit the  `btrfs docs Status <https://btrfs.readthedocs.io/en/latest/Status.html>`_.
 
 .. warning::
 
@@ -359,9 +359,8 @@ The balance operation initiates a BTRFS balance process in the background. It
 spreads data more evenly across multiple disks of the Pool. It is automatically
 triggered after a :ref:`poolresize` operation, which is the main purpose of
 this feature. A standalone balance operation is intended for advanced users who
-can judge for themselves if it is necessary. To find out more, see the `btrfs
-wiki balance section
-<https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F>`_.
+can judge for themselves if it is necessary. To find out more, see
+`btrfs docs balance <https://btrfs.readthedocs.io/en/latest/Balance.html>`_.
 
 To start a balance, go to the Pool's detail page and click on the **Start a new
 balance** button in the **Balances** tab.

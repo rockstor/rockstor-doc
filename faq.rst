@@ -150,45 +150,26 @@ The :ref:`testing_channel` or :ref:`stable_channel` repositories.
 
 The following repositories are included and enabled in :ref:`installer_howto`:
 
-* `OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only)
+* `OSS <https://en.opensuse.org/Package_repositories#OSS>`_ (open source software only) Aliased "Leap_**_*".
 
-* `Update <https://en.opensuse.org/Package_repositories#Update>`_ (security and bugfix updates for OSS packages)
-
-Aliased as per the installer profile: e.g. "Leap_15_3" & "Leap_15_3_Updates" respectively.
-
-**Leap 15.2 profiles** have the following additional repositories:-
-
-* `shells <https://build.opensuse.org/project/show/shells>`_
-  An OBS repo for shellinabox - used by our Web-UI shell function.
+* `Update <https://en.opensuse.org/Package_repositories#Update>`_ (security and bugfix updates for OSS packages) Aliased "Leap_**_*_Updates".
 
 * `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
   Rockstor's OBS repo for branding packages.
-
-We are required to de/re-brand packages that have no
-"...branding-upstream" equivalent". See: `Making_an_openSUSE_based_distribution
-<https://en.opensuse.org/Archive:Making_an_openSUSE_based_distribution>`_
-
-
-**Leap 15.3 profiles** and newer - shells is replaced with Rockstor's OBS
-home_rockstor; there was no Leap 15.3 ARM64 shellinabox package available otherwise:-
+  We are required to de/re-brand packages that have no "...branding-upstream" equivalent".
+  See: `Making_an_openSUSE_based_distribution <https://en.opensuse.org/Archive:Making_an_openSUSE_based_distribution>`_
 
 * `home_rockstor <https://build.opensuse.org/project/show/home:rockstor>`_
   Multi-arch Shellinabox with no changes from upstream:
-
-* `home_rockstor_branches_Base_System <https://build.opensuse.org/project/subprojects/home:rockstor>`_
-  As for Leap 15.2 Profiles.
-
-The following are new in upstream openSUSE Leap 15.3: see
-`Upstream release notes <https://doc.opensuse.org/release-notes/x86_64/openSUSE/Leap/15.3/#installation-new-update-repos>`_
-They are included but no persisted by our installer build process.
-However they are identical to those added by a regular openSUSE Leap 15.3 update.
-And so are also auto included in the resulting install.
 
 * `repo-backports-update <http://download.opensuse.org/update/leap/15.3/backports/>`_
   Update repository of openSUSE Backports
 
 * `repo-sle-update <http://download.opensuse.org/update/leap/15.3/sle/>`_
   Update repository with updates from SUSE Linux Enterprise 15
+
+* `repo-openh264 <http://codecs.opensuse.org/openh264/openSUSE_Leap>`_
+  To provide `Open H264 capabilities <https://news.opensuse.org/2023/01/24/opensuse-simplifies-codec-install>`_.
 
 Debug-info counterparts "repo-backports-debug-update" & "repo-sle-debug-update" are also added but are not enabled.
 These are not used during the installer build.
@@ -295,10 +276,10 @@ confines users from using BTRFS more freely, thus reducing the chances of
 hitting deep intricate bugs. The fact that BTRFS bugs being reported lately are
 only triggered by very special scenarios is an encouraging sign.
 
-However a proviso here is that The BTRFS community consensus is that **raid5
-and raid6** levels of btrfs support are not yet fully stable and so are ***not
-recommended for production use***. Please see the `btrfs wiki
-<https://btrfs.wiki.kernel.org/index.php/Main_Page>`_ for up to date
+However a proviso here is that the BTRFS community consensus has **btrfs-raid5
+and btrfs-raid6** parity levels of as not yet fully stable; and so are ***not
+recommended for production use***. Please see the `btrfs docs
+<https://btrfs.readthedocs.io/en/latest/Introduction.html>`_ for up to date
 information on all btrfs matters.
 
 
@@ -316,8 +297,8 @@ How can I stay in touch with the latest Rockstor news?
 ------------------------------------------------------
 
 We recommend you join our `community forum <https://forum.rockstor.com>`_,
-follow the `rockstor-core project <https://github.com/rockstor/rockstor-core>`_
-on github, and follow us on `twitter <https://twitter.com/rockstorinc>`_.
+follow the `rockstor-core project <https://github.com/rockstor/rockstor-core>`_ on github,
+and follow us on Masterdon `@TheRockstorProject <https://mastodon.world/@TheRockstorProject>`_.
 
 
 How can I contribute to Rockstor?

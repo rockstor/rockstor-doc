@@ -6,7 +6,7 @@ Rockstor USB install disk using Rufus
 `Rufus 3.4 <https://rufus.ie/>`_ is an open source multilingual general
 purpose graphical utility for Windows 7 and newer systems to help in the
 creation of bootable USB flash drives. It is licensed under
-`GNU GPLv3 or later <https://www.gnu.org/licenses/gpl.html>`_. Using it's
+`GNU GPLv3 or later <https://www.gnu.org/licenses/gpl-3.0.html>`_. Using it's
 default settings it will **NOT** create a working Rockstor USB install disk.
 However, using the following configuration options, it can successfully prepare
 a working USB flash drive to be used for Rockstor install. Please see the

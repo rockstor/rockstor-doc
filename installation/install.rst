@@ -39,7 +39,7 @@ See :ref:`minsysreqs` for the basic requirements.
 Rockstor developers and the user community share hardware specs known to work well with Rockstor.
 Visiting our `Forum <https://forum.rockstor.com>`_
 for user stories, example builds, and to request advice on hardware choice or current recommendations.
-There is also a `Hardware <https://forum.rockstor.com/c/hardware/l/latest>`_ tag available.
+There is also a `Hardware <https://forum.rockstor.com/c/hardware/18/l/latest>`_ tag available.
 
 .. _updating_rockstor:
 

@@ -15,7 +15,7 @@ The Rockstor package code, as distributed, is developed under two main repositor
 
 * Source1: `rockstor-jslibs <https://github.com/rockstor/rockstor-jslibs>`_ is
   (`MIT <https://opensource.org/license/mit-0>`_ AND
-  `Apache-2.0 <https://opensource.org/license/apache2.0>`_ AND
+  `Apache-2.0 <https://opensource.org/license/apache-2-0>`_ AND
   `GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0-standalone.html>`_ AND
   `LGPL-3.0-or-later <https://www.gnu.org/licenses/lgpl-3.0-standalone.html>`_ AND
   `ISC <https://spdx.org/licenses/ISC.html>`_) licensed.
@@ -109,9 +109,10 @@ There will also be greater attention paid to avoiding regressions from one
 stable channel release to the next.
 
 Below we see the process involved in setting up the stable channel updates.
-A link is provided to the Rockstor shop showing the **Stable Updates
-subscription** option. On selection and purchase the activation code will be
-emailed to the address given. This code is intended for the dialog shown
+A link is provided to `The Rockstor Project Open Collective <https://opencollective.com/the-rockstor-project>`_
+showing the **Stable Updates subscription membership** option.
+Upon membership the activation code will be emailed to the address given.
+This code is intended for the dialog shown
 below. Also note our :ref:`email_test` section where the Appliance ID, a UUID
 generated during install, is contained within the test email. The appliance ID
 is used to identify an individual install and when paired with an activation
@@ -129,10 +130,10 @@ self explanatory elements.
 Participation in the stable channel is key to the future of Rockstor development.
 The ability to continue to improve and provide future-proof services,
 by way of advanced file system facilities made easy, is dependant on a financial component.
-The stable channel, and it's associated
-`Commercial Support <https://rockstor.com/commercial_support.html>`_
-option, is that financial component.
-See our `Shop <https://shop.rockstor.com/>`_ for the current cost of a **Stable Updates subscription**.
+The stable channel, and it's associated `Paid Support <https://rockstor.com/paid_support.html>`_ option,
+is that financial component.
+See our `Open Collective non-profit <https://opencollective.com/the-rockstor-project>`_
+for the current cost of a **Stable Updates subscription members**.
 
 Please keep an eye on our `friendly forum <https://forum.rockstor.com/>`_ as
 discount / promotional codes are occasionally issued.
