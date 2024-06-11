@@ -3,7 +3,7 @@
 Distribution update from 15.4 to 15.5
 =====================================
 
-Rockstor installs "Build on openSUSE" Leap 15.4 - **End of Life (EOL) December 2023** - should be *distribution updated*.
+Rockstor installs "Built on openSUSE" Leap 15.4 - **End of Life (EOL) December 2023** - should be *distribution updated*.
 This How-to includes instruction on moving an existing 15.4 based install over, **in-place**,
 to the next major version of our base OS.
 Only one major version jump must be attempted at any one time.

@@ -4,7 +4,7 @@ Distribution update from 15.2 to 15.3
 =====================================
 
 Rockstor version 4 has been released in the testing channel for the entire life of openSUSE Leap 15.2.
-As such there are many installs "Build on openSUSE" Leap 15.2 - End of Life (EOL) December 2021.
+As such there are many installs "Built on openSUSE" Leap 15.2 - End of Life (EOL) December 2021.
 This How-to includes instruction on moving an existing 15.2 based install over, **in-place** to the new openSUSE Leap 15.3 base.
 
 .. note::
