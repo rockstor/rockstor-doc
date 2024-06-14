@@ -172,7 +172,7 @@ For both of the above, the sole listed action is the same:
 
     ... deinstallation of libopenssl-1_1-devel-1.1.1l-150500.17.28.2.x86_64
 
-**Favour your systems `Solution #` containing this same single action.**
+**Favour your system's `Solution #` containing this same single action.**
 
 We use --allow-vendor-change as some prior openSUSE packages are now supplied directly from SuSE.
 The --no-recommends is to keep to our JeOS (Just enough Operating System) `minimal` origin.
