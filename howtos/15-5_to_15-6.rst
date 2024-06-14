@@ -129,8 +129,10 @@ So ensure that you have at least 2 GB free on your system disk ('ROOT' Pool), be
 
     zypper --releasever=15.6 dup --download-in-advance --allow-vendor-change --no-recommends
 
-This document was create prior to the final public release of openSUSE Leap 15.6.
-At the time the following was experienced:
+
+.. note::
+    The following **Problems** / **packaging conflicts** have been observed & reported.
+    Compare your own systems output to identify which `Solution #` to pick:
 
 .. code-block:: console
 
@@ -146,6 +148,31 @@ At the time the following was experienced:
     Choose from above solutions by number or cancel [1/2/3/c/d/?] (c):
 
 If you see the above message: it is currently advised to choose **Solution 2**.
+
+.. code-block:: console
+
+    Problem: 1: the to be installed libopenssl-1_1-devel-1.1.1w-150600.3.10.x86_64 conflicts with ‘libopenssl-devel > 1.1.1w’ provided by the to be installed libopenssl-devel-3.1.4-150600.2.1.noarch
+     Solution 1: Following actions will be done:
+      keep obsolete libopenssl-1_1-devel-1.1.1l-150500.17.28.2.x86_64
+      keep obsolete libopenssl-devel-1.1.1l-150400.1.5.noarch
+      keep obsolete openssl-1.1.1l-150400.1.5.noarch
+      keep obsolete openssl-1_1-1.1.1l-150500.17.28.2.x86_64
+     Solution 2: Following actions will be done:
+      deinstallation of libopenssl-devel-1.1.1l-150400.1.5.noarch
+      deinstallation of postgresql13-llvmjit-devel-13.15-150200.5.58.1.x86_64
+     Solution 3: deinstallation of libopenssl-1_1-devel-1.1.1l-150500.17.28.2.x86_64
+
+    Choose from above solutions by number or cancel [1/2/3/c/d/?] (c):
+
+If you see the above message: it is currently advised to choose **Solution 3**.
+
+For both of the above, the sole listed action is the same:
+
+.. code-block:: console
+
+    ... deinstallation of libopenssl-1_1-devel-1.1.1l-150500.17.28.2.x86_64
+
+**Favour your systems `Solution #` containing this same single action.**
 
 We use --allow-vendor-change as some prior openSUSE packages are now supplied directly from SuSE.
 The --no-recommends is to keep to our JeOS (Just enough Operating System) `minimal` origin.
