@@ -158,8 +158,10 @@ Confirm root User Password
 Wait for the "Rockstor bootstrapping tasks"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Rockstor tasks may take a few minutes to appear, depending on computer and
-selected drive speed, but will normally appear in less than 2 minutes.
+The Rockstor bootstrapping task may take around 3-4 minutes to appear,
+depending on computer, drive, and internet speed.
+This same delay occurs during every `rockstor` package update,
+as rockstor-build downloads and builds from `PyPi <https://pypi.org/>`_.
 
 .. image:: /images/installation/installer-howto/wait_for_rockstor_tasks.png
    :align: center
