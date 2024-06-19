@@ -17,7 +17,6 @@ How-tos & Guides
    howtos/clients
    howtos/smart
    howtos/luks
-   howtos/boot_drive_howto
    howtos/soho
    howtos/kvm_setup
    howtos/reset-root-password
