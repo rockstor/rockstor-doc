@@ -302,7 +302,7 @@ Simply run each of these steps:
    If the :code:`build.sh` command does not end with the instructions above,
    look into the build log recorded in :code:`/opt/rockstor/poetry-install.txt`.
 
-The build process, towards the end, enables and starts the following rockstor systemd services.
+The build process, towards the end, enables and starts the following rockstor **systemd services**.
 
 .. note::
 
@@ -312,16 +312,17 @@ Note that all paths indicated below are within the rockstor source tree.
 
 .. code-block:: console
 
-    rockstor-pre.service  # starts .venv/bin/initrock after postgresql.service
-    rockstor  # starts .venv/bin/supervisord -c etc/supervisord.conf after rockstor-pre.service
-    rockstor-bootstrap  # starts .venv/bin/bootstrap after rockstor.service
+    rockstor-build # runs build.sh if .venv dir is not found
+    rockstor-pre  # starts .venv/bin/initrock after rockstor-build
+    rockstor  # starts .venv/bin/supervisord -c etc/supervisord.conf after rockstor-pre
+    rockstor-bootstrap  # starts .venv/bin/bootstrap after rockstor
 
 If a custom HDD power (APM) and/or spin-down setting is enabled, the following service is added,
 but only if the drive is confirmed as rotational:
 
 .. code-block:: console
 
-    rockstor-hdparm.service  # Configures drives APM & spindown settings via hdparm
+    rockstor-hdparm  # Configures drives APM & spindown settings via hdparm
 
 It is entirely safe to disable and delete the rockstor-hdparm.service.
 The only consequence is a return to defaults for all drives on next power cycle.
