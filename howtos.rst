@@ -5,6 +5,7 @@ How-tos & Guides
 .. toctree::
    :maxdepth: 2
 
+   howtos/tailscale_install
    howtos/stable_kernel_backport
    howtos/15-2_to_15-3
    howtos/15-3_to_15-4

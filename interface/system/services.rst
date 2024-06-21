@@ -296,8 +296,15 @@ The SNMP service can now be turned ON by toggling the ON/OFF switch located to i
 Tailscale
 ---------
 
-Starting in version 5.0.5-0, Rockstor provides an easy integration of the `Tailscale <https://tailscale.com/>`_ service.
-Tailscale is a private mesh VPN using `Wireguard <https://www.wireguard.com/>`_ allowing, for instance, to connect remote machines as if they were on the same private network.
+From Rockstor version 5.0.5-0 `Tailscale <https://tailscale.com/>`_ is natively supported.
+However the required Tailscale program is intentionally **NOT pre-installed**.
+
+.. warning::
+
+    A :ref:`install_tailscale` is required before configuration or use.
+
+Tailscale is a private mesh VPN using `Wireguard <https://www.wireguard.com/>`_ allowing, for instance,
+to connect remote machines as if they were on the same private network.
 This service can thus provide an easy solution to remotely access your Rockstor instances and/or their :ref:`File sharing <accessshares>`.
 
 .. note::
