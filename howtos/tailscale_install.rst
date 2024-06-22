@@ -21,7 +21,7 @@ It is intended only to assist in providing relevant links and light guidance.
 
 .. note::
 
-    Rockstor is "Build on openSUSE", specifically **openSUSE Leap** or **Tumbleweed**: depending on the installer used.
+    Rockstor is "Built on openSUSE", specifically **openSUSE Leap** or **Tumbleweed**: depending on the installer used.
     Our Tailscale service integration requires only that a recent Tailscale instance be installed.
     The Tailscale `Stable` variant is advised but not assumed.
 
