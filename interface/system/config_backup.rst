@@ -24,7 +24,7 @@ e.g. see: :ref:`v3_to_v4`.
 The following state information is saved as part of a backup
 
 * Users and Groups
-* Samba configuration and exports
+* Samba configuration and exports (**Note**: only the global Samba configuration will be restored, share level custom configuration entries will be backed up into the file, but are as of yet not being restored).
 * NFS configuration and exports
 * Schedule task configuration
 * Service configurations (ntp, smartd etc..)
@@ -32,8 +32,13 @@ The following state information is saved as part of a backup
 * Scheduled task configuration
 * Rock-on configuration
 
-*Note: as of Rockstor-3.9.2-56, AFP configuration and exports are no-longer
-supported.*
+.. note::
+  **Addtional Notes:**
+
+  * For Samba exports: as of Rockstor 5.0.14-0 only the global Samba configuration will be restored share level custom configuration entries will be saved into the configuration backup file but are not yet being restored.
+  * For AFP exports: as of Rockstor 3.9.2-56, AFP configuration and exports are no-longer supported.
+
+
 
 Since Rockstor can dynamically detect  :ref:`Pool <pools>`,
 :ref:`Share <shares>`, and :ref:`Snapshot <snapshots>` information after an
