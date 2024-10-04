@@ -237,6 +237,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
 
    docker-based-rock-ons/jenkins
    docker-based-rock-ons/minio
+   docker-based-rock-ons/nginx
    docker-based-rock-ons/netdata_official
    docker-based-rock-ons/openvpn-server
    docker-based-rock-ons/plex-media-server
