@@ -58,7 +58,7 @@ other, granting external access to some, while preventing it from others. As a
 result, docker networks (rocknets) are ideal ways to connect a front-end
 container to a back-end database container, or connect multiple rock-ons
 together hidden behind a reverse-proxy rock-on. Please see
-`Docker's documentation <https://docs.docker.com/network/drivers/bridge>`_
+`Docker's documentation <https://docs.docker.com/engine/network/drivers/bridge/>`_
 for further details on the different features and settings of such networks.
 
 .. note::
