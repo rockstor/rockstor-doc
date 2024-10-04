@@ -222,7 +222,7 @@ Docker command examples for nginx Rockon
 1. For help with Docker go to Docker.com and create an ID. For users subscribed to Dockers free plan, here are some resources that are available to you:
 
 - Docker Community Forums: https://forums.docker.com/
-- Third-Party Communities: http://www.docker.com/community/
+- Third-Party Communities: https://www.docker.com/community/
 - Docker Documentation: https://docs.docker.com/
 
 2. To execute commands such as nginx -T` or nginx -s reload inside your Nginx container, you need to access the container's shell. You can do this using the `docker exec` command.
