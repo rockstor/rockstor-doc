@@ -319,7 +319,7 @@ settings summarized in the previous table.
 Add Labels
 ^^^^^^^^^^
 The **Add Labels** feature allows to apply customized *docker container labels*
-(`docker documentation <https://docs.docker.com/config/labels-custom-metadata/>`_)
+(`docker documentation <https://docs.docker.com/engine/manage-resources/labels/>`_)
 to any installed Rock-on. To add a new label within an existing Rock-on, make
 sure the Rock-on is turned OFF, and click on the little wrench icon next to the
 ON/OFF toggle to display a summary of the Rock-on's addlabels_settings_summary

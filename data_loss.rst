@@ -184,8 +184,8 @@ See our :ref:`support` options.
 If you are already knowledgeable in btrfs and system administration,
 see the upstream community `Libera Chat - #btrfs channel <https://web.libera.chat/#btrfs>`_.
 Finally, if your needs are extreme, consider seeking help on the
-`btrfs mailing list <http://vger.kernel.org/vger-lists.html#linux-btrfs>`_.
-More details on subscribing to the mailing list are available `here <http://vger.kernel.org/majordomo-info.html#taboo>`_.
+`btrfs mailing list (linux-btrfs) <https://subspace.kernel.org/vger.kernel.org.html>`_.
+More details on subscribing to the mailing list are available `here <https://subspace.kernel.org/subscribing.html>`_.
 
 .. warning::
 
@@ -205,8 +205,8 @@ Also take note of what you are usually expected to include:
 .. note::
 
    The :code:`dmesg` information output may be very large. If it is, instead of pasting it into the mail body,
-   it should be attached to the mail. However, check the restrictions on overall mail size
-   `here <http://vger.kernel.org/majordomo-info.html#taboo>`_.
+   it should be attached to the mail. However, check the restrictions on overall mail size on the
+   `etiquette page <https://subspace.kernel.org/etiquette.html>`_.
 
 .. _datalossraid0_single:
 
