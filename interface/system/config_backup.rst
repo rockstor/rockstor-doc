@@ -35,7 +35,7 @@ The following state information is saved as part of a backup
 .. note::
   **Addtional Notes:**
 
-  * For Samba exports: as of Rockstor 5.0.14-0 only the global Samba configuration will be restored share level custom configuration entries will be saved into the configuration backup file but are not yet being restored.
+  * For Samba exports: the configuration of the Samba service itself will be fully restored, including the *global custom configuration*. However, the *custom configuration* of Samba exports will only be saved into the configuration file, as Rockstor does not yet support restoring this information.
   * For AFP exports: as of Rockstor 3.9.2-56, AFP configuration and exports are no-longer supported.
 
 
