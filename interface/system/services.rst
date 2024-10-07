@@ -68,7 +68,7 @@ Rockstor 4 relies on `SSSD <https://sssd.io/>`_ for the management of identities
 As a result, one can edit :code:`/etc/sssd/sssd.conf` to further customize the enrollment into an AD.
 
 Upon submission of the AD configuration form, Rockstor will test the configuration settings by attempting to *discover* the AD domain and save the configuration if successful.
-If Rockstor cannot discover the AD domain, it will report the error back to the Web-UI; notably, verify that the AD domain can be resolved by name via DNS (see `Red Hat Windows Integration Guide <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/windows_integration_guide/sssd-integration-intro#sssd-ad-proc>`_ for further documentation).
+If Rockstor cannot discover the AD domain, it will report the error back to the Web-UI; notably, verify that the AD domain can be resolved by name via DNS (see `Red Hat Windows Integration Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/windows_integration_guide/sssd-integration-intro>`_ for further documentation).
 
 Note that a successful configuration of the AD service does not enroll the system into the AD. To do this, the AD service must be turned ON. To leave the AD, simply turn the AD service OFF.
 

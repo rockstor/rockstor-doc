@@ -7,7 +7,7 @@ Steps for contributing to **rockstor-doc** repo are similar to contributing to
 **rockstor-core**, as we follow the same fork and pull request model. We'll
 assume you have basic proficiency with Git and are familiar with using a
 text editor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
-recommendations. Or you may be able to use an online such as https://livesphinx.herokuapp.com/.
+recommendations. Or you may be able to use an online editor such as https://www.tutorialspoint.com/online_restructure_editor.php.
 
 Environment setup
 -----------------
@@ -326,6 +326,5 @@ To expedite the review, please follow these two tips:
 * When you make a pull request, adding a "Fixes #number-of-issue" on its own
   line will automatically close the related issue when it gets merged. Just a
   nice thing to have and also provides a link to the relevant issue. See
-  `GitHub documentation <https://docs.github
-  .com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue>`_
+  `GitHub documentation <https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue>`_
   for details.
