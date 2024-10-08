@@ -183,7 +183,7 @@ I.e. don't install things like manuals etc and other 'extra' packages.
 To reboot from the command line once the above "zypper ... dup ..." command has finished,
 enter the following commands as root:
 
-.. code-block::
+.. code-block:: console
 
     sync
     reboot
