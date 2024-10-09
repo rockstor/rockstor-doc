@@ -33,39 +33,40 @@
 
 
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" role="navigation">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/docs">
-        <img src="{{ pathto('_static/' + 'img/rockstorlogo-font2.png', 1) }}" alt="Bootstrap" style="padding-top: 8px;" width="150px">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li>
-          <a class="nav-link  active" href="https://rockstor.com/" target="_blank">Website</a>
-        </li>
-        <li>
-          <a class="nav-link  active" href="https://opencollective.com/the-rockstor-project" target="_blank">Open Collective</a>
-        </li>
-      </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/docs">
+            <img src="{{ pathto('_static/' + 'img/rockstorlogo-font2.png', 1) }}" alt="Bootstrap"
+                 style="padding-bottom: 6px;" width="150px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li>
+                    <a class="nav-link  active" href="https://rockstor.com/" target="_blank">Website</a>
+                </li>
+                <li>
+                    <a class="nav-link  active" href="https://opencollective.com/the-rockstor-project" target="_blank">Open
+                        Collective</a>
+                </li>
+            </ul>
+            <form class="form-inline" id="top-search" method="get" action="{{ pathto('search.html', 1) }}">
+                <label>
+                    <input type="text" value="" name="q"></input>
+                </label>
+                <input class="btn btn-primary-main-story" type="submit" value="Search"></input>
+                <span id="search-progress" style="padding-left: 10px"></span>
+            </form>
+        </div>
     </div>
-  </div>
 </nav>
 
 
 <div id="maincontent">
     <div class="container">
         <span style="padding-left: 20px;" class="h1">Documentation</span>
-
-        <div class="float-end">
-            <form class="form-inline" id="top-search" method="get" action="{{ pathto('search.html', 1) }}">
-                <input type="text" value="" name="q"></input>
-                &nbsp;
-                <input class="btn btn-primary-main-story" type="submit" value="Search"></input>
-                <span id="search-progress" style="padding-left: 10px"></span>
-            </form>
-        </div>
 <!--        https://getbootstrap.com/docs/5.2/layout/grid/#how-it-works-->
         <div class="row">
             <div class="col-lg-4 col-xs-12">
