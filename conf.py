@@ -47,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Rockstor'
-copyright = u'2015, Rockstor, Inc'
+copyright = u'The Rockstor Project'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -88,7 +88,8 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# https://www.florian-diesch.de/doc/sphinx/themes-and-pygments-styles/index.html#theme-sphinxdoc
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -202,7 +203,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'Rockstor.tex', u'Rockstor Documentation',
-   u'Rockstor, Inc', 'manual'),
+   u'The Rockstor Project', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -232,7 +233,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'rockstor', u'Rockstor Documentation',
-     [u'Rockstor, Inc'], 1)
+     [u'The Rockstor Project'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -246,7 +247,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Rockstor', u'Rockstor Documentation',
-   u'Rockstor, Inc', 'Rockstor', 'One line description of project.',
+   u'The Rockstor Project', 'Rockstor', 'An Open Source Linux & BTRFS DIY NAS',
    'Miscellaneous'),
 ]
 
