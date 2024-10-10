@@ -265,7 +265,6 @@ project repository `here <https://github.com/AnalogJ/scrutiny/blob/master/exampl
 You can modify the file `scrutiny.yaml` located in the share
 "Scrutiny-Config-Share".
 
-**Warning!**
-
-If :code:`smartd` is not working or doesn't list any device, (like in a VM) the
-dashboard will remain empty!
+.. warning::
+    **WARNING** If :code:`smartd` is not working or doesn't list any device,
+    (like in a VM) the dashboard will remain empty!

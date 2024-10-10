@@ -151,7 +151,7 @@ So ensure that you have at least 2 GB free on your system disk ('ROOT' Pool), be
 To reboot from the command line once the above "zypper ... dup ..." command has finished,
 enter the following commands as root:
 
-.. code-block::
+.. code-block:: console
 
     sync
     reboot

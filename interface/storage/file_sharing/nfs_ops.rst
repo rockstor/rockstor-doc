@@ -147,7 +147,7 @@ The Rockstor Share named *share01* is now accessible on the Linux laptop at the
 If you would like your Linux laptop to automatically mount this NFS export at startup,
 you can manually edit your :code:`/etc/fstab` file to contain the following line:
 
-.. code-block::
+.. code-block:: console
 
     rockstable:/export/share01 $HOME/share01 nfs4 rw 0 0
 
