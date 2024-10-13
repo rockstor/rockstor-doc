@@ -17,13 +17,13 @@ is an exact copy of the host system's, read motherboard's, response to:
     With the majority of systems,
     this is a genuinely unique reference; and no intervention of any sort is required.
 
-The implied unique-ness is assumed by multiple current Rockstor subsystems, e.g.
+The implied uniqueness is assumed by multiple current Rockstor subsystems, e.g.
 when :ref:`add_appliance` as part of setting up a Share :ref:`sharereplication`.
 And as part of configuring a system to use the :ref:`stable_channel` updates.
 
 .. warning::
 
-    WARNING: some systems, via lax firmware implementations, return a NON-Unique / fake product_uuid.
+    WARNING: some systems, via lax firmware implementations, return a NON-Unique/fake product_uuid.
 
 .. _knownfakeapplianceids:
 
@@ -41,7 +41,7 @@ all recognised by the latest version of Rockstor.
 - **5c4606fa-192f-453a-b299-7b088c63bb9b** -
   GIADA N70E-DR - Thanks to forum member hammerite.
 - **31393138-3538-5a43-3135-353130323750** -
-  HP / HPE ProLiant MicroServer Gen8 - Thanks to David via support email.
+  HP/HPE ProLiant MicroServer Gen8 - Thanks to David via support email.
 - **00000000-0000-0000-0807-060504030201** -
   Reported by Appman
 - **00000000-2093bfe3-e53b-4fc3-9cb1-9217ea6228c7** -
@@ -50,7 +50,7 @@ all recognised by the latest version of Rockstor.
 For all non-unique Appliance IDs known to the bundled version of Rockstor within an installer,
 a fail-over Appliance ID is substituted automatically.
 This has the advantage of ensuring that Rockstor's Appliance ID dependant subsystems are functional.
-But the disadvantage that upon re-install, using the same motherboard,
+But the disadvantage is that upon re-install, using the same motherboard,
 a new Appliance ID will be generated.
 
 .. note::
