@@ -51,7 +51,7 @@ requires a share for the media it is going to manage and a share to store its co
 files.
 
 .. note::
-    Plex optionally offers the option to use hardware-based transcoding capabilities. This Rock-on supports
+    Plex optionally offers the configuration to use hardware-based transcoding capabilities. This Rock-on supports
     Intel's Quick Sync capabilities. To determine whether the (Intel) CPU used in the Rockstor installation
     supports Quick Sync, refer to `Intel's Product Specifications <https://ark.intel.com/>`_
     If this is desired, another share needs to be created for temporary storage while transcoding takes place.
@@ -300,16 +300,29 @@ Plex requires to sign into an existing plex account:
 .. note::
     Please see `Sign in to Your Plex Account<https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`
     for details.
+.. warning::
+    However, if no account is handy, the login can be bypassed selecting the **What's this?** link
 
+.. image:: /images/interface/docker-based-rock-ons/plex_whats_this.png
+   :width: 90%
+   :align: center
 
-After an information screen is displayed, the setup wizard moves on to
+.. warning::
+   In the subsequent screen there is the option to skip first and accept limited functionality.
+
+.. image:: /images/interface/docker-based-rock-ons/plex_skip_login.png
+   :width: 90%
+   :align: center
+
+After an information screen is displayed (which one can cancel out of or move on), the first setup screen is displayed for
 the server setup.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_server_setup.png
    :width: 90%
    :align: center
 
-After setting the plex name we are given an option to add a library:
+After setting the plex server name and decide whether to allow access from outside (this can be changed in detailed configuration later)
+the installation routine provides the option to add a library:
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library.png
    :width: 90%
