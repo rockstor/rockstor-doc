@@ -51,32 +51,36 @@ requires a share for the media it is going to manage and a share to store its co
 files.
 
 .. note::
-Plex optionally offers the option to use hardware-based transcoding capabilities. This Rock-on supports 
-Intel CPU's Quick Sync capabilities. To determine whether the (Intel) CPU used in the Rockstor installation
-supports, refer to `Intel's Product Specifications<https://ark.intel.com/>`
-If this is desired, another share needs to be created for temporary storage while transcoding takes place. 
-The transcoding share should be housed on the fastest Pool or disk that is managed by Rockstor to minimize 
-performance bottlenecks.
-Alternatively, using the command line can be used to determine whether Quick Sync is available
-(essentially by checking for the Kernel module **i915**)
-being used. Using the command below
+    Plex optionally offers the option to use hardware-based transcoding capabilities. This Rock-on supports
+    Intel's Quick Sync capabilities. To determine whether the (Intel) CPU used in the Rockstor installation
+    supports Quick Sync, refer to `Intel's Product Specifications <https://ark.intel.com/>`_
+    If this is desired, another share needs to be created for temporary storage while transcoding takes place.
+    The transcoding share should be housed on the fastest Pool or disk that is managed by Rockstor to minimize
+    performance bottlenecks.
+    Alternatively, using the command line can be used to determine whether Quick Sync is available
+    (essentially by checking for the Kernel module **i915**)
+    being used. Using the command below
 
 .. code:: bash
-lsmod | grep i915
-should return some results containing **i915** indicating that the system/CPU support Quick Sync transcoding.
+
+    lsmod | grep i915
 
 
-This makes a total of up to 3 shares to split your Plex config, data, and
+should return some results containing **i915** indicating that the system/CPU supports Quick Sync transcoding.
+
+
+This makes a total of up to 3 shares to split the Plex config, data, and
 optional transcoding working area. As with every Rockon, the shares should be created prior
 to starting the installation.
 
 
-It is also recommended that this Rock-on be run by a dedicated user and that
-the above shares be owned by that user. This Rockon allows for selecting a non-root user.
-The following :ref:`plex_shares` section and the later :ref:`plex_uidgidver` section detail the relevant
-aspects. If there is not already a *non-admin non-root* user under which
-run Plex could be run then please first create a **plex** user, see
-:ref:`users` section for instructions.
+.. note::
+    It is also recommended that this Rock-on be run by a dedicated user and that
+    the above shares be owned by that user. This Rockon allows for selecting a non-root user.
+    The following :ref:`plex_shares` section and the later :ref:`plex_uidgidver` section detail the relevant
+    aspects. If there is not already a *non-admin non-root* user under which
+    Plex could be run, consider first creating for example a **plex** user (and group). See
+    :ref:`users` section for instructions.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_install.png
    :width: 100%
@@ -89,28 +93,24 @@ Click the **Install** button next to the Plex listing on the Rock-ons page.
 Plex Shares
 ^^^^^^^^^^^
 
-Next we select the **Storage areas** for the Plex Rock-on's **data** and
-**configuration** files. Note that the order of these items may vary.
+Next, select the **Storage areas** for the Plex Rock-on's **data** and
+**configuration** files.
 
-Please note that it is best practice to have all these shares owned by a
-non-admin non-root user ie *plex*.
+Some general size recommendations:
 
-* **Config Storage** - minimum 20 GB
-* **Data Storage** - room enough for your data and snapshots - minimum 100GB
+* **Config Storage**: should be a minimum 20 GB for larger libraries
+* **Data Storage**: enough space for data and snapshots - minimum 100GB
 
-If the these recommended values appear insufficient, it can be highlighted at
-`Rockstor forum <https://forum.rockstor.com/t/plex-media-server-rock-on/179>`_
-so that this document could be updated and improved.
 
 .. note::
-additional information for each field can be found by hovering the mouse over the *i* icons.
+    Additional information for each field can be found by hovering the mouse over the *i* icons.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_shares.png
    :width: 100%
    :align: center
 
-..  note::
-N.B. to create these Shares or 'Storage areas' please see :ref:`createshare`.
+.. note::
+    To create these Shares or 'Storage areas' please see :ref:`createshare`.
 
 
 The following image illustrates an example *Access Control* setting for the
@@ -123,10 +123,10 @@ similarly.
 
 
 .. note::
-Note that the plex user does not exist by default but can easily be created
-by following the :ref:`users` part of the documentation.
-**Please take a note of the created user's UID and GID** as they will be
-required in a later step.
+    Note that the plex user does not exist by default but can easily be created
+    by following the :ref:`users` part of the documentation.
+    **Please take a note of the created user's UID and GID** as they will be
+    required in a later step.
 
 By visiting the **System - Users** page one can see the **UID** and **GID** of
 any user.
@@ -148,7 +148,7 @@ This is the **Default Port** and it is unlikely that you will have to alter it.
 
 * **WebUI port** - This is the port you will use to access the :ref:`plex_ui`.
 
-.. image:: /images/interface/docker-based-rock-ons/plex_port.png
+.. image:: /images/interface/docker-based-rock-ons/plex_ports.png
    :width: 100%
    :align: center
 
@@ -166,7 +166,8 @@ If planning on using the transcoding feature, the Quick Sync device needs to be 
 done by typing
 
 .. code:: bash
-/dev/dri
+
+    /dev/dri
 
 into the field. Then proceed to the next screen.
 
@@ -179,13 +180,13 @@ In this section one selects the version of Plex to be used, as well as the **UID
 the **GID (Group ID)** under which the Plex server will run.
 
 .. note::
-The **UID** and **GID** must be the same as the user/group who owns the shares configured
-in the :ref:`plex_shares` section above.
+    The **UID** and **GID** must be the same as the user/group who owns the shares configured
+    in the :ref:`plex_shares` section above.
 
 
-- **VERSION**: e.g., **latest** for latest version or a specific version if so desired.
-- **UID**: User ID (number) to run Plex as.
-- **GID** Group ID (number) to run Plex as.
+* **VERSION**: e.g., **latest** for the newest version or a specific version if so desired.
+* **UID**: User ID (number) to run Plex as.
+* **GID** Group ID (number) to run Plex as.
 
 
 .. image:: /images/interface/docker-based-rock-ons/plex_uid_gid_version.png
@@ -193,21 +194,21 @@ in the :ref:`plex_shares` section above.
    :align: center
 
 
-The next screen is summary view of all parameters entered in the previous screens.
+The next screen is a summary view of all parameters entered in the previous steps.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_verify.png
    :width: 100%
    :align: center
 
-Now check that the entered details are correct before selecting **Submit**.
+Check that the entered details are correct before selecting **Submit**.
 
-Closing the resulting simple *Installation is in progress* dialog and we have:-
+Closing the resulting simple *Installation is in progress* dialog and we the installation progress is shown:
 
 .. image:: /images/interface/docker-based-rock-ons/plex_installing.png
    :width: 100%
    :align: center
 
-and a few minutes later depending on internet and machine speed:-
+and a few minutes later depending on internet and machine speed:
 
 **The Plex Media Server Rock-on is ON**
 
@@ -216,9 +217,9 @@ and a few minutes later depending on internet and machine speed:-
    :align: center
 
 .. note::
-Notice the **Plex UI** button to visit the installed Plex Web interface
-and the **spanner** icon to view the Rock-on settings and add additional
-Rockstor Shares.
+    Notice the **Plex UI** button to visit the installed Plex Web interface
+    and the **spanner** icon to view the Rock-on settings and add additional
+    Rockstor Shares.
 
 .. _plex_transcoding:
 
@@ -252,15 +253,14 @@ See the Plex support article on
 
 Adding Other Shares to Plex
 ---------------------------
-It is also possible to configure additional media shares for the Plex Rock-on to access. For example: if all Movies reside in one
-share and all recorded TV Shows in another one, or the desire to separate the media that way. However, it is not 
-uncommon for all of a Plex Media Server's data to reside on a single Share.
+It is also possible to configure additional media shares for the Plex Rock-on to access. For example: if all movies reside in one
+share and all recorded TV Shows in another one. However, it is not uncommon for all of a Plex Media Server's data to reside on a single share.
 
 .. note::
-shares are **not** the same as the libraries within Plex, i.e., there can be multiple 
-Plex libraries on a single Rockstor Share by using different directories within that Share.
-Plex Libraries are configured from within the :ref:`plex_ui` and represent how the Plex Server
-organizes and shares the media.
+    shares are **not** the same as the libraries within Plex, i.e., there can be multiple
+    Plex libraries on a single Rockstor Share by using different directories within that Share.
+    The Libraries are configured from within the :ref:`plex_ui` and represent how the Plex Server
+    organizes and shares the media.
 
 When configuring a Plex Library one can either choose an existing directory or configure a non-existing one, all
 from within Plex itself. 
@@ -276,39 +276,43 @@ The **settings wizard** is accessed via the **spanner** icon on the Plex
 entry on the Rock-ons page.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_spanner.png
-   :width: 100%
+   :width: 70%
    :align: center
 
-As can be seen here there is an **Add Storage** button on the spanner dialog.
+As can be seen here, there is an **Add Storage** button on the spanner dialog.
 
 .. _plex_ui:
 
 Plex UI
 -------
+.. warning::
+    These instructions follow the screen flow at the time this document was updated. Future Plex releases might change
+    that installation procedure again.
+
+
 On first accessing the Plex UI via the **Plex UI** button on the Rock-ons page
 Plex requires to sign into an existing plex account:
 
 .. image:: /images/interface/docker-based-rock-ons/plex_login.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 .. note::
-Please see `Sign in to Your Plex Account
-<https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`_
-for details.
+    Please see `Sign in to Your Plex Account<https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`
+    for details.
 
 
 After an information screen is displayed, the setup wizard moves on to
 the server setup.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_server_setup.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 After setting the plex name we are given an option to add a library:
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 Selecting the type of media in this library is important as it defines how Plex
@@ -321,7 +325,7 @@ will process and present the files found therein.
 - **Home Videos**: Treated as not having publicly available meta data.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library_type.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 
@@ -329,7 +333,7 @@ On selecting Movies the default name **Movies** and a language option is shown.
 
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library_movies.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 
@@ -337,12 +341,12 @@ Once the Name has been confirmed a directory can be selected.
 
 
 .. note::
-As mentioned before, plex libraries can consist of multiple directories or folders as they
-reference them:
+    As mentioned before, plex libraries can consist of multiple directories or folders as they
+    reference them:
 
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library_folders.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 
@@ -353,7 +357,7 @@ in this example.
 
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library_data.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 
@@ -362,17 +366,17 @@ for example add **Movies** to the end of the selection. Make sure to create this
 
 
 .. image:: /images/interface/docker-based-rock-ons/plex_ss_add_library_data_movies.png
-   :width: 100%
+   :width: 90%
    :align: center
 
 More plex libraries of various types and their associated directories can be
 setup. Once that's done, the basic setup is complete and Plex branches to the Dasboard.
 
 .. note::
-To add movies to the library from an external system, simply Export the plex-data share using the Rockstor UI
-(Samba or nfs) in order to be able to upload directly into the Plex Media Server over the local network from any
-machine. The :ref:`shares` section contains links to methods by which this can be accomplished. 
-The most common and compatible is probably the :ref:`samba_export` protocol.
+    To add movies to the library from an external system, simply export the plex-data share using the Rockstor UI
+    (Samba or nfs) in order to be able to upload directly into the Plex Media Server over the local network from any
+    machine. The :ref:`shares` section contains links to methods by which this can be accomplished.
+    The most common and compatible is probably the :ref:`samba_export` protocol.
 
 More detailed Media server configuration can be found on the Plex website and the links mentioned above.
 
