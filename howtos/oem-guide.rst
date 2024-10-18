@@ -3,7 +3,7 @@
 OEM Guide
 =========
 
-This Guide is intended for Original Equipment Manufacturers / NAS hardware sellers, Value-added resellers (VARs),
+This Guide is intended for Original Equipment Manufacturers/NAS hardware sellers, Value-added resellers (VARs),
 who are interested in bundling Rockstor "Built on openSUSE" with their hardware products.
 
 For our software license, please see FAQ entry: ":ref:`faq_license`".
@@ -11,11 +11,14 @@ Compliance with the stated licenses under which our code is released,
 and their necessarily associated Copyright notices,
 and that of our trivially modified linux distro base; the "Built on openSUSE" bit,
 is a legal requirement.
-Note however; this requirement does not differ from any other predominantly GPL-3.0-or-later licensed software bundling.
-I.e. one is free to redistribute, as-is, so long as no modifications are made.
-Modified versions, once re-distributed,
-entail further legal responsibilities regard availability of the modified version.
-Continuing the freedoms originally granted, for folks to know what code their systems are running.
+
+.. note::
+
+    Note however; this requirement does not differ from any other predominantly GPL-3.0-or-later licensed software bundling.
+    I.e. one is free to redistribute, as-is, so long as no modifications are made.
+    Modified versions, once re-distributed,
+    entail further legal responsibilities regard availability of the modified version.
+    Continuing the freedoms originally granted, for folks to know what code their systems are running.
 
 Note that `The GPL Is a License, not a Contract <https://lwn.net/Articles/61292/>`_.
 
@@ -23,12 +26,12 @@ Note that `The GPL Is a License, not a Contract <https://lwn.net/Articles/61292/
 is an `Open Collective <https://opencollective.com/>`_
 Non-Profit/Non-Business Open Source community endeavour.
 
-- All rockstor distributed code is FSF Free/Libre & OSI approved and available on our
+- All Rockstor distributed code is FSF Free/Libre & OSI approved and available on our
   `GitHub Organisation <https://github.com/rockstor>`_ site.
 
-- All 'rockstor' rpm packages are source (--format sdist) in-nature: i.e. non binary.
+- All 'rockstor' rpm packages are source (--format sdist) in nature: i.e. non binary.
 
-- All released packages are build directly from publicly tagged GitHub releases,
+- All released packages are built directly from publicly tagged GitHub releases,
   for details see: `rockstor-rpmbuild <https://github.com/rockstor/rockstor-rpmbuild>`_.
 
 - All installers are built using an open source project and configuration,
@@ -76,7 +79,7 @@ will be ignored.
 3. All pre-installs/re-distributions will involve only our
 `downloadable <https://rockstor.com/dls.html>`_ installer images.
 And then only when said installers include Stable Release Candidate 10 or later status 'rockstor' packages.
-With Stable release status (non RC) strongly preferred: when available.
+With Stable release status (non RC) strongly preferred, if available.
 
 .. warning::
 
@@ -90,7 +93,7 @@ With Stable release status (non RC) strongly preferred: when available.
 Practical considerations
 ------------------------
 
-Our installer is end-user orientated, but OEM compatible, with caveats.
+Our installer is end-user orientated, but, with caveats, OEM compatible.
 During the very first boot of our installers: the systems `root` user password is configured.
 As such the end user, not a pre-installer, is the intended client.
 See: :ref:`installer_howto` for all the steps involved.
@@ -101,7 +104,7 @@ In brief:
 - Select Keyboard Layout
 - Rockstor “Built on openSUSE” installer License Agreement
 - Select Time Zone
-- Enter Desired root User Password (with a confirmation step there-after)
+- Enter Desired root User Password (with a confirmation step thereafter)
 
 .. warning::
 
@@ -132,4 +135,4 @@ Repeat Appliance ID installs will be refused support by the The Rockstor Project
 Given all of the above, and our end-user accessible installer,
 we recommend that Rockstor bundling takes the form of supplying/bundling an installation medium:
 i.e. a USB key pre-loaded with our installer, with BIOS settings adjusted accordingly.
-Empowering the end-user with bare-metal re-install capability; assisted or otherwise.
+This will empower the designated end-user with bare-metal re-install capability, assisted or otherwise.
