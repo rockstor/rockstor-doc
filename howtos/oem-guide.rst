@@ -39,15 +39,15 @@ Non-Profit/Non-Business Open Source community endeavour.
 
 Our continued existence, i.e. ongoing-development & distribution services,
 depend entirely upon good-will and active community participation in our Open Collective membership Tiers.
-As such circumvention of these service orientated tiers (curated release channels / support / membership / etc),
+As such, circumvention of these service orientated tiers (curated release channels/support/membership/etc),
 in any way, would result in no future communication or service to the offending agent.
 We protect, by way of our licensing choices, and consequent code availability, the end-users freedoms.
-That does not oblige any member of The Rockstor Project's team in any way: regardless of Tier membership.
+That does not oblige any member of The Rockstor Project's team, in any way, regardless of Tier membership.
 
 **Given the above freedoms, all-around, we can only request the following:**
 
-1. OEM hardware distributors/redistributors resellers honour our existing sustainability model.
-I.e. they have an appropriate number, given anticipated development team contacts per-year,
+1. OEM hardware distributors/redistributors resellers honour our existing sustainability model,
+i.e. they have an appropriate number, given anticipated development team contacts per-year,
 of 'OEM Pre-installer subscription' memberships.
 Rockstor's continued development, and existence,
 depends entirely on interested parties appreciating both past and ongoing development team efforts and associated costs.
@@ -55,7 +55,7 @@ depends entirely on interested parties appreciating both past and ongoing develo
 The Rockstor Project development team, in-turn,
 will endeavour to prioritise OEM/reseller technical enquiries/requests as resources allow.
 I.e. a pre-installer's enquiries/concerns are assumed to relate to more than one install,
-where-as our non OEM contribution tiers relate to specific installs; i.e:
+whereas our non-OEM contribution tiers relate to specific installs; i.e:
 
 - a. Stable Updates subscription €24/year.
 - b. Incident-based Support subscription (`Planned <https://rockstor.com/paid_support.html>`_) €240/incident/year.
@@ -72,7 +72,7 @@ where-as our non OEM contribution tiers relate to specific installs; i.e:
 All non 'rockstor' package upstream updates are available regardless of this selection.
 See: :ref:`updaterockstorwebui`.
 We stand-by the end-users choice to subscribe to either of our update channels, or neither.
-Support requests, of any sort, related to pre-installed instances,
+Support requests of any sort related to pre-installed instances,
 where this choice was made by the distributor/re-distributor,
 will be ignored.
 
