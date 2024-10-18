@@ -6,8 +6,9 @@ How-tos & Guides
    :maxdepth: 2
 
    howtos/tailscale_install
-   howtos/stable_kernel_backport
    howtos/about_appliance_id
+   howtos/oem-guide
+   howtos/stable_kernel_backport
    howtos/15-2_to_15-3
    howtos/15-3_to_15-4
    howtos/15-4_to_15-5
