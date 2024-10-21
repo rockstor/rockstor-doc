@@ -136,7 +136,7 @@ any user.
    :align: center
 
 In the above example one can see our created **plex** user has UID and GID of 1001.
-Depending on whether other users and groups have previously been have created a new *plex* user
+Depending on whether other users and groups have been have created previously, a new *plex* user
 may have a different UID and GID.
 
 .. _plex_port:
@@ -298,10 +298,11 @@ Plex requires to sign into an existing plex account:
    :align: center
 
 .. note::
-    Please see `Sign in to Your Plex Account<https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`
+    Please see `Sign in to Your Plex Account <https://support.plex.tv/articles/200878643-sign-in-to-your-plex-account/>`_
     for details.
+
 .. warning::
-    However, if no account is handy, the login can be bypassed selecting the **What's this?** link
+    However, if no account is handy, the login can be skipped by selecting the **What's this?** link.
 
 .. image:: /images/interface/docker-based-rock-ons/plex_whats_this.png
    :width: 90%
