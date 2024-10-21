@@ -54,12 +54,13 @@ files.
     Plex optionally offers the configuration to use hardware-based transcoding capabilities. This Rock-on supports
     Intel's Quick Sync capabilities. To determine whether the (Intel) CPU used in the Rockstor installation
     supports Quick Sync, refer to `Intel's Product Specifications <https://ark.intel.com/>`_
-    If this is desired, another share needs to be created for temporary storage while transcoding takes place.
-    The transcoding share should be housed on the fastest Pool or disk that is managed by Rockstor to minimize
-    performance bottlenecks.
-    Alternatively, the command line can be used to determine whether Quick Sync is available:
-    essentially by checking to see if the Kernel module **i915** is
-    being used. Using the command below
+
+If this is desired, another share needs to be created for temporary storage while transcoding takes place.
+The transcoding share should be housed on the fastest Pool or disk that is managed by Rockstor to minimize
+performance bottlenecks.
+Alternatively, the command line can be used to determine whether Quick Sync is available:
+essentially by checking to see if the Kernel module **i915** is
+being used. Using the command below
 
 .. code:: bash
 
