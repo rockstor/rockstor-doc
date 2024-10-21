@@ -247,7 +247,7 @@ If satisfied with the settings, select **Next** and then **Submit**. This will a
 Plex Rock-on.
 
 See the Plex support article on 
-`using Hardware-Accelerated Streaming<https://support.plex.tv/articles/115002178853-using-hardware-accelerated-streaming/>`.
+`using Hardware-Accelerated Streaming <https://support.plex.tv/articles/115002178853-using-hardware-accelerated-streaming/>`_.
 
 .. _plex_addshares:
 
