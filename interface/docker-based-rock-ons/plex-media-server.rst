@@ -365,7 +365,7 @@ Once the Name has been confirmed a directory can be selected.
 
 
 From the previous summary screen or via the **Plex Settings** panel opened via
-the **spanner icon** the *plex-data* share was mapped to the **data** directory. 
+the **spanner icon** the *plex-data* Share was mapped to the **data** directory. 
 As there are no other mapped shares or sub directories, the *data* directory is directly selected
 in this example.
 
