@@ -57,8 +57,8 @@ files.
     If this is desired, another share needs to be created for temporary storage while transcoding takes place.
     The transcoding share should be housed on the fastest Pool or disk that is managed by Rockstor to minimize
     performance bottlenecks.
-    Alternatively, using the command line can be used to determine whether Quick Sync is available
-    (essentially by checking for the Kernel module **i915**)
+    Alternatively, the command line can be used to determine whether Quick Sync is available:
+    essentially by checking to see if the Kernel module **i915** is
     being used. Using the command below
 
 .. code:: bash
