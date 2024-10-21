@@ -202,7 +202,7 @@ The next screen is a summary view of all parameters entered in the previous step
 
 Check that the entered details are correct before selecting **Submit**.
 
-Closing the resulting simple *Installation is in progress* dialog and we the installation progress is shown:
+Closing the resulting simple *Installation is in progress* dialog and the installation progress status is shown:
 
 .. image:: /images/interface/docker-based-rock-ons/plex_installing.png
    :width: 100%
