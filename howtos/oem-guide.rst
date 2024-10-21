@@ -29,7 +29,7 @@ Non-Profit/Non-Business Open Source community endeavour.
 - All Rockstor distributed code is FSF Free/Libre & OSI approved and available on our
   `GitHub Organisation <https://github.com/rockstor>`_ site.
 
-- All 'rockstor' rpm packages are source (--format sdist) in nature: i.e. non binary.
+- All 'rockstor' rpm packages are source (--format sdist) in nature: i.e. non-binary.
 
 - All released packages are built directly from publicly tagged GitHub releases,
   for details see: `rockstor-rpmbuild <https://github.com/rockstor/rockstor-rpmbuild>`_.
@@ -125,7 +125,7 @@ Only during the :ref:`webui_setup` stage do we establish the intended system-uni
 See :ref:`aboutapplianceid` for details.
 
 Pre-installers are strongly requested to ensure their distributed systems do not result in fake/non-unique Appliance IDs.
-Repeat Appliance ID installs will be refused support by the The Rockstor Project.
+Repeat Appliance ID installs will be refused support by The Rockstor Project.
 
 .. note::
     If hardware preferred by a pre-installer results in fake/non-unique Appliance IDs,
