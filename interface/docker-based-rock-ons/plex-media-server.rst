@@ -227,7 +227,7 @@ Add Transcoding Share
 ^^^^^^^^^^^^^^^^^^^^^
 If CPU-based transcoding was configured :ref:`plex_quicksync`, then the transcoding share
 created earlier needs to be mapped into the Rockon, so Plex can see and use it.
-Adding a another share requires the Rockon to be turned off (but not uninstalled).
+Adding another share requires the Rockon to be turned off (but not uninstalled).
 Select the spanner icon that shows the configuration information in a pop-up, then select **Add Storage**.
 
 Select the *transcode* share created earlier and populate the *Rock-on directory* with
