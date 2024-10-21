@@ -257,7 +257,7 @@ It is also possible to configure additional media shares for the Plex Rock-on to
 share and all recorded TV Shows in another one. However, it is not uncommon for all of a Plex Media Server's data to reside on a single share.
 
 .. note::
-    shares are **not** the same as the libraries within Plex, i.e., there can be multiple
+    Shares are **not** the same as the libraries within Plex, i.e., there can be multiple
     Plex libraries on a single Rockstor Share by using different directories within that Share.
     The Libraries are configured from within the :ref:`plex_ui` and represent how the Plex Server
     organizes and shares the media.
