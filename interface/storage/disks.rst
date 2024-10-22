@@ -97,7 +97,8 @@ This process is detailed in the following sub-sections: :ref:`btrfsdisk`, and
    activities, for example a Rockstor system restore using a previously
    generated configuration backup file, ensure that the respective share
    user/group ownerships are set back to what they were before they were
-   imported into the Rockstor installation.
+   imported into the Rockstor installation. For how OpenSUSE handles default user
+   and group assignment see :ref:`Users_default_groups`.
 
 
 

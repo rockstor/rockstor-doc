@@ -267,6 +267,9 @@ texinfo_documents = [
 linkcheck_retries = 2
 linkcheck_timeout = 20
 linkcheck_ignore = [r'https://web.libera.chat/#btrfs']
+linkcheck_ignore = [r'https://ark.intel.com/']
+linkcheck_ignore = [r'https://opensource.org/license/mit-0']
+linkcheck_ignore = [r'https://opensource.org/license/apache-2-0']
 
 # -- Options for sphinxext.rediraffe --------------------------------------
 rediraffe_redirects = "redirects.txt"
