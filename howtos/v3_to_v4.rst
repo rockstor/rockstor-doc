@@ -191,6 +191,9 @@ So, if your prior v3 install had a customization involving a CentOS/RHEL compati
 you should now, in v4, look first for an openSUSE equivalent and then for a SLES equivalent.
 This is most likely only going to affect advanced users and is not a concern for mainly Web-UI users.
 
+
+.. _Users_default_groups:
+
 Users and default group
 ^^^^^^^^^^^^^^^^^^^^^^^
 
