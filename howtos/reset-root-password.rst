@@ -26,8 +26,10 @@ there is no ready image for a Pi architecture:
 .. image:: /images/howtos/reset-root-password/pw01_search_rescue_disk.png
    :scale: 100%
    :align: center
-   
-The downloaded image needs to be used to create bootable media, on a USB stick, 
+
+
+|
+The downloaded image needs to be used to create bootable media, on a USB stick,
 CD-ROM/DVD disk, or, if using Rockstor on a virtual machine, the downloaded
 *iso* file can be mounted directly. For USB one can use the same approach
 described for :ref:`makeusbinstalldisk`.
@@ -107,7 +109,7 @@ for the next step:
 Step 3: Reset password
 ----------------------
 
-Now change the password with the *passwd* command ::
+Now change the password with the *passwd* command:
 
 .. code-block:: console
 
@@ -116,7 +118,7 @@ Now change the password with the *passwd* command ::
 Enter the new password. The system will ask for confirmation
 through retyping it. Then the new password is set.
 
-Get out of chroot with the exit command ::
+Get out of *chroot*:
 
 .. code-block:: console
    
