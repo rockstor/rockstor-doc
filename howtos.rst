@@ -23,6 +23,7 @@ How-tos & Guides
    howtos/soho
    howtos/kvm_setup
    howtos/reset-root-password
+   howtos/reset-root-password-v3
    howtos/windows-shadow-copy
    howtos/multi_period_snapshots
    howtos/rufus_howto
