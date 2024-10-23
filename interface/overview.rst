@@ -496,6 +496,57 @@ For the Rock-on named *Emby server*, for instance, the commands would be:
 
 *This example is for newer Rockstor versions.*
 
+.. _rockons_root_reset:
+
+Reset Rock-on Root
+-----------------
+In rare instances reported by users, issues during installation and operation 
+of Rock-ons can be traced back to an inconsistent :ref:`rockons_root` share.
+Symptoms are things like:
+* The installation fails without a discernible
+  error when checking the logs.
+* A deletion of the Rock-on using the command line as described in :ref:`rockons_force_delete`
+  and a subsequent Rock-on attempt to re-install it, does not seem to work.
+* The Rock-on fails to start when it worked in previous cases without any
+  issues. However, this could also be related to a breaking update of
+the underlying image.
+* The WebUI throws an error like this when for example uninstalling/reinstalling a
+  Rock-on: :code:`Unknown internal error doing a GET to /api/rockons?page...`.
+
+In that case, the resolution is to reset the Rock-on Root:
+* If possible, note the settings of the still installed Rock-ons.
+
+.. note::
+
+    If, alternatively, using the :ref:`config_backup` option to back-up the 
+    settings of installed Rock-ons, then you should follow the
+    *delete/recreate* Rock-ons root option described below.
+
+* Uninstall all installed Rock-ons (likely requires the command line as described 
+  in :ref:`rockons_force_delete`).
+
+.. note::
+
+   All shares that were used for any of the Rock-ons will not be affected by these process
+   steps, so a later re-installation of an associated Rock-on should put the situation
+   right back to where it was before the Rock-on root reset process.
+
+* Turn off Rock-ons Service (either on the Rockons page directly, or via the 
+  :code:`System --> Services` web page).
+* Either create a new Rock-on root share as described in :ref:`rockons_root`, or
+  delete and recreate the Rock-on root share.
+* In case of creating a new Rock-on root share with a different name, adjust the Rock-ons
+  service setting by changing the share name. If the Rock-on root share has been 
+  re-created, no change is necessary. Delete the old Rock-on root share to free up the disk
+  space.
+* Restart the Rock-ons Service.
+* Run an update on the list of available Rock-ons.
+
+Now the Rock-ons root should be consistent (albeit empty) once again, and (re-)installation
+of Rock-ons should work as before. Or, if the configuration backup was created
+this could now be executed, which should skip all existing configuration elements
+and only result in the re-installation of the previously capture Rock-ons.
+
 .. _rockons_update:
 
 Updating a Rock-on
