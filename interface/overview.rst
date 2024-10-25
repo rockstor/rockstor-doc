@@ -555,7 +555,7 @@ following the sequence below:
 Now the Rock-ons root should be consistent, albeit empty, once again, and (re-)installation
 of Rock-ons should work as before. Or, if the configuration backup was created
 this could now be executed, which should skip all existing configuration elements
-and only result in the re-installation of the previously capture Rock-ons.
+and only result in the re-installation of the previously installed Rock-ons.
 
 
 .. _rockons_update:
