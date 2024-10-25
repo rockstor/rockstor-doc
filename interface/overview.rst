@@ -499,7 +499,7 @@ For the Rock-on named *Emby server*, for instance, the commands would be:
 
 .. _rockons_root_reset:
 
-Reset Rock-on Root
+Reset The Rock-ons Root
 ------------------
 In rare instances reported by users, issues during installation and operation 
 of Rock-ons can be traced back to an inconsistent :ref:`rockons_root` share.
