@@ -57,7 +57,7 @@ configuring a sufficiently large share for the rock-ons to be installed into.
 It is recommended to create a *dedicated* share to be used as the Rock-ons root.
 While any share can be chosen as the Rock-ons root, it is **strongly** recommended
 to create a share to be used **only** as the Rock-ons root to prevent any
-conflict that may arise with a mixed-used share. The Rock-ons root share is
+conflict that may arise with a mixed-use share. The Rock-ons root share is
 used by Docker to store permanent data such as images and container
 layers. As a result, any conflict or alteration of these data that might result
 from a mixed used share has the potential to break the installed Rock-ons.
