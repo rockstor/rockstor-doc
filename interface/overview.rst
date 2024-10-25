@@ -41,7 +41,7 @@ specifically for this purpose.
 
 It is assumed that :ref:`pools` and one or more shares in those pools
 (see our :ref:`createshare`) have already been created, appropriate for the
-Rock-on requirements, e.g. a *plex-movies* share and a *plex-config* share.
+Rock-on requirements, e.g. a *plex-media* share and a *plex-config* share.
 
 As a one-time setup activity, it is also necessary create
 the :ref:`rockons_root` share.
