@@ -60,7 +60,7 @@ to create a share to be used **only** as the Rock-ons root to prevent any
 conflict that may arise with a mixed-use share. The Rock-ons root share is
 used by Docker to store permanent data such as images and container
 layers. As a result, any conflict or alteration of these data that might result
-from a mixed used share has the potential to break the installed Rock-ons.
+from a mixed-use share has the potential to break the installed Rock-ons.
 Note that the rock-ons root share can be part of any :ref:`pool<pools>`
 and does not require the creation of a dedicated pool.
 
