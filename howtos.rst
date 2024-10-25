@@ -13,6 +13,8 @@ How-tos & Guides
    howtos/15-3_to_15-4
    howtos/15-4_to_15-5
    howtos/15-5_to_15-6
+   installation/installer-howto
+   installation/special-install-scenarios-howto
    howtos/rpm_install
    howtos/v3_to_v4
    howtos/reinstall
