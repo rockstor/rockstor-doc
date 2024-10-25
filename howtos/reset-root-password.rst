@@ -107,7 +107,7 @@ for the next step:
 Step 3: Reset password
 ----------------------
 
-Now change the password with the *passwd* command ::
+Now change the password with the *passwd* command:
 
 .. code-block:: console
 
