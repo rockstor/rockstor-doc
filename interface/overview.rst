@@ -537,7 +537,7 @@ following the sequence below:
    steps, so a later re-installation of an associated Rock-on should put the situation
    right back to where it was before the Rock-ons root reset process.
 
-* Turn off Rock-ons Service (either on the Rockons page directly, or via the 
+* Turn off the Rock-ons Service (either on the Rockons page directly, or via the 
   **System --> Services** web page).
 * Following :ref:`rockons_root`, to either create a new Rock-ons root share with
   a different name, or delete and recreate the Rock-ons root share with its original name.
