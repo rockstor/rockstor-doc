@@ -90,6 +90,18 @@ The BTRFS Pool import procedure imports the following:-
 This process is detailed in the following sub-sections: :ref:`btrfsdisk`, and
 :ref:`btrfspartition`.
 
+.. warning::
+
+   During the pool import sometimes the imported shares' ownership for user and group
+   can revert back to the default `root:root`. Before proceeding with any other
+   activities, for example a Rockstor system restore using a previously
+   generated configuration backup file, ensure that the respective share
+   user/group ownerships are set back to what they were before they were
+   imported into the Rockstor installation. For how OpenSUSE handles default user
+   and group assignment see :ref:`Users_default_groups`.
+
+
+
 ..  _btrfsdisk:
 
 Import whole disk BTRFS
