@@ -500,13 +500,14 @@ For the Rock-on named *Emby server*, for instance, the commands would be:
 .. _rockons_root_reset:
 
 Reset The Rock-ons Root
-------------------
+-----------------------
 In rare instances reported by users, issues during installation and operation 
 of Rock-ons can be traced back to an inconsistent :ref:`rockons_root` share.
 Symptoms are things like:
 
 * The installation fails without a discernible
-  error when checking the logs.
+  error when checking the logs. Or error messages are logged indicating missing subvolumes
+  or snapshots within the Rock-ons Root share and referencing docker containers.
 * A deletion of the Rock-on using the command line as described in :ref:`rockons_force_delete`
   and a subsequent attempt to re-install it does not seem to work.
 * The Rock-on fails to start when it worked in previous cases without any
@@ -517,8 +518,24 @@ Symptoms are things like:
 
   * :code:`Unknown internal error doing a GET to /api/rockons?page...`.
 
-With the symptoms described above, the best resolution might be to reset the Rock-on root,
-following the sequence below:
+The symptoms described above could point to some inconsistent docker layers stored in the Rock-ons root.
+Often times this can be resolved using the command line with the following docker maintenance command:
+
+.. code-block:: console
+
+    docker system prune -a --volumes
+
+In case that this does not yield any improvement in the Rockons' installation or startup behavior, 
+the best resolution might be to reset the Rock-on root. This will effectively remove all underlying 
+docker containers that have been previously installed.
+
+To reset the Rock-ons root, follow the sequence below:
+
+.. warning::
+
+   While the configuration and data volumes associated with installed Rock-ons won't be affected, 
+   any currently installed Rock-ons will have to be re-installed (even if they did not show any
+   issues).
 
 * If possible, note the settings of the still installed Rock-ons.
 
