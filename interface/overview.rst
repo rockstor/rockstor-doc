@@ -535,7 +535,7 @@ following the sequence below:
 
    All shares that were used for any of the Rock-ons will not be affected by these process
    steps, so a later re-installation of an associated Rock-on should put the situation
-   right back to where it was before the Rock-on root reset process.
+   right back to where it was before the Rock-ons root reset process.
 
 * Turn off Rock-ons Service (either on the Rockons page directly, or via the 
   **System --> Services** web page).
