@@ -544,7 +544,7 @@ following the sequence below:
 
 .. note::
 
-  In case of creating a new Rock-on root share with a different name, adjust the Rock-ons
+  In the case of creating a new Rock-ons root share with a different name, adjust the Rock-ons
   Service setting by selecting the new share name from the dropdown. If the Rock-on root
   share has been re-created with the same name, no change is necessary. Delete the old
   Rock-on root share to free up disk space.
