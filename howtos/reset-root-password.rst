@@ -116,7 +116,7 @@ Now change the password with the *passwd* command:
 Enter the new password. The system will ask for confirmation
 through retyping it. Then the new password is set.
 
-Get out of chroot with the exit command ::
+Get out of chroot with the exit command:
 
 .. code-block:: console
    
