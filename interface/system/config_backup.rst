@@ -13,7 +13,7 @@ any previously saved point. This is a particularly useful feature when making
 extensive configuration changes as it provides the possibility to revert to a
 known good configuration. Once a configuration backup has been generated and
 downloaded it can also be used in system migration scenarios;
-e.g., see: :ref:`v3_to_v4`.
+e.g., see: :ref:`centos_to_opensuse`.
 
 .. warning::
    Upon restore, the configuration of most features included in the backup
