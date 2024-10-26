@@ -276,5 +276,4 @@ Update Channel is selected.**
 
 .. note::
 
-   There a some specific installation use cases that have been reported over the
-   years, that are documented in the :ref:`special_install_scenarios`.
+   For advanced installation scenarios see: :ref:`special_install_scenarios`.
