@@ -69,7 +69,7 @@ Proxy for private network
 -------------------------
 
 In some network architectures, a proxy is required to be able to manage updates from external sources
-like OpenSUSE upstream packages, or check for and update a new version of the Rockstor software.
+like OpenSUSE upstream packages, or to check for and update to a new version of the `rockstor` package.
 
 This `KB 7006845 <https://www.suse.com/support/kb/doc/?id=000017441>`_ provides some insights into how
 to set up a Proxy using the command line.
