@@ -77,8 +77,9 @@ to set up a Proxy using the command line.
 VMWare guest tools installation
 -------------------------------
 
-As VMWare is a commmon virtualization package that is used by the Rockstor (alongside with others VirtualBox, Proxmox, etc.), there is a useful toolset available that helps with various aspects of the integration between
-the host and guest among other tools (similar guest extensions exist under VirtualBox as well): **open-vm-tools**.
+When running Rockstor as a VMWare guest (unsupported),
+consider using **open-vm-tools** to help with various aspects of the host/guest integration.
+Similar guest extensions exist for VirtualBox.
 
 There is the option to build this package into the custom installer, so it becomes part of the initial installation routine.
 When building a customer installer to include it, using the `Rockstor installer <https://github.com/rockstor/rockstor-installer>`_
