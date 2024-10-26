@@ -43,7 +43,7 @@ Upon successful completion of the command the connection will receive a static I
 * Gateway of 192.168.22.1 and
 * DNS1 and DNS2 server 8.8.8.8 and 8.8.4.4 respectively.
 
-To move the connection back to to `dhcp` mode, the above settings need to be reverted:
+To move the connection back to `DHCP` mode, the above settings need to be reverted:
 
 .. code-block:: console
 
