@@ -13,6 +13,13 @@ documented below:
 Assign static IP address after installation but before WebUI setup
 ------------------------------------------------------------------
 
+.. note::
+   The below is meant for setting up a specific connection **before** the installation/configuration is 
+   completed using Rockstor's WebUI.
+   Under most circumstances this should not be necessary, as most routers today offer IP address reservation 
+   that will effectively result in a static IP address assigned to the Rockstor appliance 
+   (which by default uses `DHCP` to automatically obtain an IP address from the gateway).
+
 If during setup the network architecture requires a static IP address on the Rockstor appliance's
 network interface :code:`Network Manager` can be used to force a static IP address on the network interface.
 
@@ -61,9 +68,6 @@ For either of these changes to take effect run
 
 or reboot the system.
 
-.. note::
-   The above is meant for setting up a specific connection **before** the installation/configuration is completed using Rockstor's WebUI.
-   Once the Rockstor installation is complete, a static IP can be assigned from the WebUI. Under most circumstances neither should be necessary, as most routers today offer IP address reservation that will effectively result in a static IP address assigned to the Rockstor appliance (which by default uses `dhcp` to automatically obtain an IP address from the gateway).
 
 Proxy for private network
 -------------------------
