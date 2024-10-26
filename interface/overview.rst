@@ -39,11 +39,12 @@ specifically for this purpose.
     within each rock-on but that is also good practice, and is why this option
     is offered.
 
-It is assumed you have already setup your :ref:`pools` and one or more
-shares in those pools (see our :ref:`createshare`) appropriate for your
-Rock-ons, i.e. a plex-movies share and a plex-config share.
+It is assumed that :ref:`pools` and one or more shares in those pools
+(see our :ref:`createshare`) have already been created, appropriate for the
+Rock-on requirements, e.g. a *plex-media* share and a *plex-config* share.
 
-But we also need to create the :ref:`rockons_root` share.
+As a one-time setup activity, it is also necessary to create
+the :ref:`rockons_root` share.
 
 .. _rockons_root:
 
@@ -53,14 +54,14 @@ All Rock-ons require the **Rock-on service** to be enabled and prior to
 enabling this service it must be configured. This is a simple matter of
 configuring a sufficiently large share for the rock-ons to be installed into.
 
-We recommend creating a *dedicated* share to be used as the rock-ons root.
-While any share can be chosen as the rock-ons root, we **strongly** recommend
-to create a share to be used *only* as the rock-ons root to prevent any
-conflict that may arise with a mixed-used share. The rock-ons root share is
+It is recommended to create a *dedicated* share to be used as the Rock-ons root.
+While any share can be chosen as the Rock-ons root, it is **strongly** recommended
+to create a share to be used **only** as the Rock-ons root to prevent any
+conflict that may arise with a mixed-use share. The Rock-ons root share is
 used by Docker to store permanent data such as images and container
 layers. As a result, any conflict or alteration of these data that might result
-from a mixed used share has the potential to break the installed Rock-ons.
-Note also that the rock-ons root share can be part of any :ref:`pool<pools>`
+from a mixed-use share has the potential to break the installed Rock-ons.
+Note that the rock-ons root share can be part of any :ref:`pool<pools>`
 and does not require the creation of a dedicated pool.
 
 .. note::
@@ -94,7 +95,7 @@ Now to **select** the share to use for your **Rock-ons root**.
 
 **Select** the **rock-on-root** share that we created earlier and **Submit**
 
-You can now **enable** the **Rock-on service** and proceed to the Rock-ons
+Now **enable** the **Rock-on service** and proceed to the Rock-ons
 page.
 
 .. image:: /images/interface/docker-based-rock-ons/rockons_page.png
@@ -110,11 +111,11 @@ its **Install** button on the Rock-ons WebUI page.
 UID and GID usage in Rock-ons
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During the configuration of Rock-ons, quite a few require the specification of
-a User ID (UID) and/or a Group ID (GID). Aside from the various options using
+During the configuration of Rock-ons, quite a few of them require the specification
+of a User ID (UID) and/or a Group ID (GID). Aside from the various options using
 the command line to determine existing UIDs and GIDs, the simplest way is to
-take advantage of the User and/or Group management screens. Navigate to System
---> Users (or Groups if necessary).
+take advantage of the User and/or Group management screens. Navigate to *System
+--> Users* (or *Groups*, if necessary).
 
 .. image:: /images/interface/docker-based-rock-ons/users_page.png
    :width: 100%
@@ -461,9 +462,9 @@ a convenient way to update a Rock-on if desired
 
 Force uninstall of a Rock-on
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In the event the uninstallation process of a Rock-on is not possible, we
-provide a script to force the deletion of a Rock-on. While we do not yet have
-this tool integrated into Rockstor's :ref:`web-UI <webui>`, it can easily be
+In the event the above uninstallation process of a Rock-on is not possible, a
+script is provided to force the deletion of a Rock-on. While this tool has not
+yet been integrated into Rockstor's :ref:`web-UI <webui>`, it can easily be
 used from the command line as follows.
 Running this script (as the 'root' user) without argument will detail its usage:
 
@@ -495,6 +496,84 @@ For the Rock-on named *Emby server*, for instance, the commands would be:
     poetry run delete-rockon "Emby server"
 
 *This example is for newer Rockstor versions.*
+
+.. _rockons_root_reset:
+
+Reset The Rock-ons Root
+-----------------------
+In rare instances reported by users, issues during installation and operation 
+of Rock-ons can be traced back to an inconsistent :ref:`rockons_root` share.
+Symptoms are things like:
+
+* The installation fails without a discernible
+  error when checking the logs. Or error messages are logged indicating missing subvolumes
+  or snapshots within the Rock-ons Root share and referencing docker containers.
+* A deletion of the Rock-on using the command line as described in :ref:`rockons_force_delete`
+  and a subsequent attempt to re-install it does not seem to work.
+* The Rock-on fails to start when it worked in previous cases without any
+  issues. However, this could also be related to a breaking update of
+  the underlying image used for the Rock-on.
+* The WebUI throws an error like this when uninstalling/reinstalling a
+  Rock-on:
+
+  * :code:`Unknown internal error doing a GET to /api/rockons?page...`.
+
+The symptoms described above could point to some inconsistent docker layers stored in the Rock-ons root.
+Often times this can be resolved using the command line with the following docker maintenance command:
+
+.. code-block:: console
+
+    docker system prune -a --volumes
+
+In case that this does not yield any improvement in the Rockons' installation or startup behavior, 
+the best resolution might be to reset the Rock-on root. This will effectively remove all underlying 
+docker containers that have been previously installed.
+
+To reset the Rock-ons root, follow the sequence below:
+
+.. warning::
+
+   While the configuration and data volumes associated with installed Rock-ons won't be affected, 
+   any currently installed Rock-ons will have to be re-installed (even if they did not show any
+   issues).
+
+* If possible, note the settings of the still installed Rock-ons.
+
+.. note::
+
+    If, alternatively, using the :ref:`config_backup` option to back-up the 
+    settings of installed Rock-ons, then you should follow the
+    *recreate* Rock-ons root option described below.
+
+* Uninstall all installed Rock-ons (likely requires the command line as described 
+  in :ref:`rockons_force_delete`).
+
+.. note::
+
+   All shares that were used for any of the Rock-ons will not be affected by these process
+   steps, so a later re-installation of an associated Rock-on should put the situation
+   right back to where it was before the Rock-ons root reset process.
+
+* Turn off the Rock-ons Service (either on the Rockons page directly, or via the 
+  **System --> Services** web page).
+* Following :ref:`rockons_root`, to either create a new Rock-ons root share with
+  a different name, or delete and recreate the Rock-ons root share with its original name.
+
+.. note::
+
+  In the case of creating a new Rock-ons root share with a different name, adjust the Rock-ons
+  Service setting by selecting the new share name from the dropdown. If the Rock-ons root
+  share has been re-created with the same name, no change is necessary. Delete the old
+  Rock-on root share to free up disk space.
+
+* Restart the Rock-ons Service.
+* Run an update on the list of available Rock-ons.
+
+Now the Rock-ons root should be consistent, albeit empty, once again, and (re-)installation
+of Rock-ons should work as before. Or, if the configuration backup was created
+this could now be executed, which should skip all existing configuration elements
+and only result in the re-installation of the previously installed Rock-ons.
+
 
 .. _rockons_update:
 
