@@ -148,7 +148,6 @@ See: :ref:`import_data`.
 
 .. warning::
 
-    under openSUSE btrfs parity raid levels of 5 and 6 are read-only by default.
     This is an upstream decision and **not** enacted by Rockstor.
     See our :ref:`redundancyprofiles` for more information,
     and a suggested workaround if needed.
