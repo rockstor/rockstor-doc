@@ -81,9 +81,9 @@ When running Rockstor as a VMWare guest (unsupported),
 consider using **open-vm-tools** to help with various aspects of the host/guest integration.
 Similar guest extensions exist for VirtualBox.
 
-There is the option to build this package into the custom installer, so it becomes part of the initial installation routine.
-When building a customer installer to include it, using the `Rockstor installer <https://github.com/rockstor/rockstor-installer>`_
-the package is already contained in the **rockstor.kiwi** file, albeit commented out.
+This or any package can be included into a custom installer, making them available during the initial installation.
+For building a custom installer see our `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ repo.
+The `open-vm-tools` package is already contained in the **rockstor.kiwi** file, albeit commented out.
 
 .. note::
 
