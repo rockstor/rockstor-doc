@@ -9,12 +9,12 @@ Thanks
 ------
 
 Rockstor’s developers would like to thank the entire OSS community for making
-any of this possible. Specifically with our recent move / rebase on openSUSE
-Leap, our thanks go to the openSUSE/SuSE organisations and the larger
-community for the extreme generosity we all benefit from in a myriad of seen
-and unseen ways.
+any of this possible.
+Specifically with our recent move / rebase on openSUSE Leap, our thanks go to
+the openSUSE/SuSE organisations and the larger community for the extreme
+generosity we all benefit from in a myriad of seen and unseen ways.
 
-**Please note: Rockstor is in no way affiliated with openSUSE / SuSE and does
+**Please note: Rockstor is in no way affiliated with openSUSE/SuSE and does
 not wish, under any circumstances, to misrepresent these organisations.**
 *Any errors you encounter are most likely our fault and we try, on a current
 volunteer basis, to support our users via our*
@@ -23,13 +23,14 @@ volunteer basis, to support our users via our*
 It is hoped that Rockstor’s ongoing small contribution back to the larger
 community is of value, and if this is so for you please consider either
 subscribing to our Stable Channel updates or taking part in our developer
-orientated Testing Channel. Details of these Rockstor package update services
-are available in our subsection on :ref:`update_channels`. Rockstor’s ongoing
-development is wholly dependent on community support via either of these
-channels and by positively participating in our forum, linked above. It is
-hoped that in time we can contribute back more significantly, and possibly
-financially, as our own community and Stable Channel subscriptions grow. Also
-note that irrespective of Rockstor update channel selection or otherwise,
+orientated Testing Channel.
+Details of these Rockstor package update services are available in our
+subsection on :ref:`update_channels`. Rockstor’s ongoing development is wholly
+dependent on community support via either of these channels and by positively
+participating in our forum, linked above.
+It is hoped that in time we can contribute back more significantly, and possibly
+financially, as our own community and Stable Channel subscriptions grow.
+Also note that irrespective of Rockstor update channel selection or otherwise,
 upstream updates are available by normal command line means and via our Web-UI.
 See :ref:`dash_and_updates` later in this guide for the details.
 
@@ -39,13 +40,13 @@ Our "Built on openSUSE" Kiwi-ng created installer
 -------------------------------------------------
 
 The existence of this installer, and those of many Linux distributions, is down
-in a major part to the Kiwi installer creation tool. I would specifically like
-to thank `Marcus Schafer <https://github.com/schaefi>`_ and David
-`Cassany Viladomat <https://github.com/davidcassany>`_ of openSUSE/SuSE for
+in a major part to the Kiwi installer creation tool.
+I would specifically like to thank `Marcus Schafer <https://github.com/schaefi>`_
+and David `Cassany Viladomat <https://github.com/davidcassany>`_ of openSUSE/SuSE for
 their timely and rapid oem, partition, swap, and btrfs related fixes that were
-required for our initial version of this installer. Please contribute to this
-important multi-distribution upstream project if you have the means and/or
-talent `KIWI - Next Generation <https://github.com/OSInside/kiwi>`_.
+required for our initial version of this installer.
+Please contribute to this important multi-distribution upstream project if you have
+the means and/or talent `KIWI - Next Generation <https://github.com/OSInside/kiwi>`_.
 
 Initial Selection Screen
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -74,14 +75,14 @@ If unsure do not proceed and select <Cancel> via Tab key and then Enter.
    :align: center
 
 Use cursor keys to highlight, then the "Enter" key to select.
-Only devices less than 5000 GB (5 TB) are shown. Larger disks are assumed to be data
-disks.
+Only devices less than 5000 GB (5 TB) are shown.
+Larger disks are assumed to be data disks.
 
 Destroying ALL data on ..., continue ?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Do not proceed if at all unsure. This will wipe the entire contents of the
-indicated drive.
+Do not proceed if at all unsure.
+This will wipe the entire contents of the indicated drive.
 
 .. image:: /images/installation/installer-howto/destroy-all-data.png
    :width: 100%
@@ -132,7 +133,8 @@ The included **rockstor** package is :ref:`rockstor_license`
    :align: center
 
 Use cursor keys or Page-up / Page-down (space bar) to view the entire
-agreement. There are about 3 pages: Enter key to 'Exit' & 'Agree', or cursor
+agreement.
+There are about 3 pages: Enter key to 'Exit' & 'Agree', or cursor
 keys to select 'No' in pop up.
 
 Select Time Zone
@@ -229,8 +231,8 @@ Welcome banner
 ^^^^^^^^^^^^^^
 
 Directly after the initial Rockstor setup the following welcome banner
-introduces the Rockstor package Update Channels. A link to our documentation
-explaining these channels is included:
+introduces the Rockstor package Update Channels.
+A link to our documentation explaining these channels is included:
 
 .. image:: /images/installation/installer-howto/initial_welcome_banner.png
    :align: center
@@ -270,3 +272,8 @@ See our FAQ entry: :ref:`faq_rockstor4_repos`
 
 **NOTE: No Rockstor package update repository is configured until an
 Update Channel is selected.**
+
+
+.. note::
+
+   For advanced installation scenarios see: :ref:`special_install_scenarios`.

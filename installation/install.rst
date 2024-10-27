@@ -15,6 +15,7 @@ that we have a :ref:`pre_install`.
    quickstart
    pre-install-howto
    installer-howto
+   special-install-scenarios-howto
 
 .. _quickeval:
 
