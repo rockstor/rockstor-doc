@@ -148,9 +148,6 @@ See: :ref:`import_data`.
 
 .. warning::
 
-    This is an upstream decision and **not** enacted by Rockstor.
-    See our :ref:`redundancyprofiles` for more information,
-    and a suggested workaround if needed.
     See also :ref:`btrfsunwellimport` in case a pool requires special mount options.
 
 OpenSUSE versions config restore
