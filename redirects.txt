@@ -62,3 +62,4 @@
 "howtos/home_nas_guide.rst" "index.rst"
 "interface/docker-based-rock-ons/owncloud.rst" "interface/overview.rst"
 "howtos/boot_drive_howto.rst" "index.rst"
+"howtos/v3_to_v4.rst" "howtos/centos_to_opensuse.rst"

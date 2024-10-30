@@ -16,7 +16,7 @@ How-tos & Guides
    installation/installer-howto
    installation/special-install-scenarios-howto
    howtos/rpm_install
-   howtos/v3_to_v4
+   howtos/centos_to_opensuse
    howtos/reinstall
    howtos/disk_power_down
    howtos/clients
