@@ -6,7 +6,7 @@ Installing the Stable Kernel Backport
 .. warning::
 
     This How-to is intended for advanced users only.
-    Its contents are likely irrelevant unless you require capabilities beyond our default openSUSE base.
+    Its contents are likely irrelevant, unless you require capabilities beyond our default openSUSE base.
     We include these instructions with the proviso that they will significantly modify your system from our upstream base.
     As such you will be running a far less tested system, and consequently may face more system stability/reliability risks.
     N.B. Pools created with this newer kernel have the newer free space tree i.e. (space_cache=v2).
