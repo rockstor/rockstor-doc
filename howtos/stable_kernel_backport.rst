@@ -11,7 +11,7 @@ Installing the Stable Kernel Backport
     As such you will be running a far less tested system, and consequently may face more system stability/reliability risks.
     N.B. Pools created with this newer kernel have the newer free space tree (i.e., space_cache=v2).
     As do Pools created using "Built on openSUSE" Leap 15.6 and newer instances.
-    Future imports require kernels which are equally new/capable (at least ideally).
+    Future pool imports require kernels which are equally new/capable (at least ideally).
 
 If you are reporting issues on our `Community Forum <https://forum.rockstor.com/>`_
 or in any of our `GitHub <https://github.com/rockstor>`_ repositories,
