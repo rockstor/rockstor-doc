@@ -34,7 +34,7 @@ Redundancy profiles
 A broad abstraction of BTRFS raid profiles are available when creating a pool.
 
 - Rockstor 4.1.0-0 and earlier supported btrfs raid single, 0, 1, 10, 5, and 6; with no mixed profile awareness.
-- 4.6.0-0's Web-UI supports: single, single-dup, 0, 1, 10, 5, 6, raid1c3, raid1c4, raid1-1c3, raid1-1c4,
+- Starting with Rockstor 4.6.0-0 the Web-UI now supports: single, single-dup, 0, 1, 10, 5, 6, raid1c3, raid1c4, raid1-1c3, raid1-1c4,
   raid10-1c3, raid10-1c4, raid5-1, raid5-1c3, raid6-1c3, raid6-1c4.
 
 .. warning::
