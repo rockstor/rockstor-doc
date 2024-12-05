@@ -121,7 +121,7 @@ raid5
 Can sustain **a maximum of one drive failure**.
 Two or more drives are required.
 Uses parity and striping.
-The BTRFS community consensus is that btrfs raid5 is ***not recommended for production/metadata use***.
+The BTRFS community consensus is that btrfs raid5 is currently ***not recommended for production/metadata use***.
 
 .. _raid6:
 
