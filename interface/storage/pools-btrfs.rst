@@ -275,7 +275,7 @@ But this is not always an option and the following example serves to show both r
 Pool has below minimum members
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This situation is most common in non industrial DIY setups where a pool will often have only the minimum number of disks.
+This situation is most common in non-industrial DIY setups where a pool will often have only the minimum number of disks.
 
 In the following example we have a btrfs raid1 Pool (minimum 2 disks) that has a detached/missing member.
 We have already refreshed our backups via the suggested ro,degraded mount;
