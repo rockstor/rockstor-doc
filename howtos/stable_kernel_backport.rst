@@ -67,7 +67,7 @@ In this case the upstream-of-openSUSE latest stable kernel version back-ported t
 
 .. warning::
 
-    As of Leap 15.6 there are far-fewer btrfs reasons to use the Stable_kernel_Backport approach.
+    As of Leap 15.6, there are far fewer btrfs reasons to use the Stable_kernel_Backport approach.
     Consider instead installing a later version of Rockstor,
     or following the appropriate in-place "Distribution update from 15.* to 15.*` howto.
 
