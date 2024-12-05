@@ -241,7 +241,7 @@ but depending on your hardware overhead, this can be unnoticeable.
 **Note that increases in; drive count, percent usage, snapshots count, and Pool size can all impact on the memory and CPU required,
 and the time for any changes to be enacted.**
 
-Pool Resize / ReRaid may be done for the following reasons.
+Pool Resize/ReRaid may be done for the following reasons.
 
 1. Change redundancy profiles. E.g. from btrfs RAID10 to btrfs RAID1. See :ref:`poolraidchange`.
 2. Add disks and increase capacity. See :ref:`pooladddisks`.
