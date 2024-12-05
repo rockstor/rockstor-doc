@@ -131,7 +131,7 @@ raid6
 Can sustain **a maximum of two drive failures**.
 Three or more drives are required.
 Uses dual-parity and striping.
-The BTRFS community consensus is that btrfs raid6 is ***not recommended for production/metadata use***.
+The BTRFS community consensus is that btrfs raid6 is currently ***not recommended for production/metadata use***.
 
 .. _raid10:
 
