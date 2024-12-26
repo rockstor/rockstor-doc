@@ -66,17 +66,14 @@ The default and expected value is *eth0*.
 The last entry of the command *adguard-home* has to be kept the same. This is fixed in 
 the Rock-on configuration.
 
-With the shares and the network created the Rock-on can be installed.
-
-
-
-
-
-
-
-We are now ready to start the installation of the Netdata rock-on. Click the
-*Install* button next to the **Netdata (official)** listing on the *Rock-ons*
+We are now ready to start the installation of the AdGuard Home rock-on. Click the
+*Install* button next to the **AdGuard Home** listing on the *Rock-ons*
 page.
+
+
+
+
+
 
 .. image:: /images/interface/docker-based-rock-ons/netdata_install.png
    :width: 100%
