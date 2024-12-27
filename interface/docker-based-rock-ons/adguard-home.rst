@@ -70,62 +70,23 @@ We are now ready to start the installation of the AdGuard Home rock-on. Click th
 *Install* button next to the **AdGuard Home** listing on the *Rock-ons*
 page.
 
-
-
-
-
-
-.. image:: /images/interface/docker-based-rock-ons/netdata_install.png
-   :width: 100%
-   :align: center
-
-
-.. _netdata_port:
+.. _adguard_home_port:
 
 Web-UI port
 ^^^^^^^^^^^
-This corresponds to the port used to reach Netdata's web-UI. Note that
-this port **must** be set to **19999**.
-
-.. image:: /images/interface/docker-based-rock-ons/netdata_webUI_port.png
-   :width: 100%
-   :align: center
-
-
-.. _netdata_pgid:
-
-PGID
-^^^^
-This corresponds to the **docker group GID** that was identified above (see
-:ref:`netdata_install` above).
-
-.. image:: /images/interface/docker-based-rock-ons/netdata_PGID.png
-   :width: 100%
-   :align: center
-
-
-.. _netdata_verify:
+This corresponds to the port used to reach AdGuard Home web-UI. Note that
+the Port *3000* is the port for the initial configuration.
+After the configuration is done, the Web-UI is reachable under port *80* or *443*.
 
 Verify and Submit
 ^^^^^^^^^^^^^^^^^
 Verify the information you've provided is correct, then click **Submit**.
-
-.. image:: /images/interface/docker-based-rock-ons/netdata_verify.png
-   :width: 100%
-   :align: center
-
 You'll see a screen indicating the Rock-on is being installed.  Click "Close".
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_final.png
-   :width: 100%
-   :align: center
 
-
-Netdata Installation Successful
+AdGuard Home Installation Successful
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Congratulations! You can use the **Netdata (official) UI** button to go to the
-web interface to view and monitor all the metrics collected by Netdata.
+Congratulations! You can see the **AdGuard Home** entry in in the list of installed Rock-ons.
+To reach the Webinterface you have to use the configured value of *--ip-range* and the port *3000*.
+Using the example values the UI is reachable under *http://192.168.178.58:3000*
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_UI.png
-   :width: 100%
-   :align: center
