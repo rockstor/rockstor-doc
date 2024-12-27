@@ -12,7 +12,7 @@ requirements.
 .. _adguard_home_whatis:
 
 What is AdGuard Home
----------------
+---------------------
 
 `AdGuard Home <https://adguard.com/en/adguard-home/overview.html>`_ AdGuard Home is a 
 network-wide software for blocking ads and tracking. After you set it up, it'll
@@ -22,15 +22,15 @@ AdGuard Home is available for amd64 and arm64 architecture.
 .. _adguard_doc:
 
 AdGuard Home Documentation
----------------------
+---------------------------
 
 AdGuard Home features and documentation can be found here: `documentation <https://github.com/AdguardTeam/AdGuardHome>`_.
 Note that there is some preparation necassary to get this rock-on to work.
 
 .. _adguard_install:
 
-Installing the Adguard Home rock-on
-------------------------------
+Installing the Adguard Home Rock-on
+-------------------------------------
 This rock-on does require two additional shares to be set. 
 E.g. **adguard_config** and **adguard_data**. These shares have 
 to be setup up before installation. 
@@ -99,7 +99,7 @@ You'll see a screen indicating the Rock-on is being installed.  Click "Close".
 
 
 AdGuard Home Installation Successful
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Congratulations! You can see the **AdGuard Home** entry in in the list of installed Rock-ons.
 To reach the Webinterface you have to use the configured value of *--ip-range* and the port *3000*.
 Using the example values the UI is reachable under *http://192.168.178.58:3000*
