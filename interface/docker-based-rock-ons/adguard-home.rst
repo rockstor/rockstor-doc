@@ -24,7 +24,7 @@ AdGuard Home is available for amd64 and arm64 architecture.
 AdGuard Home Documentation
 ---------------------
 
-AdGuard Home features and documentation can be found at `documentation <https://github.com/AdguardTeam/AdGuardHome>`_.
+AdGuard Home features and documentation can be found here: `documentation <https://github.com/AdguardTeam/AdGuardHome>`_.
 Note that there is some preparation necassary to get this rock-on to work.
 
 .. _adguard_install:
@@ -32,7 +32,7 @@ Note that there is some preparation necassary to get this rock-on to work.
 Installing the Adguard Home rock-on
 ------------------------------
 This rock-on does require two additional shares to be set. 
-E.g. **adguard_Config** and **adguard_data**. These shares have 
+E.g. **adguard_config** and **adguard_data**. These shares have 
 to be setup up before installation. 
 
 Additional we are changing the share permissions for the **adguard_data**.
@@ -70,6 +70,19 @@ We are now ready to start the installation of the AdGuard Home rock-on. Click th
 *Install* button next to the **AdGuard Home** listing on the *Rock-ons*
 page.
 
+.. _adguard_home_shares:
+
+Set Shares
+^^^^^^^^^^^
+
+We need to only need to set the shares for the installation. Set them in the Web-UI.
+Use the shares we configured before.
+
+.. image:: /images/interface/docker-based-rock-ons/adguard_share_installation.png
+   :width: 100%
+   :align: center
+
+
 .. _adguard_home_port:
 
 Web-UI port
@@ -77,6 +90,7 @@ Web-UI port
 This corresponds to the port used to reach AdGuard Home web-UI. Note that
 the Port *3000* is the port for the initial configuration.
 After the configuration is done, the Web-UI is reachable under port *80* or *443*.
+These are set without any User Interaction.
 
 Verify and Submit
 ^^^^^^^^^^^^^^^^^
