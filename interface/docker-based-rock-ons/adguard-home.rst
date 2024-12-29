@@ -25,27 +25,28 @@ AdGuard Home Documentation
 ---------------------------
 
 AdGuard Home features and documentation can be found here: `documentation <https://github.com/AdguardTeam/AdGuardHome>`_.
-Note that there is some preparation necassary to get this rock-on to work.
+Note that there is some preparation required to get this rock-on to work.
 
 .. _adguard_install:
 
 Installing the Adguard Home Rock-on
 -------------------------------------
-This rock-on does require two additional shares to be set. 
-E.g. **adguard_config** and **adguard_data**. These shares have 
-to be setup up before installation. 
+This rock-on requires two additional shares to be set. 
+E.g. **adguard_config** and **adguard_data**. These shares must be 
+setup up before the installation. 
 
-Additional we are changing the share permissions for the **adguard_data**.
-Navigate to *Storage* > *Shares* then select the created data share. Navigate 
-to *Access Control* and the click on *Edit*. Change the settings like shown in
+
+We will also change the share permissions for **adguard_data**.
+Navigate to *Storage* > *Shares* and select the data share you created. Navigate to 
+to *Access Control* and click on *Edit*. Change the settings as shown in
 the picture. 
 
 .. image:: /images/interface/docker-based-rock-ons/adguard_share_permission.png
    :width: 100%
    :align: center
 
-We now have to add the *macvlan-network* for the Rock-on. For that we have to 
-use a command with has to be changed to confirm with your local network. 
+Now we need to add the *macvlan-network* for the rock-on. To do this, we need to 
+with a command that needs to be changed to match your local network. 
 
 .. code:: bash 
 
