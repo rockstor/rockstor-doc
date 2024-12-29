@@ -52,7 +52,7 @@ with a command that needs to be changed to match your local network.
 
    docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home
 
-The value for the *--subnet* has to be change to the ip range of your local network.
+The value for *--subnet* must be changed to the ip range of your local network.
 Values like these are examples: 192.168.1.0/24, 192.168.100.0/24, etc.
 
 In this example the *--ip-range* value is the to the single IP-Adress: *192.168.178.58*.
