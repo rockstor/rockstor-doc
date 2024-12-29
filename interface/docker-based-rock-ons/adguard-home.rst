@@ -55,9 +55,9 @@ with a command that needs to be changed to match your local network.
 The value for *--subnet* must be changed to the ip range of your local network.
 Values like these are examples: 192.168.1.0/24, 192.168.100.0/24, etc.
 
-In this example the *--ip-range* value is the to the single IP-Adress: *192.168.178.58*.
-Please select a unused ip address in your local *--ip-range*. If your using a DHCP-Server
-either reserve this address permantly or choose an address outside of the DHCP-Server range.
+In this example, the *--ip-range* value is the single IP address: *192.168.178.58*.
+Please choose an unused IP address in your local *--ip-range*. If you are using a DHCP server
+either reserve this address permanently or choose an address outside the DHCP server range.
 
 The value for *--gateway* has to be set to the IP-Adress of your gateway of your local network.
 
