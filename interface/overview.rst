@@ -236,6 +236,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
 .. toctree::
    :maxdepth: 2
 
+   docker-based-rock-ons/adguard-home
    docker-based-rock-ons/jenkins
    docker-based-rock-ons/minio
    docker-based-rock-ons/nginx
