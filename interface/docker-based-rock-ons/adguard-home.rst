@@ -52,23 +52,21 @@ with a command that needs to be changed to match your local network.
 
    docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home
 
-The value for *--subnet* must be changed to the ip range of your local network.
-Values like these are examples: 192.168.1.0/24, 192.168.100.0/24, etc.
 
 In this example, the *--ip-range* value is the single IP address: *192.168.178.58*.
-Please choose an unused IP address in your local *--ip-range*. If you are using a DHCP server
+Please select an unused IP address in your local *--ip-range*. If you use a DHCP server
 either reserve this address permanently or choose an address outside the DHCP server range.
 
-The value for *--gateway* has to be set to the IP-Adress of your gateway of your local network.
+The value for *-gateway* must be set to the IP address of the gateway of your local network.
 
-The value for *parent* has to be set to the name of your network. Found under *System* > *Network*.
+The value for *-parent* must be set to the name of your network. This can be found under *System* > *Network*.
 The default and expected value is *eth0*. 
 
-The last entry of the command *adguard-home* has to be kept the same. This is fixed in 
-the Rock-on configuration.
+The last entry of the *adguard-home* command must be kept the same. This network name is set in the 
+rock-on configuration.
 
-We are now ready to start the installation of the AdGuard Home rock-on. Click the
-*Install* button next to the **AdGuard Home** listing on the *Rock-ons*
+We are now ready to start the installation of the AdGuard Home rock-on. Click on the
+*Install button next to the **AdGuard Home** listing on the *Rock-ons* page.
 page.
 
 .. _adguard_home_shares:
@@ -76,8 +74,8 @@ page.
 Set Shares
 ^^^^^^^^^^^
 
-We need to only need to set the shares for the installation. Set them in the Web-UI.
-Use the shares we configured before.
+We just need to set up the shares for the installation. Set them in the web interface.
+Use the shares we set up earlier.
 
 .. image:: /images/interface/docker-based-rock-ons/adguard_share_installation.png
    :width: 100%
@@ -88,20 +86,23 @@ Use the shares we configured before.
 
 Web-UI port
 ^^^^^^^^^^^
-This corresponds to the port used to reach AdGuard Home web-UI. Note that
-the Port *3000* is the port for the initial configuration.
-After the configuration is done, the Web-UI is reachable under port *80* or *443*.
-These are set without any User Interaction.
+This is the port used to access the AdGuard Home web interface. Note that
+port *3000* is the port for the initial configuration.
+After configuration, the Web UI will be accessible on port *80* or *443*.
+These ports are set without any user interaction.
 
 Verify and Submit
 ^^^^^^^^^^^^^^^^^
-Verify the information you've provided is correct, then click **Submit**.
-You'll see a screen indicating the Rock-on is being installed.  Click "Close".
+Verify that the information you've entered is correct, then click **Submit**.
+You'll see a screen indicating that the Rock-on is being installed.  Click Close.
 
 
 AdGuard Home Installation Successful
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Congratulations! You can see the **AdGuard Home** entry in in the list of installed Rock-ons.
-To reach the Webinterface you have to use the configured value of *--ip-range* and the port *3000*.
-Using the example values the UI is reachable under *http://192.168.178.58:3000*
+Congratulations! You can see the **AdGuard Home** entry in the list of installed rock-ons.
+To access the web interface, you need to use the configured value of *--ip-range* and port *3000*.
+Using the example values, the UI can be reached at *http://192.168.178.58:3000*.
+After configuration, the web interface can be reached at *http://192.168.178.58:80*.
+
+For recommendations of DNS blocklists see : `hagezi dns-blocklists <https://github.com/hagezi/dns-blocklists>`_.
 
