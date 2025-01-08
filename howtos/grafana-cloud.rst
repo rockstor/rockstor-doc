@@ -138,7 +138,7 @@ Apply the following to config.alloy with the **<url>** & **username** `#######` 
     // Write metrics to your Grafana Cloud Prometheus instance.
     // Home - Connections - Data sources - grafanacloud-******-prom
     prometheus.remote_write "metrics_service" {
-        endpoint {https://prometheus-prod-24-prod-eu-west-2.grafana.net/api/prom
+        endpoint {
             url = "<url>/push"
 
             basic_auth {
