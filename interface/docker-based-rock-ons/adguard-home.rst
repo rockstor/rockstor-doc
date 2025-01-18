@@ -3,7 +3,7 @@
 AdGuard Home Rock-on
 ==========================
 
-Before you install the Adguard Home rock-on, you should understand the
+Before you install the Adguard Home Rock-on, you should understand the
 prerequisites and configurations common to all Rockstor :ref:`rockons_intro`;
 specifically the :ref:`rockons_preinstall` and :ref:`rockons_root`
 requirements.
