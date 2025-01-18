@@ -31,7 +31,7 @@ Note that there is some preparation required to get this Rock-on to work.
 
 Installing the Adguard Home Rock-on
 -------------------------------------
-This rock-on requires two additional shares to be set. 
+This Rock-on requires two additional shares to be set. 
 E.g. **adguard_config** and **adguard_data**. These shares must be 
 setup up before the installation. 
 
