@@ -25,7 +25,7 @@ AdGuard Home Documentation
 ---------------------------
 
 AdGuard Home features and documentation can be found here: `documentation <https://github.com/AdguardTeam/AdGuardHome>`_.
-Note that there is some preparation required to get this rock-on to work.
+Note that there is some preparation required to get this Rock-on to work.
 
 .. _adguard_install:
 
