@@ -62,8 +62,8 @@ The value for *-gateway* must be set to the IP address of the gateway of your lo
 The value for *-parent* must be set to the name of your network. This can be found under *System* > *Network*.
 The default and expected value is *eth0*. 
 
-The last entry of the *adguard-home* command must be kept the same. This network name is set in the 
-rock-on configuration.
+The last entry of the *adguard-home* command must be kept the same.
+This network name is set in the Rock-on configuration.
 
 We are now ready to start the installation of the AdGuard Home rock-on. Click on the
 *Install button next to the **AdGuard Home** listing on the *Rock-ons* page.
