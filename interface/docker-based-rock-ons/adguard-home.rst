@@ -65,9 +65,8 @@ The default and expected value is *eth0*.
 The last entry of the *adguard-home* command must be kept the same.
 This network name is set in the Rock-on configuration.
 
-We are now ready to start the installation of the AdGuard Home rock-on. Click on the
-*Install button next to the **AdGuard Home** listing on the *Rock-ons* page.
-page.
+We are now ready to start the installation of the AdGuard Home Rock-on.
+Click on the *Install* button next to the **AdGuard Home** listing on the *Rock-ons* page.
 
 .. _adguard_home_shares:
 
