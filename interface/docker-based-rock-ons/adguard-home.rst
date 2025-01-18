@@ -53,9 +53,10 @@ Using the WebUI's System Shell, execute the command below, after adjusting it ac
    sudo docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home
 
 
-In this example, the *--ip-range* value is the single IP address: *192.168.178.58*.
-Please select an unused IP address in your local *--ip-range*. If you use a DHCP server
-either reserve this address permanently or choose an address outside the DHCP server range.
+In this example, the *--ip-range* value is the single IP address: *192.168.178.58*. 
+Please select an unused IP address in your local *--ip-range*.
+If you use a DHCP server either reserve this address permanently 
+or choose an address outside the DHCP server range.
 
 The value for *-gateway* must be set to the IP address of the gateway of your local network.
 
