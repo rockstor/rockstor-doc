@@ -85,8 +85,8 @@ Set them in the web interface, using the shares that were set up earlier.
 
 Web-UI port
 ^^^^^^^^^^^
-This is the port used to access the AdGuard Home web interface. Note that
-port *3000* is the port for the initial configuration.
+This is the port used to access the AdGuard Home web interface.
+Note that port *3000* is the port for the initial configuration.
 After configuration, the Web UI will be accessible on port *80* or *443*.
 These ports are set without any user interaction.
 
