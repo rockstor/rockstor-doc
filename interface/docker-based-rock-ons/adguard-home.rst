@@ -93,7 +93,8 @@ These ports are set without any user interaction.
 Verify and Submit
 ^^^^^^^^^^^^^^^^^
 Verify that the information you've entered is correct, then click **Submit**.
-You'll see a screen indicating that the Rock-on is being installed.  Click Close.
+You'll see a screen indicating that the Rock-on is being installed.
+Click Close.
 
 
 AdGuard Home Installation Successful
