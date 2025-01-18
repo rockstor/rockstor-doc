@@ -50,7 +50,7 @@ Using the WebUI's System Shell, execute the command below, after adjusting it ac
 
 .. code:: bash 
 
-   docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home
+   sudo docker network create -d macvlan --subnet=192.168.178.0/24 --ip-range=192.168.178.58/32 --gateway=192.168.178.1 -o parent=eth0 adguard-home
 
 
 In this example, the *--ip-range* value is the single IP address: *192.168.178.58*.
