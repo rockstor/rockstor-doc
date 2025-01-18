@@ -73,8 +73,8 @@ Click on the *Install* button next to the **AdGuard Home** listing on the *Rock-
 Set Shares
 ^^^^^^^^^^^
 
-We just need to set up the shares for the installation. Set them in the web interface.
-Use the shares we set up earlier.
+We just need to assign the shares for the installation.
+Set them in the web interface, using the shares that were set up earlier.
 
 .. image:: /images/interface/docker-based-rock-ons/adguard_share_installation.png
    :width: 100%
