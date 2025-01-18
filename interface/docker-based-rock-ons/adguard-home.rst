@@ -45,8 +45,8 @@ the picture.
    :width: 100%
    :align: center
 
-Now we need to add the *macvlan-network* for the rock-on. To do this, we need to 
-with a command that needs to be changed to match your local network. 
+Now we need to add the *macvlan-network* for the Rock-on.
+Using the WebUI's System Shell, execute the command below, after adjusting it according to your local network settings. Since this requires an elevated command prompt, have the `root` user password ready:
 
 .. code:: bash 
 
