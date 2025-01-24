@@ -24,7 +24,7 @@ A component of Prometheus used by Grafana Alloy to source operating system telem
 Node_exporter install
 ^^^^^^^^^^^^^^^^^^^^^
 
-The following installs and start the node_exporter service.
+The following installs and starts the node_exporter service.
 
 .. code-block:: console
 
