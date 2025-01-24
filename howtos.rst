@@ -17,6 +17,7 @@ How-tos & Guides
    installation/special-install-scenarios-howto
    howtos/rpm_install
    howtos/centos_to_opensuse
+   howtos/grafana-cloud
    howtos/reinstall
    howtos/disk_power_down
    howtos/clients
