@@ -44,7 +44,7 @@ Test by confirming telemetry type output from the following:
 Grafana Alloy
 -------------
 
-Grafana Alloy (licensed Apache-2.0) supersedes its now deprecate predecessor `Grafana Agent <https://grafana.com/docs/agent/latest/>`_.
+Grafana Alloy (licensed Apache-2.0) supersedes its now deprecated predecessor `Grafana Agent <https://grafana.com/docs/agent/latest/>`_.
 Alloy also supersedes `Grafana Promtail <https://grafana.com/docs/loki/latest/send-data/promtail/>`_ re future developments.
 This OTel collector filters & translates operating system (OS) telemetry and log data into Open Telemetry compatible streams.
 These streams can then be received by, for example, the following **hosted** services of a Grafana Cloud account:
