@@ -117,7 +117,7 @@ Visit your Grafana Cloud account and select:
 
     If Alloy was previously running, you will need to restart it via: `systemctl restart alloy.service`.
 
-4. Once the provided Test has passed, proceed with the rest of the instructions.
+4. Once the provided test has passed, proceed with the rest of the instructions.
 5. Use `nano /etc/alloy/config.alloy` to add the example configuration snippets as suggested.
 
 Missing receivers
