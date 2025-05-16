@@ -170,7 +170,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 
 * `Booksonic <https://booksonic.org>`_: Audiobooks streaming server
 * `Cardigann <https://github.com/cardigann/cardigann>`_: A proxy server for adding new indexers to Sonarr and other media managers
-* `Collabora online <https://www.collaboraoffice.com/code/>`_: LibreOffice-based online office suite
+* `Collabora online <https://www.collaboraonline.com/code/>`_: LibreOffice-based online office suite
 * `COPS <https://blog.slucas.fr/projects/calibre-opds-php-server/>`_: links to your Calibre library database and provides automation features
 * `CouchPotato <https://couchpota.to/>`_: Downloader for usenet and bittorrent users
 * `Deluge <https://deluge-torrent.org/>`_: Deluge is a movie downloader for bittorrent users
@@ -192,7 +192,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Koel <https://koel.dev/>`_: Simple web-based personal audio streaming service
 * `Lazy Librarian <https://lazylibrarian.gitlab.io>`_: Automated ebook downloader for NZB and Torrent
 * `MariaDB <https://mariadb.org/>`_: MariaDB, relational database management system
-* `Medusa <https://pymedusa.com>`_: Automatic video library manager for TV shows
+* `Medusa <https://github.com/pymedusa/Medusa>`_: Automatic video library manager for TV shows
 * `Minecraft <https://en.wikipedia.org/wiki/Minecraft>`_: Minecraft server
 * `Muximux <https://github.com/mescon/Muximux>`_: Lightweight portal to view & manage your HTPC apps
 * `Mylar <https://github.com/evilhero/mylar>`_: Automated Comic Book (cbr/cbz) downloader
