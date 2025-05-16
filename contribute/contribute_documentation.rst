@@ -7,7 +7,7 @@ Steps for contributing to **rockstor-doc** repo are similar to contributing to
 **rockstor-core**, as we follow the same fork and pull request model. We'll
 assume you have basic proficiency with Git and are familiar with using a
 text editor or IDE of your choice. Emacs, Vim, Eclipse and PyCharm are some
-recommendations. Or you may be able to use an online editor such as https://www.tutorialspoint.com/online_restructure_editor.php.
+recommendations. Or you may be able to use an online editor such as https://www.tutorialspoint.com/compilers/online-restructure-editor.htm.
 
 Environment setup
 -----------------

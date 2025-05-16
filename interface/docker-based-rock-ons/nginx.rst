@@ -38,10 +38,7 @@ The sources and documentation are distributed under the 2-clause BSD-like licens
 nginx Documentation
 --------------------
 
-For online documentation and support please refer to `nginx.org <https://nginx.org>`_. Commercial support is available from `F5, Inc. <https://www.f5.com/>`_.
-
-Also, check out youtube for instructional videos on `Nginx <https://www.youtube.com/user/nginxinc>`_.
-
+For online documentation and support please refer to `nginx.org <https://nginx.org>`_.
 
 
 .. _nginx_install:
