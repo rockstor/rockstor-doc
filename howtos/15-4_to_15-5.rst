@@ -9,7 +9,7 @@ to the next major version of our base OS.
 Only one major version jump must be attempted at any one time.
 If your Rockstor install is not based on 15.4, consider one of our other "Distribution update ..." How-tos.
 
-- **A minimum Rockstor version of 5.0.9-0 is recommended before attempting this OS update.**
+- **A minimum Rockstor version of 4.6.1-0 (stable) or 5.0.15-0 (testing) is recommended before attempting this OS update.**
 
 .. note::
 
