@@ -145,25 +145,94 @@ Select Time Zone
 
 Use cursor keys to highlight, then the "Enter" key to select.
 
-Enter Desired root User Password
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the 'root' User's Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: /images/installation/installer-howto/enter_root_password.png
    :align: center
 
-Confirm root User Password
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+----
 
 .. image:: /images/installation/installer-howto/confirm_root_password.png
+   :align: center
+
+.. _ssh_key_enrollment:
+
+SSH key Enrollment (TW/SR)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tumbleweed/Slowroll **(TW/SR)** only.
+Recommended: password SSH is disabled by default on these variants.
+
+.. image:: /images/installation/installer-howto/ssh_key_enrollment_1.png
+   :align: center
+
+Client SSH instructions
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /images/installation/installer-howto/ssh_key_enrollment_2.png
+   :align: center
+
+All details, e.g. IP address, will vary from one install to another.
+
+Client SSH login
+~~~~~~~~~~~~~~~~
+
+.. code-block:: console
+
+    ssh root@192.168.2.105
+
+    The authenticity of host '192.168.2.105 (192.168.2.105)' can't be established.
+    ED25519 key fingerprint is SHA256:MJWWw94HSmgPkrVE3SHf2WlPkHRON8Q6y7oTLoSQEhs.
+    This key is not known by any other names.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added '192.168.2.105' (ED25519) to the list of known hosts.
+    ssh-pairing: Received 1 public keys
+    Received disconnect from 192.168.2.105 port 22:11: Bye Bye
+    Disconnected from 192.168.2.105 port 22
+
+Enrollment Confirmation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /images/installation/installer-howto/ssh_key_enrollment_3.png
+   :align: center
+
+----
+
+.. image:: /images/installation/installer-howto/ssh_key_enrollment_4.png
+   :align: center
+
+----
+
+
+.. image:: /images/installation/installer-howto/ssh_key_enrollment_5.png
+   :align: center
+
+**The enrolled key based SSH login may require a reboot to become active.**
+**Finish the install before enacting any reboot.**
+
+.. _installer_user_creation:
+
+User Creation - Cockpit Web-UI  (TW/SR)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Skip advised**: Rockstor's Web-UI has :ref:`User Management<users>` built-in.
+If the above :ref:`SSH key Enrollment<ssh_key_enrollment>` was skipped, consider creating a dedicated user at this point.
+
+`Cockpit <https://cockpit-project.org/>`_ is not `installed <https://cockpit-project.org/running.html#tumbleweed>`_ and
+**Rockstor compatibility is unknown.**
+**Experienced user testing feedback is welcome - but there is no assurance of future compatibility.**
+
+.. image:: /images/installation/installer-howto/user_creation_dialog.png
    :align: center
 
 Wait for the "Rockstor bootstrapping tasks"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Rockstor bootstrapping task may take around 3-4 minutes to appear,
+The Rockstor bootstrapping task may take **around 3-4 minutes** to appear,
 depending on computer, drive, and internet speed.
 This same delay occurs during every `rockstor` package update,
-as rockstor-build downloads and builds from `PyPi <https://pypi.org/>`_.
+as rockstor-build.service downloads and builds from `PyPi <https://pypi.org/>`_.
 
 .. image:: /images/installation/installer-howto/wait_for_rockstor_tasks.png
    :align: center
@@ -179,8 +248,10 @@ browser.
 .. image:: /images/installation/installer-howto/root_login_myip.png
    :align: center
 
-Enter your systems' :code:`https://...` address into your browser,
-Chrome/Firefox/.., for the Web-UI.
+- Optional: consider running :code:`zypper refresh` and awaiting its completion.
+  This can help avoid delays in the Web-UI offering upstream OS updates.
+
+Enter your systems' displayed :code:`https://...` address into your browser's URL bar.
 
 Visit Rockstor's Web-UI
 ^^^^^^^^^^^^^^^^^^^^^^^
