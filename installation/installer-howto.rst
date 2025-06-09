@@ -216,7 +216,7 @@ Enrollment Confirmation
 User Creation - Cockpit Web-UI  (TW/SR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Skip advised**: Rockstor's Web-UI has :ref:`User Management<users>` build-in.
+**Skip advised**: Rockstor's Web-UI has :ref:`User Management<users>` built-in.
 If the above :ref:`SSH key Enrollment<ssh_key_enrollment>` was skipped, consider creating a dedicated user at this point.
 
 `Cockpit <https://cockpit-project.org/>`_ is not `installed <https://cockpit-project.org/running.html#tumbleweed>`_ and
