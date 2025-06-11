@@ -266,7 +266,10 @@ texinfo_documents = [
 # -- Options for linkcheck ------------------------------------------------
 linkcheck_retries = 2
 linkcheck_timeout = 10
+# www.smartmontools.org is a temporary exclusion
 linkcheck_ignore = [r'https://web.libera.chat/#btrfs',
+                    r'https://www.smartmontools.org',
+                    r'https://linux.die.net/',
                     r'https://ark.intel.com/',
                     r'https://opensource.org/',
                     r'https://www.samba.org/',

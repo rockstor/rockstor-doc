@@ -93,7 +93,7 @@ In the tooltip a few more directives of interest are listed:
   
 For a complete explanation of all directives read the *smartd.conf* man page, also
 available here:
-`smartd.conf man page <https://www.smartmontools.org/browser/trunk/smartmontools/smartd.conf.5.in>`_
+`smartd.conf man page <https://linux.die.net/man/5/smartd.conf>`_
 
 ..  _diskcustomsmart:
 
@@ -188,7 +188,7 @@ The research links contained within the configuration screen are duplicated
 here for convenience:
 
 * Main `Smartmontools <https://www.smartmontools.org/>`_ home page.
-* *Smartmontools* `manual <https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in>`_ for the the smartctl program.
+* *Smartmontools* `manual <https://linux.die.net/man/8/smartctl>`_ for the smartctl program.
 * `USB Device Support <https://www.smartmontools.org/wiki/Supported_USB-Devices>`_ note the *Options* column in the *Supported Devices* table.
 * `Checking disks behind RAID controllers <https://www.smartmontools.org/wiki/Supported_RAID-Controllers>`_ page.
 
