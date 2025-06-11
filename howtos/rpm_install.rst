@@ -56,7 +56,7 @@ Instantiate the package repositories required by Rockstor (all are multi-arch).
 
     zypper --non-interactive addrepo --refresh -p105 https://download.opensuse.org/repositories/home:/rockstor/15.X/ home_rockstor
     zypper --non-interactive addrepo --refresh -p97 https://download.opensuse.org/repositories/home:/rockstor:/branches:/Base:/System/15.X/ home_rockstor_branches_Base_System
-    rpm --import https://raw.githubusercontent.com/rockstor/rockstor-core/master/conf/ROCKSTOR-GPG-KEY
+    rpm --import https://rockstor.com/ROCKSTOR-GPG-KEY
     zypper addrepo -f http://updates.rockstor.com:8999/rockstor-testing/leap/15.X/ Rockstor-Testing
     zypper --non-interactive --gpg-auto-import-keys refresh
 
@@ -79,5 +79,5 @@ Finally, install and enable/start Rockstor via it's systemd services.
     Please note that Rockstor is not yet Multi-path controller compatible.
 
 .. note::
-    Visit our `friendly forum <https://forum.rockstor.com/>`_ for questions and suggestions for improving these instructions.
-    As always, GitHub pull requests are welcome: `<https://github.com/rockstor/rockstor-doc>`_.
+    Visit our `friendly forum <https://forum.rockstor.com/>`_ for questions, and suggestions for improving these instructions.
+    As always, Pull requests are welcome: `<https://github.com/rockstor/rockstor-doc>`_.
