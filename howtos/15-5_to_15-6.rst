@@ -40,11 +40,25 @@ Overview
 This **Distribution Update** procedure is well established in our upstream base OS of openSUSE Leap.
 Below we detail the following steps, each in their own sections:
 
+- Update Rockstor's public key
 - Update repositories
 - Distribution update
 - Reporting issues
 
 See our FAQ entry :ref:`faq_rockstor4_repos` for more context.
+
+.. _155_156-update_repo_key:
+
+Update Rockstor's public key
+----------------------------
+
+Rockstor's repo and rpm package signing key was expiration extended in May 2025.
+Ensure the latest version is installed via:
+
+.. code-block:: console
+
+    rpm --erase gpg-pubkey-5f043187
+    rpm --import https://rockstor.com/ROCKSTOR-GPG-KEY
 
 .. _155_156-update_repos:
 
