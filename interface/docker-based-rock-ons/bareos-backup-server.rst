@@ -213,3 +213,105 @@ Post login the default Webui is displayed:
 .. image:: /images/interface/docker-based-rock-ons/bareos_webui.png
    :width: 100%
    :align: center
+
+.. _bareos_client_reg:
+
+Client Registration
+-------------------
+
+Bareos Clients must be **Added** to, or **Registered** with, at least one **Bareos Director**.
+I.e. each client can be backed-up by more than one Director.
+The following instructions assume:
+
+1. Client machine runs Linux with command ``hostname`` output of **tuxlap**. Replace appropriately.
+2. **/home** only midday (13:00) backup. See :ref:`bareos_doc` for other examples.
+3. Rockstor and **tuxlap** can ping one-another by the provided IPs or hostnames.
+
+Using an unrestricted bconsole, default in this Rock-on's Webui:
+
+.. code-block:: bash
+
+    *configure add client name=tuxlap-fd address=client.ip.or.hostname passive=yes password=secret-here
+
+.. note::
+
+    "*" is the bconsole prompt;
+    and `Passive Client <https://docs.bareos.org/TasksAndConcepts/NetworkSetup.html#section-passiveclient>`_
+    avoids many common firewall, NAT, & name resolution issues.
+
+The above creates:
+
+1. `/etc/bareos/bareos-dir-export/client/tuxlap-fd/bareos-fd.d/director/bareos-dir.conf` for client-side use.
+2. `/etc/bareos/bareos-dir.d/client/tuxlap-fd.conf` director-side config.
+
+**Where `/etc/bareos` maps to the `bareos-dir-config` Share.**
+
+.. note::
+
+    A machine with hostname **tuxlap** is given a Client name of **tuxlap-fd** (fd = File Daemon).
+
+.. _bareos_client_install:
+
+Client Install
+--------------
+
+To use a Bareos Backup Server,
+a machine must have the Bareos Client/File software installed.
+Ideally a similar version to that on the Server, the :ref:`bareos_webui` shows running/connected versions.
+
+- See: `Installing a Bareos Client <https://docs.bareos.org/IntroductionAndTutorial/InstallingBareosClient.html>`_
+- Minimal install: **bareos-filedaemon**
+- Desktop / Laptop: **bareos-client** (bareos-filedaemon, bareos-bconsole, and bareos-traymonitor)
+
+E.g. openSUSE Leap 15.6 Desktop/Laptop (community, current assumed) :
+
+.. code-block:: bash
+
+    wget https://download.bareos.org/current/SUSE_15/add_bareos_repositories.sh
+    sh ./add_bareos_repositories.sh
+    zypper refresh
+    zypper install bareos-client
+
+The above create:
+
+1. `/etc/bareos/bareos-fd.d/client/myself.conf` sets this Client's `Name`.
+2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Director credentials incoming - to be replaced.
+
+Retrieve exported config
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Client package install creates placeholder authentication: `bareos-dir.conf`,
+replace with Director exported credentials as generated in :ref:`bareos_client_reg` above.
+
+.. code-block:: bash
+
+    sudo scp root@rockstor-ip:///mnt2/bareos-dir-config/bareos-dir-export/client/tuxlap-fd/bareos-fd.d/director/bareos-dir.conf /etc/bareos/bareos-fd.d/director/bareos-dir.conf
+    sudo systemctl stop bareos-fd.service
+    sudo systemctl start bareos-fd.service
+
+I.e. Client retrieves credentials exported by the director during registration on the Rockstor server.
+
+Alternatively match credentials by hand.
+N.B. Exported credentials contain a hashed password which is preferred.
+
+Open port 9102
+^^^^^^^^^^^^^^
+
+The Director calls the client on this port.
+Enable incoming connections; assumes client firewalld: openSUSE, Fedora, RedHat.
+
+Any source IP:
+
+.. code-block:: bash
+
+    sudo firewall-cmd --permanent --zone=public --add-port=9102/tcp
+    sudo firewall-cmd --reload
+
+
+Or a specific source IP (e.g. 192.168.2.115).
+
+.. code-block:: bash
+
+    sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.2.115" port protocol="tcp" port="9102" accept'
+    sudo firewall-cmd --reload
+
