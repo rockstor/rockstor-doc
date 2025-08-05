@@ -214,6 +214,41 @@ Post login the default Webui is displayed:
    :width: 100%
    :align: center
 
+.. _bareos_bconsole:
+
+Bareos Console
+---------------
+
+Aside from the :ref:`bareos_webui`,
+there is also the Bareos Console or `bconsole <https://docs.bareos.org/TasksAndConcepts/BareosConsole.html>`_:
+a dedicated CLI (Command Line Interface).
+
+.. note::
+
+    For convenience the WebUI embedded **bconsole** configured by this Rock-on is a fully privileged instance.
+
+.. warning::
+    As of Bareos 24, the WebUI embedded **bconsole** is limited to one-line commands, i.e. non-functional dialogs.
+
+Full bconsole
+^^^^^^^^^^^^^
+
+A full Director-local :ref:`bareos_bconsole` is available from within the bareos-dir container.
+
+.. note::
+
+    Likely required for advanced operations only,
+    or when a more interactive or multi-line Bareos operation is required.
+
+Via 'root' user SSH on the Rockstor host:
+
+.. code-block:: bash
+
+    docker exec -it bareos-dir sh
+    bconsole
+
+Use the ``exit`` command repeatedly to leave the bconsole, the container shell, and the Rockstor console itself.
+
 .. _bareos_client_reg:
 
 Client Registration
@@ -238,6 +273,13 @@ Using an unrestricted bconsole, default in this Rock-on's Webui:
     "*" is the bconsole prompt;
     and `Passive Client <https://docs.bareos.org/TasksAndConcepts/NetworkSetup.html#section-passiveclient>`_
     avoids many common firewall, NAT, & name resolution issues.
+
+.. note::
+
+    Show current clients via: ``*show clients``.
+    Remove clients via:
+    1. ``*purge jobs client=tuxlap-fd``,
+    2. (bareos-dir container) `bareos-dbcheck <https://docs.bareos.org/Appendix/BareosPrograms.html#bareos-dbcheck>`_
 
 The above creates:
 
@@ -314,4 +356,56 @@ Or a specific source IP (e.g. 192.168.2.115).
 
     sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.2.115" port protocol="tcp" port="9102" accept'
     sudo firewall-cmd --reload
+
+Status Check
+^^^^^^^^^^^^
+
+Establish if the Director can communicate with the new client.
+
+.. code-block:: bash
+
+    *status client=tuxlap-fd
+
+Backup Job
+----------
+
+A Bareos `Job <https://docs.bareos.org/Configuration/Director.html#directorresourcejob>`_ associates;
+a `Client <https://docs.bareos.org/Configuration/Director.html#client-resource>`_,
+a `FileSet <https://docs.bareos.org/Configuration/Director.html#fileset-resource>`_,
+a `Storage <https://docs.bareos.org/Configuration/Director.html#storage-resource>`_.
+a `Pool <https://docs.bareos.org/Configuration/Director.html#pool-resource>`_, and
+a `Schedule <https://docs.bareos.org/Configuration/Director.html#schedule-resource>`_.
+These are all known as Director Resources.
+`JobDefs <https://docs.bareos.org/Configuration/Director.html#jobdefs-resource>`_
+are Job Defaults honoured if not overridden by a specific Job.
+They primarily define shared settings across, for example, multiple similar clients.
+Each Job can then be setup by override only, for example, the Client the job pertains to.
+
+I.e. A job defines: what (FileSet) on which (Client) is to be backed-up/restored to/from which
+(Storage / Bareos Pool).
+
+`Pool` in this context is a set of Bareos Storage Volumes,
+akin but unrelated to Rockstor's :ref:`Pools` as sets of disks.
+
+Linux /home Backup Job
+^^^^^^^^^^^^^^^^^^^^^^
+
+Named **backup-tuxlap** for the **tuxlap-fd** client :ref:`registered <bareos_client_reg>` earlier.
+
+.. code-block:: bash
+
+    *configure add job name=backup-tuxlap client=tuxlap-fd jobdefs=LinuxHomeJob
+
+Job Estimate
+^^^^^^^^^^^^
+
+Useful to examine the expected file count, Backup size, and optionally a filelist.
+From `bconsole commands <https://docs.bareos.org/TasksAndConcepts/BareosConsole.html#console-commands>`_.
+
+
+... code-block:: bash
+
+    estimate job=backup-tuxlap
+
+Adding `listing` to the above adds a file listing to the output.
 
