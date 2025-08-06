@@ -22,7 +22,7 @@ with VM, raw partition, Database, etc backup options.
 There is also
 `compatibility <https://docs.bareos.org/Appendix/DisasterRecoveryUsingBareos.html#bare-metal-recovery-of-bareos-clients>`_
 with `Relax-and-Recover (ReaR) <https://relax-and-recover.org/>`_.
-It is a 2010 AGPL-3.0 Licensed fork of `Bacular <https://www.bacula.org/>`_,
+Bareos is a 2010 AGPL-3.0 Licensed fork of the then 10 years old `Bacular <https://www.bacula.org/>`_,
 see also `Bacular Systems <https://www.baculasystems.com/>`_,
 where the supported/enterprise variant is no longer open source, i.e. an open core model.
 
@@ -262,7 +262,7 @@ The following instructions assume:
 2. **/home** only midday (13:00) backup. See :ref:`bareos_doc` for other examples.
 3. Rockstor and **tuxlap** can ping one-another by the provided IPs or hostnames.
 
-Using an unrestricted bconsole, default in this Rock-on's Webui:
+Using an unrestricted / admin bconsole, default in this Rock-on's Webui:
 
 .. code-block:: bash
 
@@ -316,14 +316,17 @@ E.g. openSUSE Leap 15.6 Desktop/Laptop (community, current assumed) :
 
 The above create:
 
-1. `/etc/bareos/bareos-fd.d/client/myself.conf` sets this Client's `Name`.
-2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Director credentials incoming - to be replaced.
+File/Client config
+^^^^^^^^^^^^^^^^^^
 
-Retrieve exported config
-^^^^^^^^^^^^^^^^^^^^^^^^
+From **bareos-filedaemon** package:
 
-Client package install creates placeholder authentication: `bareos-dir.conf`,
-replace with Director exported credentials as generated in :ref:`bareos_client_reg` above.
+1. `/etc/bareos/bareos-fd.d/client/myself.conf` This Client's `Name`, e.g. "tuxlap-fd".
+2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Full (admin console) Authorized Director credentials.
+3. `/etc/bareos/bareos-fd.d/director/bareos-mon.conf` Tray-monitor (bareos-mon password) status credentials.
+4. `/etc/bareos/tray-monitor.d/client/FileDaemon-local.conf` 'localhost' File/Client credentials (bareos-mon password)
+
+Replace 2. with Director exported credentials as generated in :ref:`bareos_client_reg` above.
 
 .. code-block:: bash
 
@@ -331,10 +334,75 @@ replace with Director exported credentials as generated in :ref:`bareos_client_r
     sudo systemctl stop bareos-fd.service
     sudo systemctl start bareos-fd.service
 
-I.e. Client retrieves credentials exported by the director during registration on the Rockstor server.
+*I.e. Client retrieves credentials exported by the director during registration on the Rockstor server.*
 
-Alternatively match credentials by hand.
-N.B. Exported credentials contain a hashed password which is preferred.
+.. note::
+
+    Alternatively match credentials by hand,
+    however exported credentials contain a hashed password, which is preferred.
+
+From **bareos-bconsole** package:
+
+1. `/etc/bareos/bconsole.conf` 'localhost' director **bconsole** credentials.
+
+For a client-side unrestricted / admin **bconsole**:
+
+- Change 'localhost' to Rockstor's hostname or IP.
+- Change password to match bconsole.conf in the root of Share:
+  `bareos-dir-config` (/mnt2/bareos-dir-config/bconsole.conf)
+
+A restricted / `named console <https://docs.bareos.org/Configuration/Console.html#using-named-consoles>`_
+is also configurable.
+
+From **bareos-traymonitor** package:
+
+1. `/etc/bareos/tray-monitor.d/monitor/bareos-mon.conf`
+
+- Change `bareos-mon.conf` password to match that in Share: `bareos-dir-config` /bareos-dir.d/console/bareos-mon.conf
+- `Example Traymonitor configuration <https://docs.bareos.org/Configuration/Monitor.html#example-traymonitor-configuration>`_
+  for further bareos-mon.conf additions.
+
+Optionally add Director tray-monitoring:
+
+.. code-block:: bash
+
+    sudo mkdir /etc/bareos/tray-monitor.d/director
+    sudo nano /etc/bareos/tray-monitor.d/director/bareos-mon.conf  # contents follows:
+
+    Director {
+      Name = bareos-mon
+      address = Rockstor-IP_or_hostname
+    }
+
+Optionally add Storage tray-monitoring:
+
+.. code-block:: bash
+
+    sudo mkdir /etc/bareos/tray-monitor.d/storage/
+    sudo nano /etc/bareos/tray-monitor.d/storage/bareos-mon.conf  # contens follows:
+
+    Storage {
+      Name = bareos-storage
+      Address = Rockstor-IP_or_hostname
+      Password = "as-per_Share:bareos-dir-config bareos-sd.d/director/bareos-mon.conf"
+    }
+
+With both optional additions:
+
+.. code-block:: bash
+
+    tree /etc/bareos/tray-monitor.d/
+
+    /etc/bareos/tray-monitor.d/
+    ├── client
+    │   └── FileDaemon-local.conf
+    ├── director
+    │   └── bareos-mon.conf
+    ├── monitor
+    │   └── bareos-mon.conf
+    └── storage
+        └── bareos-mon.conf
+
 
 Open port 9102
 ^^^^^^^^^^^^^^
@@ -356,6 +424,12 @@ Or a specific source IP (e.g. 192.168.2.115).
 
     sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.2.115" port protocol="tcp" port="9102" accept'
     sudo firewall-cmd --reload
+
+Status of run-time firewall configuration:
+
+.. code-block:: bash
+
+    sudo firewall-cmd --list-all
 
 Status Check
 ^^^^^^^^^^^^
@@ -379,7 +453,7 @@ These are all known as Director Resources.
 `JobDefs <https://docs.bareos.org/Configuration/Director.html#jobdefs-resource>`_
 are Job Defaults honoured if not overridden by a specific Job.
 They primarily define shared settings across, for example, multiple similar clients.
-Each Job can then be setup by override only, for example, the Client the job pertains to.
+Each Job can then be setup by overriding only, for example, the Client.
 
 I.e. A job defines: what (FileSet) on which (Client) is to be backed-up/restored to/from which
 (Storage / Bareos Pool).
@@ -403,9 +477,10 @@ Useful to examine the expected file count, Backup size, and optionally a filelis
 From `bconsole commands <https://docs.bareos.org/TasksAndConcepts/BareosConsole.html#console-commands>`_.
 
 
-... code-block:: bash
+.. code-block:: bash
 
     estimate job=backup-tuxlap
 
-Adding `listing` to the above adds a file listing to the output.
+- Adding `listing` to the above command requests what files are to be backed-up
+- Adding `level=Incremental` or `level=Differential` will set the type of backup to be estimated.
 
