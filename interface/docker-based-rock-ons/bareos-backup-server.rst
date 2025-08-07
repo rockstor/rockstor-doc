@@ -39,8 +39,8 @@ This Rock-on honours the above separation of concerns by hosting one of each of 
 Constituting a Bareos server set, with a Director-local File/Client instance:
 enabling the default `BackupCatalog` job which include all shared server-side configuration.
 :ref:`Rocknets <rockons_networking>` are then used to establish the required inter-service communication.
-Registered Client machines can then reference the Rockstor IP: where all relevant ports are surfaced.
-I.e. Registered Bareos clients connect to this Rock-ons instantiated services and backup "To" the Rockstor server.
+Client machines can then reference the Rockstor IP: where all relevant ports are surfaced.
+I.e. Clients once :ref:`added <bareos_add_client>` can connect to this Rock-on's instantiated Bareos services and backup "To" the Rockstor server.
 
 .. note::
     This rock-on uses docker images authored by the Rockstor maintainers.
@@ -81,10 +81,9 @@ The requirements for this Rock-on are as follows:
    This is critical to inform you of;
    Backup/Restore success/failure, to receive recovery bootstrap files,
    tape-change instructions etc.
-2. Ensure SSH access to the Rockstor server (default as 'root' user).
-   Ideally required to ease retrieval of the exported client configuration.
-   During more recent Rockstor TW/SR based installer,
-   there is a SSH key enrolment process.
+2. Ensure SSH access to the Rockstor server: default for 'root' user.
+   Ideally required to ease client configuration via the :ref:`bareos_retrieve_client_config` procedure.
+   During more recent Rockstor TW/SR based installer, there is a recommended :ref:`ssh_key_enrollment` process.
 
 .. _bareos_usergroup:
 
@@ -93,7 +92,7 @@ Create Bareos User & Group
 
 There is a requirement to match the User ID and Group ID within the container,
 with those within the host: Rockstor in this case.
-The following two command, run as the 'root' user, will ensure this is the case:
+The following two commands, run as the 'root' user, will ensure this is the case:
 
 .. code-block:: bash
 
@@ -105,7 +104,7 @@ The following two command, run as the 'root' user, will ensure this is the case:
 Create Shares
 ^^^^^^^^^^^^^
 
-The following :ref:`Share <shares>` names are arbitrary but will help in following this how-to:
+The following :ref:`Share <shares>` names are arbitrary but will help in following this guide:
 
 Create the following, `(bareos:bareos)` indicates the required user:group for each.
 
@@ -134,8 +133,8 @@ Visit: System - Network - :ref:`Add Connection <network_add_connection>` within 
 Installing Bareos Rock-on
 -------------------------
 
-Ensure the above :ref:`bareos_pre` and navigate to
-Rockons - All (Tab), then click **Install** on the **Bareos Backup Server** entry.
+Ensure the above :ref:`bareos_pre` and navigate to the Rockons - All (Tab),
+then click **Install** on the **Bareos Backup Server** entry.
 
 .. _bareos_shares_select:
 
@@ -143,7 +142,7 @@ Bareos Shares
 ^^^^^^^^^^^^^
 
 In the following we use the suggested shared from our earlier :ref:`bareos_shares` step.
-Note that these names are also indicated in each fields label.
+Note that the same suggested names are indicated in each fields label.
 
 .. image:: /images/interface/docker-based-rock-ons/bareos_shares.png
    :width: 100%
@@ -167,7 +166,7 @@ Bareos Passwords & Email
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enter the desired passwords,
-and the email Sender & Receiver email addresses from your :ref:`email_current`.
+and the email Sender & Receiver addresses from your :ref:`email_current`.
 
 .. image:: /images/interface/docker-based-rock-ons/bareos_envars.png
    :width: 100%
@@ -217,7 +216,7 @@ Post login the default Webui is displayed:
 .. _bareos_bconsole:
 
 Bareos Console
----------------
+--------------
 
 Aside from the :ref:`bareos_webui`,
 there is also the Bareos Console or `bconsole <https://docs.bareos.org/TasksAndConcepts/BareosConsole.html>`_:
@@ -249,20 +248,24 @@ Via 'root' user SSH on the Rockstor host:
 
 Use the ``exit`` command repeatedly to leave the bconsole, the container shell, and the Rockstor console itself.
 
-.. _bareos_client_reg:
+.. _bareos_add_client:
 
-Client Registration
--------------------
+Add Client
+----------
 
-Bareos Clients must be **Added** to, or **Registered** with, at least one **Bareos Director**.
-I.e. each client can be backed-up by more than one Director.
-The following instructions assume:
+Bareos Clients must be **Added** to at least one **Bareos Director** to facilitate backup jobs managed by that director.
+Each client can have backups managed by any number of independent Directors.
+This Rock-on container one **Director** with the default name **bareos-dir**.
+
+The following example setup assumes:
 
 1. Client machine runs Linux with command ``hostname`` output of **tuxlap**. Replace appropriately.
-2. **/home** only midday (13:00) backup. See :ref:`bareos_doc` for other examples.
-3. Rockstor and **tuxlap** can ping one-another by the provided IPs or hostnames.
+2. **/home** only midday (13:00) backup, i.e. the FileSet and Schedule of the example :ref:`bareos_backup_job`; respectively.
+3. Rockstor server and **tuxlap** can ping one-another by at least their IPs and ideally their hostnames.
 
-Using an unrestricted / admin bconsole, default in this Rock-on's Webui:
+.. note::
+
+    During subsequent :ref:`bareos_client_install` a machine with a hostname **tuxlap** will be assigned a Client name **tuxlap-fd**.
 
 .. code-block:: bash
 
@@ -274,23 +277,24 @@ Using an unrestricted / admin bconsole, default in this Rock-on's Webui:
     and `Passive Client <https://docs.bareos.org/TasksAndConcepts/NetworkSetup.html#section-passiveclient>`_
     avoids many common firewall, NAT, & name resolution issues.
 
-.. note::
+The above command creates:
 
-    Show current clients via: ``*show clients``.
-    Remove clients via:
-    1. ``*purge jobs client=tuxlap-fd``,
-    2. (bareos-dir container) `bareos-dbcheck <https://docs.bareos.org/Appendix/BareosPrograms.html#bareos-dbcheck>`_
-
-The above creates:
-
-1. `/etc/bareos/bareos-dir-export/client/tuxlap-fd/bareos-fd.d/director/bareos-dir.conf` for client-side use.
+1. `/etc/bareos/bareos-dir-export/client/tuxlap-fd/bareos-fd.d/director/bareos-dir.conf` :ref:`exported client-side config <bareos_retrieve_client_config>`.
 2. `/etc/bareos/bareos-dir.d/client/tuxlap-fd.conf` director-side config.
 
-**Where `/etc/bareos` maps to the `bareos-dir-config` Share.**
+Where `/etc/bareos` maps to the `bareos-dir-config` Share: assuming the suggestions in :ref:`bareos_shares` above.
 
-.. note::
+Show current clients via: ``*show clients``.
 
-    A machine with hostname **tuxlap** is given a Client name of **tuxlap-fd** (fd = File Daemon).
+.. warning::
+
+    Bareos actively guards against data deletion; as such removing clients (and their Catalog entries) is non-trivial:
+
+    1. ``*purge jobs client=tuxlap-fd``: orphaning the client records.
+    2. In bareos-dir container shell: `bareos-dbcheck -v -f <https://docs.bareos.org/Appendix/BareosPrograms.html#bareos-dbcheck>`_
+    3. Select **Check for orphaned Client records**.
+
+    N.B. Client associated File Storage and Tape content remain.
 
 .. _bareos_client_install:
 
@@ -302,8 +306,8 @@ a machine must have the Bareos Client/File software installed.
 Ideally a similar version to that on the Server, the :ref:`bareos_webui` shows running/connected versions.
 
 - See: `Installing a Bareos Client <https://docs.bareos.org/IntroductionAndTutorial/InstallingBareosClient.html>`_
-- Minimal install: **bareos-filedaemon**
-- Desktop / Laptop: **bareos-client** (bareos-filedaemon, bareos-bconsole, and bareos-traymonitor)
+- Minimal install package name: **bareos-filedaemon**
+- Desktop / Laptop package name: **bareos-client** (includes: bareos-filedaemon, bareos-bconsole, and bareos-traymonitor)
 
 E.g. openSUSE Leap 15.6 Desktop/Laptop (community, current assumed) :
 
@@ -314,32 +318,36 @@ E.g. openSUSE Leap 15.6 Desktop/Laptop (community, current assumed) :
     zypper refresh
     zypper install bareos-client
 
-The above create:
+.. _bareos_client_config:
 
-File/Client config
-^^^^^^^^^^^^^^^^^^
+Client Config
+^^^^^^^^^^^^^
 
 From **bareos-filedaemon** package:
 
-1. `/etc/bareos/bareos-fd.d/client/myself.conf` This Client's `Name`, e.g. "tuxlap-fd".
-2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Full (admin console) Authorized Director credentials.
+1. `/etc/bareos/bareos-fd.d/client/myself.conf` This Client's `Name`, e.g. "tuxlap-fd": auto-set from ``hostname`` output plus "-fd" (File Daemon).
+2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Overwrite with export file created during :ref:`bareos_add_client`.
 3. `/etc/bareos/bareos-fd.d/director/bareos-mon.conf` Tray-monitor (bareos-mon password) status credentials.
 4. `/etc/bareos/tray-monitor.d/client/FileDaemon-local.conf` 'localhost' File/Client credentials (bareos-mon password)
 
-Replace 2. with Director exported credentials as generated in :ref:`bareos_client_reg` above.
+.. _bareos_retrieve_client_config:
+
+Retrieve exported config
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If a proposed client is first :ref:`added to a director <bareos_add_client>`, such as in this guide,
+the relevant client-side bareos-dir.conf can be retrieved from the director's **bareos-dir-export** sub-directory via 'root' user SSH/SCP.
 
 .. code-block:: bash
 
-    sudo scp root@rockstor-ip:///mnt2/bareos-dir-config/bareos-dir-export/client/tuxlap-fd/bareos-fd.d/director/bareos-dir.conf /etc/bareos/bareos-fd.d/director/bareos-dir.conf
+    sudo scp root@rockstor-ip:///mnt2/bareos-dir-config/bareos-dir-export/*/tuxlap-fd/*/*/bareos-dir.conf /etc/bareos/bareos-fd.d/director/bareos-dir.conf
     sudo systemctl stop bareos-fd.service
     sudo systemctl start bareos-fd.service
 
-*I.e. Client retrieves credentials exported by the director during registration on the Rockstor server.*
-
 .. note::
 
-    Alternatively match credentials by hand,
-    however exported credentials contain a hashed password, which is preferred.
+    Alternatively match credentials by hand.
+    N.B. exported credentials contain a hashed password, which is preferred.
 
 From **bareos-bconsole** package:
 
@@ -349,7 +357,7 @@ For a client-side unrestricted / admin **bconsole**:
 
 - Change 'localhost' to Rockstor's hostname or IP.
 - Change password to match bconsole.conf in the root of Share:
-  `bareos-dir-config` (/mnt2/bareos-dir-config/bconsole.conf)
+  `bareos-dir-config` (/mnt2/bareos-dir-config/bconsole.conf), assuming the suggestions in :ref:`bareos_shares` above.
 
 A restricted / `named console <https://docs.bareos.org/Configuration/Console.html#using-named-consoles>`_
 is also configurable.
@@ -440,13 +448,15 @@ Establish if the Director can communicate with the new client.
 
     *status client=tuxlap-fd
 
+.. _bareos_backup_job:
+
 Backup Job
 ----------
 
 A Bareos `Job <https://docs.bareos.org/Configuration/Director.html#directorresourcejob>`_ associates;
 a `Client <https://docs.bareos.org/Configuration/Director.html#client-resource>`_,
 a `FileSet <https://docs.bareos.org/Configuration/Director.html#fileset-resource>`_,
-a `Storage <https://docs.bareos.org/Configuration/Director.html#storage-resource>`_.
+a `Storage <https://docs.bareos.org/Configuration/Director.html#storage-resource>`_ service,
 a `Pool <https://docs.bareos.org/Configuration/Director.html#pool-resource>`_, and
 a `Schedule <https://docs.bareos.org/Configuration/Director.html#schedule-resource>`_.
 These are all known as Director Resources.
@@ -455,8 +465,9 @@ are Job Defaults honoured if not overridden by a specific Job.
 They primarily define shared settings across, for example, multiple similar clients.
 Each Job can then be setup by overriding only, for example, the Client.
 
-I.e. A job defines: what (FileSet) on which (Client) is to be backed-up/restored to/from which
-(Storage / Bareos Pool).
+.. note::
+
+    I.e. A job defines: what (FileSet) on which (Client) is to be backed-up/restored to/from which (Storage / Bareos Pool).
 
 `Pool` in this context is a set of Bareos Storage Volumes,
 akin but unrelated to Rockstor's :ref:`Pools` as sets of disks.
@@ -464,11 +475,18 @@ akin but unrelated to Rockstor's :ref:`Pools` as sets of disks.
 Linux /home Backup Job
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Named **backup-tuxlap** for the **tuxlap-fd** client :ref:`registered <bareos_client_reg>` earlier.
+Named **backup-tuxlap** for the **tuxlap-fd** client :ref:`registered <bareos_add_client>` earlier.
 
 .. code-block:: bash
 
     *configure add job name=backup-tuxlap client=tuxlap-fd jobdefs=LinuxHomeJob
+
+.. note::
+
+    The **LinuxHomeJob** default FileSet (LinuxHome) has an
+    `Exclude Dir Containing <https://docs.bareos.org/Configuration/Director.html#config-Dir_Fileset_Include_ExcludeDirContaining>`_ **.nobackup**.
+    So any directory containing this hidden file will be ignored during Backup jobs.
+    Note: all subdirectories will also be ignored.
 
 Job Estimate
 ^^^^^^^^^^^^
@@ -476,11 +494,10 @@ Job Estimate
 Useful to examine the expected file count, Backup size, and optionally a filelist.
 From `bconsole commands <https://docs.bareos.org/TasksAndConcepts/BareosConsole.html#console-commands>`_.
 
-
 .. code-block:: bash
 
-    estimate job=backup-tuxlap
+    *estimate job=backup-tuxlap
 
-- Adding `listing` to the above command requests what files are to be backed-up
+- Adding `listing` to the above command requests additional output of what files are to be backed-up.
 - Adding `level=Incremental` or `level=Differential` will set the type of backup to be estimated.
 
