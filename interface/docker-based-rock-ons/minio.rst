@@ -100,7 +100,7 @@ You'll see a screen indicating the Rock-on is being installed.  Click "Close".
 MinIO Installation Successful
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Congratulations!  You can open a Web browser and navigate to 
-`http://domain-name:9001` to go to the MinIO Web management interface.  
+`http://ROCKSTOR-IP:9001` to go to the MinIO Web management interface.  
 There you can view and create storage objects.  Point
 your S3-compatible application at your new server and you are 
 up and running with MinIO block storage. 
