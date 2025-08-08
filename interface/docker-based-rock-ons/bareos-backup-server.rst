@@ -13,34 +13,36 @@ Please be aware of the common prerequisites for all Rockstor
 What is Bareos
 --------------
 
-`Bareos <https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html>`_
-BAckup and REcovery `Open Source <https://github.com/bareos/bareos>`_ software:
-network-based, enterprise class, and multiply
-`certified <https://www.bareos.com/product/certifications/>`_.
-Compatible with all major operating systems as Clients,
-with VM, raw partition, Database, etc backup options.
+`Bareos <https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html>`_:
+(BAckup and REcovery `Open Source <https://github.com/bareos/bareos>`_) is network Client/Server based,
+enterprise class, multiply `certified <https://www.bareos.com/product/certifications/>`_ cross operating system,
+backup software.
+Client software is available for all major operating systems,
+with VM, raw partition, database, etc capabilities.
 There is also
 `compatibility <https://docs.bareos.org/Appendix/DisasterRecoveryUsingBareos.html#bare-metal-recovery-of-bareos-clients>`_
-with `Relax-and-Recover (ReaR) <https://relax-and-recover.org/>`_.
-Bareos is a 2010 AGPL-3.0 Licensed fork of the then 10 years old `Bacular <https://www.bacula.org/>`_,
-see also `Bacular Systems <https://www.baculasystems.com/>`_,
-where the supported/enterprise variant is no longer open source, i.e. an open core model.
+with `Relax-and-Recover (ReaR) <https://relax-and-recover.org/>`_; assuming whole system backups.
 
-For flexibility the Bareos software stack is comprised of
+As a 2010 **AGPL-3.0 Licensed** fork of the then 10 years old `Bacular <https://www.bacula.org/>`_,
+see also `Bacular Systems <https://www.baculasystems.com/>`_ (enterprise variant no longer open source),
+Bareos has a 25+ year development history of being completely open source.
+
+For flexibility the Bareos software stack is modular; comprised of
 `distinct services <https://www.bareos.com/software/>`_:
 
 - Director - Overall controller.
 - Catalog - Database (Postgres) for the Director.
 - Storage - Archives agent; HDD/SSD, SAS, SDS, Tape, Ceph, GlusterFS, S3, etc.
 - File - Client software.
-- Webui - Web user interface to the Director.
+- WebUI - Web user interface to the Director.
 
 This Rock-on honours the above separation of concerns by hosting one of each of the above in discrete docker containers.
 Constituting a Bareos server set, with a Director-local File/Client instance:
 enabling the default `BackupCatalog` job which include all shared server-side configuration.
 :ref:`Rocknets <rockons_networking>` are then used to establish the required inter-service communication.
 Client machines can then reference the Rockstor IP: where all relevant ports are surfaced.
-I.e. Clients once :ref:`added <bareos_add_client>` can connect to this Rock-on's instantiated Bareos services and backup "To" the Rockstor server.
+I.e. Clients, once :ref:`added <bareos_add_client>` to the included Director,
+can connect to this Rock-on's instantiated Bareos services and backup "To" Rockstor managed storage.
 
 .. note::
     This rock-on uses docker images authored by the Rockstor maintainers.
@@ -66,7 +68,7 @@ From the `Bareos website <https://www.bareos.com/>`_:
 
 - Manual: https://docs.bareos.org/
 - Tutorial: https://docs.bareos.org/IntroductionAndTutorial.html
-- Webui: https://docs.bareos.org/IntroductionAndTutorial/BareosWebui.html
+- WebUI: https://docs.bareos.org/IntroductionAndTutorial/BareosWebui.html
 - Adding a Client: https://docs.bareos.org/IntroductionAndTutorial/Tutorial.html#adding-a-client
 - Training: https://www.bareos.com/learn/training/
 
@@ -90,7 +92,7 @@ The requirements for this Rock-on are as follows:
 Create Bareos User & Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is a requirement to match the User ID and Group ID within the container,
+There is a requirement to match the User ID and Group ID within the containers,
 with those within the host: Rockstor in this case.
 The following two commands, run as the 'root' user, will ensure this is the case:
 
@@ -106,24 +108,24 @@ Create Shares
 
 The following :ref:`Share <shares>` names are arbitrary but will help in following this guide:
 
-Create the following, `(bareos:bareos)` indicates the required user:group for each.
+Create the following Shares: note `(bareos:bareos)` indicates the required user:group, where required.
 
 - **bareos-catalog** Used by the Postgres/DB container for the CATALOG.
 - **bareos-backups** (bareos:bareos) - BACKUP location for the Storage service.
 - **bareos-dir-config** (bareos:bareos) - Director/Storage/File shared configuration.
 - **bareos-dir-data** (bareos:bareos) - Director/Storage/File shared running state.
-- **bareos-webui** - Webui configuration.
+- **bareos-webUI** - WebUI configuration.
 
 .. _bareos_rocknet:
 
 Create Rocknet
 ^^^^^^^^^^^^^^
 
-The Rockon install process automatically creates the following docker networks:
+The Rock-on install process automatically creates the following docker networks:
 BareosDirToDB, BareosDirToStorage, BareosDirToFd, and BareosDirToWebui.
-However, due to current Rockstor limitations, the following Rocknet must be created by-hand.
+However, due to current Rock-on limitations, the following Rocknet must be created by-hand.
 
-Visit: System - Network - :ref:`Add Connection <network_add_connection>` within the Web-UI.
+(Rockstor :ref:`webui`) Navigate to: System - Network - :ref:`Add Connection <network_add_connection>`.
 
 - Name: **BareosFdToStorage**
 - Type: :ref:`docker <network_add_connection_docker>`
@@ -133,7 +135,7 @@ Visit: System - Network - :ref:`Add Connection <network_add_connection>` within 
 Installing Bareos Rock-on
 -------------------------
 
-Ensure the above :ref:`bareos_pre` and navigate to the Rockons - All (Tab),
+Ensure the above :ref:`bareos_pre` and navigate to the Rock-ons - All (Tab),
 then click **Install** on the **Bareos Backup Server** entry.
 
 .. _bareos_shares_select:
@@ -141,8 +143,8 @@ then click **Install** on the **Bareos Backup Server** entry.
 Bareos Shares
 ^^^^^^^^^^^^^
 
-In the following we use the suggested shared from our earlier :ref:`bareos_shares` step.
-Note that the same suggested names are indicated in each fields label.
+In the following we use the suggested Share name from the earlier :ref:`bareos_shares` section.
+Note that the same suggested names are indicated in each fields label between square brackets: i.e. [e.g. ...].
 
 .. image:: /images/interface/docker-based-rock-ons/bareos_shares.png
    :width: 100%
@@ -177,7 +179,7 @@ and the email Sender & Receiver addresses from your :ref:`email_current`.
 Post-install requirements
 -------------------------
 
-After the above install completes, the **BareosFdToStorage** Rocknet must be applied.
+After the above install completes, the **BareosFdToStorage** Rocknet :ref:`created earlier <bareos_rocknet>`, must be applied.
 
 1. Switch the `Bareos Backup Server` Rock-on **OFF** (required to add Rocknets).
 2. Click the **Spanner** icon.
@@ -195,19 +197,19 @@ the Rock-on should restart automatically.
 
 .. _bareos_webui:
 
-Bareos Webui
+Bareos WebUI
 ------------
 
 Within the Rock-on listing click the "Bareos Backup Server UI" button.
 
-Webui login
+WebUI login
 ^^^^^^^^^^^
 
 - Director: bareos-dir - Other directors can be selected once added to the configuration.
 - User: admin - preconfigured in this install
 - Password: ********** - from :ref:`bareos_envars` above
 
-Post login the default Webui is displayed:
+Post login the default WebUI is displayed:
 
 .. image:: /images/interface/docker-based-rock-ons/bareos_webui.png
    :width: 100%
@@ -248,6 +250,11 @@ Via 'root' user SSH on the Rockstor host:
 
 Use the ``exit`` command repeatedly to leave the bconsole, the container shell, and the Rockstor console itself.
 
+.. note::
+
+    The :ref:`bareos_client_install` section below covers the **bareos-bconsole** package,
+    along with instructions to enable this as a full client-side **bconsole**.
+
 .. _bareos_add_client:
 
 Add Client
@@ -255,17 +262,17 @@ Add Client
 
 Bareos Clients must be **Added** to at least one **Bareos Director** to facilitate backup jobs managed by that director.
 Each client can have backups managed by any number of independent Directors.
-This Rock-on container one **Director** with the default name **bareos-dir**.
+This Rock-on contains one **Director** with the default name **bareos-dir**.
 
 The following example setup assumes:
 
 1. Client machine runs Linux with command ``hostname`` output of **tuxlap**. Replace appropriately.
 2. **/home** only midday (13:00) backup, i.e. the FileSet and Schedule of the example :ref:`bareos_backup_job`; respectively.
-3. Rockstor server and **tuxlap** can ping one-another by at least their IPs and ideally their hostnames.
+3. Rockstor server and Client machine can ping one-another by at least their IPs, and ideally their hostnames.
 
 .. note::
 
-    During subsequent :ref:`bareos_client_install` a machine with a hostname **tuxlap** will be assigned a Client name **tuxlap-fd**.
+    Note: during subsequent :ref:`bareos_client_install` a machine with a hostname **tuxlap** will be assigned a Client name **tuxlap-fd**.
 
 .. code-block:: bash
 
@@ -301,9 +308,11 @@ Show current clients via: ``*show clients``.
 Client Install
 --------------
 
-To use a Bareos Backup Server,
-a machine must have the Bareos Client/File software installed.
-Ideally a similar version to that on the Server, the :ref:`bareos_webui` shows running/connected versions.
+For a client machine to use the Bareos Backup Server Rock-on,
+if must have the Bareos Client/File software installed.
+Ideally a similar version to the Bareos Server components,
+the :ref:`bareos_webui` shows the Director version in the header menu.
+As does the bconsole command ``*status director``.
 
 - See: `Installing a Bareos Client <https://docs.bareos.org/IntroductionAndTutorial/InstallingBareosClient.html>`_
 - Minimal install package name: **bareos-filedaemon**
@@ -326,7 +335,7 @@ Client Config
 From **bareos-filedaemon** package:
 
 1. `/etc/bareos/bareos-fd.d/client/myself.conf` This Client's `Name`, e.g. "tuxlap-fd": auto-set from ``hostname`` output plus "-fd" (File Daemon).
-2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Overwrite with export file created during :ref:`bareos_add_client`.
+2. `/etc/bareos/bareos-fd.d/director/bareos-dir.conf` Overwrite with exported file from :ref:`bareos_add_client` via :ref:`bareos_retrieve_client_config` below.
 3. `/etc/bareos/bareos-fd.d/director/bareos-mon.conf` Tray-monitor (bareos-mon password) status credentials.
 4. `/etc/bareos/tray-monitor.d/client/FileDaemon-local.conf` 'localhost' File/Client credentials (bareos-mon password)
 
@@ -353,10 +362,10 @@ From **bareos-bconsole** package:
 
 1. `/etc/bareos/bconsole.conf` 'localhost' director **bconsole** credentials.
 
-For a client-side unrestricted / admin **bconsole**:
+For a client-side unrestricted/admin remote **bconsole** on the Rock-on Directory:
 
 - Change 'localhost' to Rockstor's hostname or IP.
-- Change password to match bconsole.conf in the root of Share:
+- Change password to match that found in the bconsole.conf file, in the root of Share:
   `bareos-dir-config` (/mnt2/bareos-dir-config/bconsole.conf), assuming the suggestions in :ref:`bareos_shares` above.
 
 A restricted / `named console <https://docs.bareos.org/Configuration/Console.html#using-named-consoles>`_
@@ -366,7 +375,7 @@ From **bareos-traymonitor** package:
 
 1. `/etc/bareos/tray-monitor.d/monitor/bareos-mon.conf`
 
-- Change `bareos-mon.conf` password to match that in Share: `bareos-dir-config` /bareos-dir.d/console/bareos-mon.conf
+- Change `bareos-mon.conf` password to match that in /mnt2/bareos-dir-config/bareos-dir.d/console/bareos-mon.conf
 - `Example Traymonitor configuration <https://docs.bareos.org/Configuration/Monitor.html#example-traymonitor-configuration>`_
   for further bareos-mon.conf additions.
 
@@ -475,7 +484,7 @@ akin but unrelated to Rockstor's :ref:`Pools` as sets of disks.
 Linux /home Backup Job
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Named **backup-tuxlap** for the **tuxlap-fd** client :ref:`registered <bareos_add_client>` earlier.
+Named **backup-tuxlap** for the **tuxlap-fd** client :ref:`added <bareos_add_client>` earlier.
 
 .. code-block:: bash
 
