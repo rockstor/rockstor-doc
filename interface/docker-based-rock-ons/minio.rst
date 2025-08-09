@@ -63,32 +63,15 @@ Specify the share you created for MinIO.
    :align: center
 
 
-.. _minio_port:
-
-MinIO Ports
-^^^^^^^^^^^^^^^
-The default "MinIO Admin Portal Port" is 9001; the default "MinIO API Port"  
-is 9000.  You can choose different ports if you are already using 9000/9001 
-for another application, but it is wise to stick with the standard ports, 
-if possible.
-
-.. image:: /images/interface/docker-based-rock-ons/minio_ports.png
-   :width: 100%
-   :align: center
-
-
 .. _minio_environment:
 
 MinIO Environment
 ^^^^^^^^^^^^^^^^^^^^^^
-MinIO needs values for three environment variables.  "MinIO Admin User" 
+MinIO needs values for two environment variables.  "MinIO Admin User" 
 (3 to 128 alphanumeric characters) and 
 "MinIO Admin Password" (8 to 128 alphanumeric characters) 
 are the username and password you will use on the Web 
-interface and in your S3-compatible client software.  "MinIO Console Address" 
-must be set to the same port you chose in the previous dialog for 
-"MinIO Admin Portal Port", but with a colon in front.  (":9001", for 
-example.)
+interface and in your S3-compatible client software.
 
 .. image:: /images/interface/docker-based-rock-ons/minio_environment.png
    :width: 100%
@@ -111,11 +94,16 @@ You'll see a screen indicating the Rock-on is being installed.  Click "Close".
    :width: 100%
    :align: center
 
+
+.. _minio_success:
+
 MinIO Installation Successful
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Congratulations!  You can use the "MinIO UI" button to go to the Web
-management interface to view and create storage objects, and you can point
-your S3-compatible application at your new server. 
+Congratulations!  You can open a Web browser and navigate to 
+`http://ROCKSTOR-IP:9001` to go to the MinIO Web management interface.  
+There you can view and create storage objects.  Point
+your S3-compatible application at your new server and you are 
+up and running with MinIO block storage. 
 
 .. image:: /images/interface/docker-based-rock-ons/minio_finished.png
    :width: 100%
