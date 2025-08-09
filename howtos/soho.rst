@@ -105,7 +105,7 @@ should also install just fine using an external USB CD/DVD drive.
 Burn the downloaded Rockstor ISO file onto a blank CD or DVD disk as a bootable
 image. On Linux, you can use programs like K3b. On Windows, you can use Windows
 Disc Image Burner(Windows 7 only) or an open source program like
-`Infra Recorder <http://infrarecorder.org/>`_. On Mac, use the **Disk Utility**
+`Infra Recorder <http://infrarecorder.org/>`_. On macOS, use the **Disk Utility**
 program.
 
 Once the disk is ready to be booted, insert it in your soon to be Rockstor
@@ -124,15 +124,15 @@ A USB flash drive of at least 1 GB in size is required. **All data on the USB
 drive will be erased**. So backup your data as needed before proceeding
 further.
 
-On Windows or Fedora operating systems, the Fedora Media Writer program can be
-used to prepare your USB flash drive with the Rockstor ISO file. If you are
-using the Windows operating system then Fedora Media Writer can be downloaded
-from `GetFedora.org <https://fedoraproject.org/fmw/FedoraMediaWriter-win32-latest.exe>`_
-and install it. On Fedora, run the following command::
+On Windows, macOS, or Fedora linux systems,
+the Fedora Media Writer program can be used to prepare your USB flash drive with the Rockstor ISO installer variant.
+If you are using Windows or macOS then Fedora Media Writer can be downloaded & installed from
+`GitHub MediaWriter Releases <https://github.com/FedoraQt/MediaWriter/releases>`_.
+On Fedora linux, you need only run the following command::
 
     # sudo dnf install mediawriter
 
-On Mac or any Linux operating system, use the **dd** program to prepare the USB
+On macOS or any Linux system, you can also use the **dd** program to prepare the USB
 flash drive by running the following command::
 
     # dd if=path_to_rockstor_iso of=/dev/<usb_flash_drive>
