@@ -210,6 +210,7 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Seafile <https://www.seafile.com/>`_: Secure file sharing and hosting
 * `SmokePing <https://github.com/oetiker/SmokePing>`_: Network latency history monitor
 * `Sonarr <https://sonarr.tv/>`_: (formerly NZBdrone) A PVR for usenet and bittorrent users
+* `Spoolman https://github.com/Donkie/Spoolman`_: 3D printing filament management database
 * `Subsonic <https://www.subsonic.org>`_: Music server
 * `Tautulli <https://github.com/Tautulli/Tautulli>`_: Plex usage tracker
 * `Teamspeak <https://teamspeak.com/en/>`_: VoIP software
