@@ -70,7 +70,7 @@ Spoolman does not need any environment variable defined.
 .. _Spoolman_port:
 
 Spoolman Port
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 Spoolman needs to know what TCP port you would like to assign to the Web admin interface. 
 Select a port that is not currently in use on your RockStor server.
 
