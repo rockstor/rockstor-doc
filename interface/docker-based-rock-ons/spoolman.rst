@@ -82,7 +82,7 @@ Select a port that is not currently in use on your RockStor server.
 .. _Spoolman_verify:
 
 Spoolman Verify and Submit
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Verify the information you've provided is correct, then click "Submit".
 
 .. image:: /images/interface/docker-based-rock-ons/Spoolman_submit.png
