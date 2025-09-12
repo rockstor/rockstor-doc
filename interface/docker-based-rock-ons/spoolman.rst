@@ -1,7 +1,7 @@
 .. _Spoolman_rockon:
 
 Spoolman Rock-on
-=============
+================
 
 Before you install Spoolman, you should understand the prerequisites
 and configurations common to all Rockstor :ref:`rockons_intro`;
