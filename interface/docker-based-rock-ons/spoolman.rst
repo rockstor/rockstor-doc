@@ -14,15 +14,15 @@ requirement.
 What is Spoolman
 -----------------
 
-From the author's repository description: "Spoolman is a self-hosted web service designed 
-to help you efficiently manage your 3D printer filament spools and monitor their 
-usage.  It acts as a centralized database that seamlessly integrates with 
+From the author's repository description: "Spoolman is a self-hosted web service
+designed to help you efficiently manage your 3D printer filament spools and monitor their usage. 
+It acts as a centralized database that seamlessly integrates with 
 popular 3D printing software like OctoPrint and Klipper/Moonraker.  
-When connected, it automatically updates spool weights as printing progresses, 
+When connected, it automatically updates spool weights as printing progresses,
 giving you real-time insights into filament usage."  
 
-For more information go to https://github.com/Donkie/Spoolman.  Be sure to check for 
-compatibility with your print system.
+For more information go to https://github.com/Donkie/Spoolman.
+Be sure to check for compatibility with your print system.
 
 
 .. _Spoolman_install:
