@@ -103,7 +103,7 @@ You'll see screens indicating the Rock-on is being installed.  Click "Close".
 .. _Spoolman_success:
 
 Spoolman Installation Successful
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Congratulations!  You can click the red "Spoolman UI" button or open a Web browser 
 and navigate to `http://ROCKSTOR-IP:PORT-NUMBER` to go to the Spoolman Web management interface. 
 There you can begin to create and manage your filament library. 
