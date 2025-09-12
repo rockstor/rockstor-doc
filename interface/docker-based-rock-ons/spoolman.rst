@@ -63,14 +63,8 @@ created when installing Rockstor (the "admin" user) and the group is
 .. _Spoolman_environment:
 
 Spoolman Environment
-^^^^^^^^^^^^^^^^^^^^^^
-Spoolman needs a value for one environment variable, the timezone 
-to be used when time-stamping database entries.  Specify the timezone 
-in the standard tzdata format, for example "America/New_York".
-
-.. image:: /images/interface/docker-based-rock-ons/Spoolman_environment.png
-   :width: 100%
-   :align: center
+^^^^^^^^^^^^^^^^^^^^
+Spoolman does not need any environment variable defined.
 
 
 .. _Spoolman_port:
