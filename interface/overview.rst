@@ -245,6 +245,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    docker-based-rock-ons/openvpn-server
    docker-based-rock-ons/plex-media-server
    docker-based-rock-ons/scrutiny
+   docker-based-rock-ons/spoolman
    docker-based-rock-ons/syncthing
    docker-based-rock-ons/transmission-bittorrent
    docker-based-rock-ons/youtrack
