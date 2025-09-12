@@ -210,7 +210,6 @@ instructions they are like all Rock-on installs, fairly self explanatory.
 * `Seafile <https://www.seafile.com/>`_: Secure file sharing and hosting
 * `SmokePing <https://github.com/oetiker/SmokePing>`_: Network latency history monitor
 * `Sonarr <https://sonarr.tv/>`_: (formerly NZBdrone) A PVR for usenet and bittorrent users
-* `Spoolman <https://github.com/Donkie/Spoolman>`_: Database for managing your 3D printing filament spools
 * `Subsonic <https://www.subsonic.org>`_: Music server
 * `Tautulli <https://github.com/Tautulli/Tautulli>`_: Plex usage tracker
 * `Teamspeak <https://teamspeak.com/en/>`_: VoIP software
@@ -246,6 +245,7 @@ Note that not all Rock-ons have their own specific instructions in these docs.
    docker-based-rock-ons/openvpn-server
    docker-based-rock-ons/plex-media-server
    docker-based-rock-ons/scrutiny
+   docker-based-rock-ons/spoolman
    docker-based-rock-ons/syncthing
    docker-based-rock-ons/transmission-bittorrent
    docker-based-rock-ons/youtrack
