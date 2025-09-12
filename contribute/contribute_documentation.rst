@@ -117,20 +117,27 @@ Guidelines
 ^^^^^^^^^^
 
 To keep in line with Rockstor's goal to make its features as accessible as possible, 
-this documentation should strive to keep non-technical users as its primary target. 
+this documentation should strive to keep non-technical users as its primary target.
+
+To remain consistent, for Headings, use sentence case (only the first word and proper nouns are capitalized).
+
 As such, the use of external references and links to additional documentation to provide the reader with further technical information is encouraged.
 For content additions/changes please stick to one sentence per line as this helps with translations and reviews of changes.
-Really long sentences may be broken at punctuation points.
-See `Semantic Linefeeds <https://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_ which cites Brian W. Kernighan with a simple rule:
+Really long sentences may be broken at punctuation points, as well as dependent (subordinate) clauses.
+See `Semantic Linefeeds <https://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_ which cites Brian W. Kernighan with some simple rules:
 
-.. warning::
+.. note::
 
         Most documents go through several versions (always more than you expected) before they are finally finished.
+
         Accordingly, you should do whatever possible to make the job of changing them easy.
-        
+
         First, when you do the purely mechanical operations of typing, type so subsequent editing will be easy.
+
         Start each sentence on a new line.
+        
         Make lines short, and break lines at natural places, such as after commas and semicolons, rather than randomly.
+        
         Since most people change documents by rewriting phrases and adding, deleting and rearranging sentences, 
         these precautions simplify any editing you have to do later.
         
