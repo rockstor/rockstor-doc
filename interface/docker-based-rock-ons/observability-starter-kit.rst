@@ -76,9 +76,10 @@ Install the rock-on as you would any other.
 
 Make sure that the three shares will correspond to their expected components.
 
+
 .. _osk_after:
 
-Visualisation Dashboard
+The Visualisation Dashboard
 ------------------------------
 
 After a successful install, click on the **Observability Starter Kit** button on the Rock-ons page to open the Grafana web-UI.
@@ -90,7 +91,7 @@ After a successful install, click on the **Observability Starter Kit** button on
 At the login screen, input "admin" as both username and password.
 
 .. image:: /images/interface/docker-based-rock-ons/grafana_login.png
-   :width: 100%
+   :width: 50%
    :align: center
 
 .. warning::
@@ -142,13 +143,13 @@ we can see that this metric:
 Let's see how it looks like by clicking on the "Run queries" button
 
 .. image:: /images/interface/docker-based-rock-ons/grafana_run_queries.png
-   :width: 100%
+   :width: 30%
    :align: center
 
 You should see something like this:
 
 .. image:: /images/interface/docker-based-rock-ons/grafana_diskio_initial_chart.png
-   :width: 100%
+   :width: 50%
    :align: center
 
 The chart is pretty confusing in this state. 
@@ -161,7 +162,7 @@ Let's start by fixing the display of units:
 #. Scroll down to the section "Standard options" on the right-side menu,
 #. Select "Data / bytes (IEC)" from the list in the field "Unit"
 #. Scroll down to the section "Thresholds" and remove the red "80" item.
-#. Click on the "Run queries" button to update the dashboard, if it didn't already.
+#. Click on the "Run queries" button to update the dashboard, if it hasn't automatically already.
 
 At this point the chart should update, and you should see units with prefixes like GiB, TiB, PiB...
 
@@ -171,10 +172,10 @@ This basically means in its current state you will only ever get the *total* tra
 
 In order to get the *current* transferred bytes value, you need to make a modification to our metric.
 
-#. Select "Code". You will find it at the bottom, next to the "Run queries" button.
+#. Select the "Code" option. You will find it at the bottom, next to the "Run queries" button.
 #. Replace the current metric with the following expression: ``rate(system.disk.io[$__interval])``
 #. Change the unit from "Data / bytes (IEC)" to "Data rate / bytes/sec(IEC)"
-#. Scroll up to the "Tooltip" section, and click on the "All" item, and then on the "Descending" item.
+#. Scroll up to the "Tooltip" section, and select the "All" option, and then the "Descending" option.
 
 Now the lines will not be straight anymore because thanks to the
 `rate() function <https://docs.victoriametrics.com/victoriametrics/metricsql/#rate>`_
@@ -193,27 +194,33 @@ As mentioned before, the metric "system.disk.io" has two attributes: device and 
 The legend will be filled with a small combinatorial bomb of all your devices and their read/write directions.
 
 The device attribute basically represents the disks and partitions devices under ``/dev/``. 
-You can run ``fdisk -l`` on SSH to see what is your disk configuration.
+You can run ``fdisk -l`` via SSH to see your disk configuration.
 
 In case of NVMe OS disks, you will probably want to group them together, so that the chart won't be cluttered.
 
 Here's how:
 
 #. Replace the current metric expression with ``sum(rate(system.disk.io{device=~"nvme0n1.*",direction="read"}[$__interval]))``
+    - ``device=~"nvme0n1.*"`` performs a regex filter. It will select the ``nvme0n1`` disk as well as its partitions/namespaces.
+    - ``direction="read"`` selects the "read" operation.
+    - ``sum()`` sums all the values together.
 #. Under the "Options" section, click on the "Legend" combobox and select "Custom"
 #. Input something like "nvme read"
 #. Click on the **Add query** button below
 #. Select the "Code" option
 #. Input the following expression: ``sum(rate(system.disk.io{device=~"nvme0n1.*",direction="write"}[$__interval]))``
+    - performs the same kind of selection as above, but this time for the "write" operation.
 #. Input something like "nvme write" for the legend
 #. Add a new query with the following expression: ``rate(system.disk.io{device!~"nvme0n1.*"}[$__interval])``
+    - ``device!~"nvme0n1.*"`` performs a negated regex filter. It will select anything but ``nvme0n1``. In my case this will select ``sda``, ``sdb`` and ``sdc``.
+    - because we didn't include any ``direction`` selection, it will return values for both "read" and "write" operations, for each of the three aforementioned devices.
 #. Input "{{device}} {{direction}}" for the legend
 #. Click on a "Run queries" button to update the chart
 
 You should now see something more meaningful:
 
 .. image:: /images/interface/docker-based-rock-ons/grafana_diskio_fixed_chart.png
-   :width: 100%
+   :width: 50%
    :align: center
 
 Now try picking a different visualization:
@@ -222,16 +229,81 @@ Now try picking a different visualization:
 #. Select Stat
 #. Select Gauge
 
-Pick what suits you the most!
+Pick which suits you the most!
 
-.. _osk_further_steps:
+.. _osk_under_the_hood:
 
-Further steps
-------------------------------
+Under the hood and next steps
+-------------------------------
 
 ...also known as digging into documentation, searching for information on the internet and experimenting.
 
+Before you go off and explore the possibilities of this observability stack, let me briefly explain 
+the configuration of the three components and how they interact, so that you will understand what
+is happening under the hood.
+
+OpenTelemetry
+^^^^^^^^^^^^^
+
+For a quick introduction, first watch the short video about 
+`OpenTelemetry <https://opentelemetry.io/docs/what-is-opentelemetry/>`_.
+
+`OpenTelemetry Collector's <https://opentelemetry.io/docs/collector/>`_
+`configuration <https://opentelemetry.io/docs/collector/configuration/>`_
+is basically configured with receivers, processors and exporters.
+We have placed our 
+`config.yaml` <https://gist.github.com/kanecko/cfaaf349c26e4602878e4a5b82bd9730>`_ 
+file in :code:`/mnt2/osk-opentelemetry-collector` to be available to the Collector.
+
+We have defined the
+`"hostmetrics" <https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver>`_
+receiver which generates metrics about the host system scraped from various sources.
+All of the data being currently shown on your dashboard, is being collected by this receiver every 15 seconds.
+
+In addition to that, we have also defined two endpoints (gRPC and HTTP).
+They listen for metric data on the configured ports. 
+You can push any kind of external metrics via these ports, and they become available to be
+visualized on your dashboard in Grafana.
+
+We have defined the
+`"batch" <https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor>`_
+processor which batches all the different metric data together efficiently.
+
+We also have defined the
+`"deltatocumulative" <https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/deltatocumulativeprocessor>`_
+processor, because our VictoriaMetrics database can only understand metrics with 
+`cumulative temporality <https://docs.victoriametrics.com/guides/getting-started-with-opentelemetry/>`_.
+
+One of your next steps should be adding the "memory_limiter" processor.
+You can read more about 
+`recommended processors <https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor#recommended-processors>`_.
+
+We have defined a
+`"otlphttp" <https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/otlphttpexporter>`_
+exporter which is configured to send metric data to VictoriaMetrics database.
+If you would like to add the VictoriaLogs database to the mix, you will need to add the "logs_endpoint" field.
+
+We have defined and enabled the
+`internal telemetry for the OpenTelemetry Collector <https://opentelemetry.io/docs/collector/internal-telemetry/>`_
+service which is configured to send metric data to VictoriaMetrics database every 15 seconds.
+You can visualize these metrics in Grafana. They start with "otelcol_" in their name.
+
+All components (except the internal telemetry service), need to be added into the pipeline, 
+in order to be enabled. The pipeline components are executed in the order they were defined in.
+
+You can 
+`explore <https://opentelemetry.io/ecosystem/registry/?language=collector>`_
+all available collector receivers, processors, exporters and more.
+
+Check out their 
+`community <https://opentelemetry.io/community/>`_
+for any kind of configuration problems you might encounter.
+
+Grafana
+^^^^^^^
+
+
+
 TODO:
 grafana docs + plugins + dashboards + forum
-otel concepts + config docs + forum
 victoriametrics grafana datasource docs + vmui for debugging + rate(),irate(),increase()
