@@ -27,6 +27,8 @@ This rock-on consists of the following components:
 - `VictoriaMetrics Community Edition <https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/>`_: an efficient time-series database
 - `Grafana OSS <https://grafana.com/docs/grafana/latest/>`_: a visualization frontend
 
+In simple terms: with **OpenTelemetry** you *receive* metrics (CPU temperature, memory usage...) from different *sources* (HTTP endpoints, operating system...), you can *process* the metrics (batching, sampling...), and *export* (pull, push, HTTP, gRPC...) them. **VictoriaMetrics** is the database, where the metrics are exported to and stored in. **Grafana** displays your metrics as charts for easy monitoring.
+
 This rock-on was inspired by the similar
 `Grafana LGTM <https://grafana.com/docs/opentelemetry/docker-lgtm/>`_
 docker project. 
@@ -48,130 +50,188 @@ Ensure SSH access to the Rockstor server: default for 'root' user.
 Some steps require root SSH access.
 During more recent Rockstor TW/SR based installer, there is a recommended :ref:`ssh_key_enrollment` process.
 
-Login to your Rockstor instance.
-
-Under the *SYSTEM* menu, select the *Groups* menuitem.
-
-Click on the **Add group** button.
-  
-**Groupname**: grafana
-
-**Put this group under Rockstor management?**: checked
-
-**GID**: 472
-
-Click on the **Submit** button.
-
-Under the *SYSTEM* menu, select the *Users* menuitem.
-
-Click on the **Add user** button.
-  
-**Username**: grafana
-
-**UID**: 472
-
-**Group**: select "grafana"
-
-Click on the **Submit** button.
+#. Login to your Rockstor instance via web-UI.
+#. Under the *SYSTEM* menu, select the *Groups* menu item.
+#. Add two groups: osk-grafana and osk-opentelemetry
+#. Under the *SYSTEM* menu, select the *Users* menu item.
+#. Add two users: osk-grafana and osk-opentelemetry. Assign the group with the same name to each of them.
+#. Under the *STORAGE* menu, select the *Shares* menu item.
+#. Add three shares: osk-opentelemetry-collector, osk-victoria-metrics, osk-grafana
+#. Login to you Rockstor instance via SSH as root.
+#. Create a :code:`config.yaml` file with the `initial content <https://gist.github.com/kanecko/cfaaf349c26e4602878e4a5b82bd9730>`_ in :code:`/mnt2/osk-opentelemetry-collector`.
+#. Set the owner of the shares osk-grafana and osk-opentelemetry-collector to their corresponding UID/GID.
+#. Example*: :code:`chown -R 472:472 /mnt2/osk-grafana`
+#. Example*: :code:`chown -R 10001:10001 /mnt2/osk-opentelemetry-collector`
 
 .. note::
-    This is needed because the Grafana component expects exactly this username and UID and assigned GID.
-    Without this configuration, you will get file permission errors.
-
-Click on the **Add user** button again.
-  
-**Username**: opentelemetry
-
-**UID**: 10001
-
-**Group**: select "docker"
-
-Click on the **Submit** button.  
-
-.. note::
-    This is needed because the OpenTelemetry component expects exactly this username and UID and assigned GID.
-    Without this configuration, you will get file and docker permission errors.
-  
-create three shares: osk-grafana, osk-victoria-metrics, osk-opentelemetry-collector
-create config.yaml with the following contents in /mnt2/osk-opentelemetry-collector: https://gist.github.com/kanecko/cfaaf349c26e4602878e4a5b82bd9730
-chown -R 472:472 /mnt2/osk-grafana
-chown -R 10001:[docker GID] /mnt2/osk-opentelemetry-collector
-
+    \*Change the UID/GID from the example to the actual values that you have used in steps 2-5.
 
 
 .. _osk_install:
 
 Installing the OSK rock-on
 ------------------------------
-This rock-on does not require additional shares to be set. The only
-pre-install requirement is to identify the **group ID (GID)** of the **docker**
-group. This allows Netdata to identify by name the various rock-ons currently
-running and thus report their own resource usage accurately. The **docker
-group GID** can be easily identified using the Rockstor web-UI.
 
-First, navigate to *System* > *Groups*, and search for the **docker** group in
-the bottom table (*Other system groups*). In the example below, the **docker**
-group has a :code:`GID` of :code:`476`.
+Install the rock-on as you would any other.
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_docker_group.png
+Make sure that the three shares will correspond to their expected components.
+
+.. _osk_after:
+
+Visualisation Dashboard
+------------------------------
+
+After a successful install, click on the **Observability Starter Kit** button on the Rock-ons page to open the Grafana web-UI.
+
+.. note::
+    The initial bootstrapping of Grafana takes a few minutes. 
+    If the web-UI doesn't load, then try again after 3 minutes.
+
+At the login screen, input "admin" as both username and password.
+
+.. image:: /images/interface/docker-based-rock-ons/grafana_login.png
    :width: 100%
    :align: center
 
-We are now ready to start the installation of the Netdata rock-on. Click the
-*Install* button next to the **Netdata (official)** listing on the *Rock-ons*
-page.
+.. warning::
+    It is highly recommended to change the default password.
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_install.png
+#. Once logged-in, click on **Data sources**. You can find it on the left-side menu, below *Connections*.
+#. Click on the big **Add data source** button.
+#. Find and select "VictoriaMetrics" in the list.
+#. In the HTTP **URL** field, input "http://osk-victoria-metrics:8428".
+#. Scroll down and click the **Save & test** button.
+#. Click on **Dashboards** from the left-side menu.
+#. Click on the big **Create dashboard** button.
+#. Click on the **Import visualization** button.
+#. Paste the `dashboard configuration <https://gist.github.com/kanecko/42c696f9a07b557696be2d86430e2f31>`_ into the field "Import via dashboard JSON model".
+#. Click on the **Load** button.
+#. Select the just-added "VictoriaMetrics" datasource in the field "victoriametrics-metrics-datasource".
+#. Click on the **Import** button.
+
+Now you should see something like this:
+
+.. image:: /images/interface/docker-based-rock-ons/grafana_starter_dashboard.png
    :width: 100%
    :align: center
 
+.. _osk_add_chart:
 
-.. _netdata_port:
+Adding a new chart
+------------------------------
 
-Web-UI port
-^^^^^^^^^^^
-This corresponds to the port used to reach Netdata's web-UI. Note that
-this port **must** be set to **19999**.
+In the starter dashboard we don't see any disk metrics. 
+Let's add a I/O usage chart now.
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_webUI_port.png
+#. Enter edit mode by clicking on the **Edit** button on the top-right side.
+#. Click on the **Add** menu button, then on **Visualization**.
+#. Select the metric "system.disk.io" on the bottom side, in the *Metric* field.
+
+In the
+`documentation <https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/diskscraper/documentation.md#systemdiskio>`_
+we can see that this metric:
+
+- represents the disk bytes transferred,
+- its unit is *bytes* (`"By" <https://opentelemetry.io/docs/specs/semconv/general/metrics/#instrument-units>`_),
+- its underlying data type is *integer* ("Int"),
+- it is monotonic, which means that its value can only ever increase,
+- and has two attributes:
+    - *device*: name of the disk or device,
+    - *direction*: direction of flow, either *read* or *write*.
+
+Let's see how it looks like by clicking on the "Run queries" button
+
+.. image:: /images/interface/docker-based-rock-ons/grafana_run_queries.png
    :width: 100%
    :align: center
 
+You should see something like this:
 
-.. _netdata_pgid:
-
-PGID
-^^^^
-This corresponds to the **docker group GID** that was identified above (see
-:ref:`netdata_install` above).
-
-.. image:: /images/interface/docker-based-rock-ons/netdata_PGID.png
+.. image:: /images/interface/docker-based-rock-ons/grafana_diskio_initial_chart.png
    :width: 100%
    :align: center
 
+The chart is pretty confusing in this state. 
+We see some huge numbers on the left.
+Some very straight lines flowing to the right.
+And in the bottom, the legend is full of items.
 
-.. _netdata_verify:
+Let's start by fixing the display of units:
 
-Verify and Submit
-^^^^^^^^^^^^^^^^^
-Verify the information you've provided is correct, then click **Submit**.
+#. Scroll down to the section "Standard options" on the right-side menu,
+#. Select "Data / bytes (IEC)" from the list in the field "Unit"
+#. Scroll down to the section "Thresholds" and remove the red "80" item.
+#. Click on the "Run queries" button to update the dashboard, if it didn't already.
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_verify.png
+At this point the chart should update, and you should see units with prefixes like GiB, TiB, PiB...
+
+Now let's change those straight lines into something more meaningful.
+As mentioned before, the metric "system.disk.io" is monotonic.
+This basically means in its current state you will only ever get the *total* transferred bytes per device.
+
+In order to get the *current* transferred bytes value, you need to make a modification to our metric.
+
+#. Select "Code". You will find it at the bottom, next to the "Run queries" button.
+#. Replace the current metric with the following expression: ``rate(system.disk.io[$__interval])``
+#. Change the unit from "Data / bytes (IEC)" to "Data rate / bytes/sec(IEC)"
+#. Scroll up to the "Tooltip" section, and click on the "All" item, and then on the "Descending" item.
+
+Now the lines will not be straight anymore because thanks to the
+`rate() function <https://docs.victoriametrics.com/victoriametrics/metricsql/#rate>`_
+it will calculate the average per-second increase rate over the given time window for us.
+
+The time window in this case is denoted by ``[$__interval]`` which is bound to the time range
+that you can select above the chart (next to the "Refresh" button).
+
+The changed tooltip mode has enabled us to mouse-over the chart to see a list of current values of all devices.
+
+.. note::
+    If you have an NVMe OS disk, then you will see multiple ``nvme0n1*`` entries in the legend.
+    Let's fix this now by grouping them together.
+
+As mentioned before, the metric "system.disk.io" has two attributes: device and direction.
+The legend will be filled with a small combinatorial bomb of all your devices and their read/write directions.
+
+The device attribute basically represents the disks and partitions devices under ``/dev/``. 
+You can run ``fdisk -l`` on SSH to see what is your disk configuration.
+
+In case of NVMe OS disks, you will probably want to group them together, so that the chart won't be cluttered.
+
+Here's how:
+
+#. Replace the current metric expression with ``sum(rate(system.disk.io{device=~"nvme0n1.*",direction="read"}[$__interval]))``
+#. Under the "Options" section, click on the "Legend" combobox and select "Custom"
+#. Input something like "nvme read"
+#. Click on the **Add query** button below
+#. Select the "Code" option
+#. Input the following expression: ``sum(rate(system.disk.io{device=~"nvme0n1.*",direction="write"}[$__interval]))``
+#. Input something like "nvme write" for the legend
+#. Add a new query with the following expression: ``rate(system.disk.io{device!~"nvme0n1.*"}[$__interval])``
+#. Input "{{device}} {{direction}}" for the legend
+#. Click on a "Run queries" button to update the chart
+
+You should now see something more meaningful:
+
+.. image:: /images/interface/docker-based-rock-ons/grafana_diskio_fixed_chart.png
    :width: 100%
    :align: center
 
-You'll see a screen indicating the Rock-on is being installed.  Click "Close".
+Now try picking a different visualization:
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_final.png
-   :width: 100%
-   :align: center
+#. Click on the "Visualization" combobox
+#. Select Stat
+#. Select Gauge
 
+Pick what suits you the most!
 
-Netdata Installation Successful
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Congratulations! You can use the **Netdata (official) UI** button to go to the
-web interface to view and monitor all the metrics collected by Netdata.
+.. _osk_further_steps:
 
-.. image:: /images/interface/docker-based-rock-ons/netdata_UI.png
-   :width: 100%
-   :align: center
+Further steps
+------------------------------
+
+...also known as digging into documentation, searching for information on the internet and experimenting.
+
+TODO:
+grafana docs + plugins + dashboards + forum
+otel concepts + config docs + forum
+victoriametrics grafana datasource docs + vmui for debugging + rate(),irate(),increase()
