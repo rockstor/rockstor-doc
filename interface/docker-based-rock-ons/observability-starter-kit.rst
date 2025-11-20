@@ -1,7 +1,7 @@
 .. _osk_rockon:
 
 Observability Starter Kit Rock-on
-==========================
+=================================
 
 Before you install the Observability Starter Kit rock-on, you should understand the
 prerequisites and configurations common to all Rockstor :ref:`rockons_intro`;
@@ -286,7 +286,7 @@ If you would like to add the VictoriaLogs database to the mix, you will need to 
 We have defined and enabled the
 `internal telemetry for the OpenTelemetry Collector <https://opentelemetry.io/docs/collector/internal-telemetry/>`_
 service which is configured to send metric data to VictoriaMetrics database every 15 seconds.
-You can visualize these metrics in Grafana. They start with "otelcol_" in their name.
+You can visualize these metrics in Grafana. They start with *otelcol_* in their name.
 
 All components (except the internal telemetry service), need to be added into the pipeline, 
 in order to be enabled. The pipeline components are executed in the order they were defined in.
