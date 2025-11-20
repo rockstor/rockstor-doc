@@ -100,7 +100,7 @@ At the login screen, input "admin" as both username and password.
 #. Once logged-in, click on **Data sources**. You can find it on the left-side menu, below *Connections*.
 #. Click on the big **Add data source** button.
 #. Find and select "VictoriaMetrics" in the list.
-#. In the HTTP **URL** field, input "http://osk-victoria-metrics:8428".
+#. In the HTTP **URL** field, input :code:`http://osk-victoria-metrics:`.
 #. Scroll down and click the **Save & test** button.
 #. Click on **Dashboards** from the left-side menu.
 #. Click on the big **Create dashboard** button.
