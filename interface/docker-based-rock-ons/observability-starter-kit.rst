@@ -38,7 +38,7 @@ Key differences:
 - VictoriaMetrics was used instead of Prometheus, due do its resource-efficient implementation
 
 When I was choosing the components for this rock-on, I tried to strike a balance between resource-efficiency, 
-ease-of-use and flexibility. And the most important aspect was 100% open-sourced and without compulsory cloud 
+ease-of-use and flexibility. The most important aspect was 100% open-sourced and without compulsory cloud 
 account creation.
 
 .. _osk_pre:
@@ -302,8 +302,47 @@ for any kind of configuration problems you might encounter.
 Grafana
 ^^^^^^^
 
+Here are the relevant Grafana documentation parts for beginners:
 
+- `Dashboard <https://grafana.com/docs/grafana/latest/visualizations/dashboards/use-dashboards/>`_.
+- `Panels <https://grafana.com/docs/grafana/latest/visualizations/panels-visualizations/>`_.
 
-TODO:
-grafana docs + plugins + dashboards + forum
-victoriametrics grafana datasource docs + vmui for debugging + rate(),irate(),increase()
+Also check out their published 
+`Plugins <https://grafana.com/grafana/plugins/>`_.
+and 
+`Dashboards <https://grafana.com/grafana/dashboards/>`_.
+that you can browse through and use.
+
+In case of issues with your Grafana configuration, don't hesitate to ask them in their
+`community forum <https://community.grafana.com/>`_.
+
+VictoriaMetrics
+^^^^^^^^^^^^^^^
+
+You will spend the least time fiddling around with this component. 
+
+You should note that the configured data 
+`retention time <https://docs.victoriametrics.com/victoriametrics/single-server-victoriametrics/#retention>`_.
+is set to 1 month. After that the metrics are being deleted. 
+This means you will only ever see the maximum of 1 month of history on your dashboard charts.
+
+It is very important to learn the differences between the 
+`rate() and increase() <https://signoz.io/guides/understanding-prometheus-rate-vs-increase-functions-correctly/>`_.
+functions. 
+You will use them a lot with those monotonic counters.
+
+Another very useful tool is the *vmui*. 
+It is a web-UI for query troubleshooting and exploration.
+
+Open your browser at ``http://<Rockstor IP>:18428/vmui`` and enable the "Autocomplete" option.
+Start typing a name of the metric in the "Query" field (e.g. "sys") and select a metric.
+
+If something won't work on your Grafana charts, you will be able to get a raw view into metrics via this web-UI.
+You will be able to seek answers to the following questions:
+
+- is there any metric data present (within the configured time window)?
+- is my metric monotonic (use ``rate()``/``increase()``) or not (use values directly)?
+- which attributes are available?
+
+After you have completed your monitoring project, I suggest you check out the **Explore** menu on the top.
+These tools give you an insight into the performance of your active queries and time series cardinality.
