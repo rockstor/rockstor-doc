@@ -182,7 +182,7 @@ Reproduced here for clarity:
 
    Important:
 
-   The web gui will be available at http://serverip:port/zm.
+   The WebUI will be available at :code:`http://serverip:port/zm`.
    On first start, open zoneminder options, go to the Paths tab and enter the following for PATH_ZMS: /zm/cgi-bin/nph-zms.
 
    The default timezone for php is set as America/New_York if you would like to change it, edit the php.ini in the config folder.
