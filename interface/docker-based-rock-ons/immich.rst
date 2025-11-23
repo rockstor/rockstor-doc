@@ -173,8 +173,7 @@ Here is how you can import your files into Immich.
 2. Click on your profile image on the top-right corner of the page, then click on **Administration**.       
 3. Click on the **External Libraries** item in the left-side menu.   
 4. Click on the **Create library** link below your profile image on the top-right corner of the page. 
-5. Choose a user that will be the owner of the external library. 
-   This means that all files from the external library will be imported to the selected user's library. 
+5. Choose a user that will be the owner of the external library. This means that all files from the external library will be imported to the selected user's library. 
     - The user may choose to `share their library with other users with some limitations <https://docs.immich.app/features/partner-sharing/>`_.
 6. Click on the **Create** Button.
 7. Input the path to the external library that you've defined at :ref:`immich_mounting_external_library`. 
