@@ -3,12 +3,11 @@
 Rock-ons (Docker Plugins)
 =========================
 
-**Rock-ons** are Rockstor's name for its use of `docker
-<https://www.docker.com/>`_ containers to provide a **Plugin System** to
-easily expand the functions of a base Rockstor install.
+**Rock-ons** are Rockstor's name for its use of `docker <https://www.docker.com/>`_ containers.
+Providing a **Plugin System** to easily and freely expand the functions of a base Rockstor install.
 
-Each Rock-on aims to provide a single additional service and the list of
-:ref:`rockons_available` is expanding all the time.
+Each Rock-on aims to provide a single additional service,
+with the list of :ref:`rockons_available` expanding all the time.
 
 .. note::
     We are striving to provide Rock-ons as multi-architecture apps,
@@ -130,108 +129,50 @@ be used to set up the Plex rock-on.
 Adding your own Rock-on
 -----------------------
 
-The `rockon-registry <https://github.com/rockstor/rockon-registry>`_ contains
-the current list of freely available rock-on definition files and servers
-as the repository for :ref:`rockons_available`. Please consider contributing,
-or asking your favourite project to contribute, a rock-on via a GitHub pull
-request to this repository (see :ref:`contributerockons` for more
-information).
+The `rockon-registry <https://github.com/rockstor/rockon-registry>`_ GIT repo contains all the :ref:`rockons_available` definition files.
+Consider contributing, or asking your favourite project to contribute to this repository;
+see :ref:`contributerockons` for more information.
 
 .. note::
-    It is also possible to add to the available Rock-ons by placing a suitably
-    configured and named json file in the :code:`/opt/rockstor/rockons-metastore`
-    directory of your Rockstor install. For full instructions and examples
-    please see the :ref:`addmyownrockon` section. Some projects prefer to host
-    their own Rock-on plugins and this feature enables the use of other projects'
-    official Rock-ons. An example of a project that takes advantage of this
-    feature is `Emby <https://emby.media>`_ with their official `Rock-on
+    You can also add to your available Rock-ons locally.
+    Just place one or more appropriate JSON file/s in your local install's
+    :code:`/opt/rockstor/rockons-metastore` directory.
+    For full instructions and examples see the :ref:`addmyownrockon` section.
+    Some projects prefer to host their own Rock-on definition files,
+    taking advantage of this local only capability.
+    An example is `Emby <https://emby.media>`_ with their official `Rock-on
     <https://github.com/MediaBrowser/Emby.Build/blob/master/rockstor-plugins/embyserver.json>`_
-    definition file for the Emby server component. However this same Emby
-    Rock-on has now been added to the official Rockstor Rock-on registry.
+    definition file for the Emby server component.
+    This same Emby Rock-on forms the basis of what we now include by default.
 
 .. _rockons_available:
 
-Rock-ons available by default
------------------------------
+Available Rock-ons
+------------------
 
-As this list is continually growing, the best place to view the currently
-included by default Rock-ons is at the
-`rockon-registry <https://github.com/rockstor/rockon-registry>`_ or on the
-Rock-ons page *All* tab within the Rockstor WebUI directly after pressing the
-**Update** button.
+See the Rock-ons page within the Rockstor Web-UI (*All* tab) for a full list.
+Pressing the **Update** button on this page refreshes the list.
+See also our GIT repository:
+`rockon-registry <https://github.com/rockstor/rockon-registry>`_.
+
+- **There are around 90 Rock-ons available**, mostly contributed by the community.
 
 .. _rockons_without_writeups:
 
-Rock-ons without write-ups
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rock-ons without guides
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Although the following Rock-ons are currently without specific install
-instructions they are like all Rock-on installs, fairly self explanatory.
+Currently the large majority of Rock-ons are without specific **Rock-on guides**,
+but most Rock-on installs are fairly self explanatory.
 
-* `Booksonic <https://booksonic.org>`_: Audiobooks streaming server
-* `Cardigann <https://github.com/cardigann/cardigann>`_: A proxy server for adding new indexers to Sonarr and other media managers
-* `Collabora online <https://www.collaboraonline.com/code/>`_: LibreOffice-based online office suite
-* `COPS <https://blog.slucas.fr/projects/calibre-opds-php-server/>`_: links to your Calibre library database and provides automation features
-* `CouchPotato <https://couchpota.to/>`_: Downloader for usenet and bittorrent users
-* `Deluge <https://deluge-torrent.org/>`_: Deluge is a movie downloader for bittorrent users
-* `Dropbox <https://www.dropbox.com>`_: Cloud-based file syncing solution
-* `Duck DNS <https://www.duckdns.org>`_: Free dynamic DNS service
-* `Duplicati 2.0 <https://duplicati.com/>`_: Free backup software to store encrypted backups online
-* `ecoDMS <https://www.ecodms.de/en/>`_: Electronic Document Managing System
-* `Emby server <https://emby.media/>`_: Emby media server
-* `Ghost <https://ghost.org/>`_: A publishing platform for professional bloggers
-* `GitLab CE <https://about.gitlab.com/>`_: Git repository hosting and collaboration
-* `Gogs <https://gogs.io/>`_: Go Git Service, a lightweight Git version control server and front end
-* `Gollum <https://github.com/gollum/gollum>`_: Gollum is a simple wiki system built on top of Git
-* `Haproxy <https://github.com/daniel-illi/docker-haproxy-letsencrypt/tree/rock-on>`_: Reliable, High Performance TCP/HTTP Load Balancer with letsencrypt integration
-* `Headphones <https://github.com/rembo10/headphones>`_: Automated music downloader for NZB and Torrent
-* `Home Assistant <https://www.home-assistant.io/>`_: Open-source home automation platform
-* `HTTP to HTTPS redirect <https://github.com/geldim/docker-https-redirect>`_: Access the Rockstor web UI without having to remember to type "https:"
-* `Jackett <https://github.com/Jackett/Jackett>`_: Proxy server for queries from apps such as Sonarr, CouchPotato, and Mylar
-* `JDownloader 2 <https://jdownloader.org/>`_: Free, open-source download management tool
-* `Koel <https://koel.dev/>`_: Simple web-based personal audio streaming service
-* `Lazy Librarian <https://lazylibrarian.gitlab.io>`_: Automated ebook downloader for NZB and Torrent
-* `MariaDB <https://mariadb.org/>`_: MariaDB, relational database management system
-* `Medusa <https://github.com/pymedusa/Medusa>`_: Automatic video library manager for TV shows
-* `Minecraft <https://en.wikipedia.org/wiki/Minecraft>`_: Minecraft server
-* `Muximux <https://github.com/mescon/Muximux>`_: Lightweight portal to view & manage your HTPC apps
-* `Mylar <https://github.com/evilhero/mylar>`_: Automated Comic Book (cbr/cbz) downloader
-* `Nextcloud <https://nextcloud.com/>`_: Next generation open source enterprise file sync and share
-* `NZBGet <https://nzbget.net/>`_: The most efficient usenet downloader
-* `NZBHydra <https://github.com/theotherp/nzbhydra>`_: Meta search for NZB indexers
-* `Ombi <https://ombi.io/>`_: Host your own Plex Request and user management system
-* `OwnCloud-Official <https://owncloud.com/>`_: Secure file sharing and hosting
-* `Pi-hole <https://pi-hole.net/>`_: A black hole for Internet advertisements
-* `PocketMine <https://pmmp.io/>`_: Server software for Minecraft: Pocket Edition
-* `Radarr <https://github.com/Radarr/Radarr>`_: Radarr is a PVR for Movies on Usenet and Torrents
-* `Resilio Synch <https://www.resilio.com/>`_: Fast, private file sharing for teams and individuals
-* `Rocket.Chat <https://www.rocket.chat/>`_: Open Source Chat Platform
-* `SaBnzbd <https://sabnzbd.org/>`_: The best usenet downloader
-* `Seafile <https://www.seafile.com/>`_: Secure file sharing and hosting
-* `SmokePing <https://github.com/oetiker/SmokePing>`_: Network latency history monitor
-* `Sonarr <https://sonarr.tv/>`_: (formerly NZBdrone) A PVR for usenet and bittorrent users
-* `Subsonic <https://www.subsonic.org>`_: Music server
-* `Tautulli <https://github.com/Tautulli/Tautulli>`_: Plex usage tracker
-* `Teamspeak <https://teamspeak.com/en/>`_: VoIP software
-* `TFTP server <https://github.com/jumanjihouse/docker-tftp-hpa>`_: TFTP server
-* `Transmission with OpenVPN <https://haugene.github.io/docker-transmission-openvpn/>`_: Transmission torrent client with webUI while connecting to OpenVPN
-* `Ubuiquiti Unifi by Linuxserver.io <https://ui.com/cloud-gateways>`_: Unifi Access Point controller, provided by Linuxserver.io
-* `Unifi Controller <https://ui.com/cloud-gateways>`_: Unifi Access Point controller
-* `uTorrent <https://github.com/domibarton/docker-utorrent>`_: BitTorrent client
-* `Vaultwarden <https://github.com/dani-garcia/vaultwarden>`_: Unofficial server written in Rust for the password manager Bitwarden
-* `Watchtower <https://github.com/containrrr/watchtower>`_: A process for automating Docker container base image updates
-* `Xeoma <https://felenasoft.com/xeoma/en>`_: Video surveillance
-* `Zabbix-XXL <https://github.com/monitoringartist/dockbix-xxl>`_: Network and application monitoring
-* `ZeroNet <https://zeronet.io>`_: Decentralized websites using Bitcoin crypto and the BitTorrent network
-
+- To contribute a **Rock-on guide** to the following section see our :ref:`contributedocs`.
 
 .. _rockons_with_writeups:
 
-Rock-ons with write-ups
-^^^^^^^^^^^^^^^^^^^^^^^
+Rock-ons with guides
+^^^^^^^^^^^^^^^^^^^^
 
-Please see the following sections for some specific Rock-on install details.
-Note that not all Rock-ons have their own specific instructions in these docs.
+The following are specific **Rock-on guides**, where available.
 
 .. toctree::
    :maxdepth: 2
@@ -504,7 +445,7 @@ For the Rock-on named *Emby server*, for instance, the commands would be:
 
 .. _rockons_root_reset:
 
-Reset The Rock-ons Root
+Reset the Rock-ons Root
 -----------------------
 In rare instances reported by users, issues during installation and operation 
 of Rock-ons can be traced back to an inconsistent :ref:`rockons_root` share.

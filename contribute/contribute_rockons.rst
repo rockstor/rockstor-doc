@@ -3,9 +3,9 @@
 Contributing a Rock-on
 ======================
 
-Rock-ons are Docker plugins (see :ref:`rockons_intro` for more information)
-defined by a JSON file stored in the **rockon-registry** repository on
-`github.com <https://github.com/rockstor/rockon-registry>`_.
+Rock-ons are Docker/Podman/OCI image based plugins: see :ref:`rockons_intro` for more information.
+Each is defined by a JSON file developed in the `rockon-registry <https://github.com/rockstor/rockon-registry>`_.
+Or developed locally in the :code:`/opt/rockstor/rockons-metastore` directory of a Rockstor install.
 
 .. _addmyownrockon:
 
