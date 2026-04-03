@@ -59,10 +59,10 @@ How much does Rockstor cost?
 
 Little to nothing, depending on how you choose to receive Rockstor package updates.
 You can install Rockstor using our x86_64 and ARM64 installers free of cost.
-These installers include the last major stable version, or the latest stable Release Candidates.
-Depending on if the testing channel has been recently restarted or is in Release Candidate state.
-The Testing channel is free, but access to the Stable channel interim updates requires a small subscription fee.
-Stable channel interim updates are limited to small "hot fixes" to existing features only.
+These installers include the last major stable version, or a recent Stable Release Candidates.
+Depending on if the Testing channel has been recently restarted or is in Release Candidate state.
+The Edge and Testing channel are free,
+but access to the curated Stable channel updates requires a non-profit subscription fee.
 
 See :ref:`update_channels` for more information.
 
@@ -124,7 +124,7 @@ our community in the Testing Channel.
 What Linux flavor is Rockstor based on?
 ---------------------------------------
 
-Rockstor 4 is "Built on openSUSE" and resembles most closely the upstream JeOS
+Rockstor 4 & 5 are "Built on openSUSE" and resembles most closely the upstream JeOS
 variants.
 Our `rockstor-installer <https://github.com/rockstor/rockstor-installer>`_ uses
 openSUSE's own `kiwi-ng <https://github.com/OSInside/kiwi>`_ installer builder.
@@ -141,12 +141,12 @@ changed the installer to make it a bit more straightforward and specific.
 
 .. _faq_rockstor4_repos:
 
-What Repositories does Rockstor 4 use?
---------------------------------------
+What Repositories does Rockstor use?
+------------------------------------
 
-Optional Rockstor package :ref:`Update Channel <update_channels>` selection exclusively adds one of either:
+Optional Rockstor package :ref:`Update Channel <update_channels>` selection exclusively adds one of:
 
-The :ref:`testing_channel` or :ref:`stable_channel` repositories.
+:ref:`edge_channel`, :ref:`testing_channel`, or :ref:`stable_channel` repositories.
 
 The following repositories are included and enabled in :ref:`installer_howto`:
 
