@@ -268,15 +268,18 @@ linkcheck_retries = 2
 linkcheck_timeout = 10
 # www.smartmontools.org is a temporary exclusion
 linkcheck_ignore = [r'https://web.libera.chat/#btrfs',
+                    r'https://levelup.gitconnected.com/',
                     r'https://www.smartmontools.org',
                     r'https://www.freedesktop.org',
                     r'https://www.virtualbox.org',
+                    r'https://en.opensuse.org/',
                     r'https://zoneminder.com/',
                     r'https://linux.die.net/',
                     r'https://ark.intel.com/',
                     r'https://opensource.org/',
                     r'https://www.samba.org/',
                     r'https://www.gnu.org/',
+                    r'https://www.iso.org/',
                     r'https://github.com/'
                     ]
 
