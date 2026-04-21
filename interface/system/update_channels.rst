@@ -32,7 +32,7 @@ As such, the 'rockstor' package is fully Open Source; there is no contributor ag
 everyone is encouraged to help in whatever way they can. It is very much
 developed in the open with key decisions made by the community and their
 interaction with Rockstor contributors and maintainers.
-See: `About US <https://rockstor.com/about-us.html>`_.
+See: `About Us <https://rockstor.com/about-us.html>`_.
 This flow of ideas and open development is held as a founding principal and is
 instantiated in the `Rockstor forum <https://forum.rockstor.com/>`_ and within
 the code issues currently `on GitHub <https://github.com/rockstor>`_.
@@ -47,6 +47,15 @@ Released in 2013, around 2 years later the sustainable nature was approached, an
 `community forum <https://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
 The consensus was to adopt a two-tiered updates model; Testing and Stable.
 Around 11 years later, during the 5.5.*-* testing phase, an addition third tier was added: Edge.
+And we re-adopted our original donations-only model from our earliest years.
+We hope that folks now understand non-profit endeavours like ours depend on fiscal support to survive.
+
+.. note::
+
+    As from Rockstor version 5.5.1-* testing, and 5.6.0-0 stable,
+    activating Stable Channel updates no longer requires a subscription to our non-profit Open Collective.
+    Do keep in mind that we are still trying for sustainability.
+    So do consider donating as every little helps. And little and often is good.
 
 ..  image:: /images/interface/system/update-channels//update_channel_options.png
     :width: 100%
@@ -128,31 +137,19 @@ The Stable channel will receive the highest attention with regard to bug fixes,
 whereas the Edge & Testing channels are focused on developing those fixes ready for production.
 Attention is also paid to avoiding regressions from one Stable update to the next.
 
-N.B. When re-installing on a different motherboard, or where the boards
-product_uuid is non unique, a different Appliance ID will result. This means
-the prior install's activation code will no longer work against the new Appliance ID.
-For these scenarios simply edit the Appliance ID on the relevant 'Computer' entry within
-`Appman (Appliance ID manager) <https://appman.rockstor.com/>`_.
+The Stable channel's activation has an associated request to donate via our non-profit Open Collective.
+If you would like for this project to persist, consider the request as presents.
+See also the qualifying 3rd party `Paid Support <https://rockstor.com/paid_support.html>`_ endeavour.
 
-Participation in the Stable channel is key to the sustainability of Rockstor's development.
-The ability to continue to improve and provide advanced file system facilities made easy,
-is dependant on a financial component.
-The Stable channel's associated non-profit subscription is that financial component.
-See also the qualifying but as-yet pending `Paid Support <https://rockstor.com/paid_support.html>`_ option.
-
-For the current cost of a **Stable Updates subscription membership**,
-see our `Open Collective non-profit <https://opencollective.com/the-rockstor-project>`_.
+.. note::
+    A donation to our `Open Collective non-profit <https://opencollective.com/the-rockstor-project>`_ is requested,
+    **but not required**. Our sustainability depends on donations.
 
 ..  image:: /images/interface/system/update-channels//activate_stable_channel.png
     :width: 100%
     :align: center
 
-In Web-UI dialog indicating the steps to activating Stable Updates.
-
-.. _free_stable:
-
-`Rockstor project repositories <https://github.com/rockstor>`_ contributors
-qualify for up to 3 personal use activation codes.
+In Web-UI info/confirmation dialog.
 
 .. _auto_updates:
 
