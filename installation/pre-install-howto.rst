@@ -128,8 +128,11 @@ ShredOS/nwipe cautionary note
     Be sure to disconnect all drives that you wish not to be affected before booting/running ShredOS/nwipe.
 
 .. note::
-    Due to the comparatively limited write cycles of earlier generation SSDs
-    further wear consideration should be given prior to running ShredOS/nwipe on these devices.
+    Considerations for SSD & NVMe drives
+    For wiping SSD/NVMe drivers consider using the included `hdparm` and `nvme-cli` packages of ShredOS.
+    More modern flash-based devices often have the ability for a secure delete/sanitize option, protecting the drive's memory cells from additional wear.
+    This method will be especially valuable for re-installs where the drive won't change hands but is reused in the same system.
+    More details can be found in the `documentation <https://github.com/PartialVolume/shredos.x86_64/blob/master/README.md>`_.
 
 .. _installer_checksum:
 
