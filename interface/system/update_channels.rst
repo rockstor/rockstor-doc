@@ -28,59 +28,93 @@ Making the package license, as per the `Fedora Project Wiki (Packaging:Licensing
 
 See the `SPDX License List <https://spdx.org/licenses/>`_ for details on the above assertions.
 
-As such, Rockstor the package is fully Open Source; there is no contributor agreement, and
-everyone is encouraged to help in what ever way they can. It is very much
+As such, the 'rockstor' package is fully Open Source; there is no contributor agreement, and
+everyone is encouraged to help in whatever way they can. It is very much
 developed in the open with key decisions made by the community and their
 interaction with Rockstor contributors and maintainers.
-See: `Our Endeavour <https://rockstor.com/about-us.html>`_.
+See: `About Us <https://rockstor.com/about-us.html>`_.
 This flow of ideas and open development is held as a founding principal and is
 instantiated in the `Rockstor forum <https://forum.rockstor.com/>`_ and within
-the code itself `on GitHub <https://github.com/rockstor>`_.
+the code issues currently `on GitHub <https://github.com/rockstor>`_.
 
-`The Rockstor Project <https://rockstor.com/>`_ embodies an identifiable
-software maintainer and coordinator of the Open Source product that is the
-scheduled Rockstor releases. It also forms an identifiable entity necessary
-for the support of the releases (where needed) and infrastructure necessary to
-maintain the open development that is essential in modern non trivial software
-appliances that have any hope of qualifying as **future-proof**.
+In 2023 `The Rockstor Project <https://opencollective.com/the-rockstor-project>`_
+became a non-profit fiscally hosted by
+`Open Source Europe (OSE) <https://opencollective.com/europe>`_
+with the aim to establish sustainable Open Source project development and maintenance.
+Sustaining the required resources necessary; human included.
 
-After an initial development of 2.5 years the sustainable nature of this
-endeavour was approached and redressed in `a thread on the community forum <https://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
+Released in 2013, around 2 years later the sustainable nature was approached, and redressed on our
+`community forum <https://forum.rockstor.com/t/would-you-pay-a-one-time-charge-for-stable-updates/448/21>`_.
 The consensus was to adopt a two-tiered updates model; Testing and Stable.
+Around 11 years later, during the 5.5.*-* testing phase, an addition third tier was added: Edge.
+And we re-adopted our original donations-only model from our earliest years.
+We hope that folks now understand non-profit endeavours like ours depend on fiscal support to survive.
+
+.. note::
+
+    As from Rockstor version 5.5.1-* testing, and 5.6.0-0 stable,
+    activating Stable Channel updates no longer requires a subscription to our non-profit Open Collective.
+    Do keep in mind that we are still trying for sustainability.
+    So do consider donating as every little helps. And little and often is good.
 
 ..  image:: /images/interface/system/update-channels//update_channel_options.png
     :width: 100%
     :align: center
 
-The **update alternatives** offered in Rockstor.
+The 'rockstor' package **Update Tiers**.
+
+.. _edge_channel:
+
+Edge Channel
+------------
+
+.. note::
+    **Untested** - Edge updates are definitely not intended for production use.
+
+Edge tier updates are intended primarily for **developers**,
+i.e. those who wish to **actively test and develop Rockstor**,
+and who are entirely happy on the developmental edge.
+We have around three hundred unit tests that every 'rockstor' package passes prior to its release,
+but ultimately any production system needs wider field testing,
+which is why packages in Edge, if found to be basically functional,
+are promoted to the :ref:`testing_channel` for far wider community testing, evaluation, and feedback.
+
+*As a transient scratch-pad for pre-testing channel packages,
+the associated repo will be aggressively pruned.
+Do not depend on any specific pkg version persisting within the Rockstor-Edge repo.*
+
+**No charge**
+
+..  image:: /images/interface/system/update-channels//activate_edge_channel.png
+    :width: 100%
+    :align: center
+
+In Web-UI info/confirmation dialog.
 
 .. _testing_channel:
 
 Testing Channel
 ---------------
 
-The testing channel for updates is intended primarily for **developers** or
-for those who wish to **actively test Rockstor** and who are entirely happy on
-the developmental edge of releases. There is growing unit test coverage that
-all releases are expected to pass prior to their release, but, given the rapid
-nature of these releases **weekly or shorter**, it is not recommended to put
-production systems on this update channel. The flip side is that a rapid
-release cycle affords fast development and widespread field testing of what
-ultimately becomes the :ref:`stable_channel` at curated points.
+.. note::
+    **In testing** - Be advised that production use of Testing updates is discouraged.
 
-However, it must be understood that appliance development is a complicated
-business and it is inevitable that along the way, fixing one thing will break
-another. All reasonable efforts are made to avoid obvious breakage. But
-ultimately this testing channel is intended to find problems by way of
-tester/developer reports and collaboration and will involve partially
-implemented features of an experiment nature. The intention is to provide a
-feature testing platform that we can gradually stabilise before then releasing
-it's stable channel spin offs at known good points.
+All reasonable efforts are made to avoid obvious breakage in this channel.
+But ultimately the Testing channel is intended to find problems by way of
+community field-testing and reporting.
+Collaboration may involve partially implemented features of an experiment nature,
+likely published to Edge first, with the intention to provide a
+feature/fix testing platform that we can gradually stabilise before then releasing
+to the curated :ref:`stable_channel`.
+I.e. we cyclically restart testing phases to periodically release end phase testing package to the Stable channel.
 
-Participation in the testing channel along with considered bug, code, or
-documentation contributions is the heart of Rockstor development and along
-with patience and understanding can only benefit all those involved.
-Please see :ref:`additional benefits <free_stable>`.
+Participation in the Edge & Testing channels along with considered bug,
+code, or documentation contributions is the heart of Rockstor development.
+Note: patience and understanding can only benefit all those involved.
+
+There is no better testing alternative than thousands of willing folk putting a proposed product to real-world use,
+and actively involving themselves in finding and/or fixing/reporting for the greater good.
+It's the classic *Bazaar* model described in `CatB <https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar>`_.
 
 **No charge**
 
@@ -88,66 +122,34 @@ Please see :ref:`additional benefits <free_stable>`.
     :width: 100%
     :align: center
 
-There is really no better testing alternative than thousands of willing testers
-putting a proposed product to uses that were never envisaged by its developers;
-and when those testers/developers see rapid iteration in the problems they
-find/fix and report, everybody wins. It's the classic *Bazaar* model described
-in `CatB <https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar>`_.
+In Web-UI info/confirmation dialog.
 
 .. _stable_channel:
 
 Stable Channel
 --------------
 
-This is the recommended channel for **Production Rockstor use**.
-The frequency of releases is much lower (**monthy or longer**) than those in
-the :ref:`testing_channel` and there is the reassurance that updates in the
-stable channel have been field tested first in the testing channel. This
-channel will receive the highest attention with regard to bug fixes, whereas
-the testing channel is more focused on development rather than refinement.
-There will also be greater attention paid to avoiding regressions from one
-stable channel release to the next.
+.. note::
+    **Tested** - Stable updates are intended for **Production use**.
 
-Below we see the process involved in setting up the stable channel updates.
-A link is provided to `The Rockstor Project Open Collective <https://opencollective.com/the-rockstor-project>`_
-showing the **Stable Updates subscription membership** option.
-Upon membership the activation code will be emailed to the address given.
-This code is intended for the dialog shown
-below. Also note our :ref:`email_test` section where the Appliance ID, a UUID
-generated during install, is contained within the test email. The appliance ID
-is used to identify an individual install and when paired with an activation
-code configures stable channel access.
+Here there is the reassurance that updates have been field tested first in the Testing channel.
+The Stable channel will receive the highest attention with regard to bug fixes,
+whereas the Edge & Testing channels are focused on developing those fixes ready for production.
+Attention is also paid to avoiding regressions from one Stable update to the next.
 
-N.B. When re-installing on a different motherboard, or where the boards
-product_uuid is non unique, a different appliance id will result. This means
-the prior installs activation code will no longer work against the new
-appliance id. For this circumstance we have our *in public beta test*
-`Appliance ID manager (appman) <https://appman.rockstor.com/>`_. Please be
-patient as we work our the teething problems expected with newly release
-systems. Specific documentation will follow once we have established the less
-self explanatory elements.
+The Stable channel's activation has an associated request to donate via our non-profit Open Collective.
+If you would like for this project to persist, consider the request as presents.
+See also the qualifying 3rd party `Paid Support <https://rockstor.com/paid_support.html>`_ endeavour.
 
-Participation in the stable channel is key to the future of Rockstor development.
-The ability to continue to improve and provide future-proof services,
-by way of advanced file system facilities made easy, is dependant on a financial component.
-The stable channel, and it's associated `Paid Support <https://rockstor.com/paid_support.html>`_ option,
-is that financial component.
-See our `Open Collective non-profit <https://opencollective.com/the-rockstor-project>`_
-for the current cost of a **Stable Updates subscription members**.
-
-Please keep an eye on our `friendly forum <https://forum.rockstor.com/>`_ as
-discount / promotional codes are occasionally issued.
-
-**Yearly subscription managed by appman**
+.. note::
+    A donation to our `Open Collective non-profit <https://opencollective.com/the-rockstor-project>`_ is requested,
+    **but not required**. Our sustainability depends on donations.
 
 ..  image:: /images/interface/system/update-channels//activate_stable_channel.png
     :width: 100%
     :align: center
 
-.. _free_stable:
-
-`Rockstor project repositories <https://github.com/rockstor>`_: contributors
-qualify for up to 10 personal use activation codes.
+In Web-UI info/confirmation dialog.
 
 .. _auto_updates:
 
@@ -155,10 +157,10 @@ Auto Updates
 ------------
 
 Rockstor's current Web-UI does not include auto updates configuration.
-Although such a facility is planned by way of a YaST2 wrapper.
+Although such a facility is planned.
 Pull requests, as always, are welcome; see: :ref:`contributetorockstor`.
 
-In the interim the well proven YaST2 can be used directly.
+In the interim the well proven YaST2 can server this purpose.
 See `Automatic online update <https://doc.opensuse.org/documentation/leap/startup/html/book-startup/cha-onlineupdate-you.html#sec-onlineupdate-you-automatically>`_.
 A minimum (60 MB) console only YaST2 can be installed via:
 
@@ -181,7 +183,8 @@ Use the onscreen instructions to make any required changes.
 
 When enabled, all qualifying updates are auto installed at the chosen interval.
 This is only **recommended** when on the :ref:`stable_channel`.
-The :ref:`testing_channel`, due to it's developmental nature, is likely to break.
+The :ref:`testing_channel` and :ref:`edge_channel`, due to their developmental nature,
+are likely to break.
 
 **N.B. Rockstor is not necessarily compatible with other YaST modules.**
-Although again pull requests are welcome in this regard.
+Although again, pull requests are welcome in this regard.
