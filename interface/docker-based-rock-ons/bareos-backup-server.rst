@@ -318,11 +318,11 @@ As does the bconsole command ``*status director``.
 - Minimal install package name: **bareos-filedaemon**
 - Desktop / Laptop package name: **bareos-client** (includes: bareos-filedaemon, bareos-bconsole, and bareos-traymonitor)
 
-E.g. openSUSE Leap 15.6 Desktop/Laptop (community, current assumed) :
+E.g. on an openSUSE Leap 16.0/16.1 Desktop/Laptop (community repository, current channel):
 
 .. code-block:: bash
 
-    wget https://download.bareos.org/current/SUSE_15/add_bareos_repositories.sh
+    wget https://download.bareos.org/current/SUSE_16/add_bareos_repositories.sh
     sh ./add_bareos_repositories.sh
     zypper refresh
     zypper install bareos-client
