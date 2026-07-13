@@ -184,6 +184,7 @@ The following are specific **Rock-on guides**, where available.
    docker-based-rock-ons/minio
    docker-based-rock-ons/nginx
    docker-based-rock-ons/netdata_official
+   docker-based-rock-ons/observability-starter-kit
    docker-based-rock-ons/openvpn-server
    docker-based-rock-ons/plex-media-server
    docker-based-rock-ons/rustfs
