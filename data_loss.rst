@@ -28,6 +28,18 @@ always make sure you have a robust and tested backup system for any critical dat
 
 
 .. note::
+    Prefer CMR (conventional magnetic recording) drives for pool members, and avoid
+    SMR (shingled magnetic recording) drives. SMR drives rewrite overlapping tracks and
+    slow dramatically once their small internal CMR cache fills under sustained writes.
+    That directly penalises the operations a btrfs pool relies on to stay healthy or to
+    recover - a ``scrub``, a ``balance``, and especially the resilver of a ``btrfs replace``
+    on a degraded pool - where an SMR member can stall or stretch the operation from hours
+    into days. Recording technology is seldom printed on the data sheet, so confirm a model
+    is CMR; when sizing large CMR drives you can compare the per-capacity
+    `cost per terabyte <https://hddhunt.com/cheapest-hdd-per-tb/>`_.
+
+
+.. note::
     :ref:`btrfsnature` gives it the ability to check for data/metadata integrity.
     This is done on every read and write operation.
     But only for the data/metadata concerned in those operations.
